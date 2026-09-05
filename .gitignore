@@ -1,0 +1,41 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+.obsidian/
+
+# Drafts and scratch work (keep private drafts out of the repo)
+*.draft.md
+/scratch/
+/tmp/
+
+# Generated / exported product builds
+/build/
+/dist/
+/exports/
+*.pdf.tmp
+
+# Design and source binaries that belong in cloud storage, not git
+*.psd
+*.ai
+*.sketch
+*.indd
+*.mp4
+*.mov
+
+# Office lock/temp files
+~$*
+*.tmp
+
+# Secrets and personal data — never commit
+.env
+.env.*
+*.key
+/private/
+customer-lists/
