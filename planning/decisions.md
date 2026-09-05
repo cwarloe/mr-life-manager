@@ -281,7 +281,7 @@ default. That's a defensible position, but it should be chosen rather than
 stumbled into.
 
 **Decision.** **Do not choose a license yet.** Document the options and their
-implications in [LICENSE-DECISION.md](../LICENSE-DECISION.md) and decide once the
+implications in [LICENSING-NOTES.md](../LICENSING-NOTES.md) and decide once the
 first real product exists.
 
 **Rationale.**

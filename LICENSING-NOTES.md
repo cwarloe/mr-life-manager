@@ -2,6 +2,12 @@
 
 **Status:** Undecided. No `LICENSE` file has been added on purpose.
 
+> **On this file's name:** it is deliberately *not* called `LICENSE-DECISION.md`.
+> GitHub scans for files whose names begin with `LICENSE`, and it was picking
+> this one up and tagging the repository as licensed "Other" — implying a license
+> exists when the entire point is that none does yet. Keep the `LICENSE` prefix
+> free until there is a real license to put there.
+
 Under U.S. copyright law, content without a license is "all rights reserved" by
 default. That is the current, deliberate state: the material here is protected,
 and nobody has permission to reuse it. That is a fine holding position for a

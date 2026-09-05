@@ -87,7 +87,7 @@ Defined in [`frameworks/life-domains.md`](frameworks/life-domains.md).
 ```
 mr-life-manager/
 ├── README.md
-├── LICENSE-DECISION.md      Licensing options and implications (not yet decided)
+├── LICENSING-NOTES.md       Licensing options and implications (not yet decided)
 ├── docs/
 │   ├── vision/              Mission, principles, outcomes, audiences
 │   ├── business/            Model, product ladder, positioning, revenue
@@ -126,7 +126,7 @@ overwrites it. See
 - ⬜ Original source material not yet imported
 - ⬜ Audience/problem validation not yet done (Phase 1)
 - ⬜ No lead magnet, no paid product, no customers, no revenue
-- ⬜ License not chosen — see [`LICENSE-DECISION.md`](LICENSE-DECISION.md)
+- ⬜ License not chosen — see [`LICENSING-NOTES.md`](LICENSING-NOTES.md)
 
 Nothing in this repository has been validated with real customers yet. Treat
 every claim about what buyers want as a hypothesis until Phase 1 says otherwise.
