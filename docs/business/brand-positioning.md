@@ -134,6 +134,26 @@ than anything else, because it proves we're not just performing rigor.
 [decisions.md](../../planning/decisions.md)), and explicitly test audience
 reaction during Phase 1. Name changes get cheaper the earlier they happen.
 
+**Scan findings, 2026-09-06** ([brand-name-scan.md](../research/brand-name-scan.md)):
+
+- **No exact-name collision found** — medium confidence; no trademark database
+  was searched.
+- **"Life manager" is generic and crowded** in the productivity-app category
+  (multiple "Life Manager," "My Life Manager," and "LifeOS" products). The
+  protectable asset is the whole mark, never the words inside it — so the name
+  cannot carry differentiation on its own.
+- **Nearest adjacent product:** "Mr. Man: Life Tips & Coaching," a male-persona
+  life-advice app. Different category; worth naming to counsel later.
+- **The gender risk was independently confirmed** as the name's top risk. Still
+  unanswered — it needs the audience, not more analysis.
+- **`#mrlife` is occupied** by unrelated medical-representative content. Minor,
+  but check hashtags before committing to any.
+
+**What this means for positioning:** the name is not the differentiator and
+cannot be made into one. The manual-for-adulthood narrative, the
+transition-moment positioning, and the non-shaming ethos are — and all three
+survive a rename. Lead with those.
+
 ---
 
 ## Taglines
@@ -199,6 +219,27 @@ result*. We sell **competence** — and competence is the only one that persists
 after the purchase.
 
 ---
+
+## Discoverability
+
+**Do not compete on the brand name or the category phrase.** "Life manager" is
+generic and crowded, and most of that search traffic is looking for an app, not a
+curriculum — traffic that bounces
+([brand-name-scan.md](../research/brand-name-scan.md)).
+
+**Compete on the transition.** The buying trigger is a moment, not a topic
+([target-audiences.md](../vision/target-audiences.md)), and that's what people
+actually type:
+
+- "first apartment checklist"
+- "how to run your first home"
+- "how often should I …" — the highest-demand query in the whole category
+- "moving out for the first time"
+- "household systems for young adults"
+
+This is why the free tier is built the way it is: every asset in
+[product-ladder.md](product-ladder.md) rung 0 answers a query someone is already
+typing at a moment of transition.
 
 ## Visual and design direction (initial thinking)
 

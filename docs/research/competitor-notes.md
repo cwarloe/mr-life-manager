@@ -210,6 +210,14 @@ Verify before recording anything.**
 
 ### Phase E — Positioning (goal: know how to be different)
 
+> **Partially addressed, 2026-09-06.** A preliminary name scan covered the last
+> two items below (name availability, trademark conflicts) in the *software and
+> app* category only. Findings and their limitations:
+> [brand-name-scan.md](brand-name-scan.md). The remaining Phase E items, and
+> **all of Phases A–D**, are still open — and A–D cover the content and
+> curriculum competitors that actually matter to this business.
+
+
 - [ ] Collect competitor taglines and positioning statements
 - [ ] Identify claims that are overused (and therefore useless to us)
 - [ ] Identify what nobody is saying
@@ -245,3 +253,9 @@ gets labeled as inference.
 ## Findings
 
 *(Empty. Add entries only after actual research, using the format above.)*
+
+**Related, but not findings in this file:**
+[brand-name-scan.md](brand-name-scan.md) records a preliminary name-availability
+scan. It is deliberately kept separate: it examined the software category, not
+the content and curriculum competitors catalogued above, and it has not been
+independently verified. Do not treat it as competitor research.

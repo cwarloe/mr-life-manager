@@ -57,6 +57,28 @@ could proceed.
 from women in the target audience — or if a trademark conflict surfaces. Name
 changes are cheap now and expensive later.
 
+**Evidence added 2026-09-06** — preliminary external name scan
+([brand-name-scan.md](../docs/research/brand-name-scan.md)). Decision unchanged;
+confidence raised, with two new constraints recorded:
+
+- **No exact-name collision found.** Medium confidence — the scan covered GitHub,
+  app stores, and social media, but **no trademark database.** A free USPTO
+  search is now an open Phase 0 item.
+- **"Life manager" is generic and crowded** in the productivity-app category.
+  Two consequences: weak trademark distinctiveness for the words alone (the
+  protectable asset is the whole mark), and "life manager" is a bad SEO target.
+  Compete on transition queries instead.
+- **Nearest adjacent product:** "Mr. Man: Life Tips & Coaching" — a male-persona
+  life-advice app. Different category, but the one specific item to raise with
+  counsel later.
+- **The gender risk was independently confirmed**, which raises confidence that
+  it's worth testing. It does **not** answer it. That question is empirical and
+  cannot be resolved by deliberation.
+
+The scan largely confirmed this ADR rather than challenging it. Confirmation from
+an independent pass has value, but it is not a substitute for the Phase 1
+audience test, which remains the actual revisit trigger.
+
 ---
 
 ## ADR-002 — Repository name: `mr-life-manager`
@@ -269,6 +291,15 @@ quantity as **paid customer research**, not as the primary offer.
 **Revisit when:** Phase 4 shows coaching converting dramatically better than
 products, or if cash flow requires a service pivot.
 
+**Supporting argument added 2026-09-06.** The brand name scan
+([brand-name-scan.md](../docs/research/brand-name-scan.md)) supplies a reason
+this decision is right that we hadn't recorded: "life manager" is generic and
+crowded **specifically in the software and app category.** Building an app would
+drop the brand into the one category where its name is weakest and least
+differentiated. Staying content-side avoids that collision entirely. This
+strengthens the existing exclusion of "an app as the primary product" in
+[backlog.md](backlog.md).
+
 ---
 
 ## ADR-008 — License: deliberately undecided
@@ -311,12 +342,19 @@ Not yet ADRs. These need to be made, and each blocks something.
 |---|---|---|
 | **How explicit is the Christian stewardship framing?** Options: (a) stated openly, (b) held implicitly and expressed as stewardship/hospitality language, (c) two product lines. | Voice, copywriting, channel, partnerships | **High** |
 | Does the brand need a visible human face, and must it be the founder? | Marketing approach, content format | Medium |
-| Is "Mr. Life Manager" a first-person persona or a brand name? | Voice in all copy | Medium |
+| **Is "Mr. Life Manager" a first-person persona or a brand name?** An explicit character/narrator, or "Mr." as a stylistic quirk on a neutral brand? | Voice in all copy; how the gender risk lands | **High** — answerable today, free, and it blocks copywriting |
 | Should `products/` live in a public repo at all? | ADR-008, repo structure | Medium |
 | Is Health in scope, given liability and expertise limits? | Domain taxonomy, content plan | Low |
 | Does Transportation earn its own domain, or fold into Maintenance? | Taxonomy | Low |
 | Should the public-facing domain list compress from 13 to 5–6? | Marketing, product structure | Low |
 | Presell *First Place* or write it first? | Phase 3 sequencing | Medium |
+
+**Closed by evidence, not by decision:** *"What scope of offering — content, app,
+or hybrid?"* was raised externally as an open question. It is already answered:
+[ADR-007](#adr-007--mvp-prioritizes-practical-tools-over-abstract-coaching)
+commits to digital content products, and [backlog.md](backlog.md) lists an app as
+explicitly not being pursued. The name scan added a new argument for that
+position rather than reopening it.
 
 **Recommended next decision:** the faith-framing question. It's the highest-urgency
 item, it blocks copywriting, and it's the one most likely to be decided by drift

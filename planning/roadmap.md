@@ -23,7 +23,11 @@ one to have made money — only to have produced evidence.
 - [ ] Import original source material into `source-material/`
 - [ ] Decide the faith-framing question (see
       [brand-positioning.md](../docs/business/brand-positioning.md))
-- [ ] Basic name/trademark check on "Mr. Life Manager"
+- [x] Preliminary name scan — no exact collision found
+      ([brand-name-scan.md](../docs/research/brand-name-scan.md))
+- [ ] **Free USPTO search** at tmsearch.uspto.gov for "life manager," "mr life
+      manager," "Mr. Man" — the scan skipped trademark databases entirely
+- [ ] Domain and social handle availability check
 
 **Exit criteria:** the concept can be explained to a stranger in two minutes, and
 the source notes are in the repo.
@@ -48,14 +52,21 @@ This phase costs nothing but time and is the one most likely to be skipped. Don'
       Past spending is the only reliable signal of future spending.
 - [ ] Mine Reddit, TikTok comments, and forums for the exact language people use.
       Copy phrasing verbatim — it's the best copy source available.
-- [ ] Check real search demand for the top candidate topics.
+- [ ] Check real search demand for the top candidate topics. **Test transition
+      queries** ("first apartment checklist," "how to run your first home"), not
+      brand or category queries — "life manager" is generic and crowded
+      ([brand-name-scan.md](../docs/research/brand-name-scan.md)).
 - [ ] Validate or correct the problem inventory in
       [customer-problems.md](../docs/research/customer-problems.md); mark
       confirmed items ✅
 - [ ] Run the competitor research checklist in
       [competitor-notes.md](../docs/research/competitor-notes.md), Phases A–C
 - [ ] **Test the name.** Specifically watch how women in the target audience react
-      to "Mr. Life Manager."
+      to "Mr. Life Manager." Show the name plus one line of positioning and ask
+      what they expect to find and who it's for; watch for *butler*, *app*, and
+      *this isn't for me*. A preliminary scan found no blocking conflict but
+      could not answer this — it's empirical
+      ([brand-name-scan.md](../docs/research/brand-name-scan.md)).
 
 ### Exit criteria
 
