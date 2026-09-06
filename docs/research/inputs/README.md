@@ -29,6 +29,9 @@ drift?*
    > **[Note, 2026-09-05]:** Citations [1] and [3] do not support this claim.
 
 5. **One file per input**, named `YYYY-MM-DD-short-description.md`.
+6. **Run the acceptance test before filing anything.**
+   [research-prompts.md](../research-prompts.md) § Acceptance test — spot-check
+   five citations, and discard the whole report if any one fails.
 
 ## Index
 

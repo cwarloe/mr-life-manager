@@ -174,6 +174,10 @@ roadmap sequence. The scan supports the existing plan rather than redirecting it
 
 ## Recommended next steps
 
+Prompts for the two research jobs below, plus an acceptance test to apply
+before trusting any result, are in
+[research-prompts.md](research-prompts.md).
+
 **Do now — free, ~1 hour total**
 
 1. **USPTO search.** tmsearch.uspto.gov, free. Search "life manager," "mr life

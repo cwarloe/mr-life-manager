@@ -170,6 +170,12 @@ Verify before recording anything.**
 
 ## Research checklist
 
+> **A ready-to-send prompt for Phases A–D exists:**
+> [research-prompts.md](research-prompts.md) § Prompt 2, along with an acceptance
+> test to apply before any result enters this file. Use it rather than composing
+> a fresh request — it encodes the failure modes of the first research pass.
+
+
 ### Phase A — Landscape (goal: know what exists)
 
 - [ ] Identify 3–5 real players in each of the ten categories above
