@@ -21,8 +21,9 @@ one to have made money — only to have produced evidence.
 - [x] Establish the repository and planning structure
 - [x] Draft business model and product ladder
 - [ ] Import original source material into `source-material/`
-- [ ] Decide the faith-framing question (see
-      [brand-positioning.md](../docs/business/brand-positioning.md))
+- [x] Decide the faith-framing question — settled by
+      [ADR-009](decisions.md#adr-009--faith-framing-convictions-inform-the-work-belief-is-never-required-to-use-it):
+      belief is never required to use the material; the founder does not hide his
 - [x] Preliminary name scan — no exact collision found
       ([brand-name-scan.md](../docs/research/brand-name-scan.md))
 - [ ] **Free USPTO search** at tmsearch.uspto.gov for "life manager," "mr life

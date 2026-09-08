@@ -220,6 +220,35 @@ after the purchase.
 
 ---
 
+## Faith framing
+
+**Settled by [ADR-009](../../planning/decisions.md#adr-009--faith-framing-convictions-inform-the-work-belief-is-never-required-to-use-it).**
+The short version for anyone writing copy:
+
+> Nobody has to share the founder's faith to use any of this. And the founder
+> doesn't hide his.
+
+**In products** — guides, checklists, courses, toolkits — there is **no faith
+content by default.** No scripture, no assumed shared belief, no conversion
+framing. Someone who bought laundry advice gets laundry advice.
+
+**In the founder's own voice** — about page, social, newsletter, speaking,
+conversations — his convictions are his own and are not sanitized. If someone
+asks why he cares about this work, he answers honestly.
+
+**Ministry-channel editions**, if built, are explicit and appropriate to an
+audience that opted in. A separate product, never a swap-in.
+
+**Why the vocabulary already works.** *Stewardship* and *hospitality* are not
+euphemisms or code words. They are the honest names for the actual convictions
+**and** completely intelligible to a secular reader — managing entrusted
+resources well, and opening your home to people. Use them plainly. No
+translation layer is needed in either direction.
+
+**What this rules out**, in both directions:
+- Faith language drifting into general products because it felt natural
+- Quietly scrubbing the about page when a large secular buyer appears
+
 ## Discoverability
 
 **Do not compete on the brand name or the category phrase.** "Life manager" is
@@ -253,12 +282,10 @@ typing at a moment of transition.
 
 ## Open positioning questions
 
-- How explicit should the Christian stewardship and hospitality convictions be?
-  Options: (a) stated openly, which strengthens the church channel and may narrow
-  the general market; (b) held implicitly as *why the founder cares*, expressed
-  as hospitality and stewardship language that works for everyone; (c) two
-  product lines. **Recommend (b) as the default, with (a) reserved for the
-  ministry channel** — but this needs an explicit decision.
+- ~~How explicit should the Christian stewardship and hospitality convictions
+  be?~~ **Settled** —
+  [ADR-009](../../planning/decisions.md#adr-009--faith-framing-convictions-inform-the-work-belief-is-never-required-to-use-it).
+  See *Faith framing* below.
 - Does the brand need a visible human face, and must it be the founder?
 - Is "Mr. Life Manager" a persona who speaks in first person, or a brand name?
 - Does the name survive contact with the actual audience?

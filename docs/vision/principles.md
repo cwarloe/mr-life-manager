@@ -140,6 +140,12 @@ Systems produce margin; margin produces welcome.
 Every product should be able to answer: *does this ultimately help someone open
 their home and life to other people?*
 
+**On the convictions underneath this.** Hospitality and stewardship are where the
+founder's Christian faith enters the work — and they enter it as *reasons*, not
+as requirements. Nobody has to share those convictions to use any of this;
+the words carry their full ordinary meaning for any reader. Settled in
+[ADR-009](../../planning/decisions.md#adr-009--faith-framing-convictions-inform-the-work-belief-is-never-required-to-use-it).
+
 ---
 
 ## 8. Dignity, not shame

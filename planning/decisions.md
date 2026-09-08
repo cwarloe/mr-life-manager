@@ -334,13 +334,98 @@ material. Whichever comes first.
 
 ---
 
+## ADR-009 — Faith framing: convictions inform the work; belief is never required to use it
+
+**Status:** Accepted
+**Date:** 2026-09-08
+
+**Context.** The founder's motivation for this work is explicitly Christian —
+stewardship of time, money, possessions, and relationships, and hospitality as
+the reason order matters. The open question was how visible that should be:
+(a) stated openly throughout, (b) held implicitly and expressed as stewardship
+and hospitality language, or (c) split into two product lines. This blocked
+voice, copywriting, channel strategy, and partnerships.
+
+**Decision.** Option (b), stated precisely:
+
+> **Nobody has to share the founder's faith to use any of this.** The products
+> teach practical systems and require no belief, no agreement, and no religious
+> vocabulary from the customer. **And the founder does not scrub his faith from
+> his own voice.** He talks about Jesus with people; he simply never makes it a
+> condition of being helped.
+
+Or, in the founder's words: *it's not like someone has to be born again in order
+to clean up their house.*
+
+**The operational line — product vs. person.** The decision is only usable if it
+says where the boundary sits:
+
+| | Faith content |
+|---|---|
+| **Products** (guides, checklists, courses, toolkits) | None by default. No scripture, no assumed shared belief, no conversion framing. Someone who bought laundry advice gets laundry advice. |
+| **The founder's own voice** (about page, social, newsletter, conversations, speaking) | His own. Not sanitized, not hidden. If someone asks why he cares about this, he answers honestly. |
+| **Ministry-channel editions** (if built) | Explicit and appropriate to the context, because the audience opted into it. A separate product, never a swap-in. |
+
+**Rationale.**
+
+- **It is theologically coherent, not a compromise.** Practical wisdom about
+  ordinary life is available to everyone — order, diligence, stewardship, and
+  hospitality are goods that work for anyone, and much of the biblical wisdom
+  literature is addressed to exactly that. Teaching them without a belief gate
+  isn't soft-pedaling; it follows from taking them seriously as *good*.
+- **It matches the brand's central commitment.** The premise is that nobody
+  taught these people, and the tone is dignity rather than shame
+  ([principles.md](../docs/vision/principles.md) §8). A belief requirement would
+  add exactly the barrier the brand exists to remove.
+- **The vocabulary already works both ways.** *Stewardship* and *hospitality* are
+  the honest words for the actual convictions **and** fully intelligible to a
+  secular reader. They are not euphemisms or code — they carry the real meaning
+  in language everyone can use. No translation layer is needed.
+- **It keeps both channels open without dishonesty.** The general market gets a
+  genuinely general product. Churches and ministries get a partner whose
+  convictions are real rather than retrofitted.
+- **It is sustainable.** A position requiring the founder to hide who he is would
+  erode; so would one requiring customers to agree with him. This requires
+  neither.
+
+**Consequences.**
+
+- Easier: copywriting is unblocked; voice is settled; the church and campus
+  ministry channel stays open; the general market is not narrowed.
+- Easier: no separate "secular version" has to be maintained — the default
+  product *is* the general one.
+- Harder: requires discipline in both directions. Not letting faith language
+  drift into products, **and** not quietly scrubbing the about page when a large
+  secular buyer appears.
+- A ministry edition, if built, is a genuine additional product with its own
+  cost — not a reskin.
+
+**Pressure tests.** Decisions like this are rarely reversed outright; they erode
+under specific pressure. Naming the likely pressures in advance:
+
+1. **A secular institutional buyer asks that the founder's public faith be
+   downplayed.** → No. The *product* already contains no faith content, which is
+   what they are actually buying. His bio is not part of the purchase.
+2. **A church partner asks for scripture in the general product.** → No. Offer a
+   ministry edition instead.
+3. **Marketing advice says the faith association will limit the market.** → The
+   products are already general. The founder's identity is not the product, and
+   removing it would buy nothing.
+4. **A customer objects to the founder being a Christian.** → The material stands
+   on its own merits. Nothing is being asked of them.
+
+**Revisit when:** never, on the substance. Revisit the *mechanics* if a ministry
+edition is actually built, since that is where the boundary gets tested in
+practice.
+
+---
+
 ## Open decisions
 
 Not yet ADRs. These need to be made, and each blocks something.
 
 | Question | Blocks | Urgency |
 |---|---|---|
-| **How explicit is the Christian stewardship framing?** Options: (a) stated openly, (b) held implicitly and expressed as stewardship/hospitality language, (c) two product lines. | Voice, copywriting, channel, partnerships | **High** |
 | Does the brand need a visible human face, and must it be the founder? | Marketing approach, content format | Medium |
 | **Is "Mr. Life Manager" a first-person persona or a brand name?** An explicit character/narrator, or "Mr." as a stylistic quirk on a neutral brand? | Voice in all copy; how the gender risk lands | **High** — answerable today, free, and it blocks copywriting |
 | Should `products/` live in a public repo at all? | ADR-008, repo structure | Medium |
@@ -356,7 +441,10 @@ commits to digital content products, and [backlog.md](backlog.md) lists an app a
 explicitly not being pursued. The name scan added a new argument for that
 position rather than reopening it.
 
-**Recommended next decision:** the faith-framing question. It's the highest-urgency
-item, it blocks copywriting, and it's the one most likely to be decided by drift
-rather than by intent if left open. Everything downstream — voice, channel,
-partnerships — depends on it.
+**Recommended next decision:** the persona question — is "Mr. Life Manager" a
+first-person character who narrates, or a brand name with "Mr." as a stylistic
+quirk? With the faith framing settled by
+[ADR-009](#adr-009--faith-framing-convictions-inform-the-work-belief-is-never-required-to-use-it),
+this is now the highest-urgency open item. It is answerable today at no cost, it
+blocks copywriting, and it shapes how the gender risk in
+[ADR-001](#adr-001--brand-name-mr-life-manager) actually lands.
