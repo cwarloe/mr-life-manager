@@ -79,6 +79,27 @@ The scan largely confirmed this ADR rather than challenging it. Confirmation fro
 an independent pass has value, but it is not a substitute for the Phase 1
 audience test, which remains the actual revisit trigger.
 
+**Materially updated 2026-09-08 by [ADR-011](#adr-011--mr-life-manager-is-a-real-person-dave-webster).**
+"Mr. Life Manager" is **Dave Webster, a real person**, not a persona choice. This
+changes the risk profile of this ADR substantially:
+
+- **The gender risk shrinks.** The concern was that "Mr." reads as *a man telling
+  you how to run your house*. That lands very differently when "Mr." is a
+  specific man who actually taught this, and when the voice reaching the reader
+  is **the apprentice's rather than the master's**. The reader is handed what
+  someone learned, not lectured by an authority.
+- **The "butler service" read weakens.** A named teacher is not a service.
+- **The credibility structure strengthens**, matching what the research found in
+  every category winner: a real person with a real story.
+- **The trademark question sharpens.** Under
+  [ADR-012](#adr-012--licensing-permission-is-the-marketing) the name is now the
+  primary protected asset, so the USPTO search is a prerequisite rather than
+  a nice-to-have.
+
+**Still test it in Phase 1.** Reduced risk is not zero risk, and this remains an
+empirical question. But the name is now anchored in something true, which is a
+far better position than a naming device would have been.
+
 ---
 
 ## ADR-002 — Repository name: `mr-life-manager`
@@ -142,7 +163,9 @@ setting up a household for the first time.
 **Revisit when:** Phase 4 data shows a different persona buying more readily, or
 if the overwhelmed-professional segment proves easier to reach.
 
-> ### ⚠️ UNDER REVIEW — evidence added 2026-09-08
+> ### ✅ RESOLVED by [ADR-010](#adr-010--beachhead-keep-the-audience-change-the-payer) — keep the audience, change the payer
+>
+> ### The evidence that prompted it (added 2026-09-08)
 >
 > Three independent competitive research passes
 > ([findings](../docs/research/competitor-notes.md#findings)) converged on a
@@ -190,6 +213,8 @@ if the overwhelmed-professional segment proves easier to reach.
 >
 > Options 2 and 3 are close to what the evidence supports. Option 1 is
 > defensible but should be chosen deliberately, knowing the graveyard.
+>
+> **Chosen: option 2.** See [ADR-010](#adr-010--beachhead-keep-the-audience-change-the-payer).
 
 ---
 
@@ -469,15 +494,186 @@ practice.
 
 ---
 
+## ADR-010 — Beachhead: keep the audience, change the payer
+
+**Status:** Accepted
+**Date:** 2026-09-08
+**Supersedes the open review on** [ADR-003](#adr-003--initial-beachhead-market-first-time-independent-adults)
+
+**Context.** Three independent research passes found that every commercial
+success in this landscape sells to people **already running a household and
+overwhelmed by it**, while every verified attempt at *18–25, first-independence,
+multi-domain* underperformed or died — including Society of Grownups, with a
+$100M announced investment, which closed its storefront within two years.
+
+**Decision.** **Keep the audience. Change the payer.**
+
+The content stays aimed at people who were never taught these systems, with
+first-time independence as the sharpest expression of that need. What changes is
+**who the marketing addresses and who is asked to pay**:
+
+| | Who |
+|---|---|
+| **Who the content serves** | Unchanged — anyone never taught this, first-timers included |
+| **Who the marketing addresses** | The overwhelmed adult already running a household |
+| **Who pays** | That same adult · a parent buying a gift · an institution licensing |
+
+**Rationale.**
+
+- **It changes marketing, not content.** Nothing in `frameworks/`, `content/`, or
+  the drafted free assets needs rewriting. The cadence reference already serves
+  every persona; the First Apartment Checklist already works as a gift.
+- The graveyard is specifically at *selling to the 22-year-old*, not at *teaching
+  the 22-year-old*. Society of Grownups drew 9,000 registrations — the demand was
+  real, the payer was wrong.
+- This repo half-anticipated it. [target-audiences.md](../docs/vision/target-audiences.md)
+  already called Maya "the best audience and the worst customer."
+- It keeps the transition trigger, which is the strongest asset in the
+  positioning, while pointing the ask at someone who can act on it.
+
+**Consequences.**
+- Easier: the free tier reaches the widest audience; the paid tier addresses
+  someone with budget; parent-gift and institutional channels move from "later"
+  to primary.
+- Harder: two audiences to speak to without the copy becoming mush. The free
+  assets skew first-timer; the paid ladder must skew overwhelmed-householder.
+- [product-ladder.md](../docs/business/product-ladder.md) pricing should be
+  re-examined against this payer, who is less price-sensitive than a student.
+
+**Revisit when:** Phase 4 shows first-time independents buying directly at rates
+the research says they won't.
+
+---
+
+## ADR-011 — Mr. Life Manager is a real person: Dave Webster
+
+**Status:** Accepted
+**Date:** 2026-09-08
+**Resolves** the open persona question and materially changes
+[ADR-001](#adr-001--brand-name-mr-life-manager)
+
+**Context.** The open question was whether "Mr. Life Manager" is a first-person
+character, or "Mr." is a stylistic quirk on a neutral brand. Neither. **Mr. Life
+Manager is Dave Webster, a real person**, and the systems taught here originate
+with him.
+
+**Decision.**
+
+> **Dave Webster is Mr. Life Manager.** He is the original — the person who
+> actually knew how to do this and taught it. The founder's role is **the
+> apprentice**: the one who learned it, wrote it down, and is passing it on.
+
+The brand is a **master-and-apprentice structure**, not an invented persona.
+Dave's likeness is available and may be used; recording him is under
+consideration.
+
+**Rationale.**
+
+- **It is true**, which no invented persona can be. The credibility structure
+  the research found in every winner — Mercury Stardust, KC Davis, How to ADHD —
+  is a real person with a real story. This has one.
+- **It resolves the gender risk far better than a workaround would.** The concern
+  in ADR-001 was that "Mr." reads as *a man telling you how to run your house*.
+  That risk shrinks substantially when "Mr." is not a marketing device but a
+  specific man who taught specific people — and when the voice reaching the
+  reader is **the apprentice's, not the master's**. The reader isn't being
+  lectured by an authority; they're being handed what someone else learned. That
+  is a fundamentally more welcoming posture, and it is available to any reader
+  regardless of gender.
+- **It solves the voice problem.** "Here is what Dave taught me" is a natural,
+  sustainable register. An invented narrator would have required consistent
+  character work forever.
+- **It is a proven teaching structure** — the mentor who knows and the narrator
+  who learns, as in *The Goal*. It lets the reader occupy the apprentice's seat.
+
+**Consequences.**
+- Easier: authentic voice; a real face; a natural answer to "who are you to teach
+  this?"; strong story for marketing and for the ministry/institutional channel.
+- Easier: the founder never has to pose as the expert, which is both more honest
+  and more comfortable.
+- **Harder — and this is now the live risk:** the brand rests on a real person
+  who is not the founder. Consent, attribution, compensation, and control need to
+  be settled explicitly and in writing. See
+  [open questions](#open-decisions).
+- Content sourcing changes: **Dave is a primary source**, and `source-material/`
+  should reflect whose material is whose.
+
+**Revisit when:** Dave's involvement or wishes change. This decision is
+contingent on his consent in a way no other ADR here is.
+
+---
+
+## ADR-012 — Licensing: permission is the marketing
+
+**Status:** Accepted
+**Date:** 2026-09-08
+**Supersedes** [ADR-008](#adr-008--license-deliberately-undecided)
+
+**Context.** ADR-008 deliberately held the licensing decision open. The founder
+has now named the model: let people use the material freely or cheaply, ask that
+they say where it came from, and charge for **assistance**, not for permission.
+
+**Decision.** **Attribution, not restriction.**
+
+| What | Terms |
+|---|---|
+| **Frameworks and free content** | Free to use, adapt, and teach — **attribution required** |
+| **Paid products** | Bought normally; not freely redistributable |
+| **The name "Mr. Life Manager"** | **Protected.** This is the actual asset. |
+| **Help, coaching, consultation, facilitation** | Paid. This is the revenue. |
+
+Recommended instrument: **CC BY 4.0** for `frameworks/` and the free tier;
+all-rights-reserved for paid products; **trademark** as the real protection.
+
+**Rationale.**
+
+- **Copyright was never the moat.** Anyone can write a first-apartment checklist.
+  Nobody else can be Mr. Life Manager. [LICENSING-NOTES.md](../LICENSING-NOTES.md)
+  already reached this conclusion; this decision acts on it.
+- **Attribution is distribution.** Every church, campus ministry, RA program, and
+  transition program that uses the material carries the name with it. That is the
+  institutional channel solving its own hardest problem — getting in the door —
+  at zero acquisition cost.
+- **It removes the friction that kills the institutional channel.** Procurement
+  is slow; permission is instant. Let them use it, then sell them help.
+- **It fits the convictions.** Withholding practical help that costs nothing to
+  copy, in order to charge for permission, would sit badly against
+  [ADR-009](#adr-009--faith-framing-convictions-inform-the-work-belief-is-never-required-to-use-it)
+  and the stewardship framing. Generosity here is also good strategy, which is a
+  comfortable place to be.
+
+**Consequences.**
+- Easier: adoption, institutional reach, goodwill, and word of mouth.
+- Easier: no permissions administration.
+- Harder: **the trademark now matters much more.** If the name is the asset, it
+  has to be searched and registered. The free USPTO search moves from
+  nice-to-have to prerequisite.
+- Harder: someone will eventually use the material commercially with attribution
+  and without paying. Under this model that is a **feature**, not a leak — but it
+  should be a decision made with open eyes.
+- CC BY permits commercial reuse. If that is unacceptable, **CC BY-NC** is the
+  fallback — but note that "non-commercial" is vague and hard to enforce, and it
+  would block exactly the institutional uses this model wants to encourage.
+
+**Not legal advice.** Before registering a trademark or publishing a license,
+talk to an attorney — especially given ADR-011.
+
+**Revisit when:** the trademark position is known, or the first paid product
+exists.
+
+---
+
 ## Open decisions
 
 Not yet ADRs. These need to be made, and each blocks something.
 
 | Question | Blocks | Urgency |
 |---|---|---|
-| Does the brand need a visible human face, and must it be the founder? | Marketing approach, content format | Medium |
-| **Is "Mr. Life Manager" a first-person persona or a brand name?** An explicit character/narrator, or "Mr." as a stylistic quirk on a neutral brand? | Voice in all copy; how the gender risk lands | **High** — answerable today, free, and it blocks copywriting |
-| Should `products/` live in a public repo at all? | ADR-008, repo structure | Medium |
+| **Is Dave's participation settled in writing?** Consent to use his name and likeness, how he's credited, whether he's compensated or holds equity, and who decides if you disagree. | Everything. [ADR-011](#adr-011--mr-life-manager-is-a-real-person-dave-webster) rests on it. | **Highest** |
+| **Is he "Dave Webster" publicly, or only "Mr. Life Manager"?** | Copy, the about page, how the face is used | **High** |
+| **Whose notes are in `source-material/`** — the founder's, Dave's, or the founder's record of Dave's teaching? | Attribution, and the file's name | **High** |
+| **Trademark the name.** Now the primary protected asset under [ADR-012](#adr-012--licensing-permission-is-the-marketing). | Licensing model, brand safety | **High** |
+| Does CC BY (commercial reuse allowed) go too far, or is CC BY-NC the right fallback? | [ADR-012](#adr-012--licensing-permission-is-the-marketing) mechanics | Medium |
 | Is Health in scope, given liability and expertise limits? | Domain taxonomy, content plan | Low |
 | Does Transportation earn its own domain, or fold into Maintenance? | Taxonomy | Low |
 | Should the public-facing domain list compress from 13 to 5–6? | Marketing, product structure | Low |
@@ -490,10 +686,14 @@ commits to digital content products, and [backlog.md](backlog.md) lists an app a
 explicitly not being pursued. The name scan added a new argument for that
 position rather than reopening it.
 
-**Recommended next decision:** the persona question — is "Mr. Life Manager" a
-first-person character who narrates, or a brand name with "Mr." as a stylistic
-quirk? With the faith framing settled by
-[ADR-009](#adr-009--faith-framing-convictions-inform-the-work-belief-is-never-required-to-use-it),
-this is now the highest-urgency open item. It is answerable today at no cost, it
-blocks copywriting, and it shapes how the gender risk in
-[ADR-001](#adr-001--brand-name-mr-life-manager) actually lands.
+**Recommended next decision: settle Dave's participation, in writing.**
+
+[ADR-011](#adr-011--mr-life-manager-is-a-real-person-dave-webster) is now the
+foundation of the brand, and it is the only ADR here that depends on another
+person's ongoing consent. Everything else — the name, the face, the voice, the
+story, the trademark — sits on top of it.
+
+This is not a legal formality between strangers. It is the ordinary kindness of
+being explicit with someone whose name you are building something on, **before**
+there is money or an audience to complicate it. Friendships survive that
+conversation early far more reliably than late.

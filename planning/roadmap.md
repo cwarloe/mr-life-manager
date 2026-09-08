@@ -27,7 +27,12 @@ one to have made money — only to have produced evidence.
 - [x] Preliminary name scan — no exact collision found
       ([brand-name-scan.md](../docs/research/brand-name-scan.md))
 - [ ] **Free USPTO search** at tmsearch.uspto.gov for "life manager," "mr life
-      manager," "Mr. Man" — the scan skipped trademark databases entirely
+      manager," "Mr. Man" — **now a prerequisite, not a nice-to-have.** Under
+      [ADR-012](decisions.md#adr-012--licensing-permission-is-the-marketing) the
+      name is the primary protected asset.
+- [ ] **Settle Dave's participation in writing** — consent, credit,
+      compensation, control
+      ([ADR-011](decisions.md#adr-011--mr-life-manager-is-a-real-person-dave-webster))
 - [ ] Domain and social handle availability check
 
 **Exit criteria:** the concept can be explained to a stranger in two minutes, and
@@ -138,10 +143,10 @@ content businesses die of obscurity, not of bad content.
 
 ### Build
 
-- [ ] **★ First Place: The Practical Guide to Running Your First Home** — $49
-      *(recommended flagship; see below)*
-- [ ] Or start smaller: two or three $9–$19 guides to test which topic sells
-      before committing to a book
+- [ ] **Two or three $9–$19 guides** — lead with these. They test which topic
+      sells before anything long gets written.
+- [ ] **Presell or waitlist *First Place*** — do not write it first
+      (decided 2026-09-08). Build demand, then produce to it.
 - [ ] Payment and delivery (Gumroad, Podia, Lemon Squeezy — pick the boring one)
 - [ ] Sales page written from
       [customer-outcomes.md](../docs/vision/customer-outcomes.md)
@@ -158,9 +163,14 @@ content businesses die of obscurity, not of bad content.
   the student edition, and eventually a course are all repackagings of it.
 - **It's the licensable asset.** Institutions buy curriculum, not tips.
 
-**Strong recommendation:** presell or sell a short version *before* writing the
-long one. A 40-page guide that sells beats a 200-page book that doesn't, and you
-find out in a fraction of the time.
+**Decided 2026-09-08: no book until there is demand.** Build demand first, then
+produce to it. A 40-page guide that sells beats a 200-page book that doesn't, and
+you find out in a fraction of the time.
+
+Practically, that means Phase 3 leads with the **small paid guides** and a
+**presell or waitlist** for *First Place* — not with writing it. If the waitlist
+fills, write the book to an audience that already exists. If it doesn't, you
+learned that for the cost of a landing page instead of three months.
 
 ### Exit criteria
 

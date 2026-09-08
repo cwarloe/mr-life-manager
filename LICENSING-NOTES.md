@@ -85,11 +85,44 @@ to call theirs Mr. Life Manager.
 - [ ] Is a name/trademark search worth doing before publicizing the brand?
 - [ ] Do we want outside contributors? (If yes, a CLA or license is required.)
 
-## Recommendation
+## Decision (2026-09-08)
 
-Hold at **Option A (no license)** while the repo is a concept sandbox. Move to
-**Option D** the moment the first real product exists — but only after answering
-whether `products/` belongs in public at all.
+**Settled by [ADR-012](planning/decisions.md#adr-012--licensing-permission-is-the-marketing) — attribution, not restriction.**
+
+The model: **let people use the material freely or cheaply, ask that they say
+where it came from, and charge for help rather than for permission.**
+
+| What | Terms |
+|---|---|
+| Frameworks and free content | Free to use, adapt, and teach — **attribution required** (CC BY 4.0) |
+| Paid products | Bought normally; not freely redistributable |
+| **The name "Mr. Life Manager"** | **Protected — this is the actual asset** |
+| Coaching, consultation, facilitation | Paid. This is the revenue. |
+
+This is Option D above, resolved toward the permissive end, and it acts on a
+conclusion this document already reached: **copyright was never the moat.**
+Anyone can write a first-apartment checklist. Nobody else can be Mr. Life
+Manager.
+
+**Why permissive is also the commercial answer.** Attribution *is* distribution.
+Every church, campus ministry, RA program, and transition program that uses the
+material carries the name with it — which solves the institutional channel's
+hardest problem, getting in the door, at zero acquisition cost. Procurement is
+slow; permission is instant.
+
+**What this makes urgent.** If the name is the asset, the trademark is no longer
+optional. The free USPTO search is now a prerequisite, and it matters more since
+[ADR-011](planning/decisions.md#adr-011--mr-life-manager-is-a-real-person-dave-webster)
+tied the brand to a real person.
+
+**The open sub-question.** CC BY permits *commercial* reuse — someone could sell
+a product built on this material, with attribution, and owe nothing. Under this
+model that is a feature. If it isn't acceptable, CC BY-NC is the fallback, but
+"non-commercial" is vague, hard to enforce, and would block exactly the
+institutional uses this model wants to invite.
+
+**Still not legal advice.** Talk to an attorney before registering a trademark or
+publishing a license file — especially given ADR-011.
 
 **This is not legal advice.** Before licensing or trademarking anything with
 commercial value, talk to an attorney.

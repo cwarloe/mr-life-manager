@@ -9,6 +9,29 @@
 
 ---
 
+## ⚠️ Provenance question, opened 2026-09-08
+
+[ADR-011](../planning/decisions.md#adr-011--mr-life-manager-is-a-real-person-dave-webster)
+establishes that **Mr. Life Manager is Dave Webster**, a real person, and that
+the founder's role is the apprentice who learned from him.
+
+That makes this file's name and contents an open question:
+
+- Are these notes **the founder's own**?
+- Are they **Dave's**, in his words?
+- Are they **the founder's record of Dave's teaching** — which is a third thing,
+  and the most likely?
+
+**It matters, for three reasons.** Attribution has to be accurate. Dave's own
+words are primary source material of a different order than notes about him. And
+under [ADR-012](../planning/decisions.md#adr-012--licensing-permission-is-the-marketing),
+which asks others to credit their sources, this project should be scrupulous
+about crediting its own.
+
+**Do not rename or reorganize this file until that is answered.** If material
+from both people ends up here, keep it in **separate files** with distinct
+headers — never merged.
+
 ## What goes in this file
 
 The original household cleaning and organization notes that started this project

@@ -86,11 +86,49 @@ Three commitments define the brand:
 
 ---
 
+## Who is speaking
+
+**Settled 2026-09-08 by [ADR-011](../../planning/decisions.md#adr-011--mr-life-manager-is-a-real-person-dave-webster).**
+
+> **Mr. Life Manager is Dave Webster — a real person.** He is the original: the
+> one who actually knew how to run a home and taught it. The founder is **the
+> apprentice** — the one who learned it, wrote it down, and passes it on.
+
+This is a **master-and-apprentice** structure, not an invented persona, and it
+does more work than any tagline could:
+
+- **The reader gets the apprentice's seat.** They are not being lectured by an
+  authority. They are being handed what someone else learned, by someone who also
+  had to be taught. That is the least shame-inducing posture available, and shame
+  is the barrier this brand exists to remove.
+- **It answers "who are you to teach this?"** honestly, which the research found
+  is how every winner in this category is built — a real person with a real story.
+- **It softens the "Mr."** substantially. "Mr." is not a marketing device; it is
+  a specific man. And the voice reaching the reader is not his — it is the
+  apprentice's. That combination is far more welcoming to every reader than a
+  branded male authority figure would have been.
+- **It is sustainable.** "Here's what Dave taught me" is a register anyone can
+  write in indefinitely. An invented narrator would need character work forever.
+
+**Practical implications for copy:**
+
+| Do | Don't |
+|---|---|
+| "Dave's rule was…" · "What Dave taught me…" | Write in Dave's first person unless he actually said it |
+| Credit the source of a method when it has one | Invent Dave quotes |
+| Let the apprentice admit what they didn't know | Have the apprentice pose as the expert |
+| Use his face and story where it's earned | Use his name on anything he hasn't seen |
+
+**Standing constraint:** the brand rests on a real person who is not the founder.
+Nothing goes out under Dave's name or likeness without his knowing about it. This
+is recorded as the highest-urgency open item in
+[decisions.md](../../planning/decisions.md#open-decisions).
+
 ## Brand voice
 
-**Sounds like:** a competent older sibling or a good RA. Someone who has done
-this, will tell you plainly how it works, doesn't make a big deal of it, and
-doesn't think less of you for asking.
+**Sounds like:** the apprentice — a competent older sibling or a good RA. Someone
+who has done this, learned it from somebody, will tell you plainly how it works,
+doesn't make a big deal of it, and doesn't think less of you for asking.
 
 | Do | Don't |
 |---|---|
@@ -313,6 +351,10 @@ typing at a moment of transition.
   be?~~ **Settled** —
   [ADR-009](../../planning/decisions.md#adr-009--faith-framing-convictions-inform-the-work-belief-is-never-required-to-use-it).
   See *Faith framing* below.
-- Does the brand need a visible human face, and must it be the founder?
-- Is "Mr. Life Manager" a persona who speaks in first person, or a brand name?
-- Does the name survive contact with the actual audience?
+- ~~Does the brand need a visible human face?~~ **Settled** — it's Dave's, and
+  his likeness is available. [ADR-011](../../planning/decisions.md#adr-011--mr-life-manager-is-a-real-person-dave-webster)
+- ~~Is "Mr. Life Manager" a persona or a brand name?~~ **Settled — neither.**
+  He's a real person. See *Who is speaking* above.
+- Does the name survive contact with the actual audience? **Still open, still
+  empirical** — though ADR-011 materially reduces the risk.
+- Is he "Dave Webster" publicly, or only "Mr. Life Manager"? **Open.**
