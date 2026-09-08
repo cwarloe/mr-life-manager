@@ -218,6 +218,33 @@ Retire "Run your life. Don't let it run you." unless testing says otherwise.
 result*. We sell **competence** — and competence is the only one that persists
 after the purchase.
 
+> ### ⚠️ The "nobody taught you" frame is occupied
+>
+> **Finding, 2026-09-08** ([research](../research/competitor-notes.md#q3-does-anyone-use-nobody-taught-you-this-positioning--yes-and-this-is-the-finding-that-stings)).
+> Three independent passes found this positioning already in use — **by the
+> category's winners**, not its failures:
+>
+> - Clutterbug: "No shame. No perfection."
+> - KC Davis (**350,000+ copies**): care tasks are "morally neutral"
+> - Dana K. White: "I just didn't know how to manage my stuff!"
+> - How to ADHD: "Forget 'try harder.'"
+> - A ~2-month-old iOS app: "No shame. No boomer advice. No spreadsheets, no
+>   guilt."
+>
+> The frame is **validated** — aspiration-led competitors underperform against
+> it (The Home Edit: 88% critics, **17% audience**; Mercury Stardust, on
+> capability-plus-reassurance: **#1 NYT**). But validated is not available.
+>
+> **What this means:** the tone and ethos in this document are correct and
+> should not change. They are simply **not the differentiator.** Every player
+> using this frame today is **single-domain.** The differentiation has to be
+> **scope** (multi-domain) and **delivery** (an actual taught system, not tips
+> or blank forms).
+>
+> Copy that leans on "nobody taught you" as the hook is entering a crowded
+> conversation. Copy that leans on *one taught system across your whole life* is
+> not.
+
 ---
 
 ## Faith framing

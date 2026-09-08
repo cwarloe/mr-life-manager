@@ -125,6 +125,44 @@ different landing page.
 - Video courses, physical products, memberships, sponsorships, formal
   institutional licensing
 
+## Research update (2026-09-08)
+
+[Competitive research](../research/competitor-notes.md#findings) shifts the
+weight of several ideas on this page.
+
+**Strengthened — move up**
+
+- **Parent-as-buyer for the student market.** This page already called it
+  "potentially the single best unlock." The research supports that hard: every
+  commercial attempt to sell directly to 18–25-year-olds underperformed, while
+  the audience itself is real and well-documented. The buyer is a parent or an
+  institution.
+- **Institutional licensing.** Listed here as 🔴-now / 🟢-later. The research
+  found a **specific, named, uncovered gap**: DoD TAP is mandatory for ~200,000
+  people per year and covers career, benefits, and money — and **nothing** about
+  running a household. Casey Life Skills assesses housing and daily living, then
+  points at a curriculum gap it doesn't fill.
+
+**New idea the page didn't contain — certification / train-the-trainer**
+
+Three independent players converged on this as the high-end monetization point
+(Clutterbug $99–$149; Go Clean Co's intent-to-use filing; UW-Madison Extension's
+$325 course and train-the-trainer). The pattern is consistent: **the consumer
+course is cheap or free; the professional tier is where money changes hands.**
+Worth adding to the ladder as an option.
+
+**Weakened — reconsider**
+
+- **Do not lead with money content.** It has the best-funded free competition in
+  the entire landscape: NGPF gives a full free semester curriculum to teachers in
+  schools serving **75% of US high schoolers**. Even the successful commercial
+  player (Her First $100K) earns primarily from **sponsorship and speaking**, not
+  courses. Ramsey shows it *can* be sold — but only into a community that wants a
+  specific frame.
+- **Low-cost single guides ($9–$19).** Squeezed by Etsy bundles at $3–$17 that
+  are permanently discounted 35–70%. Still worth doing for validation, but not
+  as a revenue line.
+
 ## Realistic first-year expectation
 
 With no existing audience, part-time effort, and no paid acquisition, a

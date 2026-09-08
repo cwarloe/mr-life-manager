@@ -258,7 +258,250 @@ gets labeled as inference.
 
 ## Findings
 
-*(Empty. Add entries only after actual research, using the format above.)*
+**Synthesized 2026-09-08 from three independent research passes**
+([competitive-landscape/](competitive-landscape/)), run against Prompt 2 in
+[research-prompts.md](research-prompts.md).
+
+**Acceptance test: PASS.** Every claim independently checkable was checked and
+held. No fabrications found. Details and limits in
+[Verification](#verification-what-was-and-wasnt-checked) below.
+
+---
+
+### The four questions, answered
+
+#### Q1. Does anyone teach a multi-domain system? — No. **All three passes agree.**
+
+Multi-domain *material* exists in four places, each failing the spec differently:
+
+| Where | Why it doesn't count |
+|---|---|
+| **Books** (*The Financial Diet*) | One-shot artifact, not a taught system |
+| **Assessments** (Casey Life Skills, 9 domains) | Diagnoses without instructing; free; sold to practitioners |
+| **Homeschool curricula** (SkillTrek, Well-Trained Mind) | Sold to parents, for minors, teacher-mediated |
+| **Etsy binders** | Blank forms — the buyer supplies the method |
+
+**Every commercially successful player is single-domain:** Clutterbug
+(organizing), Clean My Space (cleaning), Mercury Stardust (renter repair), Her
+First $100K (money), KC Davis (executive function).
+
+> **Nobody sells a taught, multi-domain system directly to the adult who needs
+> it.** Confidence: **High** — three independent passes converged.
+
+#### Q2. Does anyone target first-time independent adults? — Institutions yes, businesses barely, and the ones that tried failed. **All three agree.**
+
+Free/funded programs own this audience: Casey Life Skills, Project LIFE, DoD TAP
+(~200,000/yr), Extension Rent Smart / RentWise / Informed Renter, and university
+"Adulting 101" courses at MSU, Waterloo, Kennesaw State, UC Riverside.
+
+Commercial attempts at this exact audience are the weakest performers found —
+see [the graveyard](#the-graveyard-verified) below.
+
+The commercially successful players target **someone else**: overwhelmed adults
+already running a household, parents, homeowners.
+
+#### Q3. Does anyone use "nobody taught you this" positioning? — **Yes, and this is the finding that stings.**
+
+It is **proven territory, not open territory**, and it correlates with the
+winners:
+
+- Clutterbug: "No shame. No perfection."
+- KC Davis: care tasks are "morally neutral"; mess is not a moral failing
+- Dana K. White: "I just didn't know how to manage my stuff!"
+- How to ADHD: "Forget 'try harder.'"
+- An iOS app launched ~2 months ago: "No shame. No boomer advice. No
+  spreadsheets, no guilt."
+- Clean It Like You Mean It: "Chances are you were never taught…"
+
+The counter-example is sharp. **The Home Edit** positions on pure aspiration and
+scores **88% with critics / 17% with the audience.** **Mercury Stardust**
+positions on capability-plus-reassurance: **#1 NYT bestseller.**
+
+> **Our positioning frame cannot be the differentiator — it is already occupied
+> by the category's winners.** Differentiation has to be **scope** (multi-domain)
+> and **delivery** (an actual taught system). Everyone using this frame today is
+> single-domain. Confidence: **High.**
+
+#### Q4. Opening or graveyard? — **Both, and the line between them is the buyer.**
+
+---
+
+### The graveyard (verified)
+
+Two well-documented failures at almost exactly the concept under consideration.
+
+**Society of Grownups** — the most important single data point in this research.
+
+- Founded 2014 by **MassMutual** with **IDEO**. Millennial "adulting" classes,
+  supper clubs, financial planning.
+- **9,000 registrations in the first 13 months.** Average age 29.
+- October 2015: MassMutual announced a **$100M investment** and plans for **10
+  US cities.**
+- **October 2016: storefront closed**, all classes cancelled, CEO and at least a
+  third of 40–50 staff laid off. Pivoted to digital-only, then disappeared as a
+  consumer brand.
+- **Independently verified 2026-09-08** (Boston Globe, Quartz, Boston Startups
+  Guide). Confidence: **High.**
+
+> Demand was real — 9,000 people signed up. The **vehicle and the unit
+> economics** failed, not the need.
+
+**The Adulting School / Adulting Collective** (Portland, ME)
+
+- Founded Nov 2016. Four-pillar multi-domain curriculum. **$30** summit; ~50
+  attendees. Positioning verbatim: *"We're teaching the shit they don't teach you
+  in school"* and *"Come here instead of calling your parents."*
+- National press: CNBC, NPR, Forbes, Maine Public, WGME.
+- Renamed to "Adulting Collective." **No activity found after ~2019.**
+- Confidence: **Medium-High.** The rename and press are confirmed; the decline is
+  strongly indicated but a formal shutdown was not confirmed.
+
+**Supporting weak performers**
+
+| Product | Volume signal |
+|---|---|
+| Udemy "Adulting" | **361 students** |
+| Outschool "Adulting 101 FLEX" | **completed by 5 learners** |
+| iOS "Adulting: Real Life Skills" (~2 mo old) | **priced at $0** |
+
+> These were not marketing failures. Several had press most startups would kill
+> for. **The pattern is that the 18–25 buyer with the acute need has the least
+> money and the most free substitutes.**
+
+---
+
+### The openings (empty, with adjacent proof of payment)
+
+**(a) Multi-domain instruction sold to people already buying multi-domain forms.**
+Etsy home-management binder shops carry **38.7k, 8.6k, and 5.2k reviews**,
+selling home + food + money + paperwork + medical bundles at **$3–$17**. Those
+buyers have already self-identified as wanting one system across domains. Nobody
+sells them the **instruction that makes the forms work**. Every top listing runs
+a permanent 35–70% discount — they compete on price because they aren't
+defending a method.
+
+> **The sharpest opening in the research.** The forms are the graveyard of good
+> intentions; the teaching is the missing product.
+
+**(b) A paid, taught course for renters.** Mercury Stardust's *Safe and Sound*
+proved renters pay: **#1 NYT bestseller**, ~4.77 on Goodreads, #17 in Home
+Repair. Every renter *course* found is free (Extension, a UK council tenant
+academy). Nobody converted that demonstrated book demand into a course — and
+reviewers named the format gap themselves, wanting video over printed QR codes.
+
+**(c) The household side of institutional transitions.** DoD TAP is **mandatory
+for ~200,000 people/year** and covers career, benefits, and money — and
+**nothing** about running a household. Casey Life Skills *assesses* daily living
+and housing, then points at a curriculum gap it doesn't fill. Captive, funded,
+recurring audiences with a named uncovered domain.
+
+---
+
+### Two structural patterns worth carrying
+
+**1. The certification tier is where this category monetizes at the high end.**
+Three independent players in three sub-categories converged on it:
+
+| Player | Certification offer |
+|---|---|
+| Clutterbug | $99–$149 "Certified Organizational Specialist™" |
+| Go Clean Co | Intent-to-use trademark filing for certification training |
+| UW-Madison Extension | $325 Financial Coaching Foundations + Rent Smart train-the-trainer |
+
+Note the shape: **the consumer course is free or cheap; the professional tier is
+the paid tier.**
+
+**2. What people buy is emotional scaffolding, not information.** Mercury
+Stardust's "emotional resets," Clutterbug's "no shame, no perfection," KC Davis's
+"morally neutral" — reviewers name the reassurance, not the technique. **The
+information is free everywhere. The permission to not already know is the
+product.**
+
+---
+
+### Verified price points
+
+Useful calibration for [product-ladder.md](../business/product-ladder.md).
+
+| Player | Offer | Price |
+|---|---|---|
+| Clean My Space | Individual checklists | $0.99–$1.99 |
+| Clean My Space | E-book bundles | $7.99–$19.99 |
+| Etsy binder bundles | Multi-domain printables | $2.69–$16.97 |
+| KC Davis | Course | $14.99 |
+| KC Davis | Book | $24.99 |
+| Clutterbug | 30-Day Organizing Bootcamp | **$30** |
+| Go Clean Co | E-guides | up to $40 CAD |
+| Clutterbug | The Clutterbug Method | **$94** |
+| Clutterbug | Organizing Expert certification | $99–$149 |
+| Her First $100K | Intro workshop | $99 |
+| Clean Mama | Homekeeping Society membership | $19/mo · $189–228/yr |
+| UW-Madison Extension | Financial Coaching Foundations | $325 |
+| The Home Edit | In-person organizing | $185–250/hr |
+
+---
+
+### Verification: what was and wasn't checked
+
+**Method.** Three independent passes were run separately, then diffed —
+agreement across passes is the primary confidence signal. Spot-checks were then
+attempted on the most decision-relevant claims.
+
+**Independently verified 2026-09-08:** Society of Grownups (MassMutual/IDEO,
+$100M, Oct 2016 closure, layoffs); KC Davis 350,000+ copies; Clutterbug $30
+bootcamp and $94 method plus a certification tier; Mercury Stardust #1 NYT;
+The Adulting School rename to Adulting Collective.
+
+**Limitation — could not open pages.** The network egress proxy blocked direct
+fetches to Goodreads, Udemy, Etsy, Amazon, and the vendors' own sites. Exact
+figures sourced to those pages (849 Goodreads ratings, 361 Udemy students, 5
+Outschool learners, specific Etsy review counts) are **cross-report consistent
+but not independently re-verified.** Treat as Medium confidence.
+
+**Conflict found:** Clean My Space bundle pricing differs between passes —
+$19.99 MEGA bundle (5 Sep) vs. $29.99 five-ebook bundle (6 Sep). Either prices
+changed or one pass misread. **Low confidence on that specific number.**
+
+**Not researched by any pass — genuine gaps:**
+- **Church young-adult ministry curriculum — zero verified examples.** Directly
+  relevant to a named channel and to [ADR-009](../../planning/decisions.md).
+- University residence life / first-year experience as a distinct program type
+- Notion template sellers (one pass only, thin)
+- Mrs. Hinch, Vanesa Amaro, KonMari, NEAT Method, FlyLady
+- Trad-homemaking Substack/Instagram economy
+- Systematic archive sweep (Wayback) of dead adulting sites — the graveyard
+  analysis rests on two strong cases plus three weak signals
+
+---
+
+### What this changes
+
+| Document | Implication | Status |
+|---|---|---|
+| [ADR-003](../../planning/decisions.md) beachhead | **Under review** — right audience, wrong payer | Flagged, not changed |
+| [brand-positioning.md](../business/brand-positioning.md) | "Nobody taught you" is occupied, not open | Flagged |
+| [product-ladder.md](../business/product-ladder.md) | $49 flagship sits above verified comparables | Flagged |
+| [revenue-ideas.md](../business/revenue-ideas.md) | Parent-gift and institutional channels strengthened; certification tier is new | Flagged |
+| [roadmap.md](../../planning/roadmap.md) | Phase 1 competitor research substantially done | Updated |
+
+**The single strategic question this raises**, for a human to decide:
+
+> Every commercial success in this landscape sells to someone **already running a
+> household and overwhelmed by it.** Every commercial attempt at **18–25,
+> first-independence, multi-domain** underperformed or died — including one with
+> $100M behind it.
+>
+> The repo already half-anticipated this: `target-audiences.md` calls Maya "the
+> best audience and the worst customer," and `revenue-ideas.md` flags
+> parent-as-buyer as the unlock. The research says that instinct was right and
+> understates it.
+>
+> **This is not a case for abandoning the audience.** It is a case for separating
+> *who has the problem* from *who has the credit card* — and possibly for
+> entering through cleaning, aimed at the overwhelmed, with first-independence as
+> a gift and institutional channel.
+>
+> That is an ADR-003 decision, and it belongs to a person, not to this file.
 
 **Related, but not findings in this file:**
 [brand-name-scan.md](brand-name-scan.md) records a preliminary name-availability

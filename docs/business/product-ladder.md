@@ -155,6 +155,48 @@ purchasing committee.
 Note how much of the ladder is **the same content in different containers.** That
 is the point. Write once at high quality; package many times.
 
+## ⚠️ Pricing reality check (2026-09-08)
+
+Verified competitor prices from
+[competitor research](../research/competitor-notes.md#verified-price-points).
+**Every price on this ladder was set before any of this was known.** None of it
+is fatal, but the low and mid tiers need a hard look.
+
+| Our tier | Our price | What the market shows |
+|---|---|---|
+| Free assets | $0 | Correct — everyone's funnel starts free |
+| Single guides | $9 | Clean My Space checklists **$0.99–$1.99**; Etsy multi-domain bundles **$2.69–$16.97** |
+| Room-by-room bundle | $29 | Clean My Space e-book bundles **$7.99–$19.99**; Clutterbug's 30-day bootcamp is **$30** |
+| ★ *First Place* | **$49** | Clutterbug's full method course: **$94**. KC Davis's book **$24.99** + course **$14.99** |
+| 30-Day Life Reset | $79 | Clutterbug Method **$94** — closest comparable |
+| Couples OS | $99 | Her First $100K intro workshop **$99** |
+| Group cohort | $299–$499 | Thin comparables; Extension charges **$325** for a *professional* course |
+
+**Three things to weigh:**
+
+1. **The $9 single guide is squeezed.** Etsy sells 170-page multi-domain
+   bundles at $13.49 on permanent discount. Competing on price here is a losing
+   game — but note *why* we can charge more: they sell **blank forms**, we sell
+   **instruction**. That distinction has to be obvious on the sales page or the
+   price looks arbitrary.
+2. **$49 for *First Place* is defensible but unproven.** It sits between
+   Clutterbug's $30 and $94. The advantage is scope — nobody else sells
+   multi-domain instruction. The risk is that scope is exactly what buyers have
+   not yet paid for.
+3. **A certification tier is missing from this ladder**, and three independent
+   players converged on it as the high-end monetization point:
+
+| Player | Certification |
+|---|---|
+| Clutterbug | $99–$149 "Certified Organizational Specialist™" |
+| Go Clean Co | Intent-to-use trademark filing for certification training |
+| UW-Madison Extension | $325 professional course + train-the-trainer |
+
+The recurring shape is **consumer tier cheap or free, professional tier paid.**
+That is worth considering against the current premium rungs, which assume
+1:1 coaching and consultation instead. Not a decision — an option the ladder
+currently doesn't contain.
+
 ## Ladder health checks
 
 - **Free → paid conversion** target: 2–5% of list within 90 days.

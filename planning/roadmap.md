@@ -60,10 +60,11 @@ This phase costs nothing but time and is the one most likely to be skipped. Don'
 - [ ] Validate or correct the problem inventory in
       [customer-problems.md](../docs/research/customer-problems.md); mark
       confirmed items ✅
-- [ ] Run the competitor research checklist in
-      [competitor-notes.md](../docs/research/competitor-notes.md), Phases A–C —
-      ready-to-send prompt and acceptance test in
-      [research-prompts.md](../docs/research/research-prompts.md)
+- [x] **Competitor research Phases A–C — substantially done 2026-09-08.** Three
+      independent passes, acceptance test passed, findings synthesized in
+      [competitor-notes.md](../docs/research/competitor-notes.md#findings).
+      Remaining gaps: church young-adult curriculum (**zero examples**),
+      university residence life, Notion sellers, and a systematic archive sweep.
 - [ ] **Test the name.** Specifically watch how women in the target audience react
       to "Mr. Life Manager." Show the name plus one line of positioning and ask
       what they expect to find and who it's for; watch for *butler*, *app*, and

@@ -142,6 +142,55 @@ setting up a household for the first time.
 **Revisit when:** Phase 4 data shows a different persona buying more readily, or
 if the overwhelmed-professional segment proves easier to reach.
 
+> ### ⚠️ UNDER REVIEW — evidence added 2026-09-08
+>
+> Three independent competitive research passes
+> ([findings](../docs/research/competitor-notes.md#findings)) converged on a
+> pattern that puts this ADR in question. **The decision has not been changed —
+> this needs a human.**
+>
+> **What the evidence says.** Every commercially successful player in this
+> landscape sells to someone **already running a household and overwhelmed by
+> it** — not to someone new at it. Every verified commercial attempt at
+> *18–25, first-independence, multi-domain* underperformed or died:
+>
+> - **Society of Grownups** — MassMutual + IDEO, a **$100M** announced
+>   investment, 9,000 registrations in 13 months, 10-city expansion plan.
+>   **Storefront closed within two years**, staff laid off, brand gone.
+>   *(Independently verified.)*
+> - **The Adulting School** — this exact positioning, four-domain curriculum,
+>   national press, $30 price. Renamed, then no activity found after ~2019.
+> - Udemy "Adulting": **361 students.** Outschool: **5 learners.** The newest
+>   entrant with near-identical positioning is **free.**
+>
+> Meanwhile the audience is well served for free by institutions — Casey Life
+> Skills, Project LIFE, DoD TAP (~200,000/yr), Extension renter programs,
+> university Adulting 101 courses.
+>
+> **What it does not say.** It does *not* say the need is fake. Society of
+> Grownups drew 9,000 signups; the vehicle and unit economics failed, not the
+> demand. It also does not say abandon this audience.
+>
+> **What it does say:** *who has the problem* and *who has the credit card* are
+> different people. This repo half-anticipated it —
+> [target-audiences.md](../docs/vision/target-audiences.md) already calls Maya
+> "the best audience and the worst customer," and
+> [revenue-ideas.md](../docs/business/revenue-ideas.md) already flags
+> parent-as-buyer as the unlock. The research says that instinct was right and
+> **understated**.
+>
+> **The options, for a human to choose between:**
+>
+> 1. **Hold.** Keep the beachhead, and treat parent-gift and institutional
+>    licensing as the primary revenue path rather than a later channel.
+> 2. **Shift the payer, keep the audience.** Same content, sold to the
+>    overwhelmed adult already running a household — with first-independence as
+>    a gift and institutional channel. (This is what the research recommends.)
+> 3. **Shift both.** Aim at the overwhelmed-household persona (Dana) as primary.
+>
+> Options 2 and 3 are close to what the evidence supports. Option 1 is
+> defensible but should be chosen deliberately, knowing the graveyard.
+
 ---
 
 ## ADR-004 — Broader scope: practical adult-life management
