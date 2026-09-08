@@ -50,7 +50,10 @@ Write a `brief.md` before building — see [../README.md](../README.md).
 | Product | State | Next step |
 |---|---|---|
 | [First Apartment Checklist](first-apartment/) | Draft 1 + [brief](first-apartment/brief.md) | Read by someone who moved recently |
-| [How Often Should I…?](how-often/) | Draft 1 + [brief](how-often/brief.md) | **Fact-check every cadence against a second source** |
+| [How Often Should I…?](how-often/) | Draft 1, **safety rows fact-checked** + [brief](how-often/brief.md) | Second pass on the non-safety rows |
+| [Cleaning Supply Starter List](cleaning-supplies/) | Draft 1 + [brief](cleaning-supplies/brief.md) | Price-check the ranges |
+
+**The free tier is now drafted.** Three assets, each with a brief.
 
 Both are drafted as **source material for `content/`**, not the reverse —
 `content/` is still empty, so sections should be extracted back into it once

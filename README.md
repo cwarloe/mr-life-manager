@@ -24,17 +24,46 @@ rewarding. But **this is not a cleaning brand.** Cleaning is the door. The house
 is life management: home, food, money, time, work, relationships, digital life,
 paperwork, maintenance, hospitality, and transitions.
 
+## Who Mr. Life Manager is
+
+**Mr. Life Manager is Dave Webster — a real person**, not a persona. He is the
+one who actually knew how to run a home and taught it. This project is written
+by **the apprentice**: the one who learned it, wrote it down, and is passing it
+on.
+
+That structure matters more than it sounds. The reader gets the apprentice's
+seat — not lectured by an authority, but handed what someone else had to be
+taught. Which is the point, since the barrier here is embarrassment.
+
+Dave's own view of the material is worth quoting, because it is the whole thesis:
+
+> He says it's all obvious, and he's embarrassed to tell people things he assumed
+> they already knew.
+
+**That is why nobody was taught this.** Not indifference — invisibility. The
+people who know it can't see it as knowledge. See
+[ADR-011](planning/decisions.md#adr-011--mr-life-manager-is-a-real-person-dave-webster).
+
 ## Who it is for
 
-The initial beachhead is **first-time independent adults**:
+**Anyone who was never explicitly taught how to run a home and a life.**
+First-time independence is the sharpest expression of that need — students
+leaving dorms, young adults on their own, newlyweds — but it is not the whole of
+it. Plenty of people have been running a household for a decade and never had
+these systems either.
 
-- College students moving out of dorms into apartments or houses
-- Young adults living on their own for the first time
-- Newlyweds who have never jointly run a household
-- Anyone whose parents never explicitly taught them these skills
+**Who the marketing addresses and who pays is a separate question**, settled in
+[ADR-010](planning/decisions.md#adr-010--beachhead-keep-the-audience-change-the-payer):
+competitive research found that every commercial success in this space sells to
+the adult already running a household and overwhelmed by it, while every attempt
+to sell to the 22-year-old directly underperformed or failed. So the content
+serves first-timers; the *ask* goes to the overwhelmed householder, a parent
+buying a gift, or an institution licensing.
 
 See [`docs/vision/target-audiences.md`](docs/vision/target-audiences.md) for the
-personas we are actually designing for.
+personas, and
+[`docs/research/competitor-notes.md`](docs/research/competitor-notes.md) for the
+evidence.
 
 ## The problem it solves
 
@@ -87,7 +116,8 @@ Defined in [`frameworks/life-domains.md`](frameworks/life-domains.md).
 ```
 mr-life-manager/
 ├── README.md
-├── LICENSING-NOTES.md       Licensing options and implications (not yet decided)
+├── LICENSING-NOTES.md       Licensing: free to use, never free to sell
+├── PERMISSIONS.md           Plain-language "what you can do with this"
 ├── docs/
 │   ├── vision/              Mission, principles, outcomes, audiences
 │   ├── business/            Model, product ladder, positioning, revenue
@@ -121,15 +151,24 @@ overwrites it. See
 
 **Pre-MVP. Concept and planning stage.**
 
-- ✅ Concept defined, audiences drafted, frameworks drafted
-- ✅ Repository and planning structure established
-- ⬜ Original source material not yet imported
-- ⬜ Audience/problem validation not yet done (Phase 1)
-- ⬜ No lead magnet, no paid product, no customers, no revenue
-- ⬜ License not chosen — see [`LICENSING-NOTES.md`](LICENSING-NOTES.md)
+- ✅ Concept, audiences, principles, and frameworks drafted
+- ✅ Competitive research done — three independent passes, acceptance test passed
+      ([findings](docs/research/competitor-notes.md#findings))
+- ✅ Foundational decisions settled: faith framing, beachhead and payer, the
+      person behind the brand, licensing ([decision log](planning/decisions.md))
+- ✅ Two free-tier assets drafted —
+      [First Apartment Checklist](products/checklists/first-apartment/) and
+      [How Often Should I…?](products/checklists/how-often/)
+- ⬜ **Dave not yet recorded — this is the critical path.** Every framework here
+      is a reconstruction from memory of an uncaptured primary source.
+- ⬜ Trademark search not done — the name is now the primary protected asset
+- ⬜ No audience validation, no customers, no revenue
+- ⬜ Nothing designed, nothing shipped
 
-Nothing in this repository has been validated with real customers yet. Treat
-every claim about what buyers want as a hypothesis until Phase 1 says otherwise.
+**Two honest caveats.** Nothing here has been validated with a real customer, so
+treat every claim about what buyers want as a hypothesis. And the frameworks are
+the apprentice's reconstruction, not the source — that gets fixed by recording
+Dave, not by more writing.
 
 ## Next steps
 

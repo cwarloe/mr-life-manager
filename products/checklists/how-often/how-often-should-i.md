@@ -44,7 +44,7 @@ reference you never open.
 | Vacuum main areas | Weekly | Twice weekly, or daily with pets |
 | Mop hard floors | Every 2 weeks | Weekly |
 | Dust surfaces | Every 2 weeks | Weekly |
-| Change sheets | Every 2 weeks | Weekly |
+| Change sheets | Every 2 weeks | **Weekly** — the standard recommendation |
 | Trash and recycling out | On your collection day | — |
 | Clear out the fridge | Before you shop | — |
 | Laundry | Weekly, set day | — |
@@ -62,7 +62,7 @@ reference you never open.
 | Hand towels | 2–3 days |
 | Kitchen dish towels | 2–3 days |
 | Kitchen sponge | Replace every 1–2 weeks (microwave it damp in between) |
-| Pillowcases | With sheets, or weekly if you have acne |
+| Pillowcases | With sheets — **weekly or more** with acne, eczema, allergies, night sweats, or a pet in the bed |
 | Bras | 2–3 wears |
 | Jeans | 4–5 wears — genuinely, not a myth |
 | Bath mat | Every 1–2 weeks |
@@ -94,7 +94,7 @@ reference you never open.
 
 | Task | Notes |
 |---|---|
-| **HVAC filter — change** | Every 1–3 months. Sooner with pets, allergies, or a dusty area. Check the size printed on the old one before buying. |
+| **HVAC filter — change** | Every 1–3 months (90 days is the standard for a 1-inch filter). **With pets, every 30–60 days.** Check it monthly and change it when it looks dirty. The size is printed on the old one — check before buying. |
 | Baseboards and door frames | Quarterly |
 | Windows, inside | Quarterly |
 | Light fixtures and ceiling fans | Quarterly |
@@ -113,7 +113,8 @@ reference you never open.
 | Task | Notes |
 |---|---|
 | **Dryer vent duct — clean** | Annually ⚠️ **Fire risk.** Not the lint trap — the duct behind the dryer. |
-| **Smoke/CO detector batteries** | Annually. Pick a memorable date and keep it. |
+| **Smoke/CO detector batteries** | Annually at minimum — **NFPA recommends every 6 months** for standard batteries. Pick a memorable date and keep it. |
+| **Replace the whole smoke/CO alarm** | **Every 10 years, no exceptions** ⚠️ Sensors degrade even when the test button still beeps. The manufacture date is stamped on the back — go look at yours tonight. Required by NFPA 72. |
 | Water heater — flush | Annually. Renting? This is your landlord's job — report it. |
 | Gutters | Twice a year, if they're yours |
 | Caulk and grout — inspect | Annually. Re-seal before water gets behind it. |
@@ -176,9 +177,20 @@ and it's what protects your deposit.
 **Health rows are scheduling reminders only** — your doctor and dentist set your
 actual intervals.
 
-**The three marked ⚠️ are different in kind.** Dryer lint, dryer vents, and smoke
-detectors aren't about a home looking nice. Everything else on this page can slip
-a week without consequence. Those can't.
+**The marked ⚠️ rows are different in kind.** Dryer lint, dryer vents, smoke and
+CO alarms, and backups aren't about a home looking nice. Everything else on this
+page can slip a week without consequence. Those can't.
+
+**Where the safety numbers come from.** The dryer and alarm intervals follow
+National Fire Protection Association guidance: clean the lint filter every load,
+have the dryer vent cleaned annually, test alarms monthly, and **replace alarms
+every 10 years from the manufacture date** (NFPA 72) regardless of whether they
+still chirp when tested. Filter intervals follow manufacturer guidance for
+standard 1-inch filters. Everything else here is ordinary practice, not code.
+
+**The 10-year alarm rule is the one almost nobody knows.** Sensors degrade
+whether or not the test button works. Go look at the date stamped on the back of
+yours — a lot of people find one older than they expected.
 
 ---
 

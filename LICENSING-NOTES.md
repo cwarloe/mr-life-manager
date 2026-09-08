@@ -130,9 +130,11 @@ optional. The free USPTO search is a prerequisite — more so since
 [ADR-011](planning/decisions.md#adr-011--mr-life-manager-is-a-real-person-dave-webster)
 tied the brand to a real person.
 
-**Still to write:** a short, plain-language permissions page. Most people who
-need to know are not lawyers, and "here's what you can do without asking"
-prevents most of the questions before they arrive.
+**Written:** [PERMISSIONS.md](PERMISSIONS.md) — the plain-language version for
+people who need to know what they can do and are not lawyers. It answers the
+awkward middle cases explicitly (a church covering copying costs, a university
+course, a grant-funded workshop) by inviting the question rather than pretending
+the line is clear.
 
 **Still not legal advice.** Talk to an attorney before registering a trademark or
 publishing a license file — especially given ADR-011.

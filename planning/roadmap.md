@@ -112,7 +112,10 @@ what you make.
       ([product](../products/checklists/how-often/)). Organized by frequency so
       it converts into a routine. **Every cadence needs fact-checking before
       this ships** — it is a reference, so errors are quotable.
-- [ ] Remaining free asset: *Cleaning Supply Starter List*
+- [x] **Cleaning Supply Starter List — draft 1 written** 2026-09-08
+      ([product](../products/checklists/cleaning-supplies/)). Leads with what to
+      *skip* — the fastest credibility move in a category full of affiliate
+      content. **The free tier is drafted; none of it is designed or tested.**
 - [ ] A one-page landing site with an email capture
 - [ ] Email service provider + a short welcome sequence (3–5 emails that teach,
       not sell)

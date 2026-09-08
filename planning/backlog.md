@@ -21,7 +21,7 @@ Each item is tagged with its [roadmap](roadmap.md) phase and primary
 |---|---|---|---|
 | **Record Dave** | Source | 0 | **The critical path.** Primary source is uncaptured; every framework is a reconstruction. Method matters — see [capture guidance](../source-material/original-charles-cleanup-notes.md). |
 | Import existing written notes | Source | 0 | Everything derives from this; the repo is incomplete without it |
-| Plain-language permissions page | Business | 0 | Pairs with [ADR-013](decisions.md#adr-013--licensing-revised-free-to-use-never-free-to-sell). Prevents most licensing questions before they arrive. |
+| ~~Plain-language permissions page~~ | Business | 0 | **Done** 2026-09-08 → [PERMISSIONS.md](../PERMISSIONS.md). Needs contact details before launch. |
 | Decide the faith-framing question | Decision | 0 | Shapes voice, channel, and partnerships. Blocks copywriting. |
 | Name/trademark check on "Mr. Life Manager" | Research | 0 | Cheapest now; expensive after a launch |
 | Line up first 5 validation conversations | Research | 1 | Warm network first |
@@ -36,7 +36,7 @@ Each item is tagged with its [roadmap](roadmap.md) phase and primary
 | Item | Domain | Notes |
 |---|---|---|
 | ~~"How Often Should I…?" cadence reference~~ | All | **Draft 1 done** 2026-09-08 → [product](../products/checklists/how-often/). **Must be fact-checked before it ships.** |
-| Cleaning supply starter list | Home | Free asset; affiliate candidate later |
+| ~~Cleaning supply starter list~~ | Home | **Draft 1 done** 2026-09-08 → [product](../products/checklists/cleaning-supplies/). Affiliate revenue would undermine its core credibility move — see its brief. |
 | The 20-minute reset routine | Home | Emergency recovery, high emotional value |
 | Nightly kitchen reset | Home/Food | The keystone habit; teach it first |
 | Weekly reset routine | Time | The other keystone |

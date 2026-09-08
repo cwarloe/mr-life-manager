@@ -85,11 +85,29 @@ later.
   from every other organizing brand.
 - The short form is what goes on a homepage. Nobody memorizes a 25-word mission.
 
+### Adjustment, 2026-09-08
+
+[ADR-010](../../planning/decisions.md#adr-010--beachhead-keep-the-audience-change-the-payer)
+separated *who the content serves* from *who is asked to pay*. The mission above
+names the audience, which is still right — but it must not be read as naming the
+buyer.
+
+A version that survives that distinction:
+
+> **Mr. Life Manager gives people the practical systems nobody taught them — so
+> their homes and lives are orderly, functional, and ready for the people in
+> them.**
+
+Dropping "first-time independent adults" costs less than it looks. First
+independence remains the **sharpest expression** of the need and the clearest
+marketing trigger, but the need is not age-bound, and the research found the
+people who *pay* are usually further along. Keep the transition as the story;
+don't let it become the ceiling.
+
 ### What to revisit
 
-- "First-time independent adults" is a beachhead, not a ceiling. Expect to widen
-  this after Phase 4 of the [roadmap](../../planning/roadmap.md) if the
-  overwhelmed-professional persona buys as strongly as expected.
+- Whether the shorter version above should simply replace the recommendation,
+  once copy has been written against both.
 - Test whether "systems" reads as helpful or intimidating to the actual
   audience. Some people hear "system" and think "one more thing to maintain."
   Candidate substitutes to test: *routines*, *setups*, *how-to*.

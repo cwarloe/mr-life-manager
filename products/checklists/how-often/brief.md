@@ -86,9 +86,13 @@ consequence of skipping is categorically different from "it gets dirty."
 
 ## Open questions before this ships
 
-- [ ] **Fact-check every cadence with a second source.** This is the highest-risk
-      asset in the free tier — it is a reference, so errors are load-bearing and
-      quotable.
+- [x] **Fact-check — first pass done 2026-09-08.** Safety-critical rows verified
+      against NFPA guidance (lint every load, vent annually, test monthly,
+      **replace alarms every 10 years** — that last one was **missing entirely**
+      and has been added) and filter intervals against manufacturer guidance.
+      Sheet and pillowcase rows refined with the conditions that shorten them.
+- [ ] Second pass on the non-safety rows (appliance care, descaling, mattress
+      rotation) — lower stakes, still worth checking before ship.
 - [ ] Two pages may be one too many. Test whether the *quarterly/annual* half can
       be split into a separate one-pager.
 - [ ] Add an apartment/renter version that drops homeowner-only rows?
