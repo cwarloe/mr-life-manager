@@ -598,6 +598,36 @@ consideration.
 - Content sourcing changes: **Dave is a primary source**, and `source-material/`
   should reflect whose material is whose.
 
+**Participation, settled 2026-09-08.** This has been discussed between them over
+a period of years, not sprung on him. **Dave's own position is that he does not
+need to be compensated. He will be compensated anyway** — that is the founder's
+decision, made freely.
+
+Writing it down at some point still serves *Dave*, not just the founder: it
+protects him if circumstances change, and it means his family never has to
+reconstruct an understanding from memory. But the substance is settled and the
+relationship is long. Treat this as decided.
+
+**Dave's own view of the material — and why it matters more than it looks.**
+
+> He says it's all obvious, and he's embarrassed to tell people things he assumed
+> they already knew.
+
+That sentence is the thesis of this entire business, stated from the inside by
+the person who holds the knowledge. It is worth recording for two reasons:
+
+1. **It confirms the premise.** The reason nobody was taught this is precisely
+   that the people who know it cannot see it as knowledge. It looks like common
+   sense from the inside. That is why it never gets handed down — not
+   indifference, invisibility.
+2. **It is a production risk.** Asked "what should people know?", Dave will
+   reasonably answer "it's all obvious." **He is not a reliable narrator of his
+   own expertise** — no expert is. Capture methods have to work around that, and
+   **noticing what Dave thinks isn't worth saying is the apprentice's actual
+   job.** See
+   [source-material/original-charles-cleanup-notes.md](../source-material/original-charles-cleanup-notes.md)
+   for capture guidance.
+
 **Revisit when:** Dave's involvement or wishes change. This decision is
 contingent on his consent in a way no other ADR here is.
 
@@ -605,7 +635,9 @@ contingent on his consent in a way no other ADR here is.
 
 ## ADR-012 — Licensing: permission is the marketing
 
-**Status:** Accepted
+**Status:** ⚠️ **Superseded by [ADR-013](#adr-013--licensing-revised-free-to-use-never-free-to-sell)** — the
+permissive commercial-reuse position was rejected within a day of being recorded.
+Kept for the reasoning, which still holds in part.
 **Date:** 2026-09-08
 **Supersedes** [ADR-008](#adr-008--license-deliberately-undecided)
 
@@ -663,17 +695,90 @@ exists.
 
 ---
 
+## ADR-013 — Licensing revised: free to use, never free to sell
+
+**Status:** Accepted
+**Date:** 2026-09-08
+**Supersedes** [ADR-012](#adr-012--licensing-permission-is-the-marketing)
+
+**Context.** ADR-012 adopted an attribution-only model (CC BY), which permits
+**commercial reuse**: someone could take this material, build a paid product on
+it, and owe nothing but a credit line. That consequence was flagged when the ADR
+was written. On reflection it is not acceptable.
+
+**Decision.**
+
+> **Free to use. Never free to sell. The brand travels with it.**
+
+| Use | Allowed? |
+|---|---|
+| A person uses it to run their own home | **Yes** |
+| A church, campus ministry, or RA program teaches from it | **Yes** |
+| Someone adapts a checklist for their own program | **Yes**, with credit, under the same terms |
+| Someone sells it, or a product built from it | **No** — talk to us |
+| Someone strips the branding and reissues it as theirs | **No**, under any circumstances |
+
+**Recommended instrument: CC BY-NC-SA 4.0** for `frameworks/` and the free tier.
+
+- **BY** — attribution required, so **the brand travels with every copy.** Note
+  this already forbids rebranding: stripping the name violates the license.
+- **NC** — non-commercial only. Nobody sells this material or a product built on
+  it, rebranded or not.
+- **SA** — adaptations carry the same terms, so nobody can adapt it and then lock
+  their version down.
+
+Paid products stay all-rights-reserved. The **name remains the primary protected
+asset**, and the trademark search remains a prerequisite.
+
+**Rationale.**
+
+- **The point of giving it away was reach, not supply chain.** Free use by people
+  and programs achieves that. Free *commercial* reuse just donates the business
+  to whoever moves fastest.
+- **"I want it branded" is the actual requirement.** BY plus NC delivers it: the
+  name is attached, and nobody has an incentive to detach it, because the
+  commercial path runs through us.
+- **The generosity is intact.** Anyone who wants to *use* this — including every
+  institution in the target channel — still can, instantly and free. What is
+  withheld is only the right to profit from someone else's work.
+
+**Consequences.**
+
+- Easier: the brand cannot be laundered out of the material.
+- Easier: institutions still get frictionless permission, which was the whole
+  point of the permissive model.
+- **Harder — and this is the real cost:** "non-commercial" is famously vague. Is
+  a church charging $10 for printed workbooks commercial? A university charging
+  tuition? A nonprofit with a paid facilitator? The line is genuinely unclear.
+
+**The mitigation turns that cost into an asset.** CC licences are
+**non-exclusive**, so this can be dual-licensed: the public terms are
+BY-NC-SA, and anyone whose use falls outside them **comes and asks.** Ambiguity
+that would otherwise be a problem becomes an **inbound qualification
+mechanism** — every awkward edge case is an institution identifying itself as a
+potential customer. Say yes generously and often; just say it deliberately.
+
+**Practical note:** publish a short, plain-language permissions page alongside
+the licence. Most people who need to know are not lawyers, and "here's what you
+can do without asking" prevents most of the questions.
+
+**Revisit when:** the trademark position is known, or a real licensing request
+arrives that the terms handle badly.
+
+---
+
 ## Open decisions
 
 Not yet ADRs. These need to be made, and each blocks something.
 
 | Question | Blocks | Urgency |
 |---|---|---|
-| **Is Dave's participation settled in writing?** Consent to use his name and likeness, how he's credited, whether he's compensated or holds equity, and who decides if you disagree. | Everything. [ADR-011](#adr-011--mr-life-manager-is-a-real-person-dave-webster) rests on it. | **Highest** |
+| Put Dave's arrangement in writing at some point — **not urgent, substance is settled** ([ADR-011](#adr-011--mr-life-manager-is-a-real-person-dave-webster)). It protects him and his family more than it protects the founder. | Nothing immediate | Low |
+| **Capture Dave's material before anything else.** He under-reports his own expertise by nature, so this needs method, not just time. | All content; the entire product line | **Highest** |
 | **Is he "Dave Webster" publicly, or only "Mr. Life Manager"?** | Copy, the about page, how the face is used | **High** |
 | **Whose notes are in `source-material/`** — the founder's, Dave's, or the founder's record of Dave's teaching? | Attribution, and the file's name | **High** |
 | **Trademark the name.** Now the primary protected asset under [ADR-012](#adr-012--licensing-permission-is-the-marketing). | Licensing model, brand safety | **High** |
-| Does CC BY (commercial reuse allowed) go too far, or is CC BY-NC the right fallback? | [ADR-012](#adr-012--licensing-permission-is-the-marketing) mechanics | Medium |
+| Write the plain-language permissions page that goes with the licence | Clarity for institutional users | Medium |
 | Is Health in scope, given liability and expertise limits? | Domain taxonomy, content plan | Low |
 | Does Transportation earn its own domain, or fold into Maintenance? | Taxonomy | Low |
 | Should the public-facing domain list compress from 13 to 5–6? | Marketing, product structure | Low |
@@ -686,14 +791,14 @@ commits to digital content products, and [backlog.md](backlog.md) lists an app a
 explicitly not being pursued. The name scan added a new argument for that
 position rather than reopening it.
 
-**Recommended next decision: settle Dave's participation, in writing.**
+**Recommended next action: capture Dave's material.**
 
-[ADR-011](#adr-011--mr-life-manager-is-a-real-person-dave-webster) is now the
-foundation of the brand, and it is the only ADR here that depends on another
-person's ongoing consent. Everything else — the name, the face, the voice, the
-story, the trademark — sits on top of it.
+Not a decision — a task, and now the critical path. Every framework in this repo
+is a reconstruction from memory of what he taught. The primary source has not
+been recorded, and
+[ADR-011](#adr-011--mr-life-manager-is-a-real-person-dave-webster) makes him the
+foundation of the brand.
 
-This is not a legal formality between strangers. It is the ordinary kindness of
-being explicit with someone whose name you are building something on, **before**
-there is money or an audience to complicate it. Friendships survive that
-conversation early far more reliably than late.
+It needs **method rather than just time**, because he will tell you it's all
+obvious and he'll mean it. Capture guidance is in
+[source-material/original-charles-cleanup-notes.md](../source-material/original-charles-cleanup-notes.md).

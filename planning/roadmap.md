@@ -20,7 +20,12 @@ one to have made money — only to have produced evidence.
 - [x] Draft the core frameworks
 - [x] Establish the repository and planning structure
 - [x] Draft business model and product ladder
-- [ ] Import original source material into `source-material/`
+- [ ] **Record Dave — now the critical path.** Every framework here is a
+      reconstruction from memory; the primary source is uncaptured. Needs
+      *method*, not just time: he will tell you it's all obvious and mean it.
+      Guidance in
+      [source-material/](../source-material/original-charles-cleanup-notes.md).
+- [ ] Import the existing written notes into `source-material/`
 - [x] Decide the faith-framing question — settled by
       [ADR-009](decisions.md#adr-009--faith-framing-convictions-inform-the-work-belief-is-never-required-to-use-it):
       belief is never required to use the material; the founder does not hide his
@@ -30,9 +35,9 @@ one to have made money — only to have produced evidence.
       manager," "Mr. Man" — **now a prerequisite, not a nice-to-have.** Under
       [ADR-012](decisions.md#adr-012--licensing-permission-is-the-marketing) the
       name is the primary protected asset.
-- [ ] **Settle Dave's participation in writing** — consent, credit,
-      compensation, control
-      ([ADR-011](decisions.md#adr-011--mr-life-manager-is-a-real-person-dave-webster))
+- [x] Dave's participation settled — discussed over years; he'll be compensated
+      ([ADR-011](decisions.md#adr-011--mr-life-manager-is-a-real-person-dave-webster)).
+      Putting it in writing eventually is worth doing, but it isn't blocking.
 - [ ] Domain and social handle availability check
 
 **Exit criteria:** the concept can be explained to a stranger in two minutes, and

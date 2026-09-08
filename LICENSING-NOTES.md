@@ -87,39 +87,52 @@ to call theirs Mr. Life Manager.
 
 ## Decision (2026-09-08)
 
-**Settled by [ADR-012](planning/decisions.md#adr-012--licensing-permission-is-the-marketing) — attribution, not restriction.**
+**Settled by [ADR-013](planning/decisions.md#adr-013--licensing-revised-free-to-use-never-free-to-sell).**
 
-The model: **let people use the material freely or cheaply, ask that they say
-where it came from, and charge for help rather than for permission.**
+> **Free to use. Never free to sell. The brand travels with it.**
 
-| What | Terms |
+| Use | Allowed? |
 |---|---|
-| Frameworks and free content | Free to use, adapt, and teach — **attribution required** (CC BY 4.0) |
-| Paid products | Bought normally; not freely redistributable |
-| **The name "Mr. Life Manager"** | **Protected — this is the actual asset** |
-| Coaching, consultation, facilitation | Paid. This is the revenue. |
+| A person uses it to run their own home | **Yes** |
+| A church, ministry, or RA program teaches from it | **Yes** |
+| Someone adapts a checklist for their own program | **Yes**, with credit, same terms |
+| Someone sells it, or a product built on it | **No** — come and ask |
+| Someone strips the branding and reissues it | **No**, under any circumstances |
 
-This is Option D above, resolved toward the permissive end, and it acts on a
-conclusion this document already reached: **copyright was never the moat.**
-Anyone can write a first-apartment checklist. Nobody else can be Mr. Life
-Manager.
+**Instrument: CC BY-NC-SA 4.0** for `frameworks/` and the free tier. Paid
+products stay all rights reserved. The **name** remains the primary protected
+asset.
 
-**Why permissive is also the commercial answer.** Attribution *is* distribution.
-Every church, campus ministry, RA program, and transition program that uses the
-material carries the name with it — which solves the institutional channel's
-hardest problem, getting in the door, at zero acquisition cost. Procurement is
-slow; permission is instant.
+- **BY** — attribution, so the brand travels with every copy. This alone already
+  forbids rebranding: stripping the name violates the licence.
+- **NC** — nobody sells it, or a product built on it, rebranded or not.
+- **SA** — adaptations carry the same terms, so nobody adapts it and then locks
+  their version down.
+
+**Why not fully permissive.** An earlier version of this decision
+([ADR-012](planning/decisions.md#adr-012--licensing-permission-is-the-marketing),
+now superseded) allowed commercial reuse under CC BY. The point of giving the
+material away is **reach**, and free use by people and programs achieves that.
+Free *commercial* reuse just donates the business to whoever moves fastest.
+
+**The real cost, stated plainly.** "Non-commercial" is famously vague. Is a
+church charging $10 for printed workbooks commercial? A university charging
+tuition? A nonprofit with a paid facilitator? The line is genuinely unclear.
+
+**The mitigation makes the cost useful.** CC licences are **non-exclusive**, so
+this can be dual-licensed. Public terms are BY-NC-SA; anyone outside them comes
+and asks. Ambiguity becomes an **inbound qualification mechanism** — every
+awkward edge case is an institution identifying itself as a potential customer.
+Say yes generously; just say it deliberately.
 
 **What this makes urgent.** If the name is the asset, the trademark is no longer
-optional. The free USPTO search is now a prerequisite, and it matters more since
+optional. The free USPTO search is a prerequisite — more so since
 [ADR-011](planning/decisions.md#adr-011--mr-life-manager-is-a-real-person-dave-webster)
 tied the brand to a real person.
 
-**The open sub-question.** CC BY permits *commercial* reuse — someone could sell
-a product built on this material, with attribution, and owe nothing. Under this
-model that is a feature. If it isn't acceptable, CC BY-NC is the fallback, but
-"non-commercial" is vague, hard to enforce, and would block exactly the
-institutional uses this model wants to invite.
+**Still to write:** a short, plain-language permissions page. Most people who
+need to know are not lawyers, and "here's what you can do without asking"
+prevents most of the questions before they arrive.
 
 **Still not legal advice.** Talk to an attorney before registering a trademark or
 publishing a license file — especially given ADR-011.

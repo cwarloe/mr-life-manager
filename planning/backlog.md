@@ -19,7 +19,9 @@ Each item is tagged with its [roadmap](roadmap.md) phase and primary
 
 | Item | Type | Phase | Notes |
 |---|---|---|---|
-| Import original cleanup/household notes | Source | 0 | Everything derives from this; the repo is incomplete without it |
+| **Record Dave** | Source | 0 | **The critical path.** Primary source is uncaptured; every framework is a reconstruction. Method matters — see [capture guidance](../source-material/original-charles-cleanup-notes.md). |
+| Import existing written notes | Source | 0 | Everything derives from this; the repo is incomplete without it |
+| Plain-language permissions page | Business | 0 | Pairs with [ADR-013](decisions.md#adr-013--licensing-revised-free-to-use-never-free-to-sell). Prevents most licensing questions before they arrive. |
 | Decide the faith-framing question | Decision | 0 | Shapes voice, channel, and partnerships. Blocks copywriting. |
 | Name/trademark check on "Mr. Life Manager" | Research | 0 | Cheapest now; expensive after a launch |
 | Line up first 5 validation conversations | Research | 1 | Warm network first |
