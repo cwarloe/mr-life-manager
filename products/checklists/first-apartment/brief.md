@@ -89,5 +89,8 @@ should presume its answer.
 - [ ] Cut for length? Four pages may be one too many for a free asset.
 - [ ] Add a parent-gift framing variant, per the Phase 2 channel test.
 - [ ] Someone who has actually moved recently should read it for gaps.
+- [x] **Depth pass 2026-09-08** — dropped the renter's-insurance price (goes
+      stale, and "it's cheap" is what someone would actually say) and simplified
+      the breaker-panel line. The rest sat at the right depth.
 - [ ] Test the title. "First Apartment Checklist" is the searched phrase, but it
       is also what every competitor calls theirs.

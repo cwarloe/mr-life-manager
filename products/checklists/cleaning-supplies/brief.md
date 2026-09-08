@@ -81,4 +81,7 @@ vinegar are genuinely dangerous and widely unknown. Two sentences, no lecture.
       it's ever monetized, disclosure has to be prominent and the "skip these"
       section must stay untouched.
 - [ ] Resolve the overlap with the First Apartment Checklist once `content/` exists.
-- [ ] Verify the chemical-safety wording with a second source before ship.
+- [x] **Depth pass 2026-09-08.** The chemical-safety section explained which
+      combinations are dangerous and why. Wrong depth — replaced with the rule
+      that actually keeps people safe: don't mix anything. See
+      [content scope](../../../content/README.md#scope-how-deep-is-too-deep).

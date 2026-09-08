@@ -62,19 +62,16 @@ Here's the honest list.
 
 ---
 
-## Two safety rules that genuinely matter
+## One safety rule
 
-> **⚠️ Never mix bleach and ammonia.** It produces a toxic gas. Many glass
-> cleaners contain ammonia, and many bathroom cleaners contain bleach — so don't
-> layer them on the same surface, and don't combine them in a bucket.
->
-> **⚠️ Never mix bleach and vinegar** (or any acid). Same problem, different
-> chemistry.
+> **⚠️ Don't mix cleaning products.** Some combinations — bleach with anything,
+> especially — make fumes that will genuinely hurt you.
 
-**The safe rule: one product at a time. Rinse in between.** If a surface needs
-two treatments, rinse with water first.
+**One product at a time. Rinse in between.** If a surface needs two treatments,
+rinse with water first. Open a window when you're using anything strong.
 
-Also: ventilate. Open a window or run the fan when you're using anything strong.
+That's the whole rule. You don't need to know which combinations are the bad
+ones if you never mix any of them.
 
 ---
 

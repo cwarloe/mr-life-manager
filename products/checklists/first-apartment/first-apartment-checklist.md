@@ -84,7 +84,7 @@ single box comes in, while the place is empty.
 ### Find these five things and write down where they are
 
 - ☐ **Water shutoff valve** — for the whole unit, and under each sink and toilet
-- ☐ **Breaker panel** (and which breaker is which — test them and label it)
+- ☐ **Breaker panel** — and which switch controls what
 - ☐ **Water heater**, and whether it's yours or shared
 - ☐ **Smoke and CO detectors** — where they are, and test each one now
 - ☐ **Fire extinguisher** — where the nearest one is
@@ -94,9 +94,9 @@ single box comes in, while the place is empty.
 
 ### Get renter's insurance
 
-- ☐ Usually $10–$25/month. It covers your belongings if there's a fire, a
-  burst pipe, or a theft — **your landlord's insurance covers the building, not
-  your things** — and it covers you if you're liable for damage.
+- ☐ It's cheap — a few dollars a month. Get it before you move in.
+- ☐ **Your landlord's insurance covers the building, not your things.** If
+  there's a fire, a burst pipe, or a break-in, this is what replaces your stuff.
 - ☐ Photograph your valuables and keep the receipts somewhere that isn't the
   apartment.
 
