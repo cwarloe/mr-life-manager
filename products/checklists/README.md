@@ -45,5 +45,16 @@ Write a `brief.md` before building — see [../README.md](../README.md).
 
 ## Status
 
-Empty. First build: **First Apartment Checklist**, Phase 2 of the
-[roadmap](../../planning/roadmap.md).
+**Two drafts written 2026-09-08. Neither is reviewed, designed, or tested.**
+
+| Product | State | Next step |
+|---|---|---|
+| [First Apartment Checklist](first-apartment/) | Draft 1 + [brief](first-apartment/brief.md) | Read by someone who moved recently |
+| [How Often Should I…?](how-often/) | Draft 1 + [brief](how-often/brief.md) | **Fact-check every cadence against a second source** |
+
+Both are drafted as **source material for `content/`**, not the reverse —
+`content/` is still empty, so sections should be extracted back into it once
+proven. Each brief lists its own open questions.
+
+Neither has been through: a second-pair-of-eyes read, design, print testing, or
+any contact with a real reader.

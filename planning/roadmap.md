@@ -94,10 +94,15 @@ what you make.
 
 ### Build
 
-- [ ] **First Apartment Checklist** — the flagship free asset. 2–4 pages,
-      genuinely complete, printable, designed well enough to be shared.
-- [ ] One or two supporting free assets: *Cleaning Supply Starter List*, *How
-      Often Should I…?*
+- [x] **First Apartment Checklist — draft 1 written** 2026-09-08
+      ([product](../products/checklists/first-apartment/)). Sequenced by time
+      rather than by category, with move-in documentation as the hook. **Not yet
+      reviewed, designed, or tested.**
+- [x] **How Often Should I…? — draft 1 written** 2026-09-08
+      ([product](../products/checklists/how-often/)). Organized by frequency so
+      it converts into a routine. **Every cadence needs fact-checking before
+      this ships** — it is a reference, so errors are quotable.
+- [ ] Remaining free asset: *Cleaning Supply Starter List*
 - [ ] A one-page landing site with an email capture
 - [ ] Email service provider + a short welcome sequence (3–5 emails that teach,
       not sell)

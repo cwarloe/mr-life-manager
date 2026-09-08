@@ -23,7 +23,7 @@ Each item is tagged with its [roadmap](roadmap.md) phase and primary
 | Decide the faith-framing question | Decision | 0 | Shapes voice, channel, and partnerships. Blocks copywriting. |
 | Name/trademark check on "Mr. Life Manager" | Research | 0 | Cheapest now; expensive after a launch |
 | Line up first 5 validation conversations | Research | 1 | Warm network first |
-| **Draft the First Apartment Checklist** | Product | 2 | The single most important asset in the plan |
+| ~~Draft the First Apartment Checklist~~ | Product | 2 | **Draft 1 done** 2026-09-08 → [product](../products/checklists/first-apartment/). Needs review + design. |
 
 ---
 
@@ -33,7 +33,7 @@ Each item is tagged with its [roadmap](roadmap.md) phase and primary
 
 | Item | Domain | Notes |
 |---|---|---|
-| **"How Often Should I…?" cadence reference** | All | Highest-demand content in the entire category. One page. Enormously shareable. |
+| ~~"How Often Should I…?" cadence reference~~ | All | **Draft 1 done** 2026-09-08 → [product](../products/checklists/how-often/). **Must be fact-checked before it ships.** |
 | Cleaning supply starter list | Home | Free asset; affiliate candidate later |
 | The 20-minute reset routine | Home | Emergency recovery, high emotional value |
 | Nightly kitchen reset | Home/Food | The keystone habit; teach it first |
