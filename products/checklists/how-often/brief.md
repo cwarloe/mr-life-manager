@@ -91,8 +91,11 @@ consequence of skipping is categorically different from "it gets dirty."
       **replace alarms every 10 years** — that last one was **missing entirely**
       and has been added) and filter intervals against manufacturer guidance.
       Sheet and pillowcase rows refined with the conditions that shorten them.
-- [ ] Second pass on the non-safety rows (appliance care, descaling, mattress
-      rotation) — lower stakes, still worth checking before ship.
+- [x] **Depth corrected 2026-09-08.** The fact-check pulled the sheet toward
+      technical reference (code citations, 10-year alarm replacement). Wrong
+      depth — see [content scope](../../../content/README.md#scope-how-deep-is-too-deep).
+      Removed. Verify cadences quietly; don't put the sourcing on the page.
+- [ ] Light second pass on the remaining rows — no research apparatus.
 - [ ] Two pages may be one too many. Test whether the *quarterly/annual* half can
       be split into a separate one-pager.
 - [ ] Add an apartment/renter version that drops homeowner-only rows?

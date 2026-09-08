@@ -54,6 +54,25 @@ Every piece of content should:
 6. **Be modular.** Assume it will be reused in three products and read out of
    order.
 
+## Scope: how deep is too deep
+
+**If someone would have to look it up in a code book or a database, it's not our
+content.** We teach what a competent person would just *tell* you — the things
+that never got said, not the things that are hard to find.
+
+| Ours | Not ours |
+|---|---|
+| "Clean the lint trap every load — it's a fire risk" | Fire code citations and replacement intervals |
+| "Check your owner's manual for oil changes" | Comparative oil-change interval research |
+| "Don't mix bleach and ammonia" | Chemistry |
+| "Wipe the counter while the pan's still hot" | — |
+
+The test: **would Dave say this, standing in someone's kitchen?** If it needs
+research to state, it's the wrong depth. Nobody is buying technical reference
+from us, and pretending otherwise makes the material heavier and less useful.
+
+Simple and effective is the product. Thorough is a different business.
+
 ## File conventions
 
 - One topic per file, `kebab-case.md`
