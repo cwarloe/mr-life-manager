@@ -20,6 +20,7 @@ quality, package many times. See
 | `ebooks/` | Multi-chapter guides. Includes the flagship, *First Place*. |
 | `courses/` | Structured multi-module programs, text or video. |
 | `toolkits/` | Bundled systems — several artifacts solving one situation end to end. |
+| `landing/` | The landing page. Static HTML; see its [SETUP.md](landing/SETUP.md). |
 
 ## Every product needs a brief
 

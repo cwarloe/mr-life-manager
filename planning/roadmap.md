@@ -117,9 +117,15 @@ what you make.
       *skip* — the fastest credibility move in a category full of affiliate
       content. **The free tier is drafted and designed. None of it is tested with a
       real reader.**
-- [ ] A one-page landing site with an email capture
-- [ ] Email service provider + a short welcome sequence (3–5 emails that teach,
-      not sell)
+- [x] **Landing page — draft 1 written and designed** 2026-09-09
+      ([product](../products/landing/), [setup](../products/landing/SETUP.md)).
+      Static, no dependencies. **Not connected to an email provider** — that is
+      the one remaining step, and it's a paste-in URL.
+- [ ] **Pick an email provider and paste the endpoint in** — see
+      [SETUP.md](../products/landing/SETUP.md)
+- [ ] Welcome sequence, 3 emails that teach rather than sell. The day-7 email
+      should invite a reply about what they're stuck on — **that is the research
+      channel**, and the most valuable email in the sequence.
 - [ ] **A parent-facing variant** — "send this with your kid to college."
       Costs one extra landing page and tests the buyer-isn't-the-user hypothesis
       that may unlock the entire student market.

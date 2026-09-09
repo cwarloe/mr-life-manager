@@ -1,0 +1,250 @@
+<title>Mr. Life Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+:root{
+  --ink:#12161C; --paper:#FBF9F4; --surface:#FFFFFF;
+  --blue:#1F4E79; --blue-soft:#E7EEF5;
+  --amber:#B4741A; --amber-soft:#F7EEDD;
+  --slate:#6B7280; --rule:#D9D5CC; --rule-strong:#B8B2A6;
+  --sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
+    --blue:#8FB6DA; --blue-soft:#1D2833;
+    --amber:#E3A94E; --amber-soft:#2A2418;
+    --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
+  --blue:#8FB6DA; --blue-soft:#1D2833;
+  --amber:#E3A94E; --amber-soft:#2A2418;
+  --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;
+  line-height:1.55;margin:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:60rem;margin:0 auto;padding:0 1.5rem}
+.narrow{max-width:42rem}
+
+/* ---------- top bar ---------- */
+.bar{border-bottom:1px solid var(--rule)}
+.bar .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:1rem;padding-bottom:1rem}
+.brand{font-weight:700;font-size:.95rem;letter-spacing:-.01em}
+.brand span{color:var(--blue)}
+.bar a{font-size:.85rem;color:var(--slate);text-decoration:none;font-weight:500}
+.bar a:hover{color:var(--blue)}
+
+/* ---------- hero ---------- */
+.hero{padding:4.5rem 0 3.5rem;border-bottom:3px solid var(--ink)}
+.kicker{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--blue);margin:0 0 1.2rem}
+h1{font-size:clamp(2.4rem,7vw,4rem);font-weight:800;line-height:1.02;letter-spacing:-.03em;
+  margin:0;text-wrap:balance;max-width:19ch}
+.sub{font-family:var(--serif);font-size:clamp(1.1rem,2.4vw,1.35rem);line-height:1.5;
+  color:var(--slate);margin:1.4rem 0 0;max-width:46ch}
+.sub strong{color:var(--ink);font-weight:600}
+
+/* ---------- signup ---------- */
+.signup{margin:2.5rem 0 0;max-width:34rem}
+.signup form{display:flex;gap:.6rem;flex-wrap:wrap}
+.signup input[type=email]{
+  flex:1 1 15rem;font-family:inherit;font-size:1rem;padding:.85rem 1rem;
+  border:2px solid var(--rule-strong);border-radius:3px;background:var(--surface);
+  color:var(--ink);min-width:0}
+.signup input[type=email]::placeholder{color:var(--slate)}
+.signup input[type=email]:focus-visible{outline:none;border-color:var(--blue);
+  box-shadow:0 0 0 3px var(--blue-soft)}
+.signup button{
+  font-family:inherit;font-size:1rem;font-weight:600;padding:.85rem 1.5rem;
+  border:2px solid var(--ink);border-radius:3px;background:var(--ink);color:var(--paper);
+  cursor:pointer;white-space:nowrap}
+.signup button:hover{background:var(--blue);border-color:var(--blue)}
+.signup button:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.fine{font-size:.82rem;color:var(--slate);margin:.75rem 0 0}
+
+/* ---------- sections ---------- */
+section{padding:4rem 0}
+section + section{border-top:1px solid var(--rule)}
+.eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--blue);margin:0 0 .9rem}
+h2{font-size:clamp(1.6rem,3.6vw,2.2rem);font-weight:700;letter-spacing:-.02em;margin:0;
+  text-wrap:balance;max-width:22ch}
+.lede{font-family:var(--serif);font-size:1.08rem;line-height:1.6;margin:1.1rem 0 0;max-width:58ch}
+p.body{font-family:var(--serif);font-size:1.03rem;line-height:1.65;margin:1.1rem 0 0;max-width:58ch}
+p.body strong{font-weight:600}
+
+/* ---------- guides ---------- */
+.guides{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));margin:2rem 0 0}
+.guide{border:2px solid var(--rule-strong);border-radius:3px;padding:1.3rem 1.4rem;
+  background:var(--surface);display:flex;flex-direction:column;gap:.5rem;text-decoration:none;color:inherit}
+.guide:hover{border-color:var(--blue)}
+.guide:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.guide .num{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+.guide h3{font-size:1.08rem;font-weight:700;margin:0;letter-spacing:-.01em;line-height:1.25}
+.guide p{font-family:var(--serif);font-size:.93rem;line-height:1.5;color:var(--slate);margin:0}
+.guide .go{font-size:.82rem;font-weight:600;color:var(--blue);margin-top:auto;padding-top:.4rem}
+
+/* ---------- dave ---------- */
+.dave{background:var(--surface);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.pull{font-family:var(--serif);font-size:clamp(1.3rem,3.2vw,1.75rem);line-height:1.4;
+  font-style:italic;margin:1.6rem 0;padding-left:1.4rem;border-left:4px solid var(--amber);
+  max-width:34ch;text-wrap:balance}
+.attrib{font-family:var(--sans);font-style:normal;font-size:.8rem;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--slate);display:block;margin-top:.9rem}
+
+/* ---------- domains ---------- */
+.domains{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.8rem 0 0}
+.domains span{border:1.5px solid var(--rule-strong);border-radius:2px;padding:.4rem .75rem;
+  font-size:.86rem;font-weight:500}
+.domains span.on{border-color:var(--blue);color:var(--blue);font-weight:600}
+
+/* ---------- closing ---------- */
+.close{border-top:3px solid var(--ink);background:var(--surface)}
+.close h2{max-width:20ch}
+footer{border-top:1px solid var(--rule);padding:2rem 0 3rem;font-size:.82rem;color:var(--slate)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space-between}
+footer b{color:var(--ink);font-weight:600}
+footer a{color:var(--slate)}
+@media (max-width:34rem){
+  .hero{padding:3rem 0 2.5rem}
+  section{padding:3rem 0}
+  .signup button{width:100%}
+}
+</style>
+
+<div class="bar"><div class="wrap">
+  <span class="brand">Mr.&nbsp;<span>Life Manager</span></span>
+  <a href="#guides">Free guides</a>
+</div></div>
+
+<header class="hero"><div class="wrap">
+  <p class="kicker">Practical systems for running an adult life</p>
+  <h1>The life skills nobody thought to teach you.</h1>
+  <p class="sub">How often to wash the sheets. What to do before you sign a lease. Which nine
+  cleaning products actually matter. <strong>Nobody sat you down and explained any of it</strong> —
+  and that was never your fault.</p>
+
+  <div class="signup">
+    <!-- ═══════════════════════════════════════════════════════════════════
+         INTEGRATION POINT — replace action="" with your email provider's
+         form endpoint (ConvertKit, Beehiiv, Buttondown, MailerLite…).
+         Most give you a URL to paste here. Nothing else needs to change.
+         ═══════════════════════════════════════════════════════════════════ -->
+    <form action="" method="post">
+      <label for="email" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Email address</label>
+      <input id="email" name="email_address" type="email" required placeholder="you@example.com" autocomplete="email">
+      <button type="submit">Send me the guides</button>
+    </form>
+    <p class="fine">Three free guides, then an occasional note when there's something
+    genuinely useful. Unsubscribe whenever — no hard feelings.</p>
+  </div>
+</div></header>
+
+<section id="guides"><div class="wrap">
+  <p class="eyebrow">Free, and complete</p>
+  <h2>Start with these three.</h2>
+  <p class="lede">No catch and no upsell buried in them. If they're the only thing you ever
+  take from us, they'll still have done their job.</p>
+
+  <div class="guides">
+    <a class="guide" href="https://claude.ai/code/artifact/5c207676-f7e3-46ac-9f08-0d6f0130810b">
+      <span class="num">Guide 01</span>
+      <h3>The First Apartment Checklist</h3>
+      <p>Everything to do, buy, and find out — in the order you'll need it. Including the
+      half hour on move-in day that decides whether you get your deposit back.</p>
+      <span class="go">Read it →</span>
+    </a>
+    <a class="guide" href="https://claude.ai/code/artifact/3e114e67-79da-4c94-b532-4ce1b3a1d151">
+      <span class="num">Guide 02</span>
+      <h3>How Often Should I…?</h3>
+      <p>Sheets, filters, towels, oil, the dryer vent. Every cadence in one place, with an
+      honest "good enough" next to the ideal.</p>
+      <span class="go">Read it →</span>
+    </a>
+    <a class="guide" href="https://claude.ai/code/artifact/081fdfef-3e22-4758-9b93-7955bd8698c5">
+      <span class="num">Guide 03</span>
+      <h3>Cleaning Supply Starter List</h3>
+      <p>The nine products that do the work, what they cost, and the long list of things the
+      cleaning aisle wants you to buy that you don't need.</p>
+      <span class="go">Read it →</span>
+    </a>
+  </div>
+</div></section>
+
+<section class="dave"><div class="wrap narrow">
+  <p class="eyebrow">Who Mr. Life Manager is</p>
+  <h2>Dave actually knew how to do this.</h2>
+
+  <p class="body">Mr. Life Manager is a real person — Dave Webster, who knew how to run a home
+  and, over years, taught me. I'm the apprentice. I wrote it down.</p>
+
+  <p class="body">When I told him people would pay to learn this, he was baffled. His answer
+  has stuck with me ever since:</p>
+
+  <blockquote class="pull">It's all obvious. I'd be embarrassed telling people things I
+  assumed they already knew.
+  <span class="attrib">— Dave</span></blockquote>
+
+  <p class="body">Which is <strong>exactly why nobody ever told you.</strong> The people who
+  know this can't see it as knowledge. From the inside it just looks like common sense — so it
+  never gets handed down. Not out of indifference. Out of invisibility.</p>
+
+  <p class="body">That's the whole reason this exists. And it's why nothing here talks down to
+  you: I had to be taught all of it too.</p>
+</div></section>
+
+<section><div class="wrap">
+  <p class="eyebrow">The scope</p>
+  <h2>It was never really about cleaning.</h2>
+  <p class="lede">Cleaning is where most people notice the problem. But the same thing is
+  happening everywhere else — no system, so everything runs on memory and mood until something
+  becomes urgent.</p>
+
+  <div class="domains">
+    <span class="on">Home</span><span class="on">Food</span><span class="on">Money</span>
+    <span class="on">Time</span><span>Health</span><span>Work</span>
+    <span class="on">Digital life</span><span>Relationships</span><span>Transportation</span>
+    <span class="on">Maintenance</span><span class="on">Paperwork</span>
+    <span class="on">Hospitality</span><span class="on">Life transitions</span>
+  </div>
+
+  <p class="body">Everyone else teaches one of these. The work is in the fact that they're the
+  same problem: <strong>nothing has a place, so everything lives in your head.</strong></p>
+</div></section>
+
+<section><div class="wrap narrow">
+  <p class="eyebrow">Where this goes</p>
+  <h2>Order isn't the point.</h2>
+  <p class="body">A tidy house nobody enters is a museum. The reason to get a handle on all
+  this is so you can <strong>open the door</strong> — have people over on two hours' notice,
+  feed someone, put a friend up for the night, without a two-day panic first.</p>
+  <p class="body">Systems buy you margin. Margin is what lets you say <em>come over.</em>
+  That's the whole point, and everything else is just the machinery that makes it possible.</p>
+</div></section>
+
+<section class="close"><div class="wrap">
+  <h2>Nobody expected you to have known this.</h2>
+  <p class="lede">Start with the three guides. They're free, they're complete, and they'll tell
+  you more in twenty minutes than anyone ever bothered to.</p>
+  <div class="signup">
+    <!-- Same integration point as above — use the same endpoint. -->
+    <form action="" method="post">
+      <label for="email2" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Email address</label>
+      <input id="email2" name="email_address" type="email" required placeholder="you@example.com" autocomplete="email">
+      <button type="submit">Send me the guides</button>
+    </form>
+    <p class="fine">Three free guides. Occasional notes. Unsubscribe whenever.</p>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <span><b>Mr. Life Manager</b> — practical systems for running an adult life</span>
+  <span>Free to use, copy, and teach from — with credit. Not for resale.</span>
+</div></footer>
