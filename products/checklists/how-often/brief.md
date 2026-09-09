@@ -3,8 +3,16 @@
 **Status:** Draft 1, 2026-09-08. Not reviewed, not designed, not fact-checked by
 a second pair of eyes.
 **Tier:** Rung 0 — free ([product-ladder.md](../../../docs/business/product-ladder.md))
-**Format:** 2-page printable reference, black-and-white, US Letter. Designed to
-be **taped inside a cabinet door.**
+**Format:** printable reference, black-and-white, US Letter. Designed to be
+**taped inside a cabinet door.**
+**Files:** [`how-often-should-i.md`](how-often-should-i.md) (source text) ·
+[`how-often-should-i.html`](how-often-should-i.html) (designed, printable)
+
+**Design:** frequency bands as the structure, each with a stamped tag — daily,
+weekly, monthly, seasonal, annual, vehicle, now. Good-enough and better are
+real table columns rather than prose, so the eye can take one column and ignore
+the other. Amber marks only the rows where skipping has a different kind of
+consequence.
 
 ---
 

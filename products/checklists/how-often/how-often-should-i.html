@@ -1,0 +1,306 @@
+<title>How Often Should I…?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+:root{
+  --ink:#12161C; --paper:#FBF9F4; --surface:#FFFFFF;
+  --blue:#1F4E79; --blue-soft:#E7EEF5;
+  --amber:#B4741A; --amber-soft:#F7EEDD;
+  --slate:#6B7280; --rule:#D9D5CC; --rule-strong:#B8B2A6;
+  --sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
+    --blue:#8FB6DA; --blue-soft:#1D2833;
+    --amber:#E3A94E; --amber-soft:#2A2418;
+    --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
+  --blue:#8FB6DA; --blue-soft:#1D2833;
+  --amber:#E3A94E; --amber-soft:#2A2418;
+  --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;
+  line-height:1.5;margin:0;-webkit-font-smoothing:antialiased}
+.sheet{max-width:54rem;margin:0 auto;padding:3rem 1.5rem 5rem}
+.mast{border-bottom:3px solid var(--ink);padding-bottom:1.25rem}
+.eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--blue);margin:0 0 .6rem}
+h1{font-size:clamp(2.1rem,6vw,3.1rem);font-weight:700;line-height:1.02;letter-spacing:-.02em;
+  margin:0;text-wrap:balance}
+.deck{font-family:var(--serif);font-size:1.05rem;color:var(--slate);margin:.7rem 0 0;max-width:44ch}
+.standfirst{font-family:var(--serif);font-size:1rem;line-height:1.6;margin:1.5rem 0 0;max-width:62ch}
+.key-note{border-left:3px solid var(--blue);background:var(--blue-soft);padding:.9rem 1.1rem;
+  margin:1.75rem 0 0;border-radius:0 3px 3px 0;font-family:var(--serif);font-size:.97rem;line-height:1.55}
+.key-note b{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blue);display:block;margin-bottom:.3rem}
+
+/* frequency band */
+.band{margin:3rem 0 0;break-inside:avoid}
+.band-head{display:flex;align-items:baseline;gap:.9rem;border-bottom:2px solid var(--ink);
+  padding-bottom:.5rem;margin-bottom:.2rem}
+.band-tag{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--paper);background:var(--ink);padding:.28rem .5rem;border-radius:2px;white-space:nowrap}
+.band-head h2{font-size:1.4rem;font-weight:700;letter-spacing:-.015em;margin:0;flex:1}
+.mins{font-size:.75rem;color:var(--slate);font-weight:500;white-space:nowrap}
+.band-note{font-family:var(--serif);color:var(--slate);font-size:.95rem;margin:.6rem 0 1.1rem}
+
+table{width:100%;border-collapse:collapse;font-size:.92rem;margin:0}
+.scroll{overflow-x:auto}
+thead th{font-size:.66rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--slate);text-align:left;padding:0 .7rem .45rem 0;border-bottom:1px solid var(--rule-strong)}
+thead th.n{width:9.5rem}
+tbody td{padding:.5rem .7rem .5rem 0;border-bottom:1px solid var(--rule);vertical-align:top;
+  font-variant-numeric:tabular-nums}
+tbody tr:last-child td{border-bottom:none}
+td.task{font-weight:500}
+td.good{color:var(--ink)}
+td.better{color:var(--slate)}
+tr.flag td.task{color:var(--amber);font-weight:600}
+tr.flag td.task::after{content:" ⚠"}
+td strong{font-weight:600}
+
+.simple{list-style:none;margin:0;padding:0;display:grid;gap:.4rem;
+  grid-template-columns:repeat(auto-fill,minmax(17rem,1fr));gap:.4rem 1.75rem}
+.simple li{font-size:.92rem;padding-left:1rem;position:relative;line-height:1.45}
+.simple li::before{content:"";position:absolute;left:0;top:.62em;width:.32rem;height:.32rem;
+  background:var(--rule-strong);border-radius:50%}
+
+h3{font-size:.76rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--blue);
+  margin:2rem 0 .8rem;padding-bottom:.3rem;border-bottom:1px solid var(--rule)}
+
+.notes{margin:3.5rem 0 0;border-top:2px solid var(--ink);padding-top:1.5rem}
+.notes h2{font-size:1.15rem;font-weight:700;margin:0 0 1.1rem;letter-spacing:-.01em}
+.note{font-family:var(--serif);font-size:.96rem;line-height:1.6;margin:0 0 1rem;max-width:66ch}
+.note b{font-family:var(--sans);font-weight:600;font-size:.9rem}
+.signoff{font-family:var(--serif);font-style:italic;font-size:1.02rem;text-align:center;
+  color:var(--slate);margin:3rem auto 0;max-width:40ch;line-height:1.5}
+footer{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--rule);font-size:.74rem;
+  color:var(--slate);display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;justify-content:space-between}
+footer b{color:var(--ink);font-weight:600}
+@media (max-width:38rem){
+  .sheet{padding:2rem 1.1rem 3rem}
+  thead th.n{width:auto}
+  table{font-size:.86rem}
+}
+@media print{
+  :root{--ink:#000;--paper:#fff;--surface:#fff;--slate:#444;--rule:#bbb;--rule-strong:#666;
+    --blue-soft:#fff;--amber:#7a4d0a;--amber-soft:#fff}
+  body{font-size:9.6pt}.sheet{max-width:none;padding:0}
+  .band,.key-note,.notes{page-break-inside:avoid}
+  .band-head{page-break-after:avoid}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="sheet">
+  <header class="mast">
+    <p class="eyebrow">Mr. Life Manager · Free Guide</p>
+    <h1>How Often Should&nbsp;I…?</h1>
+    <p class="deck">The cadences nobody tells you, in one place.</p>
+  </header>
+
+  <p class="standfirst">This is the most common question in running a home, and it's almost
+  never answered plainly. So here's the honest version.</p>
+
+  <div class="key-note">
+    <b>Two numbers per row</b>
+    <strong>Good enough</strong> is the standard that actually keeps a home working.
+    <strong>Better</strong> is the ideal, for when you have the time or the situation calls for
+    it. <em>Good enough is genuinely fine.</em> A schedule you keep beats a stricter one you
+    abandon.
+  </div>
+
+  <p class="standfirst">Organized by how often, not by room — so it turns into a routine instead
+  of a reference you never open.</p>
+
+  <section class="band">
+    <div class="band-head"><span class="band-tag">Daily</span><h2>Every day</h2><span class="mins">≈10 minutes</span></div>
+    <div class="scroll"><table>
+      <thead><tr><th>Task</th><th class="n">Good enough</th><th class="n">Better</th></tr></thead>
+      <tbody>
+        <tr><td class="task">Dishes washed or in the dishwasher</td><td class="good">Before bed</td><td class="better">After each meal</td></tr>
+        <tr><td class="task">Kitchen counters wiped</td><td class="good">Before bed</td><td class="better">As you cook</td></tr>
+        <tr><td class="task">Stovetop wiped</td><td class="good">While still warm</td><td class="better">After each use</td></tr>
+        <tr><td class="task">Things put back where they live</td><td class="good">Once, before bed</td><td class="better">As you go</td></tr>
+        <tr><td class="task">Make the bed</td><td class="good">Most days</td><td class="better">Daily</td></tr>
+        <tr class="flag"><td class="task">Dryer lint trap</td><td class="good"><strong>Every load</strong></td><td class="better">Every load</td></tr>
+        <tr><td class="task">Food put away, nothing left out</td><td class="good">Before bed</td><td class="better">Right after eating</td></tr>
+      </tbody>
+    </table></div>
+    <div class="key-note">
+      <b>The ten-minute closing shift</b>
+      This is the highest-leverage habit on the page. A kitchen reset nightly never needs a
+      rescue. Skip it four days and you've got a project.
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="band-head"><span class="band-tag">Weekly</span><h2>Every week</h2><span class="mins">45–90 minutes</span></div>
+    <div class="scroll"><table>
+      <thead><tr><th>Task</th><th class="n">Good enough</th><th class="n">Better</th></tr></thead>
+      <tbody>
+        <tr><td class="task">Bathroom — toilet, sink, mirror</td><td class="good">Weekly</td><td class="better">Twice weekly</td></tr>
+        <tr><td class="task">Shower or tub</td><td class="good">Every 1–2 weeks</td><td class="better">Weekly</td></tr>
+        <tr><td class="task">Vacuum main areas</td><td class="good">Weekly</td><td class="better">Twice weekly, or daily with pets</td></tr>
+        <tr><td class="task">Mop hard floors</td><td class="good">Every 2 weeks</td><td class="better">Weekly</td></tr>
+        <tr><td class="task">Dust surfaces</td><td class="good">Every 2 weeks</td><td class="better">Weekly</td></tr>
+        <tr><td class="task">Change sheets</td><td class="good">Every 2 weeks</td><td class="better"><strong>Weekly</strong></td></tr>
+        <tr><td class="task">Clear out the fridge</td><td class="good">Before you shop</td><td class="better">—</td></tr>
+        <tr><td class="task">Laundry</td><td class="good">Weekly, set day</td><td class="better">—</td></tr>
+        <tr><td class="task">Wipe down the microwave</td><td class="good">Weekly</td><td class="better">When it splatters</td></tr>
+        <tr><td class="task">Check bank accounts</td><td class="good">Weekly, 5 min</td><td class="better">—</td></tr>
+        <tr><td class="task">Plan the week, look at the calendar</td><td class="good">Weekly, 20–30 min</td><td class="better">—</td></tr>
+      </tbody>
+    </table></div>
+    <div class="key-note">
+      <b>Pick one day and stop deciding</b>
+      The deciding costs more than the doing.
+    </div>
+
+    <h3>By use, not by calendar</h3>
+    <div class="scroll"><table>
+      <thead><tr><th>Item</th><th class="n">Wash or replace after</th></tr></thead>
+      <tbody>
+        <tr><td class="task">Bath towels</td><td class="good">3–4 uses</td></tr>
+        <tr><td class="task">Hand towels</td><td class="good">2–3 days</td></tr>
+        <tr><td class="task">Kitchen dish towels</td><td class="good">2–3 days</td></tr>
+        <tr><td class="task">Kitchen sponge</td><td class="good">Replace every 1–2 weeks</td></tr>
+        <tr><td class="task">Pillowcases</td><td class="good">With sheets — more often with acne, eczema, allergies, night sweats, or a pet in the bed</td></tr>
+        <tr><td class="task">Bras</td><td class="good">2–3 wears</td></tr>
+        <tr><td class="task">Jeans</td><td class="good">4–5 wears — genuinely, not a myth</td></tr>
+        <tr><td class="task">Bath mat</td><td class="good">Every 1–2 weeks</td></tr>
+        <tr><td class="task">Reusable water bottle</td><td class="good"><strong>Daily</strong> — the one people skip</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="band">
+    <div class="band-head"><span class="band-tag">Monthly</span><h2>Every month</h2></div>
+    <div class="scroll"><table>
+      <thead><tr><th>Task</th><th class="n">Good enough</th><th class="n">Better</th></tr></thead>
+      <tbody>
+        <tr class="flag"><td class="task">Test smoke and CO detectors</td><td class="good">Monthly</td><td class="better">Monthly</td></tr>
+        <tr><td class="task">Dishwasher filter — pull and rinse</td><td class="good">Monthly</td><td class="better">Every 2 weeks</td></tr>
+        <tr><td class="task">Washing machine — hot empty cycle</td><td class="good">Monthly</td><td class="better">Monthly</td></tr>
+        <tr><td class="task">Garbage disposal</td><td class="good">Monthly</td><td class="better">Every 2 weeks</td></tr>
+        <tr><td class="task">Drains — flush with hot water</td><td class="good">Monthly</td><td class="better">—</td></tr>
+        <tr><td class="task">Oven interior</td><td class="good">Every 3 months</td><td class="better">Monthly</td></tr>
+        <tr><td class="task">Fridge — full wipe-out</td><td class="good">Monthly</td><td class="better">—</td></tr>
+        <tr><td class="task">Air filter — check it</td><td class="good">Monthly</td><td class="better">—</td></tr>
+        <tr><td class="task">Vacuum under and behind furniture</td><td class="good">Monthly</td><td class="better">—</td></tr>
+        <tr><td class="task">Review spending</td><td class="good">Monthly</td><td class="better">—</td></tr>
+        <tr><td class="task">Shower head — descale</td><td class="good">Every 3 months</td><td class="better">Monthly</td></tr>
+        <tr><td class="task">Wash pillows</td><td class="good">Every 3–6 months</td><td class="better">Quarterly</td></tr>
+        <tr><td class="task">Replace toothbrush</td><td class="good">Every 3 months</td><td class="better">After illness too</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="band">
+    <div class="band-head"><span class="band-tag">Seasonal</span><h2>Every 3–6 months</h2></div>
+    <div class="scroll"><table>
+      <thead><tr><th>Task</th><th class="n">When</th></tr></thead>
+      <tbody>
+        <tr><td class="task">Air filter — change it</td><td class="good">Every 1–3 months. Sooner with pets. The size is printed on the old one.</td></tr>
+        <tr><td class="task">Baseboards and door frames</td><td class="good">Quarterly</td></tr>
+        <tr><td class="task">Windows, inside</td><td class="good">Quarterly</td></tr>
+        <tr><td class="task">Light fixtures and ceiling fans</td><td class="good">Quarterly</td></tr>
+        <tr><td class="task">Refrigerator coils — vacuum</td><td class="good">Twice a year</td></tr>
+        <tr><td class="task">Flip or rotate the mattress</td><td class="good">Every 6 months — check the manufacturer first</td></tr>
+        <tr><td class="task">Wash comforter or duvet</td><td class="good">Every 3–6 months</td></tr>
+        <tr><td class="task">Deep clean one room at a time</td><td class="good">Rotate quarterly — never all at once</td></tr>
+        <tr><td class="task">Review subscriptions</td><td class="good">Quarterly. Cancel what you forgot about.</td></tr>
+        <tr class="flag"><td class="task">Check that your backups actually restore</td><td class="good">Quarterly — the step everyone skips</td></tr>
+        <tr><td class="task">Dentist</td><td class="good">Every 6 months, or as your dentist says</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="band">
+    <div class="band-head"><span class="band-tag">Annual</span><h2>Once a year</h2></div>
+    <div class="scroll"><table>
+      <thead><tr><th>Task</th><th class="n">Notes</th></tr></thead>
+      <tbody>
+        <tr class="flag"><td class="task">Dryer vent duct — clean</td><td class="good"><strong>Fire risk.</strong> Not the lint trap — the duct behind the dryer.</td></tr>
+        <tr class="flag"><td class="task">Smoke and CO detector batteries</td><td class="good">Pick a memorable date and keep it</td></tr>
+        <tr><td class="task">Water heater — flush</td><td class="good">Renting? This is your landlord's job — report it.</td></tr>
+        <tr><td class="task">Gutters</td><td class="good">Twice a year, if they're yours</td></tr>
+        <tr><td class="task">Caulk and grout — inspect</td><td class="good">Re-seal before water gets behind it</td></tr>
+        <tr><td class="task">Check for leaks under every sink</td><td class="good">Five minutes; catches expensive problems</td></tr>
+        <tr><td class="task">Insurance review</td><td class="good">Renter's, auto, health — at renewal</td></tr>
+        <tr><td class="task">Credit report check</td><td class="good">Free from the official federal source</td></tr>
+        <tr><td class="task">Gather tax documents</td><td class="good">January</td></tr>
+        <tr><td class="task">Physical / annual checkup</td><td class="good">Or as your provider advises</td></tr>
+        <tr><td class="task">Eye exam</td><td class="good">Every 1–2 years</td></tr>
+        <tr><td class="task">Wardrobe clear-out</td><td class="good">Annually</td></tr>
+        <tr><td class="task">Review this list against your actual life</td><td class="good">Annually</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="band">
+    <div class="band-head"><span class="band-tag">Vehicle</span><h2>Check your manual first</h2></div>
+    <p class="band-note">Intervals vary a lot by vehicle, oil type, and how you drive. Treat
+    these as "go look it up," not as the answer.</p>
+    <div class="scroll"><table>
+      <thead><tr><th>Task</th><th class="n">Typical guidance</th></tr></thead>
+      <tbody>
+        <tr><td class="task">Oil change</td><td class="good"><strong>Follow your owner's manual.</strong> The old 3,000-mile rule is usually obsolete.</td></tr>
+        <tr><td class="task">Tire pressure</td><td class="good">Monthly, and before long trips. Check when tires are cold.</td></tr>
+        <tr><td class="task">Tire rotation</td><td class="good">Per manual — commonly every other oil change</td></tr>
+        <tr><td class="task">Registration and inspection</td><td class="good">Per your state. <strong>Put the expiration on a calendar.</strong></td></tr>
+        <tr><td class="task">Wiper blades</td><td class="good">Every 6–12 months, or when they streak</td></tr>
+        <tr><td class="task">Air filter, brakes, fluids</td><td class="good">Per manual; checked at each service</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="band">
+    <div class="band-head"><span class="band-tag">Now</span><h2>When "as needed" means today</h2></div>
+    <div class="scroll"><table>
+      <thead><tr><th>Situation</th><th class="n">Do it</th></tr></thead>
+      <tbody>
+        <tr><td class="task">A spill</td><td class="good">Immediately. Wet is 10 seconds; dried is 3 minutes.</td></tr>
+        <tr><td class="task">A stain on clothing</td><td class="good">Immediately. Set stains are usually permanent.</td></tr>
+        <tr><td class="task">A slow drip or running toilet</td><td class="good">This week. Cheap fix, expensive flood.</td></tr>
+        <tr class="flag"><td class="task">A stain appearing on a ceiling</td><td class="good"><strong>Today.</strong> Report it in writing if you rent.</td></tr>
+        <tr><td class="task">Smoke detector chirping</td><td class="good">Today. The battery is dying.</td></tr>
+        <tr><td class="task">Anything your landlord is responsible for</td><td class="good">Report in writing, immediately. The paper trail protects your deposit.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <div class="notes">
+    <h2>The honest footnotes</h2>
+    <p class="note"><b>These are starting points, not laws.</b> Pets, allergies, kids, a dusty
+    climate, working from home, or a health condition all shift them. Adjust, and don't feel bad
+    about it.</p>
+    <p class="note"><b>If you're behind on all of it, don't start here.</b> Pick one room —
+    usually the kitchen — get it to baseline, and add the ten-minute nightly reset. Then add one
+    line at a time. Trying to adopt this whole page at once is the most reliable way to abandon
+    it by Thursday.</p>
+    <p class="note"><b>Renting?</b> A good deal of the annual list is your landlord's job. Your
+    job is to notice and report it in writing, promptly. That's the whole task — and it's what
+    protects your deposit.</p>
+    <p class="note"><b>Health rows are scheduling reminders only.</b> Your doctor and dentist set
+    your actual intervals.</p>
+    <p class="note"><b>The ⚠ rows are different in kind.</b> Dryer lint, dryer vents, smoke
+    alarms, and backups aren't about a home looking nice. Everything else here can slip a week
+    without consequence. Those can't.</p>
+  </div>
+
+  <p class="signoff">You were never told any of this. Now it's on paper, and you can stop trying
+  to remember it.</p>
+
+  <footer>
+    <span><b>Mr. Life Manager</b> — practical systems for running an adult life</span>
+    <span>Free to use, copy, and teach from — with credit. Not for resale.</span>
+  </footer>
+</div>

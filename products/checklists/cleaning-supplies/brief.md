@@ -2,7 +2,15 @@
 
 **Status:** Draft 1, 2026-09-08. Not reviewed, not designed, not price-checked.
 **Tier:** Rung 0 — free ([product-ladder.md](../../../docs/business/product-ladder.md))
-**Format:** 2-page printable, black-and-white, US Letter
+**Format:** printable, black-and-white, US Letter
+**Files:** [`cleaning-supply-starter-list.md`](cleaning-supply-starter-list.md) (source text) ·
+[`cleaning-supply-starter-list.html`](cleaning-supply-starter-list.html) (designed, printable)
+
+**Design:** buy / tools / laundry as priced tables with right-aligned tabular
+figures, then **Skip** gets an amber tag and its own visual weight — it's the
+credibility move, so it shouldn't read as an afterthought. The storage section
+is three room cards, because "keep a set in each room" is spatial advice and
+reads better as space than as a sentence.
 
 ---
 

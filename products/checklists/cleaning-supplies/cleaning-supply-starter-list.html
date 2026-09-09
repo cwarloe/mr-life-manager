@@ -1,0 +1,256 @@
+<title>Cleaning Supply Starter List</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+:root{
+  --ink:#12161C; --paper:#FBF9F4; --surface:#FFFFFF;
+  --blue:#1F4E79; --blue-soft:#E7EEF5;
+  --amber:#B4741A; --amber-soft:#F7EEDD;
+  --slate:#6B7280; --rule:#D9D5CC; --rule-strong:#B8B2A6;
+  --sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
+    --blue:#8FB6DA; --blue-soft:#1D2833;
+    --amber:#E3A94E; --amber-soft:#2A2418;
+    --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
+  --blue:#8FB6DA; --blue-soft:#1D2833;
+  --amber:#E3A94E; --amber-soft:#2A2418;
+  --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;
+  line-height:1.5;margin:0;-webkit-font-smoothing:antialiased}
+.sheet{max-width:50rem;margin:0 auto;padding:3rem 1.5rem 5rem}
+.mast{border-bottom:3px solid var(--ink);padding-bottom:1.25rem}
+.eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--blue);margin:0 0 .6rem}
+h1{font-size:clamp(2.1rem,6vw,3.1rem);font-weight:700;line-height:1.02;letter-spacing:-.02em;
+  margin:0;text-wrap:balance}
+.deck{font-family:var(--serif);font-size:1.05rem;color:var(--slate);margin:.7rem 0 0;max-width:46ch}
+.standfirst{font-family:var(--serif);font-size:1rem;line-height:1.6;margin:1.5rem 0 0;max-width:62ch}
+
+.sec{margin:3rem 0 0;break-inside:avoid}
+.sec-head{display:flex;align-items:baseline;gap:.9rem;border-bottom:2px solid var(--ink);
+  padding-bottom:.5rem;margin-bottom:.2rem}
+.tag{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--paper);background:var(--ink);padding:.28rem .5rem;border-radius:2px;white-space:nowrap}
+.tag.skip{background:var(--amber);color:#fff}
+.sec-head h2{font-size:1.4rem;font-weight:700;letter-spacing:-.015em;margin:0;flex:1}
+.total{font-size:.78rem;color:var(--slate);font-weight:600;white-space:nowrap;
+  font-variant-numeric:tabular-nums}
+.sec-note{font-family:var(--serif);color:var(--slate);font-size:.95rem;margin:.6rem 0 1.1rem}
+
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.93rem}
+thead th{font-size:.66rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--slate);text-align:left;padding:0 .7rem .45rem 0;border-bottom:1px solid var(--rule-strong)}
+thead th.p{width:5.5rem;text-align:right;padding-right:0}
+tbody td{padding:.52rem .7rem .52rem 0;border-bottom:1px solid var(--rule);vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+td.item{font-weight:600;white-space:nowrap}
+td.why{color:var(--slate);font-size:.9rem}
+td.price{text-align:right;padding-right:0;font-variant-numeric:tabular-nums;
+  color:var(--slate);white-space:nowrap;font-size:.88rem}
+tr.star td.item{color:var(--amber)}
+tr.star td.item::before{content:"★ ";font-size:.75em}
+
+.skips{list-style:none;margin:0;padding:0;display:grid;gap:.9rem}
+.skips li{padding-left:1.6rem;position:relative;break-inside:avoid}
+.skips li::before{content:"×";position:absolute;left:0;top:-.1em;color:var(--amber);
+  font-weight:700;font-size:1.15rem;line-height:1}
+.skips b{display:block;font-weight:600;font-size:.95rem;margin-bottom:.12rem}
+.skips span{font-family:var(--serif);font-size:.93rem;color:var(--slate);line-height:1.5}
+
+.warn{border:2px solid var(--amber);background:var(--amber-soft);padding:1.1rem 1.3rem;
+  border-radius:3px;margin:3rem 0 0;break-inside:avoid}
+.warn b{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--amber);display:block;margin-bottom:.5rem}
+.warn p{font-family:var(--serif);font-size:1rem;line-height:1.55;margin:0 0 .7rem}
+.warn p:last-child{margin-bottom:0}
+.warn strong{font-weight:600}
+
+.note{border-left:3px solid var(--blue);background:var(--blue-soft);padding:.9rem 1.1rem;
+  margin:1.4rem 0 0;border-radius:0 3px 3px 0;font-family:var(--serif);font-size:.96rem;line-height:1.55}
+.note b{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blue);display:block;margin-bottom:.3rem}
+
+.where{display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));margin:1.2rem 0 0}
+.room{border:1px solid var(--rule-strong);border-radius:3px;padding:.85rem 1rem;background:var(--surface)}
+.room h4{font-size:.7rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--blue);margin:0 0 .4rem}
+.room p{margin:0;font-size:.89rem;line-height:1.45;color:var(--slate)}
+
+ol.upgrade{margin:1rem 0 0;padding-left:1.3rem;display:grid;gap:.5rem;font-size:.95rem}
+ol.upgrade li::marker{font-weight:700;color:var(--blue)}
+ol.upgrade b{font-weight:600}
+
+.budget{border:2px solid var(--ink);padding:1.4rem 1.5rem;border-radius:3px;margin:3rem 0 0;
+  background:var(--surface);break-inside:avoid}
+.budget h2{font-size:1.15rem;font-weight:700;margin:0 0 .3rem;letter-spacing:-.01em}
+.budget p{font-family:var(--serif);font-size:.97rem;line-height:1.55;margin:0 0 .9rem;color:var(--slate)}
+.four{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1rem}
+.four span{border:1.5px solid var(--rule-strong);border-radius:2px;padding:.35rem .7rem;
+  font-size:.85rem;font-weight:600}
+.budget .last{margin:0;color:var(--ink)}
+
+.signoff{font-family:var(--serif);font-style:italic;font-size:1.02rem;text-align:center;
+  color:var(--slate);margin:3rem auto 0;max-width:42ch;line-height:1.5}
+footer{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--rule);font-size:.74rem;
+  color:var(--slate);display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;justify-content:space-between}
+footer b{color:var(--ink);font-weight:600}
+@media (max-width:36rem){
+  .sheet{padding:2rem 1.1rem 3rem}
+  td.item{white-space:normal}
+  table{font-size:.88rem}
+}
+@media print{
+  :root{--ink:#000;--paper:#fff;--surface:#fff;--slate:#444;--rule:#bbb;--rule-strong:#666;
+    --blue-soft:#fff;--amber:#7a4d0a;--amber-soft:#fff}
+  body{font-size:9.8pt}.sheet{max-width:none;padding:0}
+  .sec,.warn,.budget,.note{page-break-inside:avoid}
+  .sec-head{page-break-after:avoid}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="sheet">
+  <header class="mast">
+    <p class="eyebrow">Mr. Life Manager · Free Guide</p>
+    <h1>Cleaning Supply Starter&nbsp;List</h1>
+    <p class="deck">What to actually buy, what to skip, and roughly what it costs.</p>
+  </header>
+
+  <p class="standfirst">The cleaning aisle is designed to make you think you need forty
+  products. You need about nine. Most specialty cleaners are the same few ingredients with a
+  different label and a different smell.</p>
+
+  <p class="standfirst">Here's the honest list.</p>
+
+  <section class="sec">
+    <div class="sec-head"><span class="tag">Buy</span><h2>The nine that do the work</h2><span class="total">≈$40–60</span></div>
+    <div class="scroll"><table>
+      <thead><tr><th>What</th><th>Why</th><th class="p">Roughly</th></tr></thead>
+      <tbody>
+        <tr><td class="item">All-purpose cleaner</td><td class="why">Counters, tables, appliances, most surfaces. Your workhorse.</td><td class="price">$4–6</td></tr>
+        <tr><td class="item">Dish soap</td><td class="why">Dishes — and a decent spot cleaner besides</td><td class="price">$3–5</td></tr>
+        <tr><td class="item">Bathroom cleaner</td><td class="why">Soap scum and mildew need something stronger</td><td class="price">$4–6</td></tr>
+        <tr><td class="item">Toilet bowl cleaner</td><td class="why">Plus a brush</td><td class="price">$3–5</td></tr>
+        <tr><td class="item">Glass cleaner</td><td class="why">Optional — a damp microfiber does most of it</td><td class="price">$3–5</td></tr>
+        <tr><td class="item">Baking soda</td><td class="why">Scrubbing without scratching. Absurdly useful.</td><td class="price">$1–2</td></tr>
+        <tr><td class="item">White vinegar</td><td class="why">Descaling, hard water, shower heads, coffee maker</td><td class="price">$3–4</td></tr>
+        <tr class="star"><td class="item">Microfiber cloths</td><td class="why"><strong>The best purchase on this list.</strong> Six to twelve. Replaces most paper towels.</td><td class="price">$10–15</td></tr>
+        <tr><td class="item">Sponges or scrub pads</td><td class="why">Replace every 1–2 weeks</td><td class="price">$3–5</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="tag">Tools</span><h2>One-time buys</h2><span class="total">≈$50–80</span></div>
+    <div class="scroll"><table>
+      <thead><tr><th>What</th><th>Notes</th><th class="p">Roughly</th></tr></thead>
+      <tbody>
+        <tr><td class="item">Broom and dustpan</td><td class="why"></td><td class="price">$15–20</td></tr>
+        <tr><td class="item">Vacuum</td><td class="why">A cheap one you'll actually pull out beats an expensive one in a closet</td><td class="price">$40–150</td></tr>
+        <tr><td class="item">Mop and bucket</td><td class="why">A flat spray mop is fine for an apartment</td><td class="price">$15–30</td></tr>
+        <tr><td class="item">Rubber gloves</td><td class="why">Makes the unpleasant jobs less unpleasant</td><td class="price">$3–5</td></tr>
+        <tr><td class="item">Toilet brush and holder</td><td class="why"></td><td class="price">$5</td></tr>
+        <tr class="star"><td class="item">Plunger</td><td class="why"><strong>Buy it before you need it.</strong> You will not want to go out for one at 11pm.</td><td class="price">$8–12</td></tr>
+        <tr><td class="item">Trash bags</td><td class="why">Check your can size first</td><td class="price">$8–12</td></tr>
+        <tr><td class="item">Paper towels</td><td class="why">You'll use far fewer with microfiber</td><td class="price">$8–12</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="tag">Laundry</span><h2>Laundry</h2><span class="total">≈$25–35</span></div>
+    <div class="scroll"><table>
+      <thead><tr><th>What</th><th>Notes</th><th class="p">Roughly</th></tr></thead>
+      <tbody>
+        <tr><td class="item">Laundry detergent</td><td class="why">Use less than the cap suggests — almost everyone overdoses it</td><td class="price">$10–15</td></tr>
+        <tr><td class="item">Stain remover</td><td class="why">Works on fresh stains, rarely on set ones</td><td class="price">$4–6</td></tr>
+        <tr><td class="item">Dryer sheets or wool balls</td><td class="why">Wool balls last years</td><td class="price">$5–10</td></tr>
+        <tr><td class="item">Mesh bags for delicates</td><td class="why"></td><td class="price">$5</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="tag skip">Skip</span><h2>Don't buy these — at least not yet</h2></div>
+    <p class="sec-note">This is the part the cleaning aisle would rather you didn't read.</p>
+    <ul class="skips">
+      <li><b>A separate cleaner for every room</b><span>Kitchen, living room, and bedroom surfaces are the same surfaces. One all-purpose does it.</span></li>
+      <li><b>Wood-, granite-, and stainless-specific sprays</b><span>Buy these only when you actually have that surface <em>and</em> the general one isn't working.</span></li>
+      <li><b>Disinfecting wipes as your main cleaner</b><span>Convenient, expensive, wasteful, and worse at actual cleaning. Fine to keep a tub for quick jobs.</span></li>
+      <li><b>Scented everything</b><span>You're paying for fragrance — and it masks the smell of a surface that isn't clean.</span></li>
+      <li><b>Premium "natural" brands</b><span>Often the same actives at triple the price. Vinegar and baking soda are the actual budget natural option.</span></li>
+      <li><b>Steam mops, robot vacuums, specialty gadgets</b><span>Maybe later. Not in month one.</span></li>
+      <li><b>Bulk anything, at first</b><span>Buy small until you know what you'll use. Bulk cleaner you hate is worse than no cleaner.</span></li>
+    </ul>
+  </section>
+
+  <div class="warn">
+    <b>⚠ One safety rule</b>
+    <p><strong>Don't mix cleaning products.</strong> Some combinations — bleach with anything,
+    especially — make fumes that will genuinely hurt you.</p>
+    <p><strong>One product at a time. Rinse in between.</strong> If a surface needs two
+    treatments, rinse with water first. Open a window when you're using anything strong.</p>
+    <p>That's the whole rule. You don't need to know which combinations are the bad ones if you
+    never mix any of them.</p>
+  </div>
+
+  <section class="sec">
+    <div class="sec-head"><span class="tag">Storage</span><h2>Where to keep it</h2></div>
+    <p class="sec-note"><strong>Not all in one closet.</strong> This is the part that changes
+    whether cleaning actually happens.</p>
+    <div class="where">
+      <div class="room"><h4>Bathroom</h4><p>Bathroom cleaner, toilet cleaner, brush, a couple of cloths</p></div>
+      <div class="room"><h4>Kitchen</h4><p>All-purpose, dish soap, cloths, sponges</p></div>
+      <div class="room"><h4>Central closet</h4><p>Vacuum, mop, broom, backups, laundry supplies</p></div>
+    </div>
+    <div class="note">
+      <b>Why the duplicate is worth it</b>
+      Buying a second cheap bottle of bathroom cleaner feels wasteful and isn't. The bathroom
+      gets wiped when the supplies are already in the bathroom. Every trip down the hall is a
+      reason not to bother — and reasons not to bother are what you're actually fighting.
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="tag">Later</span><h2>The upgrade order</h2></div>
+    <p class="sec-note">Once the basics are working, in this order:</p>
+    <ol class="upgrade">
+      <li><b>More microfiber cloths.</b> Genuinely, more. You'll never regret it.</li>
+      <li>A <b>squeegee</b> for the shower — thirty seconds after showering prevents most soap scum, which is the worst job in the bathroom.</li>
+      <li>A <b>handheld vacuum</b> for quick messes.</li>
+      <li>An <b>extendable duster</b> for ceiling fans and high corners.</li>
+      <li>A <b>better vacuum</b>, once you know what you actually need.</li>
+    </ol>
+  </section>
+
+  <div class="budget">
+    <h2>If money is tight</h2>
+    <p>You can clean an entire apartment with four things, for about fifteen dollars:</p>
+    <div class="four">
+      <span>Dish soap</span><span>Baking soda</span><span>White vinegar</span><span>Microfiber cloths</span>
+    </div>
+    <p class="last">That covers dishes, counters, most surfaces, glass, scrubbing, and
+    descaling. Add a toilet brush and a plunger and you're genuinely fine. Everything else on
+    this page is convenience.</p>
+  </div>
+
+  <p class="signoff">Nobody teaches this, so most people learn it by buying $200 of cleaning
+  products and using four of them.</p>
+
+  <footer>
+    <span><b>Mr. Life Manager</b> — practical systems for running an adult life</span>
+    <span>Free to use, copy, and teach from — with credit. Not for resale.</span>
+  </footer>
+</div>

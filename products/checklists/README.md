@@ -49,11 +49,21 @@ Write a `brief.md` before building — see [../README.md](../README.md).
 
 | Product | State | Next step |
 |---|---|---|
-| [First Apartment Checklist](first-apartment/) | Draft 1 + [brief](first-apartment/brief.md) | Read by someone who moved recently |
-| [How Often Should I…?](how-often/) | Draft 1, **safety rows fact-checked** + [brief](how-often/brief.md) | Second pass on the non-safety rows |
-| [Cleaning Supply Starter List](cleaning-supplies/) | Draft 1 + [brief](cleaning-supplies/brief.md) | Price-check the ranges |
+| [First Apartment Checklist](first-apartment/) | Draft 1 + **designed** | Read by someone who moved recently |
+| [How Often Should I…?](how-often/) | Draft 1, safety rows checked + **designed** | Second pass on the non-safety rows |
+| [Cleaning Supply Starter List](cleaning-supplies/) | Draft 1 + **designed** | Price-check the ranges |
 
-**The free tier is now drafted.** Three assets, each with a brief.
+**The free tier is drafted and designed.** Three assets, each with a brief, a
+source `.md`, and a printable `.html`.
+
+They share one system: Archivo for mechanics, Source Serif for the teaching
+voice, blueprint blue for structure, amber spent only where money or safety is
+at stake. Each footer carries the
+[ADR-013](../../planning/decisions.md#adr-013--licensing-revised-free-to-use-never-free-to-sell)
+permission line, so the licensing decision travels on the asset.
+
+**Still untested with a real reader**, and no contact details or capture
+mechanism yet.
 
 Both are drafted as **source material for `content/`**, not the reverse —
 `content/` is still empty, so sections should be extracted back into it once
