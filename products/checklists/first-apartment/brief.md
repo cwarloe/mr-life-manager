@@ -1,6 +1,17 @@
 # Product Brief — First Apartment Checklist
 
-**Status:** Draft 1, 2026-09-08. Not reviewed, not designed, not tested.
+**Status:** Draft 1 text + **designed HTML** (2026-09-09). Not reviewed, not tested.
+**Files:** [`first-apartment-checklist.md`](first-apartment-checklist.md) (source text) ·
+[`first-apartment-checklist.html`](first-apartment-checklist.html) (designed, printable)
+
+**Design direction:** a building punch list — which is literally what Part 3 is.
+Blueprint blue carries structure; amber is spent only on the two money signals
+(★ day-one items, and the five costly mistakes). Archivo for checklist
+mechanics, Source Serif for the "why it matters" asides, so the teaching voice
+reads as a different register from the boxes. Real drawn checkboxes; print
+stylesheet goes black-on-white and holds sections together across pages. Footer
+carries the [ADR-013](../../../planning/decisions.md#adr-013--licensing-revised-free-to-use-never-free-to-sell)
+permission line.
 **Tier:** Rung 0 — free ([product-ladder.md](../../../docs/business/product-ladder.md))
 **Format:** 4-page printable PDF, black-and-white, US Letter
 

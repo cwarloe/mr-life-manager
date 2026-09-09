@@ -1,0 +1,511 @@
+<title>First Apartment Checklist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+:root{
+  --ink:#12161C; --paper:#FBF9F4; --surface:#FFFFFF;
+  --blue:#1F4E79; --blue-soft:#E7EEF5;
+  --amber:#B4741A; --amber-soft:#F7EEDD;
+  --slate:#6B7280; --rule:#D9D5CC; --rule-strong:#B8B2A6;
+  --sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
+    --blue:#8FB6DA; --blue-soft:#1D2833;
+    --amber:#E3A94E; --amber-soft:#2A2418;
+    --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
+  --blue:#8FB6DA; --blue-soft:#1D2833;
+  --amber:#E3A94E; --amber-soft:#2A2418;
+  --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
+}
+*{box-sizing:border-box}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:var(--sans); font-size:15px; line-height:1.5;
+  margin:0; padding:0;
+  -webkit-font-smoothing:antialiased;
+}
+.sheet{max-width:52rem;margin:0 auto;padding:3rem 1.5rem 5rem}
+
+/* ---- masthead ---- */
+.mast{border-bottom:3px solid var(--ink);padding-bottom:1.25rem;margin-bottom:.75rem}
+.eyebrow{
+  font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--blue);margin:0 0 .6rem
+}
+h1{
+  font-size:clamp(2.1rem,6vw,3.1rem);font-weight:700;line-height:1.02;
+  letter-spacing:-.02em;margin:0;text-wrap:balance
+}
+.deck{
+  font-family:var(--serif);font-size:1.05rem;line-height:1.5;color:var(--slate);
+  margin:.7rem 0 0;max-width:44ch
+}
+.standfirst{
+  font-family:var(--serif);font-size:1rem;line-height:1.6;
+  margin:1.25rem 0 0;max-width:62ch
+}
+.standfirst strong{font-weight:600}
+
+/* ---- legend ---- */
+.legend{
+  display:flex;flex-wrap:wrap;gap:1.25rem;
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  padding:.7rem 0;margin:2rem 0 2.5rem;
+  font-size:.78rem;color:var(--slate)
+}
+.legend b{color:var(--ink);font-weight:600}
+.star{color:var(--amber);font-weight:700}
+
+/* ---- part headers: the time sequence ---- */
+.part{margin:0 0 3rem;break-inside:avoid}
+.part-head{display:flex;align-items:baseline;gap:.9rem;border-bottom:2px solid var(--ink);padding-bottom:.5rem;margin-bottom:.35rem}
+.part-num{
+  font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--paper);background:var(--ink);
+  padding:.28rem .5rem;border-radius:2px;white-space:nowrap;
+  font-variant-numeric:tabular-nums
+}
+.part-head h2{font-size:1.4rem;font-weight:700;letter-spacing:-.015em;margin:0;flex:1}
+.when{font-size:.75rem;color:var(--slate);font-weight:500;white-space:nowrap}
+.part-note{font-family:var(--serif);color:var(--slate);font-size:.95rem;margin:.6rem 0 1.4rem}
+
+h3{
+  font-size:.76rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--blue);margin:2rem 0 .8rem;padding-bottom:.3rem;
+  border-bottom:1px solid var(--rule)
+}
+.lead-in{margin:0 0 .9rem;font-size:.95rem}
+
+/* ---- checkable items ---- */
+ul.checks{list-style:none;margin:0;padding:0;display:grid;gap:.45rem}
+ul.checks.two{grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:.45rem 1.75rem}
+ul.checks li{
+  position:relative;padding-left:1.7rem;font-size:.93rem;line-height:1.45;
+  break-inside:avoid
+}
+ul.checks li::before{
+  content:"";position:absolute;left:0;top:.18em;
+  width:.85rem;height:.85rem;border:1.5px solid var(--rule-strong);border-radius:2px
+}
+ul.checks li strong{font-weight:600}
+li.key::before{border-color:var(--amber);border-width:2px}
+li.key::after{content:"★";position:absolute;left:1.15rem;top:.02em;color:var(--amber);font-size:.6rem}
+li.key{padding-left:2.1rem}
+
+/* ---- the teacher's aside ---- */
+.why{
+  font-family:var(--serif);font-size:.95rem;line-height:1.55;
+  border-left:3px solid var(--blue);background:var(--blue-soft);
+  padding:.85rem 1.1rem;margin:1.2rem 0 0;border-radius:0 3px 3px 0;
+  break-inside:avoid
+}
+.why b{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blue);display:block;margin-bottom:.3rem}
+
+/* ---- money table ---- */
+.cost{margin:0;padding:0;list-style:none;counter-reset:c;display:grid;gap:.7rem}
+.cost li{
+  counter-increment:c;position:relative;padding-left:2.4rem;font-size:.95rem;
+  line-height:1.45;break-inside:avoid
+}
+.cost li::before{
+  content:counter(c);position:absolute;left:0;top:0;
+  font-family:var(--sans);font-weight:700;font-size:.8rem;
+  color:var(--amber);background:var(--amber-soft);
+  width:1.6rem;height:1.6rem;border-radius:50%;
+  display:grid;place-items:center;font-variant-numeric:tabular-nums
+}
+.cost li strong{font-weight:600}
+
+/* ---- closer ---- */
+.closer{
+  border:2px solid var(--ink);padding:1.5rem 1.6rem;margin:3.5rem 0 0;
+  border-radius:3px;break-inside:avoid;background:var(--surface)
+}
+.closer h2{font-size:1.15rem;font-weight:700;margin:0 0 .3rem;letter-spacing:-.01em}
+.closer p.sub{font-family:var(--serif);color:var(--slate);font-size:.92rem;margin:0 0 1.1rem}
+.closer ol{margin:0;padding-left:1.3rem;display:grid;gap:.4rem;font-size:.95rem}
+.closer ol li::marker{font-weight:700;color:var(--blue)}
+.closer .kicker{font-family:var(--serif);font-size:.95rem;margin:1.2rem 0 0;padding-top:1rem;border-top:1px solid var(--rule)}
+
+.signoff{
+  font-family:var(--serif);font-style:italic;font-size:1.02rem;
+  text-align:center;color:var(--slate);margin:3rem auto 0;max-width:38ch;line-height:1.5
+}
+footer{
+  margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--rule);
+  font-size:.74rem;color:var(--slate);display:flex;flex-wrap:wrap;
+  gap:.4rem 1.5rem;justify-content:space-between;align-items:baseline
+}
+footer b{color:var(--ink);font-weight:600}
+
+@media (max-width:34rem){
+  .sheet{padding:2rem 1.1rem 3rem}
+  .part-head{flex-wrap:wrap;gap:.5rem}
+  .when{width:100%}
+}
+@media print{
+  :root{--ink:#000;--paper:#fff;--surface:#fff;--blue:#1F4E79;--slate:#444;
+    --rule:#bbb;--rule-strong:#666;--blue-soft:#fff;--amber:#7a4d0a;--amber-soft:#fff}
+  body{font-size:10.2pt}
+  .sheet{max-width:none;padding:0}
+  .part{page-break-inside:auto}
+  .part-head,h3,.why,.closer{page-break-inside:avoid}
+  h3{page-break-after:avoid}
+  .why{border-left-width:2px}
+  footer{position:running(f)}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="sheet">
+
+  <header class="mast">
+    <p class="eyebrow">Mr. Life Manager · Free Guide</p>
+    <h1>The First Apartment Checklist</h1>
+    <p class="deck">Everything to do, buy, and find out — in the order you'll need it.</p>
+  </header>
+
+  <p class="standfirst">Most first-apartment lists are shopping lists. <strong>This one is a
+  sequence</strong>, because the order matters more than the list. Work through it roughly in
+  order and you won't spend your first month discovering things you should have handled in
+  week one.</p>
+
+  <p class="standfirst">Nobody is born knowing this. It just doesn't get taught.</p>
+
+  <div class="legend">
+    <span><b>☐</b> &nbsp;Check it off — print this and use a pen</span>
+    <span><span class="star">★</span> &nbsp;<b>You'll miss this in the first 24 hours</b></span>
+  </div>
+
+  <!-- PART 1 -->
+  <section class="part">
+    <div class="part-head">
+      <span class="part-num">Part 1</span>
+      <h2>Before you sign</h2>
+      <span class="when">15 minutes</span>
+    </div>
+    <p class="part-note">Fifteen minutes here saves months later.</p>
+
+    <h3>Read the lease — all of it</h3>
+    <p class="lead-in">Yes, really. Find these and write them down:</p>
+    <ul class="checks">
+      <li>Rent due date, and the late fee after it</li>
+      <li>Length of the lease, and what happens at the end — does it auto-renew?</li>
+      <li><strong>Notice required to move out</strong> — usually 30 or 60 days. Miss it and you owe another month.</li>
+      <li>What you pay for vs. what's included: water, trash, heat, electric, internet</li>
+      <li>Rules on guests, pets, subletting, painting, and mounting things on walls</li>
+      <li>How to submit a repair request, and who to call after hours</li>
+      <li>Deposit amount, and the conditions for getting it back</li>
+    </ul>
+
+    <h3>Ask before you sign</h3>
+    <ul class="checks">
+      <li>Which utilities do I set up, and with which companies?</li>
+      <li>Is renter's insurance required? <em>(Get it either way — see Part 3.)</em></li>
+      <li>What's the parking situation, and is it extra?</li>
+      <li>Which appliances are included, and who repairs them?</li>
+      <li>Has anything in this unit recently been repaired or had a problem?</li>
+    </ul>
+
+    <div class="why">
+      <b>Why it matters</b>
+      Almost every expensive surprise in a first apartment is written somewhere in the lease.
+      It's not that people agree to bad terms — it's that they never read them, so they don't
+      know what they agreed to.
+    </div>
+  </section>
+
+  <!-- PART 2 -->
+  <section class="part">
+    <div class="part-head">
+      <span class="part-num">Part 2</span>
+      <h2>Before you move a single box</h2>
+      <span class="when">A week ahead</span>
+    </div>
+
+    <h3>Set up utilities</h3>
+    <ul class="checks two">
+      <li>Electric</li>
+      <li>Gas</li>
+      <li>Water &amp; sewer <em>(often landlord)</em></li>
+      <li>Trash <em>(often landlord)</em></li>
+      <li><strong>Internet</strong> — book the install now; it's often 1–2 weeks out</li>
+      <li><strong>Put it all on autopay</strong> the day you set it up</li>
+    </ul>
+    <div class="why">
+      <b>Why it matters</b>
+      Autopay is the cheapest thing you will ever do to protect your credit. One missed bill
+      you never even saw can follow you for years.
+    </div>
+
+    <h3>Change your address</h3>
+    <ul class="checks two">
+      <li>USPS mail forwarding</li>
+      <li>Bank and credit cards</li>
+      <li>Employer / payroll</li>
+      <li>Driver's license</li>
+      <li>Vehicle registration</li>
+      <li>Voter registration</li>
+      <li>Auto and health insurance</li>
+      <li>Phone</li>
+      <li>Subscriptions that ship things</li>
+      <li>Doctor, dentist, pharmacy</li>
+      <li>School or student records</li>
+    </ul>
+  </section>
+
+  <!-- PART 3 -->
+  <section class="part">
+    <div class="part-head">
+      <span class="part-num">Part 3</span>
+      <h2>Move-in day, before you unpack</h2>
+      <span class="when">30 minutes</span>
+    </div>
+    <p class="part-note">The most valuable half hour in this document. Do it before a single
+    box comes in, while the place is still empty.</p>
+
+    <h3>Document the condition of everything</h3>
+    <ul class="checks">
+      <li><strong>Photograph and video every room</strong>, empty, with the date visible if you can</li>
+      <li>Close-ups of every existing flaw: scuffs, stains, chips, holes, scratched floors, dinged counters, torn screens, cracked tiles</li>
+      <li>Check and photograph inside the fridge and oven, under every sink, inside closets, window frames, and bathroom corners</li>
+      <li>Fill out the move-in condition form if you got one. <strong>If you didn't, email your landlord a list of what you found anyway</strong> — and keep that email.</li>
+      <li>Test every outlet, light switch, faucet (hot <em>and</em> cold), window, lock, and the toilet</li>
+      <li>Run the shower five minutes — check drainage, and how long the hot water lasts</li>
+    </ul>
+    <div class="why">
+      <b>Why it matters</b>
+      At move-out, the default assumption is that the damage is yours. Dated photos are how you
+      prove it wasn't. This routinely decides whether people get several hundred dollars back —
+      which makes it the highest-paid half hour of your year.
+    </div>
+
+    <h3>Find these five things and write down where they are</h3>
+    <ul class="checks">
+      <li><strong>Water shutoff valve</strong> — for the whole unit, and under each sink and toilet</li>
+      <li><strong>Breaker panel</strong> — and which switch controls what</li>
+      <li><strong>Water heater</strong> — and whether it's yours or shared</li>
+      <li><strong>Smoke and CO detectors</strong> — where they are, and test each one now</li>
+      <li><strong>Fire extinguisher</strong> — where the nearest one is</li>
+    </ul>
+    <div class="why">
+      <b>Why it matters</b>
+      You will not learn where the water shutoff is during a leak. You'll learn it after.
+    </div>
+
+    <h3>Get renter's insurance</h3>
+    <ul class="checks">
+      <li>It's cheap — a few dollars a month. Get it before you move in.</li>
+      <li><strong>Your landlord's insurance covers the building, not your things.</strong> If there's a fire, a burst pipe, or a break-in, this is what replaces your stuff.</li>
+      <li>Photograph your valuables and keep the receipts somewhere that isn't the apartment</li>
+    </ul>
+  </section>
+
+  <!-- PART 4 -->
+  <section class="part">
+    <div class="part-head">
+      <span class="part-num">Part 4</span>
+      <h2>The first shopping trip</h2>
+      <span class="when">Day one</span>
+    </div>
+    <p class="part-note">Grouped by where things go. You don't need all of it on day one —
+    the ★ items are what you'll miss first.</p>
+
+    <h3>Cleaning — buy these before you unpack</h3>
+    <ul class="checks two">
+      <li class="key">Paper towels</li>
+      <li class="key">Trash bags <em>(check the can size)</em></li>
+      <li class="key">Dish soap</li>
+      <li class="key">Plunger</li>
+      <li>All-purpose cleaner</li>
+      <li>Bathroom cleaner</li>
+      <li>Sponges and microfiber cloths</li>
+      <li>Toilet brush</li>
+      <li>Broom and dustpan</li>
+      <li>Vacuum or a good sweeper</li>
+      <li>Mop and bucket</li>
+      <li>Rubber gloves</li>
+      <li>Laundry detergent</li>
+      <li>Dryer sheets or wool balls</li>
+    </ul>
+    <div class="why">
+      <b>Where to keep it</b>
+      Keep a small set of supplies <em>in each room where you use them</em>. A second cheap
+      bottle of bathroom cleaner buys a behavior change — the bathroom gets wiped when the
+      supplies are already in the bathroom.
+    </div>
+
+    <h3>Kitchen</h3>
+    <ul class="checks two">
+      <li class="key">Dish soap, sponge, dish towels</li>
+      <li class="key">Can opener</li>
+      <li class="key">One good knife</li>
+      <li>Cutting board</li>
+      <li>Skillet</li>
+      <li>Saucepan with a lid</li>
+      <li>Baking sheet</li>
+      <li>Mixing bowl</li>
+      <li>Spatula, wooden spoon, tongs</li>
+      <li>Measuring cups and spoons</li>
+      <li>Colander</li>
+      <li>Plates, bowls, cups, silverware</li>
+      <li>Food storage containers</li>
+      <li>Foil, plastic wrap, storage bags</li>
+      <li>Oven mitt</li>
+      <li>Dish rack</li>
+    </ul>
+
+    <h3>Bathroom</h3>
+    <ul class="checks two">
+      <li class="key">Toilet paper</li>
+      <li class="key">Hand soap</li>
+      <li class="key">Shower curtain, liner, rings</li>
+      <li>Bath towels, hand towels, washcloths</li>
+      <li>Bath mat</li>
+      <li>Trash can</li>
+      <li>Basic first aid kit</li>
+      <li>Any medication you take</li>
+    </ul>
+
+    <h3>Bedroom</h3>
+    <ul class="checks two">
+      <li class="key">Sheets — two sets, so laundry day isn't a crisis</li>
+      <li class="key">Pillows</li>
+      <li>Comforter or duvet</li>
+      <li>Mattress protector</li>
+      <li>Hangers</li>
+      <li>Laundry hamper</li>
+      <li>Curtains or blinds, if the windows are bare</li>
+      <li>Alarm clock</li>
+    </ul>
+
+    <h3>The stuff nobody puts on the list</h3>
+    <ul class="checks two">
+      <li class="key">Light bulbs <em>(check what fits first)</em></li>
+      <li class="key">Batteries</li>
+      <li><strong>Toolkit:</strong> hammer, screwdriver with bits, tape measure, pliers, level, utility knife, adjustable wrench</li>
+      <li>Command strips and picture hardware</li>
+      <li>Extension cords, power strips</li>
+      <li>Flashlight</li>
+      <li>Duct tape</li>
+      <li>Scissors</li>
+      <li>Step stool</li>
+      <li>Fire extinguisher <em>(kitchen-rated)</em></li>
+      <li>Air filters — <strong>check the size on the existing one</strong></li>
+      <li>Drain hair catcher <em>(cheaper than a plumber, every time)</em></li>
+    </ul>
+  </section>
+
+  <!-- PART 5 -->
+  <section class="part">
+    <div class="part-head">
+      <span class="part-num">Part 5</span>
+      <h2>The first week</h2>
+      <span class="when">Days 1–7</span>
+    </div>
+    <ul class="checks">
+      <li><strong>Make your bed properly on night one.</strong> Everything else can wait; sleeping well is what makes the rest of the week possible.</li>
+      <li>Set up the kitchen before anything else — a working kitchen makes the place feel livable, and it's what stops the delivery spending</li>
+      <li><strong>Give things a home as you unpack.</strong> Unpacking is the only time you'll decide where things live from scratch. Don't waste it by stacking boxes.</li>
+      <li>Put daily-use items at waist-to-eye height; rarely-used things go high or low</li>
+      <li>Note the trash and recycling schedule, and where the bins go</li>
+      <li>Find the nearest grocery store, pharmacy, urgent care, and laundromat</li>
+      <li>Learn where mail is delivered and how packages are handled</li>
+      <li>Meet at least one neighbor — worth more than it sounds when you're locked out</li>
+      <li>Buy one week of groceries for <strong>three or four meals you already know how to make</strong></li>
+      <li>Test the smoke detectors; note the air filter size and set a reminder</li>
+    </ul>
+    <div class="why">
+      <b>Why it matters</b>
+      Ambitious grocery shopping in week one becomes food waste in week two. Cook what you
+      already know until the kitchen works.
+    </div>
+  </section>
+
+  <!-- PART 6 -->
+  <section class="part">
+    <div class="part-head">
+      <span class="part-num">Part 6</span>
+      <h2>The first month</h2>
+      <span class="when">Weeks 2–4</span>
+    </div>
+
+    <h3>Set up the systems</h3>
+    <ul class="checks">
+      <li><strong>Autopay everything</strong> — rent if you can, utilities, phone, insurance</li>
+      <li>Put these on a calendar for the whole year, with reminders: rent (monthly) · air filter (every 1–3 months) · smoke detector batteries (yearly) · insurance renewal · <strong>lease end date, and the notice deadline before it</strong></li>
+      <li>Pick a <strong>home for incoming mail</strong> — process it standing up, near a recycling bin</li>
+      <li>Pick a <strong>home for important documents</strong>: lease, insurance, pay stubs, anything with an account number</li>
+      <li>Pick a <strong>home for keys</strong> by the door, and use it every time</li>
+    </ul>
+    <div class="why">
+      <b>Why it matters</b>
+      A stack of mail is a stack of unmade decisions with deadlines attached. The stack isn't
+      the problem — the deferred decisions are.
+    </div>
+
+    <h3>Set the rhythm</h3>
+    <ul class="checks">
+      <li><strong>A ten-minute reset before bed</strong> — dishes in, counters wiped, things put back</li>
+      <li><strong>One weekly reset</strong>, 45–90 minutes: laundry, bathroom, floors, fridge clear-out. Same day each week, so you stop deciding.</li>
+      <li>Laundry on a schedule, not when you run out of clothes</li>
+    </ul>
+    <div class="why">
+      <b>Why it matters</b>
+      The nightly reset is the single habit that separates a place that stays livable from one
+      that spirals. Skip it four days and you've got a project instead of ten minutes.
+    </div>
+
+    <h3>If you have roommates</h3>
+    <ul class="checks">
+      <li><strong>Agree out loud who does what</strong>, and write it down. Not "we'll both do the kitchen" — "you own dishes, I own trash and floors."</li>
+      <li>Decide how shared bills are split, and <em>who actually pays the company</em></li>
+      <li>Agree on guests, quiet hours, and shared groceries <strong>before</strong> it's a problem</li>
+      <li>Name the invisible work too: noticing supplies are low, taking out recycling, scheduling repairs. It's real work, and it's what people end up resenting.</li>
+    </ul>
+  </section>
+
+  <!-- COSTS -->
+  <section class="part">
+    <div class="part-head">
+      <span class="part-num">Costly</span>
+      <h2>The five things that cost people the most</h2>
+    </div>
+    <ol class="cost">
+      <li><strong>Not documenting move-in condition.</strong> Hundreds of dollars, every time.</li>
+      <li><strong>Missing the move-out notice deadline.</strong> An extra month's rent.</li>
+      <li><strong>No renter's insurance.</strong> One burst pipe replaces everything you own.</li>
+      <li><strong>Aspirational grocery shopping.</strong> Produce rots; delivery fills the gap.</li>
+      <li><strong>Ignoring small repairs.</strong> Report them in writing, early. A slow drip becomes a ceiling.</li>
+    </ol>
+  </section>
+
+  <div class="closer">
+    <h2>If you only do five things</h2>
+    <p class="sub">Everything else on this list gets easier once these are true.</p>
+    <ol>
+      <li>Photograph everything before you unpack.</li>
+      <li>Put every bill on autopay.</li>
+      <li>Find the water shutoff and the breaker panel.</li>
+      <li>Give things a home while you're unpacking.</li>
+      <li>Reset the kitchen for ten minutes before bed.</li>
+    </ol>
+    <p class="kicker">That's it. Five things, and the first month stops happening <em>to</em> you.</p>
+  </div>
+
+  <p class="signoff">Nobody expected you to have known any of this. Now you do.</p>
+
+  <footer>
+    <span><b>Mr. Life Manager</b> — practical systems for running an adult life</span>
+    <span>Free to use, copy, and teach from — with credit. Not for resale.</span>
+  </footer>
+</div>
