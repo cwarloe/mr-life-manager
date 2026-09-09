@@ -20,11 +20,11 @@ one to have made money — only to have produced evidence.
 - [x] Draft the core frameworks
 - [x] Establish the repository and planning structure
 - [x] Draft business model and product ladder
-- [ ] **Record Dave — now the critical path.** Every framework here is a
-      reconstruction from memory; the primary source is uncaptured. Needs
-      *method*, not just time: he will tell you it's all obvious and mean it.
-      Guidance in
-      [source-material/](../source-material/original-charles-cleanup-notes.md).
+- [ ] **Record Dave — the critical path.** Every framework here is a
+      reconstruction from memory; the primary source is uncaptured.
+      **A session guide with 28 ready questions is drafted** —
+      [dave-session-guide.md](../source-material/interviews/dave-session-guide.md).
+      Take it to the session; don't send it ahead.
 - [ ] Import the existing written notes into `source-material/`
 - [x] Decide the faith-framing question — settled by
       [ADR-009](decisions.md#adr-009--faith-framing-convictions-inform-the-work-belief-is-never-required-to-use-it):
@@ -123,9 +123,10 @@ what you make.
       the one remaining step, and it's a paste-in URL.
 - [ ] **Pick an email provider and paste the endpoint in** — see
       [SETUP.md](../products/landing/SETUP.md)
-- [ ] Welcome sequence, 3 emails that teach rather than sell. The day-7 email
-      should invite a reply about what they're stuck on — **that is the research
-      channel**, and the most valuable email in the sequence.
+- [x] **Welcome sequence — draft 1 written** 2026-09-09
+      ([emails](../products/landing/emails/welcome-sequence.md)). Three emails,
+      nothing to buy in any of them. The day-7 email is the research channel —
+      it asks what they're stuck on and commits to answering every reply.
 - [ ] **A parent-facing variant** — "send this with your kid to college."
       Costs one extra landing page and tests the buyer-isn't-the-user hypothesis
       that may unlock the entire student market.

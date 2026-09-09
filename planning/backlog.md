@@ -19,7 +19,7 @@ Each item is tagged with its [roadmap](roadmap.md) phase and primary
 
 | Item | Type | Phase | Notes |
 |---|---|---|---|
-| **Record Dave** | Source | 0 | **The critical path.** Primary source is uncaptured; every framework is a reconstruction. Method matters — see [capture guidance](../source-material/original-charles-cleanup-notes.md). |
+| **Record Dave** | Source | 0 | **The critical path.** Questions are ready — [session guide](../source-material/interviews/dave-session-guide.md). Nothing blocking but the calendar. |
 | Import existing written notes | Source | 0 | Everything derives from this; the repo is incomplete without it |
 | ~~Plain-language permissions page~~ | Business | 0 | **Done** 2026-09-08 → [PERMISSIONS.md](../PERMISSIONS.md). Needs contact details before launch. |
 | Decide the faith-framing question | Decision | 0 | Shapes voice, channel, and partnerships. Blocks copywriting. |
