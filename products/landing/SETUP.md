@@ -1,36 +1,31 @@
 # Landing Page — Setup
 
-**Status:** Draft 1, 2026-09-09. Copy and design done. **Not connected to anything.**
+**Status:** MailerLite wired on the page (account `2635985`, form `00ZwEr`). Copy and
+design done. **Still needs PDF exports + hosting deploy before launch.**
 
 `index.html` is the page. It's static — no build step, no dependencies.
 
 ---
 
-## The one thing you have to do: pick an email provider
+## Email provider: MailerLite
 
-The page has **two identical signup forms** (hero and footer). Both have an empty
-`action=""` marked with a comment block. Paste your provider's form endpoint into
-both and the page works.
+**ESP:** MailerLite  
+**Account ID:** `2635985`  
+**Embedded form ID:** `00ZwEr`
 
-Candidates, all with free tiers at this size:
+The page loads MailerLite Universal once (script after `</style>`) and embeds the
+same form in the hero and closing signup sections via:
 
-| | Notes |
-|---|---|
-| **Buttondown** | Simplest. Plain-text, writer-first, cheap. Good fit for the voice. |
-| **ConvertKit / Kit** | Best automation for a free-guide-then-sequence funnel. Heavier. |
-| **Beehiiv** | Strong growth tooling; more publication-shaped than list-shaped. |
-| **MailerLite** | Generous free tier, decent automation. |
+```html
+<div class="ml-embedded" data-form="00ZwEr"></div>
+```
 
-**Recommendation: Buttondown or Kit.** Buttondown if you want to start writing
-this week; Kit if you know you want the delivery sequence automated from day one.
-
-Whichever you pick, the only change to this file is the `action` URL — the field
-is already named `email_address`, which most providers accept. Check your
-provider's expected field name and adjust if it differs.
+Surrounding section copy is unchanged. Guide cards no longer link out — the
+guides are the signup incentive.
 
 ## Then: the delivery sequence
 
-Signing up has to actually deliver the three guides. Set up:
+Signing up has to actually deliver the three guides. Set up in MailerLite:
 
 1. **Immediate** — the three guides (PDF exports of the checklist HTML files)
 2. **Day 3** — one genuinely useful thing, no ask
@@ -42,14 +37,17 @@ Keep the sequence teaching, not selling
 ([product-ladder.md](../../docs/business/product-ladder.md) rung 0: a free asset
 that's really a sales pitch poisons everything above it).
 
-## Guides: preview vs. production
+## Remaining before launch
 
-The three guide cards currently link to the published artifact previews, so the
-page can be clicked through end to end. **In production they shouldn't link
-anywhere** — the guides are what you get *for* signing up. Either remove the
-hrefs or point them at a post-signup delivery page.
+- [ ] **PDF exports** — print each checklist HTML to PDF for the email attachments
+- [ ] **Deploy** — host the static page (Netlify, Cloudflare Pages, GitHub Pages,
+      or Vercel) and point a domain at it
+- [ ] Confirm the MailerLite welcome/automation actually sends the three guides
 
-Print each checklist HTML to PDF for the email attachments.
+## Guides on the page
+
+The three guide cards describe the free assets but **do not link** to open
+previews. Readers get the guides by signing up.
 
 ## Hosting
 
