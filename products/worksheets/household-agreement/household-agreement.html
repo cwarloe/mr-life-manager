@@ -1,0 +1,294 @@
+<title>Household Agreement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+:root{
+  --ink:#12161C; --paper:#FBF9F4; --surface:#FFFFFF;
+  --blue:#1F4E79; --blue-soft:#E7EEF5;
+  --amber:#B4741A; --amber-soft:#F7EEDD;
+  --slate:#6B7280; --rule:#D9D5CC; --rule-strong:#B8B2A6;
+  --sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
+    --blue:#8FB6DA; --blue-soft:#1D2833;
+    --amber:#E3A94E; --amber-soft:#2A2418;
+    --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
+  --blue:#8FB6DA; --blue-soft:#1D2833;
+  --amber:#E3A94E; --amber-soft:#2A2418;
+  --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;
+  line-height:1.5;margin:0;-webkit-font-smoothing:antialiased}
+.sheet{max-width:50rem;margin:0 auto;padding:3rem 1.5rem 5rem}
+.mast{border-bottom:3px solid var(--ink);padding-bottom:1.25rem}
+.eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--blue);margin:0 0 .6rem}
+h1{font-size:clamp(2.1rem,6vw,3rem);font-weight:700;line-height:1.02;letter-spacing:-.02em;
+  margin:0;text-wrap:balance}
+.deck{font-family:var(--serif);font-size:1.05rem;color:var(--slate);margin:.7rem 0 0;max-width:46ch}
+.standfirst{font-family:var(--serif);font-size:1rem;line-height:1.6;margin:1.5rem 0 0;max-width:62ch}
+
+.why{border-left:3px solid var(--blue);background:var(--blue-soft);padding:.9rem 1.1rem;
+  margin:1.6rem 0 0;border-radius:0 3px 3px 0;font-family:var(--serif);font-size:.97rem;line-height:1.55}
+.why b{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blue);display:block;margin-bottom:.3rem}
+
+.sec{margin:2.75rem 0 0;break-inside:avoid}
+.sec-head{display:flex;align-items:baseline;gap:.9rem;border-bottom:2px solid var(--ink);
+  padding-bottom:.5rem;margin-bottom:.2rem}
+.num{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--paper);background:var(--ink);padding:.28rem .5rem;border-radius:2px;white-space:nowrap}
+.sec-head h2{font-size:1.3rem;font-weight:700;letter-spacing:-.015em;margin:0;flex:1}
+.sec-note{font-family:var(--serif);color:var(--slate);font-size:.94rem;margin:.6rem 0 1.1rem}
+
+/* fillable */
+.field{margin:0 0 1rem}
+.field label{display:block;font-size:.72rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--slate);margin-bottom:.3rem}
+.line{border-bottom:1.5px solid var(--rule-strong);height:1.85rem}
+.line.tall{height:3.2rem}
+.grid2{display:grid;gap:1rem 1.5rem;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr))}
+
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+thead th{font-size:.66rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--slate);text-align:left;padding:0 .6rem .4rem 0;border-bottom:1px solid var(--rule-strong)}
+tbody td{padding:.62rem .6rem;border-bottom:1px solid var(--rule);vertical-align:top}
+tbody td:first-child{padding-left:0;font-weight:500}
+tbody td.fill{border-bottom:1px solid var(--rule);min-width:6rem}
+tbody tr:last-child td{border-bottom:1px solid var(--rule-strong)}
+td.hint{font-family:var(--serif);color:var(--slate);font-size:.87rem}
+
+.example{border:2px dashed var(--rule-strong);border-radius:3px;padding:1.1rem 1.3rem;
+  margin:1.3rem 0 0;background:var(--surface)}
+.example b{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--amber);display:block;margin-bottom:.6rem}
+.example table{font-size:.88rem}
+.example td{color:var(--slate)}
+.example td:first-child{color:var(--ink)}
+
+.script{display:grid;gap:.8rem;margin:1.2rem 0 0}
+.step{border-left:3px solid var(--amber);padding:.1rem 0 .1rem 1rem}
+.step b{display:block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--amber);margin-bottom:.15rem}
+.step p{margin:0;font-family:var(--serif);font-size:.96rem;line-height:1.5}
+.step em{color:var(--ink);font-style:italic}
+
+.sign{border:2px solid var(--ink);padding:1.4rem 1.5rem;border-radius:3px;margin:3rem 0 0;
+  background:var(--surface);break-inside:avoid}
+.sign h2{font-size:1.1rem;font-weight:700;margin:0 0 .3rem}
+.sign p{font-family:var(--serif);font-size:.95rem;color:var(--slate);margin:0 0 1.2rem}
+.signoff{font-family:var(--serif);font-style:italic;font-size:1rem;text-align:center;
+  color:var(--slate);margin:2.5rem auto 0;max-width:40ch;line-height:1.5}
+footer{margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid var(--rule);font-size:.74rem;
+  color:var(--slate);display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;justify-content:space-between}
+footer b{color:var(--ink);font-weight:600}
+@media (max-width:34rem){.sheet{padding:2rem 1.1rem 3rem}table{font-size:.86rem}}
+@media print{
+  :root{--ink:#000;--paper:#fff;--surface:#fff;--slate:#444;--rule:#bbb;--rule-strong:#555;
+    --blue-soft:#fff;--amber:#7a4d0a;--amber-soft:#fff}
+  body{font-size:10pt}.sheet{max-width:none;padding:0}
+  .sec,.sign,.why,.example{page-break-inside:avoid}
+  .sec-head{page-break-after:avoid}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="sheet">
+  <header class="mast">
+    <p class="eyebrow">Mr. Life Manager · Worksheet</p>
+    <h1>The Household Agreement</h1>
+    <p class="deck">Decide it once, together, before it's a problem.</p>
+  </header>
+
+  <p class="standfirst">Almost every roommate fight and most household resentment comes from the
+  same place: <strong>nobody ever said out loud who does what.</strong> So it gets absorbed by
+  whoever notices first — and that person slowly becomes the household's memory, and burns
+  out.</p>
+
+  <p class="standfirst">This takes about forty minutes. Do it at the start, when nobody's
+  annoyed yet. Fill it in together, print two copies, stick one on the fridge.</p>
+
+  <div class="why">
+    <b>Why writing it down works</b>
+    An unwritten expectation gets renegotiated every single time. A written one was decided
+    once. That's the entire trick — you're not being bureaucratic, you're closing a decision so
+    it stops costing you.
+  </div>
+
+  <section class="sec">
+    <div class="sec-head"><span class="num">01</span><h2>Who lives here</h2></div>
+    <div class="grid2">
+      <div class="field"><label>Name</label><div class="line"></div></div>
+      <div class="field"><label>Name</label><div class="line"></div></div>
+      <div class="field"><label>Name</label><div class="line"></div></div>
+      <div class="field"><label>Date agreed</label><div class="line"></div></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="num">02</span><h2>Who owns what</h2></div>
+    <p class="sec-note">Not "we'll both do the kitchen." One name per line. <strong>Owning a job
+    means noticing it needs doing</strong>, doing it, and knowing when supplies run out — not
+    just the visible part.</p>
+    <div class="scroll"><table>
+      <thead><tr><th>Job</th><th>Owner</th><th>How often</th></tr></thead>
+      <tbody>
+        <tr><td>Dishes</td><td class="fill"></td><td class="fill"></td></tr>
+        <tr><td>Kitchen counters &amp; stove</td><td class="fill"></td><td class="fill"></td></tr>
+        <tr><td>Trash &amp; recycling out</td><td class="fill"></td><td class="fill"></td></tr>
+        <tr><td>Bathroom</td><td class="fill"></td><td class="fill"></td></tr>
+        <tr><td>Floors — vacuum &amp; mop</td><td class="fill"></td><td class="fill"></td></tr>
+        <tr><td>Shared-space tidy</td><td class="fill"></td><td class="fill"></td></tr>
+        <tr><td>Buying shared supplies</td><td class="fill"></td><td class="fill"></td></tr>
+        <tr><td>Fridge clear-out</td><td class="fill"></td><td class="fill"></td></tr>
+        <tr><td>Dealing with the landlord</td><td class="fill"></td><td class="fill"></td></tr>
+        <tr><td></td><td class="fill"></td><td class="fill"></td></tr>
+        <tr><td></td><td class="fill"></td><td class="fill"></td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="example">
+      <b>Filled example</b>
+      <table>
+        <tbody>
+          <tr><td>Dishes</td><td>Sam — same night, before bed</td></tr>
+          <tr><td>Trash &amp; recycling</td><td>Alex — out Tuesday, and buys the bags</td></tr>
+          <tr><td>Bathroom</td><td>Alternate weeks — Sam odd, Alex even</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="num">03</span><h2>The invisible work</h2></div>
+    <p class="sec-note">This is the part that gets skipped, and it's the part people actually
+    resent. Someone is already doing all of it. Name them.</p>
+    <div class="scroll"><table>
+      <thead><tr><th>The job nobody counts</th><th>Owner</th></tr></thead>
+      <tbody>
+        <tr><td>Noticing we're out of something</td><td class="fill"></td></tr>
+        <tr><td>Actually paying the bills on time</td><td class="fill"></td></tr>
+        <tr><td>Scheduling repairs, chasing the landlord</td><td class="fill"></td></tr>
+        <tr><td>Knowing what's in the fridge</td><td class="fill"></td></tr>
+        <tr><td>Remembering when rent is due</td><td class="fill"></td></tr>
+        <tr><td>Being the one who says something when it slips</td><td class="fill"></td></tr>
+      </tbody>
+    </table></div>
+    <div class="why">
+      <b>Why this section exists</b>
+      Noticing is work. Tracking is work. Being the person who has to bring it up is
+      <em>especially</em> work. If one person is doing all of it, they're carrying a second job
+      nobody has acknowledged — and that's what turns into a fight about dishes that isn't
+      really about dishes.
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="num">04</span><h2>What "clean enough" means</h2></div>
+    <p class="sec-note">People have wildly different defaults and assume theirs is normal.
+    Agree the floor, not the ideal.</p>
+    <div class="field"><label>Kitchen at the end of a night should look like…</label><div class="line tall"></div></div>
+    <div class="field"><label>Shared spaces on a normal weekday should look like…</label><div class="line tall"></div></div>
+    <div class="field"><label>Things we've agreed we genuinely don't care about</label><div class="line tall"></div></div>
+    <div class="field"><label>Your own room: anything goes, or are there limits?</label><div class="line"></div></div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="num">05</span><h2>Money</h2></div>
+    <p class="sec-note">The two things that cause trouble: who <em>actually</em> pays the
+    company, and what counts as shared.</p>
+    <div class="scroll"><table>
+      <thead><tr><th>Bill</th><th>In whose name</th><th>Split how</th><th>Due</th></tr></thead>
+      <tbody>
+        <tr><td>Rent</td><td class="fill"></td><td class="fill"></td><td class="fill"></td></tr>
+        <tr><td>Electric</td><td class="fill"></td><td class="fill"></td><td class="fill"></td></tr>
+        <tr><td>Gas</td><td class="fill"></td><td class="fill"></td><td class="fill"></td></tr>
+        <tr><td>Internet</td><td class="fill"></td><td class="fill"></td><td class="fill"></td></tr>
+        <tr><td>Water / trash</td><td class="fill"></td><td class="fill"></td><td class="fill"></td></tr>
+        <tr><td></td><td class="fill"></td><td class="fill"></td><td class="fill"></td></tr>
+      </tbody>
+    </table></div>
+    <div class="grid2" style="margin-top:1.2rem">
+      <div class="field"><label>Shared supplies we split</label><div class="line tall"></div></div>
+      <div class="field"><label>How we settle up, and when</label><div class="line tall"></div></div>
+    </div>
+    <div class="why">
+      <b>The one that bites</b>
+      Whoever's name is on the bill takes the credit hit if it's late — no matter who owed
+      what. Put it on autopay from an account that's actually funded, and settle up separately.
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="num">06</span><h2>Living together</h2></div>
+    <div class="field"><label>Guests — how much notice, how often, how long</label><div class="line tall"></div></div>
+    <div class="field"><label>Partners staying over — what's normal, what's too much</label><div class="line tall"></div></div>
+    <div class="field"><label>Quiet hours</label><div class="line"></div></div>
+    <div class="field"><label>Food — shared, separate, or both? What's off-limits?</label><div class="line tall"></div></div>
+    <div class="field"><label>Borrowing each other's things</label><div class="line"></div></div>
+    <div class="field"><label>Anything else that would bother you if it happened</label><div class="line tall"></div></div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="num">07</span><h2>When it slips — the script</h2></div>
+    <p class="sec-note">It will slip. Agreeing <em>now</em> how you'll raise it means nobody has
+    to invent a way to do it while annoyed.</p>
+    <div class="script">
+      <div class="step"><b>Within a few days</b><p>Say it early, while it's still small and
+      boring. A week of silence turns a dish into a character judgement.</p></div>
+      <div class="step"><b>Name the thing, not the person</b><p><em>"The kitchen's been piling
+      up this week"</em> — not <em>"you never do the dishes."</em></p></div>
+      <div class="step"><b>Ask before you assume</b><p><em>"Is something going on, or did it
+      just get away from you?"</em> Usually it's the second one.</p></div>
+      <div class="step"><b>Fix the system, not just the instance</b><p>If the same thing keeps
+      slipping, the agreement is wrong. Change the agreement.</p></div>
+      <div class="step"><b>Assume good faith</b><p>Almost nobody is trying to get away with
+      anything. They forgot, or they're underwater, or their normal is different from yours.</p></div>
+    </div>
+    <div class="field" style="margin-top:1.4rem"><label>How we've agreed to bring things up</label><div class="line tall"></div></div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="num">08</span><h2>Check back in</h2></div>
+    <p class="sec-note">An agreement nobody revisits becomes an agreement nobody honors. Put a
+    real date on it.</p>
+    <div class="grid2">
+      <div class="field"><label>We'll review this on</label><div class="line"></div></div>
+      <div class="field"><label>Quick weekly check-in — when?</label><div class="line"></div></div>
+    </div>
+    <div class="why">
+      <b>Ten minutes, weekly</b>
+      Anything coming up? Anything not working? That's the whole meeting. It sounds
+      unnecessary right up until the month you skip it.
+    </div>
+  </section>
+
+  <div class="sign">
+    <h2>We agree to this</h2>
+    <p>Not a contract — a record of what we decided, so nobody has to remember it.</p>
+    <div class="grid2">
+      <div class="field"><label>Signed</label><div class="line"></div></div>
+      <div class="field"><label>Signed</label><div class="line"></div></div>
+      <div class="field"><label>Signed</label><div class="line"></div></div>
+      <div class="field"><label>Date</label><div class="line"></div></div>
+    </div>
+  </div>
+
+  <p class="signoff">The awkward forty minutes now is cheaper than the year of quiet resentment
+  later.</p>
+
+  <footer>
+    <span><b>Mr. Life Manager</b> — practical systems for running an adult life</span>
+    <span>Free to use, copy, and teach from — with credit. Not for resale.</span>
+  </footer>
+</div>

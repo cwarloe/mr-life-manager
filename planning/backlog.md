@@ -46,7 +46,7 @@ Each item is tagged with its [roadmap](roadmap.md) phase and primary
 | Annual home maintenance calendar | Maintenance | Apartment and house versions |
 | What documents to keep, where, how long | Paperwork | High anxiety, low information available |
 | Money setup: accounts, autopay, buffer | Money | Keep it to one page; resist scope creep |
-| Roommate/household agreement template | Relationships | Enormous felt pain, near-zero content exists |
+| ~~Roommate/household agreement template~~ | Relationships | **Drafted + designed** 2026-09-15 → [worksheet](../products/worksheets/household-agreement/) |
 | Move-in / move-out checklists | Transitions | Seasonal, urgent, high search volume |
 
 ### Product
@@ -55,7 +55,7 @@ Each item is tagged with its [roadmap](roadmap.md) phase and primary
 |---|---|---|
 | Landing page + email capture | 2 | Boring tooling; don't over-engineer |
 | Welcome email sequence (3–5) | 2 | Teach, don't sell |
-| Parent-facing gift landing page | 2 | Tests the buyer≠user hypothesis. Cheap, potentially decisive. |
+| ~~Parent-facing gift landing page~~ | 2 | **Drafted** 2026-09-15 → [index-parents.html](../products/landing/index-parents.html) |
 | 2–3 low-cost guides ($9–$19) | 3 | Tests which topic sells before committing to a book |
 | ***First Place*** outline | 3 | Outline first, write second |
 | Payment + delivery setup | 3 | Gumroad or similar; pick and move on |

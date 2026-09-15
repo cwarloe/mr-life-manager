@@ -37,4 +37,12 @@ Write a `brief.md` before building — see [../README.md](../README.md).
 
 ## Status
 
-Empty. See [backlog.md](../../planning/backlog.md).
+| Worksheet | State |
+|---|---|
+| [Household Agreement](household-agreement/) | **Draft 1, designed** 2026-09-15 |
+
+Serves roommates and couples equally — the research found the pain is the same
+shape in both, and nothing comparable exists as a real product. Includes a filled
+example, per the standard above.
+
+Rest of the list is still open. See [backlog.md](../../planning/backlog.md).

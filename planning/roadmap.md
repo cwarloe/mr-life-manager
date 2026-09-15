@@ -57,6 +57,8 @@ This phase costs nothing but time and is the one most likely to be skipped. Don'
 - [ ] **15–20 conversations** across the personas in
       [target-audiences.md](../docs/vision/target-audiences.md). Recent movers,
       newlyweds, and recent grads are easiest to reach through existing networks.
+      **Script ready** —
+      [customer-interview-script.md](../docs/research/interviews/customer-interview-script.md).
 - [ ] Lead with: *"What's something about running a home you had to figure out on
       your own and felt like you should have already known?"*
 - [ ] Ask what they've **already tried**, and what they've **already paid for**.
@@ -127,9 +129,9 @@ what you make.
       ([emails](../products/landing/emails/welcome-sequence.md)). Three emails,
       nothing to buy in any of them. The day-7 email is the research channel —
       it asks what they're stuck on and commits to answering every reply.
-- [ ] **A parent-facing variant** — "send this with your kid to college."
-      Costs one extra landing page and tests the buyer-isn't-the-user hypothesis
-      that may unlock the entire student market.
+- [x] **Parent-facing variant — drafted** 2026-09-15
+      ([index-parents.html](../products/landing/index-parents.html)). Tests the
+      buyer-isn't-the-user hypothesis that may unlock the student market.
 
 ### Distribute
 
