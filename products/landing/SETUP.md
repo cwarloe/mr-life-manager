@@ -1,9 +1,11 @@
 # Landing Page — Setup
 
-**Status:** MailerLite wired on the page (account `2635985`, form `00ZwEr`). Copy and
-design done. **Still needs PDF exports + hosting deploy before launch.**
+**Status:** MailerLite wired on both pages (account `2635985`, form `00ZwEr`). Copy and
+design done. PDF exports and main deploy are done. Parent-facing variant is live at
+`/index-parents.html` (same MailerLite form as `index.html`).
 
-`index.html` is the page. It's static — no build step, no dependencies.
+`index.html` is the main page; `index-parents.html` is the parent-facing variant.
+Both are static — no build step, no dependencies.
 
 ---
 
@@ -13,7 +15,7 @@ design done. **Still needs PDF exports + hosting deploy before launch.**
 **Account ID:** `2635985`  
 **Embedded form ID:** `00ZwEr`
 
-The page loads MailerLite Universal once (script after `</style>`) and embeds the
+Both pages load MailerLite Universal once (script after `</style>`) and embed the
 same form in the hero and closing signup sections via:
 
 ```html
@@ -39,8 +41,8 @@ that's really a sales pitch poisons everything above it).
 
 ## Remaining before launch
 
-- [ ] **PDF exports** — print each checklist HTML to PDF for the email attachments
-- [ ] **Deploy** — host the static page (Netlify, Cloudflare Pages, GitHub Pages,
+- [x] **PDF exports** — print each checklist HTML to PDF for the email attachments
+- [x] **Deploy** — host the static page (Netlify, Cloudflare Pages, GitHub Pages,
       or Vercel) and point a domain at it
 - [ ] Confirm the MailerLite welcome/automation actually sends the three guides
 
@@ -64,7 +66,7 @@ made a prerequisite.
 - [ ] A photo of Dave, if he's willing — the Dave section carries the page and
       currently has no face
 - [ ] Privacy note near the signup, once there's a real list
-- [ ] A parent-facing variant, per the Phase 2 channel test in
+- [x] A parent-facing variant (`index-parents.html`), per the Phase 2 channel test in
       [roadmap.md](../../planning/roadmap.md)
 
 ## Copy decisions worth knowing
