@@ -84,8 +84,6 @@ p.body strong{font-weight:600}
 .guides{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));margin:2rem 0 0}
 .guide{border:2px solid var(--rule-strong);border-radius:3px;padding:1.3rem 1.4rem;
   background:var(--surface);display:flex;flex-direction:column;gap:.5rem;text-decoration:none;color:inherit}
-.guide:hover{border-color:var(--blue)}
-.guide:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
 .guide .num{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
 .guide h3{font-size:1.08rem;font-weight:700;margin:0;letter-spacing:-.01em;line-height:1.25}
 .guide p{font-family:var(--serif);font-size:.93rem;line-height:1.5;color:var(--slate);margin:0}
@@ -119,6 +117,15 @@ footer a{color:var(--slate)}
 }
 </style>
 
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2635985');
+</script>
+
+
 <div class="bar"><div class="wrap">
   <span class="brand">Mr.&nbsp;<span>Life Manager</span></span>
   <a href="#guides">Free guides</a>
@@ -132,16 +139,7 @@ footer a{color:var(--slate)}
   and that was never your fault.</p>
 
   <div class="signup">
-    <!-- ═══════════════════════════════════════════════════════════════════
-         INTEGRATION POINT — replace action="" with your email provider's
-         form endpoint (ConvertKit, Beehiiv, Buttondown, MailerLite…).
-         Most give you a URL to paste here. Nothing else needs to change.
-         ═══════════════════════════════════════════════════════════════════ -->
-    <form action="" method="post">
-      <label for="email" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Email address</label>
-      <input id="email" name="email_address" type="email" required placeholder="you@example.com" autocomplete="email">
-      <button type="submit">Send me the guides</button>
-    </form>
+    <div class="ml-embedded" data-form="00ZwEr"></div>
     <p class="fine">Three free guides, then an occasional note when there's something
     genuinely useful. Unsubscribe whenever — no hard feelings.</p>
   </div>
@@ -154,27 +152,27 @@ footer a{color:var(--slate)}
   take from us, they'll still have done their job.</p>
 
   <div class="guides">
-    <a class="guide" href="https://claude.ai/code/artifact/5c207676-f7e3-46ac-9f08-0d6f0130810b">
+    <div class="guide">
       <span class="num">Guide 01</span>
       <h3>The First Apartment Checklist</h3>
       <p>Everything to do, buy, and find out — in the order you'll need it. Including the
       half hour on move-in day that decides whether you get your deposit back.</p>
-      <span class="go">Read it →</span>
-    </a>
-    <a class="guide" href="https://claude.ai/code/artifact/3e114e67-79da-4c94-b532-4ce1b3a1d151">
+      <span class="go">Free when you sign up</span>
+    </div>
+    <div class="guide">
       <span class="num">Guide 02</span>
       <h3>How Often Should I…?</h3>
       <p>Sheets, filters, towels, oil, the dryer vent. Every cadence in one place, with an
       honest "good enough" next to the ideal.</p>
-      <span class="go">Read it →</span>
-    </a>
-    <a class="guide" href="https://claude.ai/code/artifact/081fdfef-3e22-4758-9b93-7955bd8698c5">
+      <span class="go">Free when you sign up</span>
+    </div>
+    <div class="guide">
       <span class="num">Guide 03</span>
       <h3>Cleaning Supply Starter List</h3>
       <p>The nine products that do the work, what they cost, and the long list of things the
       cleaning aisle wants you to buy that you don't need.</p>
-      <span class="go">Read it →</span>
-    </a>
+      <span class="go">Free when you sign up</span>
+    </div>
   </div>
 </div></section>
 
@@ -234,12 +232,7 @@ footer a{color:var(--slate)}
   <p class="lede">Start with the three guides. They're free, they're complete, and they'll tell
   you more in twenty minutes than anyone ever bothered to.</p>
   <div class="signup">
-    <!-- Same integration point as above — use the same endpoint. -->
-    <form action="" method="post">
-      <label for="email2" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Email address</label>
-      <input id="email2" name="email_address" type="email" required placeholder="you@example.com" autocomplete="email">
-      <button type="submit">Send me the guides</button>
-    </form>
+    <div class="ml-embedded" data-form="00ZwEr"></div>
     <p class="fine">Three free guides. Occasional notes. Unsubscribe whenever.</p>
   </div>
 </div></section>
