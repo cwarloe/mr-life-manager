@@ -1,0 +1,25 @@
+name: Validate repository content
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    paths:
+      - "**/*.html"
+      - "**/*.md"
+      - ".github/scripts/validate_repo.py"
+      - ".github/workflows/validate-content.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate HTML structure and local links
+        run: python .github/scripts/validate_repo.py
