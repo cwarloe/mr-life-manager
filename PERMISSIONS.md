@@ -1,8 +1,9 @@
 # What You Can Do With This
 
-**Plain language. Not a legal document** — the actual terms are in
-[LICENSING-NOTES.md](LICENSING-NOTES.md). This page is here so you don't have to
-read that one.
+**Plain language. Not a legal document.** The intended model and its rationale
+are recorded in [LICENSING-NOTES.md](LICENSING-NOTES.md); formal scoped license
+files have not yet been published. This page explains the permissions the
+project owner intends to grant, not a completed licensing implementation.
 
 ---
 
