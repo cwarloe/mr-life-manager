@@ -1,7 +1,7 @@
 # Product Brief — How Often Should I…?
 
-**Status:** Draft 1, 2026-09-08. Not reviewed, not designed, not fact-checked by
-a second pair of eyes.
+**Status:** Drafted, designed, and first-pass fact-checked, 2026-09-09. Not yet
+reviewed or tested with a real reader.
 **Tier:** Rung 0 — free ([product-ladder.md](../../../docs/business/product-ladder.md))
 **Format:** printable reference, black-and-white, US Letter. Designed to be
 **taped inside a cabinet door.**

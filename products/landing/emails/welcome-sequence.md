@@ -128,7 +128,8 @@ that they still remember signing up.
 
 - [ ] Fill in the sign-off name — decide whether the apprentice signs by name
       (recommended: it matches the whole posture)
-- [ ] Export the three guides to PDF from the checklist HTML files
+- [ ] Confirm the three exported PDFs are attached to the immediate email and
+      open correctly on a phone
 - [ ] Test both subject lines on email 1 and 2 if the provider supports it
 - [ ] Send the whole sequence to yourself first and read it on a phone
 - [ ] **Decide who answers the day-7 replies, and commit to actually doing it.**

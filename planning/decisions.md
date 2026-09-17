@@ -378,7 +378,7 @@ strengthens the existing exclusion of "an app as the primary product" in
 
 ## ADR-008 — License: deliberately undecided
 
-**Status:** Proposed
+**Status:** Superseded by [ADR-013](#adr-013--licensing-revised-free-to-use-never-free-to-sell)
 **Date:** 2026-09-05
 
 **Context.** A public repository with no license is "all rights reserved" by
@@ -775,14 +775,12 @@ Not yet ADRs. These need to be made, and each blocks something.
 |---|---|---|
 | Put Dave's arrangement in writing at some point — **not urgent, substance is settled** ([ADR-011](#adr-011--mr-life-manager-is-a-real-person-dave-webster)). It protects him and his family more than it protects the founder. | Nothing immediate | Low |
 | **Capture Dave's material before anything else.** He under-reports his own expertise by nature, so this needs method, not just time. | All content; the entire product line | **Highest** |
-| **Is he "Dave Webster" publicly, or only "Mr. Life Manager"?** | Copy, the about page, how the face is used | **High** |
+| **Confirm whether he is publicly "Dave Webster" or only "Mr. Life Manager."** The current landing pages already use his full name; either record that permission or revise the pages. | Copy, the about page, how the face is used | **High** |
 | **Whose notes are in `source-material/`** — the founder's, Dave's, or the founder's record of Dave's teaching? | Attribution, and the file's name | **High** |
-| **Trademark the name.** Now the primary protected asset under [ADR-012](#adr-012--licensing-permission-is-the-marketing). | Licensing model, brand safety | **High** |
-| Write the plain-language permissions page that goes with the licence | Clarity for institutional users | Medium |
+| **Complete the trademark search.** The name is the primary protected asset under [ADR-013](#adr-013--licensing-revised-free-to-use-never-free-to-sell). | Licensing model, brand safety | **High** |
 | Is Health in scope, given liability and expertise limits? | Domain taxonomy, content plan | Low |
 | Does Transportation earn its own domain, or fold into Maintenance? | Taxonomy | Low |
 | Should the public-facing domain list compress from 13 to 5–6? | Marketing, product structure | Low |
-| Presell *First Place* or write it first? | Phase 3 sequencing | Medium |
 
 **Closed by evidence, not by decision:** *"What scope of offering — content, app,
 or hybrid?"* was raised externally as an open question. It is already answered:

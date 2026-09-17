@@ -22,10 +22,11 @@ Each item is tagged with its [roadmap](roadmap.md) phase and primary
 | **Record Dave** | Source | 0 | **The critical path.** Questions are ready — [session guide](../source-material/interviews/dave-session-guide.md). Nothing blocking but the calendar. |
 | Import existing written notes | Source | 0 | Everything derives from this; the repo is incomplete without it |
 | ~~Plain-language permissions page~~ | Business | 0 | **Done** 2026-09-08 → [PERMISSIONS.md](../PERMISSIONS.md). Needs contact details before launch. |
-| Decide the faith-framing question | Decision | 0 | Shapes voice, channel, and partnerships. Blocks copywriting. |
+| ~~Decide the faith-framing question~~ | Decision | 0 | **Done** 2026-09-08 → [ADR-009](decisions.md#adr-009--faith-framing-convictions-inform-the-work-belief-is-never-required-to-use-it). |
 | Name/trademark check on "Mr. Life Manager" | Research | 0 | Cheapest now; expensive after a launch |
+| Verify MailerLite delivery end to end | Launch | 2 | Test both forms, all three emails, guide delivery, unsubscribe, and replies on phone and desktop. |
 | Line up first 5 validation conversations | Research | 1 | Warm network first |
-| ~~Draft the First Apartment Checklist~~ | Product | 2 | **Draft 1 done** 2026-09-08 → [product](../products/checklists/first-apartment/). Needs review + design. |
+| ~~Draft and design the First Apartment Checklist~~ | Product | 2 | **Done** 2026-09-09 → [product](../products/checklists/first-apartment/). Still needs real-reader review and testing. |
 
 ---
 
@@ -35,8 +36,8 @@ Each item is tagged with its [roadmap](roadmap.md) phase and primary
 
 | Item | Domain | Notes |
 |---|---|---|
-| ~~"How Often Should I…?" cadence reference~~ | All | **Draft 1 done** 2026-09-08 → [product](../products/checklists/how-often/). **Must be fact-checked before it ships.** |
-| ~~Cleaning supply starter list~~ | Home | **Draft 1 done** 2026-09-08 → [product](../products/checklists/cleaning-supplies/). Affiliate revenue would undermine its core credibility move — see its brief. |
+| ~~"How Often Should I…?" cadence reference~~ | All | **Drafted, designed, and first-pass fact-checked** 2026-09-09 → [product](../products/checklists/how-often/). Still needs real-reader testing. |
+| ~~Cleaning supply starter list~~ | Home | **Drafted and designed** 2026-09-09 → [product](../products/checklists/cleaning-supplies/). Still needs real-reader testing; affiliate revenue would undermine its credibility move. |
 | The 20-minute reset routine | Home | Emergency recovery, high emotional value |
 | Nightly kitchen reset | Home/Food | The keystone habit; teach it first |
 | Weekly reset routine | Time | The other keystone |
@@ -53,9 +54,9 @@ Each item is tagged with its [roadmap](roadmap.md) phase and primary
 
 | Item | Phase | Notes |
 |---|---|---|
-| Landing page + email capture | 2 | Boring tooling; don't over-engineer |
-| Welcome email sequence (3–5) | 2 | Teach, don't sell |
-| ~~Parent-facing gift landing page~~ | 2 | **Drafted** 2026-09-15 → [index-parents.html](../products/landing/index-parents.html) |
+| ~~Landing page + email capture~~ | 2 | **Deployed and connected to MailerLite** 2026-09-16. End-to-end delivery test remains P0. |
+| Welcome email sequence (3–5) | 2 | Drafted; configure and test in MailerLite. Teach, don't sell. |
+| ~~Parent-facing gift landing page~~ | 2 | **Deployed and connected** 2026-09-16 → [index-parents.html](../products/landing/index-parents.html) |
 | 2–3 low-cost guides ($9–$19) | 3 | Tests which topic sells before committing to a book |
 | ***First Place*** outline | 3 | Outline first, write second |
 | Payment + delivery setup | 3 | Gumroad or similar; pick and move on |

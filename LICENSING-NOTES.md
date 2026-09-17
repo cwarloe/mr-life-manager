@@ -1,17 +1,16 @@
-# License Decision (Open — Not Yet Made)
+# Licensing Notes
 
-**Status:** Undecided. No `LICENSE` file has been added on purpose.
+**Status:** The intended model was accepted in
+[ADR-013](planning/decisions.md#adr-013--licensing-revised-free-to-use-never-free-to-sell).
+Formal scoped license files have not yet been published.
 
-> **On this file's name:** it is deliberately *not* called `LICENSE-DECISION.md`.
-> GitHub scans for files whose names begin with `LICENSE`, and it was picking
-> this one up and tagging the repository as licensed "Other" — implying a license
-> exists when the entire point is that none does yet. Keep the `LICENSE` prefix
-> free until there is a real license to put there.
+> **Why this is not named `LICENSE`:** GitHub treats files beginning with
+> `LICENSE` as license instruments. This document records the decision and its
+> rationale; it is not a substitute for the final scoped license files.
 
-Under U.S. copyright law, content without a license is "all rights reserved" by
-default. That is the current, deliberate state: the material here is protected,
-and nobody has permission to reuse it. That is a fine holding position for a
-commercial product concept, but it should be a choice, not an accident.
+Until those files are published, copyright defaults still apply. The project
+owner has stated the intended permissions in [PERMISSIONS.md](PERMISSIONS.md),
+but the repository should not describe the licensing implementation as complete.
 
 ## Why this is genuinely a decision, not a formality
 
@@ -136,10 +135,7 @@ awkward middle cases explicitly (a church covering copying costs, a university
 course, a grant-funded workshop) by inviting the question rather than pretending
 the line is clear.
 
-**Still not legal advice.** Talk to an attorney before registering a trademark or
-publishing a license file — especially given ADR-011.
-
-**This is not legal advice.** Before licensing or trademarking anything with
-commercial value, talk to an attorney.
-
-Record the outcome as an ADR in [`planning/decisions.md`](planning/decisions.md).
+**Implementation still required.** Before broad distribution, publish the
+appropriate scoped license text for the free material and keep paid products
+all rights reserved. Have an attorney review the structure before relying on it
+commercially, especially because the brand is tied to a real person.

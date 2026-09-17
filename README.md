@@ -149,26 +149,33 @@ overwrites it. See
 
 ## Current status
 
-**Pre-MVP. Concept and planning stage.**
+**Pre-launch validation stage.** The free funnel exists; the next job is to
+verify it and learn from real people.
 
 - ✅ Concept, audiences, principles, and frameworks drafted
 - ✅ Competitive research done — three independent passes, acceptance test passed
       ([findings](docs/research/competitor-notes.md#findings))
 - ✅ Foundational decisions settled: faith framing, beachhead and payer, the
-      person behind the brand, licensing ([decision log](planning/decisions.md))
-- ✅ Two free-tier assets drafted —
-      [First Apartment Checklist](products/checklists/first-apartment/) and
-      [How Often Should I…?](products/checklists/how-often/)
-- ⬜ **Dave not yet recorded — this is the critical path.** Every framework here
-      is a reconstruction from memory of an uncaptured primary source.
-- ⬜ Trademark search not done — the name is now the primary protected asset
-- ⬜ No audience validation, no customers, no revenue
-- ⬜ Nothing designed, nothing shipped
+      person behind the brand, and the intended licensing model
+      ([decision log](planning/decisions.md))
+- ✅ Three free-tier guides drafted and designed —
+      [First Apartment Checklist](products/checklists/first-apartment/),
+      [How Often Should I…?](products/checklists/how-often/), and
+      [Cleaning Supply Starter List](products/checklists/cleaning-supplies/)
+- ✅ General and parent-facing landing pages deployed through GitHub Pages and
+      connected to MailerLite
+- ✅ Customer-interview script and Dave recording guide ready
+- ⬜ **Verify the MailerLite automation end to end** — signup, immediate guide
+      delivery, day-3/day-7 emails, unsubscribe, and replies
+- ⬜ **Record Dave.** Every framework here is still a reconstruction from memory
+      of an uncaptured primary source
+- ⬜ Complete the USPTO/name check and domain/social availability check
+- ⬜ Add public contact and privacy details before broad distribution
+- ⬜ No completed audience validation, customers, or revenue yet
 
-**Two honest caveats.** Nothing here has been validated with a real customer, so
-treat every claim about what buyers want as a hypothesis. And the frameworks are
-the apprentice's reconstruction, not the source — that gets fixed by recording
-Dave, not by more writing.
+**Two honest caveats.** The products are designed prototypes, not validated
+products. And the frameworks are the apprentice's reconstruction, not the
+primary source — that gets fixed by recording Dave, not by more writing.
 
 ## Next steps
 

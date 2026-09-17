@@ -215,11 +215,14 @@ information needed for the next.
 
 - Is the audience reachable at acceptable cost, or is distribution the real
   constraint? (Almost certainly the latter — plan accordingly.)
-- Does the "Mr. Life Manager" persona require a visible face? Does that face have
-  to be the founder?
-- Does the Christian stewardship framing get stated openly, held implicitly, or
-  split into two product lines for different channels? **This is a foundational
-  decision** — it shapes voice, channel, and partnerships.
-- Should `products/` and business planning live in a public repo at all?
+- The brand is built around Dave Webster, not the founder. Confirm whether his
+  full name and likeness are public-facing; the landing pages currently use his
+  full name.
+- Faith framing is settled by
+  [ADR-009](../../planning/decisions.md#adr-009--faith-framing-convictions-inform-the-work-belief-is-never-required-to-use-it):
+  belief is never required to use the material, general products do not contain
+  faith content by default, and the founder does not conceal his convictions.
+- Should `products/` and business planning live in a public repo at all,
+  especially once paid products exist?
 
 Next: [product-ladder.md](product-ladder.md) · [revenue-ideas.md](revenue-ideas.md)

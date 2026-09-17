@@ -1,6 +1,7 @@
 # Product Brief — Cleaning Supply Starter List
 
-**Status:** Draft 1, 2026-09-08. Not reviewed, not designed, not price-checked.
+**Status:** Drafted and designed, 2026-09-09. Not yet reviewed or tested with a
+real reader; price examples still need a freshness check before distribution.
 **Tier:** Rung 0 — free ([product-ladder.md](../../../docs/business/product-ladder.md))
 **Format:** printable, black-and-white, US Letter
 **Files:** [`cleaning-supply-starter-list.md`](cleaning-supply-starter-list.md) (source text) ·
