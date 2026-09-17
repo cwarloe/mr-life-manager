@@ -44,7 +44,9 @@ that's really a sales pitch poisons everything above it).
 - [x] **PDF exports** — print each checklist HTML to PDF for the email attachments
 - [x] **Deploy** — host the static page (Netlify, Cloudflare Pages, GitHub Pages,
       or Vercel) and point a domain at it
-- [ ] Confirm the MailerLite welcome/automation actually sends the three guides
+- [ ] Confirm both embedded forms submit successfully on phone and desktop
+- [ ] Confirm the MailerLite welcome/automation sends all three guides, schedules
+      the day-3/day-7 messages, honors unsubscribe, and routes replies correctly
 
 ## Guides on the page
 
