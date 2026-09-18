@@ -139,8 +139,8 @@ __CARDS__
 </div></section>
 
 <footer><div class="wrap">
-  <span><b>Mr. Life Manager</b> — practical systems for running an adult life</span>
-  <span>Free to use, copy, and teach from — with credit. Not for resale.</span>
+  <span><b>Mr. Life Manager</b> — <a href="mailto:hello@mrlifemanager.com">hello@mrlifemanager.com</a></span>
+  <span>Free to use, copy, and teach from — with credit. Not for resale. · <a href="/privacy.html">Privacy</a></span>
 </div></footer>
 </body>
 </html>
@@ -189,6 +189,25 @@ def main() -> int:
              .replace("__TOKENS__", tokens)
              .replace("__CARDS__", "\n".join(cards)))
     (OUT / "guides" / "index.html").write_text(index)
+
+    # robots + sitemap for the custom domain (static copies also live in landing/)
+    (OUT / "robots.txt").write_text(
+        "User-agent: *\nAllow: /\n\nSitemap: https://mrlifemanager.com/sitemap.xml\n"
+    )
+    urls = [
+        "https://mrlifemanager.com/",
+        "https://mrlifemanager.com/index-parents.html",
+        "https://mrlifemanager.com/privacy.html",
+        "https://mrlifemanager.com/guides/",
+    ]
+    urls += [f"https://mrlifemanager.com/guides/{slug}.html" for slug, *_ in GUIDES]
+    body = [
+        '''<?xml version="1.0" encoding="UTF-8"?>''',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ]
+    body += [f"  <url><loc>{u}</loc></url>" for u in urls]
+    body.append("</urlset>\n")
+    (OUT / "sitemap.xml").write_text("\n".join(body))
 
     print(f"Built _site/ — {len(GUIDES)} guides, "
           f"{len(list(OUT.glob('*.html')))} top-level pages.")
