@@ -95,4 +95,4 @@ group, ask us — group and site licenses exist and they're not expensive.
 Tell us who you are, what you want to use, and what you're doing with it. Short
 is fine. We answer.
 
-*(Contact details to be added before launch.)*
+Email **[hello@mrlifemanager.com](mailto:hello@mrlifemanager.com)**. Short is fine. We answer.
