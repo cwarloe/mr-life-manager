@@ -1,8 +1,10 @@
 # Landing Page — Setup
 
-**Status:** MailerLite wired on both pages (account `2635985`, form `00ZwEr`). Copy and
-design done. PDF exports and main deploy are done. Parent-facing variant is live at
-`/index-parents.html` (same MailerLite form as `index.html`).
+**Status:** Live on GitHub Pages, MailerLite wired on both pages (account
+`2635985`, form `00ZwEr`). Custom domain **mrlifemanager.com** declared via the
+`CNAME` file in this directory — **DNS records still need adding at the
+registrar**, see below. Parent-facing variant at `/index-parents.html` uses the
+same form.
 
 `index.html` is the main page; `index-parents.html` is the parent-facing variant.
 Both are static — no build step, no dependencies.
@@ -53,6 +55,53 @@ that's really a sales pitch poisons everything above it).
 The three guide cards describe the free assets but **do not link** to open
 previews. Readers get the guides by signing up.
 
+## Domain: mrlifemanager.com
+
+The `CNAME` file in this directory tells GitHub Pages the custom domain. It has
+to sit **inside the published directory** (`products/landing/`) because that's
+what the deploy workflow uploads.
+
+### DNS records to add at your registrar
+
+**Apex — `mrlifemanager.com`** → four A records, all with host `@`:
+
+```
+185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+```
+
+Add the AAAA records too if your registrar supports IPv6:
+
+```
+2606:50c0:8000::153
+2606:50c0:8001::153
+2606:50c0:8002::153
+2606:50c0:8003::153
+```
+
+**`www.mrlifemanager.com`** → one CNAME record:
+
+```
+host: www     value: cwarloe.github.io
+```
+
+> **Confirm these against the repo's own Settings → Pages screen.** After the
+> CNAME file deploys, GitHub shows the exact records it expects for your domain
+> right there — that's the authoritative list, and it beats any list written
+> down elsewhere.
+
+### After DNS propagates
+
+1. **Settings → Pages** — the custom domain should show as verified. Propagation
+   is usually minutes, occasionally a few hours.
+2. **Tick "Enforce HTTPS."** It only becomes available once the certificate is
+   issued, which can take another hour or so after verification. Don't skip it —
+   a signup form on plain HTTP is a bad look and some browsers will say so.
+3. Load both pages and submit a test address through the MailerLite form. Confirm
+   it lands in the list **and** that the automation fires.
+
 ## Hosting
 
 Static file. Netlify, Cloudflare Pages, GitHub Pages, or Vercel — all free at
@@ -64,6 +113,13 @@ made a prerequisite.
 
 ## Still missing
 
+- [ ] **DNS records at the registrar** — the CNAME file alone does nothing until
+      the domain points here. See *Domain* above.
+- [ ] **Tick "Enforce HTTPS"** once the certificate is issued.
+- [ ] **Confirm the guide PDFs are attached in MailerLite.** No PDFs are
+      committed to this repo, so the day-0 email has nothing to send unless
+      they're already uploaded on the MailerLite side. Verify by subscribing a
+      test address and checking what actually arrives.
 - [ ] Contact address in [PERMISSIONS.md](../../PERMISSIONS.md) and in the footer
 - [ ] A photo of Dave, if he's willing — the Dave section carries the page and
       currently has no face
