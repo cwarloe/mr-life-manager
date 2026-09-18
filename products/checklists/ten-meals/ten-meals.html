@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Ten meals you can make without a recipe, the pattern underneath them, and the cupboard that makes an unplanned night work.">
+<meta name="color-scheme" content="light dark">
+<title>Ten Meals and a Stocked Kitchen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+:root{
+  --ink:#12161C; --paper:#FBF9F4; --surface:#FFFFFF;
+  --blue:#1F4E79; --blue-soft:#E7EEF5;
+  --amber:#B4741A; --amber-soft:#F7EEDD;
+  --slate:#6B7280; --rule:#D9D5CC; --rule-strong:#B8B2A6;
+  --sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
+    --blue:#8FB6DA; --blue-soft:#1D2833;
+    --amber:#E3A94E; --amber-soft:#2A2418;
+    --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
+  --blue:#8FB6DA; --blue-soft:#1D2833;
+  --amber:#E3A94E; --amber-soft:#2A2418;
+  --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;
+  line-height:1.5;margin:0;-webkit-font-smoothing:antialiased}
+.sheet{max-width:50rem;margin:0 auto;padding:3rem 1.5rem 5rem}
+.mast{border-bottom:3px solid var(--ink);padding-bottom:1.25rem}
+.eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--blue);margin:0 0 .6rem}
+h1{font-size:clamp(2.1rem,6vw,3rem);font-weight:700;line-height:1.02;letter-spacing:-.02em;
+  margin:0;text-wrap:balance}
+.deck{font-family:var(--serif);font-size:1.05rem;color:var(--slate);margin:.7rem 0 0;max-width:46ch}
+.standfirst{font-family:var(--serif);font-size:1rem;line-height:1.6;margin:1.5rem 0 0;max-width:62ch}
+.standfirst strong{font-weight:600}
+.sec{margin:2.9rem 0 0;break-inside:avoid}
+.sec-head{display:flex;align-items:baseline;gap:.9rem;border-bottom:2px solid var(--ink);
+  padding-bottom:.5rem;margin-bottom:.2rem}
+.num{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--paper);background:var(--ink);padding:.28rem .5rem;border-radius:2px;white-space:nowrap}
+.sec-head h2{font-size:1.32rem;font-weight:700;letter-spacing:-.015em;margin:0;flex:1}
+.when{font-size:.75rem;color:var(--slate);font-weight:500;white-space:nowrap}
+.sec-note{font-family:var(--serif);color:var(--slate);font-size:.95rem;margin:.6rem 0 1.1rem}
+h3{font-size:.76rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--blue);
+  margin:1.9rem 0 .8rem;padding-bottom:.3rem;border-bottom:1px solid var(--rule)}
+.why{font-family:var(--serif);font-size:.96rem;line-height:1.55;border-left:3px solid var(--blue);
+  background:var(--blue-soft);padding:.85rem 1.1rem;margin:1.3rem 0 0;border-radius:0 3px 3px 0;
+  break-inside:avoid}
+.why b{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blue);display:block;margin-bottom:.3rem}
+.warn{font-family:var(--serif);font-size:.96rem;line-height:1.55;border-left:3px solid var(--amber);
+  background:var(--amber-soft);padding:.85rem 1.1rem;margin:1.3rem 0 0;border-radius:0 3px 3px 0;
+  break-inside:avoid}
+.warn b{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--amber);display:block;margin-bottom:.3rem}
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+thead th{font-size:.66rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--slate);text-align:left;padding:0 .7rem .45rem 0;border-bottom:1px solid var(--rule-strong)}
+tbody td{padding:.52rem .7rem .52rem 0;border-bottom:1px solid var(--rule);vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+td.k{font-weight:600;white-space:nowrap}
+td.v{color:var(--slate)}
+td strong{font-weight:600;color:var(--ink)}
+ul.plain{list-style:none;margin:0;padding:0;display:grid;gap:.45rem}
+ul.plain.two{grid-template-columns:repeat(auto-fill,minmax(16rem,1fr));gap:.45rem 1.75rem}
+ul.plain li{font-size:.93rem;line-height:1.45;padding-left:1rem;position:relative}
+ul.plain li::before{content:"";position:absolute;left:0;top:.62em;width:.32rem;height:.32rem;
+  background:var(--rule-strong);border-radius:50%}
+ul.plain li strong{font-weight:600}
+.signoff{font-family:var(--serif);font-style:italic;font-size:1.02rem;text-align:center;
+  color:var(--slate);margin:3rem auto 0;max-width:42ch;line-height:1.5}
+footer{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--rule);font-size:.74rem;
+  color:var(--slate);display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;justify-content:space-between}
+footer b{color:var(--ink);font-weight:600}
+@media (max-width:34rem){.sheet{padding:2rem 1.1rem 3rem}table{font-size:.87rem}td.k{white-space:normal}}
+@media print{
+  :root{--ink:#000;--paper:#fff;--surface:#fff;--slate:#444;--rule:#bbb;--rule-strong:#666;
+    --blue-soft:#fff;--amber:#7a4d0a;--amber-soft:#fff}
+  body{font-size:10pt}.sheet{max-width:none;padding:0}
+  .sec,.why,.warn{page-break-inside:avoid}.sec-head,h3{page-break-after:avoid}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.meal{border:1.5px solid var(--rule-strong);border-radius:3px;padding:1rem 1.2rem;
+  background:var(--surface);break-inside:avoid;display:grid;gap:.45rem}
+.meals{display:grid;gap:.9rem;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));margin:1.4rem 0 0}
+.meal .mnum{font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+.meal h4{font-size:1.05rem;font-weight:700;margin:0;letter-spacing:-.01em}
+.meal p{margin:0;font-family:var(--serif);font-size:.93rem;line-height:1.5}
+.meal .tip{font-size:.85rem;color:var(--slate);font-family:var(--sans);border-top:1px solid var(--rule);
+  padding-top:.45rem;margin-top:.15rem}
+.formula{border:2px solid var(--ink);border-radius:3px;padding:1.2rem 1.4rem;background:var(--surface);
+  margin:1.4rem 0 0;break-inside:avoid}
+.formula .row{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:0 0 .9rem}
+.formula .row span{border:1.5px solid var(--rule-strong);border-radius:2px;padding:.35rem .7rem;
+  font-size:.88rem;font-weight:600}
+.formula .row i{color:var(--slate);font-style:normal;font-weight:700}
+.formula p{font-family:var(--serif);font-size:.96rem;line-height:1.55;margin:0;color:var(--slate)}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header class="mast">
+    <p class="eyebrow">Mr. Life Manager · Free Guide</p>
+    <h1>Ten Meals and a Stocked Kitchen</h1>
+    <p class="deck">Enough to stop deciding what's for dinner every single night.</p>
+  </header>
+
+  <p class="standfirst">You don't need a hundred recipes. You need <strong>about ten things you
+  can make without looking anything up</strong>, and the ingredients already in the house.</p>
+
+  <p class="standfirst">That's the whole difference between cooking and ordering. Not skill —
+  repertoire.</p>
+
+  <section class="sec">
+    <div class="sec-head"><span class="num">01</span><h2>The pattern underneath all of it</h2></div>
+    <p class="sec-note">Almost every simple dinner is the same four slots. Learn the shape and
+    you can improvise forever without a recipe.</p>
+
+    <div class="formula">
+      <div class="row">
+        <span>Something filling</span><i>+</i><span>Something with protein</span><i>+</i>
+        <span>Something green</span><i>+</i><span>Something with flavour</span>
+      </div>
+      <p>Rice, pasta, potatoes, bread, tortillas — plus eggs, chicken, beans, ground meat,
+      cheese, tinned fish — plus whatever vegetable you have — plus sauce, spice, butter, lemon,
+      soy, hot sauce. Swap any slot. It still works.</p>
+    </div>
+
+    <div class="why">
+      <b>Why this matters more than the recipes</b>
+      A recipe tells you what to do once. The pattern tells you what to do when you're missing
+      an ingredient, which is most nights. It's also what lets you shop without a meal plan and
+      still eat.
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="num">02</span><h2>The ten</h2><span class="when">All under 30 min</span></div>
+    <p class="sec-note">Make each one three times and you'll stop needing to read it.</p>
+
+    <div class="meals">
+      <div class="meal">
+        <span class="mnum">One</span>
+        <h4>Pasta, properly</h4>
+        <p>Salt the water heavily — it should taste like the sea. Cook the pasta one minute less
+        than the box says. Save a mug of the water before draining, then stir a splash into the
+        sauce and pasta together in the pan.</p>
+        <p class="tip">That mug of starchy water is the whole trick. It turns sauce and pasta
+        into one thing instead of two.</p>
+      </div>
+
+      <div class="meal">
+        <span class="mnum">Two</span>
+        <h4>Eggs, three ways</h4>
+        <p>Scrambled: low heat, keep them moving, take them off while still slightly wet. Fried:
+        medium, lid on for a minute. Omelette: beat, pour, tilt, fold when the top is nearly set.</p>
+        <p class="tip">Low and slow is the answer to almost every egg problem. High heat is why
+        they go rubbery.</p>
+      </div>
+
+      <div class="meal">
+        <span class="mnum">Three</span>
+        <h4>Sheet-pan chicken and vegetables</h4>
+        <p>Chop vegetables, add chicken thighs, coat everything in oil, salt and pepper. One
+        tray, 200°C / 400°F, 30–35 minutes. Don't crowd the tray.</p>
+        <p class="tip">Thighs, not breasts — far harder to dry out. One tray means one thing to
+        wash.</p>
+      </div>
+
+      <div class="meal">
+        <span class="mnum">Four</span>
+        <h4>Rice bowl</h4>
+        <p>Rice, plus whatever protein you have, plus a vegetable, plus a sauce. Fried egg on
+        top makes almost any version better.</p>
+        <p class="tip">The most forgiving meal there is. It's designed for leftovers.</p>
+      </div>
+
+      <div class="meal">
+        <span class="mnum">Five</span>
+        <h4>Stir fry</h4>
+        <p>Pan as hot as you dare. Protein first, out. Hard vegetables, then soft. Protein back
+        in, sauce last, thirty seconds. Serve on rice.</p>
+        <p class="tip">Everything chopped <em>before</em> you turn the heat on. There is no time
+        once it starts.</p>
+      </div>
+
+      <div class="meal">
+        <span class="mnum">Six</span>
+        <h4>Tacos or a burrito bowl</h4>
+        <p>Brown ground meat or warm a tin of black beans. Season generously. Tortillas or rice,
+        plus cheese, salsa, whatever's in the fridge.</p>
+        <p class="tip">Season the meat more than feels right. Under-seasoning is why home
+        cooking tastes flat.</p>
+      </div>
+
+      <div class="meal">
+        <span class="mnum">Seven</span>
+        <h4>Soup from a tin, upgraded</h4>
+        <p>Tinned soup or stock, plus something you add: leftover chicken, a handful of pasta,
+        frozen vegetables, a swirl of cream, a squeeze of lemon.</p>
+        <p class="tip">Lemon or vinegar at the end wakes up almost any soup that tastes dull.</p>
+      </div>
+
+      <div class="meal">
+        <span class="mnum">Eight</span>
+        <h4>Baked potato</h4>
+        <p>Prick it, rub with oil and salt, 200°C / 400°F for an hour. Top with cheese, beans,
+        tuna, chilli, whatever's there.</p>
+        <p class="tip">Almost zero effort, and it cooks while you do something else. Do two.</p>
+      </div>
+
+      <div class="meal">
+        <span class="mnum">Nine</span>
+        <h4>Grilled cheese and tomato soup</h4>
+        <p>Butter the outside of the bread, not the pan. Medium-low heat, lid on, flip once.
+        Patience is the whole recipe.</p>
+        <p class="tip">High heat burns the bread before the cheese melts. This is the only
+        mistake available.</p>
+      </div>
+
+      <div class="meal">
+        <span class="mnum">Ten</span>
+        <h4>Breakfast for dinner</h4>
+        <p>Eggs, toast, something fried, beans or tomatoes. Takes ten minutes and everyone is
+        pleased about it.</p>
+        <p class="tip">The correct answer to a night when you can't face cooking but shouldn't
+        order in.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="num">03</span><h2>The stocked kitchen</h2></div>
+    <p class="sec-note">If these are in the house, you can make something on a night you didn't
+    plan for. That's the entire point of a stocked kitchen.</p>
+
+    <h3>Cupboard — buy once, replace when out</h3>
+    <ul class="plain two">
+      <li>Cooking oil — olive and a neutral one</li>
+      <li>Salt and black pepper</li>
+      <li>Pasta and rice</li>
+      <li>Tinned tomatoes</li>
+      <li>Tinned beans</li>
+      <li>Stock cubes or powder</li>
+      <li>Soy sauce</li>
+      <li>Vinegar — any kind</li>
+      <li>Garlic</li>
+      <li>Onions</li>
+      <li>Dried herbs — oregano, chilli flakes</li>
+      <li>Paprika and cumin</li>
+      <li>Hot sauce</li>
+      <li>Peanut butter</li>
+      <li>Honey or sugar</li>
+      <li>Flour</li>
+    </ul>
+
+    <h3>Fridge and freezer</h3>
+    <ul class="plain two">
+      <li>Eggs</li>
+      <li>Butter</li>
+      <li>Milk</li>
+      <li>Cheese — something hard, something that melts</li>
+      <li>Lemons</li>
+      <li>Frozen vegetables — peas, spinach, mixed</li>
+      <li>Frozen protein — chicken thighs, mince</li>
+      <li>Bread — freeze half the loaf</li>
+      <li>Mustard and mayonnaise</li>
+      <li>Something green that keeps: carrots, cabbage</li>
+    </ul>
+
+    <div class="why">
+      <b>Frozen vegetables are not a compromise</b>
+      They're frozen within hours of picking, they don't rot in the drawer, and they cost less.
+      Fresh is better for things you eat raw. For anything cooked, frozen is genuinely fine —
+      and it's the difference between having a vegetable and not.
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="num">04</span><h2>Shopping so the food gets eaten</h2></div>
+    <ul class="plain">
+      <li><strong>Check the fridge before you go.</strong> Two minutes, and it's what stops you buying a third jar of mustard.</li>
+      <li><strong>Pick three or four meals</strong> for the week — not seven. You'll eat out, or repeat, or not feel like it.</li>
+      <li><strong>Buy perishables for two or three days</strong>, not seven. Fresh food bought on Sunday for Friday is food you're throwing away.</li>
+      <li><strong>Keep a running list</strong> — on the fridge or your phone — and add things when you notice, not when you shop.</li>
+      <li><strong>Don't shop hungry.</strong> It's a cliché because it's true and it costs real money.</li>
+    </ul>
+
+    <div class="why">
+      <b>The mistake everyone makes in week one</b>
+      Aspirational shopping. You buy for the person who cooks four fresh meals a week, and then
+      you're the person you actually are, and half of it rots. <strong>Buy for the cook you are
+      right now.</strong> Grow the list once you're actually cooking.
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="num">05</span><h2>Clean as you cook</h2></div>
+    <p class="sec-note">This is what decides whether you cook again tomorrow.</p>
+    <ul class="plain">
+      <li><strong>Fill the sink with hot soapy water before you start.</strong> Things go in as you finish with them.</li>
+      <li><strong>Wash while things simmer.</strong> There's always four minutes of standing around.</li>
+      <li><strong>Wipe the counter while the pan's still hot.</strong> Wet is ten seconds; dried is three minutes.</li>
+      <li><strong>Deal with the pan before you sit down.</strong> Soak it at minimum.</li>
+      <li><strong>Aim to sit down to a clean kitchen.</strong> It sounds fussy and it's the entire game.</li>
+    </ul>
+    <div class="warn">
+      <b>The loop that ends in takeaway</b>
+      Dirty kitchen → cooking feels like a chore → you order in → money gone and the kitchen is
+      still dirty. It compounds fast. <strong>The ten minutes after dinner is the cheapest place
+      to break it.</strong>
+    </div>
+  </section>
+
+  <p class="signoff">Ten meals, a stocked cupboard, and a clean kitchen. That's cooking. Nobody
+  needed to make it more complicated than that.</p>
+
+  <footer>
+    <span><b>Mr. Life Manager</b> — practical systems for running an adult life</span>
+    <span>Free to use, copy, and teach from — with credit. Not for resale.</span>
+  </footer>
+</div>
+
+</body>
+</html>

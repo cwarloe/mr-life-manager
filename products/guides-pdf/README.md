@@ -9,9 +9,12 @@ attaches to the day-0 welcome email.**
 | `how-often-should-i.pdf` | 9 | [source](../checklists/how-often/how-often-should-i.html) |
 | `cleaning-supply-starter-list.pdf` | 5 | [source](../checklists/cleaning-supplies/cleaning-supply-starter-list.html) |
 | `household-agreement.pdf` | 7 | [source](../worksheets/household-agreement/household-agreement.html) |
+| `laundry-solved.pdf` | 6 | [source](../checklists/laundry/laundry-solved.html) |
+| `ten-meals.pdf` | 6 | [source](../checklists/ten-meals/ten-meals.html) |
 
-The household agreement isn't in the day-0 email — it's a later asset. Exported
-here so it's ready.
+Only the first three go in the day-0 email. The household agreement, laundry and
+ten-meals guides are later assets — good candidates for the day-3 and day-7
+emails, or for a second signup incentive once the list is running.
 
 ## Regenerating
 
