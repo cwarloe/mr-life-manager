@@ -5,6 +5,9 @@ on:
     branches: [main]
     paths:
       - "products/landing/**"
+      - "products/checklists/**"
+      - "products/worksheets/**"
+      - ".github/scripts/build_site.py"
       - ".github/workflows/deploy-landing.yml"
   workflow_dispatch:
 
@@ -30,10 +33,13 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+      - name: Build site
+        run: python3 .github/scripts/build_site.py
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: products/landing
+          path: _site
 
       - name: Deploy to GitHub Pages
         id: deployment

@@ -7,7 +7,47 @@ registrar**, see below. Parent-facing variant at `/index-parents.html` uses the
 same form.
 
 `index.html` is the main page; `index-parents.html` is the parent-facing variant.
-Both are static — no build step, no dependencies.
+
+**The site is assembled by `.github/scripts/build_site.py`**, which the deploy
+workflow runs. It copies these landing pages plus the `CNAME`, then pulls each
+guide from wherever it lives in `products/`, appends a signup call-to-action, and
+generates `/guides/index.html`. The guides are never duplicated in git — edit the
+source file and the next deploy picks it up.
+
+Run it locally to preview:
+
+```bash
+python3 .github/scripts/build_site.py   # writes _site/ (gitignored)
+```
+
+### Site map
+
+| URL | What |
+|---|---|
+| `/` | Main landing page |
+| `/index-parents.html` | Parent-facing variant |
+| `/guides/` | Guide index |
+| `/guides/<slug>.html` | Each guide, with a signup CTA appended |
+
+### Guides are public — a decision worth knowing about
+
+An earlier pass deliberately **un-linked** the guide cards so the guides stayed
+behind the signup form. This build publishes them instead. The reasoning:
+
+- **Distribution is the documented top risk** for this business
+  ([roadmap.md](../../planning/roadmap.md)). A gated PDF cannot be found in
+  search, linked from a forum answer, or forwarded. A guide nobody can reach
+  cannot spread, and Phase 2's exit criteria explicitly include *measurable
+  organic sharing*.
+- **It matches [ADR-013](../../planning/decisions.md#adr-013--licensing-revised-free-to-use-never-free-to-sell)** —
+  free to use, copy and teach from. Gating contradicts the spirit of the licence
+  the footer already carries.
+- **The email list still grows**, because the incentive moved rather than
+  disappeared: the *PDF pack plus the sequence* is what you sign up for, and
+  every guide page ends with that offer.
+
+**To reverse it**, remove the `GUIDES` entries from `build_site.py` and put the
+guide cards back to plain `<div>`s. One small edit in one place.
 
 ---
 
