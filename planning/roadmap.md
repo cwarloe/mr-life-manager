@@ -25,7 +25,12 @@ one to have made money — only to have produced evidence.
       **A session guide with 28 ready questions is drafted** —
       [dave-session-guide.md](../source-material/interviews/dave-session-guide.md).
       Take it to the session; don't send it ahead.
-- [ ] Import the existing written notes into `source-material/`
+- [x] **Original notes recovered 2026-09-19** — Dave's email of 17 July 2023,
+      found in Gmail.
+      [Verbatim](../source-material/2023-07-17-dave-webster-cleanup-notes.md) ·
+      [analysis](../source-material/2023-07-17-analysis.md). Confirms the
+      frameworks are named from his actual words; surfaces three real
+      contradictions to put to him.
 - [x] Decide the faith-framing question — settled by
       [ADR-009](decisions.md#adr-009--faith-framing-convictions-inform-the-work-belief-is-never-required-to-use-it):
       belief is never required to use the material; the founder does not hide his

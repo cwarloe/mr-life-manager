@@ -103,15 +103,33 @@ Things he has said that are already being used in conversation but are **not
 captured in his own words anywhere.** Ask him about each; record the answer
 verbatim.
 
-- **"The thousand-yard stare."** What someone looks like when they are so far
-  behind that they have stopped seeing the room at all. Ask him: when have you
-  seen it? What do you do for someone in that state? Where do you start them?
+- ~~**"The thousand-yard stare."**~~ **Found in writing, 2026-09-19** — he wrote
+  *"no bleeding heart, **glazed eyes** excuses."*
+  ([source](../2023-07-17-dave-webster-cleanup-notes.md)). Still ask him about
+  it: when have you seen that look? What do you do for someone in it? Where do
+  you start them?
 - **"It's all obvious."** He means it sincerely. Ask him what he means by it, and
   whether he still thinks so after watching people struggle.
 
 *Add to this list whenever a Dave-ism turns up in conversation without a source.
 These are the highest-value things to capture, because they are already proving
 useful and nobody has written down what he actually said.*
+
+## The three contradictions — ask these directly
+
+His 2023 notes disagree with what the guides now say. He will have opinions.
+
+1. **You said buy as big a supply as you can to save trips. The guide tells
+   first-timers to buy the smallest size of anything new. Who's right, and for
+   whom?**
+2. **You listed about twenty-five products, one per surface. The guide says nine
+   and argues most specialty cleaners are the same thing relabelled. Where did
+   you land on that, and why?**
+3. **You specified Pine Sol in lemon scent, and Febreze. The guide steers people
+   away from scented products. What's your actual view?**
+
+Also worth asking: **you said these rules save fifty percent of your time —
+where does that number come from?**
 
 ## Right after the session — while it's fresh
 

@@ -9,7 +9,18 @@
 
 ---
 
-## ⚠️ Provenance question, opened 2026-09-08
+## ✅ FOUND — 2026-09-19
+
+**The original notes were recovered from Gmail.** They are Dave's, written for
+Charles, in an email dated 17 July 2023 titled "All that I could find."
+
+- **Verbatim source:** [2023-07-17-dave-webster-cleanup-notes.md](2023-07-17-dave-webster-cleanup-notes.md)
+- **What it confirms and contradicts:** [2023-07-17-analysis.md](2023-07-17-analysis.md)
+
+The provenance question below is answered: they are **Dave's notes**, addressed
+to Charles by name throughout. This file stays as the folder's rulebook.
+
+## ~~⚠️ Provenance question, opened 2026-09-08~~ (answered above)
 
 [ADR-011](../planning/decisions.md#adr-011--mr-life-manager-is-a-real-person-dave-webster)
 establishes that **Mr. Life Manager is Dave Webster**, a real person, and that
