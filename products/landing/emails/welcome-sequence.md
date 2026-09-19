@@ -1,79 +1,87 @@
-# Welcome Sequence — Draft 1
+# Welcome Sequence — Draft 2
 
-Three emails. **They teach; they don't sell.** Rung 0 of the
-[product ladder](../../../docs/business/product-ladder.md) says a free asset
-that's really a sales pitch poisons everything above it — that applies to the
-emails as much as the guides.
+**Rebuilt 2026-09-19 around
+[ADR-014](../../../planning/decisions.md#adr-014--completion-is-what-converts).**
+Draft 1 delivered three guides on day zero — the same failure the landing page
+had, just by email. Handing someone three PDFs produces the feeling of progress
+and none of the fact of it.
 
-Plain text. No header images, no template chrome. It should read like a person
-wrote it, because one did.
+**One guide. Then ask whether it got done. The next one comes after action, not
+after a timer.**
 
-**Voice:** the apprentice, not the expert.
-([brand-positioning.md](../../../docs/business/brand-positioning.md))
+Plain text. No header images, no template chrome. Voice is the apprentice, not
+the expert.
+
+---
+
+## Setup in MailerLite
+
+The signup form carries a hidden `guide` field set by the question on the
+landing page — `first-apartment`, `household-agreement`, or `how-often`.
+
+Branch the automation on it so day 0 sends **only** the guide they chose. Same
+three emails, one attachment each.
 
 ---
 
 ## Email 1 — Immediate
 
-**Subject:** Here are your three guides
-**Alt subject to test:** The stuff nobody told you
+**Subject:** Here's your [guide name]
+**Alt to test:** The one you picked
 
-> Here they are — all three, attached:
+> Here it is — attached.
 >
-> **The First Apartment Checklist** — everything to do, buy and find out, in the
-> order you'll need it. If you're moving soon, skip to Part 3. That half hour on
-> move-in day is worth several hundred dollars.
+> **Don't read the whole thing.** Open it, find the first thing you can do today,
+> and do that. Twenty minutes is plenty. The rest will still be there.
 >
-> **How Often Should I…?** — sheets, filters, towels, the dryer vent. Print it and
-> tape it inside a cabinet door. That's genuinely what it's for.
+> If you only do one thing from it, do [THE ONE ACTION — varies by guide].
 >
-> **Cleaning Supply Starter List** — the nine products that matter, and the long
-> list of things you don't need.
+> ---
 >
-> A word on where these come from. Mr. Life Manager is a real person — Dave, who
-> knew how to run a home and taught me over a lot of years. When I told him people
-> would pay to learn this, he was baffled. He said it was all obvious, and he'd be
-> embarrassed telling people things he assumed they already knew.
+> A word on where this comes from. Mr. Life Manager is a real person — Dave, who
+> knew how to run a home and taught me over a lot of years. When I told him
+> people would pay to learn this, he was baffled. He said it was all obvious, and
+> he'd be embarrassed telling people things he assumed they already knew.
 >
-> Which is exactly why nobody ever told you. The people who know this can't see it
-> as knowledge.
+> Which is exactly why nobody ever told you. The people who know this can't see
+> it as knowledge.
 >
-> I'll send you something useful in a few days. Nothing to buy.
+> I'll check in in a few days. Nothing to buy.
 >
 > — [name]
 
+**The one action, per guide:**
+
+| Guide | The one thing |
+|---|---|
+| First Apartment | Photograph every room before you unpack |
+| Household Agreement | Sit down together and fill in section 2 — who owns what |
+| How Often | Tape it inside a cabinet door and do tonight's ten-minute reset |
+
 ---
 
-## Email 2 — Day 3
+## Email 2 — Day 3 ★
 
-**Subject:** The ten minutes that decide everything else
-**Alt subject to test:** If you only build one habit
+**Subject:** Did you do the first bit?
 
-> If you take one thing from any of this, take this one.
+> ★ **The pivot of the whole sequence.** Not new content — a nudge, and
+> permission to have not done it. Most sequences send more. This one asks.
+
+> Quick one. Did you get to [THE ONE ACTION]?
 >
-> **Ten minutes before bed.** Dishes in. Counters wiped. Things put back where they
-> live. That's it — you're not cleaning, you're resetting.
+> **If you did** — good. That's genuinely the hard part. The rest of the guide is
+> the same move repeated, and it gets easier each time.
 >
-> Here's why it matters more than it sounds. A kitchen reset nightly never needs
-> rescuing. Skip it four days and it stops being ten minutes and becomes a project
-> — and projects get postponed, which makes them bigger, which makes them get
-> postponed again.
+> **If you didn't** — that's normal, and it isn't a character problem. It's
+> usually one of two things:
 >
-> That's the whole mechanism behind almost every house that's gotten away from
-> someone. Not laziness. Compounding.
+> *It felt too big.* Cut it smaller. Not "photograph the apartment" — photograph
+> one room. Not "fill in the agreement" — just the dishes line.
 >
-> Two things that make it stick:
+> *You forgot.* Which is a system problem, not a you problem. Put it on the
+> calendar for a specific evening, with a time attached.
 >
-> **Do it at a fixed moment**, not when the mood strikes. After dinner, or right
-> before you brush your teeth. Attached to something you already do.
->
-> **Keep it to ten minutes.** Set a timer if you want. When it goes off, stop, even
-> if there's more. A ten-minute habit you keep beats a thorough one you abandon by
-> Thursday.
->
-> If your place has already gotten away from you, don't start here. Pick one room —
-> usually the kitchen — get it back to baseline once, and *then* start the ten
-> minutes. Trying to do both at once is how people give up.
+> That's it. No new reading. Just the one thing.
 >
 > — [name]
 
@@ -83,54 +91,60 @@ wrote it, because one did.
 
 **Subject:** What are you stuck on?
 
-> ★ **This is the research channel. It's the most valuable email in the sequence.**
-> Keep it short so the question is the whole point. Reply to every single response
-> personally — that's where the next product comes from.
+> ★ **The research channel, and still the most valuable email here.** Reply to
+> every single response personally — that is where the next product comes from.
 
 > Last one for now.
 >
-> Everything I've sent you is stuff I had to be taught. Which means there are gaps
-> in it — things Dave never thought to mention because they were obvious to him,
-> and things I never thought to ask because they were obvious to me.
+> Everything I sent you is stuff I had to be taught. Which means there are gaps —
+> things Dave never thought to mention because they were obvious to him, and
+> things I never thought to ask because they were obvious to me.
 >
-> So: **what's something about running a home or a life that you had to figure out
-> on your own, and felt like you should have already known?**
+> So: **what's something about running a home or a life that you had to figure
+> out on your own, and felt like you should have already known?**
 >
 > Hit reply and tell me. One line is fine. I read all of them, and I answer.
 >
-> I'm asking because it's genuinely how this gets better. The next thing I write
-> will come out of these replies.
+> If you're sitting there thinking your question is too basic to ask — that's the
+> exact feeling this whole thing exists to fix. Ask it.
 >
-> And if you're sitting there thinking your question is too basic to ask — that's
-> the exact feeling this whole thing exists to fix. Ask it.
+> And if you finished the guide and want the next one, just say which problem
+> you're on. I'll point you at it.
 >
 > — [name]
 
 ---
 
+## After the sequence
+
+**Do not drip more guides on a schedule.** The next one goes out when they ask,
+or when they say they finished. That's the whole principle — material arrives
+behind completion, not ahead of it.
+
+Pacing this way also gives the list a job beyond delivery, which is a reason to
+stay subscribed rather than a reason to unsubscribe after the dump.
+
+---
+
 ## Notes
 
-**Why three and not five.** More emails means more chances to sound like a
-funnel. Three teaches, asks a question, and stops. If the answer to email 3 is
-good, the next sequence writes itself.
+**Why three and not five.** More emails means more chance of sounding like a
+funnel. Three teaches, asks, and stops.
 
-**Nothing to buy in any of them.** There is nothing to buy yet. Even once there
-is, this sequence should stay clean — it's the free tier's job to earn the right
-to sell later, not to sell now.
+**Nothing to buy in any of them.** There's nothing to buy yet — and when there
+is, this sequence stays clean. The free tier's job is earning the right to sell
+later, not selling now.
 
 **Dave appears in email 1 and nowhere else.** He's the credibility, not the
 gimmick. Introduce him once, properly, and let it sit.
 
-**Timing.** Immediate / day 3 / day 7. Long enough not to crowd, short enough
-that they still remember signing up.
-
 ## Before sending
 
-- [ ] Fill in the sign-off name — decide whether the apprentice signs by name
-      (recommended: it matches the whole posture)
-- [ ] Confirm the three exported PDFs are attached to the immediate email and
-      open correctly on a phone
-- [ ] Test both subject lines on email 1 and 2 if the provider supports it
-- [ ] Send the whole sequence to yourself first and read it on a phone
-- [ ] **Decide who answers the day-7 replies, and commit to actually doing it.**
-      An unanswered reply is worse than never asking.
+- [ ] Branch the automation on the `guide` field — day 0 sends **one** attachment
+- [ ] Fill in the one-action line per guide from the table above
+- [ ] Fill in the sign-off name
+- [ ] Send the whole sequence to yourself and read it on a phone
+- [ ] **Decide who answers the day-7 replies, and commit to it.** An unanswered
+      reply is worse than never asking.
+- [ ] Set up a way to record who says they finished — that's the completion
+      metric, and there's no other instrument at this scale

@@ -1,0 +1,22 @@
+name: Check outbound links
+
+on:
+  schedule:
+    - cron: "0 13 * * 1"   # Mondays, 13:00 UTC
+  workflow_dispatch:
+  push:
+    paths:
+      - "products/**/*.html"
+      - ".github/scripts/check_links.py"
+      - ".github/workflows/check-links.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check every outbound link resolves
+        run: python3 .github/scripts/check_links.py

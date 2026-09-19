@@ -80,6 +80,21 @@ h1{font-size:clamp(2.4rem,7vw,4rem);font-weight:800;line-height:1.02;letter-spac
 .ml-fallback .fb-body{font-family:var(--serif);font-size:.95rem;line-height:1.55;
   color:var(--slate);margin:0}
 .ml-fallback a{color:var(--blue);font-weight:600}
+.picker{display:grid;gap:.75rem;margin:2rem 0 0}
+a.pick{display:grid;gap:.3rem;border:2px solid var(--rule-strong);border-radius:3px;
+  padding:1.15rem 1.4rem;background:var(--surface);text-decoration:none;color:inherit}
+a.pick:hover{border-color:var(--blue)}
+a.pick:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+a.pick .q{font-size:1.12rem;font-weight:700;letter-spacing:-.01em;line-height:1.25}
+a.pick .a{font-family:var(--serif);font-size:.95rem;line-height:1.45;color:var(--slate)}
+a.pick[aria-current="true"]{border-color:var(--blue);background:var(--blue-soft)}
+a.pick[aria-current="true"] .q::after{content:" ✓";color:var(--blue)}
+.fine.browse{margin-top:1.5rem}
+.fine.browse a{color:var(--blue);font-weight:600}
+.chosen{font-family:var(--serif);font-size:.97rem;line-height:1.5;margin:0 0 .9rem;
+  padding:.7rem .95rem;border-left:3px solid var(--blue);background:var(--blue-soft);
+  border-radius:0 3px 3px 0}
+.chosen b{font-family:var(--sans);font-weight:700}
 .fine{font-size:.82rem;color:var(--slate);margin:.75rem 0 0}
 
 /* ---------- sections ---------- */
@@ -156,7 +171,8 @@ footer a{color:var(--slate)}
   cleaning products actually matter. <strong>You know all of it. You just never got a clean
   moment to say it</strong> — and they'd rather read it than be told.</p>
 
-  <div class="signup">
+  <div class="signup" id="signup">
+    <p class="chosen" hidden></p>
     <div class="ml-embedded" data-form="00ZwEr"></div>
     <div class="ml-fallback" hidden>
       <p class="fb-lead">Signup isn't loading.</p>
@@ -164,41 +180,34 @@ footer a{color:var(--slate)}
       <a href="/guides/">read every guide right here</a> — they're free and complete, and
       nothing is held back.</p>
     </div>
-    <p class="fine">Three free guides, yours to forward. Then an occasional note when there's
+    <p class="fine">One guide, free, yours to forward. Then an occasional note when there's
     something genuinely useful. Unsubscribe whenever — no hard feelings. <a href="/privacy.html">Privacy</a></p>
   </div>
 </div></header>
 
 <section id="guides"><div class="wrap">
-  <p class="eyebrow">Free, and complete</p>
-  <h2>Three things worth forwarding.</h2>
-  <p class="lede">No catch and no upsell buried in them. Print them, email them, or slip them
-  in a box of kitchen stuff. They're written to be read by someone who didn't ask for
-  advice.
+  <p class="eyebrow">Start here</p>
+  <h2>What's going on with them?</h2>
+  <p class="lede">Pick one. They'll get that guide and nothing else — because one thing
+  they actually do beats six things they meant to get around to.</p>
 
-  <div class="guides">
-    <a class="guide" href="/guides/first-apartment-checklist.html">
-      <span class="num">Guide 01</span>
-      <h3>The First Apartment Checklist</h3>
-      <p>Everything to do, buy, and find out — in the order it's needed. Including the half
-      hour on move-in day that decides whether the deposit comes back.</p>
-      <span class="go">Read it →</span>
+  <div class="picker">
+    <a class="pick" href="#signup" data-guide="first-apartment">
+      <span class="q">They just moved into their own place</span>
+      <span class="a">The First Apartment Checklist — what to do, buy and find out, in order</span>
     </a>
-    <a class="guide" href="/guides/how-often-should-i.html">
-      <span class="num">Guide 02</span>
-      <h3>How Often Should I…?</h3>
-      <p>Sheets, filters, towels, oil, the dryer vent. Every cadence in one place, with an
-      honest "good enough" next to the ideal.</p>
-      <span class="go">Read it →</span>
+    <a class="pick" href="#signup" data-guide="household-agreement">
+      <span class="q">They just moved in with someone</span>
+      <span class="a">The Household Agreement — who does what, settled before it's a fight</span>
     </a>
-    <a class="guide" href="/guides/cleaning-supply-starter-list.html">
-      <span class="num">Guide 03</span>
-      <h3>Cleaning Supply Starter List</h3>
-      <p>The nine products that do the work, what they cost, and the long list of things the
-      cleaning aisle wants you to buy that you don't need.</p>
-      <span class="go">Read it →</span>
+    <a class="pick" href="#signup" data-guide="how-often">
+      <span class="q">They're just not keeping on top of it</span>
+      <span class="a">How Often Should I…? — every cadence in one place</span>
     </a>
   </div>
+
+  <p class="fine browse">Want to read them first? <a href="/guides/">They're all here,
+  free</a> — send the one that fits, not the whole pile.</p>
 </div></section>
 
 <section class="dave"><div class="wrap narrow">
@@ -258,8 +267,9 @@ footer a{color:var(--slate)}
 
 <section class="close"><div class="wrap">
   <h2>Send it instead of saying it.</h2>
-  <p class="lede">Three free guides. They cover what you'd tell them if you had an uninterrupted
-  hour and they were in the mood to listen — which, realistically, isn't going to happen.</p>
+  <p class="lede">One guide, matched to what's actually going on. It covers what you'd tell
+  them if you had an uninterrupted hour and they were in the mood to listen — which,
+  realistically, isn't going to happen.</p>
   <div class="signup">
     <div class="ml-embedded" data-form="00ZwEr"></div>
     <div class="ml-fallback" hidden>
@@ -268,7 +278,7 @@ footer a{color:var(--slate)}
       <a href="/guides/">read every guide right here</a> — they're free and complete, and
       nothing is held back.</p>
     </div>
-    <p class="fine">Three free guides, yours to forward. Occasional notes. Unsubscribe whenever. <a href="/privacy.html">Privacy</a> · <a href="mailto:hello@mrlifemanager.com">hello@</a></p>
+    <p class="fine">One guide, free, yours to forward. Occasional notes. Unsubscribe whenever. <a href="/privacy.html">Privacy</a> · <a href="mailto:hello@mrlifemanager.com">hello@</a></p>
   </div>
 </div></section>
 
@@ -290,6 +300,48 @@ footer a{color:var(--slate)}
       });
     }, 2500);
   });
+</script>
+<script>
+  // ADR-014 — completion is what converts. One guide, chosen by a question about
+  // their situation rather than a menu of products. The choice is carried into
+  // the signup so the welcome sequence sends that guide and only that guide.
+  (function () {
+    var LABELS = {
+      'first-apartment': 'The First Apartment Checklist',
+      'household-agreement': 'The Household Agreement',
+      'how-often': 'How Often Should I…?'
+    };
+    function choose(slug) {
+      try { sessionStorage.setItem('mlm_guide', slug); } catch (e) {}
+      document.querySelectorAll('.pick').forEach(function (el) {
+        el.setAttribute('aria-current', String(el.dataset.guide === slug));
+      });
+      document.querySelectorAll('.chosen').forEach(function (el) {
+        el.innerHTML = 'Sending you <b>' + LABELS[slug] + '</b>. Just that one.';
+        el.hidden = false;
+      });
+      document.querySelectorAll('input[name="guide"]').forEach(function (i) { i.value = slug; });
+    }
+    document.querySelectorAll('.pick').forEach(function (el) {
+      el.addEventListener('click', function () { choose(el.dataset.guide); });
+    });
+    // MailerLite renders its form asynchronously; add the hidden field once it exists.
+    var tries = 0;
+    var t = setInterval(function () {
+      var forms = document.querySelectorAll('.ml-embedded form');
+      if (forms.length) {
+        forms.forEach(function (f) {
+          if (f.querySelector('input[name="guide"]')) return;
+          var i = document.createElement('input');
+          i.type = 'hidden'; i.name = 'guide';
+          try { i.value = sessionStorage.getItem('mlm_guide') || ''; } catch (e) { i.value = ''; }
+          f.appendChild(i);
+        });
+        clearInterval(t);
+      }
+      if (++tries > 40) clearInterval(t);
+    }, 250);
+  })();
 </script>
 </body>
 </html>

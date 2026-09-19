@@ -1,5 +1,11 @@
 # Revenue Ideas
 
+> **Operating rules live in [commerce-rules.md](commerce-rules.md)** — adopted
+> 2026-09-19. Affiliate placement, disclosure, upsell limits, the freemium
+> ladder, and the maintenance cadence are settled there. Notably: **no commission
+> on basic consumables**, which removes the incentive to distort advice on the
+> products the guides are actually built around.
+
 A brainstorm of monetization paths, scored for MVP fit. Broader than
 [business-model.md](business-model.md), which analyzes the main models in depth;
 this file exists to catch ideas that don't fit neatly there.

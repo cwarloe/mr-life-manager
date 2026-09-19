@@ -767,6 +767,81 @@ arrives that the terms handle badly.
 
 ---
 
+## ADR-014 — Completion is what converts
+
+**Status:** Accepted
+**Date:** 2026-09-19
+**Scope:** Overriding. Governs offers, funnels, email, pricing, and content.
+
+**Context.** Six free guides were published and offered together — three on the
+landing page, six in the public index. The reasoning was distribution: guides
+that cannot be found or forwarded cannot spread, and distribution is this
+project's documented top risk.
+
+The founder identified a failure that outranks it, and it has nothing to do with
+money:
+
+> If they download all six checklists, they'd feel they accomplished something.
+> The reality is they downloaded a checklist and did nothing.
+
+**That is the exact failure this business exists to fix.** A person holding six
+undone PDFs has made no progress but feels as though they have — which is worse
+than feeling nothing, because the feeling is what would otherwise have driven
+them to act. It directly contradicts [do-it-now.md](../frameworks/do-it-now.md)
+and everything Dave taught.
+
+**Decision.**
+
+> **Completion is what converts.** Offer one thing at a time. Measure whether it
+> got done, not whether it was delivered.
+
+Recorded as [principle 11](../docs/vision/principles.md).
+
+**The distinction that makes this workable.** *Public* and *offered* are not the
+same decision:
+
+| | Purpose | Scope |
+|---|---|---|
+| **Public** | Search, linking, forwarding — the long tail | All guides stay at `/guides/`, indexed |
+| **Offered** | What a person at the front door is handed | Exactly **one** |
+
+Nothing gets pulled back or de-indexed. The funnel changes, not the library.
+
+**How the one gets chosen: a question, not a menu.** A menu asks someone to
+evaluate products, which paralyzes — the paradox of choice, which is the problem
+the brand exists to solve. A question about their own situation is a different
+cognitive task and people answer it easily:
+
+> **What just changed?**
+> *I just moved into my own place* · *We just moved in together* · *Nothing
+> changed, I'm just drowning*
+
+Each answer resolves to one guide. Segmented landing pages for specific traffic
+sources skip the question entirely and land on their answer.
+
+**Consequences.**
+
+- **The welcome sequence is rebuilt.** Delivering three guides on day zero is the
+  same failure by email. Day 0 is one guide; day 3 asks whether it got done; the
+  next guide comes after action, not on a timer.
+- **Pacing gives the list a job.** Material arrives behind completion, which is a
+  reason to stay subscribed rather than a reason to unsubscribe after the dump.
+- **Success metric changes** from downloads to completions.
+- Harder: completion is harder to measure than delivery. Replies and self-report
+  are the only instruments we have at this scale, which makes the day-3 and day-7
+  emails more important, not less.
+
+**The commercial half.** Someone who finished one checklist and felt the result
+buys the next for $9. Someone sitting on six undone PDFs does not buy a seventh.
+Abundance suppresses conversion. The principled answer and the profitable answer
+coincide.
+
+**Revisit when:** never on the substance. Revisit the *mechanism* — the question,
+the pacing — if Phase 4 shows people completing more when handed more, which
+would be genuinely surprising and worth knowing.
+
+---
+
 ## Open decisions
 
 Not yet ADRs. These need to be made, and each blocks something.

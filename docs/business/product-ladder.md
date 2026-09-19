@@ -1,5 +1,11 @@
 # Product Ladder
 
+> **Governed by [ADR-014](../../planning/decisions.md#adr-014--completion-is-what-converts)** —
+> completion is what converts. The free tier offers **one** guide, chosen by a
+> question about the reader's situation, not a menu. All guides remain public at
+> `/guides/`; *public* and *offered* are different decisions. See
+> [commerce-rules.md](commerce-rules.md) for the ladder as operated.
+
 A value ladder moves someone from *never heard of us* to *paid us a lot*, one
 small trust increment at a time. Each rung should deliver a complete win on its
 own and make the next rung feel obvious.

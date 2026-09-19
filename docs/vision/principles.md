@@ -192,11 +192,50 @@ education — and it's why this is a teaching business, not a chore list.
 
 ---
 
+## 11. Completion is what converts
+
+*Delivering something is not the same as it getting done. Only one of those is worth anything.*
+
+A person who downloads six checklists and completes none of them has made **no
+progress** — but they feel as though they have, which is worse than feeling
+nothing, because the feeling is what would otherwise have driven them to act.
+Abundance of material is not generosity. It is a way of appearing helpful while
+leaving someone exactly where they were.
+
+This is the failure this whole business exists to fix, so we must not be the
+ones causing it.
+
+**What follows from it**
+
+- **Offer one thing at a time.** Not everything we have — the one thing that
+  matches where the person actually is.
+- **The funnel must model the behavior it sells.** "Pick one thing and do it"
+  *is* the product. A front door that says "take all six" teaches the opposite of
+  everything inside.
+- **Let a question do the choosing.** A menu asks someone to evaluate products,
+  which paralyzes. A question about their own situation — *what just changed?* —
+  is a different task entirely, and people answer it easily.
+- **Pace delivery behind action.** The next thing comes after the last thing got
+  done, not on a schedule.
+- **Measure completion, not downloads.** A download is not a result. Ask whether
+  it got done.
+
+**The commercial half, which is real and worth saying out loud.** Someone who
+finished one checklist and felt the result will buy the next one. Someone sitting
+on six undone PDFs will not buy a seventh. **Completion is what converts** —
+abundance actively suppresses it. The principled answer and the profitable answer
+are the same here, which is usually a sign it's the right one.
+
+> **Test:** does this help someone *finish something*, or does it just give them
+> more? If it's the second, it is not help — however much of it there is.
+
 ## Using these principles
 
 - **Product filter:** every product should serve at least one principle
   explicitly. Name it in the product brief.
 - **Content filter:** if a piece of content contradicts #8 (dignity) or #9
   (simplicity), rewrite it.
+- **Offer filter:** if a page, email, or campaign hands someone more than one
+  thing to act on, it fails #11. Cut it to one.
 - **Scope filter:** if an opportunity has nothing to do with practical systems,
   it's outside the business — however profitable it looks.
