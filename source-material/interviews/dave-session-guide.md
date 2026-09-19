@@ -97,6 +97,22 @@ come out of this whole project. He can't judge what's worth saying; you can.
 
 ---
 
+## Phrases of Dave's already in circulation — get him to say these properly
+
+Things he has said that are already being used in conversation but are **not
+captured in his own words anywhere.** Ask him about each; record the answer
+verbatim.
+
+- **"The thousand-yard stare."** What someone looks like when they are so far
+  behind that they have stopped seeing the room at all. Ask him: when have you
+  seen it? What do you do for someone in that state? Where do you start them?
+- **"It's all obvious."** He means it sincerely. Ask him what he means by it, and
+  whether he still thinks so after watching people struggle.
+
+*Add to this list whenever a Dave-ism turns up in conversation without a source.
+These are the highest-value things to capture, because they are already proving
+useful and nobody has written down what he actually said.*
+
 ## Right after the session — while it's fresh
 
 - [ ] **Note what surprised you.** That list is the content. It's also the thing

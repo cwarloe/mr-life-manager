@@ -1,4 +1,4 @@
-# Welcome Sequence — Draft 2
+# Welcome Sequence — Draft 3
 
 **Rebuilt 2026-09-19 around
 [ADR-014](../../../planning/decisions.md#adr-014--completion-is-what-converts).**
@@ -6,8 +6,13 @@ Draft 1 delivered three guides on day zero — the same failure the landing page
 had, just by email. Handing someone three PDFs produces the feeling of progress
 and none of the fact of it.
 
-**One guide. Then ask whether it got done. The next one comes after action, not
-after a timer.**
+**One guide. Then a conversation.** Day 3 and day 7 ask questions and offer help —
+they deliver nothing. The next guide exists only for someone who finished and
+asked for it.
+
+Draft 2 still had me talking: it diagnosed why they might be stuck, and it
+offered the next guide in the same breath as the research question. Both are
+weight on someone who is already carrying too much.
 
 Plain text. No header images, no template chrome. Voice is the apprentice, not
 the expert.
@@ -62,39 +67,39 @@ three emails, one attachment each.
 
 ## Email 2 — Day 3 ★
 
-**Subject:** Did you do the first bit?
+> ★ **Ask, don't tell.** Draft 2 diagnosed why they might be stuck. That is still
+> me talking, and it hands them a paragraph to read when the problem is that they
+> already have too much to read. **One question. Easy to answer. Offer help.**
 
-> ★ **The pivot of the whole sequence.** Not new content — a nudge, and
-> permission to have not done it. Most sequences send more. This one asks.
+**Subject:** How's it going?
 
-> Quick one. Did you get to [THE ONE ACTION]?
+> Just checking — how did you get on with [THE ONE ACTION]?
 >
-> **If you did** — good. That's genuinely the hard part. The rest of the guide is
-> the same move repeated, and it gets easier each time.
+> Three honest options, pick one and hit reply:
 >
-> **If you didn't** — that's normal, and it isn't a character problem. It's
-> usually one of two things:
+> **Done** — and I'd like to hear how it went
+> **Started, didn't finish** — tell me where you got stuck
+> **Haven't yet** — also completely fine, and worth saying why
 >
-> *It felt too big.* Cut it smaller. Not "photograph the apartment" — photograph
-> one room. Not "fill in the agreement" — just the dishes line.
+> One word is a real answer. I read every reply.
 >
-> *You forgot.* Which is a system problem, not a you problem. Put it on the
-> calendar for a specific evening, with a time attached.
->
-> That's it. No new reading. Just the one thing.
+> If something in the guide didn't make sense, or you hit a bit I didn't cover,
+> tell me that too — that's the most useful thing you could send me.
 >
 > — [name]
+
+**No attachment. No new material. No next guide.** The email is a question.
 
 ---
 
 ## Email 3 — Day 7 ★
 
+> ★ **The research channel.** Still no offer of anything. Someone who hasn't
+> finished should not be handed another thing to not finish.
+
 **Subject:** What are you stuck on?
 
-> ★ **The research channel, and still the most valuable email here.** Reply to
-> every single response personally — that is where the next product comes from.
-
-> Last one for now.
+> Last one from me unless you write back.
 >
 > Everything I sent you is stuff I had to be taught. Which means there are gaps —
 > things Dave never thought to mention because they were obvious to him, and
@@ -103,26 +108,59 @@ three emails, one attachment each.
 > So: **what's something about running a home or a life that you had to figure
 > out on your own, and felt like you should have already known?**
 >
-> Hit reply and tell me. One line is fine. I read all of them, and I answer.
+> Hit reply. One line is fine.
 >
 > If you're sitting there thinking your question is too basic to ask — that's the
 > exact feeling this whole thing exists to fix. Ask it.
->
-> And if you finished the guide and want the next one, just say which problem
-> you're on. I'll point you at it.
 >
 > — [name]
 
 ---
 
-## After the sequence
+## After day 7: branch on what they said
 
-**Do not drip more guides on a schedule.** The next one goes out when they ask,
-or when they say they finished. That's the whole principle — material arrives
-behind completion, not ahead of it.
+**This is the part that matters.** The sequence stops delivering and starts
+responding. Nothing else goes out on a timer.
 
-Pacing this way also gives the list a job beyond delivery, which is a reason to
-stay subscribed rather than a reason to unsubscribe after the dump.
+| They said | Send |
+|---|---|
+| **Done** | Congratulate them, specifically. *Then* ask what they want next — and only then name a guide. |
+| **Stuck on X** | Help with X. A few lines, in the email. **Not a guide.** The answer, or the smallest next step. |
+| **Haven't started** | One short note: cut the action smaller, name a specific evening. Nothing else. Then leave them alone. |
+| **A question** | Answer it. Personally. That's the whole job. |
+| **Silence** | **Nothing.** See below. |
+
+### The rule on offering the next guide
+
+**Only after someone says they finished, and only when they ask for more.**
+
+Offering another guide to someone who hasn't finished the first is exactly the
+overload this whole model exists to prevent — the pile builds, the thousand-yard
+stare sets in, and they stop opening anything at all. A guide unoffered costs
+nothing. A guide offered at the wrong moment costs the relationship.
+
+### The rule on silence
+
+After day 7, someone who hasn't replied gets **nothing further on a schedule.**
+
+They are not a lead to be nurtured. They took a guide, and either it helped or it
+didn't. Continuing to email them turns a useful thing they received into a
+channel they resent.
+
+Write to them again when there is genuinely something new and worth their
+attention — not a drip, and not because it's been a while.
+
+---
+
+## What "help" means right now
+
+Honestly: **it means you replying personally.** There is no paid support tier, no
+1:1 offer, nothing to sell them. At this list size that's fine, and it's also the
+research channel — every reply is data the repo doesn't have.
+
+**It does not scale**, and it shouldn't be promised as though it will. At a few
+hundred subscribers this is the most valuable hour a week in the business. At a
+few thousand it becomes something else, and that's a problem worth having later.
 
 ---
 
@@ -148,3 +186,6 @@ gimmick. Introduce him once, properly, and let it sit.
       reply is worse than never asking.
 - [ ] Set up a way to record who says they finished — that's the completion
       metric, and there's no other instrument at this scale
+- [ ] Tag repliers by what they said (done / stuck / not started) so the branch
+      table is actually actionable
+- [ ] **Turn off any automation after day 7.** No drip. Silence means stop.
