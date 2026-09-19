@@ -9,18 +9,16 @@ Recovered from Gmail 2026-09-19. Thread IDs are Gmail's, for re-retrieval.
 |---|---|---|
 | 2009-10-26 | Garage clean-up plan (inline in email body) | [2009-10-26-dave-webster-garage-cleanup.md](2009-10-26-dave-webster-garage-cleanup.md) |
 | 2019-04-05 | The naming exchange | [2019-04-05-naming-exchange.md](2019-04-05-naming-exchange.md) |
-| 2023-07-17 | Condo cleanup notes / golden housekeeping rules | [2023-07-17-dave-webster-cleanup-notes.md](2023-07-17-dave-webster-cleanup-notes.md) |
+| 2009-11-04 | Weekly cleaning schedule (+ the golden-rules preface) | [2009-11-04-dave-webster-weekly-schedule.md](2009-11-04-dave-webster-weekly-schedule.md) |
+| 2023-07-17 | Kitchen cleanup notes + materials list | [2023-07-17-dave-webster-cleanup-notes.md](2023-07-17-dave-webster-cleanup-notes.md) |
 
 ## Identified but NOT yet retrieved — all are .docx attachments
 
 These are guides Dave wrote **for Charles specifically**. The email bodies are
-empty; the entire content is in the attachment. Four separate documents, three
-of them from a two-month burst in late 2009.
+empty; the entire content is in the attachment. Two still outstanding.
 
 | Date | Subject | Attachment | Thread ID |
 |---|---|---|---|
-| 2009-10-26 | "Dave          Garage clean-up" | `Charles Warloe.docx  Garage.docx` | `12492f14a0d31cf2` |
-| 2009-11-04 | "Dave:Cleanning materials,basic idea, will check your place to finish" | `Charles.docx` | `124bcb900f76aa6d` |
 | 2009-11-10 | "Cleanning products    David" | `Charles clean.docx` | `124dc4ab789a7332` |
 | 2010-01-02 | "House goals" | `Charles House goals and fix.docx` | `125ec78aafe3995a` |
 | 2023-07-17 | (with the condo notes) | `Do it now.jpg` | — |
@@ -34,7 +32,12 @@ of them from a two-month burst in late 2009.
 - **"House goals" (2010)** is the only document whose title suggests scope beyond
   cleaning. Dave's subject line pairs "goals" with "fix" — possibly maintenance,
   possibly the missing domain coverage.
-- **The garage `.docx`** may carry formatting or content the inline paste dropped.
+- **Retrieved 2026-09-19:** the garage `.docx` (identical to the inline email
+  body — nothing new) and `Charles.docx`, which turned out to be the **weekly
+  schedule**, not a materials list despite the subject line. See
+  [its analysis](2009-11-04-analysis.md).
+- **"Earlier papers on mail"** — the weekly schedule references a prior document
+  about handling mail that is not in this inventory and has not been found.
 
 ## How to retrieve them
 
