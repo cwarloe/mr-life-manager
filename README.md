@@ -109,6 +109,7 @@ Defined in [`frameworks/life-domains.md`](frameworks/life-domains.md).
 | [Everything Has a Place](frameworks/everything-has-a-place.md) | Every object, task, document, dollar, and responsibility has one defined home. |
 | [Do It Now](frameworks/do-it-now.md) | A decision rule — do, schedule, delegate, or discard — not a command to do everything immediately. |
 | [Preventative vs. Crisis](frameworks/preventative-vs-crisis.md) | Small scheduled effort beats large forced effort, across every domain. |
+| [Remove the Excuse](frameworks/remove-the-excuse.md) | A prep list's job is closing off the reasons a person will stop, not gathering supplies. |
 | [Life Domains](frameworks/life-domains.md) | The taxonomy that organizes all content and products. |
 
 ## Repository structure

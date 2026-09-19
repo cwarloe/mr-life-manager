@@ -131,6 +131,24 @@ His 2023 notes disagree with what the guides now say. He will have opinions.
 Also worth asking: **you said these rules save fifty percent of your time —
 where does that number come from?**
 
+### From the 2009 garage document
+
+1. **You wrote the garage plan as one day, start to finish. The condo notes are
+   a daily routine. Is the one-day reset a prerequisite — do you have to bring a
+   place to zero before maintenance is even possible?**
+2. **"Glazed eyes" is on your excuse list, not your sympathy list. Was that
+   deliberate? What do you actually do when you see it in someone?**
+3. **Your first section is almost entirely about making sure people can't quit —
+   the dump is open, the truck is there. Did you learn that the hard way?**
+4. **You open both documents by asking "do I really want this, and am I willing
+   to work on it till the goal is reached?" What happens if someone answers no?**
+5. **The closing quote about overestimating a year and underestimating ten —
+   where did you get it?** (We can't print it attributed to you or to anyone
+   else without knowing.)
+6. **"Am sure I can help a lot of foolish young people not to be as stupid as I
+   was" — that's from a 2019 email. Is money a domain you want to teach, and how
+   much of your own story goes in it?**
+
 ## Right after the session — while it's fresh
 
 - [ ] **Note what surprised you.** That list is the content. It's also the thing
