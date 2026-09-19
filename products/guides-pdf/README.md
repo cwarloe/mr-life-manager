@@ -7,7 +7,7 @@ attaches to the day-0 welcome email.**
 |---|---|---|
 | `first-apartment-checklist.pdf` | 7 | [source](../checklists/first-apartment/first-apartment-checklist.html) |
 | `how-often-should-i.pdf` | 9 | [source](../checklists/how-often/how-often-should-i.html) |
-| `cleaning-supply-starter-list.pdf` | 5 | [source](../checklists/cleaning-supplies/cleaning-supply-starter-list.html) |
+| `cleaning-supply-starter-list.pdf` | 6 | [source](../checklists/cleaning-supplies/cleaning-supply-starter-list.html) |
 | `household-agreement.pdf` | 7 | [source](../worksheets/household-agreement/household-agreement.html) |
 | `laundry-solved.pdf` | 6 | [source](../checklists/laundry/laundry-solved.html) |
 | `ten-meals.pdf` | 6 | [source](../checklists/ten-meals/ten-meals.html) |

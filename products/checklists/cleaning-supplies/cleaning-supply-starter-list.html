@@ -69,6 +69,24 @@ td.price{text-align:right;padding-right:0;font-variant-numeric:tabular-nums;
 tr.star td.item{color:var(--amber)}
 tr.star td.item::before{content:"★ ";font-size:.75em}
 
+.aisle{display:grid;gap:.7rem;margin:1.3rem 0 0}
+.aisle-row{display:grid;grid-template-columns:11rem 1fr;gap:.2rem 1.2rem;
+  padding:.7rem 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.aisle-row:last-child{border-bottom:none}
+.aisle-row b{font-weight:600;font-size:.94rem}
+.aisle-row span{font-family:var(--serif);font-size:.93rem;line-height:1.5;color:var(--slate)}
+.aisle-row span em{color:var(--ink);font-style:normal;font-weight:600}
+@media (max-width:34rem){.aisle-row{grid-template-columns:1fr;gap:.15rem}}
+.shoponline{margin:1.4rem 0 0;padding:1rem 1.2rem;border:1px solid var(--rule-strong);
+  border-radius:3px;background:var(--surface)}
+.shoponline b{display:block;font-size:.72rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blue);margin-bottom:.5rem}
+.shoponline p{font-family:var(--serif);font-size:.92rem;line-height:1.5;color:var(--slate);margin:0 0 .7rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.chips a{font-size:.85rem;font-weight:600;padding:.3rem .65rem;border:1.5px solid var(--rule-strong);
+  border-radius:2px;text-decoration:none;color:var(--ink)}
+.chips a:hover{border-color:var(--blue);color:var(--blue)}
+.chips a:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
 .skips{list-style:none;margin:0;padding:0;display:grid;gap:.9rem}
 .skips li{padding-left:1.6rem;position:relative;break-inside:avoid}
 .skips li::before{content:"×";position:absolute;left:0;top:-.1em;color:var(--amber);
@@ -160,6 +178,77 @@ footer b{color:var(--ink);font-weight:600}
         <tr><td class="item">Sponges or scrub pads</td><td class="why">Replace every 1–2 weeks</td><td class="price">$3–5</td></tr>
       </tbody>
     </table></div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="tag">Aisle</span><h2>What to grab, in the aisle</h2><span class="total">One trip</span></div>
+    <p class="sec-note">No brands here on purpose — they change, they cost more, and the
+    cheap version is usually the same thing. This is what to reach for.</p>
+
+    <div class="aisle">
+      <div class="aisle-row"><b>All-purpose cleaner</b>
+        <span>Any spray bottle that says <em>all-purpose</em> or <em>multi-surface</em>.
+        Store brand is fine. <em>Unscented if they have it</em> — fragrance is what you're
+        paying extra for, and it hides the smell of a surface that isn't actually clean.</span></div>
+
+      <div class="aisle-row"><b>Dish soap</b>
+        <span>The big plain bottle. Concentrated lasts noticeably longer. Any brand.</span></div>
+
+      <div class="aisle-row"><b>Bathroom cleaner</b>
+        <span>Look for <em>soap scum</em> or <em>mildew</em> on the label — that's the one
+        job an all-purpose won't do well. A spray, not a cream.</span></div>
+
+      <div class="aisle-row"><b>Toilet bowl cleaner</b>
+        <span>The bottle with the angled neck, so it reaches under the rim. Grab the brush
+        at the same time.</span></div>
+
+      <div class="aisle-row"><b>Glass cleaner</b>
+        <span><em>Optional.</em> Try a damp microfiber first — it does most of it. Only buy
+        this if you've tried that and weren't happy.</span></div>
+
+      <div class="aisle-row"><b>Baking soda</b>
+        <span>Baking aisle, not cleaning. A plain box. <em>Buy the small one</em> — you'll
+        use less than you think.</span></div>
+
+      <div class="aisle-row"><b>White vinegar</b>
+        <span>Condiment aisle. <em>Distilled white</em>, the cheapest big jug. Not cider,
+        not wine vinegar.</span></div>
+
+      <div class="aisle-row"><b>Microfiber cloths</b>
+        <span><em>Buy a multipack, not two.</em> Ten or more. This is the best value on the
+        list and the thing you'll wish you had more of. Colour-coding them by room is
+        optional but genuinely useful.</span></div>
+
+      <div class="aisle-row"><b>Sponges or scrub pads</b>
+        <span>A multipack. The kind with a scrubby side. You replace these every week or
+        two, so don't buy nice ones.</span></div>
+    </div>
+
+    <div class="note">
+      <b>Two rules for the whole aisle</b>
+      <strong>Store brand is almost always the same product.</strong> Compare the active
+      ingredients if you're curious — usually identical, often half the price.
+      <br><br>
+      <strong>Buy the smallest size of anything new to you.</strong> A bulk jug of something
+      you end up hating is worse than no cleaner at all.
+    </div>
+
+    <div class="shoponline">
+      <b>Or order it</b>
+      <p>These open a search rather than a specific item, so they still work when a product
+      gets discontinued or relisted. Same rules apply: store brand, unscented, smallest size
+      of anything new.</p>
+      <div class="chips">
+        <a href="https://www.walmart.com/search?q=all+purpose+cleaner+unscented">All-purpose</a>
+        <a href="https://www.walmart.com/search?q=dish+soap">Dish soap</a>
+        <a href="https://www.walmart.com/search?q=bathroom+cleaner+soap+scum">Bathroom</a>
+        <a href="https://www.walmart.com/search?q=toilet+bowl+cleaner">Toilet</a>
+        <a href="https://www.walmart.com/search?q=baking+soda">Baking soda</a>
+        <a href="https://www.walmart.com/search?q=distilled+white+vinegar">Vinegar</a>
+        <a href="https://www.walmart.com/search?q=microfiber+cleaning+cloths+multipack">Microfiber</a>
+        <a href="https://www.walmart.com/search?q=scrub+sponges+multipack">Sponges</a>
+      </div>
+    </div>
   </section>
 
   <section class="sec">

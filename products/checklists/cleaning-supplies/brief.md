@@ -84,6 +84,14 @@ vinegar are genuinely dangerous and widely unknown. Two sentences, no lecture.
 ## Open questions before this ships
 
 - [ ] **Price-check the ranges** — they're estimates and should be verified.
+- [x] **"In the aisle" section added 2026-09-19.** A Walmart kit with nine specific
+      branded product links was proposed and rejected: one URL was a fabricated
+      placeholder, five pointed at the B2B storefront that walls off consumers,
+      none could be verified, and retail product IDs rot. Worse, it recommended
+      scented premium brands two sections above the Skip list that tells people
+      not to buy exactly those. Replaced with brand-free aisle guidance that
+      cannot go stale, plus search-URL chips rather than item links — searches
+      survive a discontinued product.
 - [ ] Affiliate links later? [revenue-ideas.md](../../../docs/business/revenue-ideas.md)
       flags real integrity risk. **This asset's credibility comes from telling
       people what not to buy**, which affiliate revenue directly undermines. If
