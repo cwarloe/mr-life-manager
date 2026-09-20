@@ -159,18 +159,26 @@ verify it and learn from real people.
 - ✅ Foundational decisions settled: faith framing, beachhead and payer, the
       person behind the brand, and the intended licensing model
       ([decision log](planning/decisions.md))
-- ✅ Three free-tier guides drafted and designed —
-      [First Apartment Checklist](products/checklists/first-apartment/),
-      [How Often Should I…?](products/checklists/how-often/),
-      [Cleaning Supply Starter List](products/checklists/cleaning-supplies/), and
-      [What Is This Room For?](products/checklists/room-for/)
-- ✅ General and parent-facing landing pages deployed through GitHub Pages and
-      connected to MailerLite
+- ✅ Seven free-tier guides drafted and designed — see
+      [`products/checklists/`](products/checklists/). They are now **archive and
+      search surface, not offers** ([ADR-015](planning/decisions.md#adr-015--the-win-comes-before-the-email))
+- ✅ **Dave's original documents recovered** — four guides he wrote in 2009–2010,
+      plus the 2023 re-send and the 2019 thread where the name was coined. The
+      frameworks are documented rather than reconstructed
+      ([`source-material/`](source-material/INVENTORY.md))
+- ✅ **Funnel rebuilt around the win, not the email** — the main page routes to
+      per-pain entry pages; the action is free and ungated; signup comes after
+      ([ADR-015](planning/decisions.md#adr-015--the-win-comes-before-the-email),
+      [ADR-016](planning/decisions.md#adr-016--the-sequence-shrinks-unconditionally))
+- ✅ Two entry pages live with sequences drafted —
+      [first night](products/landing/first-night.html) ·
+      [someone's coming over](products/landing/guests.html)
 - ✅ Customer-interview script and Dave recording guide ready
-- ⬜ **Verify the MailerLite automation end to end** — signup, immediate guide
-      delivery, day-3/day-7 emails, unsubscribe, and replies
-- ⬜ **Record Dave.** Every framework here is still a reconstruction from memory
-      of an uncaptured primary source
+- ⬜ **Nothing is configured in MailerLite.** Both sequences are written and
+      unsent; the main page no longer captures email at all
+- ⬜ **Record Dave.** The recovered documents cover cleaning, organizing and
+      hospitality only. Money, food, paperwork, maintenance and transitions are
+      still entirely unsourced, and he is still the critical path for them
 - ⬜ Complete the USPTO/name check and domain/social availability check
 - ⬜ Add public contact and privacy details before broad distribution
 - ⬜ No completed audience validation, customers, or revenue yet

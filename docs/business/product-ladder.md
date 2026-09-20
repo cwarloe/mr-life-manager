@@ -18,8 +18,15 @@ especially for an audience whose core wound is being talked down to.
 
 ## Rung 0 — Free (attract and prove)
 
-**Purpose:** prove we understand the problem better than anyone else they've
-found. Capture an email. Earn the right to sell.
+**Purpose:** get something *done*, today, for free. Then earn the email, then
+earn the right to sell — in that order.
+
+> **Revised 2026-09-20 by [ADR-015](../../planning/decisions.md#adr-015--the-win-comes-before-the-email).**
+> Rung 0 used to read "capture an email." That put the ask before any evidence we
+> were worth it. The free tier's job is a **completed action**, and the email is
+> what a person gives once something has already worked. The guides below are no
+> longer the front door — they are archive and search surface. The front door is a
+> **per-pain entry page** carrying one action, ungated.
 
 | Product | Format | Notes |
 |---|---|---|
@@ -30,8 +37,12 @@ found. Capture an email. Earn the right to sell.
 | **Move-Out Checklist** | 2 pg PDF | Get the deposit back. Seasonal, urgent, highly searched. |
 | Articles / short videos | Web | Same content, discoverable. |
 
-**Success looks like:** downloads, email signups, and unprompted sharing. If the
-free tier doesn't spread on its own, the paid tier will not sell.
+**Success looks like:** a thing that got done, then an email, then unprompted
+sharing — in that order. Downloads are explicitly *not* a success measure
+([ADR-014](../../planning/decisions.md#adr-014--completion-is-what-converts)): a
+person holding seven undone PDFs has made no progress while feeling as though
+they have. If the free tier doesn't spread on its own, the paid tier will not
+sell.
 
 ---
 
