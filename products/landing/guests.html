@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Someone is coming over and your place is a mess. Six things, in order, about 35 minutes. Stop whenever they arrive.">
+<meta name="color-scheme" content="light dark">
+<title>Someone's Coming Over</title>
+<link rel="canonical" href="https://mrlifemanager.com/guests.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+:root{
+  --ink:#12161C; --paper:#FBF9F4; --surface:#FFFFFF;
+  --blue:#1F4E79; --blue-soft:#E7EEF5;
+  --amber:#B4741A; --amber-soft:#F7EEDD;
+  --slate:#6B7280; --rule:#D9D5CC; --rule-strong:#B8B2A6;
+  --sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
+    --blue:#8FB6DA; --blue-soft:#1D2833;
+    --amber:#E3A94E; --amber-soft:#2A2418;
+    --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
+  --blue:#8FB6DA; --blue-soft:#1D2833;
+  --amber:#E3A94E; --amber-soft:#2A2418;
+  --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;
+  line-height:1.5;margin:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.15rem}
+
+header.top{padding:2.5rem 0 0}
+.eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--blue);margin:0 0 .7rem}
+h1{font-size:clamp(2rem,8vw,2.9rem);font-weight:800;line-height:1.03;letter-spacing:-.025em;
+  margin:0;text-wrap:balance}
+.sub{font-family:var(--serif);font-size:1.1rem;line-height:1.5;margin:.9rem 0 0;color:var(--slate)}
+
+.frame{background:var(--surface);border:1px solid var(--rule);border-radius:5px;
+  padding:1.15rem 1.25rem;margin:1.9rem 0 0}
+.frame p{margin:0;font-family:var(--serif);font-size:1rem;line-height:1.55}
+.frame p + p{margin-top:.7rem}
+.frame b{font-family:var(--sans);font-weight:700}
+
+.steps{margin:2.6rem 0 0;padding:0;list-style:none;counter-reset:s}
+.step{margin:0 0 2.3rem;counter-increment:s;position:relative}
+.step-head{display:flex;gap:.85rem;align-items:baseline}
+.step-head::before{content:counter(s);font-size:1.6rem;font-weight:800;line-height:1;
+  color:var(--paper);background:var(--ink);min-width:2.1rem;height:2.1rem;border-radius:3px;
+  display:flex;align-items:center;justify-content:center;flex:none;font-variant-numeric:tabular-nums}
+.step-head h2{font-size:1.32rem;font-weight:700;letter-spacing:-.018em;margin:0;line-height:1.2;flex:1}
+.mins{font-size:.78rem;font-weight:600;color:var(--slate);white-space:nowrap;
+  border:1px solid var(--rule-strong);border-radius:99px;padding:.16rem .55rem;align-self:center}
+.do{font-size:1.04rem;line-height:1.55;margin:.85rem 0 0}
+.do b{font-weight:700}
+.why{font-family:var(--serif);font-size:.98rem;line-height:1.55;color:var(--slate);
+  margin:.7rem 0 0;border-left:2px solid var(--rule);padding-left:.85rem}
+.why b{font-family:var(--sans);font-weight:600;color:var(--ink)}
+
+.warn{border-left:3px solid var(--amber);background:var(--amber-soft);padding:.85rem 1rem;
+  border-radius:0 3px 3px 0;margin:2.4rem 0 0}
+.warn p{margin:0;font-family:var(--serif);font-size:.98rem;line-height:1.55}
+.warn b{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--amber);display:block;margin-bottom:.3rem}
+
+.stop{border-top:3px solid var(--ink);margin:3rem 0 0;padding:1.5rem 0 0}
+.stop h2{font-size:1.45rem;font-weight:800;letter-spacing:-.02em;margin:0 0 .6rem}
+.stop p{font-family:var(--serif);font-size:1.04rem;line-height:1.6;margin:0}
+.stop p + p{margin-top:.8rem}
+
+.after{margin:3.5rem 0 0;padding:2rem 0 0;border-top:1px solid var(--rule)}
+.after h2{font-size:1.28rem;font-weight:700;letter-spacing:-.015em;margin:0 0 .8rem}
+.after p{font-family:var(--serif);font-size:1.02rem;line-height:1.62;margin:0 0 .9rem}
+.after p b{font-family:var(--sans);font-weight:600}
+.pull{font-family:var(--serif);font-style:italic;font-size:1.08rem;line-height:1.5;
+  border-left:3px solid var(--blue);padding-left:1rem;margin:1.4rem 0;color:var(--ink)}
+
+.signup{background:var(--surface);border:1px solid var(--rule-strong);border-radius:5px;
+  padding:1.5rem 1.35rem;margin:2.2rem 0 0}
+.signup h2{font-size:1.18rem;font-weight:700;margin:0 0 .5rem;letter-spacing:-.01em}
+.signup p{font-family:var(--serif);font-size:1rem;line-height:1.55;margin:0 0 1.1rem;color:var(--slate)}
+.ml-fallback a{font-weight:600;color:var(--blue)}
+.fine{font-size:.82rem;color:var(--slate);margin:.9rem 0 0;line-height:1.5}
+
+footer{margin:3.5rem 0 0;padding:1.3rem 0 3.5rem;border-top:1px solid var(--rule);
+  font-size:.8rem;color:var(--slate);line-height:1.6}
+footer a{color:var(--blue);font-weight:600;text-decoration:none}
+
+@media (min-width:40rem){ body{font-size:18px} .wrap{padding:0 1.5rem} }
+@media print{
+  :root{--ink:#000;--paper:#fff;--surface:#fff;--slate:#444;--rule:#bbb;--rule-strong:#666;
+    --blue-soft:#fff;--amber:#7a4d0a;--amber-soft:#fff}
+  body{font-size:10.5pt}.signup,footer{display:none}
+  .step{page-break-inside:avoid}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+<script>
+  (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+  .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+  n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+  (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+  ml('account', '2635985');
+</script>
+</head>
+<body>
+
+<div class="wrap">
+
+<header class="top">
+  <p class="eyebrow">Mr. Life Manager</p>
+  <h1>Someone's coming over and your place is a disaster.</h1>
+  <p class="sub">Six things, in this order. About thirty-five minutes if you have
+  it, and it still works if you don't.</p>
+</header>
+
+<div class="frame">
+  <p><b>Do them in order and stop when they knock.</b> The order runs biggest
+  visible difference first, so wherever you get to is the right place to have
+  stopped. You are not going to finish and you don't need to.</p>
+  <p>Nothing to sign up for. Start at one.</p>
+</div>
+
+<ol class="steps">
+
+  <li class="step">
+    <div class="step-head"><h2>Bin out. Window open.</h2><span class="mins">3 min</span></div>
+    <p class="do">Take the kitchen bin <b>all the way out</b> — not into the hallway.
+    Fresh bag in. Then open a window in the room they'll sit in and leave it open
+    while you do everything else.</p>
+    <p class="why"><b>Why this is first.</b> Smell is what people register before
+    they register anything they can see, and they will never mention it. The bin is
+    usually the reason. Five minutes of open window does more than anything you can
+    spray. If you want the place to smell of something afterwards, that's fine —
+    just do it once the source is gone, rather than over the top of it.</p>
+  </li>
+
+  <li class="step">
+    <div class="step-head"><h2>Empty the sink.</h2><span class="mins">5 min</span></div>
+    <p class="do">Everything in it goes in the dishwasher, or gets washed and left on
+    the rack. Then wipe the counter it was sitting on. <b>Completely empty</b> — not
+    tidier.</p>
+    <p class="why"><b>Why it's worth five minutes.</b> An empty sink makes a kitchen
+    read as clean even if you touch nothing else. A full one reads as chaos even when
+    everything around it is spotless. It's the single most unfair detail in the
+    house, and it's free.</p>
+  </li>
+
+  <li class="step">
+    <div class="step-head"><h2>One basket. Clear every flat surface.</h2><span class="mins">10 min</span></div>
+    <p class="do">Get a laundry basket or a cardboard box. Walk the room they'll be
+    in and put <b>everything that doesn't live there</b> into it — coffee table,
+    dining table, the arm of the chair, the floor, the back of the sofa. Then put the
+    basket in your bedroom and shut the door.</p>
+    <p class="why"><b>This is a trick and you're going to have to deal with it.</b>
+    Worth being straight about that. But it takes ten minutes instead of two hours,
+    and it is the biggest visual change available to you today. There's a note at the
+    bottom about why that basket filled up, which is the part that actually matters.</p>
+  </li>
+
+  <li class="step">
+    <div class="step-head"><h2>The bathroom, properly.</h2><span class="mins">8 min</span></div>
+    <p class="do">They will go in there alone and they will look. In order: <b>toilet</b>
+    — bowl, seat, and the rim underneath it — then <b>sink</b>, then <b>mirror</b>,
+    then the floor immediately around the toilet. Put out a clean towel. Empty the bin.</p>
+    <p class="why"><b>This is the one room worth doing properly.</b> It's the only
+    space a guest occupies by themselves with nothing to do but look around. Everywhere
+    else you're standing next to them, talking, and they're not inspecting anything.</p>
+  </li>
+
+  <li class="step">
+    <div class="step-head"><h2>The floor they'll walk on.</h2><span class="mins">5 min</span></div>
+    <p class="do">The way in, and the room they'll sit in. Whatever you've got —
+    vacuum, broom, or a damp cloth over the obvious bits. <b>That's the whole job.</b></p>
+    <p class="why"><b>Not the rest of it.</b> Nobody is looking at the floor of a room
+    they never enter. Doing the hallway and the living room properly beats doing the
+    whole flat badly, and it takes a fifth of the time.</p>
+  </li>
+
+  <li class="step">
+    <div class="step-head"><h2>Turn the big light off.</h2><span class="mins">2 min</span></div>
+    <p class="do">Lamps on instead. No lamps? Turn off half the overhead lights, or
+    all of them in the rooms you're not using.</p>
+    <p class="why"><b>Thirty seconds, and it changes the room more than the last
+    twenty minutes did.</b> Low, warm light from a couple of low points is forgiving
+    about everything you didn't get to, and it reads as a deliberate choice rather
+    than a rescue. This is the step people skip and then wonder why the place still
+    feels off.</p>
+  </li>
+
+</ol>
+
+<div class="warn">
+  <p><b>One safety thing</b>
+  Don't mix cleaning products while you're rushing. <b>Bleach with ammonia</b> — in
+  a lot of glass cleaners — or <b>bleach with vinegar</b> produces genuinely
+  dangerous fumes in a small bathroom. One product at a time, and it's fine.</p>
+</div>
+
+<div class="stop">
+  <h2>When they knock, you're done.</h2>
+  <p>Whatever you got through is what there was time for. The list is ordered so
+  that stopping early still leaves you better off than any other order would have —
+  that's the entire point of the order.</p>
+  <p>Don't apologise for the place when they walk in. They weren't going to notice,
+  and saying it out loud is what makes them look.</p>
+</div>
+
+<div class="after">
+  <h2>About that basket.</h2>
+  <p>Tomorrow you'll find a laundry basket of unrelated objects in your bedroom, and
+  you'll put most of it back exactly where it was. That's not a discipline problem.</p>
+  <p><b>Almost everything in that basket has nowhere to live.</b> That's the real
+  reason the surfaces fill up, and it's why this happens again in three weeks. Not
+  laziness — an unmade decision, repeated daily. You can't tidy your way out of it,
+  which is why tidying never worked.</p>
+
+  <p class="pull">"Everything has it's place. Do it now."</p>
+
+  <p>Those are Dave Webster's, and he's been saying them for at least seventeen
+  years. He's a real person — a friend who taught me how to run a house after I'd
+  been failing at it for years, and who is faintly embarrassed to tell anyone
+  because he assumes everybody already knows. Almost nobody does. Nobody teaches
+  this.</p>
+  <p>He also had a rule about tonight, specifically: <b>preventative cleaning rather
+  than crisis cleaning.</b> What you just did was the crisis version. It works, and
+  you'll need it again, and needing it again is the actual problem.</p>
+</div>
+
+<div class="signup">
+  <h2>Want to not do this again?</h2>
+  <p>Two things, and nothing else: this page as a printable you can keep, and
+  Dave's ten minutes a night — the one that means there's nothing to rescue when
+  someone calls at short notice.</p>
+  <div class="ml-embedded" data-form="00ZwEr"></div>
+  <p class="ml-fallback" hidden>Form not loading? Email
+    <a href="mailto:hello@mrlifemanager.com?subject=Guests%20guide">hello@mrlifemanager.com</a>
+    and I'll send it over.</p>
+  <p class="fine">One guide at a time. No stream of things to read. Unsubscribe
+  whenever, and silence is a fine answer.</p>
+</div>
+
+<footer>
+  <b>Mr. Life Manager</b> — the practical systems of running a life, written down.<br>
+  Free to use, copy, and teach from — with credit. Not for resale.
+  <a href="/">What this is</a>
+</footer>
+
+</div>
+
+<script>
+  // The MailerLite embed renders into an empty div. Ad blockers commonly block the
+  // script, leaving it empty and the section a dead end. Reveal a fallback if so.
+  addEventListener('load', function () {
+    setTimeout(function () {
+      document.querySelectorAll('.signup').forEach(function (box) {
+        var embed = box.querySelector('.ml-embedded');
+        var fb = box.querySelector('.ml-fallback');
+        if (embed && fb && embed.children.length === 0) fb.hidden = false;
+      });
+    }, 2500);
+  });
+  // ADR-015 — entry is per-pain. Tag the signup so the sequence knows which door
+  // they came in by, without ever asking them to choose.
+  (function () {
+    var tries = 0;
+    var t = setInterval(function () {
+      var forms = document.querySelectorAll('.ml-embedded form');
+      if (forms.length) {
+        forms.forEach(function (f) {
+          if (f.querySelector('input[name="guide"]')) return;
+          var i = document.createElement('input');
+          i.type = 'hidden'; i.name = 'guide'; i.value = 'guests';
+          f.appendChild(i);
+        });
+        clearInterval(t);
+      }
+      if (++tries > 40) clearInterval(t);
+    }, 250);
+  })();
+</script>
+</body>
+</html>

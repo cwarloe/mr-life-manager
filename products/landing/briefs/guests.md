@@ -1,0 +1,87 @@
+# Entry Page Brief — "Someone's coming over"
+
+**Status:** Built 2026-09-20. Not yet tested with a reader, and no traffic source.
+**URL:** `/guests.html`
+**Implements:** [ADR-015](../../../planning/decisions.md#adr-015--the-win-comes-before-the-email)
+— the first page built to that architecture.
+
+---
+
+### The shape
+
+One pain → one page → one action → one win → then the email. Self-contained: it
+does not route to the main page, and it links to no other guide. The only outbound
+link is a quiet "What this is" in the footer, for the curious.
+
+### Decisions worth recording
+
+**The action is free and above the fold-ish.** No form, no download, no gate. The
+frame at the top says so explicitly — *"Nothing to sign up for. Start at one."*
+The email is asked for once, at the bottom, after the work.
+
+**Ordered by visible difference per minute, and the order is the anti-shame
+mechanism.** *"Do them in order and stop when they knock."* Because the biggest
+wins are first, stopping anywhere still leaves the reader better off than any
+other ordering would have. **There is no way to fail this page** — which matters
+for an audience whose documented core wound is shame about not knowing.
+
+**Mobile-first.** 17px base, single column, large numerals, no tables, no
+horizontal scroll. The reader is standing in a room holding a phone.
+
+**The basket is admitted to be a trick.** Step 3 says so in bold before the reader
+finds out for themselves. Concealing it would have bought ten minutes of goodwill
+and lost all of it tomorrow morning.
+
+**The basket is also the bridge.** The "About that basket" section turns tomorrow's
+annoyance into the actual teaching — *almost everything in it has nowhere to live* —
+which is [everything-has-a-place](../../../frameworks/everything-has-a-place.md)
+arriving at the one moment the reader has just felt the problem. This is what earns
+the maintenance offer instead of asserting it.
+
+**Dave is named here.** First time in a shipped product. It sits *after* the win,
+where it reads as provenance rather than onboarding, and it carries his own framing
+— crisis versus preventative cleaning — to set up the offer. This resolves the open
+question flagged in the [What Is This Room For? brief](../../checklists/room-for/brief.md)
+in favour of naming him, at least in this position. If that's wrong it is a
+two-line revert.
+
+**The offer is smaller, not bigger.** The printable plus *"Dave's ten minutes a
+night."* Per ADR-015, never a bigger pile of guides.
+
+**One amber safety note**, on mixing bleach with ammonia or vinegar. It clears the
+[depth rule](../../../content/README.md) — a competent person would simply tell
+you, and someone rushing with two bottles in a small bathroom is the exact
+situation where it matters.
+
+### Voice
+
+Plain, not commanding — per ADR-015. No "EXECUTE NOW", no congratulation, no
+video, no face. The closest it comes to an order is *"That's the whole job."*
+
+The last line of the stop section — *"Don't apologise for the place when they walk
+in. They weren't going to notice, and saying it out loud is what makes them look."*
+— is doing brand work rather than cleaning work. It's the one moment the page
+addresses the shame directly, and it's placed after the labour rather than before.
+
+### Untested assumptions
+
+1. **That the order is right.** Bin/smell first is a judgement call; a reader in a
+   panic may expect visible clutter first and bounce when told to take the bin out.
+   The most likely thing to be wrong on this page.
+2. **That admitting the basket trick builds trust rather than deflating the win.**
+3. **That step 6 (lights) lands as a revelation rather than as filler.** It's the
+   cheapest, highest-leverage step and the easiest to dismiss.
+4. **That thirty-five minutes is the right size.** Someone with ten minutes may
+   read "35" and close the tab. Possible fix: lead with "stop whenever" harder, or
+   state a ten-minute version up front.
+
+### Not built yet
+
+- **Draft 4 of the welcome sequence.** The form tags this entry as `guides=guests`,
+  but [ADR-016](../../../planning/decisions.md#adr-016--the-sequence-shrinks-unconditionally)
+  withdrew Draft 3 and nothing replaces it. **Signups currently have no sequence to
+  receive.** This is the blocking gap before the page should be promoted anywhere.
+- **The printable** the signup promises. Needs generating from this page.
+- **The $9 maintenance product** the section gestures at.
+- **Traffic.** There is none. The page is a bet on search intent that has nothing
+  pointing at it yet.
