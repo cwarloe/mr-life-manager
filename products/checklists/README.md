@@ -1,7 +1,12 @@
 # Checklists
 
-One- to four-page printable checklists. The **free tier** and the **$9 tier** of
-the [product ladder](../../docs/business/product-ladder.md).
+Printable checklists. The **free tier** and the **$9 tier** of the
+[product ladder](../../docs/business/product-ladder.md).
+
+*As built, these run six to nine printed pages — the "one to four pages" this
+file used to claim was never true of any of them. Left as a note rather than
+quietly corrected: if short is the actual requirement, the guides are wrong, not
+the standard, and that's a decision to make deliberately.*
 
 ## Why checklists matter more than their price suggests
 
@@ -18,6 +23,7 @@ the [product ladder](../../docs/business/product-ladder.md).
 
 **Free**
 - ★ **First Apartment Checklist** — the flagship lead magnet
+- ✓ **What Is This Room For?** — decide the job of each room before maintaining it
 - Cleaning Supply Starter List
 - The 20-Minute Reset
 - How Often Should I…? — the cadence reference

@@ -161,8 +161,9 @@ verify it and learn from real people.
       ([decision log](planning/decisions.md))
 - ✅ Three free-tier guides drafted and designed —
       [First Apartment Checklist](products/checklists/first-apartment/),
-      [How Often Should I…?](products/checklists/how-often/), and
-      [Cleaning Supply Starter List](products/checklists/cleaning-supplies/)
+      [How Often Should I…?](products/checklists/how-often/),
+      [Cleaning Supply Starter List](products/checklists/cleaning-supplies/), and
+      [What Is This Room For?](products/checklists/room-for/)
 - ✅ General and parent-facing landing pages deployed through GitHub Pages and
       connected to MailerLite
 - ✅ Customer-interview script and Dave recording guide ready

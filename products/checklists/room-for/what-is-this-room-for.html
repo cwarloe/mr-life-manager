@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Decide what you want your home to do, then find what is fighting it. A one-sitting checklist.">
+<meta name="color-scheme" content="light dark">
+<title>What Is This Room For?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+:root{
+  --ink:#12161C; --paper:#FBF9F4; --surface:#FFFFFF;
+  --blue:#1F4E79; --blue-soft:#E7EEF5;
+  --amber:#B4741A; --amber-soft:#F7EEDD;
+  --slate:#6B7280; --rule:#D9D5CC; --rule-strong:#B8B2A6;
+  --sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
+    --blue:#8FB6DA; --blue-soft:#1D2833;
+    --amber:#E3A94E; --amber-soft:#2A2418;
+    --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
+  --blue:#8FB6DA; --blue-soft:#1D2833;
+  --amber:#E3A94E; --amber-soft:#2A2418;
+  --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;
+  line-height:1.5;margin:0;-webkit-font-smoothing:antialiased}
+.sheet{max-width:54rem;margin:0 auto;padding:3rem 1.5rem 5rem}
+.mast{border-bottom:3px solid var(--ink);padding-bottom:1.25rem}
+.eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--blue);margin:0 0 .6rem}
+h1{font-size:clamp(2.1rem,6vw,3.1rem);font-weight:700;line-height:1.02;letter-spacing:-.02em;
+  margin:0;text-wrap:balance}
+.deck{font-family:var(--serif);font-size:1.05rem;color:var(--slate);margin:.7rem 0 0;max-width:44ch}
+.standfirst{font-family:var(--serif);font-size:1rem;line-height:1.6;margin:1.5rem 0 0;max-width:62ch}
+.key-note{border-left:3px solid var(--blue);background:var(--blue-soft);padding:.9rem 1.1rem;
+  margin:1.75rem 0 0;border-radius:0 3px 3px 0;font-family:var(--serif);font-size:.97rem;line-height:1.55}
+.key-note b{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blue);display:block;margin-bottom:.3rem}
+.key-note.warn{border-left-color:var(--amber);background:var(--amber-soft)}
+.key-note.warn b{color:var(--amber)}
+
+.band{margin:3rem 0 0;break-inside:avoid}
+.band-head{display:flex;align-items:baseline;gap:.9rem;border-bottom:2px solid var(--ink);
+  padding-bottom:.5rem;margin-bottom:.2rem}
+.band-tag{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--paper);background:var(--ink);padding:.28rem .5rem;border-radius:2px;white-space:nowrap}
+.band-head h2{font-size:1.4rem;font-weight:700;letter-spacing:-.015em;margin:0;flex:1}
+.mins{font-size:.75rem;color:var(--slate);font-weight:500;white-space:nowrap}
+.band-note{font-family:var(--serif);color:var(--slate);font-size:.95rem;margin:.6rem 0 1.1rem}
+
+h3{font-size:.76rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--blue);
+  margin:2rem 0 .8rem;padding-bottom:.3rem;border-bottom:1px solid var(--rule)}
+
+/* tick lists */
+ul.tick{list-style:none;margin:0;padding:0;display:grid;gap:.42rem 1.75rem;
+  grid-template-columns:repeat(auto-fill,minmax(18.5rem,1fr))}
+ul.tick.one{grid-template-columns:1fr}
+ul.tick li{font-size:.93rem;line-height:1.45;padding-left:1.6rem;position:relative}
+ul.tick li::before{content:"";position:absolute;left:0;top:.18em;width:.85rem;height:.85rem;
+  border:1.5px solid var(--rule-strong);border-radius:2px;background:var(--surface)}
+ul.tick li b{font-weight:600}
+ul.tick li .why{color:var(--slate);font-size:.87rem;display:block;line-height:1.4}
+
+/* room card */
+.room{border:1px solid var(--rule);border-radius:4px;background:var(--surface);
+  padding:1.1rem 1.2rem 1.25rem;margin:0 0 1rem;break-inside:avoid}
+.room h4{font-size:1.02rem;font-weight:700;margin:0 0 .15rem;letter-spacing:-.01em}
+.room .jobline{font-family:var(--serif);font-size:.92rem;color:var(--slate);margin:0 0 .85rem}
+.room .sub{font-size:.68rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--slate);margin:.9rem 0 .45rem}
+
+.dolist{width:100%;border-collapse:collapse;font-size:.92rem;margin:.4rem 0 0}
+.dolist thead th{font-size:.66rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--slate);text-align:left;padding:0 .7rem .45rem 0;border-bottom:1px solid var(--rule-strong)}
+.dolist td{padding:.85rem .7rem;border-bottom:1px solid var(--rule);height:2.4rem}
+.dolist th.w-when{width:9rem}.dolist th.w-who{width:9rem}
+.scroll{overflow-x:auto}
+
+.notes{margin:3.5rem 0 0;border-top:2px solid var(--ink);padding-top:1.5rem}
+.notes h2{font-size:1.15rem;font-weight:700;margin:0 0 1.1rem;letter-spacing:-.01em}
+.note{font-family:var(--serif);font-size:.96rem;line-height:1.6;margin:0 0 1rem;max-width:66ch}
+.note b{font-family:var(--sans);font-weight:600;font-size:.9rem}
+.signoff{font-family:var(--serif);font-style:italic;font-size:1.02rem;text-align:center;
+  color:var(--slate);margin:3rem auto 0;max-width:40ch;line-height:1.5}
+footer{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--rule);font-size:.74rem;
+  color:var(--slate);display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;justify-content:space-between}
+footer b{color:var(--ink);font-weight:600}
+@media (max-width:38rem){
+  .sheet{padding:2rem 1.1rem 3rem}
+  ul.tick{grid-template-columns:1fr}
+  .dolist{font-size:.86rem}
+}
+@media print{
+  :root{--ink:#000;--paper:#fff;--surface:#fff;--slate:#444;--rule:#bbb;--rule-strong:#666;
+    --blue-soft:#fff;--amber:#7a4d0a;--amber-soft:#fff}
+  body{font-size:9.6pt}.sheet{max-width:none;padding:0}
+  .band,.key-note,.notes,.room{page-break-inside:avoid}
+  .band-head{page-break-after:avoid}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="sheet">
+  <header class="mast">
+    <p class="eyebrow">Mr. Life Manager · Free Guide</p>
+    <h1>What Is This Room&nbsp;For?</h1>
+    <p class="deck">Decide what you want your place to do. Then find what's fighting it.</p>
+  </header>
+
+  <p class="standfirst">Most advice about your home starts with cleaning. This starts one step
+  earlier, with the question that makes cleaning worth doing: <strong>what is this place
+  actually for?</strong> Answer that and half the decisions make themselves.</p>
+
+  <div class="key-note">
+    <b>How to use this</b>
+    Four parts, one sitting, about 45 minutes. <strong>Everything is a tick box</strong> — you
+    are choosing from a list, not filling in blanks. Walk around while you do it. Part 4 turns
+    your ticks into a dated list, which is the only part that changes anything.
+  </div>
+
+  <!-- PART 1 -->
+  <section class="band">
+    <div class="band-head"><span class="band-tag">Part 1</span><h2>What you want</h2><span class="mins">≈10 minutes</span></div>
+    <p class="band-note">Tick <strong>three to five. No more.</strong> Five things you actually
+    want beats fifteen you'd like. If everything is a goal, nothing is.</p>
+
+    <h3>People — what should be possible here</h3>
+    <ul class="tick">
+      <li>Someone can drop by <b>without warning</b> and I'm not embarrassed</li>
+      <li>I can have <b>one or two people</b> over for dinner</li>
+      <li>I can have <b>six to ten people</b> over</li>
+      <li>Someone can <b>stay the night</b> comfortably</li>
+      <li>We can watch a <b>movie or a game</b> together properly</li>
+      <li>Family can visit and not feel like they're in the way</li>
+      <li><b>It's just me, and that's the point</b> <span class="why">A home that works for one person is a real goal, not a lesser one.</span></li>
+    </ul>
+
+    <h3>Feeling — how it should read when you walk in</h3>
+    <ul class="tick">
+      <li><b>Hotel</b> <span class="why">Clear surfaces, nothing personal out, everything squared up.</span></li>
+      <li><b>Calm and plain</b> <span class="why">Few things, all of them chosen.</span></li>
+      <li><b>Warm and full</b> <span class="why">Books, colour, things with a story. Full is fine; chaotic isn't.</span></li>
+      <li><b>Bright and open</b> <span class="why">Light is the whole effect.</span></li>
+      <li><b>Low and cosy at night</b> <span class="why">Different light after dark than before it.</span></li>
+      <li><b>Workshop</b> <span class="why">Tools out because they're used. Order that serves making things.</span></li>
+    </ul>
+
+    <h3>Function — what you need to be able to do</h3>
+    <ul class="tick">
+      <li><b>Work or study</b> here without clearing a space first</li>
+      <li><b>Cook real food</b> without running out of counter</li>
+      <li><b>Sleep well</b> — the bedroom does one job</li>
+      <li><b>Exercise</b> without moving furniture</li>
+      <li>Keep a <b>hobby</b> set up, or set it up in under five minutes</li>
+      <li><b>Find anything</b> in under a minute</li>
+      <li>A guest can find a glass, a towel, or the bin <b>without asking</b></li>
+    </ul>
+
+    <h3>Surfaces — the one about stuff</h3>
+    <ul class="tick">
+      <li><b>Free horizontal spaces</b> <span class="why">Tables and counters are for using, not for storing.</span></li>
+      <li>Everything owns <b>one place</b>, and I know where it is</li>
+      <li>The <b>floor is clear</b> — nothing lives on it that isn't furniture</li>
+      <li>I can <b>wipe a whole counter</b> without moving nine things first</li>
+    </ul>
+
+    <div class="key-note">
+      <b>Write them down</b>
+      Say each one as a sentence starting <em>"I want…"</em> and write it at the top of Part 4.
+      Out loud, if you can stand it. Wanting something specific is what makes the rest of this
+      work — and most people have never once said what they want their home to <em>do</em>.
+    </div>
+  </section>
+
+  <!-- PART 2 -->
+  <section class="band">
+    <div class="band-head"><span class="band-tag">Part 2</span><h2>What's fighting it</h2><span class="mins">≈20 minutes</span></div>
+    <p class="band-note">Walk into each room and stand there for a moment. Pick the job, then
+    tick what's working against it. Skip rooms you don't have.</p>
+
+    <div class="room">
+      <h4>The way in</h4>
+      <p class="jobline">Its job: <b>land</b> — keys, shoes, post, bag, all with somewhere to go.</p>
+      <p class="sub">Fighting it</p>
+      <ul class="tick">
+        <li>Nowhere to put <b>keys</b>, so they move around</li>
+        <li><b>Post</b> piles up here, or somewhere worse</li>
+        <li><b>Shoes</b> have no edge or mat to live on</li>
+        <li>Bag or coat ends up on a <b>chair or the floor</b></li>
+        <li>It's the <b>darkest spot</b> in the place</li>
+      </ul>
+    </div>
+
+    <div class="room">
+      <h4>Living room</h4>
+      <p class="jobline">Its job: pick one — <b>having people in</b> · <b>watching something</b> · <b>reading and sitting</b> · <b>all three, in shifts</b>.</p>
+      <p class="sub">Fighting it</p>
+      <ul class="tick">
+        <li>The <b>coffee table is storage</b>, not a surface</li>
+        <li>Seating <b>faces the screen</b> when the job is talking, or doesn't when it's watching</li>
+        <li>There's <b>nowhere to set a drink</b> from where people actually sit</li>
+        <li>One <b>overhead light</b>, on or off, nothing in between</li>
+        <li>Furniture is <b>too big for the room</b> <span class="why">A table that shrinks when no one's coming is worth more than a bigger room.</span></li>
+        <li>There's a <b>pile with no owner</b> — it's been there weeks and it's nobody's</li>
+        <li>You can't tell <b>what the room is pointed at</b> <span class="why">Every room has a focal point. If it's the television by default, that was a decision made for you.</span></li>
+      </ul>
+    </div>
+
+    <div class="room">
+      <h4>Kitchen</h4>
+      <p class="jobline">Its job: <b>cook and clear</b>, without a tidy-up before you can start.</p>
+      <p class="sub">Fighting it</p>
+      <ul class="tick">
+        <li><b>No clear run of counter</b> big enough to actually work on</li>
+        <li>Things live on the counter that are used <b>less than weekly</b></li>
+        <li>The <b>bin is in the wrong place</b> — you carry rubbish across the room</li>
+        <li><b>Something's in the sink</b> most of the time</li>
+        <li>You keep <b>moving things to reach</b> the things you use daily</li>
+        <li>The <b>dining table has become a desk</b>, or a shelf</li>
+        <li><b>Not enough light on the counter</b> where you chop</li>
+      </ul>
+    </div>
+
+    <div class="room">
+      <h4>Bedroom</h4>
+      <p class="jobline">Its job: <b>sleep</b>. Anything else in here is a guest.</p>
+      <p class="sub">Fighting it</p>
+      <ul class="tick">
+        <li>There's a <b>chair that is really a laundry pile</b></li>
+        <li>Clean and dirty clothes <b>aren't clearly separate</b></li>
+        <li>Work or a screen <b>lives in here</b></li>
+        <li>Nothing to put a glass or a phone on <b>within reach of the bed</b></li>
+        <li><b>No lamp</b> — the only option is the ceiling light</li>
+        <li>Too much light in the morning, or the wrong kind at night</li>
+      </ul>
+    </div>
+
+    <div class="room">
+      <h4>Bathroom</h4>
+      <p class="jobline">Its job: work for you daily, and be fine for a guest with no warning.</p>
+      <p class="sub">Fighting it</p>
+      <ul class="tick">
+        <li>Everything you own is <b>out on the surfaces</b></li>
+        <li>A <b>guest couldn't find a clean towel</b></li>
+        <li>Nowhere for things to <b>dry</b></li>
+        <li>A bulb is out, or all of them are <b>unflattering</b></li>
+        <li>No bin</li>
+      </ul>
+    </div>
+
+    <div class="room">
+      <h4>Where you work</h4>
+      <p class="jobline">Its job: <b>start in under a minute</b> — even if it's a corner of the table.</p>
+      <p class="sub">Fighting it</p>
+      <ul class="tick">
+        <li>You have to <b>clear it before you can start</b></li>
+        <li>You have to <b>clear it before you can eat</b></li>
+        <li><b>Cables</b> are a daily negotiation</li>
+        <li>The <b>chair is wrong</b> and you know it</li>
+        <li><b>Light comes from behind you</b>, or from nowhere</li>
+        <li>Paperwork has <b>no home</b>, so it lives in view</li>
+      </ul>
+    </div>
+
+    <div class="room">
+      <h4>The car</h4>
+      <p class="jobline">Its job: it's a room you own. Treat it like one.</p>
+      <p class="sub">Fighting it</p>
+      <ul class="tick">
+        <li>Things live in it that <b>should have come inside days ago</b></li>
+        <li>There's no <b>bin or bag</b> for rubbish</li>
+        <li>A passenger would have to <b>move something</b> to sit down</li>
+        <li>The boot is <b>long-term storage</b></li>
+        <li>You don't know where the <b>documents</b> are</li>
+      </ul>
+    </div>
+
+    <div class="key-note">
+      <b>The pattern you'll notice</b>
+      Most of what's fighting you isn't dirt, and it isn't a shortage of space. It's
+      <strong>something without a home</strong>, or <strong>furniture doing a job it wasn't
+      meant for</strong>. Both are decisions, not chores — which is why cleaning never fixed them.
+    </div>
+  </section>
+
+  <!-- PART 3 -->
+  <section class="band">
+    <div class="band-head"><span class="band-tag">Part 3</span><h2>Light</h2><span class="mins">≈5 minutes</span></div>
+    <p class="band-note">This gets its own part because it changes how a place feels more than
+    anything else you can do in an afternoon, and almost nobody tells you. It's also the most
+    renter-friendly thing on this page — nearly all of it unplugs and comes with you.</p>
+
+    <h3>Tick what's true</h3>
+    <ul class="tick">
+      <li>A room where the <b>ceiling light is the only light</b></li>
+      <li>Bulbs of <b>different colours in the same room</b> <span class="why">One warm, one blue-white. It reads as "wrong" without anyone identifying why.</span></li>
+      <li><b>Nothing you can turn down</b> in the evening</li>
+      <li>You <b>can't read comfortably</b> in the chair you read in</li>
+      <li>A bulb has been <b>out for more than a week</b></li>
+      <li>A room you avoid and <b>can't say why</b> <span class="why">Check the light first. It's usually the light.</span></li>
+    </ul>
+
+    <h3>What fixes it</h3>
+    <ul class="tick one">
+      <li><b>Two lamps beat one ceiling light.</b> Light from two low points instead of one high one is most of the difference between a room that feels like a room and one that feels like a corridor.</li>
+      <li><b>Match your bulb colour across a room.</b> Warm for living and sleeping, brighter and cooler where you work or chop. Consistent within a room matters more than which you pick.</li>
+      <li><b>Get one light you can turn down</b> — a dimmable bulb, or just a small lamp you use instead of the big light after dark.</li>
+      <li><b>Put light where the task is</b>, not only in the middle of the ceiling. The counter, the desk, beside the chair, next to the bed.</li>
+      <li><b>Replace dead bulbs the day they go.</b> A dark corner quietly becomes a place things get dumped.</li>
+    </ul>
+  </section>
+
+  <!-- PART 4 -->
+  <section class="band">
+    <div class="band-head"><span class="band-tag">Part 4</span><h2>The do-list</h2><span class="mins">≈10 minutes</span></div>
+    <p class="band-note">This is the part that matters. Everything above is noticing; noticing
+    changes nothing on its own.</p>
+
+    <div class="key-note">
+      <b>Pick five. Leave the rest.</b>
+      Go back through your ticks and choose the <strong>five</strong> that would most change how
+      the place works. Not the easiest five, and not all of them. A list of five with dates gets
+      done. A list of thirty is a mood.
+    </div>
+
+    <p class="standfirst"><strong>I want…</strong> (your three to five from Part 1)</p>
+    <div class="scroll"><table class="dolist">
+      <tbody>
+        <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>The five things</h3>
+    <div class="scroll"><table class="dolist">
+      <thead><tr><th>What I'm going to do</th><th class="w-when">Done by</th><th class="w-who">Who's checking</th></tr></thead>
+      <tbody>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="key-note warn">
+      <b>Don't skip the third column</b>
+      Name an actual person and tell them. Not for accountability theatre — because a date you
+      told nobody about is a wish. Ask them to check whether you <em>started</em> on time as well
+      as whether you finished. Starting is the part that goes wrong.
+    </div>
+  </section>
+
+  <div class="notes">
+    <h2>Notes</h2>
+    <p class="note"><b>Most of this costs nothing.</b> Moving a bin, turning a chair, deciding
+    where the post goes, taking one thing off a table. The spending version of this advice is a
+    different and much less useful guide.</p>
+    <p class="note"><b>Renting doesn't disqualify you.</b> Lamps, bulbs, where furniture sits,
+    what goes on a surface, and what a room is for are all yours. Paint and fittings aren't the
+    part that changes how a place feels day to day — the rest of it is.</p>
+    <p class="note"><b>If you can't pick a job for a room, that's the finding.</b> A room with no
+    job becomes the room everything gets put in. Giving it one — even a modest one — is usually
+    the single highest-value decision in the house.</p>
+    <p class="note"><b>Do this again when something changes.</b> A new flatmate, a new job, a
+    baby, a move. The place should be for whatever your life is now, and it quietly stops being
+    that without anyone noticing.</p>
+    <p class="note"><b>One sitting, then stop.</b> If you find yourself on hour three, you've
+    turned a 45-minute decision into a project. Five things, dates, done.</p>
+  </div>
+
+  <p class="signoff">Nobody ever asked you what you wanted your home to do. It's a fair question,
+  and you're allowed an answer.</p>
+
+  <footer>
+    <span><b>Mr. Life Manager</b> — practical systems for running an adult life</span>
+    <span>Free to use, copy, and teach from — with credit. Not for resale.</span>
+  </footer>
+</div>
+</body>
+</html>
