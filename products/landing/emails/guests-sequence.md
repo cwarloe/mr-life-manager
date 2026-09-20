@@ -48,7 +48,7 @@ of the sequence and into a conversation. Nothing else does.
 >
 > — Charles
 
-*Attachment or link: `guests-when-someone-is-coming-over.pdf`.*
+*Link (not attach): <https://mrlifemanager.com/print/guests-when-someone-is-coming-over.pdf>*
 
 ---
 
@@ -123,7 +123,7 @@ genuinely doable and it's the only real research we have.
 
 1. **The printable.** Email 1 promises it. Generated as
    [`products/guides-pdf/guests-when-someone-is-coming-over.pdf`](../../guides-pdf/)
-   — needs hosting somewhere linkable, or attaching in MailerLite.
+   — **published** at <https://mrlifemanager.com/print/guests-when-someone-is-coming-over.pdf> by the build. Open it before sending.
 2. **No paid offer appears anywhere in this sequence**, deliberately. ADR-015
    says the paid step is smaller and in the same domain; that product ($9, the
    maintenance version) **does not exist yet**. Inserting a placeholder offer

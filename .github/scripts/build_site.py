@@ -190,6 +190,17 @@ def main() -> int:
              .replace("__CARDS__", "\n".join(cards)))
     (OUT / "guides" / "index.html").write_text(index)
 
+    # Printables. The email sequences promise "here's the printable" and need a
+    # stable URL to link to; attaching PDFs in MailerLite is worse for
+    # deliverability and impossible to update after sending.
+    pdf_src = ROOT / "products" / "guides-pdf"
+    pdfs = sorted(pdf_src.glob("*.pdf"))
+    if not pdfs:
+        sys.exit("no printables found in products/guides-pdf/")
+    (OUT / "print").mkdir(parents=True, exist_ok=True)
+    for pdf in pdfs:
+        shutil.copy2(pdf, OUT / "print" / pdf.name)
+
     # robots + sitemap for the custom domain (static copies also live in landing/)
     (OUT / "robots.txt").write_text(
         "User-agent: *\nAllow: /\n\nSitemap: https://mrlifemanager.com/sitemap.xml\n"
@@ -212,7 +223,8 @@ def main() -> int:
     (OUT / "sitemap.xml").write_text("\n".join(body))
 
     print(f"Built _site/ — {len(GUIDES)} guides, "
-          f"{len(list(OUT.glob('*.html')))} top-level pages.")
+          f"{len(list(OUT.glob('*.html')))} top-level pages, "
+          f"{len(pdfs)} printables.")
     return 0
 
 
