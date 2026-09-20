@@ -75,6 +75,7 @@ still feels wrong after fixing the light, the question is what the room is *for*
 
 ### Currency note
 
-Prices and units read British ("forty pounds"). **The beachhead is US.** This
-needs settling as a site-wide voice decision, not fixed quietly here — see the
-same issue in the room-for guide.
+~~Prices and units read British.~~ **Resolved 2026-09-20: US English throughout**,
+swept across the whole free tier and recorded in
+[content/README.md](../../../content/README.md). `source-material/` is exempt —
+Dave's documents stay verbatim, spelling and typos included.

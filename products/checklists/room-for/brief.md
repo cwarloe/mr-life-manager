@@ -65,7 +65,8 @@ complaint the cleaning advice can't: *"I clean and it still doesn't feel right."
 
 ### 5. Open
 
-- **Currency and idiom read British** in places across the free tier. The
-  beachhead is US. Needs a site-wide decision, not quiet per-file fixes.
+- ~~Currency and idiom read British.~~ Resolved 2026-09-20 — **US English
+  throughout**, swept site-wide and recorded in
+  [content/README.md](../../../content/README.md).
 - **Untested:** that "pick the room you're in most, not the worst one" is
   followed. The instinct will be to pick the worst one.

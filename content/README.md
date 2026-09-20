@@ -54,6 +54,30 @@ Every piece of content should:
 6. **Be modular.** Assume it will be reused in three products and read out of
    order.
 
+## US English, throughout
+
+**The beachhead is American. Everything reader-facing is written in US English** —
+spelling, vocabulary, currency and units. Decided 2026-09-20 after British idiom
+turned up across the free tier.
+
+| Not this | This |
+|---|---|
+| colour, apologise, grey, realise | color, apologize, gray, realize |
+| bin | trash, trash can |
+| tap | faucet |
+| flat | apartment, place |
+| post | mail |
+| cupboard | cabinet, pantry |
+| boot (of a car) | trunk |
+| rubbish | trash, garbage |
+| £, pounds | $, dollars |
+| hob, cooker | stove, range |
+| tidy-up (noun) | cleanup |
+
+**The exception is [`source-material/`](../source-material/), which is never
+touched.** Dave's documents are verbatim primary source, including his spelling,
+his punctuation and his typos. Americanizing a quotation would be falsifying it.
+
 ## Referring to Dave
 
 **He is "Dave." Not "Dave Webster."** The surname adds no credibility and reads
