@@ -15,15 +15,35 @@ else follows from it.
 
 ---
 
+## 0. Authenticate the sending domain — do this first
+
+**Settings → Domains → Authenticate.** Add the SPF and DKIM records MailerLite
+gives you to the DNS for `mrlifemanager.com`, in the same place the site's A
+records live.
+
+This is the step people skip, and skipping it is why a sequence that works
+perfectly ends up in spam. Nothing below matters if the mail doesn't arrive.
+Allow up to a day for DNS, and don't send anything real until MailerLite shows
+the domain verified.
+
+Also confirm automations are available on the plan you're on before building
+them — that varies, and it's better to find out now than after writing them in.
+
 ## 1. Create the custom field
 
-**Subscribers → Fields → Create field.** Type **Text**, name it so the personal
-tag comes out as `guide`. If MailerLite generates a different key, the pages must
-be updated to match — the field name in the form and the value in
-`i.name = 'guide'` on each page have to be identical or the tag arrives empty.
+**Subscribers → Fields → Create field.** Type **Text**, key `guide`.
 
-**Check this first, before anything else.** A mismatch here fails silently:
-signups still work, they just all land with no `guide` value and no sequence.
+**A mismatch here fails silently** — signups keep working, they just all arrive
+with no `guide` value and therefore no sequence. That is the single most likely
+way this setup breaks, and it breaks quietly.
+
+> **Known risk, handled in the page code.** MailerLite names its embedded-form
+> inputs `fields[email]`, not `email`. The first version of the entry pages
+> appended a hidden input called `guide`, which MailerLite would most likely have
+> discarded. Both pages now **read the naming convention off the rendered form**
+> and match it — `fields[guide]` where the form uses `fields[…]`, `guide` where
+> it doesn't, and both if it can't tell. This has **not been verified against a
+> live form**, so step 1 of the test below is the one that matters.
 
 ## 2. Two groups
 

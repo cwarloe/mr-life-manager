@@ -294,19 +294,34 @@ footer a{color:var(--blue);font-weight:600;text-decoration:none}
   });
   // ADR-015 — entry is per-pain. Tag the signup so the sequence knows which door
   // they came in by, without ever asking them to choose.
+  //
+  // MailerLite names its embedded-form inputs fields[email], not email. Assuming
+  // the bare name would have this fail SILENTLY: signups keep working and every
+  // one arrives untagged, so nobody gets a sequence. So mirror whatever naming
+  // the rendered form actually uses, and set both spellings if it's ambiguous.
   (function () {
+    var VALUE = 'first-night';
+    function fieldName(form) {
+      var email = form.querySelector('input[type=email], input[name*="email" i]');
+      var n = email && email.getAttribute('name');
+      if (n && /^fields\[/.test(n)) return 'fields[guide]';
+      if (n === 'email') return 'guide';
+      return null; // unknown convention — set both below
+    }
+    function tag(form) {
+      var names = fieldName(form);
+      names = names ? [names] : ['fields[guide]', 'guide'];
+      names.forEach(function (name) {
+        if (form.querySelector('input[name="' + name + '"]')) return;
+        var i = document.createElement('input');
+        i.type = 'hidden'; i.name = name; i.value = VALUE;
+        form.appendChild(i);
+      });
+    }
     var tries = 0;
     var t = setInterval(function () {
       var forms = document.querySelectorAll('.ml-embedded form');
-      if (forms.length) {
-        forms.forEach(function (f) {
-          if (f.querySelector('input[name="guide"]')) return;
-          var i = document.createElement('input');
-          i.type = 'hidden'; i.name = 'guide'; i.value = 'first-night';
-          f.appendChild(i);
-        });
-        clearInterval(t);
-      }
+      if (forms.length) { forms.forEach(tag); clearInterval(t); }
       if (++tries > 40) clearInterval(t);
     }, 250);
   })();
