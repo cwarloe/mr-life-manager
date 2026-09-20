@@ -133,19 +133,17 @@ genuinely doable and it's the only real research we have.
    0 / 3 / 7 days, no re-entry, and no "resend to unopens" — that last one is a
    standard feature and it directly violates ADR-016.
 
-## Open, and bigger than this sequence
+## Resolved 2026-09-20 — the main page is a router
 
-**The landing page still has a three-way picker** offering first-apartment,
-household-agreement and how-often. ADR-015 says entry is per-pain and the picker
-goes — but those three paths have no sequence at all now that Draft 3 is
-withdrawn, so anyone choosing them gets silence.
+The landing page previously captured email directly and offered a three-way
+picker whose three paths had no sequence once Draft 3 was withdrawn — collecting
+addresses with nothing to send them.
 
-Two ways out, and it's a founder call:
+**Both email forms have been removed from the main page.** It now explains what
+this is and routes to entry pages; every entry page carries its own action and
+its own signup, and no entry page ships without a sequence.
 
-- **Main page stops being an entry.** It explains what this is and points at
-  per-pain pages; each gets its own sequence as it's built.
-- **Main page keeps a picker** as the front door for word-of-mouth traffic, and
-  each option gets a sequence of its own.
-
-Until that's settled, **the picker options are collecting addresses with nothing
-to send them.** That is worse than the paralysis problem it was built to solve.
+**Consequence, stated plainly: there is one door.** `/guests.html`. The page says
+so rather than pretending otherwise, and invites people to name the one they
+needed — which is both honest and the cheapest research available on what to
+build next.
