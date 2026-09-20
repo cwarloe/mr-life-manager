@@ -875,3 +875,150 @@ foundation of the brand.
 It needs **method rather than just time**, because he will tell you it's all
 obvious and he'll mean it. Capture guidance is in
 [source-material/original-charles-cleanup-notes.md](../source-material/original-charles-cleanup-notes.md).
+
+---
+
+## ADR-015 — The win comes before the email
+
+**Status:** Accepted
+**Date:** 2026-09-20
+**Scope:** Funnel architecture, landing pages, email sequences, guide design.
+**Implements** [ADR-014](#adr-014--completion-is-what-converts).
+
+**Context.** ADR-014 established that completion converts, and the landing page
+copy was rewritten to say so — *"one thing you actually do beats six things you
+meant to."* The architecture never followed. A review on 2026-09-20 found the
+site telling people to pick one thing and offering seven, in four places at once:
+
+- **`Want the rest?`** with an "All guides" link, injected by
+  [`build_site.py`](../.github/scripts/build_site.py) into the footer of
+  *every* guide
+- *"Rather look around first? All the guides are here, free"* — directly beneath
+  the picker
+- `/guides/` numbering them **Guide 01–07**, which reads as a set to complete
+- The picker itself: three decisions before anything happens
+
+Two further findings:
+
+- **The email was charged before any value was delivered.** Give address → get
+  guide → perhaps act tomorrow. The strongest moment we will ever have with a
+  reader is the moment just after something worked, and we were spending it
+  before anything had.
+- **Our highest-frequency pain has our least actionable answer.**
+  [customer-problems.md](../docs/research/customer-problems.md) names *"how often
+  should I…"* as the most-asked question in every domain. We answered it with a
+  nine-page reference table. Good product, bad entry — reading a cadence chart
+  changes nothing tonight.
+
+**Decision.**
+
+> **One pain → one page → one action → one win → then the email.**
+
+1. **Entry is per-pain, not per-site.** A narrow landing page per traffic source.
+   The query is the headline. No picker — how someone arrived has already
+   segmented them, and asking again is redundant.
+2. **The action is free, on the page, and mobile-first.** No form, no download,
+   no "write it on paper first" step. The reader is standing in a room holding a
+   phone.
+3. **The email is asked for after the win**, in exchange for the printable
+   version and what comes next. The reader already has the value; they are
+   paying for portability, not access.
+4. **The paid step is smaller and in the same domain**, never more. *That took
+   forty minutes; here's the ten minutes a night that means you never do it
+   again.* This is Dave's own sequence — reset, then maintain — recovered in
+   [the 2009 weekly schedule](../source-material/2009-11-04-analysis.md).
+5. **Each entry page is self-contained.** It does not route to the main page.
+   The brand story appears *after* the win, as a reward, never as onboarding.
+   Someone ninety minutes from guests does not want to learn who we are.
+
+**On voice.** Plain, not commanding. No video, no face, no personality hype —
+and equally no drill sergeant. Dave's bluntness is real but it is earned by
+twenty years of friendship; a stranger barking *"execute now"* at someone who
+arrived thirty seconds ago has earned nothing, and a commanding persona is still
+a persona. No fake gates either: *"don't scroll until you've done it"* is
+unenforceable and the reader knows it. Where a gate is wanted, make the next
+section genuinely useless without the first.
+
+**Consequences.**
+
+- Fewer email addresses, of better quality. We lose the ones who would never
+  have acted. Accepted deliberately under ADR-014.
+- The existing guides are demoted from *offers* to *archive and search surface*.
+  They are not deleted; nothing in a funnel points at them.
+- Each new niche costs an entry page.
+- **New guide standard:** one action, roughly a dozen decisions at most, and
+  "done" reachable in a single sitting.
+
+**First niche:** *"Someone's coming over and my place is a disaster."* Acute,
+time-boxed, genuinely searched, and visibly winnable inside an hour. It is also
+precisely the **crisis cleaning** Dave says not to do, which means it earns the
+maintenance teaching instead of lecturing someone mid-panic.
+
+**Price:** the first paid step is **$9**. Explicitly not doctrinal — the founder's
+position is that the number matters far less than the exchange being real. Revisit
+with evidence, not argument.
+
+**Status of the evidence.** None of this has met a reader. The site has no traffic
+source; current visitors are people the founder has told directly, who are not the
+target. This is a well-grounded hypothesis, not a finding, and should be held that
+way until something tests it.
+
+---
+
+## ADR-016 — The sequence shrinks unconditionally
+
+**Status:** Accepted
+**Date:** 2026-09-20
+**Scope:** All email sequences.
+**Implements** [ADR-014](#adr-014--completion-is-what-converts) and
+[principle 11](../docs/vision/principles.md).
+
+**Context.** Draft 3 of the welcome sequence asked, on day 3, *"How's it going?"*
+with three one-word answers: **Done / Started, didn't finish / Haven't yet.** Two
+of the three are a confession. It is a test with a wrong answer, aimed at an
+audience whose documented core wound is shame about not knowing —
+[customer-problems.md](../docs/research/customer-problems.md), cross-cutting
+pattern 5: *"Shame prevents asking, which prevents learning, which deepens the
+shame."*
+
+A first fix proposed that *"every unanswered email asks for less than the one
+before."* The founder identified the flaw: **we cannot observe whether an email
+was "unanswered."** Opens are unreliable — Apple's Mail Privacy Protection
+pre-fetches images, so a share of recorded opens never happened. Clicks tell us
+only that someone clicked. And whether a person actually cleaned their kitchen is
+permanently invisible to us.
+
+The rule was resting on a signal that does not exist.
+
+**Decision.**
+
+> **The sequence shrinks unconditionally.** Every email asks less than the one
+> before — for everyone, regardless of what they did or didn't do.
+
+Only two things change the path, and the reader chooses both:
+
+| Signal | Meaning | Result |
+|---|---|---|
+| **Reply** | Unambiguous | A human conversation; leaves the sequence |
+| **Purchase** | Unambiguous | A different sequence |
+| Opens | Not trustworthy | Never branched on |
+| Clicks | Weak | Not branched on in v1 |
+
+**Why unconditional is better than conditional.** It is simpler, and it is more
+honest: because we never infer behaviour, we can never imply we know someone
+failed. The shame vector is removed at the root rather than managed.
+
+**The supporting rules.**
+
+- Never ask a question that has a wrong answer.
+- Never reference what the reader did or did not do.
+- When something didn't land, it is **our** fault out loud — *"that guide was
+  too long"* beats *"did you get stuck?"*
+- **Silence means stop.** Carried forward from Draft 3.
+
+**Shape.** Day 0: the printable, plus the one action. Day 3: smaller — one thing,
+three minutes. Day 7: smallest — two sentences and a question answerable in a
+word, with nothing attached. Then stop.
+
+**Consequence.** The welcome sequence needs a Draft 4. Draft 3's day-3 email is
+withdrawn.

@@ -47,21 +47,16 @@ GUIDES = [
 
 CTA = """
 <div class="mlm-cta">
-  <p class="mlm-cta-lead">Want the rest?</p>
-  <p class="mlm-cta-body">All of these as print-ready PDFs, plus the occasional note
-  when there's something genuinely useful. Free, and nothing to buy.</p>
-  <p class="mlm-cta-links"><a href="/">Get the guides</a> &nbsp;·&nbsp;
-  <a href="/guides/">All guides</a></p>
+  <p class="mlm-cta-body">Made by <a href="/">Mr. Life Manager</a> — the practical
+  systems of running a life, written down. Free to use, copy, and teach from.</p>
 </div>
 <style>
-.mlm-cta{max-width:50rem;margin:0 auto;padding:2rem 1.5rem 3.5rem}
-.mlm-cta-lead{font-size:1.15rem;font-weight:700;margin:0 0 .4rem;letter-spacing:-.01em}
-.mlm-cta-body{font-family:var(--serif);font-size:1rem;line-height:1.55;color:var(--slate);
-  margin:0 0 1rem;max-width:52ch}
-.mlm-cta-links a{font-weight:600;color:var(--blue);text-decoration:none;
+.mlm-cta{max-width:50rem;margin:0 auto;padding:1.6rem 1.5rem 3rem;border-top:2px solid var(--rule)}
+.mlm-cta-body{font-family:var(--serif);font-size:.95rem;line-height:1.55;color:var(--slate);
+  margin:0;max-width:52ch}
+.mlm-cta-body a{font-weight:600;color:var(--blue);text-decoration:none;
   border-bottom:2px solid var(--blue-soft);padding-bottom:1px}
-.mlm-cta-links a:hover{border-bottom-color:var(--blue)}
-.mlm-cta{border-top:2px solid var(--rule)}
+.mlm-cta-body a:hover{border-bottom-color:var(--blue)}
 @media print{.mlm-cta{display:none}}
 </style>
 """
@@ -100,7 +95,6 @@ a.card{border:2px solid var(--rule-strong);border-radius:3px;padding:1.3rem 1.5r
   background:var(--surface);text-decoration:none;color:inherit;display:grid;gap:.4rem}
 a.card:hover{border-color:var(--blue)}
 a.card:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
-a.card .n{font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
 a.card h2{font-size:1.2rem;font-weight:700;margin:0;letter-spacing:-.015em}
 a.card p{font-family:var(--serif);font-size:.97rem;line-height:1.5;color:var(--slate);margin:0}
 a.card .go{font-size:.83rem;font-weight:600;color:var(--blue);margin-top:.2rem}
@@ -174,7 +168,7 @@ def main() -> int:
     tokens = tokens_from(ROOT / GUIDES[0][1])
     cards = []
 
-    for i, (slug, src, title, blurb) in enumerate(GUIDES, start=1):
+    for slug, src, title, blurb in GUIDES:
         html = (ROOT / src).read_text()
         if "</body>" not in html:
             sys.exit(f"{src}: no </body> — cannot inject the signup CTA")
@@ -182,7 +176,6 @@ def main() -> int:
         (OUT / "guides" / f"{slug}.html").write_text(html)
         cards.append(
             f'  <a class="card" href="/guides/{slug}.html">\n'
-            f'    <span class="n">Guide {i:02d}</span>\n'
             f'    <h2>{title}</h2>\n'
             f'    <p>{blurb}</p>\n'
             f'    <span class="go">Read it →</span>\n'

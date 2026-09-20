@@ -37,6 +37,13 @@ the standard, and that's a decision to make deliberately.*
 
 ## Standards
 
+**The design standard, per [ADR-015](../../planning/decisions.md#adr-015--the-win-comes-before-the-email):
+one action, roughly a dozen decisions at most, and "done" reachable in a single
+sitting.** A guide that presents a menu has moved the analysis paralysis inside
+the product instead of removing it. *What Is This Room For?* shipped with 76 tick
+boxes and is the worked example of getting this wrong.
+
+
 - **Genuinely complete.** A checklist with gaps is worse than none — it produces
   false confidence.
 - **Printable, black-and-white, 8.5×11.** Much of this gets taped inside a

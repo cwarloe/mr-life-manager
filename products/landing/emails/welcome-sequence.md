@@ -1,5 +1,12 @@
 # Welcome Sequence — Draft 3
 
+> **SUPERSEDED 2026-09-20 by [ADR-016](../../../planning/decisions.md#adr-016--the-sequence-shrinks-unconditionally).**
+> The day-3 email ("How's it going?" — Done / Started, didn't finish / Haven't yet)
+> is **withdrawn**: two of its three answers are a confession, and it branches on
+> a signal we cannot observe. Draft 4 is pending. Kept here as the record of what
+> was tried and why it was wrong — do not send this sequence as written.
+
+
 **Rebuilt 2026-09-19 around
 [ADR-014](../../../planning/decisions.md#adr-014--completion-is-what-converts).**
 Draft 1 delivered three guides on day zero — the same failure the landing page
