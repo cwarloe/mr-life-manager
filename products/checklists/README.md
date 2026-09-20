@@ -23,7 +23,8 @@ the standard, and that's a decision to make deliberately.*
 
 **Free**
 - ★ **First Apartment Checklist** — the flagship lead magnet
-- ✓ **What Is This Room For?** — decide the job of each room before maintaining it
+- ✓ **What Is This Room For?** — one room: its job, what fights it, three things
+- ✓ **The Light Is the Problem** — why a room feels wrong when nothing is dirty
 - Cleaning Supply Starter List
 - The 20-Minute Reset
 - How Often Should I…? — the cadence reference
@@ -41,7 +42,8 @@ the standard, and that's a decision to make deliberately.*
 one action, roughly a dozen decisions at most, and "done" reachable in a single
 sitting.** A guide that presents a menu has moved the analysis paralysis inside
 the product instead of removing it. *What Is This Room For?* shipped with 76 tick
-boxes and is the worked example of getting this wrong.
+boxes and is the worked example of getting this wrong; it was cut to 13 on
+2026-09-20.
 
 
 - **Genuinely complete.** A checklist with gaps is worse than none — it produces

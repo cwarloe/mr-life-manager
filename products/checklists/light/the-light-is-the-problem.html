@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Why a room feels wrong when nothing is dirty, and the cheapest thing in the house to fix.">
+<meta name="color-scheme" content="light dark">
+<title>The Light Is the Problem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+:root{
+  --ink:#12161C; --paper:#FBF9F4; --surface:#FFFFFF;
+  --blue:#1F4E79; --blue-soft:#E7EEF5;
+  --amber:#B4741A; --amber-soft:#F7EEDD;
+  --slate:#6B7280; --rule:#D9D5CC; --rule-strong:#B8B2A6;
+  --sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
+    --blue:#8FB6DA; --blue-soft:#1D2833;
+    --amber:#E3A94E; --amber-soft:#2A2418;
+    --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
+  --blue:#8FB6DA; --blue-soft:#1D2833;
+  --amber:#E3A94E; --amber-soft:#2A2418;
+  --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;
+  line-height:1.5;margin:0;-webkit-font-smoothing:antialiased}
+.sheet{max-width:54rem;margin:0 auto;padding:3rem 1.5rem 5rem}
+.mast{border-bottom:3px solid var(--ink);padding-bottom:1.25rem}
+.eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--blue);margin:0 0 .6rem}
+h1{font-size:clamp(2.1rem,6vw,3.1rem);font-weight:700;line-height:1.02;letter-spacing:-.02em;
+  margin:0;text-wrap:balance}
+.deck{font-family:var(--serif);font-size:1.05rem;color:var(--slate);margin:.7rem 0 0;max-width:44ch}
+.standfirst{font-family:var(--serif);font-size:1rem;line-height:1.6;margin:1.5rem 0 0;max-width:62ch}
+.key-note{border-left:3px solid var(--blue);background:var(--blue-soft);padding:.9rem 1.1rem;
+  margin:1.75rem 0 0;border-radius:0 3px 3px 0;font-family:var(--serif);font-size:.97rem;line-height:1.55}
+.key-note b{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blue);display:block;margin-bottom:.3rem}
+
+/* frequency band */
+.band{margin:3rem 0 0;break-inside:avoid}
+.band-head{display:flex;align-items:baseline;gap:.9rem;border-bottom:2px solid var(--ink);
+  padding-bottom:.5rem;margin-bottom:.2rem}
+.band-tag{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--paper);background:var(--ink);padding:.28rem .5rem;border-radius:2px;white-space:nowrap}
+.band-head h2{font-size:1.4rem;font-weight:700;letter-spacing:-.015em;margin:0;flex:1}
+.mins{font-size:.75rem;color:var(--slate);font-weight:500;white-space:nowrap}
+.band-note{font-family:var(--serif);color:var(--slate);font-size:.95rem;margin:.6rem 0 1.1rem}
+
+table{width:100%;border-collapse:collapse;font-size:.92rem;margin:0}
+.scroll{overflow-x:auto}
+thead th{font-size:.66rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--slate);text-align:left;padding:0 .7rem .45rem 0;border-bottom:1px solid var(--rule-strong)}
+thead th.n{width:9.5rem}
+tbody td{padding:.5rem .7rem .5rem 0;border-bottom:1px solid var(--rule);vertical-align:top;
+  font-variant-numeric:tabular-nums}
+tbody tr:last-child td{border-bottom:none}
+td.task{font-weight:500}
+td.good{color:var(--ink)}
+td.better{color:var(--slate)}
+tr.flag td.task{color:var(--amber);font-weight:600}
+tr.flag td.task::after{content:" ⚠"}
+td strong{font-weight:600}
+
+.simple{list-style:none;margin:0;padding:0;display:grid;gap:.4rem;
+  grid-template-columns:repeat(auto-fill,minmax(17rem,1fr));gap:.4rem 1.75rem}
+.simple li{font-size:.92rem;padding-left:1rem;position:relative;line-height:1.45}
+.simple li::before{content:"";position:absolute;left:0;top:.62em;width:.32rem;height:.32rem;
+  background:var(--rule-strong);border-radius:50%}
+
+h3{font-size:.76rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--blue);
+  margin:2rem 0 .8rem;padding-bottom:.3rem;border-bottom:1px solid var(--rule)}
+
+.notes{margin:3.5rem 0 0;border-top:2px solid var(--ink);padding-top:1.5rem}
+.notes h2{font-size:1.15rem;font-weight:700;margin:0 0 1.1rem;letter-spacing:-.01em}
+.note{font-family:var(--serif);font-size:.96rem;line-height:1.6;margin:0 0 1rem;max-width:66ch}
+.note b{font-family:var(--sans);font-weight:600;font-size:.9rem}
+.signoff{font-family:var(--serif);font-style:italic;font-size:1.02rem;text-align:center;
+  color:var(--slate);margin:3rem auto 0;max-width:40ch;line-height:1.5}
+footer{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--rule);font-size:.74rem;
+  color:var(--slate);display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;justify-content:space-between}
+footer b{color:var(--ink);font-weight:600}
+@media (max-width:38rem){
+  .sheet{padding:2rem 1.1rem 3rem}
+  thead th.n{width:auto}
+  table{font-size:.86rem}
+}
+@media print{
+  :root{--ink:#000;--paper:#fff;--surface:#fff;--slate:#444;--rule:#bbb;--rule-strong:#666;
+    --blue-soft:#fff;--amber:#7a4d0a;--amber-soft:#fff}
+  body{font-size:9.6pt}.sheet{max-width:none;padding:0}
+  .band,.key-note,.notes{page-break-inside:avoid}
+  .band-head{page-break-after:avoid}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* teaching layout — no tick boxes in this one */
+.lede-block{font-family:var(--serif);font-size:1.06rem;line-height:1.62;margin:1.6rem 0 0;max-width:62ch}
+.lede-block b{font-family:var(--sans);font-weight:600}
+.rule{margin:2.6rem 0 0;break-inside:avoid}
+.rule h2{font-size:1.32rem;font-weight:700;letter-spacing:-.018em;margin:0 0 .6rem;line-height:1.25}
+.rule p{font-family:var(--serif);font-size:1rem;line-height:1.62;margin:0 0 .75rem;max-width:64ch}
+.rule p:last-child{margin-bottom:0}
+.rule b{font-family:var(--sans);font-weight:600}
+.spec{width:100%;border-collapse:collapse;font-size:.93rem;margin:1rem 0 .3rem}
+.spec th{font-size:.66rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--slate);
+  text-align:left;padding:0 .7rem .45rem 0;border-bottom:1px solid var(--rule-strong)}
+.spec td{padding:.5rem .7rem .5rem 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.spec td:first-child{font-weight:600;white-space:nowrap}
+.spec tr:last-child td{border-bottom:none}
+.action{border:2px solid var(--ink);border-radius:4px;padding:1.4rem 1.3rem;margin:3rem 0 0}
+.action .lab{font-size:.7rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--blue);margin:0 0 .5rem}
+.action h2{font-size:1.3rem;font-weight:800;letter-spacing:-.02em;margin:0 0 .7rem}
+.action p{font-family:var(--serif);font-size:1.02rem;line-height:1.6;margin:0 0 .7rem}
+.action p:last-child{margin-bottom:0}
+.action b{font-family:var(--sans);font-weight:700}
+</style>
+
+</head>
+<body>
+
+<div class="sheet">
+  <header class="mast">
+    <p class="eyebrow">Mr. Life Manager · Free Guide</p>
+    <h1>The light is the problem.</h1>
+    <p class="deck">Why a room feels wrong when nothing in it is dirty.</p>
+  </header>
+
+  <p class="lede-block">There's a room you don't much like being in, and if someone
+  asked why, you'd probably say you need to tidy it. You've tidied it. It didn't
+  help.</p>
+
+  <p class="lede-block"><b>Check the light first.</b> It's almost always the light,
+  it's the cheapest thing in the house to fix, and it's the one nobody mentions —
+  which is exactly the sort of thing this whole project is about.</p>
+
+  <div class="key-note">
+    <b>If you rent, this is still yours</b>
+    Almost all of it is lamps and bulbs. It unplugs, it comes with you, and none of
+    it needs asking anyone's permission.
+  </div>
+
+  <h3>What's actually wrong</h3>
+
+  <section class="rule">
+    <h2>One light in the ceiling is doing a job it can't do.</h2>
+    <p>A single bright source overhead lights a room the way a car park is lit: evenly,
+    from above, with nothing left in shadow. It's efficient and it's why the room
+    reads as a corridor rather than somewhere to be.</p>
+    <p><b>Two lamps at roughly head height or below will beat it every time</b> — a
+    floor lamp in a corner and a table lamp beside where you sit is the whole trick.
+    Light coming from two low points instead of one high one is most of the
+    difference between a room you avoid and a room you don't.</p>
+    <p>It's a rule of thumb, not physics. But it holds more often than almost any
+    other piece of advice on this site.</p>
+  </section>
+
+  <section class="rule">
+    <h2>Your bulbs don't match, and it reads as "wrong."</h2>
+    <p>Bulb colour is measured in kelvin. Lower is yellower, higher is bluer. Put a
+    2700K bulb in one lamp and a 5000K in the one next to it and the room will feel
+    subtly off to everyone who walks in, and not one of them will be able to say why.</p>
+    <p><b>Matching within a room matters more than which one you choose.</b></p>
+    <div class="scroll"><table class="spec">
+      <thead><tr><th>On the box</th><th>What it looks like</th><th>Where it belongs</th></tr></thead>
+      <tbody>
+        <tr><td>2700K</td><td>Warm, yellowish — like the old bulbs</td><td>Living rooms, bedrooms</td></tr>
+        <tr><td>3000K</td><td>Soft white, slightly crisper</td><td>Anywhere, safe default</td></tr>
+        <tr><td>4000K</td><td>Neutral, faintly clinical</td><td>Kitchen counters, desks</td></tr>
+        <tr><td>5000K+</td><td>Blue-white, "daylight"</td><td>Garages, workbenches. Not where you relax.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="rule">
+    <h2>You're buying by the wrong number.</h2>
+    <p>Brightness is <b>lumens</b>, not watts. Watts were only ever a measure of
+    electricity used, and with old bulbs that happened to track brightness closely
+    enough that everyone learned the wrong lesson. LEDs broke the link — a 9W LED and
+    a 60W incandescent put out about the same light.</p>
+    <p>Rough shape of it: <b>450 lm</b> is a bedside lamp, <b>800 lm</b> is a normal
+    room bulb, <b>1600 lm</b> is bright enough for a kitchen ceiling.</p>
+  </section>
+
+  <section class="rule">
+    <h2>There's nothing you can turn down.</h2>
+    <p>A room that has exactly one setting — everything on, or everything off — makes
+    you choose between an interrogation and the dark at nine in the evening.</p>
+    <p>You don't need a dimmer switch. <b>A lamp you use instead of the big light
+    after dark does the same job for the price of a lamp.</b> If you do want dimming,
+    check the bulb says dimmable and that your switch is rated for LEDs — mismatched,
+    they buzz and flicker, and it isn't the bulb's fault.</p>
+  </section>
+
+  <section class="rule">
+    <h2>The light isn't where the work is.</h2>
+    <p>Ceiling light, your body, the counter. Your own shadow lands exactly where
+    you're chopping. Same at a desk with a window behind you.</p>
+    <p><b>Put a light where the task is</b> — under a cupboard, beside the chair you
+    read in, next to the bed. Small lamps in the right places beat one big one in the
+    middle.</p>
+  </section>
+
+  <section class="rule">
+    <h2>A bulb went, and you left it.</h2>
+    <p>A dead bulb lasts about a week before it stops being a dead bulb and becomes a
+    dark corner — and a dark corner quietly becomes the place things get put down.</p>
+    <p><b>Replace it the day it goes.</b> Keep spares in one known place. This is the
+    cheapest preventative maintenance in the building.</p>
+  </section>
+
+  <div class="action">
+    <p class="lab">The only thing to do</p>
+    <h2>Pick the room you like least. Fix its light tonight.</h2>
+    <p>Walk in. Count the light sources. If the answer is one and it's in the
+    ceiling, <b>that's the finding</b> — you need a lamp, not a tidy-up.</p>
+    <p>Then check every bulb in that room is the same colour. If they aren't, make
+    them match. That part is usually free, because there's a right bulb already in
+    some other room.</p>
+    <p>One room. Not the whole house. Come back for the next one when this one is
+    done.</p>
+  </div>
+
+  <div class="notes">
+    <h2>Notes</h2>
+    <p class="note"><b>Don't relight the whole place at once.</b> Two lamps in one
+    room beats a box of eight bulbs you meant to get to. Nothing on this page needs
+    doing in order or all together.</p>
+    <p class="note"><b>Daylight is free and most people block it.</b> Before buying
+    anything: open the curtains fully, clean the inside of the window, and move
+    whatever is standing in front of it.</p>
+    <p class="note"><b>A mirror opposite a window is worth a lamp</b> and costs no
+    electricity. Old trick, still works.</p>
+    <p class="note"><b>If a room still feels wrong after this</b>, then it's probably
+    the thing the light was hiding. That's a different question — what the room is
+    actually for — and it's worth asking separately.</p>
+  </div>
+
+  <p class="signoff">Nobody ever told you a room can be clean and still feel wrong.
+  Usually it's this, and usually it's forty pounds and an evening.</p>
+
+  <footer>
+    <span><b>Mr. Life Manager</b> — practical systems for running an adult life</span>
+    <span>Free to use, copy, and teach from — with credit. Not for resale.</span>
+  </footer>
+</div>
+</body>
+</html>

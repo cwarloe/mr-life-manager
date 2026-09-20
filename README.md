@@ -159,7 +159,7 @@ verify it and learn from real people.
 - ✅ Foundational decisions settled: faith framing, beachhead and payer, the
       person behind the brand, and the intended licensing model
       ([decision log](planning/decisions.md))
-- ✅ Seven free-tier guides drafted and designed — see
+- ✅ Eight free-tier guides drafted and designed — see
       [`products/checklists/`](products/checklists/). They are now **archive and
       search surface, not offers** ([ADR-015](planning/decisions.md#adr-015--the-win-comes-before-the-email))
 - ✅ **Dave's original documents recovered** — four guides he wrote in 2009–2010,
