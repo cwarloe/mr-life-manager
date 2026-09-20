@@ -54,6 +54,21 @@ Every piece of content should:
 6. **Be modular.** Assume it will be reused in three products and read out of
    order.
 
+## Referring to Dave
+
+**He is "Dave." Not "Dave Webster."** The surname adds no credibility and reads
+as a claim being made for him. The first name reads as a friend, which is what
+he is — and the whole premise of the brand is that this knowledge comes from
+someone who'd tell you over a coffee, not from an authority.
+
+**Say "decades," not a number of years.** We happen to hold documents going back
+to 2009, but that's the age of our archive, not the age of his practice. "Decades"
+is both truer and more interesting than counting.
+
+**Where he appears in a product, he appears after the reader has done something**,
+never as onboarding. Provenance is a reward; it is not an introduction. See
+[ADR-015](../planning/decisions.md#adr-015--the-win-comes-before-the-email).
+
 ## Scope: how deep is too deep
 
 **If someone would have to look it up in a code book or a database, it's not our

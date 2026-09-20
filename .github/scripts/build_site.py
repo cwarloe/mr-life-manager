@@ -161,7 +161,10 @@ def main() -> int:
 
     # landing pages, CNAME — everything in products/landing except working files
     for item in LANDING.iterdir():
-        if item.name in {"SETUP.md", "emails"}:
+        # Working files, not published: notes, briefs, email drafts, and any
+        # subdirectory. Copying a directory with copy2 raises, so skip by type
+        # rather than by name — a new folder here must not break the build.
+        if item.is_dir() or item.name == "SETUP.md":
             continue
         shutil.copy2(item, OUT / item.name)
 

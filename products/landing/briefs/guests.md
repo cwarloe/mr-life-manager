@@ -38,12 +38,24 @@ which is [everything-has-a-place](../../../frameworks/everything-has-a-place.md)
 arriving at the one moment the reader has just felt the problem. This is what earns
 the maintenance offer instead of asserting it.
 
-**Dave is named here.** First time in a shipped product. It sits *after* the win,
-where it reads as provenance rather than onboarding, and it carries his own framing
-— crisis versus preventative cleaning — to set up the offer. This resolves the open
-question flagged in the [What Is This Room For? brief](../../checklists/room-for/brief.md)
-in favour of naming him, at least in this position. If that's wrong it is a
-two-line revert.
+**Dave is named here — first name only.** First time in a shipped product. It
+sits *after* the win, where it reads as provenance rather than onboarding. This
+resolves the open question flagged in the
+[What Is This Room For? brief](../../checklists/room-for/brief.md) in favour of
+naming him.
+
+**"Dave," not "Dave Webster," and "decades," not a number.** Founder's call,
+2026-09-20: the surname adds no credibility and reads as a claim being made;
+first name reads as a friend, which is what he is. "Decades" is both more
+accurate than counting from the oldest document we happen to hold, and more
+interesting than a figure. **Applies everywhere, not just this page** — treat it
+as the house style for referring to him in product copy.
+
+**"What just happened" is its own callout.** Dave's crisis-versus-preventative
+framing was originally a trailing paragraph in the basket section, where it read
+as an afterthought. It's the hinge of the whole page — it names what the reader
+just did and why they'll need it again — so it now gets a bordered block of its
+own, visually distinct from the amber safety note.
 
 **The offer is smaller, not bigger.** The printable plus *"Dave's ten minutes a
 night."* Per ADR-015, never a bigger pile of guides.
@@ -51,7 +63,9 @@ night."* Per ADR-015, never a bigger pile of guides.
 **One amber safety note**, on mixing bleach with ammonia or vinegar. It clears the
 [depth rule](../../../content/README.md) — a competent person would simply tell
 you, and someone rushing with two bottles in a small bathroom is the exact
-situation where it matters.
+situation where it matters. Rebuilt 2026-09-20 after it read badly on a phone:
+the label is now its own element rather than a block-level `<b>` inside the
+paragraph, and the body is broken into short lines instead of one dense block.
 
 ### Voice
 

@@ -67,11 +67,22 @@ h1{font-size:clamp(2rem,8vw,2.9rem);font-weight:800;line-height:1.03;letter-spac
   margin:.7rem 0 0;border-left:2px solid var(--rule);padding-left:.85rem}
 .why b{font-family:var(--sans);font-weight:600;color:var(--ink)}
 
-.warn{border-left:3px solid var(--amber);background:var(--amber-soft);padding:.85rem 1rem;
-  border-radius:0 3px 3px 0;margin:2.4rem 0 0}
-.warn p{margin:0;font-family:var(--serif);font-size:.98rem;line-height:1.55}
-.warn b{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--amber);display:block;margin-bottom:.3rem}
+.warn{border-left:3px solid var(--amber);background:var(--amber-soft);
+  padding:1.1rem 1.15rem;border-radius:0 4px 4px 0;margin:2.4rem 0 0}
+.warn-label{font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--amber);margin:0 0 .55rem}
+.warn p{margin:0;font-family:var(--serif);font-size:1rem;line-height:1.62}
+.warn p + p{margin-top:.6rem}
+.warn strong{font-family:var(--sans);font-weight:700;font-size:.97rem}
+
+/* what just happened — its own callout, distinct from the safety note */
+.callout{border:2px solid var(--ink);border-radius:4px;padding:1.3rem 1.25rem;margin:2.2rem 0 0}
+.callout-label{font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--blue);margin:0 0 .6rem}
+.callout h3{font-size:1.2rem;font-weight:800;letter-spacing:-.018em;margin:0 0 .7rem;line-height:1.25}
+.callout p{font-family:var(--serif);font-size:1.02rem;line-height:1.62;margin:0}
+.callout p + p{margin-top:.75rem}
+.callout strong{font-family:var(--sans);font-weight:700}
 
 .stop{border-top:3px solid var(--ink);margin:3rem 0 0;padding:1.5rem 0 0}
 .stop h2{font-size:1.45rem;font-weight:800;letter-spacing:-.02em;margin:0 0 .6rem}
@@ -201,10 +212,12 @@ footer a{color:var(--blue);font-weight:600;text-decoration:none}
 </ol>
 
 <div class="warn">
-  <p><b>One safety thing</b>
-  Don't mix cleaning products while you're rushing. <b>Bleach with ammonia</b> — in
-  a lot of glass cleaners — or <b>bleach with vinegar</b> produces genuinely
-  dangerous fumes in a small bathroom. One product at a time, and it's fine.</p>
+  <p class="warn-label">One safety thing</p>
+  <p>Don't mix cleaning products while you're rushing.</p>
+  <p><strong>Bleach with ammonia</strong> — which is in a lot of glass cleaners —
+  or <strong>bleach with vinegar</strong> makes genuinely dangerous fumes in a
+  small bathroom.</p>
+  <p>One product at a time, and you're fine.</p>
 </div>
 
 <div class="stop">
@@ -227,14 +240,19 @@ footer a{color:var(--blue);font-weight:600;text-decoration:none}
 
   <p class="pull">"Everything has it's place. Do it now."</p>
 
-  <p>Those are Dave Webster's, and he's been saying them for at least seventeen
-  years. He's a real person — a friend who taught me how to run a house after I'd
-  been failing at it for years, and who is faintly embarrassed to tell anyone
-  because he assumes everybody already knows. Almost nobody does. Nobody teaches
-  this.</p>
-  <p>He also had a rule about tonight, specifically: <b>preventative cleaning rather
-  than crisis cleaning.</b> What you just did was the crisis version. It works, and
-  you'll need it again, and needing it again is the actual problem.</p>
+  <p>Those are Dave's. He's a real person, he's been saying them for decades, and
+  he taught me how to run a house after I'd spent years failing at it. He's faintly
+  embarrassed to tell anyone any of this, because he assumes everybody already
+  knows. Almost nobody does. Nobody teaches it.</p>
+</div>
+
+<div class="callout">
+  <p class="callout-label">What just happened</p>
+  <h3>That was crisis cleaning.</h3>
+  <p>Dave's rule is <strong>preventative cleaning rather than crisis cleaning</strong>
+  — and tonight was the crisis version. It works. You'll also need it again.</p>
+  <p><strong>Needing it again is the actual problem.</strong> Not tonight, and not
+  the state of the place. The reason tonight was necessary at all.</p>
 </div>
 
 <div class="signup">
