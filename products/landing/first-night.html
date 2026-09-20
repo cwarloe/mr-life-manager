@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="First night in a new place. Six things, in order of what you'll regret skipping. About an hour, and it still works if you only do the first one.">
+<meta name="color-scheme" content="light dark">
+<title>Your First Night</title>
+<link rel="canonical" href="https://mrlifemanager.com/first-night.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+:root{
+  --ink:#12161C; --paper:#FBF9F4; --surface:#FFFFFF;
+  --blue:#1F4E79; --blue-soft:#E7EEF5;
+  --amber:#B4741A; --amber-soft:#F7EEDD;
+  --slate:#6B7280; --rule:#D9D5CC; --rule-strong:#B8B2A6;
+  --sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
+    --blue:#8FB6DA; --blue-soft:#1D2833;
+    --amber:#E3A94E; --amber-soft:#2A2418;
+    --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
+  --blue:#8FB6DA; --blue-soft:#1D2833;
+  --amber:#E3A94E; --amber-soft:#2A2418;
+  --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;
+  line-height:1.5;margin:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.15rem}
+
+header.top{padding:2.5rem 0 0}
+.eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--blue);margin:0 0 .7rem}
+h1{font-size:clamp(2rem,8vw,2.9rem);font-weight:800;line-height:1.03;letter-spacing:-.025em;
+  margin:0;text-wrap:balance}
+.sub{font-family:var(--serif);font-size:1.1rem;line-height:1.5;margin:.9rem 0 0;color:var(--slate)}
+
+.frame{background:var(--surface);border:1px solid var(--rule);border-radius:5px;
+  padding:1.15rem 1.25rem;margin:1.9rem 0 0}
+.frame p{margin:0;font-family:var(--serif);font-size:1rem;line-height:1.55}
+.frame p + p{margin-top:.7rem}
+.frame b{font-family:var(--sans);font-weight:700}
+
+.steps{margin:2.6rem 0 0;padding:0;list-style:none;counter-reset:s}
+.step{margin:0 0 2.3rem;counter-increment:s;position:relative}
+.step-head{display:flex;gap:.85rem;align-items:baseline}
+.step-head::before{content:counter(s);font-size:1.6rem;font-weight:800;line-height:1;
+  color:var(--paper);background:var(--ink);min-width:2.1rem;height:2.1rem;border-radius:3px;
+  display:flex;align-items:center;justify-content:center;flex:none;font-variant-numeric:tabular-nums}
+.step-head h2{font-size:1.32rem;font-weight:700;letter-spacing:-.018em;margin:0;line-height:1.2;flex:1}
+.mins{font-size:.78rem;font-weight:600;color:var(--slate);white-space:nowrap;
+  border:1px solid var(--rule-strong);border-radius:99px;padding:.16rem .55rem;align-self:center}
+.do{font-size:1.04rem;line-height:1.55;margin:.85rem 0 0}
+.do b{font-weight:700}
+.why{font-family:var(--serif);font-size:.98rem;line-height:1.55;color:var(--slate);
+  margin:.7rem 0 0;border-left:2px solid var(--rule);padding-left:.85rem}
+.why b{font-family:var(--sans);font-weight:600;color:var(--ink)}
+
+.warn{border-left:3px solid var(--amber);background:var(--amber-soft);
+  padding:1.1rem 1.15rem;border-radius:0 4px 4px 0;margin:2.4rem 0 0}
+.warn-label{font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--amber);margin:0 0 .55rem}
+.warn p{margin:0;font-family:var(--serif);font-size:1rem;line-height:1.62}
+.warn p + p{margin-top:.6rem}
+.warn strong{font-family:var(--sans);font-weight:700;font-size:.97rem}
+
+/* what just happened — its own callout, distinct from the safety note */
+.callout{border:2px solid var(--ink);border-radius:4px;padding:1.3rem 1.25rem;margin:2.2rem 0 0}
+.callout-label{font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--blue);margin:0 0 .6rem}
+.callout h3{font-size:1.2rem;font-weight:800;letter-spacing:-.018em;margin:0 0 .7rem;line-height:1.25}
+.callout p{font-family:var(--serif);font-size:1.02rem;line-height:1.62;margin:0}
+.callout p + p{margin-top:.75rem}
+.callout strong{font-family:var(--sans);font-weight:700}
+
+.stop{border-top:3px solid var(--ink);margin:3rem 0 0;padding:1.5rem 0 0}
+.stop h2{font-size:1.45rem;font-weight:800;letter-spacing:-.02em;margin:0 0 .6rem}
+.stop p{font-family:var(--serif);font-size:1.04rem;line-height:1.6;margin:0}
+.stop p + p{margin-top:.8rem}
+
+.after{margin:3.5rem 0 0;padding:2rem 0 0;border-top:1px solid var(--rule)}
+.after h2{font-size:1.28rem;font-weight:700;letter-spacing:-.015em;margin:0 0 .8rem}
+.after p{font-family:var(--serif);font-size:1.02rem;line-height:1.62;margin:0 0 .9rem}
+.after p b{font-family:var(--sans);font-weight:600}
+.pull{font-family:var(--serif);font-style:italic;font-size:1.08rem;line-height:1.5;
+  border-left:3px solid var(--blue);padding-left:1rem;margin:1.4rem 0;color:var(--ink)}
+
+.signup{background:var(--surface);border:1px solid var(--rule-strong);border-radius:5px;
+  padding:1.5rem 1.35rem;margin:2.2rem 0 0}
+.signup h2{font-size:1.18rem;font-weight:700;margin:0 0 .5rem;letter-spacing:-.01em}
+.signup p{font-family:var(--serif);font-size:1rem;line-height:1.55;margin:0 0 1.1rem;color:var(--slate)}
+.ml-fallback a{font-weight:600;color:var(--blue)}
+.fine{font-size:.82rem;color:var(--slate);margin:.9rem 0 0;line-height:1.5}
+
+footer{margin:3.5rem 0 0;padding:1.3rem 0 3.5rem;border-top:1px solid var(--rule);
+  font-size:.8rem;color:var(--slate);line-height:1.6}
+footer a{color:var(--blue);font-weight:600;text-decoration:none}
+
+@media (min-width:40rem){ body{font-size:18px} .wrap{padding:0 1.5rem} }
+@media print{
+  :root{--ink:#000;--paper:#fff;--surface:#fff;--slate:#444;--rule:#bbb;--rule-strong:#666;
+    --blue-soft:#fff;--amber:#7a4d0a;--amber-soft:#fff}
+  body{font-size:10.5pt}.signup,footer{display:none}
+  .step{page-break-inside:avoid}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+<script>
+  (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+  .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+  n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+  (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+  ml('account', '2635985');
+</script>
+</head>
+<body>
+
+<div class="wrap">
+
+<header class="top">
+  <p class="eyebrow">Mr. Life Manager</p>
+  <h1>It's your first night in your own place.</h1>
+  <p class="sub">Six things, in order of what you'll regret skipping. About an
+  hour — and the first one matters more than the other five put together.</p>
+</header>
+
+<div class="frame">
+  <p><b>Stop unpacking and do these first.</b> The instinct is to empty every box
+  tonight. That ends at midnight with forty open boxes and nowhere to sleep. This
+  is the order that makes tonight work and protects you later.</p>
+  <p>Nothing to sign up for. Start at one.</p>
+</div>
+
+<ol class="steps">
+
+  <li class="step">
+    <div class="step-head"><h2>Photograph everything. Before another box comes in.</h2><span class="mins">15 min</span></div>
+    <p class="do">Every room, every wall, the floors, inside the oven and the
+    fridge, and <b>close-ups of every mark, stain, chip and scuff you can find</b>.
+    Your phone timestamps them. Don't tidy first — you want it exactly as handed
+    over.</p>
+    <p class="why"><b>This is the one that's worth money, and it expires tonight.</b>
+    At the end of the tenancy, a deposit dispute comes down to who can show what
+    the place looked like on day one. If you can, they pay. If you can't, you do —
+    and "it was already like that" is not evidence. The moment you start filling
+    the place, the chance is gone. Nobody tells you this, and it's the most
+    expensive thing on the list.</p>
+  </li>
+
+  <li class="step">
+    <div class="step-head"><h2>Make the bed. Properly.</h2><span class="mins">10 min</span></div>
+    <p class="do">Find the sheets, put them on, make it up as though it's a normal
+    Tuesday. <b>Before you're tired.</b></p>
+    <p class="why"><b>Why so early.</b> At one in the morning you will not want to
+    be opening boxes looking for a fitted sheet, and that's exactly when you'll be
+    doing it. Ten minutes now buys you the ability to stop whenever you want. It
+    also means that whatever else the place looks like, one thing in it is finished.</p>
+  </li>
+
+  <li class="step">
+    <div class="step-head"><h2>Make the bathroom work.</h2><span class="mins">10 min</span></div>
+    <p class="do">Toilet paper on the holder. Soap by the sink. One towel hung up.
+    Toothbrush and toothpaste somewhere they can sit. <b>That's the whole list</b> —
+    don't unpack the rest of the box.</p>
+    <p class="why"><b>Four items and a room becomes usable.</b> It's the room you'll
+    need first and at the worst possible moment, and it's the cheapest one to
+    finish.</p>
+  </li>
+
+  <li class="step">
+    <div class="step-head"><h2>Find three things and photograph them too.</h2><span class="mins">10 min</span></div>
+    <p class="do"><b>The breaker box</b> — where the switches are when the power
+    cuts. <b>The water shutoff</b> — the main valve, plus the ones under the sink
+    and behind the toilet. <b>The thermostat</b>, and whatever controls the hot
+    water.</p>
+    <p class="why"><b>You want to know this before you need it, not during.</b> A
+    pipe fitting lets go at 2am roughly once in a lifetime, and the difference
+    between a wet floor and a ruined one is whether you know where the valve is.
+    Photograph each so you're not describing it to a landlord from memory.</p>
+  </li>
+
+  <li class="step">
+    <div class="step-head"><h2>Test the things that matter. Report anything broken tonight.</h2><span class="mins">10 min</span></div>
+    <p class="do">Hot water at every tap. <b>Press the test button on every smoke
+    alarm.</b> The lock and the deadbolt, with your own key, from outside. Every
+    window opens and shuts and locks.</p>
+    <p class="why"><b>Anything wrong goes to the landlord in writing today</b> —
+    email, not a phone call, so there's a record with a date on it. Reporting a
+    fault on day one is a maintenance request. Reporting it in month nine starts
+    an argument about who broke it. Same fault, completely different conversation.</p>
+  </li>
+
+  <li class="step">
+    <div class="step-head"><h2>Clear one surface and one place to sit.</h2><span class="mins">10 min</span></div>
+    <p class="do">One table or counter with nothing on it, and one chair that isn't
+    covered in things. <b>Then eat something.</b></p>
+    <p class="why"><b>Somewhere to sit that isn't the bed.</b> It sounds trivial and
+    it's the difference between a place you're camping in and a place you live. It
+    also gives you a surface for tomorrow, which is when the actual unpacking
+    starts.</p>
+  </li>
+
+</ol>
+
+<div class="warn">
+  <p class="warn-label">One thing to check tonight</p>
+  <p>Press the test button on <strong>every</strong> smoke alarm, not just the one
+  you can reach.</p>
+  <p>If any of them chirps, is silent, or isn't there at all, that goes to the
+  landlord in writing tonight. In most places it's their legal obligation, and it
+  is the one fault on this page that can actually kill you.</p>
+</div>
+
+<div class="stop">
+  <h2>That's tonight. The boxes will keep.</h2>
+  <p>Whatever you got through is what there was time for. The list runs in order of
+  what costs most to have skipped, so wherever you stopped is the right place to
+  have stopped.</p>
+  <p>If you only did the first one, you did the one that's worth money.</p>
+</div>
+
+<div class="after">
+  <h2>Before you unpack the rest.</h2>
+  <p>Tomorrow the instinct will be to empty every box and then work out where
+  things go. Everyone does it. It's also backwards, and it's why six months from
+  now there'll be a drawer nobody can name the purpose of.</p>
+  <p><b>You will never again have this good a chance to decide where things live.</b>
+  Right now the place is empty and nothing has a home yet, so giving each thing one
+  costs you nothing — you're putting it down for the first time either way. Do it
+  in six months and it costs a weekend and an argument with yourself.</p>
+
+  <p class="pull">"Everything has it's place. Do it now."</p>
+
+  <p>Those are Dave's. He's a real person, he's been saying them for decades, and
+  he taught me how to run a house after I'd spent years failing at it. He's faintly
+  embarrassed to tell anyone any of this, because he assumes everybody already
+  knows. Almost nobody does. Nobody teaches it.</p>
+</div>
+
+<div class="callout">
+  <p class="callout-label">What just happened</p>
+  <h3>You did the cheap version of everything.</h3>
+  <p>Every item on that list took ten minutes tonight and would have cost hours,
+  money or an argument later. <strong>That's the whole method</strong> — not
+  working harder, just doing things while they're still small.</p>
+  <p>Dave calls it <strong>preventative rather than crisis</strong>. Tonight is
+  the only night this year where almost everything in your life is still in the
+  cheap column.</p>
+</div>
+
+<div class="signup">
+  <h2>Want the rest of the first month?</h2>
+  <p>Two things, and nothing else: this page as a printable you can keep, and what
+  to do with the boxes tomorrow — the part that decides whether this place stays
+  livable or slowly stops being.</p>
+  <div class="ml-embedded" data-form="00ZwEr"></div>
+  <p class="ml-fallback" hidden>Form not loading? Email
+    <a href="mailto:hello@mrlifemanager.com?subject=First%20night">hello@mrlifemanager.com</a>
+    and I'll send it over.</p>
+  <p class="fine">One thing at a time. No stream of things to read. Unsubscribe
+  whenever, and silence is a fine answer.</p>
+</div>
+
+<footer>
+  <b>Mr. Life Manager</b> — the practical systems of running a life, written down.<br>
+  Free to use, copy, and teach from — with credit. Not for resale.
+  <a href="/">What this is</a>
+</footer>
+
+</div>
+
+<script>
+  // The MailerLite embed renders into an empty div. Ad blockers commonly block the
+  // script, leaving it empty and the section a dead end. Reveal a fallback if so.
+  addEventListener('load', function () {
+    setTimeout(function () {
+      document.querySelectorAll('.signup').forEach(function (box) {
+        var embed = box.querySelector('.ml-embedded');
+        var fb = box.querySelector('.ml-fallback');
+        if (embed && fb && embed.children.length === 0) fb.hidden = false;
+      });
+    }, 2500);
+  });
+  // ADR-015 — entry is per-pain. Tag the signup so the sequence knows which door
+  // they came in by, without ever asking them to choose.
+  (function () {
+    var tries = 0;
+    var t = setInterval(function () {
+      var forms = document.querySelectorAll('.ml-embedded form');
+      if (forms.length) {
+        forms.forEach(function (f) {
+          if (f.querySelector('input[name="guide"]')) return;
+          var i = document.createElement('input');
+          i.type = 'hidden'; i.name = 'guide'; i.value = 'first-night';
+          f.appendChild(i);
+        });
+        clearInterval(t);
+      }
+      if (++tries > 40) clearInterval(t);
+    }, 250);
+  })();
+</script>
+</body>
+</html>
