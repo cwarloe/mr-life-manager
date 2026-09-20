@@ -89,7 +89,7 @@ than anything they say about the future.
 
 ## The name test ★
 
-**Do this near the end, so it doesn't colour everything before it.** And watch
+**Do this near the end, so it doesn't color everything before it.** And watch
 their face, not just their words.
 
 > "Last thing. If you saw something called **Mr. Life Manager**, what would you

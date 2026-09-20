@@ -29,7 +29,7 @@ of the sequence and into a conversation. Nothing else does.
 
 **Subject:** Here's the printable
 
-> The page you just used, as one sheet you can keep. Stick it inside a cupboard
+> The page you just used, as one sheet you can keep. Stick it inside a cabinet
 > door and you'll never have to find it again.
 >
 > Now the part that means you don't need it.

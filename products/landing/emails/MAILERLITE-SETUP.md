@@ -3,6 +3,11 @@
 **Account:** `2635985` · **Form:** `00ZwEr` (embedded on both entry pages)
 **Written 2026-09-20.** Nothing below is configured yet.
 
+> **Handing this to an agent instead?**
+> [`MAILERLITE-AGENT-PROMPT.md`](MAILERLITE-AGENT-PROMPT.md) is the same job
+> written as a runnable prompt, with the email copy embedded so nothing gets
+> improvised. This file stays the source of truth if the two disagree.
+
 Both entry pages already inject a hidden field on submit:
 
 | Page | Hidden field |
