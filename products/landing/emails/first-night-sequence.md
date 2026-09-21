@@ -25,24 +25,21 @@ Shrinks unconditionally. Nobody is branched on opens or clicks. A **reply** or a
 
 **Subject:** Here's the printable
 
-> The page you just used, as one sheet. Worth keeping somewhere you'll find it
-> again — the breaker box and water shutoff bit is the sort of thing you look up
-> twice a decade and need urgently both times.
+> Here's a one-page version of the guide you just used. Print it out and keep it somewhere you'll find it again. The part about the breaker box and the water shutoff is the kind of thing you look up maybe twice in ten years, and both times you need it in a hurry.
 >
-> Now tomorrow.
+> https://mrlifemanager.com/print/first-night.pdf
 >
-> The instinct is to empty every box and then work out where things go. Do it the
-> other way round:
+> Now, about tomorrow.
 >
-> **Take one box. Before anything comes out of it, decide where each thing is
-> going to live. Then put it there.**
+> Your instinct will be to empty every box and then figure out where things go. Try it the other way around.
 >
-> Not "somewhere for now." Its actual place. One box done that way beats six boxes
-> emptied onto the floor, because six boxes on the floor is just the same job again
-> with more steps.
+> Take one box. Before anything comes out of it, decide where each thing is going to live. Then put it there.
 >
-> Right now that costs you nothing. Everything is still in your hands for the first
-> time anyway.
+> Not "somewhere for now." I mean the place it's actually going to live.
+>
+> One box done that way beats six boxes emptied onto the floor, because six boxes on the floor is just the same job again with more steps.
+>
+> Right now this costs you nothing extra, because you're already holding everything for the first time anyway.
 >
 > — Charles
 
@@ -54,24 +51,17 @@ Shrinks unconditionally. Nobody is branched on opens or clicks. A **reply** or a
 
 **Subject:** Smaller than a box
 
-> A whole box is more than most people have in them in week one of a new place,
-> when you're also working and eating badly and still finding the light switches.
-> That's on me for starting there.
+> A whole box is probably more than most people have in them during week one, when you're also working and eating badly and still finding the light switches. That's on me for starting there.
 >
-> So:
+> So here's a smaller one.
 >
-> **One drawer. The kitchen one you've already opened four times looking for
-> something.**
+> Just do one drawer. Pick the kitchen one you've already opened four times looking for something.
 >
-> Take everything out, decide what belongs in it, put that back, and find homes for
-> the rest. Ten minutes.
+> Take everything out, decide what actually belongs in it, put that back, and find homes for the rest. It takes about ten minutes.
 >
-> That drawer is the one you'll open a thousand times this year. It's the highest
-> return on ten minutes anywhere in the place — and unlike the boxes, it's finished
-> when you close it.
+> That's the drawer you'll open a thousand times this year, so it's the best ten minutes you can spend anywhere in the place. And unlike the boxes, it's finished the moment you close it.
 >
-> There's no schedule attached to this. Some weeks nothing gets unpacked. That's
-> normal and it isn't a failure.
+> There's no schedule attached to any of this. Some weeks nothing gets unpacked, and that's normal. It isn't a failure.
 >
 > — Charles
 
@@ -81,14 +71,13 @@ Shrinks unconditionally. Nobody is branched on opens or clicks. A **reply** or a
 
 **Subject:** One question
 
-> Nothing attached to this one.
+> There's nothing attached to this one.
 >
-> I'm working out what to write next, and the most useful thing anyone's told me
-> came from a question like this:
+> I'm trying to figure out what to write next, and the most useful thing anyone has told me so far came out of a question like this one.
 >
-> **What's still in a box?**
+> What's still in a box?
 >
-> One word is a complete answer. Hit reply — it's me reading them, not a system.
+> One word is a complete answer. Just hit reply. It's me reading these, not a system.
 >
 > — Charles
 

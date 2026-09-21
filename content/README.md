@@ -54,6 +54,35 @@ Every piece of content should:
 6. **Be modular.** Assume it will be reused in three products and read out of
    order.
 
+## Email voice: write full sentences
+
+**Emails must sound spoken, not written.** The recurring failure is dropping the
+subject and verb to make a clipped fragment. It reads as stylish on a page and as
+contrived in an inbox, and it is the single most reliable tell that a machine
+wrote it.
+
+| Contrived | Say it like a person |
+|---|---|
+| Nothing attached to this one. | There's nothing attached to this one. |
+| The page you just used, as one sheet you can keep. | Here's a one-page version of the guide you just used. |
+| Now tomorrow. | Now, about tomorrow. |
+| Four minutes, most nights. | It takes about four minutes most nights. |
+| Not "somewhere for now." Its actual place. | Not "somewhere for now." I mean the place it's actually going to live. |
+
+Three habits to watch, all of them mine:
+
+1. **Subjectless fragments.** If a sentence has no subject, say it out loud. If
+   you wouldn't say it that way, write it out.
+2. **The em-dash appositive.** *"…turn into next month's project — which is the
+   only reason tonight was ever necessary."* One per email at most. A plain
+   "which" or a new sentence usually reads better.
+3. **Eliding the connective.** People say "So," "And," "But," and "Now." Writing
+   drops them to sound tighter; speech keeps them.
+
+**This applies to emails, not to the guides.** On a printed checklist a fragment
+is a label and it works — *"Bin out. Window open."* is correct there. In an inbox
+the same construction sounds like a robot. Different register, different rules.
+
 ## US English, throughout
 
 **The beachhead is American. Everything reader-facing is written in US English** —

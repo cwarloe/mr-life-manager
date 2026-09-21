@@ -29,22 +29,21 @@ of the sequence and into a conversation. Nothing else does.
 
 **Subject:** Here's the printable
 
-> The page you just used, as one sheet you can keep. Stick it inside a cabinet
-> door and you'll never have to find it again.
+> Here's a one-page version of the guide you just used. Print it out and stick it inside a cabinet door, and you won't have to go looking for it next time.
 >
-> Now the part that means you don't need it.
+> https://mrlifemanager.com/print/guests-when-someone-is-coming-over.pdf
 >
-> Dave's version is ten minutes, before bed:
+> Now here's the part that means you won't need it again.
 >
-> **1. Empty the sink. Completely.**
-> **2. Wipe the counters and the table.**
-> **3. Walk one lap and put back anything that isn't where it lives.**
+> Dave's version of this takes about ten minutes, and you do it before you go to bed:
 >
-> That's the whole system. There's no week two.
+> 1. Empty the sink. Completely.
+> 2. Wipe down the counters and the table.
+> 3. Walk one lap around the room and put back anything that isn't where it lives.
 >
-> It works because none of it is cleaning. It's just not letting today's mess
-> turn into next month's project — which is the only reason tonight was ever
-> necessary.
+> That's the whole thing. There's no week two.
+>
+> It works because none of it is really cleaning. You're just stopping today's mess from turning into next month's project, which is the only reason tonight happened in the first place.
 >
 > — Charles
 
@@ -56,22 +55,17 @@ of the sequence and into a conversation. Nothing else does.
 
 **Subject:** The shorter version
 
-> Ten minutes a night is the right answer, and for a lot of people it's too much
-> to start with. That's my fault for leading with it.
+> I think ten minutes a night is the right answer, but I also think it's more than most people can start with. That's my fault for leading with it.
 >
-> So here's the version that fits anywhere:
+> So here's the version that fits anywhere.
 >
-> **Empty the sink before bed. That's all.**
+> Just empty the sink before you go to bed. That's it.
 >
-> Four minutes, most nights. Skip the counters. Skip the lap around the room.
-> Just the sink.
+> It takes about four minutes most nights. You can skip the counters and skip the lap around the room. Just do the sink.
 >
-> It's the one that does the most work, because a kitchen with an empty sink
-> reads as under control even when nothing else has been touched — and walking
-> into that in the morning changes how the day starts.
+> It's the one that does the most work. A kitchen with an empty sink looks under control even if you haven't touched anything else, and walking into that in the morning changes how the whole day starts.
 >
-> Some nights it won't happen. That's fine. It isn't a streak, and nothing
-> resets.
+> Some nights it won't happen, and that's fine. This isn't a streak and there's nothing to reset.
 >
 > — Charles
 
@@ -81,14 +75,13 @@ of the sequence and into a conversation. Nothing else does.
 
 **Subject:** One question
 
-> Nothing attached to this one.
+> There's nothing attached to this one.
 >
-> I'm working out what to write next, and the most useful thing anyone has told
-> me came from a question like this one:
+> I'm trying to figure out what to write next, and the most useful thing anyone has told me so far came out of a question like this one.
 >
-> **Which room do you avoid?**
+> Which room do you avoid?
 >
-> One word is a complete answer. Hit reply — it's me reading them, not a system.
+> One word is a complete answer. Just hit reply. It's me reading these, not a system.
 >
 > — Charles
 

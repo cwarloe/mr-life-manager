@@ -109,21 +109,21 @@ images, no banners, no hero graphics.
 **Email 1 — immediately. Subject: `Here's the printable`**
 
 ```
-The page you just used, as one sheet you can keep. Stick it inside a cabinet door and you'll never have to find it again.
+Here's a one-page version of the guide you just used. Print it out and stick it inside a cabinet door, and you won't have to go looking for it next time.
 
 https://mrlifemanager.com/print/guests-when-someone-is-coming-over.pdf
 
-Now the part that means you don't need it.
+Now here's the part that means you won't need it again.
 
-Dave's version is ten minutes, before bed:
+Dave's version of this takes about ten minutes, and you do it before you go to bed:
 
 1. Empty the sink. Completely.
-2. Wipe the counters and the table.
-3. Walk one lap and put back anything that isn't where it lives.
+2. Wipe down the counters and the table.
+3. Walk one lap around the room and put back anything that isn't where it lives.
 
-That's the whole system. There's no week two.
+That's the whole thing. There's no week two.
 
-It works because none of it is cleaning. It's just not letting today's mess turn into next month's project — which is the only reason tonight was ever necessary.
+It works because none of it is really cleaning. You're just stopping today's mess from turning into next month's project, which is the only reason tonight happened in the first place.
 
 — Charles
 ```
@@ -131,17 +131,17 @@ It works because none of it is cleaning. It's just not letting today's mess turn
 **Email 2 — 3 days later. Subject: `The shorter version`**
 
 ```
-Ten minutes a night is the right answer, and for a lot of people it's too much to start with. That's my fault for leading with it.
+I think ten minutes a night is the right answer, but I also think it's more than most people can start with. That's my fault for leading with it.
 
-So here's the version that fits anywhere:
+So here's the version that fits anywhere.
 
-Empty the sink before bed. That's all.
+Just empty the sink before you go to bed. That's it.
 
-Four minutes, most nights. Skip the counters. Skip the lap around the room. Just the sink.
+It takes about four minutes most nights. You can skip the counters and skip the lap around the room. Just do the sink.
 
-It's the one that does the most work, because a kitchen with an empty sink reads as under control even when nothing else has been touched — and walking into that in the morning changes how the day starts.
+It's the one that does the most work. A kitchen with an empty sink looks under control even if you haven't touched anything else, and walking into that in the morning changes how the whole day starts.
 
-Some nights it won't happen. That's fine. It isn't a streak, and nothing resets.
+Some nights it won't happen, and that's fine. This isn't a streak and there's nothing to reset.
 
 — Charles
 ```
@@ -149,13 +149,13 @@ Some nights it won't happen. That's fine. It isn't a streak, and nothing resets.
 **Email 3 — 4 days later. Subject: `One question`**
 
 ```
-Nothing attached to this one.
+There's nothing attached to this one.
 
-I'm working out what to write next, and the most useful thing anyone has told me came from a question like this one:
+I'm trying to figure out what to write next, and the most useful thing anyone has told me so far came out of a question like this one.
 
 Which room do you avoid?
 
-One word is a complete answer. Hit reply — it's me reading them, not a system.
+One word is a complete answer. Just hit reply. It's me reading these, not a system.
 
 — Charles
 ```
@@ -167,19 +167,21 @@ One word is a complete answer. Hit reply — it's me reading them, not a system.
 **Email 1 — immediately. Subject: `Here's the printable`**
 
 ```
-The page you just used, as one sheet. Worth keeping somewhere you'll find it again — the breaker box and water shutoff bit is the sort of thing you look up twice a decade and need urgently both times.
+Here's a one-page version of the guide you just used. Print it out and keep it somewhere you'll find it again. The part about the breaker box and the water shutoff is the kind of thing you look up maybe twice in ten years, and both times you need it in a hurry.
 
 https://mrlifemanager.com/print/first-night.pdf
 
-Now tomorrow.
+Now, about tomorrow.
 
-The instinct is to empty every box and then work out where things go. Do it the other way round:
+Your instinct will be to empty every box and then figure out where things go. Try it the other way around.
 
 Take one box. Before anything comes out of it, decide where each thing is going to live. Then put it there.
 
-Not "somewhere for now." Its actual place. One box done that way beats six boxes emptied onto the floor, because six boxes on the floor is just the same job again with more steps.
+Not "somewhere for now." I mean the place it's actually going to live.
 
-Right now that costs you nothing. Everything is still in your hands for the first time anyway.
+One box done that way beats six boxes emptied onto the floor, because six boxes on the floor is just the same job again with more steps.
+
+Right now this costs you nothing extra, because you're already holding everything for the first time anyway.
 
 — Charles
 ```
@@ -187,17 +189,17 @@ Right now that costs you nothing. Everything is still in your hands for the firs
 **Email 2 — 3 days later. Subject: `Smaller than a box`**
 
 ```
-A whole box is more than most people have in them in week one of a new place, when you're also working and eating badly and still finding the light switches. That's on me for starting there.
+A whole box is probably more than most people have in them during week one, when you're also working and eating badly and still finding the light switches. That's on me for starting there.
 
-So:
+So here's a smaller one.
 
-One drawer. The kitchen one you've already opened four times looking for something.
+Just do one drawer. Pick the kitchen one you've already opened four times looking for something.
 
-Take everything out, decide what belongs in it, put that back, and find homes for the rest. Ten minutes.
+Take everything out, decide what actually belongs in it, put that back, and find homes for the rest. It takes about ten minutes.
 
-That drawer is the one you'll open a thousand times this year. It's the highest return on ten minutes anywhere in the place — and unlike the boxes, it's finished when you close it.
+That's the drawer you'll open a thousand times this year, so it's the best ten minutes you can spend anywhere in the place. And unlike the boxes, it's finished the moment you close it.
 
-There's no schedule attached to this. Some weeks nothing gets unpacked. That's normal and it isn't a failure.
+There's no schedule attached to any of this. Some weeks nothing gets unpacked, and that's normal. It isn't a failure.
 
 — Charles
 ```
@@ -205,13 +207,13 @@ There's no schedule attached to this. Some weeks nothing gets unpacked. That's n
 **Email 3 — 4 days later. Subject: `One question`**
 
 ```
-Nothing attached to this one.
+There's nothing attached to this one.
 
-I'm working out what to write next, and the most useful thing anyone's told me came from a question like this:
+I'm trying to figure out what to write next, and the most useful thing anyone has told me so far came out of a question like this one.
 
 What's still in a box?
 
-One word is a complete answer. Hit reply — it's me reading them, not a system.
+One word is a complete answer. Just hit reply. It's me reading these, not a system.
 
 — Charles
 ```
