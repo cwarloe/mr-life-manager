@@ -7,7 +7,9 @@ on:
     paths:
       - "**/*.html"
       - "**/*.md"
+      - "products/guides-pdf/**"
       - ".github/scripts/validate_repo.py"
+      - ".github/scripts/check_pdfs_fresh.py"
       - ".github/workflows/validate-content.yml"
   workflow_dispatch:
 
@@ -23,3 +25,6 @@ jobs:
 
       - name: Validate HTML structure and local links
         run: python .github/scripts/validate_repo.py
+
+      - name: Printables match their sources
+        run: python .github/scripts/check_pdfs_fresh.py

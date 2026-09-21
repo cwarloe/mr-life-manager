@@ -7,6 +7,8 @@ of reasoning each. Shipping a PDF of them as well would mean two copies of the
 same thing drifting apart, and the whole point of the fork is that the reader
 chooses paper or phone at the moment they commit.
 """
+import hashlib
+import json
 import subprocess
 import sys
 from pathlib import Path
@@ -42,6 +44,12 @@ def main() -> int:
             failed.append(f"{stem}: {r.stderr.strip() or r.stdout.strip()}")
         else:
             print(r.stdout.strip())
+    # Record what each PDF was rendered from, so check_pdfs_fresh.py can tell
+    # when a source has moved on without the printable being regenerated.
+    manifest = {stem: hashlib.sha256((ROOT / src).read_bytes()).hexdigest()[:16]
+                for src, stem in SHEETS if (ROOT / src).exists()}
+    (OUT / ".sources.json").write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n")
+
     if failed:
         print("\nFAILED:", file=sys.stderr)
         for f in failed:

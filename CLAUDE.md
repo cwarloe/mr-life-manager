@@ -59,5 +59,8 @@ Don't re-derive these — read them:
   committing
 - `python3 .github/scripts/render_all_pdfs.py` — regenerate printables with the
   brand fonts embedded; it refuses to write a PDF missing them
+- `python3 .github/scripts/check_pdfs_fresh.py` — fails if a committed PDF is
+  older than its source HTML. Runs in CI. **Change a guide's HTML and you must
+  re-render**, or the emails link to the old version
 - Entry-page action sheets are **not** committed as PDFs. They print from each
   page's own stylesheet, so the sheet can't drift from the page.
