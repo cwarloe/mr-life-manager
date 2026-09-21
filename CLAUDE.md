@@ -59,6 +59,10 @@ Don't re-derive these — read them:
   committing
 - `python3 .github/scripts/render_all_pdfs.py` — regenerate printables with the
   brand fonts embedded; it refuses to write a PDF missing them
+- `python3 .github/scripts/tune_print_scale.py` — measures the largest type each
+  printable can take without gaining a page and writes `.print-scale.json`.
+  Re-run after a print-layout change; hand-tuning sizes downward is what left
+  sheets two-thirds empty
 - `python3 .github/scripts/check_pdfs_fresh.py` — fails if a committed PDF is
   older than its source HTML. Runs in CI. **Change a guide's HTML and you must
   re-render**, or the emails link to the old version

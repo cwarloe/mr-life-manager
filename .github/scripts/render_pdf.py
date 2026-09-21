@@ -27,12 +27,16 @@ GF_LINK = re.compile(
     r'<link[^>]+fonts\.(?:googleapis|gstatic)\.com[^>]*>\s*', re.I)
 
 
-def render(src: Path, out: Path) -> None:
+def render(src: Path, out: Path, zoom: float = 1.0) -> None:
     html = src.read_text()
     if not FONT_CSS.exists():
         sys.exit(f"missing {FONT_CSS} — fonts cannot be embedded")
 
     style = "<style>\n" + FONT_CSS.read_text() + "\n</style>"
+    if zoom != 1.0:
+        # Chrome honours zoom in print and it scales pt units too, which a
+        # root font-size override does not. Used by tune_print_scale.py.
+        style += f"<style>@media print{{body{{zoom:{zoom}}}}}</style>"
     html, n = GF_LINK.subn("", html)
     if "</head>" not in html:
         sys.exit(f"{src}: no </head>")
@@ -64,11 +68,12 @@ def render(src: Path, out: Path) -> None:
 
 
 def main() -> int:
-    if len(sys.argv) != 3:
+    if len(sys.argv) not in (3, 4):
         sys.exit(__doc__)
     if not shutil.which(CHROME) and not Path(CHROME).exists():
         sys.exit(f"chrome not found at {CHROME}")
-    render(Path(sys.argv[1]).resolve(), Path(sys.argv[2]).resolve())
+    zoom = float(sys.argv[3]) if len(sys.argv) > 3 else 1.0
+    render(Path(sys.argv[1]).resolve(), Path(sys.argv[2]).resolve(), zoom)
     return 0
 
 

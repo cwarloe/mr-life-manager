@@ -32,13 +32,24 @@ SHEETS = [
 
 
 def main() -> int:
+    # Print sizes were hand-tuned downward until things fit, which left short
+    # sheets using about two-thirds of the paper. tune_print_scale.py measures
+    # the largest scale each one can take without gaining a page; anything under
+    # 5% is noise and not worth a zoom rule.
+    scale_file = OUT / ".print-scale.json"
+    scales = json.loads(scale_file.read_text()) if scale_file.exists() else {}
+
     failed = []
     for src, stem in SHEETS:
         s = ROOT / src
         if not s.exists():
             failed.append(f"{src}: missing")
             continue
-        r = subprocess.run([sys.executable, str(RENDER), str(s), str(OUT / f"{stem}.pdf")],
+        zoom = scales.get(stem, 1.0)
+        if zoom < 1.05:
+            zoom = 1.0
+        r = subprocess.run([sys.executable, str(RENDER), str(s),
+                            str(OUT / f"{stem}.pdf"), str(zoom)],
                            capture_output=True, text=True)
         if r.returncode:
             failed.append(f"{stem}: {r.stderr.strip() or r.stdout.strip()}")
