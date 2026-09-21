@@ -25,6 +25,8 @@ field recording which page they came from:
 |---|---|
 | `https://mrlifemanager.com/first-night.html` | `first-night` |
 | `https://mrlifemanager.com/guests.html` | `guests` |
+| `https://mrlifemanager.com/underwater.html` | `underwater` |
+| `https://mrlifemanager.com/one-room.html` | `one-room` |
 
 That value is the only thing deciding which of two email sequences a person
 receives. Everything you build depends on it arriving correctly.
@@ -59,6 +61,8 @@ inspect, nothing to report.
 
 - `entry-first-night`
 - `entry-guests`
+- `entry-underwater`
+- `entry-one-room`
 - `entry-unknown`
 
 ### 4. Route signups by the `guide` field
@@ -68,17 +72,21 @@ Configure routing so that:
 ```
 guide = "first-night"  → add to entry-first-night
 guide = "guests"       → add to entry-guests
+guide = "underwater"   → add to entry-underwater
+guide = "one-room"     → add to entry-one-room
 anything else or empty → add to entry-unknown
 ```
 
 `entry-unknown` is deliberate. It is an alarm: it should stay empty forever, and
 anything landing in it means the tagging is broken.
 
-### 5. Build two automations
+### 5. Build four automations
 
 Each triggers on **subscriber joins group** and sends three emails.
 
-**Settings for both, all mandatory:**
+All four link the same printable: `https://mrlifemanager.com/print/the-week.pdf`.
+
+**Settings for all four, all mandatory:**
 
 - Allow re-entry: **OFF**
 - Resend to unopeners: **OFF** — this is on by default in some accounts and must
@@ -87,7 +95,7 @@ Each triggers on **subscriber joins group** and sends three emails.
 - Sender name: **Charles**
 - Sender address: a real inbox that a person reads
 
-**Timing for both:** email 1 immediately, email 2 three days after email 1,
+**Timing for all:** email 1 immediately, email 2 three days after email 1,
 email 3 four days after email 2.
 
 Use the copy below **exactly as written**. Do not rewrite, shorten, improve,
@@ -213,9 +221,115 @@ One word is a complete answer. Just hit reply. It's me reading these, not a syst
 
 ---
 
-### 6. Verify both PDF links
+---
 
-Open both in the browser and confirm each loads a readable PDF:
+#### Automation C — group `entry-underwater`
+
+**Email 1 — immediately. Subject: `Here's the thing worth printing`**
+
+```
+You got the floor back tonight. Here's the thing that keeps it.
+
+https://mrlifemanager.com/print/the-week.pdf
+
+It's one page. The top of it is ten minutes you do before bed — empty the sink, wipe the counters, walk one lap and put things back. Underneath that there's one job for each day, and two days with nothing on them at all.
+
+Print it and stick it inside a cabinet door.
+
+The two empty days are the important part. This isn't a system that needs you to be different. It's a system that assumes some days you've got nothing left.
+
+— Charles
+```
+
+**Email 2 — 3 days later. Subject: `The shorter version`**
+
+```
+Ten minutes a night is the right answer, and it's also more than most people can start with. That's my fault for leading with it.
+
+So here's the version that fits anywhere.
+
+Just empty the sink before you go to bed. That's it.
+
+It takes about four minutes most nights. Skip the counters, skip the lap around the room. Just the sink.
+
+It does the most work of anything on that page, because a kitchen with an empty sink looks under control even if nothing else has been touched — and walking into that in the morning changes how the day starts.
+
+Some nights it won't happen, and that's fine. This isn't a streak and there's nothing to reset.
+
+— Charles
+```
+
+**Email 3 — 4 days later. Subject: `One question`**
+
+```
+There's nothing attached to this one.
+
+I'm trying to figure out what to write next, and the most useful thing anyone has told me so far came out of a question like this one.
+
+Which room do you avoid?
+
+One word is a complete answer. Just hit reply. It's me reading these, not a system.
+
+— Charles
+```
+
+---
+
+#### Automation D — group `entry-one-room`
+
+**Email 1 — immediately. Subject: `Here's the thing worth printing`**
+
+```
+One zone down. Here's what stops the next one filling up.
+
+https://mrlifemanager.com/print/the-week.pdf
+
+It's one page. The top is ten minutes before bed — empty the sink, wipe the counters, walk one lap and put things back. Underneath there's one job a day, and two days with nothing on them.
+
+Print it and stick it inside a cabinet door.
+
+It has nothing to do with the room you just did, and that's the point. Rooms fill up because things have nowhere to go, and the ten minutes is where things go.
+
+— Charles
+```
+
+**Email 2 — 3 days later. Subject: `The next one is smaller than you think`**
+
+```
+If you're picturing another full afternoon before you touch the next zone, you'll be picturing it for a while. That's on me for how I framed it.
+
+So here's the smaller version.
+
+One shelf. Twenty minutes. Same three piles.
+
+Throw away, give away, belongs somewhere else. No fourth pile.
+
+You've already made most of the hard calls — what you keep, what you don't, where things live. The second pass is mostly execution, and it goes about twice as fast as the first.
+
+And if it doesn't happen this week, nothing is lost. The zone you did is still done.
+
+— Charles
+```
+
+**Email 3 — 4 days later. Subject: `One question`**
+
+```
+There's nothing attached to this one.
+
+I'm trying to figure out what to write next, and the most useful thing anyone has told me so far came out of a question like this one.
+
+What was the hardest thing to throw away?
+
+A few words is a complete answer. Just hit reply. It's me reading these, not a system.
+
+— Charles
+```
+
+---
+
+### 6. Verify the printable link
+
+Open it in the browser and confirm it loads a readable PDF:
 
 - `https://mrlifemanager.com/print/the-week.pdf` (both sequences link this one)
 
@@ -224,7 +338,7 @@ email 1 wastes the only moment the reader is paying attention.
 
 ### 7. Test, then clean up
 
-Sign up from **both** pages using two different test addresses. Confirm and
+Sign up from **each** page using a different test address. Confirm and
 report each:
 
 - [ ] Each landed in the correct group
