@@ -173,14 +173,15 @@ verify it and learn from real people.
 - ✅ Two entry pages live with sequences drafted —
       [first night](products/landing/first-night.html) ·
       [someone's coming over](products/landing/guests.html)
+- ✅ Public contact (`hello@mrlifemanager.com`) and [privacy page](products/landing/privacy.html)
+- ✅ Custom domain live at https://mrlifemanager.com (HTTPS)
 - ✅ Customer-interview script and Dave recording guide ready
-- ⬜ **Nothing is configured in MailerLite.** Both sequences are written and
-      unsent; the main page no longer captures email at all
+- ⬜ **MailerLite wiring is unproven from this repo.** Sequences are written;
+      a test signup on each entry page has not been recorded here
 - ⬜ **Record Dave.** The recovered documents cover cleaning, organizing and
       hospitality only. Money, food, paperwork, maintenance and transitions are
       still entirely unsourced, and he is still the critical path for them
 - ⬜ Complete the USPTO/name check and domain/social availability check
-- ⬜ Add public contact and privacy details before broad distribution
 - ⬜ No completed audience validation, customers, or revenue yet
 
 **Two honest caveats.** The products are designed prototypes, not validated
