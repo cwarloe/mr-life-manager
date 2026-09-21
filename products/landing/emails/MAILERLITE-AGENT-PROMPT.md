@@ -49,18 +49,11 @@ Subscribers → Fields. Create a **Text** field with the key `guide`.
 Then report **the exact key MailerLite assigned**, verbatim. It may differ from
 what you typed.
 
-### 2. Report the form's real field naming — this is the critical check
+### 2. Nothing to check here
 
-Open `https://mrlifemanager.com/guests.html` in the browser, find the embedded
-signup form, and inspect the email input element.
-
-**Report the exact `name` attribute**, character for character. It will be
-something like `fields[email]` or `email`.
-
-This matters because the pages guess at the convention. If the guess is wrong,
-signups keep working and every one arrives untagged, which means **nobody gets any
-email at all** and nothing appears broken. Report what you find; do not try to fix
-the website.
+The pages send the tag under both `fields[guide]` and `guide`, so whichever
+naming this account uses will be accepted and the other ignored. Nothing to
+inspect, nothing to report.
 
 ### 3. Create three groups
 

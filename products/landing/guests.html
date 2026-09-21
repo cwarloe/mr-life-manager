@@ -348,23 +348,15 @@ footer a{color:var(--blue);font-weight:600;text-decoration:none}
   // ADR-015 — entry is per-pain. Tag the signup so the sequence knows which door
   // they came in by, without ever asking them to choose.
   //
-  // MailerLite names its embedded-form inputs fields[email], not email. Assuming
-  // the bare name would have this fail SILENTLY: signups keep working and every
-  // one arrives untagged, so nobody gets a sequence. So mirror whatever naming
-  // the rendered form actually uses, and set both spellings if it's ambiguous.
+  // MailerLite may name form inputs `fields[guide]` or plain `guide` depending on
+  // how the form was built. Rather than detect it and risk guessing wrong — which
+  // fails silently, with every signup arriving untagged and nobody receiving
+  // anything — just send both. Whichever one the account expects is accepted and
+  // the other is ignored.
   (function () {
     var VALUE = 'guests';
-    function fieldName(form) {
-      var email = form.querySelector('input[type=email], input[name*="email" i]');
-      var n = email && email.getAttribute('name');
-      if (n && /^fields\[/.test(n)) return 'fields[guide]';
-      if (n === 'email') return 'guide';
-      return null; // unknown convention — set both below
-    }
     function tag(form) {
-      var names = fieldName(form);
-      names = names ? [names] : ['fields[guide]', 'guide'];
-      names.forEach(function (name) {
+      ['fields[guide]', 'guide'].forEach(function (name) {
         if (form.querySelector('input[name="' + name + '"]')) return;
         var i = document.createElement('input');
         i.type = 'hidden'; i.name = name; i.value = VALUE;
