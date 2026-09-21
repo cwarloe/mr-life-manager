@@ -134,7 +134,7 @@ footer a{color:var(--blue);font-weight:600;text-decoration:none}
   body{font-size:10pt;line-height:1.34}
   .wrap{max-width:none;padding:0}
   .fork,.after,.callout,.signup,footer,.frame p:last-child,.no-print,
-  .why,.whybtn,.nav,.done{display:none}
+  .why,.why.open,.whybtn,.nav,.done{display:none !important}
   .step{display:block !important}
   header.top{padding:0;border-bottom:2px solid #000;padding-bottom:.35rem}
   .eyebrow{font-size:7.5pt;margin:0 0 .12rem}
@@ -149,10 +149,6 @@ footer a{color:var(--blue);font-weight:600;text-decoration:none}
   .step-head h2{font-size:11.5pt;line-height:1.14}
   .mins{font-size:8pt;padding:.02rem .3rem}
   .do{font-size:9.5pt;line-height:1.36;margin:.16rem 0 0;padding-left:1.55rem}
-  /* keep one line of reasoning, drop the rest of the paragraph */
-  .why{font-size:8.6pt;line-height:1.3;margin:.1rem 0 0 1.55rem;padding-left:.5rem;
-    border-left:1px solid #999;color:#333;
-    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
   .warn{margin:.45rem 0 0;padding:.4rem .55rem;border-radius:0;break-inside:avoid}
   .warn-label{font-size:7.5pt;margin:0 0 .12rem}
   .warn p{font-size:9pt;line-height:1.34}
@@ -195,9 +191,15 @@ body.doing h1{font-size:clamp(1.35rem,5vw,1.7rem);letter-spacing:-.02em}
 body.doing header.top{padding:1.4rem 0 0;border-bottom:2px solid var(--rule);padding-bottom:.7rem}
 
 /* one card at a time */
-body.doing .steps{margin:1.4rem 0 0}
+body.doing .steps{margin:0}
 body.doing .step{display:none}
-body.doing .step.current{display:block}
+/* Fill the screen. A card floating at the top of an empty viewport reads as a
+   fragment of a longer page — the opposite of "this is the only thing now". */
+body.doing .step.current{display:flex;flex-direction:column;justify-content:center;
+  min-height:calc(100dvh - 11rem);padding:1.2rem 0}
+@supports not (height:100dvh){
+  body.doing .step.current{min-height:calc(100vh - 11rem)}
+}
 body.doing .step-head h2{font-size:clamp(1.5rem,6vw,2rem);line-height:1.12}
 body.doing .step-head::before{font-size:1.9rem;min-width:2.5rem;height:2.5rem}
 body.doing .do{font-size:1.18rem;line-height:1.5;margin-top:1rem}
