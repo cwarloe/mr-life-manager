@@ -112,7 +112,7 @@ You can clean an entire apartment with four things, for about $15:
 
 **Dish soap. Baking soda. White vinegar. A stack of microfiber cloths.**
 
-That covers dishes, counters, most surfaces, glass, scrubbing, and descaling.
+That covers dishes, counters, glass, scrubbing, and descaling. Not on stone counters — marble, granite, some quartz. If it looks like stone, use dish soap and water.
 Add a toilet brush and a plunger and you're genuinely fine. Everything else on
 this page is convenience.
 
