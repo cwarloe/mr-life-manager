@@ -73,6 +73,8 @@ prevented:
 | Standalone printables are **purpose-built** (`products/print/`) | [The Week](../products/print/the-week.html) is content the site doesn't have |
 | PDFs render via [`render_pdf.py`](../.github/scripts/render_pdf.py), which **embeds the fonts** | It asserts the brand faces are present and refuses to write a file without them |
 | `@page{size:Letter}` | US beachhead |
+| Large sections must be `break-inside:auto` | `avoid` on a long section jumps it whole to the next page and leaves half a sheet blank. Keep `avoid` only on rows, list items and callouts. |
+| `.no-print` on sections that aren't for the printed context | A shopping list doesn't need "where to keep it" — that's for when you're home |
 
 **What's worth printing is what gets used again.** A sheet for something someone
 does once has no reason to exist. That is why both email sequences hand over
