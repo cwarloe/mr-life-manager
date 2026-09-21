@@ -55,6 +55,19 @@ PDF_TITLES = {
     "what-is-this-room-for.pdf": "What Is This Room For?",
 }
 
+# Copy corrections applied at build so the live guides stay accurate even if
+# the large HTML sources have not been rewritten in the same commit.
+GUIDE_COPY_FIXES = [
+    (
+        "It's cheap — a few dollars a month. Get it before you move in.",
+        "Usually around fifteen dollars a month. Cheap compared with replacing your stuff. Get it before you move in.",
+    ),
+    (
+        "That covers dishes, counters, most surfaces, glass, scrubbing, and\n    descaling.",
+        "That covers dishes, counters, glass, scrubbing, and\n    descaling. Not on stone counters — marble, granite, some quartz. If it looks like stone, use dish soap and water.",
+    ),
+]
+
 
 def tokens_from(path: Path) -> str:
     css = path.read_text()
@@ -126,6 +139,8 @@ def main() -> int:
         html = (ROOT / src).read_text()
         if "</body>" not in html:
             sys.exit(f"{src}: no </body>")
+        for old, new in GUIDE_COPY_FIXES:
+            html = html.replace(old, new)
         html = html.replace("</body>", CTA + "</body>")
         (OUT / "guides" / f"{slug}.html").write_text(html)
         cards.append(
