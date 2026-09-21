@@ -12,37 +12,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: html-copy-fixes
+          ref: main
           fetch-depth: 0
-      - name: Restore apartment HTML from main, then apply both fixes
+      - name: Take the patched HTML from html-copy-fixes
         run: |
-          git fetch origin main
-          git checkout origin/main -- products/checklists/first-apartment/first-apartment-checklist.html
-          python3 << 'PY'
-          from pathlib import Path
-          fixes = [
-            (
-              Path('products/checklists/first-apartment/first-apartment-checklist.html'),
-              "It's cheap \u2014 a few dollars a month. Get it before you move in.",
-              "Usually around fifteen dollars a month. Cheap compared with replacing your stuff. Get it before you move in.",
-            ),
-            (
-              Path('products/checklists/cleaning-supplies/cleaning-supply-starter-list.html'),
-              "That covers dishes, counters, most surfaces, glass, scrubbing, and\n    descaling.",
-              "That covers dishes, counters, glass, scrubbing, and\n    descaling. Not on stone counters \u2014 marble, granite, some quartz. If it looks like stone, use dish soap and water.",
-            ),
-          ]
-          for path, old, new in fixes:
-              text = path.read_text()
-              if old not in text:
-                  raise SystemExit(f'{path}: expected string not found')
-              path.write_text(text.replace(old, new, 1))
-              print('patched', path)
-          PY
-      - name: Commit
+          git fetch origin html-copy-fixes
+          git checkout origin/html-copy-fixes -- \
+            products/checklists/first-apartment/first-apartment-checklist.html \
+            products/checklists/cleaning-supplies/cleaning-supply-starter-list.html
+      - name: Commit to main
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add products/checklists/first-apartment/first-apartment-checklist.html products/checklists/cleaning-supplies/cleaning-supply-starter-list.html
+          git diff --cached --quiet && echo 'no changes' && exit 0
           git commit -m "Patch insurance price and vinegar-on-stone in guide HTML"
-          git push origin HEAD:html-copy-fixes
+          git push origin HEAD:main
