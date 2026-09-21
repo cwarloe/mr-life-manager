@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A room that turned into storage. Dave's three-pile method, one zone at a time, about two hours.">
+<meta name="color-scheme" content="light dark">
+<title>The Room That Became Storage</title>
+<link rel="canonical" href="https://mrlifemanager.com/one-room.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+:root{
+  --ink:#12161C; --paper:#FBF9F4; --surface:#FFFFFF;
+  --blue:#1F4E79; --blue-soft:#E7EEF5;
+  --amber:#B4741A; --amber-soft:#F7EEDD;
+  --slate:#6B7280; --rule:#D9D5CC; --rule-strong:#B8B2A6;
+  --sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
+    --blue:#8FB6DA; --blue-soft:#1D2833;
+    --amber:#E3A94E; --amber-soft:#2A2418;
+    --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
+  --blue:#8FB6DA; --blue-soft:#1D2833;
+  --amber:#E3A94E; --amber-soft:#2A2418;
+  --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;
+  line-height:1.5;margin:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.15rem}
+
+header.top{padding:2.5rem 0 0}
+.eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--blue);margin:0 0 .7rem}
+h1{font-size:clamp(2rem,8vw,2.9rem);font-weight:800;line-height:1.03;letter-spacing:-.025em;
+  margin:0;text-wrap:balance}
+.sub{font-family:var(--serif);font-size:1.1rem;line-height:1.5;margin:.9rem 0 0;color:var(--slate)}
+
+.frame{background:var(--surface);border:1px solid var(--rule);border-radius:5px;
+  padding:1.15rem 1.25rem;margin:1.9rem 0 0}
+.frame p{margin:0;font-family:var(--serif);font-size:1rem;line-height:1.55}
+.frame p + p{margin-top:.7rem}
+.frame b{font-family:var(--sans);font-weight:700}
+
+.steps{margin:2.6rem 0 0;padding:0;list-style:none;counter-reset:s}
+.step{margin:0 0 2.3rem;counter-increment:s;position:relative}
+.step-head{display:flex;gap:.85rem;align-items:baseline}
+.step-head::before{content:counter(s);font-size:1.6rem;font-weight:800;line-height:1;
+  color:var(--paper);background:var(--ink);min-width:2.1rem;height:2.1rem;border-radius:3px;
+  display:flex;align-items:center;justify-content:center;flex:none;font-variant-numeric:tabular-nums}
+.step-head h2{font-size:1.32rem;font-weight:700;letter-spacing:-.018em;margin:0;line-height:1.2;flex:1}
+.mins{font-size:.78rem;font-weight:600;color:var(--slate);white-space:nowrap;
+  border:1px solid var(--rule-strong);border-radius:99px;padding:.16rem .55rem;align-self:center}
+.do{font-size:1.04rem;line-height:1.55;margin:.85rem 0 0}
+.do b{font-weight:700}
+.why{font-family:var(--serif);font-size:.98rem;line-height:1.55;color:var(--slate);
+  margin:.7rem 0 0;border-left:2px solid var(--rule);padding-left:.85rem}
+.why b{font-family:var(--sans);font-weight:600;color:var(--ink)}
+
+.warn{border-left:3px solid var(--amber);background:var(--amber-soft);
+  padding:1.1rem 1.15rem;border-radius:0 4px 4px 0;margin:2.4rem 0 0}
+.warn-label{font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--amber);margin:0 0 .55rem}
+.warn p{margin:0;font-family:var(--serif);font-size:1rem;line-height:1.62}
+.warn p + p{margin-top:.6rem}
+.warn strong{font-family:var(--sans);font-weight:700;font-size:.97rem}
+
+/* what just happened — its own callout, distinct from the safety note */
+.callout{border:2px solid var(--ink);border-radius:4px;padding:1.3rem 1.25rem;margin:2.2rem 0 0}
+.callout-label{font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--blue);margin:0 0 .6rem}
+.callout h3{font-size:1.2rem;font-weight:800;letter-spacing:-.018em;margin:0 0 .7rem;line-height:1.25}
+.callout p{font-family:var(--serif);font-size:1.02rem;line-height:1.62;margin:0}
+.callout p + p{margin-top:.75rem}
+.callout strong{font-family:var(--sans);font-weight:700}
+
+.stop{border-top:3px solid var(--ink);margin:3rem 0 0;padding:1.5rem 0 0}
+.stop h2{font-size:1.45rem;font-weight:800;letter-spacing:-.02em;margin:0 0 .6rem}
+.stop p{font-family:var(--serif);font-size:1.04rem;line-height:1.6;margin:0}
+.stop p + p{margin-top:.8rem}
+
+.after{margin:3.5rem 0 0;padding:2rem 0 0;border-top:1px solid var(--rule)}
+.after h2{font-size:1.28rem;font-weight:700;letter-spacing:-.015em;margin:0 0 .8rem}
+.after p{font-family:var(--serif);font-size:1.02rem;line-height:1.62;margin:0 0 .9rem}
+.after p b{font-family:var(--sans);font-weight:600}
+.pull{font-family:var(--serif);font-style:italic;font-size:1.08rem;line-height:1.5;
+  border-left:3px solid var(--blue);padding-left:1rem;margin:1.4rem 0;color:var(--ink)}
+
+.signup{background:var(--surface);border:1px solid var(--rule-strong);border-radius:5px;
+  padding:1.5rem 1.35rem;margin:2.2rem 0 0}
+.signup h2{font-size:1.18rem;font-weight:700;margin:0 0 .5rem;letter-spacing:-.01em}
+.signup p{font-family:var(--serif);font-size:1rem;line-height:1.55;margin:0 0 1.1rem;color:var(--slate)}
+.ml-fallback a{font-weight:600;color:var(--blue)}
+.fine{font-size:.82rem;color:var(--slate);margin:.9rem 0 0;line-height:1.5}
+
+footer{margin:3.5rem 0 0;padding:1.3rem 0 3.5rem;border-top:1px solid var(--rule);
+  font-size:.8rem;color:var(--slate);line-height:1.6}
+footer a{color:var(--blue);font-weight:600;text-decoration:none}
+
+@media (min-width:40rem){ body{font-size:18px} .wrap{padding:0 1.5rem} }
+@media print{
+  :root{--ink:#000;--paper:#fff;--surface:#fff;--slate:#444;--rule:#bbb;--rule-strong:#666;
+    --blue-soft:#fff;--amber:#7a4d0a;--amber-soft:#fff}
+  body{font-size:10.5pt}.signup,footer{display:none}
+  .step{page-break-inside:avoid}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* the paper/phone fork */
+.fork{margin:1.6rem 0 0;padding:.95rem 1.1rem;border:1px dashed var(--rule-strong);border-radius:4px}
+.fork-lead{font-size:.95rem;font-weight:700;margin:0 0 .25rem;letter-spacing:-.01em}
+.fork-body{font-family:var(--serif);font-size:.98rem;line-height:1.55;margin:0;color:var(--slate)}
+.fork-body a{color:var(--blue);font-weight:600}
+
+/* ---- printed action sheet ----
+   The page persuades; the sheet reminds. Printing drops the long "why"
+   paragraphs, the brand story, the offer and the chrome, and keeps the actions
+   plus one short line of reasoning each — because whoever prints this may be
+   meeting it cold on paper and bare commands would read as barking. */
+@media print{
+  @page{size:Letter;margin:0.5in}
+  /* Sizes below were tuned downward until the sheet fit, which left a
+     third of the page blank. Measured with tune_print_scale.py: this is
+     the largest scale that still fits one page, less 3% headroom.
+     Chrome honours zoom in print and it scales pt units too. */
+  body{zoom:1.06}
+  :root{--ink:#000;--paper:#fff;--surface:#fff;--slate:#333;--rule:#bbb;
+    --rule-strong:#666;--blue:#1F4E79;--blue-soft:#fff;--amber:#7a4d0a;--amber-soft:#fff}
+  body{font-size:10pt;line-height:1.34}
+  .wrap{max-width:none;padding:0}
+  .fork,.after,.callout,.signup,footer,.frame p:last-child,.no-print,
+  .why,.why.open,.whybtn,.nav,.done{display:none !important}
+  .step{display:block !important}
+  header.top{padding:0;border-bottom:2px solid #000;padding-bottom:.35rem}
+  .eyebrow{font-size:7.5pt;margin:0 0 .12rem}
+  h1{font-size:19pt;line-height:1.02}
+  .sub{font-size:10pt;margin:.25rem 0 0;max-width:none}
+  .frame{margin:.4rem 0 0;padding:.4rem .55rem;border-radius:0;break-inside:avoid}
+  .frame p{font-size:9.5pt;line-height:1.36}
+  .steps{margin:.5rem 0 0}
+  .step{margin:0 0 .42rem;break-inside:avoid}
+  .step-head{gap:.4rem}
+  .step-head::before{font-size:11pt;min-width:1.15rem;height:1.15rem;border-radius:2px}
+  .step-head h2{font-size:11.5pt;line-height:1.14}
+  .mins{font-size:8pt;padding:.02rem .3rem}
+  .do{font-size:9.5pt;line-height:1.36;margin:.16rem 0 0;padding-left:1.55rem}
+  .warn{margin:.45rem 0 0;padding:.4rem .55rem;border-radius:0;break-inside:avoid}
+  .warn-label{font-size:7.5pt;margin:0 0 .12rem}
+  .warn p{font-size:9pt;line-height:1.34}
+  .warn p + p{margin-top:.15rem}
+  .stop{margin:.5rem 0 0;padding:.35rem 0 0;border-top:2px solid #000;break-inside:avoid}
+  .stop h2{font-size:12pt;margin:0 0 .18rem}
+  .stop p{font-size:9pt;line-height:1.36}
+  .stop p + p{margin-top:.18rem}
+  .printfoot{display:block !important;margin-top:.5rem;padding-top:.3rem;
+    border-top:1px solid #999;font-size:8pt;color:#333}
+}
+.printfoot{display:none}
+
+/* ---- doing mode ----
+   The "why" exists to get someone to start. Once they have, the same text is
+   clutter — on a phone and on paper alike. Doing mode hides it, makes the type
+   bigger rather than smaller, and shows one step at a time so the screen is
+   never a rubber-band scroll of things not yet relevant. */
+.fork-sub{font-family:var(--serif);font-size:.92rem;line-height:1.45;color:var(--slate);margin:.2rem 0 .8rem}
+.fork-btns{display:flex;flex-wrap:wrap;gap:.55rem;margin:0}
+.fork-btns button{font-family:var(--sans);font-size:1rem;font-weight:700;letter-spacing:-.01em;
+  padding:.72rem 1.15rem;border-radius:4px;cursor:pointer;border:2px solid var(--ink);
+  background:var(--ink);color:var(--paper)}
+.fork-btns .go-print{background:transparent;color:var(--ink)}
+.fork-btns button:hover{border-color:var(--blue);background:var(--blue);color:#fff}
+.fork-btns button:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+
+.whybtn{display:none;margin:.5rem 0 0;font-family:var(--sans);font-size:.78rem;font-weight:600;
+  letter-spacing:.02em;color:var(--slate);background:none;border:0;border-bottom:1px dotted var(--rule-strong);
+  padding:0 0 1px;cursor:pointer}
+.whybtn:hover{color:var(--blue);border-bottom-color:var(--blue)}
+
+body.doing .fork,body.doing .frame,body.doing .after,body.doing .callout,
+body.doing .warn,body.doing .stop,body.doing .signup,body.doing footer{display:none}
+body.doing .why{display:none}
+body.doing .why.open{display:block}
+body.doing .whybtn{display:inline-block}
+body.doing header.top .sub{display:none}
+
+/* Doing mode locks the viewport: header at the top, nav pinned at the bottom,
+   the step scrolling between them. Nothing can push Next off the screen — not a
+   long step, not an opened Why?. Content fills the space rather than sitting in
+   a centred block with empty paper above and below it. */
+html:has(body.doing){height:100%}
+body.doing{height:100dvh;overflow:hidden;display:flex;flex-direction:column}
+@supports not (height:100dvh){body.doing{height:100vh}}
+body.doing .wrap{flex:1;min-height:0;display:flex;flex-direction:column;
+  padding-top:0;padding-bottom:0}
+body.doing h1{font-size:clamp(1.1rem,4.2vw,1.35rem);letter-spacing:-.02em}
+body.doing header.top{flex:0 0 auto;padding:.85rem 0 .55rem;border-bottom:2px solid var(--rule)}
+body.doing .eyebrow{font-size:.62rem;margin:0 0 .25rem}
+
+body.doing .steps{flex:1;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;
+  margin:0;padding:1.1rem 0 .6rem}
+body.doing .step{display:none}
+body.doing .step.current{display:block}
+body.doing .step-head{align-items:flex-start}
+body.doing .step-head h2{font-size:clamp(1.65rem,7vw,2.3rem);line-height:1.1}
+body.doing .step-head::before{font-size:1.5rem;min-width:2.1rem;height:2.1rem}
+body.doing .mins{font-size:.82rem;align-self:flex-start;margin-top:.35rem}
+
+/* One sentence per line. A dense paragraph is hard to hold your place in when
+   you're looking up from it every few seconds with your hands full. */
+body.doing .do{font-size:clamp(1.15rem,4.6vw,1.45rem);line-height:1.42;margin-top:1.1rem;
+  padding-left:0}
+body.doing .do .s{display:block}
+body.doing .do .s + .s{margin-top:.62rem}
+body.doing .why{font-size:1.02rem;line-height:1.55;margin-top:1rem;
+  border-left:3px solid var(--rule);padding-left:.9rem}
+body.doing .whybtn{margin-top:1.1rem}
+
+.nav{display:none}
+body.doing .nav{display:flex;flex:0 0 auto;align-items:center;gap:.6rem;flex-wrap:wrap;
+  margin:0;padding:.7rem 0 calc(.7rem + env(safe-area-inset-bottom));
+  border-top:1px solid var(--rule);background:var(--paper)}
+.nav button{font-family:var(--sans);font-weight:700;font-size:1.05rem;padding:.9rem 1.3rem;
+  border-radius:4px;border:2px solid var(--ink);background:var(--ink);color:var(--paper);
+  cursor:pointer;flex:1}
+.nav .back{background:transparent;color:var(--ink);flex:0 0 auto;font-size:.9rem;padding:.9rem 1rem}
+.nav button:disabled{opacity:.3;cursor:default}
+.nav .count{font-size:.85rem;font-weight:600;color:var(--slate);flex:0 0 auto;
+  font-variant-numeric:tabular-nums}
+.nav .exit{display:block;width:100%;flex:0 0 100%;margin:0;font-family:var(--sans);
+  font-size:.78rem;font-weight:600;color:var(--slate);background:none;border:0;padding:.15rem 0 0;
+  text-align:left;cursor:pointer;text-decoration:underline}
+
+.done{display:none}
+body.doing .done.show{display:block;margin:0;padding:1.4rem 1.25rem;
+  border:2px solid var(--ink);border-radius:5px}
+/* CSS counters skip display:none elements, so with one step visible at a time
+   every card numbered itself 1. Doing mode reads the real index from a data
+   attribute the script writes instead. */
+body.doing .step-head::before{content:attr(data-n)}
+.done h2{font-size:1.45rem;font-weight:800;letter-spacing:-.02em;margin:0 0 .5rem}
+.done p{font-family:var(--serif);font-size:1.04rem;line-height:1.6;margin:0 0 .8rem}
+.done button{font-family:var(--sans);font-weight:700;font-size:1rem;padding:.7rem 1.15rem;
+  border-radius:4px;border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+</style>
+<script>
+  (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+  .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+  n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+  (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+  ml('account', '2635985');
+</script>
+</head>
+<body>
+
+<div class="wrap">
+
+<header class="top">
+  <p class="eyebrow">Mr. Life Manager</p>
+  <h1>There's a room you stopped using.</h1>
+  <p class="sub">Garage, spare room, basement, a closet you don't open. Here's
+  how Dave does it — one zone, about two hours, and it's actually finished.</p>
+</header>
+
+<div class="frame">
+  <p><b>Pick one zone. Not the whole room.</b> One wall, one corner, one closet.
+  A whole garage is a day you'll keep not having; one wall is an afternoon and
+  it's done.</p>
+  <p>Do the steps in order and stop whenever you need to. The order front-loads
+  the decisions, so stopping early still leaves you further ahead than any other
+  order would.</p>
+  <p>Nothing to sign up for. Start at one.</p>
+</div>
+
+<div class="fork">
+  <p class="fork-lead">Ready to start?</p>
+  <p class="fork-sub">The steps are below either way. These just clear everything else out of the way.</p>
+  <p class="fork-btns">
+    <button type="button" class="go-do">Just the steps</button>
+    <button type="button" class="go-print">Print it</button>
+  </p>
+</div>
+
+<ol class="steps">
+
+  <li class="step">
+    <div class="step-head"><h2>Answer one question before you touch anything.</h2><span class="mins">2 min</span></div>
+    <p class="do">Dave opens every one of his guides with it: <b>do I actually want this, and am I willing to work on it until it's done?</b> If the answer is no today, close this and come back. That's a real answer and it costs you nothing.</p>
+    <p class="why"><b>Why he asks.</b> Half-finished is worse than not started — you lose the use of the space and you get a pile of decisions you've already made once. Deciding up front is the difference between a project and a mess with a new shape.</p>
+  </li>
+
+  <li class="step">
+    <div class="step-head"><h2>Close the exits.</h2><span class="mins">15 min</span></div>
+    <p class="do">Find two places that take donations and <b>check they're open today</b>. Work out where the trash goes and whether you can get there. Get the car empty enough to load. Have boxes or bags ready.</p>
+    <p class="why"><b>This is the part everyone skips, and it's the part Dave cares most about.</b> His line is "we don't want any excuses that the dump isn't open." People rarely quit because a job is hard — they quit at the first legitimate-sounding reason, and a genuine obstacle is the most legitimate-sounding reason there is. So you remove them before you start.</p>
+  </li>
+
+  <li class="step">
+    <div class="step-head"><h2>Three piles. Nothing else.</h2><span class="mins">45 min</span></div>
+    <p class="do">Start at one end of your zone and work across. Everything goes into exactly one of three piles: <b>throw away</b>, <b>give away</b>, <b>belongs somewhere else in the house</b>. Anything you're keeping right here stays where it is for now.</p>
+    <p class="why"><b>Three is the whole method.</b> A fourth pile called "decide later" is how this turns into a room full of boxes, which is what happened the last time. Dave is blunt about this part: it's emotional for some people, so be logical and honest with yourself.</p>
+  </li>
+
+  <li class="step">
+    <div class="step-head"><h2>When you get stuck: have you used it in a year?</h2><span class="mins">—</span></div>
+    <p class="do">If no, it goes. If it's genuinely useful and works — tools, equipment you actually use — it stays. <b>Don't negotiate with yourself longer than about five seconds per item.</b></p>
+    <p class="why"><b>Dave's list of what you'll tell yourself</b>, written in 2009 and still accurate: this will take too long · there's too much to do · I need a nap · I forgot where the trash can is · I'll do it tomorrow. He adds, "I'm sure you can come up with some good ones." Recognizing the voice is most of beating it.</p>
+  </li>
+
+  <li class="step">
+    <div class="step-head"><h2>Take the piles away now. Today.</h2><span class="mins">30 min</span></div>
+    <p class="do">Trash out. Donations <b>into the car and gone</b>, not stacked by the door. The third pile goes into the house and gets put away where those things live.</p>
+    <p class="why"><b>A pile left in the room is not progress, it's a pile.</b> This is the step that decides whether the work holds or quietly undoes itself over the next fortnight. If you only have time for part of this, do the donations — they're the ones that come back.</p>
+  </li>
+
+  <li class="step">
+    <div class="step-head"><h2>Put back what's left, in Dave's order.</h2><span class="mins">25 min</span></div>
+    <p class="do">Least-used things go highest. Most-used at easy reach. Like with like. Loose things go in <b>clear</b> boxes, labeled on the side facing out.</p>
+    <p class="why"><b>His test:</b> there should be nothing on the shelves whose contents you can't identify from across the room. That's what stops a tidy space turning back into a storage space — you can see what you own, so you stop buying it twice and stop burying it.</p>
+  </li>
+
+  <li class="step">
+    <div class="step-head"><h2>Sweep it, and then stop.</h2><span class="mins">10 min</span></div>
+    <p class="do">Sweep the floor. Empty the trash can, and put a spare bag in the bottom of it before the one you're using. <b>Then stop.</b> Don't start the next zone today.</p>
+    <p class="why"><b>Dave's actual last step here is "go get a beer."</b> The point stands whatever you drink: the job has an end, and you should feel it. Rolling straight into the next zone is how one good afternoon becomes a chore you avoid.</p>
+  </li>
+
+</ol>
+
+<div class="warn">
+  <p class="warn-label">Two things worth knowing</p>
+  <p>If you find paint, solvents, batteries or old electronics, those don't go in household trash. Most areas have a drop-off; it's worth a search before you load the car.</p>
+  <p>Lift with your legs and don't carry anything down a ladder. Genuinely the most common way this afternoon goes wrong.</p>
+</div>
+
+<div class="stop">
+  <h2>One zone. That's a finished thing.</h2>
+  <p>You can see the floor, you can see what you own, and nothing is waiting in a pile for a decision you already made.</p>
+  <p>The next zone is a different afternoon. It'll be faster, because you've already made most of the hard calls about what you keep.</p>
+</div>
+
+<div class="after">
+  <h2>Why it filled up in the first place.</h2>
+  <p>Almost everything in that room had no home. It wasn't trash and it wasn't in use, so it went somewhere "for now" — and the room became the place where "for now" happens.</p>
+  <p><b>That's not a discipline problem, it's an unmade decision repeated for years.</b> Which is why tidying never fixed it: tidying moves things, and the problem was never where they were.</p>
+
+  <p class="pull">"Everything has it's place. Do it now."</p>
+
+  <p>Those are Dave's. He's a real person, he's been saying them for decades, and he taught me how to run a house after I'd spent years failing at it. He wrote the method on this page out for me in 2009, excuse list and all, because my garage had got away from me.</p>
+</div>
+
+<div class="callout">
+  <p class="callout-label">What just happened</p>
+  <h3>You brought one space back to zero.</h3>
+  <p>Dave's rule is that you <strong>reset once, then maintain</strong> — and that maintenance is meaningless until the reset has happened. Most advice skips straight to the routine, which is why it bounces off a room like this one.</p>
+  <p>He closes that 2009 document with a line worth keeping: <strong>we always overestimate what we can do in a year and underestimate what we can do in ten.</strong></p>
+</div>
+
+<div class="signup">
+  <h2>Want to keep it this way?</h2>
+  <p>Two things: this page as a printable you can keep for the next zone, and Dave's week on one page — the ten minutes a night that stops a room filling up again.</p>
+  <div class="ml-embedded" data-form="00ZwEr"></div>
+  <p class="ml-fallback" hidden>Form not loading? Email
+    <a href="mailto:hello@mrlifemanager.com?subject=One%20room">hello@mrlifemanager.com</a>
+    and I'll send it over.</p>
+  <p class="fine">One guide at a time. No stream of things to read. Unsubscribe
+  whenever, and silence is a fine answer.</p>
+</div>
+
+<p class="printfoot">mrlifemanager.com — the practical systems of running a life, written down.</p>
+
+<footer>
+  <b>Mr. Life Manager</b> — the practical systems of running a life, written down.<br>
+  Free to use, copy, and teach from — with credit. Not for resale.
+  <a href="/">What this is</a>
+</footer>
+
+</div>
+
+<script>
+  // The MailerLite embed renders into an empty div. Ad blockers commonly block the
+  // script, leaving it empty and the section a dead end. Reveal a fallback if so.
+  addEventListener('load', function () {
+    setTimeout(function () {
+      document.querySelectorAll('.signup').forEach(function (box) {
+        var embed = box.querySelector('.ml-embedded');
+        var fb = box.querySelector('.ml-fallback');
+        if (embed && fb && embed.children.length === 0) fb.hidden = false;
+      });
+    }, 2500);
+  });
+  // ADR-015 — entry is per-pain. Tag the signup so the sequence knows which door
+  // they came in by, without ever asking them to choose.
+  //
+  // MailerLite may name form inputs `fields[guide]` or plain `guide` depending on
+  // how the form was built. Rather than detect it and risk guessing wrong — which
+  // fails silently, with every signup arriving untagged and nobody receiving
+  // anything — just send both. Whichever one the account expects is accepted and
+  // the other is ignored.
+  (function () {
+    var VALUE = 'one-room';
+    function tag(form) {
+      ['fields[guide]', 'guide'].forEach(function (name) {
+        if (form.querySelector('input[name="' + name + '"]')) return;
+        var i = document.createElement('input');
+        i.type = 'hidden'; i.name = name; i.value = VALUE;
+        form.appendChild(i);
+      });
+    }
+    var tries = 0;
+    var t = setInterval(function () {
+      var forms = document.querySelectorAll('.ml-embedded form');
+      if (forms.length) { forms.forEach(tag); clearInterval(t); }
+      if (++tries > 40) clearInterval(t);
+    }, 250);
+  })();
+</script>
+<script>
+  // Reading mode persuades; doing mode gets it done. The "why" has done its job
+  // by the time someone commits, so doing mode hides it — recoverable on a tap,
+  // never in the way, and gone entirely in print.
+  (function () {
+    var body = document.body;
+    var steps = Array.prototype.slice.call(document.querySelectorAll('.step'));
+    if (!steps.length) return;
+    var i = 0;
+
+    // Reading mode wants prose. Doing mode wants one sentence per line — you're
+    // looking up from it every few seconds and a dense block is hard to find
+    // your place in again. Splits on sentence ends only, so inline markup is
+    // untouched.
+    steps.forEach(function (s) {
+      var d = s.querySelector('.do');
+      if (!d || d.dataset.split) return;
+      d.dataset.split = '1';
+      var parts = d.innerHTML.split(/(?<=[.!?])\s+(?=[A-Z])/);
+      if (parts.length > 1) {
+        d.innerHTML = parts.map(function (t) {
+          return '<span class="s">' + t + '</span>';
+        }).join('');
+      }
+    });
+
+    steps.forEach(function (s) {
+      var why = s.querySelector('.why');
+      if (!why) return;
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'whybtn'; b.textContent = 'Why?';
+      b.addEventListener('click', function () {
+        var open = why.classList.toggle('open');
+        b.textContent = open ? 'Hide' : 'Why?';
+      });
+      why.parentNode.insertBefore(b, why);
+    });
+
+    steps.forEach(function (s, k) {
+      var head = s.querySelector('.step-head');
+      if (head) head.setAttribute('data-n', k + 1);
+    });
+
+    var nav = document.createElement('div');
+    nav.className = 'nav';
+    nav.innerHTML =
+      '<button type="button" class="back">Back</button>' +
+      '<button type="button" class="next">Next step</button>' +
+      '<span class="count"></span>' +
+      '<button type="button" class="exit">Show the whole page again</button>';
+    var done = document.createElement('div');
+    done.className = 'done';
+    done.innerHTML = '<h2>That\u2019s everything.</h2>' +
+      '<p>Whatever you got through is what there was time for. The order runs biggest ' +
+      'difference first, so wherever you stopped is the right place to have stopped.</p>' +
+      '<button type="button" class="exit">Show the whole page again</button>';
+    var list = document.querySelector('.steps');
+    list.parentNode.insertBefore(nav, list.nextSibling);
+    nav.parentNode.insertBefore(done, nav);
+
+    function show(n) {
+      i = n;
+      steps.forEach(function (s, k) { s.classList.toggle('current', k === i); });
+      var end = i >= steps.length;
+      done.classList.toggle('show', end);
+      nav.querySelector('.next').textContent = i === steps.length - 1 ? 'Done' : 'Next step';
+      nav.querySelector('.back').disabled = i === 0;
+      nav.querySelector('.count').textContent = end ? '' : (i + 1) + ' of ' + steps.length;
+      nav.style.display = end ? 'none' : '';
+      window.scrollTo(0, 0);
+    }
+    function start() { body.classList.add('doing'); show(0); }
+    function stop() {
+      body.classList.remove('doing');
+      steps.forEach(function (s) { s.classList.remove('current'); });
+      done.classList.remove('show');
+      document.querySelector('.fork').scrollIntoView({block: 'center'});
+    }
+
+    var goDo = document.querySelector('.go-do');
+    var goPrint = document.querySelector('.go-print');
+    if (goDo) goDo.addEventListener('click', start);
+    if (goPrint) goPrint.addEventListener('click', function () { window.print(); });
+    nav.querySelector('.next').addEventListener('click', function () { show(i + 1); });
+    nav.querySelector('.back').addEventListener('click', function () { show(i - 1); });
+    Array.prototype.forEach.call(document.querySelectorAll('.exit'), function (b) {
+      b.addEventListener('click', stop);
+    });
+  })();
+</script>
+</body>
+</html>

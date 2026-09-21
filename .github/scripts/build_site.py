@@ -216,6 +216,7 @@ def main() -> int:
         "https://mrlifemanager.com/",
         "https://mrlifemanager.com/index-parents.html",
         "https://mrlifemanager.com/first-night.html",
+        "https://mrlifemanager.com/one-room.html",
         "https://mrlifemanager.com/guests.html",
         "https://mrlifemanager.com/underwater.html",
         "https://mrlifemanager.com/privacy.html",
