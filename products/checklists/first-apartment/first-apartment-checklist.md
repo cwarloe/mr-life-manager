@@ -94,7 +94,7 @@ single box comes in, while the place is empty.
 
 ### Get renter's insurance
 
-- ☐ It's cheap — a few dollars a month. Get it before you move in.
+- ☐ Usually around fifteen dollars a month. Cheap compared with replacing your stuff. Get it before you move in.
 - ☐ **Your landlord's insurance covers the building, not your things.** If
   there's a fire, a burst pipe, or a break-in, this is what replaces your stuff.
 - ☐ Photograph your valuables and keep the receipts somewhere that isn't the
