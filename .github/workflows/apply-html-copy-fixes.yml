@@ -1,0 +1,47 @@
+name: Apply HTML copy fixes
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: html-copy-fixes
+          fetch-depth: 0
+      - name: Restore apartment HTML from main, then apply both fixes
+        run: |
+          git checkout main -- products/checklists/first-apartment/first-apartment-checklist.html
+          python3 << 'PY'
+          from pathlib import Path
+          fixes = [
+            (
+              Path('products/checklists/first-apartment/first-apartment-checklist.html'),
+              "It's cheap \u2014 a few dollars a month. Get it before you move in.",
+              "Usually around fifteen dollars a month. Cheap compared with replacing your stuff. Get it before you move in.",
+            ),
+            (
+              Path('products/checklists/cleaning-supplies/cleaning-supply-starter-list.html'),
+              "That covers dishes, counters, most surfaces, glass, scrubbing, and\n    descaling.",
+              "That covers dishes, counters, glass, scrubbing, and\n    descaling. Not on stone counters \u2014 marble, granite, some quartz. If it looks like stone, use dish soap and water.",
+            ),
+          ]
+          for path, old, new in fixes:
+              text = path.read_text()
+              if old not in text:
+                  raise SystemExit(f'{path}: expected string not found')
+              path.write_text(text.replace(old, new, 1))
+              print('patched', path)
+          PY
+      - name: Commit
+        run: |
+          git config user.name "Charles"
+          git config user.email "charles.warloe@gmail.com"
+          git add products/checklists/first-apartment/first-apartment-checklist.html products/checklists/cleaning-supplies/cleaning-supply-starter-list.html
+          git commit -m "Patch insurance price and vinegar-on-stone in guide HTML"
+          git push origin html-copy-fixes
