@@ -16,6 +16,7 @@ jobs:
           fetch-depth: 0
       - name: Restore apartment HTML from main, then apply both fixes
         run: |
+          git fetch origin main
           git checkout origin/main -- products/checklists/first-apartment/first-apartment-checklist.html
           python3 << 'PY'
           from pathlib import Path
