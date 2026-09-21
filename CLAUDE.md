@@ -22,7 +22,11 @@ chores for him. He has a bot precisely so that doesn't happen.
 
 ## How to communicate
 
-- **Concise.** He skims long replies. Half the length is usually right.
+- **Short by default.** A few lines: what changed, anything that needs a
+  decision. He'll ask if he wants detail. Long explanations he didn't ask for
+  are the main way replies go wrong here.
+- **No walkthroughs of work already done.** The commit message and the repo
+  hold the reasoning. The reply is a summary, not a report.
 - **One question at a time, and only when the answer changes what gets built.**
   Stacked questions are worse than a wrong assumption stated out loud.
 - **Prefer eliminating a question to asking it.** When the page had to guess at
