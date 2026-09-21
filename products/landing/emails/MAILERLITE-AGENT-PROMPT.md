@@ -106,24 +106,18 @@ images, no banners, no hero graphics.
 
 #### Automation A — group `entry-guests`
 
-**Email 1 — immediately. Subject: `Here's the printable`**
+**Email 1 — immediately. Subject: `Here's the thing worth printing`**
 
 ```
-Here's a one-page version of the guide you just used. Print it out and stick it inside a cabinet door, and you won't have to go looking for it next time.
+You already did the hard part tonight, so I'm not going to send you a copy of it. You won't need that page again if this works.
 
-https://mrlifemanager.com/print/guests-when-someone-is-coming-over.pdf
+Here's what I'd print instead.
 
-Now here's the part that means you won't need it again.
+https://mrlifemanager.com/print/the-week.pdf
 
-Dave's version of this takes about ten minutes, and you do it before you go to bed:
+It's one page, and it's Dave's whole system. The top of it is the ten minutes you do before bed — empty the sink, wipe the counters, walk one lap and put things back. Underneath that there's one job for each day of the week, and two days with nothing on them at all.
 
-1. Empty the sink. Completely.
-2. Wipe down the counters and the table.
-3. Walk one lap around the room and put back anything that isn't where it lives.
-
-That's the whole thing. There's no week two.
-
-It works because none of it is really cleaning. You're just stopping today's mess from turning into next month's project, which is the only reason tonight happened in the first place.
+Print it and stick it inside a cabinet door. It's the thing that means nobody ever has to do tonight again.
 
 — Charles
 ```
@@ -164,12 +158,18 @@ One word is a complete answer. Just hit reply. It's me reading these, not a syst
 
 #### Automation B — group `entry-first-night`
 
-**Email 1 — immediately. Subject: `Here's the printable`**
+**Email 1 — immediately. Subject: `Here's the thing worth printing`**
 
 ```
-Here's a one-page version of the guide you just used. Print it out and keep it somewhere you'll find it again. The part about the breaker box and the water shutoff is the kind of thing you look up maybe twice in ten years, and both times you need it in a hurry.
+You'll only have a first night once, so a copy of that page isn't much use to you now.
 
-https://mrlifemanager.com/print/first-night.pdf
+Here's what I'd print instead.
+
+https://mrlifemanager.com/print/the-week.pdf
+
+It's one page, and it's Dave's whole system. The top of it is the ten minutes you do before bed — empty the sink, wipe the counters, walk one lap and put things back. Underneath that there's one job for each day of the week, and two days with nothing on them at all.
+
+Don't start it yet. You've got boxes. But stick it inside a cabinet door now, while you're still deciding where things go, because it's a lot easier to build a place around a routine than to bolt one on later.
 
 Now, about tomorrow.
 
@@ -224,8 +224,7 @@ One word is a complete answer. Just hit reply. It's me reading these, not a syst
 
 Open both in the browser and confirm each loads a readable PDF:
 
-- `https://mrlifemanager.com/print/guests-when-someone-is-coming-over.pdf`
-- `https://mrlifemanager.com/print/first-night.pdf`
+- `https://mrlifemanager.com/print/the-week.pdf` (both sequences link this one)
 
 If either 404s, **report it and do not activate the automations.** A dead link in
 email 1 wastes the only moment the reader is paying attention.

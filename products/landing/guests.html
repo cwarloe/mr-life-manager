@@ -115,6 +115,54 @@ footer a{color:var(--blue);font-weight:600;text-decoration:none}
   .step{page-break-inside:avoid}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* the paper/phone fork */
+.fork{margin:1.6rem 0 0;padding:.95rem 1.1rem;border:1px dashed var(--rule-strong);border-radius:4px}
+.fork-lead{font-size:.95rem;font-weight:700;margin:0 0 .25rem;letter-spacing:-.01em}
+.fork-body{font-family:var(--serif);font-size:.98rem;line-height:1.55;margin:0;color:var(--slate)}
+.fork-body a{color:var(--blue);font-weight:600}
+
+/* ---- printed action sheet ----
+   The page persuades; the sheet reminds. Printing drops the long "why"
+   paragraphs, the brand story, the offer and the chrome, and keeps the actions
+   plus one short line of reasoning each — because whoever prints this may be
+   meeting it cold on paper and bare commands would read as barking. */
+@media print{
+  @page{size:Letter;margin:0.5in}
+  :root{--ink:#000;--paper:#fff;--surface:#fff;--slate:#333;--rule:#bbb;
+    --rule-strong:#666;--blue:#1F4E79;--blue-soft:#fff;--amber:#7a4d0a;--amber-soft:#fff}
+  body{font-size:10pt;line-height:1.34}
+  .wrap{max-width:none;padding:0}
+  .fork,.after,.callout,.signup,footer,.frame p:last-child{display:none}
+  header.top{padding:0;border-bottom:2px solid #000;padding-bottom:.35rem}
+  .eyebrow{font-size:7.5pt;margin:0 0 .12rem}
+  h1{font-size:19pt;line-height:1.02}
+  .sub{font-size:10pt;margin:.25rem 0 0;max-width:none}
+  .frame{margin:.4rem 0 0;padding:.4rem .55rem;border-radius:0;break-inside:avoid}
+  .frame p{font-size:9.5pt;line-height:1.36}
+  .steps{margin:.5rem 0 0}
+  .step{margin:0 0 .42rem;break-inside:avoid}
+  .step-head{gap:.4rem}
+  .step-head::before{font-size:11pt;min-width:1.15rem;height:1.15rem;border-radius:2px}
+  .step-head h2{font-size:11.5pt;line-height:1.14}
+  .mins{font-size:8pt;padding:.02rem .3rem}
+  .do{font-size:9.5pt;line-height:1.36;margin:.16rem 0 0;padding-left:1.55rem}
+  /* keep one line of reasoning, drop the rest of the paragraph */
+  .why{font-size:8.6pt;line-height:1.3;margin:.1rem 0 0 1.55rem;padding-left:.5rem;
+    border-left:1px solid #999;color:#333;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .warn{margin:.45rem 0 0;padding:.4rem .55rem;border-radius:0;break-inside:avoid}
+  .warn-label{font-size:7.5pt;margin:0 0 .12rem}
+  .warn p{font-size:9pt;line-height:1.34}
+  .warn p + p{margin-top:.15rem}
+  .stop{margin:.5rem 0 0;padding:.35rem 0 0;border-top:2px solid #000;break-inside:avoid}
+  .stop h2{font-size:12pt;margin:0 0 .18rem}
+  .stop p{font-size:9pt;line-height:1.36}
+  .stop p + p{margin-top:.18rem}
+  .printfoot{display:block !important;margin-top:.5rem;padding-top:.3rem;
+    border-top:1px solid #999;font-size:8pt;color:#333}
+}
+.printfoot{display:none}
 </style>
 <script>
   (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
@@ -140,6 +188,13 @@ footer a{color:var(--blue);font-weight:600;text-decoration:none}
   visible difference first, so wherever you get to is the right place to have
   stopped. You are not going to finish and you don't need to.</p>
   <p>Nothing to sign up for. Start at one.</p>
+</div>
+
+<div class="fork">
+  <p class="fork-lead">Two ways to do this.</p>
+  <p class="fork-body">Keep scrolling on your phone, or
+  <a href="#" class="printlink">print it and put the phone down</a> — you're
+  about to have wet hands.</p>
 </div>
 
 <ol class="steps">
@@ -268,6 +323,8 @@ footer a{color:var(--blue);font-weight:600;text-decoration:none}
   whenever, and silence is a fine answer.</p>
 </div>
 
+<p class="printfoot">mrlifemanager.com — the practical systems of running a life, written down.</p>
+
 <footer>
   <b>Mr. Life Manager</b> — the practical systems of running a life, written down.<br>
   Free to use, copy, and teach from — with credit. Not for resale.
@@ -321,6 +378,14 @@ footer a{color:var(--blue);font-weight:600;text-decoration:none}
       if (++tries > 40) clearInterval(t);
     }, 250);
   })();
+</script>
+<script>
+  // The fork is a real choice, not a fallback: print is often the better tool
+  // when both your hands are busy. Progressive — the link still reads sensibly
+  // if the click handler never runs.
+  document.querySelectorAll('.printlink').forEach(function (a) {
+    a.addEventListener('click', function (e) { e.preventDefault(); window.print(); });
+  });
 </script>
 </body>
 </html>

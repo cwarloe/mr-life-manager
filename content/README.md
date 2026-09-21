@@ -54,6 +54,30 @@ Every piece of content should:
 6. **Be modular.** Assume it will be reused in three products and read out of
    order.
 
+## Printables are not the web page
+
+**A printable is a different document, not an export.** The page persuades; the
+sheet reminds. Every "why this matters" paragraph on an entry page exists to
+convince a stranger to start — the person holding the printout has already
+started, so those paragraphs are the first thing to go.
+
+The first set of printables was the web page with the navigation stripped: four
+pages, identical wording, and set in DejaVu and Liberation because the font CDN
+was unreachable and Chrome fell back silently. All three of those are now
+prevented:
+
+| Rule | Why |
+|---|---|
+| Entry pages print from their **own print stylesheet**, not a committed PDF | One source, so the sheet can't drift from the page |
+| Printed action sheets keep the action and **one line** of reasoning | Someone may meet it cold on paper; bare commands read as barking |
+| Standalone printables are **purpose-built** (`products/print/`) | [The Week](../products/print/the-week.html) is content the site doesn't have |
+| PDFs render via [`render_pdf.py`](../.github/scripts/render_pdf.py), which **embeds the fonts** | It asserts the brand faces are present and refuses to write a file without them |
+| `@page{size:Letter}` | US beachhead |
+
+**What's worth printing is what gets used again.** A sheet for something someone
+does once has no reason to exist. That is why both email sequences hand over
+The Week rather than a copy of the page the reader just finished.
+
 ## Email voice: write full sentences
 
 **Emails must sound spoken, not written.** The recurring failure is dropping the

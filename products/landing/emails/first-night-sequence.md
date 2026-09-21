@@ -11,7 +11,7 @@ and [ADR-015](../../../planning/decisions.md#adr-015--the-win-comes-before-the-e
 
 | | When | Ask | Size |
 |---|---|---|---|
-| 1 | Immediate | The printable, plus one named action | one box |
+| 1 | Immediate | The Week (one page), plus one named action | one box |
 | 2 | Day 3 | The same thing, smaller | one drawer |
 | 3 | Day 7 | Nothing. One question. | one word |
 | — | After | **Stop.** | — |
@@ -23,11 +23,17 @@ Shrinks unconditionally. Nobody is branched on opens or clicks. A **reply** or a
 
 ## Email 1 — immediate
 
-**Subject:** Here's the printable
+**Subject:** Here's the thing worth printing
 
-> Here's a one-page version of the guide you just used. Print it out and keep it somewhere you'll find it again. The part about the breaker box and the water shutoff is the kind of thing you look up maybe twice in ten years, and both times you need it in a hurry.
+> You'll only have a first night once, so a copy of that page isn't much use to you now.
 >
-> https://mrlifemanager.com/print/first-night.pdf
+> Here's what I'd print instead.
+>
+> https://mrlifemanager.com/print/the-week.pdf
+>
+> It's one page, and it's Dave's whole system. The top of it is the ten minutes you do before bed — empty the sink, wipe the counters, walk one lap and put things back. Underneath that there's one job for each day of the week, and two days with nothing on them at all.
+>
+> Don't start it yet. You've got boxes. But stick it inside a cabinet door now, while you're still deciding where things go, because it's a lot easier to build a place around a routine than to bolt one on later.
 >
 > Now, about tomorrow.
 >
@@ -43,7 +49,7 @@ Shrinks unconditionally. Nobody is branched on opens or clicks. A **reply** or a
 >
 > — Charles
 
-*Link (not attach): <https://mrlifemanager.com/print/first-night.pdf>*
+*Link (not attach): <https://mrlifemanager.com/print/the-week.pdf>*
 
 ---
 

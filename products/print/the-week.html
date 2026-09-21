@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Dave's week on one page. The nightly ten minutes, and one job a day.">
+<title>The Week</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* A printable, not a web page. Designed to a single US Letter sheet and to be
+   read from a few feet away while taped inside a cabinet door. No links, no
+   navigation, nothing that assumes a screen. */
+@page{size:Letter;margin:0.45in}
+:root{
+  --ink:#12161C; --paper:#fff; --blue:#1F4E79; --amber:#B4741A;
+  --slate:#5A616B; --rule:#C9C4BA; --rule-strong:#8A8378;
+  --sans:"Archivo",system-ui,sans-serif; --serif:"Source Serif 4",Georgia,serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+  font-size:11pt;line-height:1.3;-webkit-font-smoothing:antialiased}
+.sheet{max-width:7.6in;margin:0 auto;padding:0}
+
+header{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;
+  border-bottom:3px solid var(--ink);padding-bottom:.28rem}
+h1{font-size:30pt;font-weight:800;letter-spacing:-.03em;margin:0;line-height:.95}
+.brand{font-size:8pt;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--blue);text-align:right;line-height:1.35}
+.brand span{display:block;color:var(--slate);letter-spacing:.06em;font-weight:600;
+  text-transform:none;font-size:7.5pt}
+
+/* nightly band */
+.nightly{margin:.42rem 0 0;border:2.5px solid var(--ink);border-radius:3px;padding:.46rem .6rem .5rem}
+.nightly .lab{font-size:8pt;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--blue);margin:0 0 .3rem}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem}
+.three div{display:flex;gap:.4rem;align-items:baseline}
+.n{font-size:15pt;font-weight:800;color:var(--ink);line-height:1;min-width:.85rem}
+.t{font-size:12.5pt;font-weight:700;letter-spacing:-.012em;line-height:1.16}
+.t em{display:block;font-family:var(--serif);font-style:normal;font-size:9pt;
+  font-weight:400;color:var(--slate);line-height:1.28;margin-top:.1rem}
+.whenever{font-family:var(--serif);font-size:9pt;color:var(--slate);margin:.4rem 0 0;line-height:1.3}
+
+/* the week */
+.days{margin:.5rem 0 0;width:100%;border-collapse:collapse}
+.days th{font-size:8pt;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--blue);text-align:left;padding:0 0 .22rem;border-bottom:1.5px solid var(--rule-strong)}
+.days th.d{width:1.5in}
+.days td{padding:.3rem .5rem .3rem 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.days td.day{font-size:13pt;font-weight:800;letter-spacing:-.018em;white-space:nowrap}
+.days td.job{font-size:10.5pt;line-height:1.3;font-weight:600}
+.days td.job em{display:block;font-family:var(--serif);font-style:normal;font-weight:400;
+  font-size:8.8pt;color:var(--slate);line-height:1.28;margin-top:.05rem}
+.days tr.rest td{border-bottom:1px solid var(--rule)}
+.days tr.rest td.day{color:var(--slate)}
+.days tr.rest td.job{font-family:var(--serif);font-weight:400;font-size:10pt;color:var(--slate);
+  font-style:italic}
+
+/* footer rules */
+.rules{margin:.5rem 0 0;display:grid;grid-template-columns:1.35fr 1fr;gap:.7rem;align-items:stretch}
+.one{border:2.5px solid var(--amber);border-radius:3px;padding:.42rem .6rem}
+.one .lab{font-size:7.5pt;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--amber);margin:0 0 .12rem}
+.one p{margin:0;font-size:12.5pt;font-weight:700;letter-spacing:-.015em;line-height:1.16}
+.swap{border:1px solid var(--rule-strong);border-radius:3px;padding:.42rem .6rem}
+.swap p{margin:0;font-family:var(--serif);font-size:9pt;line-height:1.34;color:var(--ink)}
+.swap b{font-family:var(--sans);font-weight:700}
+
+.credit{margin:.45rem 0 0;padding-top:.28rem;border-top:1px solid var(--rule);
+  font-family:var(--serif);font-size:8.4pt;line-height:1.35;color:var(--slate);
+  display:flex;justify-content:space-between;gap:1rem}
+.credit b{font-family:var(--sans);font-weight:700;color:var(--ink)}
+@media screen{
+  body{padding:2rem 1rem;background:#F3F1EC}
+  .sheet{background:#fff;padding:.5in;box-shadow:0 2px 14px rgba(0,0,0,.14)}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <header>
+    <h1>The Week</h1>
+    <p class="brand">Mr. Life Manager<span>Dave's system, on one page</span></p>
+  </header>
+
+  <section class="nightly">
+    <p class="lab">Every night, before bed · about ten minutes</p>
+    <div class="three">
+      <div><span class="n">1</span><span class="t">Empty the sink<em>Completely. Dishwasher or washed.</em></span></div>
+      <div><span class="n">2</span><span class="t">Wipe the counters<em>And the table you eat at.</em></span></div>
+      <div><span class="n">3</span><span class="t">One lap<em>Put back anything not where it lives.</em></span></div>
+    </div>
+    <p class="whenever">This is the part that matters. A kitchen reset every night never needs rescuing.
+    Skip it four days and you have a project.</p>
+  </section>
+
+  <table class="days">
+    <thead><tr><th class="d">Day</th><th>The one job, on top of the nightly ten minutes</th></tr></thead>
+    <tbody>
+      <tr><td class="day">Monday</td><td class="job">Floors<em>Sweep, vacuum or mop. Dust what needs it — blinds, mirrors, shelves. Include the entry and stairs.</em></td></tr>
+      <tr><td class="day">Tuesday</td><td class="job">Laundry, start to finish<em>Wash, dry, fold, and put it away the same day. Folded and left in the basket doesn't count.</em></td></tr>
+      <tr><td class="day">Wednesday</td><td class="job">Bedroom and the main bathroom<em>Floors, surfaces, mirror, toilet, sink, tub. Check whether the windows need doing.</em></td></tr>
+      <tr><td class="day">Thursday</td><td class="job">The kitchen, properly<em>Appliances, cabinet fronts, and clear the old food out of the fridge. Wipe the shelves while it's empty.</em></td></tr>
+      <tr class="rest"><td class="day">Friday</td><td class="job">Nothing extra. Just the nightly ten.</td></tr>
+      <tr><td class="day">Saturday</td><td class="job">The other bathroom, and the car<em>Second bathroom top to bottom. Sweep the garage. Clear out the car and the trunk.</em></td></tr>
+      <tr class="rest"><td class="day">Sunday</td><td class="job">Nothing extra. Just the nightly ten.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="rules">
+    <div class="one">
+      <p class="lab">If you only do one thing</p>
+      <p>Empty the sink before bed.</p>
+    </div>
+    <div class="swap">
+      <p>Move jobs to whichever day suits you. <b>But everything on the list is done
+      by Sunday night.</b> The order is yours. The finishing isn't.</p>
+    </div>
+  </div>
+
+  <p class="credit">
+    <span><b>Before any of this works</b>, the place has to start at zero once —
+    everything with a home, nothing left to deal with later. Then this keeps it there.</span>
+    <span style="text-align:right;white-space:nowrap"><b>mrlifemanager.com</b><br>Free to copy and share. Not for resale.</span>
+  </p>
+
+</div>
+</body>
+</html>
