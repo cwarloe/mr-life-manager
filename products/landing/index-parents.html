@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Three practical life guides worth forwarding to someone starting out.">
+<meta name="description" content="Send them the page that matches tonight — first night in a new place, or someone coming over.">
 <meta name="color-scheme" content="light dark">
 <title>Everything You Meant To Tell Them</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,29 +26,17 @@
     --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
   }
 }
-:root[data-theme="dark"]{
-  --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
-  --blue:#8FB6DA; --blue-soft:#1D2833;
-  --amber:#E3A94E; --amber-soft:#2A2418;
-  --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
-}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;
   line-height:1.55;margin:0;-webkit-font-smoothing:antialiased}
 .wrap{max-width:60rem;margin:0 auto;padding:0 1.5rem}
 .narrow{max-width:42rem}
-
-/* ---------- top bar ---------- */
 .bar{border-bottom:1px solid var(--rule)}
-.bar .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:1rem;padding-bottom:1rem}
-.brand{font-weight:700;font-size:.95rem;letter-spacing:-.01em}
+.bar .wrap{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.5rem}
+.brand{font-weight:700;font-size:.95rem;letter-spacing:-.01em;text-decoration:none;color:inherit}
 .brand span{color:var(--blue)}
 .bar a{font-size:.85rem;color:var(--slate);text-decoration:none;font-weight:500}
 .bar a:hover{color:var(--blue)}
-
-/* ---------- hero ---------- */
 .hero{padding:4.5rem 0 3.5rem;border-bottom:3px solid var(--ink)}
 .kicker{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
   color:var(--blue);margin:0 0 1.2rem}
@@ -57,47 +45,15 @@ h1{font-size:clamp(2.4rem,7vw,4rem);font-weight:800;line-height:1.02;letter-spac
 .sub{font-family:var(--serif);font-size:clamp(1.1rem,2.4vw,1.35rem);line-height:1.5;
   color:var(--slate);margin:1.4rem 0 0;max-width:46ch}
 .sub strong{color:var(--ink);font-weight:600}
-
-/* ---------- signup ---------- */
-.signup{margin:2.5rem 0 0;max-width:34rem}
-.signup form{display:flex;gap:.6rem;flex-wrap:wrap}
-.signup input[type=email]{
-  flex:1 1 15rem;font-family:inherit;font-size:1rem;padding:.85rem 1rem;
-  border:2px solid var(--rule-strong);border-radius:3px;background:var(--surface);
-  color:var(--ink);min-width:0}
-.signup input[type=email]::placeholder{color:var(--slate)}
-.signup input[type=email]:focus-visible{outline:none;border-color:var(--blue);
-  box-shadow:0 0 0 3px var(--blue-soft)}
-.signup button{
-  font-family:inherit;font-size:1rem;font-weight:600;padding:.85rem 1.5rem;
-  border:2px solid var(--ink);border-radius:3px;background:var(--ink);color:var(--paper);
-  cursor:pointer;white-space:nowrap}
-.signup button:hover{background:var(--blue);border-color:var(--blue)}
-.signup button:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
-.ml-fallback{border:2px solid var(--rule-strong);border-radius:3px;padding:1rem 1.2rem;
-  background:var(--surface)}
-.ml-fallback .fb-lead{font-weight:700;margin:0 0 .3rem;font-size:1rem}
-.ml-fallback .fb-body{font-family:var(--serif);font-size:.95rem;line-height:1.55;
-  color:var(--slate);margin:0}
-.ml-fallback a{color:var(--blue);font-weight:600}
-.picker{display:grid;gap:.75rem;margin:2rem 0 0}
+.picker{display:grid;gap:.75rem;margin:2rem 0 0;max-width:36rem}
 a.pick{display:grid;gap:.3rem;border:2px solid var(--rule-strong);border-radius:3px;
   padding:1.15rem 1.4rem;background:var(--surface);text-decoration:none;color:inherit}
 a.pick:hover{border-color:var(--blue)}
 a.pick:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
 a.pick .q{font-size:1.12rem;font-weight:700;letter-spacing:-.01em;line-height:1.25}
 a.pick .a{font-family:var(--serif);font-size:.95rem;line-height:1.45;color:var(--slate)}
-a.pick[aria-current="true"]{border-color:var(--blue);background:var(--blue-soft)}
-a.pick[aria-current="true"] .q::after{content:" ✓";color:var(--blue)}
-.fine.browse{margin-top:1.5rem}
-.fine.browse a{color:var(--blue);font-weight:600}
-.chosen{font-family:var(--serif);font-size:.97rem;line-height:1.5;margin:0 0 .9rem;
-  padding:.7rem .95rem;border-left:3px solid var(--blue);background:var(--blue-soft);
-  border-radius:0 3px 3px 0}
-.chosen b{font-family:var(--sans);font-weight:700}
-.fine{font-size:.82rem;color:var(--slate);margin:.75rem 0 0}
-
-/* ---------- sections ---------- */
+.fine{font-size:.82rem;color:var(--slate);margin:1.4rem 0 0;max-width:42rem}
+.fine a{color:var(--blue);font-weight:600}
 section{padding:4rem 0}
 section + section{border-top:1px solid var(--rule)}
 .eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
@@ -107,35 +63,13 @@ h2{font-size:clamp(1.6rem,3.6vw,2.2rem);font-weight:700;letter-spacing:-.02em;ma
 .lede{font-family:var(--serif);font-size:1.08rem;line-height:1.6;margin:1.1rem 0 0;max-width:58ch}
 p.body{font-family:var(--serif);font-size:1.03rem;line-height:1.65;margin:1.1rem 0 0;max-width:58ch}
 p.body strong{font-weight:600}
-
-/* ---------- guides ---------- */
-.guides{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));margin:2rem 0 0}
-.guide{text-decoration:none;color:inherit;border:2px solid var(--rule-strong);border-radius:3px;padding:1.3rem 1.4rem;
-  background:var(--surface);display:flex;flex-direction:column;gap:.5rem;text-decoration:none;color:inherit}
-.guide:hover{border-color:var(--blue)}
-.guide:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
-.guide .num{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
-.guide h3{font-size:1.08rem;font-weight:700;margin:0;letter-spacing:-.01em;line-height:1.25}
-.guide p{font-family:var(--serif);font-size:.93rem;line-height:1.5;color:var(--slate);margin:0}
-.guide .go{font-size:.82rem;font-weight:600;color:var(--blue);margin-top:auto;padding-top:.4rem}
-
-/* ---------- dave ---------- */
 .dave{background:var(--surface);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
 .pull{font-family:var(--serif);font-size:clamp(1.3rem,3.2vw,1.75rem);line-height:1.4;
   font-style:italic;margin:1.6rem 0;padding-left:1.4rem;border-left:4px solid var(--amber);
   max-width:34ch;text-wrap:balance}
 .attrib{font-family:var(--sans);font-style:normal;font-size:.8rem;font-weight:600;
   letter-spacing:.08em;text-transform:uppercase;color:var(--slate);display:block;margin-top:.9rem}
-
-/* ---------- domains ---------- */
-.domains{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.8rem 0 0}
-.domains span{border:1.5px solid var(--rule-strong);border-radius:2px;padding:.4rem .75rem;
-  font-size:.86rem;font-weight:500}
-.domains span.on{border-color:var(--blue);color:var(--blue);font-weight:600}
-
-/* ---------- closing ---------- */
 .close{border-top:3px solid var(--ink);background:var(--surface)}
-.close h2{max-width:20ch}
 footer{border-top:1px solid var(--rule);padding:2rem 0 3rem;font-size:.82rem;color:var(--slate)}
 footer .wrap{display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space-between}
 footer b{color:var(--ink);font-weight:600}
@@ -143,205 +77,74 @@ footer a{color:var(--slate)}
 @media (max-width:34rem){
   .hero{padding:3rem 0 2.5rem}
   section{padding:3rem 0}
-  .signup button{width:100%}
 }
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
-
-<script>
-    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', '2635985');
-</script>
-
-
 </head>
 <body>
-
 <div class="bar"><div class="wrap">
-  <span class="brand">Mr.&nbsp;<span>Life Manager</span></span>
-  <a href="#guides">Free guides</a>
+  <a class="brand" href="/">Mr.&nbsp;<span>Life Manager</span></a>
+  <a href="/">The main page</a>
 </div></div>
-
 <header class="hero"><div class="wrap">
   <p class="kicker">For the kid who just moved out</p>
   <h1>Everything you meant to tell them.</h1>
-  <p class="sub">How often to wash the sheets. What to check before signing a lease. Which nine
-  cleaning products actually matter. <strong>You know all of it. You just never got a clean
-  moment to say it</strong> — and they'd rather read it than be told.</p>
-
-  <div class="signup" id="signup">
-    <p class="chosen" hidden></p>
-    <div class="ml-embedded" data-form="00ZwEr"></div>
-    <div class="ml-fallback" hidden>
-      <p class="fb-lead">Signup isn't loading.</p>
-      <p class="fb-body">An ad blocker or a network hiccup is usually the cause. You can still
-      <a href="/guides/">read every guide right here</a> — they're free and complete, and
-      nothing is held back.</p>
-    </div>
-    <p class="fine">One guide, free, yours to forward. Then an occasional note when there's
-    something genuinely useful. Unsubscribe whenever — no hard feelings. <a href="/privacy.html">Privacy</a></p>
-  </div>
-</div></header>
-
-<section id="guides"><div class="wrap">
-  <p class="eyebrow">Start here</p>
-  <h2>What's going on with them?</h2>
-  <p class="lede">Pick one. They'll get that guide and nothing else — because one thing
-  they actually do beats six things they meant to get around to.</p>
-
+  <p class="sub">How often to wash the sheets. What to do before they sign a lease.
+  What to photograph on the first night. <strong>You know all of it. You just never
+  got a clean moment to say it</strong> — and they'd rather use a page than sit through
+  the speech.</p>
   <div class="picker">
-    <a class="pick" href="#signup" data-guide="first-apartment">
-      <span class="q">They just moved into their own place</span>
-      <span class="a">The First Apartment Checklist — what to do, buy and find out, in order</span>
+    <a class="pick" href="/first-night.html">
+      <span class="q">It's their first night in the place</span>
+      <span class="a">Six things tonight, in order of what costs most to skip. Send them this page. No account.</span>
     </a>
-    <a class="pick" href="#signup" data-guide="household-agreement">
-      <span class="q">They just moved in with someone</span>
-      <span class="a">The Household Agreement — who does what, settled before it's a fight</span>
-    </a>
-    <a class="pick" href="#signup" data-guide="how-often">
-      <span class="q">They're just not keeping on top of it</span>
-      <span class="a">How Often Should I…? — every cadence in one place</span>
+    <a class="pick" href="/guests.html">
+      <span class="q">Someone's coming over and the place is a disaster</span>
+      <span class="a">Six things, about thirty-five minutes — still works if they've only got ten.</span>
     </a>
   </div>
-
-  <p class="fine browse">Want to read them first? <a href="/guides/">They're all here,
-  free</a> — send the one that fits, not the whole pile.</p>
-</div></section>
-
+  <p class="fine">Do not sign up for them. Forward the page that matches tonight.
+  If they want a printable later, that ask lives at the bottom of the page they
+  actually used. More doors are coming. If you needed a different one,
+  <a href="mailto:hello@mrlifemanager.com?subject=The%20one%20they%20need">tell me which</a>.</p>
+</div></header>
 <section class="dave"><div class="wrap narrow">
   <p class="eyebrow">Who Mr. Life Manager is</p>
   <h2>Dave actually knew how to do this.</h2>
-
-  <p class="body">Mr. Life Manager is a real person — Dave Webster, who knew how to run a home
+  <p class="body">Mr. Life Manager is a real person — Dave, who knew how to run a home
   and, over years, taught me. I'm the apprentice. I wrote it down.</p>
-
   <p class="body">When I told him people would pay to learn this, he was baffled. His answer
   has stuck with me ever since:</p>
-
   <blockquote class="pull">It's all obvious. I'd be embarrassed telling people things I
   assumed they already knew.
   <span class="attrib">— Dave</span></blockquote>
-
   <p class="body">Which is <strong>exactly why it doesn't get handed down.</strong> The people
-  who know this can't see it as knowledge. From the inside it just looks like common sense — so
-  it never gets said out loud. Not out of indifference. Out of invisibility.</p>
-
-  <p class="body">You've probably had the same experience: you know how to run a house, and
-  you've had a hard time explaining it without sounding like you're nagging. That's not a
-  failure of parenting. It's that this stuff is genuinely hard to teach from the inside.</p>
-
+  who know this can't see it as knowledge. You've probably had the same experience:
+  you know how to run a house, and you've had a hard time explaining it without sounding
+  like you're nagging. That's not a failure of parenting. It's that this stuff is
+  genuinely hard to teach from the inside.</p>
   <p class="body">Nothing here talks down to them, and nothing here makes them wrong for not
   knowing. I had to be taught all of it too.</p>
 </div></section>
-
-<section><div class="wrap">
-  <p class="eyebrow">The scope</p>
-  <h2>It was never really about cleaning.</h2>
-  <p class="lede">Cleaning is where most people notice the problem. But the same thing is
-  happening everywhere else — no system, so everything runs on memory and mood until something
-  becomes urgent.</p>
-
-  <div class="domains">
-    <span class="on">Home</span><span class="on">Food</span><span class="on">Money</span>
-    <span class="on">Time</span><span>Health</span><span>Work</span>
-    <span class="on">Digital life</span><span>Relationships</span><span>Transportation</span>
-    <span class="on">Maintenance</span><span class="on">Paperwork</span>
-    <span class="on">Hospitality</span><span class="on">Life transitions</span>
-  </div>
-
-  <p class="body">Everyone else teaches one of these. The work is in the fact that they're the
-  same problem: <strong>nothing has a place, so everything lives in your head.</strong></p>
-</div></section>
-
-<section><div class="wrap narrow">
-  <p class="eyebrow">Where this goes</p>
-  <h2>Order isn't the point.</h2>
-  <p class="body">A tidy house nobody enters is a museum. The reason to get a handle on all
-  this is so you can <strong>open the door</strong> — have people over on two hours' notice,
-  feed someone, put a friend up for the night, without a two-day panic first.</p>
-  <p class="body">Systems buy you margin. Margin is what lets you say <em>come over.</em>
-  That's the whole point, and everything else is just the machinery that makes it possible.</p>
-</div></section>
-
 <section class="close"><div class="wrap">
-  <h2>Send it instead of saying it.</h2>
-  <p class="lede">One guide, matched to what's actually going on. It covers what you'd tell
+  <h2>Send the page. Don't narrate it.</h2>
+  <p class="lede">One link, matched to what's actually going on. It covers what you'd tell
   them if you had an uninterrupted hour and they were in the mood to listen — which,
   realistically, isn't going to happen.</p>
-  <div class="signup">
-    <div class="ml-embedded" data-form="00ZwEr"></div>
-    <div class="ml-fallback" hidden>
-      <p class="fb-lead">Signup isn't loading.</p>
-      <p class="fb-body">An ad blocker or a network hiccup is usually the cause. You can still
-      <a href="/guides/">read every guide right here</a> — they're free and complete, and
-      nothing is held back.</p>
-    </div>
-    <p class="fine">One guide, free, yours to forward. Occasional notes. Unsubscribe whenever. <a href="/privacy.html">Privacy</a> · <a href="mailto:hello@mrlifemanager.com">hello@</a></p>
+  <div class="picker">
+    <a class="pick" href="/first-night.html">
+      <span class="q">First night</span>
+      <span class="a">mrlifemanager.com/first-night.html</span>
+    </a>
+    <a class="pick" href="/guests.html">
+      <span class="q">Someone's coming over</span>
+      <span class="a">mrlifemanager.com/guests.html</span>
+    </a>
   </div>
 </div></section>
-
 <footer><div class="wrap">
   <span><b>Mr. Life Manager</b> — <a href="mailto:hello@mrlifemanager.com">hello@mrlifemanager.com</a></span>
   <span>Free to use, copy, and teach from — with credit. Not for resale. · <a href="/privacy.html">Privacy</a></span>
 </div></footer>
-
-<script>
-  // The MailerLite embed renders into an empty div. If the script is blocked —
-  // ad blockers commonly block it — that div stays empty and the signup section
-  // silently disappears. Reveal a fallback so the page is never a dead end.
-  addEventListener('load', function () {
-    setTimeout(function () {
-      document.querySelectorAll('.signup').forEach(function (box) {
-        var embed = box.querySelector('.ml-embedded');
-        var fb = box.querySelector('.ml-fallback');
-        if (embed && fb && embed.children.length === 0) fb.hidden = false;
-      });
-    }, 2500);
-  });
-</script>
-<script>
-  // ADR-014 — completion is what converts. One guide, chosen by a question about
-  // their situation rather than a menu of products. The choice is carried into
-  // the signup so the welcome sequence sends that guide and only that guide.
-  (function () {
-    var LABELS = {
-      'first-apartment': 'The First Apartment Checklist',
-      'household-agreement': 'The Household Agreement',
-      'how-often': 'How Often Should I…?'
-    };
-    function choose(slug) {
-      try { sessionStorage.setItem('mlm_guide', slug); } catch (e) {}
-      document.querySelectorAll('.pick').forEach(function (el) {
-        el.setAttribute('aria-current', String(el.dataset.guide === slug));
-      });
-      document.querySelectorAll('.chosen').forEach(function (el) {
-        el.innerHTML = 'Sending you <b>' + LABELS[slug] + '</b>. Just that one.';
-        el.hidden = false;
-      });
-      document.querySelectorAll('input[name="guide"]').forEach(function (i) { i.value = slug; });
-    }
-    document.querySelectorAll('.pick').forEach(function (el) {
-      el.addEventListener('click', function () { choose(el.dataset.guide); });
-    });
-    // MailerLite renders its form asynchronously; add the hidden field once it exists.
-    var tries = 0;
-    var t = setInterval(function () {
-      var forms = document.querySelectorAll('.ml-embedded form');
-      if (forms.length) {
-        forms.forEach(function (f) {
-          if (f.querySelector('input[name="guide"]')) return;
-          var i = document.createElement('input');
-          i.type = 'hidden'; i.name = 'guide';
-          try { i.value = sessionStorage.getItem('mlm_guide') || ''; } catch (e) { i.value = ''; }
-          f.appendChild(i);
-        });
-        clearInterval(t);
-      }
-      if (++tries > 40) clearInterval(t);
-    }, 250);
-  })();
-</script>
 </body>
 </html>
