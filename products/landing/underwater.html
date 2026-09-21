@@ -368,5 +368,27 @@ ml('account','2635985');
     });
   })();
 </script>
+<script>
+  // ADR-015 — entry is per-pain. Tag the signup so the sequence knows which
+  // door they came in by. Both field names are sent because MailerLite may use
+  // either, and guessing wrong fails silently with everyone untagged.
+  (function () {
+    var VALUE = 'underwater';
+    function tag(form) {
+      ['fields[guide]', 'guide'].forEach(function (name) {
+        if (form.querySelector('input[name="' + name + '"]')) return;
+        var i = document.createElement('input');
+        i.type = 'hidden'; i.name = name; i.value = VALUE;
+        form.appendChild(i);
+      });
+    }
+    var tries = 0;
+    var t = setInterval(function () {
+      var forms = document.querySelectorAll('.ml-embedded form');
+      if (forms.length) { forms.forEach(tag); clearInterval(t); }
+      if (++tries > 40) clearInterval(t);
+    }, 250);
+  })();
+</script>
 </body>
 </html>

@@ -54,6 +54,37 @@ Every piece of content should:
 6. **Be modular.** Assume it will be reused in three products and read out of
    order.
 
+## Building a new entry page
+
+**Copy an existing entry page and change the content. Do not build one from
+scratch, and do not copy an old one from memory** — every time that has happened
+something was missing and nothing looked broken.
+
+Source of truth: [`products/landing/guests.html`](../products/landing/guests.html).
+
+An entry page is one pain, one action, the win before the email
+([ADR-015](../planning/decisions.md#adr-015--the-win-comes-before-the-email)).
+Every one must carry all of this, and
+[`check_entry_pages.py`](../.github/scripts/check_entry_pages.py) fails CI if it
+doesn't:
+
+| Must have | Why |
+|---|---|
+| The doing-mode script | Otherwise "Just the steps" is a button that does nothing |
+| `.go-do` / `.go-print` buttons | The mode switch, placed after the framing, before step 1 |
+| Viewport-locked doing layout | So Next can never be pushed off a phone screen |
+| `content:attr(data-n)` numbering | CSS counters skip hidden steps; without it every card reads "1" |
+| Print hides `.why` and `.whybtn` | The sheet is for doing, not reading |
+| Print forces all steps visible | Otherwise it prints only the step you were on |
+| `@page{size:Letter}` and a print zoom | US paper, and fill it — see below |
+| A `VALUE` tag on the signup | Untagged signups land nowhere |
+| A matching `<tag>-sequence.md` | A page that collects addresses and sends nothing is worse than no page |
+
+**After creating one, run
+[`tune_print_scale.py`](../.github/scripts/tune_print_scale.py)** logic against
+it to set the print zoom — sizes hand-tuned downward leave a third of the sheet
+blank.
+
 ## Printables are not the web page
 
 **A printable is a different document, not an export.** The page persuades; the

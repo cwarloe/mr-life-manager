@@ -63,6 +63,9 @@ Don't re-derive these — read them:
   printable can take without gaining a page and writes `.print-scale.json`.
   Re-run after a print-layout change; hand-tuning sizes downward is what left
   sheets two-thirds empty
+- `python3 .github/scripts/check_entry_pages.py` — every entry page carries the
+  doing-mode script, the print rules, a signup tag and a matching sequence.
+  Runs in CI. **New entry page? Copy `guests.html`**, don't build from scratch
 - `python3 .github/scripts/check_pdfs_fresh.py` — fails if a committed PDF is
   older than its source HTML. Runs in CI. **Change a guide's HTML and you must
   re-render**, or the emails link to the old version
