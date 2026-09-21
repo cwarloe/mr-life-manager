@@ -3,82 +3,39 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Send them the page that matches tonight — first night in a new place, or someone coming over.">
+<meta name="description" content="Send them the page that matches tonight — first night, guests, or just underwater.">
 <meta name="color-scheme" content="light dark">
 <title>Everything You Meant To Tell Them</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
 <style>
-:root{
-  --ink:#12161C; --paper:#FBF9F4; --surface:#FFFFFF;
-  --blue:#1F4E79; --blue-soft:#E7EEF5;
-  --amber:#B4741A; --amber-soft:#F7EEDD;
-  --slate:#6B7280; --rule:#D9D5CC; --rule-strong:#B8B2A6;
-  --sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
-    --blue:#8FB6DA; --blue-soft:#1D2833;
-    --amber:#E3A94E; --amber-soft:#2A2418;
-    --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
-  }
-}
-*{box-sizing:border-box}
-body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;
-  line-height:1.55;margin:0;-webkit-font-smoothing:antialiased}
-.wrap{max-width:60rem;margin:0 auto;padding:0 1.5rem}
-.narrow{max-width:42rem}
-.bar{border-bottom:1px solid var(--rule)}
-.bar .wrap{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.5rem}
-.brand{font-weight:700;font-size:.95rem;letter-spacing:-.01em;text-decoration:none;color:inherit}
-.brand span{color:var(--blue)}
+:root{--ink:#12161C;--paper:#FBF9F4;--surface:#FFFFFF;--blue:#1F4E79;--amber:#B4741A;--amber-soft:#F7EEDD;--slate:#6B7280;--rule:#D9D5CC;--rule-strong:#B8B2A6;--sans:"Archivo",system-ui,sans-serif;--serif:"Source Serif 4",Georgia,serif}
+@media(prefers-color-scheme:dark){:root{--ink:#E8E6E1;--paper:#14171B;--surface:#1B1F24;--blue:#8FB6DA;--amber:#E3A94E;--amber-soft:#2A2418;--slate:#9AA1AC;--rule:#2E343B;--rule-strong:#454C55}}
+*{box-sizing:border-box}body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;margin:0}
+.wrap{max-width:60rem;margin:0 auto;padding:0 1.5rem}.narrow{max-width:42rem}
+.bar{border-bottom:1px solid var(--rule)}.bar .wrap{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.5rem}
+.brand{font-weight:700;font-size:.95rem;text-decoration:none;color:inherit}.brand span{color:var(--blue)}
 .bar a{font-size:.85rem;color:var(--slate);text-decoration:none;font-weight:500}
-.bar a:hover{color:var(--blue)}
 .hero{padding:4.5rem 0 3.5rem;border-bottom:3px solid var(--ink)}
-.kicker{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--blue);margin:0 0 1.2rem}
-h1{font-size:clamp(2.4rem,7vw,4rem);font-weight:800;line-height:1.02;letter-spacing:-.03em;
-  margin:0;text-wrap:balance;max-width:19ch}
-.sub{font-family:var(--serif);font-size:clamp(1.1rem,2.4vw,1.35rem);line-height:1.5;
-  color:var(--slate);margin:1.4rem 0 0;max-width:46ch}
-.sub strong{color:var(--ink);font-weight:600}
+.kicker{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin:0 0 1.2rem}
+h1{font-size:clamp(2.4rem,7vw,4rem);font-weight:800;line-height:1.02;letter-spacing:-.03em;margin:0;text-wrap:balance;max-width:19ch}
+.sub{font-family:var(--serif);font-size:clamp(1.1rem,2.4vw,1.35rem);line-height:1.5;color:var(--slate);margin:1.4rem 0 0;max-width:46ch}.sub strong{color:var(--ink);font-weight:600}
 .picker{display:grid;gap:.75rem;margin:2rem 0 0;max-width:36rem}
-a.pick{display:grid;gap:.3rem;border:2px solid var(--rule-strong);border-radius:3px;
-  padding:1.15rem 1.4rem;background:var(--surface);text-decoration:none;color:inherit}
-a.pick:hover{border-color:var(--blue)}
-a.pick:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
-a.pick .q{font-size:1.12rem;font-weight:700;letter-spacing:-.01em;line-height:1.25}
-a.pick .a{font-family:var(--serif);font-size:.95rem;line-height:1.45;color:var(--slate)}
-.fine{font-size:.82rem;color:var(--slate);margin:1.4rem 0 0;max-width:42rem}
-.fine a{color:var(--blue);font-weight:600}
-section{padding:4rem 0}
-section + section{border-top:1px solid var(--rule)}
-.eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--blue);margin:0 0 .9rem}
-h2{font-size:clamp(1.6rem,3.6vw,2.2rem);font-weight:700;letter-spacing:-.02em;margin:0;
-  text-wrap:balance;max-width:22ch}
+a.pick{display:grid;gap:.3rem;border:2px solid var(--rule-strong);border-radius:3px;padding:1.15rem 1.4rem;background:var(--surface);text-decoration:none;color:inherit}
+a.pick:hover{border-color:var(--blue)}a.pick .q{font-size:1.12rem;font-weight:700}a.pick .a{font-family:var(--serif);font-size:.95rem;color:var(--slate)}
+.fine{font-size:.82rem;color:var(--slate);margin:1.4rem 0 0;max-width:42rem}.fine a{color:var(--blue);font-weight:600}
+section{padding:4rem 0}section+section{border-top:1px solid var(--rule)}
+.eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin:0 0 .9rem}
+h2{font-size:clamp(1.6rem,3.6vw,2.2rem);font-weight:700;letter-spacing:-.02em;margin:0;max-width:22ch}
 .lede{font-family:var(--serif);font-size:1.08rem;line-height:1.6;margin:1.1rem 0 0;max-width:58ch}
 p.body{font-family:var(--serif);font-size:1.03rem;line-height:1.65;margin:1.1rem 0 0;max-width:58ch}
-p.body strong{font-weight:600}
 .dave{background:var(--surface);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.pull{font-family:var(--serif);font-size:clamp(1.3rem,3.2vw,1.75rem);line-height:1.4;
-  font-style:italic;margin:1.6rem 0;padding-left:1.4rem;border-left:4px solid var(--amber);
-  max-width:34ch;text-wrap:balance}
-.attrib{font-family:var(--sans);font-style:normal;font-size:.8rem;font-weight:600;
-  letter-spacing:.08em;text-transform:uppercase;color:var(--slate);display:block;margin-top:.9rem}
+.pull{font-family:var(--serif);font-size:clamp(1.3rem,3.2vw,1.75rem);line-height:1.4;font-style:italic;margin:1.6rem 0;padding-left:1.4rem;border-left:4px solid var(--amber);max-width:34ch}
+.attrib{font-family:var(--sans);font-style:normal;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);display:block;margin-top:.9rem}
 .close{border-top:3px solid var(--ink);background:var(--surface)}
 footer{border-top:1px solid var(--rule);padding:2rem 0 3rem;font-size:.82rem;color:var(--slate)}
-footer .wrap{display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space-between}
-footer b{color:var(--ink);font-weight:600}
-footer a{color:var(--slate)}
-@media (max-width:34rem){
-  .hero{padding:3rem 0 2.5rem}
-  section{padding:3rem 0}
-}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+footer .wrap{display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space-between}footer b{color:var(--ink)}footer a{color:var(--slate)}
 </style>
 </head>
 <body>
@@ -102,10 +59,14 @@ footer a{color:var(--slate)}
       <span class="q">Someone's coming over and the place is a disaster</span>
       <span class="a">Six things, about thirty-five minutes — still works if they've only got ten.</span>
     </a>
+    <a class="pick" href="/underwater.html">
+      <span class="q">Nothing particular happened. They're just underwater</span>
+      <span class="a">Six things that put a floor under it. Forward this one when there is no event, just the mess.</span>
+    </a>
   </div>
   <p class="fine">Do not sign up for them. Forward the page that matches tonight.
   If they want a printable later, that ask lives at the bottom of the page they
-  actually used. More doors are coming. If you needed a different one,
+  actually used. The next door is moving in with someone. If you needed a different one,
   <a href="mailto:hello@mrlifemanager.com?subject=The%20one%20they%20need">tell me which</a>.</p>
 </div></header>
 <section class="dave"><div class="wrap narrow">
@@ -128,18 +89,11 @@ footer a{color:var(--slate)}
 </div></section>
 <section class="close"><div class="wrap">
   <h2>Send the page. Don't narrate it.</h2>
-  <p class="lede">One link, matched to what's actually going on. It covers what you'd tell
-  them if you had an uninterrupted hour and they were in the mood to listen — which,
-  realistically, isn't going to happen.</p>
+  <p class="lede">One link, matched to what's actually going on.</p>
   <div class="picker">
-    <a class="pick" href="/first-night.html">
-      <span class="q">First night</span>
-      <span class="a">mrlifemanager.com/first-night.html</span>
-    </a>
-    <a class="pick" href="/guests.html">
-      <span class="q">Someone's coming over</span>
-      <span class="a">mrlifemanager.com/guests.html</span>
-    </a>
+    <a class="pick" href="/first-night.html"><span class="q">First night</span><span class="a">mrlifemanager.com/first-night.html</span></a>
+    <a class="pick" href="/guests.html"><span class="q">Someone's coming over</span><span class="a">mrlifemanager.com/guests.html</span></a>
+    <a class="pick" href="/underwater.html"><span class="q">Just underwater</span><span class="a">mrlifemanager.com/underwater.html</span></a>
   </div>
 </div></section>
 <footer><div class="wrap">
