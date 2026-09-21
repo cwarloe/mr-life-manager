@@ -129,6 +129,11 @@ footer a{color:var(--blue);font-weight:600;text-decoration:none}
    meeting it cold on paper and bare commands would read as barking. */
 @media print{
   @page{size:Letter;margin:0.5in}
+  /* Sizes below were tuned downward until the sheet fit, which left a
+     third of the page blank. Measured with tune_print_scale.py: this is
+     the largest scale that still fits one page, less 3% headroom.
+     Chrome honours zoom in print and it scales pt units too. */
+  body{zoom:1.13}
   :root{--ink:#000;--paper:#fff;--surface:#fff;--slate:#333;--rule:#bbb;
     --rule-strong:#666;--blue:#1F4E79;--blue-soft:#fff;--amber:#7a4d0a;--amber-soft:#fff}
   body{font-size:10pt;line-height:1.34}
