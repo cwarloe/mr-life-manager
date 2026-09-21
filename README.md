@@ -170,9 +170,13 @@ verify it and learn from real people.
       per-pain entry pages; the action is free and ungated; signup comes after
       ([ADR-015](planning/decisions.md#adr-015--the-win-comes-before-the-email),
       [ADR-016](planning/decisions.md#adr-016--the-sequence-shrinks-unconditionally))
-- ✅ Two entry pages live with sequences drafted —
+- ✅ Four entry pages live, each with its own sequence drafted —
       [first night](products/landing/first-night.html) ·
-      [someone's coming over](products/landing/guests.html)
+      [someone's coming over](products/landing/guests.html) ·
+      [just underwater](products/landing/underwater.html) ·
+      [the room that became storage](products/landing/one-room.html).
+      Completeness is enforced by
+      [`check_entry_pages.py`](.github/scripts/check_entry_pages.py)
 - ✅ Public contact (`hello@mrlifemanager.com`) and [privacy page](products/landing/privacy.html)
 - ✅ Custom domain live at https://mrlifemanager.com (HTTPS)
 - ✅ Customer-interview script and Dave recording guide ready
