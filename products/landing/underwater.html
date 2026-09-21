@@ -49,17 +49,111 @@ footer{margin:3.5rem 0 0;padding:1.3rem 0 3.5rem;border-top:1px solid var(--rule
 .fork-btns{display:flex;flex-wrap:wrap;gap:.55rem}
 .fork-btns button{font-family:var(--sans);font-size:1rem;font-weight:700;padding:.72rem 1.15rem;border-radius:4px;cursor:pointer;border:2px solid var(--ink);background:var(--ink);color:var(--paper)}
 .fork-btns .go-print{background:transparent;color:var(--ink)}
-body.doing .fork,body.doing .frame,body.doing .after,body.doing .callout,body.doing .warn,body.doing .stop,body.doing .signup,body.doing footer{display:none}
-body.doing .why{display:none}body.doing .why.open{display:block}body.doing .whybtn{display:inline-block}
-body.doing header.top .sub{display:none}body.doing .steps{margin:0}body.doing .step{display:none}
-body.doing .step.current{display:flex;flex-direction:column;justify-content:center;min-height:calc(100dvh - 11rem);padding:1.2rem 0}
 .whybtn{display:none;margin:.5rem 0 0;font-family:var(--sans);font-size:.78rem;font-weight:600;color:var(--slate);background:none;border:0;border-bottom:1px dotted var(--rule-strong);cursor:pointer}
 .nav{display:none;margin:1.8rem 0 0;padding-top:1rem;border-top:1px solid var(--rule);align-items:center;gap:.75rem;flex-wrap:wrap}
-body.doing .nav{display:flex}.nav button{font-family:var(--sans);font-weight:700;font-size:1.05rem;padding:.85rem 1.3rem;border-radius:4px;border:2px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer;flex:1}
 .nav .back{background:transparent;color:var(--ink);flex:0 0 auto}.nav .exit{display:block;width:100%;flex:0 0 100%;background:none;border:0;color:var(--slate);text-decoration:underline;cursor:pointer}
 .done{display:none;margin:1.6rem 0 0;padding:1.4rem 1.25rem;border:2px solid var(--ink);border-radius:5px}
-body.doing .done.show{display:block}
-@media print{.signup,footer,.fork,.after,.callout{display:none}.step{page-break-inside:avoid}}
+@media print{
+  @page{size:Letter;margin:0.5in}
+  /* Sizes below were tuned downward until the sheet fit, which left a
+     third of the page blank. Measured with tune_print_scale.py: this is
+     the largest scale that still fits one page, less 3% headroom.
+     Chrome honours zoom in print and it scales pt units too. */
+  body{zoom:1.24}
+  :root{--ink:#000;--paper:#fff;--surface:#fff;--slate:#333;--rule:#bbb;
+    --rule-strong:#666;--blue:#1F4E79;--blue-soft:#fff;--amber:#7a4d0a;--amber-soft:#fff}
+  body{font-size:10pt;line-height:1.34}
+  .wrap{max-width:none;padding:0}
+  .fork,.after,.callout,.signup,footer,.frame p:last-child,.no-print,
+  .why,.why.open,.whybtn,.nav,.done{display:none !important}
+  .step{display:block !important}
+  header.top{padding:0;border-bottom:2px solid #000;padding-bottom:.35rem}
+  .eyebrow{font-size:7.5pt;margin:0 0 .12rem}
+  h1{font-size:19pt;line-height:1.02}
+  .sub{font-size:10pt;margin:.25rem 0 0;max-width:none}
+  .frame{margin:.4rem 0 0;padding:.4rem .55rem;border-radius:0;break-inside:avoid}
+  .frame p{font-size:9.5pt;line-height:1.36}
+  .steps{margin:.5rem 0 0}
+  .step{margin:0 0 .42rem;break-inside:avoid}
+  .step-head{gap:.4rem}
+  .step-head::before{font-size:11pt;min-width:1.15rem;height:1.15rem;border-radius:2px}
+  .step-head h2{font-size:11.5pt;line-height:1.14}
+  .mins{font-size:8pt;padding:.02rem .3rem}
+  .do{font-size:9.5pt;line-height:1.36;margin:.16rem 0 0;padding-left:1.55rem}
+  .warn{margin:.45rem 0 0;padding:.4rem .55rem;border-radius:0;break-inside:avoid}
+  .warn-label{font-size:7.5pt;margin:0 0 .12rem}
+  .warn p{font-size:9pt;line-height:1.34}
+  .warn p + p{margin-top:.15rem}
+  .stop{margin:.5rem 0 0;padding:.35rem 0 0;border-top:2px solid #000;break-inside:avoid}
+  .stop h2{font-size:12pt;margin:0 0 .18rem}
+  .stop p{font-size:9pt;line-height:1.36}
+  .stop p + p{margin-top:.18rem}
+  .printfoot{display:block !important;margin-top:.5rem;padding-top:.3rem;
+    border-top:1px solid #999;font-size:8pt;color:#333}
+}
+body.doing .fork,body.doing .frame,body.doing .after,body.doing .callout,
+body.doing .warn,body.doing .stop,body.doing .signup,body.doing footer{display:none}
+body.doing .why{display:none}
+body.doing .why.open{display:block}
+body.doing .whybtn{display:inline-block}
+body.doing header.top .sub{display:none}
+
+/* Doing mode locks the viewport: header at the top, nav pinned at the bottom,
+   the step scrolling between them. Nothing can push Next off the screen — not a
+   long step, not an opened Why?. Content fills the space rather than sitting in
+   a centred block with empty paper above and below it. */
+html:has(body.doing){height:100%}
+body.doing{height:100dvh;overflow:hidden;display:flex;flex-direction:column}
+@supports not (height:100dvh){body.doing{height:100vh}}
+body.doing .wrap{flex:1;min-height:0;display:flex;flex-direction:column;
+  padding-top:0;padding-bottom:0}
+body.doing h1{font-size:clamp(1.1rem,4.2vw,1.35rem);letter-spacing:-.02em}
+body.doing header.top{flex:0 0 auto;padding:.85rem 0 .55rem;border-bottom:2px solid var(--rule)}
+body.doing .eyebrow{font-size:.62rem;margin:0 0 .25rem}
+
+body.doing .steps{flex:1;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;
+  margin:0;padding:1.1rem 0 .6rem}
+body.doing .step{display:none}
+body.doing .step.current{display:block}
+body.doing .step-head{align-items:flex-start}
+body.doing .step-head h2{font-size:clamp(1.65rem,7vw,2.3rem);line-height:1.1}
+body.doing .step-head::before{font-size:1.5rem;min-width:2.1rem;height:2.1rem}
+body.doing .mins{font-size:.82rem;align-self:flex-start;margin-top:.35rem}
+
+/* One sentence per line. A dense paragraph is hard to hold your place in when
+   you're looking up from it every few seconds with your hands full. */
+body.doing .do{font-size:clamp(1.15rem,4.6vw,1.45rem);line-height:1.42;margin-top:1.1rem;
+  padding-left:0}
+body.doing .do .s{display:block}
+body.doing .do .s + .s{margin-top:.62rem}
+body.doing .why{font-size:1.02rem;line-height:1.55;margin-top:1rem;
+  border-left:3px solid var(--rule);padding-left:.9rem}
+body.doing .whybtn{margin-top:1.1rem}
+
+.nav{display:none}
+body.doing .nav{display:flex;flex:0 0 auto;align-items:center;gap:.6rem;flex-wrap:wrap;
+  margin:0;padding:.7rem 0 calc(.7rem + env(safe-area-inset-bottom));
+  border-top:1px solid var(--rule);background:var(--paper)}
+.nav button{font-family:var(--sans);font-weight:700;font-size:1.05rem;padding:.9rem 1.3rem;
+  border-radius:4px;border:2px solid var(--ink);background:var(--ink);color:var(--paper);
+  cursor:pointer;flex:1}
+.nav .back{background:transparent;color:var(--ink);flex:0 0 auto;font-size:.9rem;padding:.9rem 1rem}
+.nav button:disabled{opacity:.3;cursor:default}
+.nav .count{font-size:.85rem;font-weight:600;color:var(--slate);flex:0 0 auto;
+  font-variant-numeric:tabular-nums}
+.nav .exit{display:block;width:100%;flex:0 0 100%;margin:0;font-family:var(--sans);
+  font-size:.78rem;font-weight:600;color:var(--slate);background:none;border:0;padding:.15rem 0 0;
+  text-align:left;cursor:pointer;text-decoration:underline}
+
+.done{display:none}
+body.doing .done.show{display:block;margin:0;padding:1.4rem 1.25rem;
+  border:2px solid var(--ink);border-radius:5px}
+/* CSS counters skip display:none elements, so with one step visible at a time
+   every card numbered itself 1. Doing mode reads the real index from a data
+   attribute the script writes instead. */
+body.doing .step-head::before{content:attr(data-n)}
+
+.done h2{font-size:1.45rem;font-weight:800;margin:0 0 .5rem}
 </style>
 <script>
 (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
@@ -183,6 +277,96 @@ ml('account','2635985');
   nav.querySelector('.back').addEventListener('click',function(){ show(i-1); });
   Array.prototype.forEach.call(document.querySelectorAll('.exit'),function(b){ b.addEventListener('click',stop); });
 })();
+</script>
+<script>
+  // Reading mode persuades; doing mode gets it done. The "why" has done its job
+  // by the time someone commits, so doing mode hides it — recoverable on a tap,
+  // never in the way, and gone entirely in print.
+  (function () {
+    var body = document.body;
+    var steps = Array.prototype.slice.call(document.querySelectorAll('.step'));
+    if (!steps.length) return;
+    var i = 0;
+
+    // Reading mode wants prose. Doing mode wants one sentence per line — you're
+    // looking up from it every few seconds and a dense block is hard to find
+    // your place in again. Splits on sentence ends only, so inline markup is
+    // untouched.
+    steps.forEach(function (s) {
+      var d = s.querySelector('.do');
+      if (!d || d.dataset.split) return;
+      d.dataset.split = '1';
+      var parts = d.innerHTML.split(/(?<=[.!?])\s+(?=[A-Z])/);
+      if (parts.length > 1) {
+        d.innerHTML = parts.map(function (t) {
+          return '<span class="s">' + t + '</span>';
+        }).join('');
+      }
+    });
+
+    steps.forEach(function (s) {
+      var why = s.querySelector('.why');
+      if (!why) return;
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'whybtn'; b.textContent = 'Why?';
+      b.addEventListener('click', function () {
+        var open = why.classList.toggle('open');
+        b.textContent = open ? 'Hide' : 'Why?';
+      });
+      why.parentNode.insertBefore(b, why);
+    });
+
+    steps.forEach(function (s, k) {
+      var head = s.querySelector('.step-head');
+      if (head) head.setAttribute('data-n', k + 1);
+    });
+
+    var nav = document.createElement('div');
+    nav.className = 'nav';
+    nav.innerHTML =
+      '<button type="button" class="back">Back</button>' +
+      '<button type="button" class="next">Next step</button>' +
+      '<span class="count"></span>' +
+      '<button type="button" class="exit">Show the whole page again</button>';
+    var done = document.createElement('div');
+    done.className = 'done';
+    done.innerHTML = '<h2>That\u2019s everything.</h2>' +
+      '<p>Whatever you got through is what there was time for. The order runs biggest ' +
+      'difference first, so wherever you stopped is the right place to have stopped.</p>' +
+      '<button type="button" class="exit">Show the whole page again</button>';
+    var list = document.querySelector('.steps');
+    list.parentNode.insertBefore(nav, list.nextSibling);
+    nav.parentNode.insertBefore(done, nav);
+
+    function show(n) {
+      i = n;
+      steps.forEach(function (s, k) { s.classList.toggle('current', k === i); });
+      var end = i >= steps.length;
+      done.classList.toggle('show', end);
+      nav.querySelector('.next').textContent = i === steps.length - 1 ? 'Done' : 'Next step';
+      nav.querySelector('.back').disabled = i === 0;
+      nav.querySelector('.count').textContent = end ? '' : (i + 1) + ' of ' + steps.length;
+      nav.style.display = end ? 'none' : '';
+      window.scrollTo(0, 0);
+    }
+    function start() { body.classList.add('doing'); show(0); }
+    function stop() {
+      body.classList.remove('doing');
+      steps.forEach(function (s) { s.classList.remove('current'); });
+      done.classList.remove('show');
+      document.querySelector('.fork').scrollIntoView({block: 'center'});
+    }
+
+    var goDo = document.querySelector('.go-do');
+    var goPrint = document.querySelector('.go-print');
+    if (goDo) goDo.addEventListener('click', start);
+    if (goPrint) goPrint.addEventListener('click', function () { window.print(); });
+    nav.querySelector('.next').addEventListener('click', function () { show(i + 1); });
+    nav.querySelector('.back').addEventListener('click', function () { show(i - 1); });
+    Array.prototype.forEach.call(document.querySelectorAll('.exit'), function (b) {
+      b.addEventListener('click', stop);
+    });
+  })();
 </script>
 </body>
 </html>

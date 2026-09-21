@@ -243,6 +243,10 @@ body.doing .nav{display:flex;flex:0 0 auto;align-items:center;gap:.6rem;flex-wra
 .done{display:none}
 body.doing .done.show{display:block;margin:0;padding:1.4rem 1.25rem;
   border:2px solid var(--ink);border-radius:5px}
+/* CSS counters skip display:none elements, so with one step visible at a time
+   every card numbered itself 1. Doing mode reads the real index from a data
+   attribute the script writes instead. */
+body.doing .step-head::before{content:attr(data-n)}
 .done h2{font-size:1.45rem;font-weight:800;letter-spacing:-.02em;margin:0 0 .5rem}
 .done p{font-family:var(--serif);font-size:1.04rem;line-height:1.6;margin:0 0 .8rem}
 .done button{font-family:var(--sans);font-weight:700;font-size:1rem;padding:.7rem 1.15rem;
@@ -493,6 +497,11 @@ body.doing .done.show{display:block;margin:0;padding:1.4rem 1.25rem;
         b.textContent = open ? 'Hide' : 'Why?';
       });
       why.parentNode.insertBefore(b, why);
+    });
+
+    steps.forEach(function (s, k) {
+      var head = s.querySelector('.step-head');
+      if (head) head.setAttribute('data-n', k + 1);
     });
 
     var nav = document.createElement('div');
