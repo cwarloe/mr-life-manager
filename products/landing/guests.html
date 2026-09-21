@@ -133,7 +133,9 @@ footer a{color:var(--blue);font-weight:600;text-decoration:none}
     --rule-strong:#666;--blue:#1F4E79;--blue-soft:#fff;--amber:#7a4d0a;--amber-soft:#fff}
   body{font-size:10pt;line-height:1.34}
   .wrap{max-width:none;padding:0}
-  .fork,.after,.callout,.signup,footer,.frame p:last-child,.no-print{display:none}
+  .fork,.after,.callout,.signup,footer,.frame p:last-child,.no-print,
+  .why,.whybtn,.nav,.done{display:none}
+  .step{display:block !important}
   header.top{padding:0;border-bottom:2px solid #000;padding-bottom:.35rem}
   .eyebrow{font-size:7.5pt;margin:0 0 .12rem}
   h1{font-size:19pt;line-height:1.02}
@@ -163,6 +165,63 @@ footer a{color:var(--blue);font-weight:600;text-decoration:none}
     border-top:1px solid #999;font-size:8pt;color:#333}
 }
 .printfoot{display:none}
+
+/* ---- doing mode ----
+   The "why" exists to get someone to start. Once they have, the same text is
+   clutter — on a phone and on paper alike. Doing mode hides it, makes the type
+   bigger rather than smaller, and shows one step at a time so the screen is
+   never a rubber-band scroll of things not yet relevant. */
+.fork-sub{font-family:var(--serif);font-size:.92rem;line-height:1.45;color:var(--slate);margin:.2rem 0 .8rem}
+.fork-btns{display:flex;flex-wrap:wrap;gap:.55rem;margin:0}
+.fork-btns button{font-family:var(--sans);font-size:1rem;font-weight:700;letter-spacing:-.01em;
+  padding:.72rem 1.15rem;border-radius:4px;cursor:pointer;border:2px solid var(--ink);
+  background:var(--ink);color:var(--paper)}
+.fork-btns .go-print{background:transparent;color:var(--ink)}
+.fork-btns button:hover{border-color:var(--blue);background:var(--blue);color:#fff}
+.fork-btns button:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+
+.whybtn{display:none;margin:.5rem 0 0;font-family:var(--sans);font-size:.78rem;font-weight:600;
+  letter-spacing:.02em;color:var(--slate);background:none;border:0;border-bottom:1px dotted var(--rule-strong);
+  padding:0 0 1px;cursor:pointer}
+.whybtn:hover{color:var(--blue);border-bottom-color:var(--blue)}
+
+body.doing .fork,body.doing .frame,body.doing .after,body.doing .callout,
+body.doing .warn,body.doing .stop,body.doing .signup,body.doing footer{display:none}
+body.doing .why{display:none}
+body.doing .why.open{display:block}
+body.doing .whybtn{display:inline-block}
+body.doing header.top .sub{display:none}
+body.doing h1{font-size:clamp(1.35rem,5vw,1.7rem);letter-spacing:-.02em}
+body.doing header.top{padding:1.4rem 0 0;border-bottom:2px solid var(--rule);padding-bottom:.7rem}
+
+/* one card at a time */
+body.doing .steps{margin:1.4rem 0 0}
+body.doing .step{display:none}
+body.doing .step.current{display:block}
+body.doing .step-head h2{font-size:clamp(1.5rem,6vw,2rem);line-height:1.12}
+body.doing .step-head::before{font-size:1.9rem;min-width:2.5rem;height:2.5rem}
+body.doing .do{font-size:1.18rem;line-height:1.5;margin-top:1rem}
+body.doing .why{font-size:1rem;line-height:1.55;margin-top:.9rem}
+
+.nav{display:none;margin:1.8rem 0 0;padding-top:1rem;border-top:1px solid var(--rule);
+  align-items:center;gap:.75rem;flex-wrap:wrap}
+body.doing .nav{display:flex}
+.nav button{font-family:var(--sans);font-weight:700;font-size:1.05rem;padding:.85rem 1.3rem;
+  border-radius:4px;border:2px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer;flex:1}
+.nav .back{background:transparent;color:var(--ink);flex:0 0 auto;font-size:.9rem;padding:.85rem 1rem}
+.nav button:disabled{opacity:.3;cursor:default}
+.nav .count{font-size:.85rem;font-weight:600;color:var(--slate);flex:0 0 auto;
+  font-variant-numeric:tabular-nums}
+.nav .exit{display:block;width:100%;flex:0 0 100%;margin-top:.2rem;font-family:var(--sans);
+  font-size:.8rem;font-weight:600;color:var(--slate);background:none;border:0;padding:.3rem 0;
+  text-align:left;cursor:pointer;text-decoration:underline}
+
+.done{display:none;margin:1.6rem 0 0;padding:1.4rem 1.25rem;border:2px solid var(--ink);border-radius:5px}
+body.doing .done.show{display:block}
+.done h2{font-size:1.45rem;font-weight:800;letter-spacing:-.02em;margin:0 0 .5rem}
+.done p{font-family:var(--serif);font-size:1.04rem;line-height:1.6;margin:0 0 .8rem}
+.done button{font-family:var(--sans);font-weight:700;font-size:1rem;padding:.7rem 1.15rem;
+  border-radius:4px;border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
 </style>
 <script>
   (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
@@ -191,10 +250,12 @@ footer a{color:var(--blue);font-weight:600;text-decoration:none}
 </div>
 
 <div class="fork">
-  <p class="fork-lead">Two ways to do this.</p>
-  <p class="fork-body">Keep scrolling on your phone, or
-  <a href="#" class="printlink">print it and put the phone down</a> — you're
-  about to have wet hands.</p>
+  <p class="fork-lead">Ready to start?</p>
+  <p class="fork-sub">The steps are below either way. These just clear everything else out of the way.</p>
+  <p class="fork-btns">
+    <button type="button" class="go-do">Just the steps</button>
+    <button type="button" class="go-print">Print it</button>
+  </p>
 </div>
 
 <ol class="steps">
@@ -372,12 +433,73 @@ footer a{color:var(--blue);font-weight:600;text-decoration:none}
   })();
 </script>
 <script>
-  // The fork is a real choice, not a fallback: print is often the better tool
-  // when both your hands are busy. Progressive — the link still reads sensibly
-  // if the click handler never runs.
-  document.querySelectorAll('.printlink').forEach(function (a) {
-    a.addEventListener('click', function (e) { e.preventDefault(); window.print(); });
-  });
+  // Reading mode persuades; doing mode gets it done. The "why" has done its job
+  // by the time someone commits, so doing mode hides it — recoverable on a tap,
+  // never in the way, and gone entirely in print.
+  (function () {
+    var body = document.body;
+    var steps = Array.prototype.slice.call(document.querySelectorAll('.step'));
+    if (!steps.length) return;
+    var i = 0;
+
+    steps.forEach(function (s) {
+      var why = s.querySelector('.why');
+      if (!why) return;
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'whybtn'; b.textContent = 'Why?';
+      b.addEventListener('click', function () {
+        var open = why.classList.toggle('open');
+        b.textContent = open ? 'Hide' : 'Why?';
+      });
+      why.parentNode.insertBefore(b, why);
+    });
+
+    var nav = document.createElement('div');
+    nav.className = 'nav';
+    nav.innerHTML =
+      '<button type="button" class="back">Back</button>' +
+      '<button type="button" class="next">Next step</button>' +
+      '<span class="count"></span>' +
+      '<button type="button" class="exit">Show the whole page again</button>';
+    var done = document.createElement('div');
+    done.className = 'done';
+    done.innerHTML = '<h2>That\u2019s everything.</h2>' +
+      '<p>Whatever you got through is what there was time for. The order runs biggest ' +
+      'difference first, so wherever you stopped is the right place to have stopped.</p>' +
+      '<button type="button" class="exit">Show the whole page again</button>';
+    var list = document.querySelector('.steps');
+    list.parentNode.insertBefore(nav, list.nextSibling);
+    nav.parentNode.insertBefore(done, nav);
+
+    function show(n) {
+      i = n;
+      steps.forEach(function (s, k) { s.classList.toggle('current', k === i); });
+      var end = i >= steps.length;
+      done.classList.toggle('show', end);
+      nav.querySelector('.next').textContent = i === steps.length - 1 ? 'Done' : 'Next step';
+      nav.querySelector('.back').disabled = i === 0;
+      nav.querySelector('.count').textContent = end ? '' : (i + 1) + ' of ' + steps.length;
+      nav.style.display = end ? 'none' : '';
+      window.scrollTo(0, 0);
+    }
+    function start() { body.classList.add('doing'); show(0); }
+    function stop() {
+      body.classList.remove('doing');
+      steps.forEach(function (s) { s.classList.remove('current'); });
+      done.classList.remove('show');
+      document.querySelector('.fork').scrollIntoView({block: 'center'});
+    }
+
+    var goDo = document.querySelector('.go-do');
+    var goPrint = document.querySelector('.go-print');
+    if (goDo) goDo.addEventListener('click', start);
+    if (goPrint) goPrint.addEventListener('click', function () { window.print(); });
+    nav.querySelector('.next').addEventListener('click', function () { show(i + 1); });
+    nav.querySelector('.back').addEventListener('click', function () { show(i - 1); });
+    Array.prototype.forEach.call(document.querySelectorAll('.exit'), function (b) {
+      b.addEventListener('click', stop);
+    });
+  })();
 </script>
 </body>
 </html>
