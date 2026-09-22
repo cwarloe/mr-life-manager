@@ -139,3 +139,24 @@ the line is clear.
 appropriate scoped license text for the free material and keep paid products
 all rights reserved. Have an attorney review the structure before relying on it
 commercially, especially because the brand is tied to a real person.
+
+## Proposed implementation map for review
+
+This is the concrete file plan, not a published licence:
+
+| Material | Proposed treatment |
+|---|---|
+| `frameworks/`, `docs/vision/`, reusable `content/` | CC BY-NC-SA 4.0 |
+| Current free landing pages, guides and printables | CC BY-NC-SA 4.0 with an explicit notice on each artifact |
+| Future paid products | All rights reserved; customer-use terms supplied at sale |
+| `source-material/` | Excluded until contributor rights are documented; public visibility is not permission to reuse |
+| `docs/business/`, `planning/`, research and build code | All rights reserved unless a separate notice says otherwise |
+| Mr. Life Manager name, marks and visual identity | Not licensed for general use; attribution may name the source |
+
+Counsel should confirm that the desired “brand travels with it” result is
+implemented through attribution without accidentally granting broader trademark
+rights. After contributor rights and the name review are settled, implementation
+would require a scoped legal-code file, a short trademark notice, directory
+notices where treatment differs, and matching language on every free artifact.
+Until then, `PERMISSIONS.md` remains an expression of intended permission rather
+than a completed legal instrument.

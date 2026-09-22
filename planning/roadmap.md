@@ -124,17 +124,21 @@ what you make.
       *skip* — the fastest credibility move in a category full of affiliate
       content. **The free tier is drafted and designed. None of it is tested with a
       real reader.**
-- [x] **Landing page — drafted, designed, and deployed** through GitHub Pages.
-      MailerLite form `00ZwEr` is embedded on both landing-page variants
+- [x] **Four-door funnel — drafted, designed, and deployed** through GitHub
+      Pages. The homepage routes by present pain; MailerLite form `00ZwEr` is
+      embedded after the action on all four entry pages
       ([product](../products/landing/), [setup](../products/landing/SETUP.md)).
-- [x] **Email provider connected — MailerLite.** End-to-end delivery testing is
-      still required before broad distribution.
-- [x] **Welcome sequence — draft 1 written** 2026-09-09
-      ([emails](../products/landing/emails/welcome-sequence.md)). Three emails,
-      nothing to buy in any of them. The day-7 email is the research channel —
-      it asks what they're stuck on and commits to answering every reply.
-- [x] **Parent-facing variant — drafted, connected, and deployed** 2026-09-16
-      ([index-parents.html](../products/landing/index-parents.html)). Tests the
+- [x] **Email provider connected — MailerLite.** Four entry-specific automations
+      reported active 2026-09-22. Each sends one PDF link in email 1: `The Week`.
+      Keep the last controlled delivery-test result in
+      [operations.md](operations.md).
+- [x] **Entry-specific sequences — active.** The original site-wide
+      [welcome sequence](../products/landing/emails/welcome-sequence.md) is
+      withdrawn. Each door now has three emails; the final email asks one easy
+      research question and then the sequence stops.
+- [x] **Parent-facing referral page — deployed** 2026-09-16
+      ([index-parents.html](../products/landing/index-parents.html)). It collects
+      no email; a parent forwards the matching door. This tests the
       buyer-isn't-the-user hypothesis that may unlock the student market.
 
 ### Distribute
@@ -300,8 +304,8 @@ those first.
 
 ## The next three things
 
-1. Verify the MailerLite funnel end to end and add the public contact/privacy
-   details needed before broad distribution.
+1. Record a controlled four-page MailerLite delivery test, enable minimal
+   visitor measurement, and begin one distribution experiment at a time.
 2. Complete the USPTO/name check, domain check, and social-handle check before
    investing further in the brand.
 3. Record Dave and line up the first five Phase 1 conversations. Use what those

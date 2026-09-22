@@ -40,3 +40,7 @@ desktop.ini
 /private/
 customer-lists/
 _site/
+
+# Python caches
+__pycache__/
+*.py[cod]

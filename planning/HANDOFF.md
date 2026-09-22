@@ -31,7 +31,9 @@ email ask. Four entry pages are live and CI-complete (`first-night`, `guests`,
 Next/Back, `Why?` toggles) and a real one-page printable. Nine printables
 render to PDF from HTML via headless Chromium with brand fonts embedded
 (`.github/scripts/render_all_pdfs.py`). Four MailerLite email sequences are
-written; Charles's bot is wiring them.
+active per owner confirmation on 2026-09-22. Each sends one PDF link in email 1:
+`/print/the-week.pdf`. The entry-page action sheet is available before signup
+and is never promised by email.
 
 CI scripts enforce the invariants — run them before committing:
 - `python3 .github/scripts/validate_repo.py` (HTML + internal links)
@@ -39,6 +41,12 @@ CI scripts enforce the invariants — run them before committing:
   mode buttons, print rules, a signup tag, AND a matching `<tag>-sequence.md`)
 - `python3 .github/scripts/check_pdfs_fresh.py` (PDF source hash unchanged)
 - `python3 .github/scripts/build_site.py` (assemble `_site/`)
+- `python3 .github/scripts/check_built_site.py` (generated metadata, routes and
+  offer invariants; run after the build)
+
+Production monitoring runs automatically after Pages deploys and every Monday
+through `.github/workflows/check-live-site.yml`. It checks public pages and the
+single promised PDF without submitting the MailerLite form.
 
 ## Open threads (nothing is blocking)
 
@@ -58,7 +66,12 @@ CI scripts enforce the invariants — run them before committing:
 3. **`Do it now.jpg`** (2023 attachment) still unretrieved — Drive can read
    JPEGs if he adds it.
 4. ~~The `underwater` and `one-room` email copy is unreviewed.~~ **Reviewed
-   2026-09-21** (PR #10). Shape unchanged. Still not sent; bot wires MailerLite.
+   2026-09-21** (PR #10) and reported active 2026-09-22. Reader validation
+   remains open.
+
+Business operations, trigger gates, account continuity and the last external
+funnel check live in [`operations.md`](operations.md). Monthly evidence lives in
+[`monthly-scorecard.md`](monthly-scorecard.md); do not create a parallel tracker.
 
 ## The workflow
 

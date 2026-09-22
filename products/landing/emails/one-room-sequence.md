@@ -1,7 +1,7 @@
 # Sequence — "The room that became storage" (Draft 2)
 
 **Entry:** [`/one-room.html`](../one-room.html). Tagged `guide=one-room`.
-**Status:** Reviewed 2026-09-21 against house style and the first-night / guests sequences. Not sent.
+**Status:** Active in MailerLite per owner 2026-09-22. Reviewed against house style; reader validation remains open.
 **Governed by** [ADR-016](../../../planning/decisions.md#adr-016--the-sequence-shrinks-unconditionally)
 and [ADR-015](../../../planning/decisions.md#adr-015--the-win-comes-before-the-email).
 

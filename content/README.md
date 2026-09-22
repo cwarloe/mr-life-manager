@@ -108,7 +108,7 @@ prevented:
 | `.no-print` on sections that aren't for the printed context | A shopping list doesn't need "where to keep it" — that's for when you're home |
 
 **What's worth printing is what gets used again.** A sheet for something someone
-does once has no reason to exist. That is why both email sequences hand over
+does once has no reason to exist. That is why all four email sequences hand over
 The Week rather than a copy of the page the reader just finished.
 
 ## Email voice: write full sentences
@@ -207,6 +207,8 @@ Simple and effective is the product. Thorough is a different business.
 
 ## Status
 
-Empty. Content production begins in Phase 2 of the
-[roadmap](../planning/roadmap.md). Priorities are in
+The domain structure and reuse rules are established, but most validated
+teaching still lives in the current products and source analyses. Extract
+material into this library only after real-reader evidence shows it survives;
+do not pause validation for an architectural refactor. Priorities are in
 [backlog.md](../planning/backlog.md).

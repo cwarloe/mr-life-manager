@@ -1,142 +1,88 @@
-# MailerLite — wiring the two sequences
+# MailerLite — operating specification
 
-**Account:** `2635985` · **Form:** `00ZwEr` (embedded on both entry pages)
-**Written 2026-09-20.** Nothing below is configured yet.
+**Account:** `2635985` · **Embedded form:** `00ZwEr`
+**Status reported by owner 2026-09-22:** four automations are active. Each
+sequence sends one PDF link in email 1 —
+[`The Week`](https://mrlifemanager.com/print/the-week.pdf) — followed by two
+smaller emails and then stops. The entry-page action sheet is available before
+signup and is never promised by email.
 
-> **Handing this to an agent instead?**
-> [`MAILERLITE-AGENT-PROMPT.md`](MAILERLITE-AGENT-PROMPT.md) is the same job
-> written as a runnable prompt, with the email copy embedded so nothing gets
-> improvised. This file stays the source of truth if the two disagree.
+This file describes the intended live state. The repository can verify the
+public pages and PDF, but it cannot inspect MailerLite's private automation
+state. If the account and this file disagree, pause broad distribution until the
+account has been brought back to this specification.
 
-Both entry pages already inject a hidden field on submit:
+## Routing
 
-| Page | Hidden field |
-|---|---|
-| `/first-night.html` | `guide` = `first-night` |
-| `/guests.html` | `guide` = `guests` |
+The same form is embedded after the completed action on all four pages. Page
+code sends the tag under both `fields[guide]` and `guide` because MailerLite's
+rendered field naming has varied.
 
-That field is the only thing that decides which sequence someone gets. Everything
-else follows from it.
+| Entry page | `guide` value | Group | Sequence source |
+|---|---|---|---|
+| `/first-night.html` | `first-night` | `entry-first-night` | [`first-night-sequence.md`](first-night-sequence.md) |
+| `/guests.html` | `guests` | `entry-guests` | [`guests-sequence.md`](guests-sequence.md) |
+| `/underwater.html` | `underwater` | `entry-underwater` | [`underwater-sequence.md`](underwater-sequence.md) |
+| `/one-room.html` | `one-room` | `entry-one-room` | [`one-room-sequence.md`](one-room-sequence.md) |
+| missing or unknown | anything else | `entry-unknown` | none; investigate |
 
----
+`entry-unknown` is an alarm. It should stay empty.
 
-## 0. Authenticate the sending domain — do this first
+## Sequence invariant
 
-**Settings → Domains → Authenticate.** Add the SPF and DKIM records MailerLite
-gives you to the DNS for `mrlifemanager.com`, in the same place the site's A
-records live.
+Each automation triggers when a subscriber joins its matching group:
 
-This is the step people skip, and skipping it is why a sequence that works
-perfectly ends up in spam. Nothing below matters if the mail doesn't arrive.
-Allow up to a day for DNS, and don't send anything real until MailerLite shows
-the domain verified.
-
-Also confirm automations are available on the plan you're on before building
-them — that varies, and it's better to find out now than after writing them in.
-
-## 1. Create the custom field
-
-**Subscribers → Fields → Create field.** Type **Text**, key `guide`.
-
-**A mismatch here fails silently** — signups keep working, they just all arrive
-with no `guide` value and therefore no sequence. That is the single most likely
-way this setup breaks, and it breaks quietly.
-
-> **Known risk, handled in the page code.** MailerLite names its embedded-form
-> inputs `fields[email]`, not `email`. The first version of the entry pages
-> appended a hidden input called `guide`, which MailerLite would most likely have
-> discarded. Both pages now **read the naming convention off the rendered form**
-> and match it — `fields[guide]` where the form uses `fields[…]`, `guide` where
-> it doesn't, and both if it can't tell. This has **not been verified against a
-> live form**, so step 1 of the test below is the one that matters.
-
-## 2. Two groups
-
-`entry-first-night` and `entry-guests`. Groups, not segments — automations trigger
-more reliably on group join.
-
-## 3. Two automations
-
-Each one: **trigger = subscriber joins group**, then three emails.
-
-| | Delay | Subject |
+| Email | Timing | Purpose |
 |---|---|---|
-| 1 | immediately | Here's the printable |
-| 2 | 3 days after previous | *first-night:* Smaller than a box · *guests:* The shorter version |
-| 3 | 4 days after previous | One question |
+| 1 | Immediately | Link `The Week`; add one entry-specific action |
+| 2 | Three days later | Ask less than email 1 |
+| 3 | Four days later | One easy reply question, then stop |
 
-Copy is in [`first-night-sequence.md`](first-night-sequence.md) and
-[`guests-sequence.md`](guests-sequence.md). Paste it as written — the wording is
-load-bearing, not decorative.
+Settings for all four:
 
-**Settings that matter:**
+- Allow re-entry: **off**
+- Resend to unopens: **off**
+- Stop on reply: **on**, if the plan supports it
+- Sender: **Charles**, from an address that accepts replies
+- No fourth email, promotion, win-back, or behavior-based branch
 
-- **Allow re-entry: OFF.** Nobody should get the same sequence twice.
-- **Resend to unopens: OFF.** It's on by default in some accounts and it
-  directly violates [ADR-016](../../../planning/decisions.md#adr-016--the-sequence-shrinks-unconditionally)
-  — it re-asks for the same thing, which is the one move the whole sequence is
-  designed not to make.
-- **Stop on reply** if the plan offers it. A reply means a conversation, not
-  another scheduled email.
-- **Sender:** Charles, from a real address that accepts replies. The emails are
-  signed by a person and email 3 says *"it's me reading them, not a system."*
-  That has to be true.
+The copy files are the source of truth. The withdrawn
+[`welcome-sequence.md`](welcome-sequence.md) must never be reactivated.
 
-## 4. Routing on the `guide` field
+## Delivery promise
 
-Simplest reliable arrangement — a condition on the form submission, or an
-automation on the main form that sorts and stops:
+The website gives the immediate task and print option before signup. Email 1
+delivers only:
 
-```
-if guide = "first-night"  → add to group entry-first-night
-if guide = "guests"       → add to group entry-guests
-else                      → add to group entry-unknown
-```
+`https://mrlifemanager.com/print/the-week.pdf`
 
-**Keep `entry-unknown`.** It should stay empty. If it fills up, the hidden field
-isn't arriving, and that's the failure mode to watch for.
+It does not promise or deliver a second PDF. This distinction implements
+[ADR-015](../../../planning/decisions.md#adr-015--the-win-comes-before-the-email):
+the reader has already acted; email supplies the reusable maintenance system.
 
-## 5. The printable links
+## Operational verification
 
-Linked, not attached — better deliverability and it can be corrected after
-sending without re-sending.
+The public-site monitor verifies that all four pages load, contain the correct
+form and route tag, and that `The Week` resolves as a PDF. A controlled external
+account check is still the only way to prove private MailerLite behavior:
 
-| Sequence | URL |
-|---|---|
-| first-night | `https://mrlifemanager.com/print/first-night.pdf` |
-| guests | `https://mrlifemanager.com/print/guests-when-someone-is-coming-over.pdf` |
+- each tag reaches its matching group;
+- `entry-unknown` remains empty;
+- email 1 arrives and its single PDF link works;
+- replies reach the monitored inbox;
+- unsubscribe and the required footer work;
+- email 2 and email 3 follow their delays; and
+- nothing arrives after email 3.
 
-Published by the build from `products/guides-pdf/`. **Open both in a browser
-before sending anything** — a dead link in email 1 kills the sequence at the only
-moment the reader is paying attention.
+Record the date and result in
+[`planning/operations.md`](../../../planning/operations.md) when that
+account-level check is performed. Remove test subscribers afterward so the
+operating numbers remain honest.
 
----
+## Domain state
 
-## Test it before it's real
-
-Subscribe yourself from **both** pages, using two addresses, and confirm:
-
-- [ ] Each one lands in the right group, with `guide` populated
-- [ ] `entry-unknown` is empty
-- [ ] Email 1 arrives within a few minutes and the printable link opens
-- [ ] The subject lines are right and the sender name is a person
-- [ ] Unsubscribe works and the footer address is correct
-- [ ] Replying reaches a real inbox someone reads
-- [ ] Email 2 arrives on day 3 and **asks for less than email 1** — if it reads
-      like a nudge, it's wrong
-- [ ] Nothing arrives after email 3
-
-Then remove both test addresses so they don't pollute the first real numbers.
-
----
-
-## What not to turn on
-
-- **Re-engagement / win-back campaigns.** "We miss you", "you haven't opened in a
-  while" — both reference behaviour we agreed never to reference, and both
-  manufacture the exact shame this brand exists to remove.
-- **Open tracking as a decision input.** It can stay on for curiosity, but Apple
-  Mail Privacy Protection pre-fetches images, so a share of recorded opens never
-  happened. **Nothing branches on it.**
-- **Anything after email 3.** Silence means stop. If there's a reason to write
-  again later, it's a new decision, not an automation that was left running.
+Direct DNS checks on 2026-09-22 found MailerLite domain verification, SPF for
+MailerLite and Zoho, and MailerLite DKIM selectors. No DMARC record resolved.
+DMARC is the remaining authentication task; begin in monitoring mode and do not
+enforce quarantine or rejection until both MailerLite and Zoho alignment have
+been confirmed.

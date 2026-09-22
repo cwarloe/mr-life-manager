@@ -8,6 +8,9 @@ on:
       - "**/*.html"
       - "**/*.md"
       - "products/guides-pdf/**"
+      - ".github/scripts/build_site.py"
+      - ".github/scripts/check_built_site.py"
+      - ".github/scripts/check_live_site.py"
       - ".github/scripts/validate_repo.py"
       - ".github/scripts/check_pdfs_fresh.py"
       - ".github/scripts/check_entry_pages.py"
@@ -32,3 +35,8 @@ jobs:
 
       - name: Entry pages are complete
         run: python .github/scripts/check_entry_pages.py
+
+      - name: Build and validate public site
+        run: |
+          python .github/scripts/build_site.py
+          python .github/scripts/check_built_site.py

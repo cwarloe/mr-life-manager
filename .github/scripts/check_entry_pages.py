@@ -32,6 +32,8 @@ REQUIRED = [
     ("print forces all steps", ".step{display:block !important}"),
     ("Letter page size", "@page{size:Letter"),
     ("print scale", "body{zoom:"),
+    ("MailerLite form", 'data-form="00ZwEr"'),
+    ("one-PDF promise", "Dave's week on one page"),
 ]
 
 

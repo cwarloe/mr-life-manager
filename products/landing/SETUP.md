@@ -13,6 +13,8 @@ entry pages, after the action
 | `/` | Router — pick the pain that is true today |
 | `/first-night.html` | Entry page + signup |
 | `/guests.html` | Entry page + signup |
+| `/underwater.html` | Entry page + signup |
+| `/one-room.html` | Entry page + signup |
 | `/index-parents.html` | Parent page — send them a door, no form |
 | `/guides/` | Archive of the free guides |
 | `/guides/<slug>.html` | Each guide |
@@ -38,16 +40,22 @@ python3 .github/scripts/build_site.py   # writes _site/ (gitignored)
 **Account ID:** `2635985`  
 **Embedded form ID:** `00ZwEr`
 
-The form is embedded on `/first-night.html` and `/guests.html` only. Do not
-put it back on the homepage.
+The form is embedded on all four entry pages and nowhere else. Do not put it
+back on the homepage.
 
-Wiring the sequences is a separate job. Follow
+The intended account state is documented in
 [`emails/MAILERLITE-SETUP.md`](emails/MAILERLITE-SETUP.md). Do **not** wire
 [`emails/welcome-sequence.md`](emails/welcome-sequence.md) — that draft is
-withdrawn. Live copy is `first-night-sequence.md` and `guests-sequence.md`.
+withdrawn. Live copy is in the four entry-specific sequence files.
 
-A signup is not proven until a test address from each entry page receives the
-printable for **that** page and nothing else.
+The owner reported all four automations active on 2026-09-22. Each sends one PDF
+link in email 1 — `/print/the-week.pdf` — not a copy of the action page. The
+action and its print option have already been delivered before signup.
+
+The repository's live-site monitor proves that the public pages, route tags,
+form containers and PDF are present. Private MailerLite routing and delivery
+still require a controlled account-level test; record the last result in
+[`planning/operations.md`](../../planning/operations.md).
 
 ## Domain
 
@@ -57,9 +65,11 @@ in this directory must stay in the published root.
 If the certificate or HTTPS checkbox ever falls off: Settings → Pages →
 confirm `mrlifemanager.com` → Enforce HTTPS.
 
-## Still missing
+## External operating items
 
-- [ ] Confirm a test signup on first-night and on guests
-- [ ] Confirm SPF/DKIM for the sending domain
+- [ ] Record a four-page MailerLite delivery test and footer/unsubscribe check
+- [x] Confirm SPF/DKIM and MailerLite domain verification (DNS checked 2026-09-22)
+- [ ] Add DMARC in monitoring mode, then verify MailerLite and Zoho alignment
+- [ ] Add privacy-first visitor analytics and Search Console verification
 - [ ] A photo of Dave, if he's willing
 - [ ] USPTO / name check

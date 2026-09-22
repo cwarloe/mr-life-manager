@@ -180,8 +180,11 @@ verify it and learn from real people.
 - ✅ Public contact (`hello@mrlifemanager.com`) and [privacy page](products/landing/privacy.html)
 - ✅ Custom domain live at https://mrlifemanager.com (HTTPS)
 - ✅ Customer-interview script and Dave recording guide ready
-- ⬜ **MailerLite wiring is unproven from this repo.** Sequences are written;
-      a test signup on each entry page has not been recorded here
+- ✅ **Four MailerLite automations are active**, per owner confirmation on
+      2026-09-22. Each entry page routes to its own three-email sequence; email
+      1 links only `The Week`. The private account state is not machine-verifiable
+      from this public repository, so the last controlled delivery-test result
+      is tracked in [`planning/operations.md`](planning/operations.md)
 - ⬜ **Record Dave.** The recovered documents cover cleaning, organizing and
       hospitality only. Money, food, paperwork, maintenance and transitions are
       still entirely unsourced, and he is still the critical path for them
@@ -195,5 +198,7 @@ primary source — that gets fixed by recording Dave, not by more writing.
 ## Next steps
 
 Start at [`planning/roadmap.md`](planning/roadmap.md), then
-[`planning/backlog.md`](planning/backlog.md). Decisions get recorded in
-[`planning/decisions.md`](planning/decisions.md).
+[`planning/backlog.md`](planning/backlog.md). Run the business from
+[`planning/operations.md`](planning/operations.md) and record evidence in
+[`planning/monthly-scorecard.md`](planning/monthly-scorecard.md). Decisions get
+recorded in [`planning/decisions.md`](planning/decisions.md).

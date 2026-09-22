@@ -17,7 +17,7 @@ each one before moving on.
 
 ## Context you need
 
-The website has two pages. Each has an embedded MailerLite form (account
+The website has four entry pages. Each has an embedded MailerLite form (account
 `2635985`, form `00ZwEr`). When someone signs up, the page attaches a hidden
 field recording which page they came from:
 
@@ -28,7 +28,7 @@ field recording which page they came from:
 | `https://mrlifemanager.com/underwater.html` | `underwater` |
 | `https://mrlifemanager.com/one-room.html` | `one-room` |
 
-That value is the only thing deciding which of two email sequences a person
+That value is the only thing deciding which of four email sequences a person
 receives. Everything you build depends on it arriving correctly.
 
 ## Your tasks, in order
@@ -57,7 +57,7 @@ The pages send the tag under both `fields[guide]` and `guide`, so whichever
 naming this account uses will be accepted and the other ignored. Nothing to
 inspect, nothing to report.
 
-### 3. Create three groups
+### 3. Create five groups
 
 - `entry-first-night`
 - `entry-guests`
@@ -331,7 +331,7 @@ A few words is a complete answer. Just hit reply. It's me reading these, not a s
 
 Open it in the browser and confirm it loads a readable PDF:
 
-- `https://mrlifemanager.com/print/the-week.pdf` (both sequences link this one)
+- `https://mrlifemanager.com/print/the-week.pdf` (all four sequences link this one)
 
 If either 404s, **report it and do not activate the automations.** A dead link in
 email 1 wastes the only moment the reader is paying attention.
@@ -349,7 +349,7 @@ report each:
 - [ ] Replying reaches a real inbox
 - [ ] Unsubscribe works
 
-Then delete both test subscribers so they don't pollute the first real numbers.
+Then delete all four test subscribers so they don't pollute the first real numbers.
 
 ## Never do these
 
