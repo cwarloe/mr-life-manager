@@ -57,8 +57,8 @@ CI scripts enforce the invariants — run them before committing:
    a file.
 3. **`Do it now.jpg`** (2023 attachment) still unretrieved — Drive can read
    JPEGs if he adds it.
-4. The `underwater` and `one-room` email copy is newer and **unreviewed** — no
-   human has read it closely yet.
+4. ~~The `underwater` and `one-room` email copy is unreviewed.~~ **Reviewed
+   2026-09-21** (PR #10). Shape unchanged. Still not sent; bot wires MailerLite.
 
 ## The workflow
 
