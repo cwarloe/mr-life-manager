@@ -1,0 +1,46 @@
+name: Fix underwater duplicate script
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Remove the first doing-mode script and add printfoot
+        run: |
+          python3 << 'PY'
+          from pathlib import Path
+          p = Path('products/landing/underwater.html')
+          t = p.read_text()
+          i1 = t.find('<script>\n(function(){\n  var body=document.body,steps=')
+          i2 = t.find('<script>\n  // Reading mode persuades')
+          if i1 < 0 or i2 <= i1:
+              raise SystemExit(f'markers not found i1={i1} i2={i2}')
+          t = t[:i1] + t[i2:]
+          if 'class="printfoot"' not in t:
+              t = t.replace('<footer>', '<p class="printfoot">mrlifemanager.com \u2014 the practical systems of running a life, written down.</p>\n<footer>', 1)
+          if '.printfoot{display:none}' not in t:
+              t = t.replace('.done h2{font-size:1.45rem;font-weight:800;margin:0 0 .5rem}',
+                            '.printfoot{display:none}\n.done h2{font-size:1.45rem;font-weight:800;margin:0 0 .5rem}', 1)
+          if t.count('goDo.addEventListener') != 1:
+              raise SystemExit('expected one goDo binder')
+          if 'Reading mode persuades' not in t:
+              raise SystemExit('kept script missing')
+          p.write_text(t)
+          print('wrote', p, 'bytes', len(t))
+          PY
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add products/landing/underwater.html
+          git diff --cached --quiet && echo no changes && exit 0
+          git commit -m "Remove duplicate doing-mode script on underwater"
+          git push origin HEAD:main
