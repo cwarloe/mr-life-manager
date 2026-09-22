@@ -1,7 +1,7 @@
-# Sequence — "You're just underwater" (Draft 1)
+# Sequence — "You're just underwater" (Draft 2)
 
 **Entry:** [`/underwater.html`](../underwater.html). Tagged `guide=underwater`.
-**Status:** Drafted 2026-09-21. Not sent. **Copy has not been reviewed.**
+**Status:** Reviewed 2026-09-21 against house style and the first-night / guests sequences. Not sent.
 **Governed by** [ADR-016](../../../planning/decisions.md#adr-016--the-sequence-shrinks-unconditionally)
 and [ADR-015](../../../planning/decisions.md#adr-015--the-win-comes-before-the-email).
 
@@ -18,10 +18,13 @@ and [ADR-015](../../../planning/decisions.md#adr-015--the-win-comes-before-the-e
 
 Shrinks unconditionally. Only a reply or a purchase moves anyone out of it.
 
-**This reader is different from the other two doors.** Nothing happened to them.
+**This reader is different from the other doors.** Nothing happened to them.
 There's no move and no guest arriving — they've just been underwater for a while,
 which means shame is closest to the surface here. Nothing in this sequence
 references how they got there or how long it's been.
+
+The page's "floor" is a foundation under the week, not a mopped floor. Email 1
+has to say that in the page's own words, or it reads like we think they cleaned.
 
 ---
 
@@ -29,11 +32,11 @@ references how they got there or how long it's been.
 
 **Subject:** Here's the thing worth printing
 
-> You got the floor back tonight. Here's the thing that keeps it.
+> You put a floor under the week tonight. Here's the thing that keeps it there.
 >
 > https://mrlifemanager.com/print/the-week.pdf
 >
-> It's one page. The top of it is ten minutes you do before bed — empty the sink, wipe the counters, walk one lap and put things back. Underneath that there's one job for each day, and two days with nothing on them at all.
+> It's one page, and it's Dave's whole system. The top of it is ten minutes you do before bed — empty the sink, wipe the counters, walk one lap and put things back. Underneath that there's one job for each day, and two days with nothing on them at all.
 >
 > Print it and stick it inside a cabinet door.
 >
@@ -85,9 +88,7 @@ Then it ends. **Silence means stop.**
 
 ## Not done
 
-1. **The copy above has not been reviewed.** It follows the established shape
-   and voice, but nobody has read it with fresh eyes.
-2. **No paid offer**, deliberately — the $9 product doesn't exist. Insertion
+1. **No paid offer**, deliberately — the $9 product doesn't exist. Insertion
    point is after email 3.
-3. **MailerLite:** group `entry-underwater`, automation keyed on
+2. **MailerLite:** group `entry-underwater`, automation keyed on
    `guide=underwater`, 0 / 3 / 7 days, no re-entry, resend-to-unopeners off.

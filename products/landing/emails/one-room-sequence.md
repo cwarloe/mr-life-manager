@@ -1,7 +1,7 @@
-# Sequence — "The room that became storage" (Draft 1)
+# Sequence — "The room that became storage" (Draft 2)
 
 **Entry:** [`/one-room.html`](../one-room.html). Tagged `guide=one-room`.
-**Status:** Drafted 2026-09-21. Not sent. **Copy has not been reviewed.**
+**Status:** Reviewed 2026-09-21 against house style and the first-night / guests sequences. Not sent.
 **Governed by** [ADR-016](../../../planning/decisions.md#adr-016--the-sequence-shrinks-unconditionally)
 and [ADR-015](../../../planning/decisions.md#adr-015--the-win-comes-before-the-email).
 
@@ -13,7 +13,7 @@ and [ADR-015](../../../planning/decisions.md#adr-015--the-win-comes-before-the-e
 |---|---|---|---|
 | 1 | Immediate | The Week, plus one named action | ten minutes |
 | 2 | Day 3 | The same thing, smaller | one shelf |
-| 3 | Day 7 | Nothing. One question. | one word |
+| 3 | Day 7 | Nothing. One question. | a few words |
 | — | After | **Stop.** | — |
 
 **This reader just finished something big.** Unlike the other doors, they've put
@@ -26,11 +26,11 @@ think the next zone has to be another whole afternoon, and never start it.
 
 **Subject:** Here's the thing worth printing
 
-> One zone down. Here's what stops the next one filling up.
+> You finished one zone. Here's what stops the next one filling up.
 >
 > https://mrlifemanager.com/print/the-week.pdf
 >
-> It's one page. The top is ten minutes before bed — empty the sink, wipe the counters, walk one lap and put things back. Underneath there's one job a day, and two days with nothing on them.
+> It's one page, and it's Dave's whole system. The top is ten minutes before bed — empty the sink, wipe the counters, walk one lap and put things back. Underneath there's one job a day, and two days with nothing on them.
 >
 > Print it and stick it inside a cabinet door.
 >
@@ -50,9 +50,9 @@ think the next zone has to be another whole afternoon, and never start it.
 >
 > So here's the smaller version.
 >
-> One shelf. Twenty minutes. Same three piles.
+> Do one shelf. Give it twenty minutes. Same three piles as before.
 >
-> Throw away, give away, belongs somewhere else. No fourth pile.
+> Throw away, give away, or it belongs somewhere else. No fourth pile.
 >
 > You've already made most of the hard calls — what you keep, what you don't, where things live. The second pass is mostly execution, and it goes about twice as fast as the first.
 >
@@ -70,7 +70,7 @@ think the next zone has to be another whole afternoon, and never start it.
 >
 > I'm trying to figure out what to write next, and the most useful thing anyone has told me so far came out of a question like this one.
 >
-> What was the hardest thing to throw away?
+> What was the hardest thing to let go of?
 >
 > A few words is a complete answer. Just hit reply. It's me reading these, not a system.
 >
@@ -85,12 +85,12 @@ Then it ends. **Silence means stop.**
 **Email 3's question is different from the other sequences' on purpose.** "Which
 room do you avoid?" doesn't fit a reader who just cleared one. What people
 struggled to let go of is the most useful thing we could learn about this
-audience, and it's a question people generally enjoy answering.
+audience, and it's a question people generally enjoy answering. "Let go of"
+covers the give-away pile as well as the trash pile.
 
 ## Not done
 
-1. **The copy above has not been reviewed.**
-2. **No paid offer** — the $9 product doesn't exist. Insertion point is after
+1. **No paid offer** — the $9 product doesn't exist. Insertion point is after
    email 3.
-3. **MailerLite:** group `entry-one-room`, automation on `guide=one-room`,
+2. **MailerLite:** group `entry-one-room`, automation on `guide=one-room`,
    0 / 3 / 7 days, no re-entry, resend-to-unopeners off.

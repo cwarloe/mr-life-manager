@@ -9,6 +9,8 @@
 > Live sequences:
 > - [first-night-sequence.md](first-night-sequence.md)
 > - [guests-sequence.md](guests-sequence.md)
+> - [underwater-sequence.md](underwater-sequence.md)
+> - [one-room-sequence.md](one-room-sequence.md)
 >
 > Wiring instructions:
 > [MAILERLITE-SETUP.md](MAILERLITE-SETUP.md)
