@@ -42,6 +42,30 @@ creation date, which Drive preserves from the original attachment.
 Whatever arrives, the verbatim-source rule in this folder still applies:
 transcribe exactly, put interpretation in a separate analysis file.
 
+## Roommate-agreement material (not Dave's)
+
+Found in Gmail 2026-09-22, searching beyond Dave's threads. None of it is in
+this folder — all of it lives in `.doc`/`.docx` attachments, which the Gmail
+connector can list but not download (see retrieval note above).
+
+| Date | Item | Thread | Note |
+|---|---|---|---|
+| 2011-07-27 | `Roommate_Behavior_Policy v2.doc` — Micah Stroh's "tenant house rules" | `1315e9526d510865` | The closest thing to a behavior-and-expectations document rather than a legal contract. Charles asked for it by name after getting the lease. Most useful of the set. |
+| 2011-07-26 | `GrassLawn Fill in Blank Monthly_Agreement.doc` — fill-in-the-blank lease | `1315e9526d510865` | Sent "at your own risk," already ~5 years old in 2011. Legal boilerplate. |
+| 2012-08-06 / 08-13 | Application form, roommate agreement, then a revised lease + roommate agreement | `138fa5293846e1ed`, `138feedc1dba0534` | Landlord-supplied (johnh.wa101@gmail.com). Received, not authored. |
+| 2024-06-17 | `Boise Roommate Agreement - 6621 W Holiday.docx` + `Boise house lease - 6621 W Holiday Drive.docx` | `18fd06c6c2a00d54` | **Charles's own.** He adapted Chad Morgan's versions — "nearly identical to what your dad created with names and addresses changed" — for a house of college guys. Forwarded to Dave 2025-05-07 as "Here's the template." This is the one with a real story behind it. |
+
+None of these are in Google Drive as of 2026-09-22 (searched by full text).
+
+## The mail system — still nothing
+
+Searched Gmail 2026-09-22 for a mail/paperwork document by subject, by phrase
+("sorting mail," "mail system," "handle the mail," "mail pile"), and by Dave's
+addresses. Every hit was noise: property-management senders whose addresses
+happen to contain `mail-system`, mortgage correspondence, and old church
+threads. The "earlier papers on mail" referenced in the 2009 weekly schedule
+remains unfound, and no separate mail document of Charles's own surfaced either.
+
 ## Also seen, not source material
 
 Dave's periodic newsletters (2012–2022, many threads, sent to a large list) are
