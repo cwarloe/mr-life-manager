@@ -153,6 +153,7 @@ body.doing .done.show{display:block;margin:0;padding:1.4rem 1.25rem;
    attribute the script writes instead. */
 body.doing .step-head::before{content:attr(data-n)}
 
+.printfoot{display:none}
 .done h2{font-size:1.45rem;font-weight:800;margin:0 0 .5rem}
 </style>
 <script>
@@ -240,44 +241,13 @@ ml('account','2635985');
   <div class="ml-embedded" data-form="00ZwEr"></div>
   <p class="fine">One thing at a time. Unsubscribe whenever, and silence is a fine answer.</p>
 </div>
+<p class="printfoot">mrlifemanager.com — the practical systems of running a life, written down.</p>
 <footer>
   <b>Mr. Life Manager</b> — the practical systems of running a life, written down.<br>
   Free to use, copy, and teach from — with credit. Not for resale.
   <a href="/">What this is</a>
 </footer>
 </div>
-<script>
-(function(){
-  var body=document.body,steps=[].slice.call(document.querySelectorAll('.step')),i=0;
-  steps.forEach(function(step){
-    var why=step.querySelector('.why'); if(!why) return;
-    var b=document.createElement('button'); b.type='button'; b.className='whybtn'; b.textContent='Why?';
-    b.addEventListener('click',function(){ var open=why.classList.toggle('open'); b.textContent=open?'Hide':'Why?'; });
-    why.parentNode.insertBefore(b,why);
-  });
-  var nav=document.createElement('div'); nav.className='nav';
-  nav.innerHTML='<button type="button" class="back">Back</button><button type="button" class="next">Next step</button><span class="count"></span><button type="button" class="exit">Show the whole page again</button>';
-  var done=document.createElement('div'); done.className='done';
-  done.innerHTML='<h2>That\u2019s everything.</h2><p>Whatever you got through is what there was time for.</p><button type="button" class="exit">Show the whole page again</button>';
-  var list=document.querySelector('.steps');
-  list.parentNode.insertBefore(nav,list.nextSibling);
-  nav.parentNode.insertBefore(done,nav);
-  function show(n){ i=n; steps.forEach(function(s,k){ s.classList.toggle('current',k===i); });
-    var end=i>=steps.length; done.classList.toggle('show',end);
-    nav.querySelector('.next').textContent=i===steps.length-1?'Done':'Next step';
-    nav.querySelector('.back').disabled=i===0;
-    nav.querySelector('.count').textContent=end?'':(i+1)+' of '+steps.length;
-    nav.style.display=end?'none':''; window.scrollTo(0,0); }
-  function start(){ body.classList.add('doing'); show(0); }
-  function stop(){ body.classList.remove('doing'); steps.forEach(function(s){ s.classList.remove('current'); }); done.classList.remove('show'); document.querySelector('.fork').scrollIntoView({block:'center'}); }
-  var goDo=document.querySelector('.go-do'), goPrint=document.querySelector('.go-print');
-  if(goDo) goDo.addEventListener('click',start);
-  if(goPrint) goPrint.addEventListener('click',function(){ window.print(); });
-  nav.querySelector('.next').addEventListener('click',function(){ show(i+1); });
-  nav.querySelector('.back').addEventListener('click',function(){ show(i-1); });
-  Array.prototype.forEach.call(document.querySelectorAll('.exit'),function(b){ b.addEventListener('click',stop); });
-})();
-</script>
 <script>
   // Reading mode persuades; doing mode gets it done. The "why" has done its job
   // by the time someone commits, so doing mode hides it — recoverable on a tap,
