@@ -20,16 +20,35 @@ jobs:
           p = Path('products/landing/one-room.html')
           t = p.read_text()
 
-          css = '''.says{list-style:none;margin:.55rem 0 0;padding:0}\n.says li{font-family:var(--serif);font-style:italic;font-size:1.02rem;line-height:1.4;margin:0 0 .28rem;padding:0;color:var(--ink)}\nbody.doing .says{margin-top:1rem}\nbody.doing .says li{font-size:clamp(1.12rem,4.2vw,1.35rem);margin:0 0 .45rem}\n'''
+          css = (
+              '.says{list-style:none;margin:.55rem 0 0;padding:0}\n'
+              '.says li{font-family:var(--serif);font-style:italic;font-size:1.02rem;'
+              'line-height:1.4;margin:0 0 .28rem;padding:0;color:var(--ink)}\n'
+              'body.doing .says{margin-top:1rem}\n'
+              'body.doing .says li{font-size:clamp(1.12rem,4.2vw,1.35rem);margin:0 0 .45rem}\n'
+          )
           if '.says{' not in t:
-              t = t.replace('.do b{font-weight:700}\n', '.do b{font-weight:700}\n' + css, 1)
+              needle = '.do b{font-weight:700}\n'
+              if needle not in t:
+                  raise SystemExit('css insert point missing')
+              t = t.replace(needle, needle + css, 1)
 
-          print_css = '''  .says{margin:.12rem 0 0;padding-left:1.55rem}\n  .says li{font-size:9.5pt;line-height:1.28;margin:0}\n'''
+          print_css = (
+              '  .says{margin:.12rem 0 0;padding-left:1.55rem}\n'
+              '  .says li{font-size:9.5pt;line-height:1.28;margin:0}\n'
+          )
+          do_print = '  .do{font-size:9.5pt;line-height:1.36;margin:.16rem 0 0;padding-left:1.55rem}\n'
           if '.says li{font-size:9.5pt' not in t:
-              t = t.replace('  .do{font-size:9.5pt;line-height:1.36;margin:.16rem 0 0;padding-left:1.55rem}\n',
-                            '  .do{font-size:9.5pt;line-height:1.36;margin:.16rem 0 0;padding-left:1.55rem}\n' + print_css, 1)
+              if do_print not in t:
+                  raise SystemExit('print css insert point missing')
+              t = t.replace(do_print, do_print + print_css, 1)
 
-          old_do = '''    <p class="do">Find two places that take donations and <b>check they're open today</b>. Work out where the trash goes and whether you can get there. Get the car empty enough to load. Have boxes or bags ready.</p>'''
+          old_do = (
+              '    <p class="do">Find two places that take donations and '
+              "<b>check they're open today</b>. Work out where the trash goes "
+              'and whether you can get there. Get the car empty enough to load. '
+              'Have boxes or bags ready.</p>'
+          )
           new_do = '''    <p class="do">These are the ones that will show up. You will hear yourself say them.</p>
     <ul class="says">
       <li>"This will take too long."</li>
@@ -43,18 +62,17 @@ jobs:
               raise SystemExit('step 2 do not found')
           t = t.replace(old_do, new_do, 1)
 
-          old_why4 = '''    <p class="why"><b>Dave's list of what you'll tell yourself</b>, written in 2009 and still accurate: this will take too long \u00b7 there's too much to do \u00b7 I need a nap \u00b7 I forgot where the trash can is \u00b7 I'll do it tomorrow. He adds, "I'm sure you can come up with some good ones." Recognizing the voice is most of beating it.</p>'''
-          new_why4 = '''    <p class="why"><b>Recognizing that voice is most of beating it.</b> Dave wrote the list in 2009, then added, "I'm sure you can come up with some good ones."</p>'''
-          if old_why4 not in t:
-              # try literal middot as in file
-              old_why4b = old_why4.replace('\u00b7', '\u00b7')
-              print('why4 found', old_why4 in t)
-              # show snippet
-              i = t.find("Dave's list of what you'll tell yourself")
-              print(repr(t[i-40:i+280]) if i>=0 else 'no snippet')
-              raise SystemExit('step 4 why not found')
-          t = t.replace(old_why4, new_why4, 1)
+          start = t.find("<p class=\"why\"><b>Dave's list of what you'll tell yourself</b>")
+          if start < 0:
+              raise SystemExit('step 4 why start not found')
+          end = t.find('</p>', start)
+          if end < 0:
+              raise SystemExit('step 4 why end not found')
+          new_why4 = '<p class="why"><b>Recognizing that voice is most of beating it.</b> Dave wrote the list in 2009, then added, "I\'m sure you can come up with some good ones."</p>'
+          t = t[:start] + new_why4 + t[end+4:]
 
+          if t.count('class="says"') != 1:
+              raise SystemExit('expected one says list')
           p.write_text(t)
           print('ok', len(t))
           PY
