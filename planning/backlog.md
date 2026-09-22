@@ -26,7 +26,7 @@ Each item is tagged with its [roadmap](roadmap.md) phase and primary
 | ~~Plain-language permissions page~~ | Business | 0 | **Done** 2026-09-08 → [PERMISSIONS.md](../PERMISSIONS.md). Needs contact details before launch. |
 | ~~Decide the faith-framing question~~ | Decision | 0 | **Done** 2026-09-08 → [ADR-009](decisions.md#adr-009--faith-framing-convictions-inform-the-work-belief-is-never-required-to-use-it). |
 | Name/trademark check on "Mr. Life Manager" | Research | 0 | Cheapest now; expensive after a launch |
-| Verify MailerLite delivery end to end | Launch | 2 | Test both forms, all three emails, guide delivery, unsubscribe, and replies on phone and desktop. |
+| Record MailerLite delivery health | Launch | 2 | Four automations are active per owner 2026-09-22. Record a controlled test of all four routes, three emails, the single `The Week` link, unsubscribe, footer and replies in `operations.md`. |
 | Line up first 5 validation conversations | Research | 1 | Warm network first |
 | ~~Draft and design the First Apartment Checklist~~ | Product | 2 | **Done** 2026-09-09 → [product](../products/checklists/first-apartment/). Still needs real-reader review and testing. |
 
@@ -56,8 +56,8 @@ Each item is tagged with its [roadmap](roadmap.md) phase and primary
 
 | Item | Phase | Notes |
 |---|---|---|
-| ~~Landing page + email capture~~ | 2 | **Deployed and connected to MailerLite** 2026-09-16. End-to-end delivery test remains P0. |
-| Welcome email sequence (3–5) | 2 | Drafted; configure and test in MailerLite. Teach, don't sell. |
+| ~~Landing page + email capture~~ | 2 | **Deployed with four active MailerLite routes**, confirmed by owner 2026-09-22. Account-level delivery evidence remains P0. |
+| ~~Four entry-specific email sequences~~ | 2 | **Active in MailerLite**, three emails each. Email 1 links only `The Week`; reader validation remains open. |
 | ~~Parent-facing gift landing page~~ | 2 | **Deployed and connected** 2026-09-16 → [index-parents.html](../products/landing/index-parents.html) |
 | 2–3 low-cost guides ($9–$19) | 3 | Tests which topic sells before committing to a book |
 | ***First Place*** outline | 3 | Outline first, write second |

@@ -69,5 +69,10 @@ Don't re-derive these — read them:
 - `python3 .github/scripts/check_pdfs_fresh.py` — fails if a committed PDF is
   older than its source HTML. Runs in CI. **Change a guide's HTML and you must
   re-render**, or the emails link to the old version
+- `python3 .github/scripts/check_built_site.py` — run after `build_site.py`; it
+  verifies canonical/share metadata, the four MailerLite routes, privacy copy
+  and public support files
+- `python3 .github/scripts/check_live_site.py` — production smoke test. GitHub
+  Actions runs it after Pages deployment and weekly; it never submits a form
 - Entry-page action sheets are **not** committed as PDFs. They print from each
   page's own stylesheet, so the sheet can't drift from the page.

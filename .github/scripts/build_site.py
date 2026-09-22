@@ -1,12 +1,17 @@
 #!/usr/bin/env python3
 """Assemble the public site into _site/ for GitHub Pages."""
 from __future__ import annotations
+import html as html_lib
 import re, shutil, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 LANDING = ROOT / "products" / "landing"
 OUT = ROOT / "_site"
+ORIGIN = "https://mrlifemanager.com"
+DEFAULT_DESCRIPTION = (
+    "Practical adult-life systems for people who were never explicitly taught them."
+)
 
 GUIDES = [
     ("first-apartment-checklist",
@@ -67,6 +72,57 @@ GUIDE_COPY_FIXES = [
         "That covers dishes, counters, glass, scrubbing, and\n    descaling. Not on stone counters — marble, granite, some quartz. If it looks like stone, use dish soap and water.",
     ),
 ]
+
+
+def public_url(path: Path) -> str:
+    rel = path.relative_to(OUT)
+    if rel.name == "index.html":
+        parent = rel.parent.as_posix()
+        suffix = "/" if parent == "." else f"/{parent}/"
+    else:
+        suffix = f"/{rel.as_posix()}"
+    return ORIGIN + suffix
+
+
+def add_public_metadata() -> int:
+    """Add one canonical/share metadata block to every published HTML page."""
+    count = 0
+    for path in sorted(OUT.rglob("*.html")):
+        text = path.read_text(encoding="utf-8")
+        if 'data-mlm-meta="1"' in text:
+            continue
+        title_match = re.search(r"<title>(.*?)</title>", text, re.I | re.S)
+        title = re.sub(r"<[^>]+>", "", title_match.group(1)).strip() if title_match else "Mr. Life Manager"
+        description_match = re.search(
+            r'<meta\s+name=["\']description["\']\s+content=["\'](.*?)["\']\s*/?>',
+            text,
+            re.I | re.S,
+        )
+        description = description_match.group(1).strip() if description_match else DEFAULT_DESCRIPTION
+        canonical = public_url(path)
+        text = re.sub(
+            r'\s*<link\s+rel=["\']canonical["\']\s+href=["\'][^"\']+["\']\s*/?>\s*',
+            "\n",
+            text,
+            flags=re.I,
+        )
+        block = (
+            '\n<meta data-mlm-meta="1" name="theme-color" content="#12161C">'
+            f'\n<link rel="canonical" href="{html_lib.escape(canonical, quote=True)}">'
+            '\n<link rel="icon" href="/favicon.svg" type="image/svg+xml">'
+            '\n<link rel="manifest" href="/site.webmanifest">'
+            f'\n<meta property="og:title" content="{html_lib.escape(title, quote=True)}">'
+            f'\n<meta property="og:description" content="{html_lib.escape(description, quote=True)}">'
+            f'\n<meta property="og:url" content="{html_lib.escape(canonical, quote=True)}">'
+            '\n<meta property="og:type" content="website">'
+            '\n<meta property="og:site_name" content="Mr. Life Manager">'
+            '\n<meta name="twitter:card" content="summary">\n'
+        )
+        if "</head>" not in text:
+            sys.exit(f"{path.relative_to(ROOT)}: no </head>")
+        path.write_text(text.replace("</head>", block + "</head>", 1), encoding="utf-8")
+        count += 1
+    return count
 
 
 def tokens_from(path: Path) -> str:
@@ -231,7 +287,11 @@ def main() -> int:
     lines += [f"  <url><loc>{u}</loc></url>" for u in urls]
     lines.append("</urlset>\n")
     (OUT / "sitemap.xml").write_text("\n".join(lines))
-    print(f"Built _site/ — {len(GUIDES)} guides, {len(pdfs)} printables.")
+    metadata_count = add_public_metadata()
+    print(
+        f"Built _site/ — {len(GUIDES)} guides, {len(pdfs)} printables, "
+        f"metadata on {metadata_count} pages."
+    )
     return 0
 
 

@@ -1,0 +1,16 @@
+{
+  "name": "Mr. Life Manager",
+  "short_name": "Life Manager",
+  "description": "Practical adult-life systems for people who were never explicitly taught them.",
+  "start_url": "/",
+  "display": "minimal-ui",
+  "background_color": "#fbf9f4",
+  "theme_color": "#12161c",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

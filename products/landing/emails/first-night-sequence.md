@@ -1,7 +1,7 @@
 # Sequence — "Your first night" (Draft 1)
 
 **Entry:** [`/first-night.html`](../first-night.html). Tagged `guide=first-night`.
-**Status:** Drafted 2026-09-20. Not sent. Not reviewed by a reader.
+**Status:** Active in MailerLite per owner 2026-09-22. Reader validation remains open.
 **Governed by** [ADR-016](../../../planning/decisions.md#adr-016--the-sequence-shrinks-unconditionally)
 and [ADR-015](../../../planning/decisions.md#adr-015--the-win-comes-before-the-email).
 
