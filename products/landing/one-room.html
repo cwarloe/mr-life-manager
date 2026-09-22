@@ -63,6 +63,10 @@ h1{font-size:clamp(2rem,8vw,2.9rem);font-weight:800;line-height:1.03;letter-spac
   border:1px solid var(--rule-strong);border-radius:99px;padding:.16rem .55rem;align-self:center}
 .do{font-size:1.04rem;line-height:1.55;margin:.85rem 0 0}
 .do b{font-weight:700}
+.says{list-style:none;margin:.55rem 0 0;padding:0}
+.says li{font-family:var(--serif);font-style:italic;font-size:1.02rem;line-height:1.4;margin:0 0 .28rem;padding:0;color:var(--ink)}
+body.doing .says{margin-top:1rem}
+body.doing .says li{font-size:clamp(1.12rem,4.2vw,1.35rem);margin:0 0 .45rem}
 .why{font-family:var(--serif);font-size:.98rem;line-height:1.55;color:var(--slate);
   margin:.7rem 0 0;border-left:2px solid var(--rule);padding-left:.85rem}
 .why b{font-family:var(--sans);font-weight:600;color:var(--ink)}
@@ -154,6 +158,8 @@ footer a{color:var(--blue);font-weight:600;text-decoration:none}
   .step-head h2{font-size:11.5pt;line-height:1.14}
   .mins{font-size:8pt;padding:.02rem .3rem}
   .do{font-size:9.5pt;line-height:1.36;margin:.16rem 0 0;padding-left:1.55rem}
+  .says{margin:.12rem 0 0;padding-left:1.55rem}
+  .says li{font-size:9.5pt;line-height:1.28;margin:0}
   .warn{margin:.45rem 0 0;padding:.4rem .55rem;border-radius:0;break-inside:avoid}
   .warn-label{font-size:7.5pt;margin:0 0 .12rem}
   .warn p{font-size:9pt;line-height:1.34}
@@ -300,7 +306,15 @@ body.doing .step-head::before{content:attr(data-n)}
 
   <li class="step">
     <div class="step-head"><h2>Close the exits.</h2><span class="mins">15 min</span></div>
-    <p class="do">Find two places that take donations and <b>check they're open today</b>. Work out where the trash goes and whether you can get there. Get the car empty enough to load. Have boxes or bags ready.</p>
+    <p class="do">These are the ones that will show up. You will hear yourself say them.</p>
+    <ul class="says">
+      <li>"This will take too long."</li>
+      <li>"There's too much to do."</li>
+      <li>"I need a nap."</li>
+      <li>"I forgot where the trash can is."</li>
+      <li>"I'll do it tomorrow."</li>
+    </ul>
+    <p class="do">So close the actual exits first. Find two places that take donations and <b>check they're open today</b>. Work out where the trash goes and whether you can get there. Get the car empty enough to load. Have boxes or bags ready.</p>
     <p class="why"><b>This is the part everyone skips, and it's the part Dave cares most about.</b> His line is "we don't want any excuses that the dump isn't open." People rarely quit because a job is hard — they quit at the first legitimate-sounding reason, and a genuine obstacle is the most legitimate-sounding reason there is. So you remove them before you start.</p>
   </li>
 
@@ -313,7 +327,7 @@ body.doing .step-head::before{content:attr(data-n)}
   <li class="step">
     <div class="step-head"><h2>When you get stuck: have you used it in a year?</h2><span class="mins">—</span></div>
     <p class="do">If no, it goes. If it's genuinely useful and works — tools, equipment you actually use — it stays. <b>Don't negotiate with yourself longer than about five seconds per item.</b></p>
-    <p class="why"><b>Dave's list of what you'll tell yourself</b>, written in 2009 and still accurate: this will take too long · there's too much to do · I need a nap · I forgot where the trash can is · I'll do it tomorrow. He adds, "I'm sure you can come up with some good ones." Recognizing the voice is most of beating it.</p>
+    <p class="why"><b>Recognizing that voice is most of beating it.</b> Dave wrote the list in 2009, then added, "I'm sure you can come up with some good ones."</p>
   </li>
 
   <li class="step">
