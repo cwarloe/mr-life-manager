@@ -1,0 +1,61 @@
+#!/usr/bin/env python3
+from pathlib import Path
+ROOT = Path(__file__).resolve().parents[2]
+p = ROOT / "products" / "landing" / "one-room.html"
+t = p.read_text()
+css = (
+    ".says{list-style:none;margin:.55rem 0 0;padding:0}\n"
+    ".says li{font-family:var(--serif);font-style:italic;font-size:1.02rem;"
+    "line-height:1.4;margin:0 0 .28rem;padding:0;color:var(--ink)}\n"
+    "body.doing .says{margin-top:1rem}\n"
+    "body.doing .says li{font-size:clamp(1.12rem,4.2vw,1.35rem);margin:0 0 .45rem}\n"
+)
+needle = ".do b{font-weight:700}\n"
+if ".says{" not in t:
+    if needle not in t:
+        raise SystemExit("css insert point missing")
+    t = t.replace(needle, needle + css, 1)
+print_css = (
+    "  .says{margin:.12rem 0 0;padding-left:1.55rem}\n"
+    "  .says li{font-size:9.5pt;line-height:1.28;margin:0}\n"
+)
+do_print = "  .do{font-size:9.5pt;line-height:1.36;margin:.16rem 0 0;padding-left:1.55rem}\n"
+if ".says li{font-size:9.5pt" not in t:
+    if do_print not in t:
+        raise SystemExit("print css insert point missing")
+    t = t.replace(do_print, do_print + print_css, 1)
+old_do = (
+    "    <p class=\"do\">Find two places that take donations and "
+    "<b>check they're open today</b>. Work out where the trash goes "
+    "and whether you can get there. Get the car empty enough to load. "
+    "Have boxes or bags ready.</p>"
+)
+new_do = (
+    "    <p class=\"do\">These are the ones that will show up. You will hear yourself say them.</p>\n"
+    "    <ul class=\"says\">\n"
+    "      <li>\"This will take too long.\"</li>\n"
+    "      <li>\"There's too much to do.\"</li>\n"
+    "      <li>\"I need a nap.\"</li>\n"
+    "      <li>\"I forgot where the trash can is.\"</li>\n"
+    "      <li>\"I'll do it tomorrow.\"</li>\n"
+    "    </ul>\n"
+    "    <p class=\"do\">So close the actual exits first. Find two places that take donations and "
+    "<b>check they're open today</b>. Work out where the trash goes and whether you can get there. "
+    "Get the car empty enough to load. Have boxes or bags ready.</p>"
+)
+if old_do not in t:
+    raise SystemExit("step 2 do not found")
+t = t.replace(old_do, new_do, 1)
+start = t.find("<p class=\"why\"><b>Dave's list of what you'll tell yourself</b>")
+if start < 0:
+    raise SystemExit("step 4 why start not found")
+end = t.find("</p>", start)
+new_why4 = (
+    "<p class=\"why\"><b>Recognizing that voice is most of beating it.</b> "
+    "Dave wrote the list in 2009, then added, \"I'm sure you can come up with some good ones.\"</p>"
+)
+t = t[:start] + new_why4 + t[end + 4 :]
+if t.count('class=\"says\"') != 1:
+    raise SystemExit("expected one says list")
+p.write_text(t)
+print("ok", p, len(t))
