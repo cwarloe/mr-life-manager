@@ -23,6 +23,14 @@ PAGES = {
     "/partners.html": ("Pilot it with five", "data-source-link", "Five-person pilot", "/print/partner-pilot.pdf"),
     "/privacy.html": ("MailerLite stores", "The Week"),
 }
+SITEMAP_URLS = (
+    f"{BASE}/",
+    f"{BASE}/first-night.html",
+    f"{BASE}/guests.html",
+    f"{BASE}/underwater.html",
+    f"{BASE}/one-room.html",
+    f"{BASE}/privacy.html",
+)
 
 
 def fetch(url: str) -> tuple[str, str, bytes]:
@@ -83,6 +91,31 @@ def run_once() -> list[str]:
     except (HTTPError, URLError, TimeoutError) as exc:
         problems.append(f"{share_url}: {exc}")
 
+    sitemap_url = BASE + "/sitemap.xml"
+    try:
+        final, content_type, body = fetch(sitemap_url)
+        if final != sitemap_url:
+            problems.append(f"{sitemap_url}: unexpected final URL {final}")
+        if content_type not in {"application/xml", "text/xml"}:
+            problems.append(f"{sitemap_url}: content type {content_type}, expected XML")
+        sitemap = body.decode("utf-8", errors="replace")
+        if "finished-" in sitemap:
+            problems.append(f"{sitemap_url}: completion pages must stay out of search")
+        for loc in SITEMAP_URLS:
+            if loc not in sitemap:
+                problems.append(f"{sitemap_url}: missing {loc}")
+    except (HTTPError, URLError, TimeoutError) as exc:
+        problems.append(f"{sitemap_url}: {exc}")
+
+    robots_url = BASE + "/robots.txt"
+    try:
+        final, _, body = fetch(robots_url)
+        robots = body.decode("utf-8", errors="replace")
+        if sitemap_url not in robots:
+            problems.append(f"{robots_url}: missing Sitemap line for {sitemap_url}")
+    except (HTTPError, URLError, TimeoutError) as exc:
+        problems.append(f"{robots_url}: {exc}")
+
     for start in ("http://mrlifemanager.com/", "https://www.mrlifemanager.com/"):
         try:
             final, _, _ = fetch(start)
@@ -98,7 +131,7 @@ def main() -> int:
     for attempt in range(3):
         problems = run_once()
         if not problems:
-            print("Production smoke test passed: twelve pages, four routes, one partner path, one founding offer, two PDFs, share images and canonical redirects.")
+            print("Production smoke test passed: twelve pages, four routes, one partner path, one founding offer, two PDFs, share images, sitemap, robots and canonical redirects.")
             return 0
         if attempt < 2:
             time.sleep(10)
