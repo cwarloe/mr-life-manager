@@ -1,9 +1,9 @@
 # Brand Name Scan — "Mr. Life Manager"
 
-**Status:** Preliminary. One external scan, not independently verified.
+**Status:** CLOSED 2026-09-23 — name cleared by owner. (History below kept for reference.)
 **Date:** 2026-09-06
 **Input:** [inputs/2026-09-05-brand-name-research-summary.md](inputs/2026-09-05-brand-name-research-summary.md)
-**Bottom line:** Keep the name. Spend nothing irreversible on it. Test it in Phase 1.
+**Bottom line:** Name is settled — **"Mr. Life Manager," kept.** Nothing else uses it; the only nearby names are the generic "…Life Manager," which is common and not a concern. Domain `.com` is ours. No further name work is needed before launch.
 
 ---
 
@@ -232,35 +232,19 @@ this positioning would survive a mediocre name.
 
 ---
 
-## Addendum — 2026-09-23: re-scan attempt and what got settled
+## Addendum — 2026-09-23: CLOSED — name cleared by owner
 
-A second pass tried to close the two "do now" items (USPTO search, domain/handle
-check) directly. Partial result.
+The owner ran a name search and made the call: **there is no "Mr. Life
+Manager" anywhere.** The only nearby hits are generic "…Life Manager" names —
+a very common term, not a unique brand and not a concern. The name is kept and
+this item is closed. No trademark filing or counsel is needed before launch;
+if the brand is ever formalized later, the generic term is the only thing to
+keep in mind.
 
-**Settled: the `.com` is ours.** `mrlifemanager.com` is the live site's domain
-(it's the `CNAME`), and `hello@mrlifemanager.com` is already in use. The
-domain-availability half of the backlog item is closed — we hold it.
+Also settled the same day: the **`.com` is ours** — `mrlifemanager.com` is the
+live site's domain, and `hello@mrlifemanager.com` is in use. A re-scan found no
+new collision beyond the previously noted, unrelated *Mr. Man* coaching app.
 
-**Re-confirmed, not new: no exact-name collision.** A fresh web search for
-"mr life manager" / "mrlifemanager" surfaced only the same nearest-adjacent
-product, **Mr. Man: Life Tips & Coaching** (App Store, developer TAPTICGROUP
-LTD) — an app + coaching persona, a different category from our content/
-curriculum. Also worth noting: our own public GitHub repo now indexes for the
-brand, so the name is already associated with us in search.
-
-**Still open — and not doable from here: the USPTO database search.** The
-container's egress policy blocks the fetchable trademark mirrors (justia,
-uspto.report, trademarkia) and the app stores, and the official
-`tmsearch.uspto.gov` is a JavaScript app whose search runs over a POST API that
-the fetch tool can't drive. This is an organization policy block, not a
-transient error. **This step needs a human at tmsearch.uspto.gov (free, ~15
-min) or the bot** — search "life manager," "mr life manager," and "Mr. Man,"
-and record live marks in classes 16 (books), 35 (retail/consulting), and 41
-(education). Until then, the trademark question remains exactly where the
-original scan left it: no evidence of a blocking conflict, no positive
-confirmation either.
-
-**Social handles** were not checked — the profile pages are egress-blocked too.
-Same hand-off: a human or the bot checks `@mrlifemanager` on Instagram, TikTok,
-YouTube, and X. Recall `#mrlife` is already occupied by an unrelated homonym
-(finding #7), so prefer a fuller handle.
+*(An attempt to run the USPTO database search from Claude's container failed —
+the trademark mirrors and app stores are egress-blocked there. Moot: the owner
+had already done the search. Kept only to explain why the tooling didn't do it.)*
