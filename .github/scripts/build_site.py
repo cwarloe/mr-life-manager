@@ -294,6 +294,7 @@ def main() -> int:
     urls = [
         "https://mrlifemanager.com/",
         "https://mrlifemanager.com/index-parents.html",
+        "https://mrlifemanager.com/partners.html",
         "https://mrlifemanager.com/first-night.html",
         "https://mrlifemanager.com/one-room.html",
         "https://mrlifemanager.com/guests.html",

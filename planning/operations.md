@@ -30,6 +30,8 @@ reached and acknowledged the end state, not that every physical action occurred.
 **Paid-demand test:** `/first-place.html` names a planned $39 founding price and
 collects no-charge reservations as prefilled emails to the monitored inbox. A
 reservation is not a sale and must never be reported as revenue or paid demand.
+The optional source label in the subject records the route that produced the
+message; it is attribution, not identity tracking.
 
 ## The cadence
 
@@ -48,6 +50,10 @@ inbox repeatedly exceeds the block.
 Choose **one** distribution experiment: one warm-network share, church or campus
 contact, useful forum contribution, or short demonstration. Record the source
 and the result in [`monthly-scorecard.md`](monthly-scorecard.md).
+
+Use `/partners.html?from=church`, `/partners.html?from=campus`, or
+`/partners.html?from=mentor` when one of those routes is the experiment. The
+page asks for a five-person learning pilot, not an institutional purchase.
 
 Do not build another product to avoid this block. If there are no visitors, the
 problem is distribution. If there are visitors but no action or signup, the

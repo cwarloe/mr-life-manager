@@ -11,19 +11,21 @@ One page for deciding what to do next. This is not an analytics warehouse.
 | Subscribers | New MailerLite subscribers, excluding tests |
 | Replies | Human replies to the three-email sequences |
 | Founding reservations | People who explicitly said they would seriously consider *First Place* at $39; interest, not revenue |
+| Five-person pilots | Partners who agreed to try the free pages with up to five people and report aggregate results |
 | Unsubscribes/complaints | Deliverability and trust warning signs |
 | Sales | Completed paid transactions, once a paid offer exists |
 | Support hours | Inbox, refunds, delivery help and other customer administration |
 
 Do not use open rate for product decisions. Record the four MailerLite route
-groups separately only when diagnosing a door; the six measures above are the
-operating dashboard.
+groups separately only when diagnosing a door. Reservation and pilot email
+subjects may contain a short source label such as `parent`, `church`, `campus`,
+or `shared-first-night`; use it only to compare routes, not to profile people.
 
 ## Monthly record
 
-| Month | Visitors | Task completions | Subscribers | Replies | Founding reservations | Unsubs / complaints | Sales / revenue | Support hours | One distribution experiment | Decision for next month |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---|---|
-| 2026-09 | — | — | — | — | — | — | — | — | Establish baseline | — |
+| Month | Visitors | Task completions | Subscribers | Replies | Reservations | Pilots | Unsubs / complaints | Sales / revenue | Support hours | One distribution experiment | Decision for next month |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|---|
+| 2026-09 | — | — | — | — | — | — | — | — | — | Establish baseline | — |
 
 ## Decision rules
 

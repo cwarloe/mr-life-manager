@@ -68,7 +68,7 @@ footer{border-top:1px solid var(--rule);padding:2rem 0 3rem;font-size:.82rem;col
   <div class="reserve-box">
     <p>Send a short reservation email and I will tell you when the founding version is ready. <strong>No charge today, and this is not a purchase.</strong></p>
     <p class="honest">If you are only curious, do not join. This list exists to find out whether the product should be built.</p>
-    <a class="reserve-button" href="mailto:hello@mrlifemanager.com?subject=First%20Place%20%2439%20founding%20reservation&amp;body=I%20would%20seriously%20consider%20buying%20First%20Place%20at%20the%20planned%20%2439%20founding%20price.%0A%0AThis%20would%20be%20for%3A%20me%20%2F%20someone%20else">Reserve the $39 founding version</a>
+    <a class="reserve-button" id="reserve-button" href="mailto:hello@mrlifemanager.com?subject=First%20Place%20%2439%20founding%20reservation&amp;body=I%20would%20seriously%20consider%20buying%20First%20Place%20at%20the%20planned%20%2439%20founding%20price.%0A%0AThis%20would%20be%20for%3A%20me%20%2F%20someone%20else">Reserve the $39 founding version</a>
     <p class="fine">This opens an email to Charles. Sending it records your interest; it does not add you to an automated list. <a href="/privacy.html">How your email is used.</a></p>
   </div>
 </div></section>
@@ -77,5 +77,16 @@ footer{border-top:1px solid var(--rule);padding:2rem 0 3rem;font-size:.82rem;col
   <span><b>Mr. Life Manager</b> — <a href="mailto:hello@mrlifemanager.com">hello@mrlifemanager.com</a></span>
   <span><a href="/privacy.html">Privacy</a></span>
 </div></footer>
+<script>
+(function () {
+  var source = new URLSearchParams(window.location.search).get('from');
+  if (!/^[a-z0-9-]{1,40}$/.test(source || '')) return;
+  var subject = 'First Place $39 founding reservation [' + source + ']';
+  var body = 'I would seriously consider buying First Place at the planned $39 founding price.\n\n' +
+    'This would be for: me / someone else\n\nHow I found this: ' + source;
+  document.getElementById('reserve-button').href = 'mailto:hello@mrlifemanager.com?subject=' +
+    encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+})();
+</script>
 </body>
 </html>

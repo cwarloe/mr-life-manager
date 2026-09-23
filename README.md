@@ -185,6 +185,10 @@ verify it and learn from real people.
       names the planned $39 price and tests serious interest without calling a
       reservation a sale. Reservations go directly to the monitored mailbox,
       so the live demand test has no unconfigured automation dependency.
+- ✅ **Distribution path added** — parents, mentors, churches, and campuses can
+      run a five-person free pilot from `partners.html`. Safe source labels carry
+      through a completed task into reservation emails without cookies, and a
+      finisher can share the original free task with someone else.
 - ✅ Public contact (`hello@mrlifemanager.com`) and [privacy page](products/landing/privacy.html)
 - ✅ Custom domain live at https://mrlifemanager.com (HTTPS)
 - ✅ Customer-interview script and Dave recording guide ready
