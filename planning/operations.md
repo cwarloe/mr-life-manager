@@ -98,8 +98,9 @@ The scheduled live-site workflow checks:
 - HTTPS and canonical redirects;
 - the homepage, four entry pages and privacy page;
 - the MailerLite form marker and page-specific `guide` value;
-- the single promised PDF; and
-- required privacy and contact links.
+- the single promised PDF;
+- required privacy and contact links; and
+- `/sitemap.xml` and `/robots.txt` (sitemap lists the public doors; completion pages stay out).
 
 That catches public breakage. It cannot see MailerLite's private groups or
 delivered inbox messages. An account operator performs the controlled four-route
@@ -136,9 +137,16 @@ repository work:
   MailerLite verification and DKIM were already resolved.
 - Postal address in MailerLite footers confirmed 2026-09-22 (6621 West Holiday
   Drive, Boise).
-- Connect privacy-first visitor analytics, then update the privacy page to name
-  the service actually used.
-- Verify the domain in Google Search Console and submit `/sitemap.xml`.
+- Privacy-first visitor analytics: **not installed** as of 2026-09-22. Default
+  choice is Cloudflare Web Analytics (existing DNS account, no extra vendor).
+  Domain is GitHub Pages IPs, not Cloudflare-proxied, so a JS beacon token from
+  the Cloudflare dashboard is required before the privacy page can name a live
+  service. Do not invent a snippet.
+- Google Search Console: **not verified in the console** as of 2026-09-22.
+  Public precheck **pass**: `/`, `/first-night.html`, `/guests.html`,
+  `/underwater.html`, `/one-room.html`, and `/privacy.html` return HTTPS 200;
+  `/sitemap.xml` is live and lists those URLs; `/robots.txt` points at the
+  sitemap. Console verify + sitemap submit still need a Google login.
 - Execute the Dave rights/compensation agreement outside this public repository.
-- Complete the name/trademark and Idaho assumed-name/entity decisions before
-  accepting payment under the brand.
+- Complete the Idaho assumed-name/entity decisions before accepting payment
+  under the brand. Owner closed the name-check for "Mr. Life Manager" 2026-09-22.
