@@ -54,6 +54,7 @@ PDF_TITLES = {
     "household-agreement.pdf": "The Household Agreement",
     "how-often-should-i.pdf": "How Often Should I…?",
     "laundry-solved.pdf": "Laundry, Solved",
+    "partner-pilot.pdf": "Five-Person Pilot Handouts",
     "ten-meals.pdf": "Ten Meals and a Stocked Kitchen",
     "the-light-is-the-problem.pdf": "The Light Is the Problem",
     "the-week.pdf": "The Week",
@@ -74,6 +75,21 @@ COMPLETION_PAGES = [
      "You reclaimed a usable part of the room. One finished zone is real progress.",
      "one-room", "/one-room.html"),
 ]
+
+SOCIAL_IMAGES = {
+    "index.html": "home.png",
+    "first-night.html": "first-night.png",
+    "finished-first-night.html": "first-night.png",
+    "guests.html": "guests.png",
+    "finished-guests.html": "guests.png",
+    "underwater.html": "underwater.png",
+    "finished-underwater.html": "underwater.png",
+    "one-room.html": "one-room.png",
+    "finished-one-room.html": "one-room.png",
+    "first-place.html": "first-place.png",
+    "partners.html": "partners.png",
+    "index-parents.html": "partners.png",
+}
 
 # Copy corrections applied at build so the live guides stay accurate even if
 # the large HTML sources have not been rewritten in the same commit.
@@ -103,6 +119,7 @@ def add_public_metadata() -> int:
     """Add one canonical/share metadata block to every published HTML page."""
     count = 0
     for path in sorted(OUT.rglob("*.html")):
+        rel = path.relative_to(OUT)
         text = path.read_text(encoding="utf-8")
         if 'data-mlm-meta="1"' in text:
             continue
@@ -115,6 +132,8 @@ def add_public_metadata() -> int:
         )
         description = description_match.group(1).strip() if description_match else DEFAULT_DESCRIPTION
         canonical = public_url(path)
+        image_name = SOCIAL_IMAGES.get(rel.as_posix(), "home.png")
+        share_image = f"{ORIGIN}/assets/share/{image_name}"
         text = re.sub(
             r'\s*<link\s+rel=["\']canonical["\']\s+href=["\'][^"\']+["\']\s*/?>\s*',
             "\n",
@@ -131,7 +150,11 @@ def add_public_metadata() -> int:
             f'\n<meta property="og:url" content="{html_lib.escape(canonical, quote=True)}">'
             '\n<meta property="og:type" content="website">'
             '\n<meta property="og:site_name" content="Mr. Life Manager">'
-            '\n<meta name="twitter:card" content="summary">\n'
+            f'\n<meta property="og:image" content="{share_image}">'
+            '\n<meta property="og:image:width" content="1200">'
+            '\n<meta property="og:image:height" content="630">'
+            '\n<meta name="twitter:card" content="summary_large_image">'
+            f'\n<meta name="twitter:image" content="{share_image}">\n'
         )
         if "</head>" not in text:
             sys.exit(f"{path.relative_to(ROOT)}: no </head>")
@@ -204,6 +227,9 @@ def main() -> int:
         if item.is_dir() or item.name == "SETUP.md":
             continue
         shutil.copy2(item, OUT / item.name)
+    assets = LANDING / "assets"
+    if assets.is_dir():
+        shutil.copytree(assets, OUT / "assets")
     completion_template = (LANDING / "templates" / "finished.html").read_text()
     for filename, door, message, guide, back in COMPLETION_PAGES:
         rendered = (completion_template

@@ -189,6 +189,9 @@ verify it and learn from real people.
       run a five-person free pilot from `partners.html`. Safe source labels carry
       through a completed task into reservation emails without cookies, and a
       finisher can share the original free task with someone else.
+- ✅ **Share kit added** — the pages people forward now have 1200x630 branded
+      link previews, and the partner page includes a four-variant printable
+      pilot handout with source-specific QR codes.
 - ✅ Public contact (`hello@mrlifemanager.com`) and [privacy page](products/landing/privacy.html)
 - ✅ Custom domain live at https://mrlifemanager.com (HTTPS)
 - ✅ Customer-interview script and Dave recording guide ready
