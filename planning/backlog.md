@@ -25,7 +25,7 @@ Each item is tagged with its [roadmap](roadmap.md) phase and primary
 | Retrieve the `Do it now.jpg` attachment | Source | 0 | On the 2023-07-17 email; not yet pulled |
 | ~~Plain-language permissions page~~ | Business | 0 | **Done** 2026-09-08 → [PERMISSIONS.md](../PERMISSIONS.md). Needs contact details before launch. |
 | ~~Decide the faith-framing question~~ | Decision | 0 | **Done** 2026-09-08 → [ADR-009](decisions.md#adr-009--faith-framing-convictions-inform-the-work-belief-is-never-required-to-use-it). |
-| Name/trademark check on "Mr. Life Manager" | Research | 0 | Cheapest now; expensive after a launch |
+| Name/trademark check on "Mr. Life Manager" | Research | 0 | **Domain `.com` confirmed ours** 2026-09-23. USPTO DB search + social handles still open — **egress-blocked from Claude's container**, needs a human at tmsearch.uspto.gov or the bot. See [scan addendum](../docs/research/brand-name-scan.md). |
 | Record MailerLite delivery health | Launch | 2 | Four automations are active per owner 2026-09-22. Record a controlled test of all four routes, three emails, the single `The Week` link, unsubscribe, footer and replies in `operations.md`. |
 | Line up first 5 validation conversations | Research | 1 | Warm network first |
 | ~~Draft and design the First Apartment Checklist~~ | Product | 2 | **Done** 2026-09-09 → [product](../products/checklists/first-apartment/). Still needs real-reader review and testing. |

@@ -229,3 +229,38 @@ Nothing in `frameworks/` or `content/` would need rewriting if the brand changed
 differentiator. The manual-for-adulthood narrative, the transition positioning,
 and the non-shaming ethos are. A great name would not save weak positioning, and
 this positioning would survive a mediocre name.
+
+---
+
+## Addendum — 2026-09-23: re-scan attempt and what got settled
+
+A second pass tried to close the two "do now" items (USPTO search, domain/handle
+check) directly. Partial result.
+
+**Settled: the `.com` is ours.** `mrlifemanager.com` is the live site's domain
+(it's the `CNAME`), and `hello@mrlifemanager.com` is already in use. The
+domain-availability half of the backlog item is closed — we hold it.
+
+**Re-confirmed, not new: no exact-name collision.** A fresh web search for
+"mr life manager" / "mrlifemanager" surfaced only the same nearest-adjacent
+product, **Mr. Man: Life Tips & Coaching** (App Store, developer TAPTICGROUP
+LTD) — an app + coaching persona, a different category from our content/
+curriculum. Also worth noting: our own public GitHub repo now indexes for the
+brand, so the name is already associated with us in search.
+
+**Still open — and not doable from here: the USPTO database search.** The
+container's egress policy blocks the fetchable trademark mirrors (justia,
+uspto.report, trademarkia) and the app stores, and the official
+`tmsearch.uspto.gov` is a JavaScript app whose search runs over a POST API that
+the fetch tool can't drive. This is an organization policy block, not a
+transient error. **This step needs a human at tmsearch.uspto.gov (free, ~15
+min) or the bot** — search "life manager," "mr life manager," and "Mr. Man,"
+and record live marks in classes 16 (books), 35 (retail/consulting), and 41
+(education). Until then, the trademark question remains exactly where the
+original scan left it: no evidence of a blocking conflict, no positive
+confirmation either.
+
+**Social handles** were not checked — the profile pages are egress-blocked too.
+Same hand-off: a human or the bot checks `@mrlifemanager` on Instagram, TikTok,
+YouTube, and X. Recall `#mrlife` is already occupied by an unrelated homonym
+(finding #7), so prefer a fuller handle.
