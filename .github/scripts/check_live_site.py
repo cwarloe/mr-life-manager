@@ -20,7 +20,7 @@ PAGES = {
     "/finished-underwater.html": ('data-form="00ZwEr"', "var VALUE = 'underwater'", "One thing finished"),
     "/finished-one-room.html": ('data-form="00ZwEr"', "var VALUE = 'one-room'", "One thing finished"),
     "/first-place.html": ("First%20Place%20%2439%20founding%20reservation", "Reserve the $39 founding version", "planned founding price"),
-    "/partners.html": ("Pilot it with five", "data-source-link", "Five-person pilot"),
+    "/partners.html": ("Pilot it with five", "data-source-link", "Five-person pilot", "/print/partner-pilot.pdf"),
     "/privacy.html": ("MailerLite stores", "The Week"),
 }
 
@@ -63,6 +63,26 @@ def run_once() -> list[str]:
     except (HTTPError, URLError, TimeoutError) as exc:
         problems.append(f"{pdf_url}: {exc}")
 
+    partner_pdf_url = BASE + "/print/partner-pilot.pdf"
+    try:
+        final, content_type, body = fetch(partner_pdf_url)
+        if final != partner_pdf_url:
+            problems.append(f"{partner_pdf_url}: unexpected final URL {final}")
+        if content_type != "application/pdf" or not body.startswith(b"%PDF-"):
+            problems.append(f"{partner_pdf_url}: response is not a PDF")
+    except (HTTPError, URLError, TimeoutError) as exc:
+        problems.append(f"{partner_pdf_url}: {exc}")
+
+    share_url = BASE + "/assets/share/home.png"
+    try:
+        final, content_type, body = fetch(share_url)
+        if final != share_url:
+            problems.append(f"{share_url}: unexpected final URL {final}")
+        if content_type != "image/png" or not body.startswith(b"\x89PNG\r\n\x1a\n"):
+            problems.append(f"{share_url}: response is not a PNG")
+    except (HTTPError, URLError, TimeoutError) as exc:
+        problems.append(f"{share_url}: {exc}")
+
     for start in ("http://mrlifemanager.com/", "https://www.mrlifemanager.com/"):
         try:
             final, _, _ = fetch(start)
@@ -78,7 +98,7 @@ def main() -> int:
     for attempt in range(3):
         problems = run_once()
         if not problems:
-            print("Production smoke test passed: twelve pages, four routes, one partner path, one founding offer, one PDF and canonical redirects.")
+            print("Production smoke test passed: twelve pages, four routes, one partner path, one founding offer, two PDFs, share images and canonical redirects.")
             return 0
         if attempt < 2:
             time.sleep(10)

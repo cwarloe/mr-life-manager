@@ -40,7 +40,8 @@ def main() -> int:
             problems.append(f"{rel}: expected exactly one generated metadata block")
         for marker in ('rel="icon" href="/favicon.svg"', 'rel="manifest" href="/site.webmanifest"',
                        'property="og:title"', 'property="og:description"',
-                       'property="og:url"', 'name="twitter:card"'):
+                       'property="og:url"', 'property="og:image"',
+                       'name="twitter:card" content="summary_large_image"'):
             if marker not in text:
                 problems.append(f"{rel}: missing {marker}")
 
@@ -84,7 +85,9 @@ def main() -> int:
         if marker not in privacy:
             problems.append(f"privacy.html: missing {marker}")
 
-    for name in ("favicon.svg", "site.webmanifest", "robots.txt", "sitemap.xml"):
+    for name in ("favicon.svg", "site.webmanifest", "robots.txt", "sitemap.xml",
+                 "assets/share/home.png", "assets/share/partners.png",
+                 "print/partner-pilot.pdf"):
         if not (OUT / name).is_file():
             problems.append(f"missing generated public file: {name}")
 
