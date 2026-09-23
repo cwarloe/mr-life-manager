@@ -20,6 +20,7 @@ PAGES = {
     "/finished-underwater.html": ('data-form="00ZwEr"', "var VALUE = 'underwater'", "One thing finished"),
     "/finished-one-room.html": ('data-form="00ZwEr"', "var VALUE = 'one-room'", "One thing finished"),
     "/first-place.html": ("First%20Place%20%2439%20founding%20reservation", "Reserve the $39 founding version", "planned founding price"),
+    "/partners.html": ("Pilot it with five", "data-source-link", "Five-person pilot"),
     "/privacy.html": ("MailerLite stores", "The Week"),
 }
 
@@ -77,7 +78,7 @@ def main() -> int:
     for attempt in range(3):
         problems = run_once()
         if not problems:
-            print("Production smoke test passed: eleven pages, four routes, one founding offer, one PDF and canonical redirects.")
+            print("Production smoke test passed: twelve pages, four routes, one partner path, one founding offer, one PDF and canonical redirects.")
             return 0
         if attempt < 2:
             time.sleep(10)

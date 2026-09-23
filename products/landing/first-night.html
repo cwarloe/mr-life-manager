@@ -520,10 +520,13 @@ body.doing .step-head::before{content:attr(data-n)}
       '<button type="button" class="exit">Show the whole page again</button>';
     var done = document.createElement('div');
     done.className = 'done';
+    var completionUrl = '/finished-first-night.html';
+    var source = new URLSearchParams(window.location.search).get('from');
+    if (/^[a-z0-9-]{1,40}$/.test(source || '')) completionUrl += '?from=' + encodeURIComponent(source);
     done.innerHTML = '<h2>That\u2019s everything.</h2>' +
       '<p>Whatever you got through is what there was time for. The order runs biggest ' +
       'difference first, so wherever you stopped is the right place to have stopped.</p>' +
-      '<a class="complete" href="/finished-first-night.html">I finished \u2014 what\u2019s next?</a>' +
+      '<a class="complete" href="' + completionUrl + '">I finished \u2014 what\u2019s next?</a>' +
       '<button type="button" class="exit">Show the whole page again</button>';
     var list = document.querySelector('.steps');
     list.parentNode.insertBefore(nav, list.nextSibling);

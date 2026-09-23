@@ -16,6 +16,7 @@ entry pages, after the action
 | `/underwater.html` | Entry page + signup |
 | `/one-room.html` | Entry page + signup |
 | `/index-parents.html` | Parent page — send them a door, no form |
+| `/partners.html?from=<source>` | Small-pilot page for mentors, churches and campuses |
 | `/guides/` | Archive of the free guides |
 | `/guides/<slug>.html` | Each guide |
 | `/print/` | Index of print-ready PDFs |
@@ -60,7 +61,9 @@ action and its print option have already been delivered before signup.
 The founding-offer page uses a prefilled email to `hello@mrlifemanager.com`.
 That keeps the demand test live without a fifth automation or a risk that a
 reservation receives an unrelated free sequence. Treat each sent message as a
-reservation, not revenue.
+reservation, not revenue. A safe `from` query value is carried through the task
+and completion pages into the reservation subject so a reply can be attributed
+without cookies or a visitor profile.
 
 The repository's live-site monitor proves that the public pages, route tags,
 form containers and PDF are present. Private MailerLite routing and delivery

@@ -19,10 +19,11 @@
 main{padding:4rem 0}.kicker{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin:0 0 1rem}
 h1{font-size:clamp(2.5rem,8vw,4rem);line-height:1;letter-spacing:-.04em;margin:0;max-width:10ch}
 .lead{font-family:var(--serif);font-size:1.2rem;line-height:1.6;color:var(--slate);margin:1.4rem 0 0;max-width:42ch}.lead strong{color:var(--ink);font-weight:600}
-.signup,.next{background:var(--surface);border:1px solid var(--rule-strong);border-radius:5px;padding:1.5rem;margin:2rem 0 0}.signup{border-top:4px solid var(--blue)}
+.signup,.next,.share{background:var(--surface);border:1px solid var(--rule-strong);border-radius:5px;padding:1.5rem;margin:2rem 0 0}.signup{border-top:4px solid var(--blue)}
 h2{font-size:1.35rem;letter-spacing:-.02em;margin:0 0 .55rem}.signup p,.next p{font-family:var(--serif);color:var(--slate);margin:.55rem 0 1rem}
 .fine{font-size:.82rem!important;line-height:1.5!important;margin:.9rem 0 0!important}.fine a{color:var(--blue)}
 .next{border-top:4px solid var(--amber)}.price{font-weight:800;color:var(--ink);font-family:var(--sans)!important}.button{display:inline-block;background:var(--ink);color:var(--paper);font-weight:700;text-decoration:none;padding:.78rem 1.15rem;border-radius:3px}.button:hover{background:var(--blue)}
+.share{border-top:4px solid var(--ink)}.share p{font-family:var(--serif);color:var(--slate)}.share-button,.share-email{font-family:var(--sans);font-size:.9rem;font-weight:700;border:2px solid var(--ink);border-radius:3px;padding:.68rem .9rem;cursor:pointer}.share-button{background:var(--ink);color:var(--paper)}.share-email{display:inline-block;text-decoration:none;color:var(--ink);margin-left:.35rem}
 .feedback{font-family:var(--serif);color:var(--slate);margin:2rem 0 0}.feedback a{color:var(--blue);font-weight:600}
 footer{border-top:1px solid var(--rule);padding:2rem 0 3rem;font-size:.82rem;color:var(--slate)}footer a{color:var(--slate)}
 </style>
@@ -52,7 +53,14 @@ ml('account','2635985');
     <h2>Your first 30 days, already decided.</h2>
     <p><em>First Place</em> is the paid next step being tested: one sequence for setting up and running a home without keeping all of it in your head.</p>
     <p class="price">Planned founding price: $39. No charge today.</p>
-    <a class="button" href="/first-place.html">See the founding offer →</a>
+    <a class="button" id="founding-offer" href="/first-place.html?from=finished-__GUIDE__">See the founding offer →</a>
+  </section>
+
+  <section class="share">
+    <h2>Know someone who needs this same starting point?</h2>
+    <p>Send the free task you just used. They will see the instructions, not your completion page or email signup.</p>
+    <button class="share-button" id="share-task" type="button">Send the task</button>
+    <a class="share-email" id="share-email" href="mailto:?subject=A%20useful%20place%20to%20start">Email it</a>
   </section>
 
   <p class="feedback">Stopped somewhere, skipped something, or had to guess? <a href="mailto:hello@mrlifemanager.com?subject=Where%20I%20stopped%20%E2%80%94%20__DOOR__">Tell me where.</a> That decides what gets fixed next.</p>
@@ -61,6 +69,23 @@ ml('account','2635985');
 <script>
 (function () {
   var VALUE = '__GUIDE__';
+  var SOURCE = new URLSearchParams(window.location.search).get('from');
+  if (!/^[a-z0-9-]{1,40}$/.test(SOURCE || '')) SOURCE = '';
+  if (SOURCE) document.getElementById('founding-offer').href =
+    '/first-place.html?from=' + encodeURIComponent(SOURCE);
+  var shareUrl = 'https://mrlifemanager.com__BACK__?from=shared-__GUIDE__';
+  var shareText = 'This gives you one useful place to start: ';
+  var emailHref = 'mailto:?subject=' + encodeURIComponent('A useful place to start') +
+    '&body=' + encodeURIComponent(shareText + shareUrl);
+  document.getElementById('share-email').href = emailHref;
+  document.getElementById('share-task').addEventListener('click', function () {
+    if (navigator.share) {
+      navigator.share({title: 'A useful place to start', text: shareText, url: shareUrl})
+        .catch(function () {});
+    } else {
+      window.location.href = emailHref;
+    }
+  });
   function tag(form) {
     ['fields[guide]', 'guide'].forEach(function (name) {
       if (form.querySelector('input[name="' + name + '"]')) return;

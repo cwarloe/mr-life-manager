@@ -60,16 +60,23 @@ def main() -> int:
 
         completion_text = (OUT / completion).read_text(encoding="utf-8")
         for marker in ('data-form="00ZwEr"', f"var VALUE = '{tag}'", "One thing finished",
-                       "/first-place.html", 'name="robots" content="noindex,nofollow"'):
+                       "/first-place.html", "navigator.share", f"shared-{tag}",
+                       'name="robots" content="noindex,nofollow"'):
             if marker not in completion_text:
                 problems.append(f"{completion}: missing {marker}")
 
     offer = (OUT / "first-place.html").read_text(encoding="utf-8")
     for marker in ('mailto:hello@mrlifemanager.com?subject=First%20Place%20%2439',
                    "planned founding price", "No charge today",
-                   "Reserve the $39 founding version"):
+                   "Reserve the $39 founding version", "How I found this:"):
         if marker not in offer:
             problems.append(f"first-place.html: missing {marker}")
+
+    partners = (OUT / "partners.html").read_text(encoding="utf-8")
+    for marker in ("Pilot it with five", "data-source-link", "Five-person pilot",
+                   "new URLSearchParams", "/first-place.html?from=partner"):
+        if marker not in partners:
+            problems.append(f"partners.html: missing {marker}")
 
     privacy = (OUT / "privacy.html").read_text(encoding="utf-8")
     for marker in ("The Week", "MailerLite stores", "just underwater", "room that became storage",
@@ -91,7 +98,7 @@ def main() -> int:
             print(f"- {problem}", file=sys.stderr)
         return 1
 
-    print(f"Validated {len(pages)} generated pages, four entry routes and the founding offer.")
+    print(f"Validated {len(pages)} generated pages, four entry routes, the partner path and the founding offer.")
     return 0
 
 
