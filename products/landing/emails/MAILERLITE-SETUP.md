@@ -1,7 +1,7 @@
 # MailerLite — operating specification
 
 **Account:** `2635985` · **Embedded form:** `00ZwEr`
-**Status reported by owner 2026-09-22:** four automations are active. Each
+**Status reported by owner 2026-09-22:** four entry automations are active. Each
 sequence sends one PDF link in email 1 —
 [`The Week`](https://mrlifemanager.com/print/the-week.pdf) — followed by two
 smaller emails and then stops. The entry-page action sheet is available before
@@ -14,9 +14,10 @@ account has been brought back to this specification.
 
 ## Routing
 
-The same form is embedded after the completed action on all four pages. Page
-code sends the tag under both `fields[guide]` and `guide` because MailerLite's
-rendered field naming has varied.
+The same form is embedded after the completed action on all four pages and on
+the four no-index completion pages. Page code sends the tag under both
+`fields[guide]` and `guide` because
+MailerLite's rendered field naming has varied.
 
 | Entry page | `guide` value | Group | Sequence source |
 |---|---|---|---|
@@ -48,6 +49,10 @@ Settings for all four:
 
 The copy files are the source of truth. The withdrawn
 [`welcome-sequence.md`](welcome-sequence.md) must never be reactivated.
+
+The *First Place* founding reservation is deliberately outside MailerLite. Its
+button opens a prefilled message to `hello@mrlifemanager.com`, so it cannot enter
+one of these sequences accidentally.
 
 ## Delivery promise
 

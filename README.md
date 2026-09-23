@@ -177,6 +177,14 @@ verify it and learn from real people.
       [the room that became storage](products/landing/one-room.html).
       Completeness is enforced by
       [`check_entry_pages.py`](.github/scripts/check_entry_pages.py)
+- ✅ **Post-completion path added** — doing mode now ends at a distinct,
+      no-index completion page for each door. Those pages expose the earned
+      email ask and the planned paid next step instead of sending a finisher
+      back to the top of the free page.
+- ✅ ***First Place* founding offer published** — a no-charge reservation page
+      names the planned $39 price and tests serious interest without calling a
+      reservation a sale. Reservations go directly to the monitored mailbox,
+      so the live demand test has no unconfigured automation dependency.
 - ✅ Public contact (`hello@mrlifemanager.com`) and [privacy page](products/landing/privacy.html)
 - ✅ Custom domain live at https://mrlifemanager.com (HTTPS)
 - ✅ Customer-interview script and Dave recording guide ready
@@ -189,7 +197,7 @@ verify it and learn from real people.
       hospitality only. Money, food, paperwork, maintenance and transitions are
       still entirely unsourced, and he is still the critical path for them
 - ⬜ Complete the USPTO/name check and domain/social availability check
-- ⬜ No completed audience validation, customers, or revenue yet
+- ⬜ No completed audience validation, paid customers, or revenue yet
 
 **Two honest caveats.** The products are designed prototypes, not validated
 products. And the frameworks are the apprentice's reconstruction, not the
