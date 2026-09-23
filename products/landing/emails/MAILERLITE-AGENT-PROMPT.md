@@ -228,11 +228,11 @@ One word is a complete answer. Just hit reply. It's me reading these, not a syst
 **Email 1 — immediately. Subject: `Here's the thing worth printing`**
 
 ```
-You got the floor back tonight. Here's the thing that keeps it.
+You put a floor under the week tonight. Here's the thing that keeps it there.
 
 https://mrlifemanager.com/print/the-week.pdf
 
-It's one page. The top of it is ten minutes you do before bed — empty the sink, wipe the counters, walk one lap and put things back. Underneath that there's one job for each day, and two days with nothing on them at all.
+It's one page, and it's Dave's whole system. The top of it is ten minutes you do before bed — empty the sink, wipe the counters, walk one lap and put things back. Underneath that there's one job for each day, and two days with nothing on them at all.
 
 Print it and stick it inside a cabinet door.
 
@@ -280,11 +280,11 @@ One word is a complete answer. Just hit reply. It's me reading these, not a syst
 **Email 1 — immediately. Subject: `Here's the thing worth printing`**
 
 ```
-One zone down. Here's what stops the next one filling up.
+You finished one zone. Here's what stops the next one filling up.
 
 https://mrlifemanager.com/print/the-week.pdf
 
-It's one page. The top is ten minutes before bed — empty the sink, wipe the counters, walk one lap and put things back. Underneath there's one job a day, and two days with nothing on them.
+It's one page, and it's Dave's whole system. The top is ten minutes before bed — empty the sink, wipe the counters, walk one lap and put things back. Underneath there's one job a day, and two days with nothing on them.
 
 Print it and stick it inside a cabinet door.
 
@@ -300,9 +300,9 @@ If you're picturing another full afternoon before you touch the next zone, you'l
 
 So here's the smaller version.
 
-One shelf. Twenty minutes. Same three piles.
+Do one shelf. Give it twenty minutes. Same three piles as before.
 
-Throw away, give away, belongs somewhere else. No fourth pile.
+Throw away, give away, or it belongs somewhere else. No fourth pile.
 
 You've already made most of the hard calls — what you keep, what you don't, where things live. The second pass is mostly execution, and it goes about twice as fast as the first.
 
@@ -318,7 +318,7 @@ There's nothing attached to this one.
 
 I'm trying to figure out what to write next, and the most useful thing anyone has told me so far came out of a question like this one.
 
-What was the hardest thing to throw away?
+What was the hardest thing to let go of?
 
 A few words is a complete answer. Just hit reply. It's me reading these, not a system.
 
