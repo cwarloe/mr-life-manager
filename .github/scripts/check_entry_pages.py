@@ -34,6 +34,7 @@ REQUIRED = [
     ("print scale", "body{zoom:"),
     ("MailerLite form", 'data-form="00ZwEr"'),
     ("one-PDF promise", "Dave's week on one page"),
+    ("post-completion destination", 'class="complete" href="/finished-'),
 ]
 
 

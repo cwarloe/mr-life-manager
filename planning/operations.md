@@ -22,6 +22,15 @@ The entry-page action and print option happen before signup.
 
 **Last private account-level funnel test:** not yet recorded in this repository.
 
+**Completion measurement:** each entry page now ends at a distinct
+`/finished-*.html` page after the reader explicitly chooses “I finished.” Count
+those page visits as a directional completion measure. They prove the reader
+reached and acknowledged the end state, not that every physical action occurred.
+
+**Paid-demand test:** `/first-place.html` names a planned $39 founding price and
+collects no-charge reservations as prefilled emails to the monitored inbox. A
+reservation is not a sale and must never be reported as revenue or paid demand.
+
 ## The cadence
 
 ### Twice weekly — support block, 15 minutes
@@ -64,6 +73,7 @@ These obligations stay dormant until their trigger occurs.
 | Trigger | Activate then |
 |---|---|
 | Before broader email distribution | Recorded four-route delivery test; DMARC monitoring; valid postal footer; privacy text matches the live account |
+| Before distributing the founding-offer page | Monitored `hello@` inbox; privacy text matches the live page; a simple count of unique reservation senders |
 | Before the first sale | Checkout terms; refund policy; assumed-name/entity check; separate transaction records; tax and bookkeeping decision |
 | After ten customers | FAQ from actual questions; three saved support replies; product version log |
 | Before coaching | Written agreement, cancellation policy, scheduling boundary and insurance review |
@@ -125,4 +135,3 @@ repository work:
 - Execute the Dave rights/compensation agreement outside this public repository.
 - Complete the name/trademark and Idaho assumed-name/entity decisions before
   accepting payment under the brand.
-

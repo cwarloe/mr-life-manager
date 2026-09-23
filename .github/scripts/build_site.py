@@ -60,6 +60,21 @@ PDF_TITLES = {
     "what-is-this-room-for.pdf": "What Is This Room For?",
 }
 
+COMPLETION_PAGES = [
+    ("finished-first-night.html", "Your first night",
+     "You handled the things that cost most to miss on a first night.",
+     "first-night", "/first-night.html"),
+    ("finished-guests.html", "Someone's coming over",
+     "The door can open now. Whatever did not get done can wait.",
+     "guests", "/guests.html"),
+    ("finished-underwater.html", "Just underwater",
+     "You put a floor under the week. That is different from fixing everything.",
+     "underwater", "/underwater.html"),
+    ("finished-one-room.html", "The room that became storage",
+     "You reclaimed a usable part of the room. One finished zone is real progress.",
+     "one-room", "/one-room.html"),
+]
+
 # Copy corrections applied at build so the live guides stay accurate even if
 # the large HTML sources have not been rewritten in the same commit.
 GUIDE_COPY_FIXES = [
@@ -189,6 +204,14 @@ def main() -> int:
         if item.is_dir() or item.name == "SETUP.md":
             continue
         shutil.copy2(item, OUT / item.name)
+    completion_template = (LANDING / "templates" / "finished.html").read_text()
+    for filename, door, message, guide, back in COMPLETION_PAGES:
+        rendered = (completion_template
+                    .replace("__DOOR__", door)
+                    .replace("__MESSAGE__", message)
+                    .replace("__GUIDE__", guide)
+                    .replace("__BACK__", back))
+        (OUT / filename).write_text(rendered)
     tokens = tokens_from(ROOT / GUIDES[0][1])
     cards = []
     for slug, src, title, blurb in GUIDES:
@@ -275,6 +298,7 @@ def main() -> int:
         "https://mrlifemanager.com/one-room.html",
         "https://mrlifemanager.com/guests.html",
         "https://mrlifemanager.com/underwater.html",
+        "https://mrlifemanager.com/first-place.html",
         "https://mrlifemanager.com/privacy.html",
         "https://mrlifemanager.com/guides/",
         "https://mrlifemanager.com/print/",

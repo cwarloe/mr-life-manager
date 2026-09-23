@@ -52,12 +52,28 @@ def main() -> int:
     }
     for name, tag in entries.items():
         text = (OUT / name).read_text(encoding="utf-8")
-        for marker in ('data-form="00ZwEr"', f"var VALUE = '{tag}'", "Dave's week on one page"):
+        completion = f"finished-{name}"
+        for marker in ('data-form="00ZwEr"', f"var VALUE = '{tag}'", "Dave's week on one page",
+                       completion):
             if marker not in text:
                 problems.append(f"{name}: missing {marker}")
 
+        completion_text = (OUT / completion).read_text(encoding="utf-8")
+        for marker in ('data-form="00ZwEr"', f"var VALUE = '{tag}'", "One thing finished",
+                       "/first-place.html", 'name="robots" content="noindex,nofollow"'):
+            if marker not in completion_text:
+                problems.append(f"{completion}: missing {marker}")
+
+    offer = (OUT / "first-place.html").read_text(encoding="utf-8")
+    for marker in ('mailto:hello@mrlifemanager.com?subject=First%20Place%20%2439',
+                   "planned founding price", "No charge today",
+                   "Reserve the $39 founding version"):
+        if marker not in offer:
+            problems.append(f"first-place.html: missing {marker}")
+
     privacy = (OUT / "privacy.html").read_text(encoding="utf-8")
-    for marker in ("The Week", "MailerLite stores", "just underwater", "room that became storage"):
+    for marker in ("The Week", "MailerLite stores", "just underwater", "room that became storage",
+                   "founding reservation"):
         if marker not in privacy:
             problems.append(f"privacy.html: missing {marker}")
 
@@ -65,16 +81,19 @@ def main() -> int:
         if not (OUT / name).is_file():
             problems.append(f"missing generated public file: {name}")
 
+    sitemap = (OUT / "sitemap.xml").read_text(encoding="utf-8")
+    if "finished-" in sitemap:
+        problems.append("sitemap.xml: completion pages must stay out of search")
+
     if problems:
         print("Built-site validation failed:", file=sys.stderr)
         for problem in problems:
             print(f"- {problem}", file=sys.stderr)
         return 1
 
-    print(f"Validated {len(pages)} generated pages and four entry routes.")
+    print(f"Validated {len(pages)} generated pages, four entry routes and the founding offer.")
     return 0
 
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

@@ -249,8 +249,10 @@ body.doing .done.show{display:block;margin:0;padding:1.4rem 1.25rem;
 body.doing .step-head::before{content:attr(data-n)}
 .done h2{font-size:1.45rem;font-weight:800;letter-spacing:-.02em;margin:0 0 .5rem}
 .done p{font-family:var(--serif);font-size:1.04rem;line-height:1.6;margin:0 0 .8rem}
-.done button{font-family:var(--sans);font-weight:700;font-size:1rem;padding:.7rem 1.15rem;
-  border-radius:4px;border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.done .complete,.done button{font-family:var(--sans);font-weight:700;font-size:1rem;padding:.7rem 1.15rem;
+  border-radius:4px;border:2px solid var(--ink);cursor:pointer}
+.done .complete{display:inline-block;background:var(--ink);color:var(--paper);text-decoration:none;margin-right:.45rem}
+.done button{background:transparent;color:var(--ink)}
 </style>
 <script>
   (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
@@ -521,6 +523,7 @@ body.doing .step-head::before{content:attr(data-n)}
     done.innerHTML = '<h2>That\u2019s everything.</h2>' +
       '<p>Whatever you got through is what there was time for. The order runs biggest ' +
       'difference first, so wherever you stopped is the right place to have stopped.</p>' +
+      '<a class="complete" href="/finished-first-night.html">I finished \u2014 what\u2019s next?</a>' +
       '<button type="button" class="exit">Show the whole page again</button>';
     var list = document.querySelector('.steps');
     list.parentNode.insertBefore(nav, list.nextSibling);

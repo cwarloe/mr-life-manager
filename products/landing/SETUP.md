@@ -20,6 +20,8 @@ entry pages, after the action
 | `/guides/<slug>.html` | Each guide |
 | `/print/` | Index of print-ready PDFs |
 | `/print/<slug>.pdf` | A specific printable |
+| `/finished-<door>.html` | No-index completion destination for each entry page |
+| `/first-place.html` | No-charge reservation for the planned $39 founding offer |
 | `/privacy.html` | What an email is used for |
 
 `index.html` is the main page. `index-parents.html` is the parent-facing
@@ -40,8 +42,11 @@ python3 .github/scripts/build_site.py   # writes _site/ (gitignored)
 **Account ID:** `2635985`  
 **Embedded form ID:** `00ZwEr`
 
-The form is embedded on all four entry pages and nowhere else. Do not put it
-back on the homepage.
+The form is embedded on all four entry pages and their four completion pages.
+Do not put it back on the homepage or the *First Place* founding-offer page. The
+completion pages reuse the originating door tag, so the reader receives the
+same three-email sequence whether they signed up in reading mode or immediately
+after finishing in doing mode.
 
 The intended account state is documented in
 [`emails/MAILERLITE-SETUP.md`](emails/MAILERLITE-SETUP.md). Do **not** wire
@@ -51,6 +56,11 @@ withdrawn. Live copy is in the four entry-specific sequence files.
 The owner reported all four automations active on 2026-09-22. Each sends one PDF
 link in email 1 — `/print/the-week.pdf` — not a copy of the action page. The
 action and its print option have already been delivered before signup.
+
+The founding-offer page uses a prefilled email to `hello@mrlifemanager.com`.
+That keeps the demand test live without a fifth automation or a risk that a
+reservation receives an unrelated free sequence. Treat each sent message as a
+reservation, not revenue.
 
 The repository's live-site monitor proves that the public pages, route tags,
 form containers and PDF are present. Private MailerLite routing and delivery

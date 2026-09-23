@@ -10,11 +10,16 @@ from urllib.request import Request, urlopen
 
 BASE = "https://mrlifemanager.com"
 PAGES = {
-    "/": ("The life skills nobody thought to teach you",),
+    "/": ("Run your home without carrying all of it in your head",),
     "/first-night.html": ('data-form="00ZwEr"', "var VALUE = 'first-night'", "Dave's week on one page"),
     "/guests.html": ('data-form="00ZwEr"', "var VALUE = 'guests'", "Dave's week on one page"),
     "/underwater.html": ('data-form="00ZwEr"', "var VALUE = 'underwater'", "Dave's week on one page"),
     "/one-room.html": ('data-form="00ZwEr"', "var VALUE = 'one-room'", "Dave's week on one page"),
+    "/finished-first-night.html": ('data-form="00ZwEr"', "var VALUE = 'first-night'", "One thing finished"),
+    "/finished-guests.html": ('data-form="00ZwEr"', "var VALUE = 'guests'", "One thing finished"),
+    "/finished-underwater.html": ('data-form="00ZwEr"', "var VALUE = 'underwater'", "One thing finished"),
+    "/finished-one-room.html": ('data-form="00ZwEr"', "var VALUE = 'one-room'", "One thing finished"),
+    "/first-place.html": ("First%20Place%20%2439%20founding%20reservation", "Reserve the $39 founding version", "planned founding price"),
     "/privacy.html": ("MailerLite stores", "The Week"),
 }
 
@@ -72,7 +77,7 @@ def main() -> int:
     for attempt in range(3):
         problems = run_once()
         if not problems:
-            print("Production smoke test passed: six pages, four routes, one PDF and canonical redirects.")
+            print("Production smoke test passed: eleven pages, four routes, one founding offer, one PDF and canonical redirects.")
             return 0
         if attempt < 2:
             time.sleep(10)

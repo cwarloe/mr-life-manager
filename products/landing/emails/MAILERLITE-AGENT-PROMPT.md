@@ -5,7 +5,7 @@ signed in to MailerLite. Written to be run, not interpreted.
 
 **Source of truth:** [`MAILERLITE-SETUP.md`](MAILERLITE-SETUP.md),
 [`guests-sequence.md`](guests-sequence.md),
-[`first-night-sequence.md`](first-night-sequence.md). The copy is duplicated in
+and [`first-night-sequence.md`](first-night-sequence.md). The copy is duplicated in
 the prompt for the agent's convenience — **if it ever disagrees with those files,
 those files win.**
 
@@ -28,7 +28,7 @@ field recording which page they came from:
 | `https://mrlifemanager.com/underwater.html` | `underwater` |
 | `https://mrlifemanager.com/one-room.html` | `one-room` |
 
-That value is the only thing deciding which of four email sequences a person
+That value is the only thing deciding which email path a person
 receives. Everything you build depends on it arriving correctly.
 
 ## Your tasks, in order
@@ -80,7 +80,7 @@ anything else or empty → add to entry-unknown
 `entry-unknown` is deliberate. It is an alarm: it should stay empty forever, and
 anything landing in it means the tagging is broken.
 
-### 5. Build four automations
+### 5. Build four entry automations
 
 Each triggers on **subscriber joins group** and sends three emails.
 
@@ -325,21 +325,19 @@ A few words is a complete answer. Just hit reply. It's me reading these, not a s
 — Charles
 ```
 
----
-
 ### 6. Verify the printable link
 
 Open it in the browser and confirm it loads a readable PDF:
 
 - `https://mrlifemanager.com/print/the-week.pdf` (all four sequences link this one)
 
-If either 404s, **report it and do not activate the automations.** A dead link in
+If it 404s, **report it and do not activate the automations.** A dead link in
 email 1 wastes the only moment the reader is paying attention.
 
 ### 7. Test, then clean up
 
-Sign up from **each** page using a different test address. Confirm and
-report each:
+Sign up from all four entry routes using a different test address for each.
+Confirm and report each:
 
 - [ ] Each landed in the correct group
 - [ ] The `guide` field is populated, not empty
@@ -357,7 +355,7 @@ Then delete all four test subscribers so they don't pollute the first real numbe
   reference the reader's behavior, which this project has decided never to do.
 - **Never enable resend-to-unopeners.** It re-asks for the same thing. Every
   email in these sequences deliberately asks for *less* than the one before it.
-- **Never add a fourth email**, a promotion, an upsell, or a "just checking in."
+- **Never add a fourth email to an entry sequence**, a promotion, an upsell, or a "just checking in."
   The sequence ends at three. Silence is an acceptable answer from a reader.
 - **Never edit the copy.** The wording is deliberate, including the parts that
   look like they need tightening.
