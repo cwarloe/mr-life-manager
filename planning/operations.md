@@ -20,7 +20,7 @@ not the number of products, platforms, or channels.
 Email 1 contains one PDF link, [`The Week`](https://mrlifemanager.com/print/the-week.pdf).
 The entry-page action and print option happen before signup.
 
-**Last private account-level funnel test:** not yet recorded in this repository.
+**Last private account-level funnel test:** 2026-09-22 — **pass** for all four entry routes (confirm → correct `entry-*` group → Email 1 with [`The Week`](https://mrlifemanager.com/print/the-week.pdf)). Test subscribers removed. Guests/first-night verified earlier the same week; underwater/one-room completed on this date.
 
 **Completion measurement:** each entry page now ends at a distinct
 `/finished-*.html` page after the reader explicitly chooses “I finished.” Count
@@ -131,10 +131,11 @@ operator only when there is a real continuity need; do not share a password.
 These require an authenticated account or a human/legal decision and are not
 repository work:
 
-- Add DMARC in monitoring mode and confirm Zoho and MailerLite alignment before
-  enforcing it. SPF, MailerLite verification and DKIM resolved on 2026-09-22;
-  DMARC did not.
-- Confirm the required postal address appears in every MailerLite footer.
+- DMARC monitoring TXT added 2026-09-22 (`p=none`, reports to `hello@`). Confirm
+  Zoho and MailerLite alignment before enforcing quarantine or reject. SPF,
+  MailerLite verification and DKIM were already resolved.
+- Postal address in MailerLite footers confirmed 2026-09-22 (6621 West Holiday
+  Drive, Boise).
 - Connect privacy-first visitor analytics, then update the privacy page to name
   the service actually used.
 - Verify the domain in Google Search Console and submit `/sitemap.xml`.
