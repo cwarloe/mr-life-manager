@@ -10,7 +10,6 @@ on:
       - "products/print/**"
       - "products/guides-pdf/**"
       - ".github/scripts/build_site.py"
-      - ".github/scripts/render_pdf.py"
       - ".github/workflows/deploy-landing.yml"
   workflow_dispatch:
 
