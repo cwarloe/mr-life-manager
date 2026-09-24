@@ -10,7 +10,6 @@ on:
       - "products/guides-pdf/**"
       - ".github/scripts/build_site.py"
       - ".github/scripts/check_built_site.py"
-      - ".github/scripts/check_live_site.py"
       - ".github/scripts/validate_repo.py"
       - ".github/scripts/check_pdfs_fresh.py"
       - ".github/scripts/check_entry_pages.py"
