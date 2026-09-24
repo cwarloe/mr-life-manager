@@ -68,8 +68,8 @@ Write a `brief.md` before building — see [../README.md](../README.md).
 | [How Often Should I…?](how-often/) | Draft 1, safety rows checked + **designed** | Second pass on the non-safety rows |
 | [Cleaning Supply Starter List](cleaning-supplies/) | Draft 1 + **designed** | Price-check the ranges |
 
-**The free tier is drafted and designed.** Three assets, each with a brief, a
-source `.md`, and a printable `.html`.
+**The free tier is drafted and designed.** Three assets, each with a `brief.md`
+(intent) and a printable `.html` (SoT for the designed asset).
 
 They share one system: Archivo for mechanics, Source Serif for the teaching
 voice, blueprint blue for structure, amber spent only where money or safety is

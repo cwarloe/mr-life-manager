@@ -5,8 +5,7 @@ reviewed or tested with a real reader.
 **Tier:** Rung 0 — free ([product-ladder.md](../../../docs/business/product-ladder.md))
 **Format:** printable reference, black-and-white, US Letter. Designed to be
 **taped inside a cabinet door.**
-**Files:** [`how-often-should-i.md`](how-often-should-i.md) (source text) ·
-[`how-often-should-i.html`](how-often-should-i.html) (designed, printable)
+**Files:** [`how-often-should-i.html`](how-often-should-i.html) (designed, printable)
 
 **Design:** frequency bands as the structure, each with a stamped tag — daily,
 weekly, monthly, seasonal, annual, vehicle, now. Good-enough and better are

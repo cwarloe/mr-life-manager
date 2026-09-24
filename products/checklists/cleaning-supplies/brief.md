@@ -4,8 +4,7 @@
 real reader; price examples still need a freshness check before distribution.
 **Tier:** Rung 0 — free ([product-ladder.md](../../../docs/business/product-ladder.md))
 **Format:** printable, black-and-white, US Letter
-**Files:** [`cleaning-supply-starter-list.md`](cleaning-supply-starter-list.md) (source text) ·
-[`cleaning-supply-starter-list.html`](cleaning-supply-starter-list.html) (designed, printable)
+**Files:** [`cleaning-supply-starter-list.html`](cleaning-supply-starter-list.html) (designed, printable)
 
 **Design:** buy / tools / laundry as priced tables with right-aligned tabular
 figures, then **Skip** gets an amber tag and its own visual weight — it's the

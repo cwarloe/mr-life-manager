@@ -1,8 +1,7 @@
 # Product Brief — First Apartment Checklist
 
 **Status:** Draft 1 text + **designed HTML** (2026-09-09). Not reviewed, not tested.
-**Files:** [`first-apartment-checklist.md`](first-apartment-checklist.md) (source text) ·
-[`first-apartment-checklist.html`](first-apartment-checklist.html) (designed, printable)
+**Files:** [`first-apartment-checklist.html`](first-apartment-checklist.html) (designed, printable)
 
 **Design direction:** a building punch list — which is literally what Part 3 is.
 Blueprint blue carries structure; amber is spent only on the two money signals
