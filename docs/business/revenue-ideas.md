@@ -22,7 +22,7 @@ this file exists to catch ideas that don't fit neatly there.
 | Idea | Est. price | Fit |
 |---|---|---|
 | Single-topic PDF guides | $9–$19 | 🟢 Fastest possible first revenue |
-| *First Place* flagship ebook | $49 | 🟢 The core MVP bet |
+| *First Place* flagship ebook | $39 | 🟢 The core MVP bet |
 | Guide bundles (room-by-room, etc.) | $29–$59 | 🟢 Free revenue from existing assets |
 | Notion / Google Sheets templates | $19–$49 | 🟡 Good margin; support burden |
 | Printable planner + calendar pack | $12–$29 | 🟡 Seasonal spikes (Aug/Sep, Jan) |
@@ -117,7 +117,7 @@ different landing page.
 **Do now (🟢)**
 1. Free **First Apartment Checklist** — audience validation and list building.
 2. Two or three **$9–$19 guides** — first revenue, and a read on which topics sell.
-3. ***First Place* at $49** — the core bet.
+3. ***First Place* at $39** — the core bet.
 4. **5–10 coaching or $99 audit slots** — cash, research, and testimonials.
 5. **Parent-gift positioning** for the student market — a landing page test.
 

@@ -476,7 +476,7 @@ changed or one pass misread. **Low confidence on that specific number.**
 |---|---|---|
 | [ADR-003](../../planning/decisions.md) beachhead | Right audience, wrong payer | Decided — [ADR-010](../../planning/decisions.md#adr-010--beachhead-keep-the-audience-change-the-payer) |
 | [brand-positioning.md](../business/brand-positioning.md) | "Nobody taught you" is occupied, not open | Flagged |
-| [product-ladder.md](../business/product-ladder.md) | $49 flagship sits above verified comparables | Flagged |
+| [product-ladder.md](../business/product-ladder.md) | $49 flagship sat above verified comparables (now $39, 2026-09-25) | Flagged |
 | [revenue-ideas.md](../business/revenue-ideas.md) | Parent-gift and institutional channels strengthened; certification tier is new | Flagged |
 | [roadmap.md](../../planning/roadmap.md) | Phase 1 competitor research substantially done | Updated |
 

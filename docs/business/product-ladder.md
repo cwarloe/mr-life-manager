@@ -65,12 +65,12 @@ across the low tier (the strongest signal that the mid-tier will work).
 
 ---
 
-## Rung 2 — Mid-tier ($49–$149) (the core offer)
+## Rung 2 — Mid-tier ($39–$149) (the core offer)
 
 **Purpose:** the flagship. Comprehensive, sequenced, and transformative rather
 than referential. This is where most revenue should come from.
 
-### ★ First Place: The Practical Guide to Running Your First Home — $49
+### ★ First Place: The Practical Guide to Running Your First Home — $39
 
 The flagship. A complete operating manual for someone running their own home for
 the first time.
@@ -147,7 +147,7 @@ purchasing committee.
 ──────────┼──────────────────────────────────────────────
      $99  ┤ Household Operating System (couples)
      $79  ┤ 30-Day Life Reset
-   ★ $49  ┤ FIRST PLACE                                   ← revenue core
+   ★ $39  ┤ FIRST PLACE                                   ← revenue core
 ──────────┼──────────────────────────────────────────────
      $29  ┤ Room-by-room bundle
      $19  ┤ Kitchen That Works · Paperwork Kit
@@ -184,7 +184,7 @@ is fatal, but the low and mid tiers need a hard look.
 | Free assets | $0 | Correct — everyone's funnel starts free |
 | Single guides | $9 | Clean My Space checklists **$0.99–$1.99**; Etsy multi-domain bundles **$2.69–$16.97** |
 | Room-by-room bundle | $29 | Clean My Space e-book bundles **$7.99–$19.99**; Clutterbug's 30-day bootcamp is **$30** |
-| ★ *First Place* | **$49** | Clutterbug's full method course: **$94**. KC Davis's book **$24.99** + course **$14.99** |
+| ★ *First Place* | **$39** | Clutterbug's full method course: **$94**. KC Davis's book **$24.99** + course **$14.99** |
 | 30-Day Life Reset | $79 | Clutterbug Method **$94** — closest comparable |
 | Couples OS | $99 | Her First $100K intro workshop **$99** |
 | Group cohort | $299–$499 | Thin comparables; Extension charges **$325** for a *professional* course |
@@ -196,7 +196,7 @@ is fatal, but the low and mid tiers need a hard look.
    game — but note *why* we can charge more: they sell **blank forms**, we sell
    **instruction**. That distinction has to be obvious on the sales page or the
    price looks arbitrary.
-2. **$49 for *First Place* is defensible but unproven.** It sits between
+2. **$39 for *First Place* is defensible but unproven.** It sits between
    Clutterbug's $30 and $94. The advantage is scope — nobody else sells
    multi-domain instruction. The risk is that scope is exactly what buyers have
    not yet paid for.
@@ -220,7 +220,7 @@ currently doesn't contain.
 - **Average revenue per customer** should rise as the ladder fills out — if it
   doesn't, the rungs are too far apart.
 - **No orphan rungs.** Every product should name the product before and after it.
-- **No cannibalization.** If the $29 bundle makes the $49 flagship pointless,
+- **No cannibalization.** If the $29 bundle makes the $39 flagship pointless,
   restructure.
 - **Nothing sold twice.** If a mid-tier buyer feels they paid again for what they
   already had, the ladder is broken.

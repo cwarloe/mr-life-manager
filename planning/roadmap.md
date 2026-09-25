@@ -167,7 +167,7 @@ content businesses die of obscurity, not of bad content.
   trigger.
 - **The title works twice:** your first place to live, and putting things in
   their place.
-- **Comprehensive enough to justify $49** while remaining one clear promise.
+- **Comprehensive enough to justify $39** while remaining one clear promise.
 - **It's the spine of everything else.** The 30-Day Reset, the couples edition,
   the student edition, and eventually a course are all repackagings of it.
 - **It's the licensable asset.** Institutions buy curriculum, not tips.

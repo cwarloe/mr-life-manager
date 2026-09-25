@@ -46,7 +46,7 @@ Home (cleaning) — narrow by design. It's a single-purpose reference.
 ### 6. Ladder position
 
 Rung 0, beside the other two free assets. Leads to room-by-room guides ($9) and
-*First Place* ($49).
+*First Place* ($39).
 
 ### 7. Content drawn on
 

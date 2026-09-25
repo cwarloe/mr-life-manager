@@ -968,6 +968,8 @@ maintenance teaching instead of lecturing someone mid-panic.
 position is that the number matters far less than the exchange being real. Revisit
 with evidence, not argument.
 
+*Note (2026-09-25): this $9 is a standalone guide idea, not First Place; First Place is $39.*
+
 **Status of the evidence.** None of this has met a reader. The site has no traffic
 source; current visitors are people the founder has told directly, who are not the
 target. This is a well-grounded hypothesis, not a finding, and should be held that

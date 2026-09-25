@@ -50,7 +50,7 @@ keep
 
 Sits beside the [First Apartment Checklist](../first-apartment/) at rung 0. That
 one is **sequenced for a moment**; this one is a **standing reference**. Leads
-naturally to the maintenance calendar ($12) and *First Place* ($49).
+naturally to the maintenance calendar ($12) and *First Place* ($39).
 
 ### 7. Content drawn on
 
