@@ -108,9 +108,8 @@ genuinely doable and it's the only real research we have.
 
 ## Not built — do not send until these are closed
 
-1. **The printable.** Email 1 promises it. Generated as
-   [`products/guides-pdf/guests-when-someone-is-coming-over.pdf`](../../guides-pdf/)
-   — **published** at <https://mrlifemanager.com/print/guests-when-someone-is-coming-over.pdf> by the build. Open it before sending.
+1. ~~**The printable.**~~ Done — Email 1 links
+   <https://mrlifemanager.com/print/the-week.pdf>. Open it before sending.
 2. **No paid offer appears anywhere in this sequence**, deliberately. ADR-015
    says the paid step is smaller and in the same domain; that product ($9, the
    maintenance version) **does not exist yet**. Inserting a placeholder offer
