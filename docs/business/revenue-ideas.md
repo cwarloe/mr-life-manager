@@ -26,7 +26,7 @@ this file exists to catch ideas that don't fit neatly there.
 | Guide bundles (room-by-room, etc.) | $29–$59 | 🟢 Free revenue from existing assets |
 | Notion / Google Sheets templates | $19–$49 | 🟡 Good margin; support burden |
 | Printable planner + calendar pack | $12–$29 | 🟡 Seasonal spikes (Aug/Sep, Jan) |
-| Editions by persona (student / couples / starting over) | $49 | 🟡 High leverage: one spine, three markets |
+| Editions by persona (student / couples / starting over) | $39 | 🟡 High leverage: one spine, three markets |
 | Audiobook version | $19 | 🔴 Wait for a proven text product |
 | Physical printed book | $24 | 🔴 Print-on-demand possible, but a distraction |
 
