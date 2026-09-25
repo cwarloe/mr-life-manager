@@ -14,7 +14,7 @@ the rest are archive, per
 | `what-is-this-room-for.pdf` | 2 | [source](../checklists/room-for/what-is-this-room-for.html) |
 | `the-light-is-the-problem.pdf` | 2 | [source](../checklists/light/the-light-is-the-problem.html) |
 | `laundry-solved.pdf` | 4 | [source](../checklists/laundry/laundry-solved.html) |
-| `ten-meals.pdf` | 4 | [source](../checklists/ten-meals/ten-meals.html) |
+| `ten-meals.pdf` | 3 | [source](../checklists/ten-meals/ten-meals.html) |
 | `household-agreement.pdf` | 5 | [source](../worksheets/household-agreement/household-agreement.html) |
 | `partner-pilot.pdf` | 4 | [generator](../../.github/scripts/generate_share_assets.py) |
 

@@ -1,10 +1,10 @@
-# Product Brief — Ten Meals and a Stocked Kitchen
+# Product Brief — Six Meals and a Stocked Kitchen
 
 **Status:** Drafted and designed 2026-09-18. Not reviewed or reader-tested.
 Brief written after the fact from the HTML.
 **Tier:** Rung 0 — free ([product-ladder.md](../../../docs/business/product-ladder.md))
 **Files:** [`ten-meals.html`](ten-meals.html) ·
-[PDF](../../guides-pdf/ten-meals.pdf) (4 pp) · public at
+[PDF](../../guides-pdf/ten-meals.pdf) (3 pp) · public at
 `/guides/ten-meals.html`
 
 ---
@@ -43,7 +43,7 @@ relates to either is not decided.
 
 ### 7. What content?
 
-The four-slot pattern (filling, protein, green, flavor) before any recipe; ten
+The four-slot pattern (filling, protein, green, flavor) before any recipe; six
 meals under 30 minutes, each with the one thing that usually goes wrong; a
 stocked-kitchen list (cupboard, fridge and freezer); shopping so food gets
 eaten; clean as you cook. The pantry list was folded in rather than split out
@@ -52,6 +52,10 @@ eaten; clean as you cook. The pantry list was folded in rather than split out
 ### 8. Price?
 
 Free. Footer: free to use, copy and teach from with credit, not for resale.
+
+### Decisions
+
+- 2026-09-25, Charles: cut from ten meals to six. Ten was too many to hold in your head, and every meal must take 30 minutes or less. Cut: sheet-pan chicken (over 30 min), baked potato (an hour), canned soup and breakfast for dinner (overlap with grilled cheese and eggs).
 
 ### Open
 
