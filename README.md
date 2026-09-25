@@ -123,10 +123,7 @@ mr-life-manager/
 │   ├── vision/              Mission, principles, outcomes, audiences
 │   ├── business/            Model, product ladder, positioning, revenue
 │   └── research/            Customer problems, competitor research plan
-├── content/                 Teaching content, organized by life domain
-│   ├── home/                cleaning · kitchen · organization · hospitality
-│   ├── personal/            routines · time-management · digital-life · personal-admin
-│   ├── money/  work/  relationships/  life-transitions/
+├── content/                 Teaching content by life domain (house rules only, so far)
 ├── products/                Packaged deliverables
 │   ├── ebooks/ checklists/ worksheets/ courses/ toolkits/
 ├── frameworks/              The durable conceptual models
