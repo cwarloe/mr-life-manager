@@ -211,8 +211,9 @@ def main() -> int:
     if OUT.exists():
         shutil.rmtree(OUT)
     (OUT / "guides").mkdir(parents=True)
+    skip_landing = {"SETUP.md", "sitemap.xml", "robots.txt"}
     for item in LANDING.iterdir():
-        if item.is_dir() or item.name == "SETUP.md":
+        if item.is_dir() or item.name in skip_landing:
             continue
         shutil.copy2(item, OUT / item.name)
     assets = LANDING / "assets"

@@ -20,18 +20,12 @@
   --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
 }
 @media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
+  :root{
     --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
     --blue:#8FB6DA; --blue-soft:#1D2833;
     --amber:#E3A94E; --amber-soft:#2A2418;
     --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
   }
-}
-:root[data-theme="dark"]{
-  --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
-  --blue:#8FB6DA; --blue-soft:#1D2833;
-  --amber:#E3A94E; --amber-soft:#2A2418;
-  --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -119,8 +113,6 @@ footer a{color:var(--blue);font-weight:600;text-decoration:none}
 /* the paper/phone fork */
 .fork{margin:1.6rem 0 0;padding:.95rem 1.1rem;border:1px dashed var(--rule-strong);border-radius:4px}
 .fork-lead{font-size:.95rem;font-weight:700;margin:0 0 .25rem;letter-spacing:-.01em}
-.fork-body{font-family:var(--serif);font-size:.98rem;line-height:1.55;margin:0;color:var(--slate)}
-.fork-body a{color:var(--blue);font-weight:600}
 
 /* ---- printed action sheet ----
    The page persuades; the sheet reminds. Printing drops the long "why"
@@ -138,7 +130,7 @@ footer a{color:var(--blue);font-weight:600;text-decoration:none}
     --rule-strong:#666;--blue:#1F4E79;--blue-soft:#fff;--amber:#7a4d0a;--amber-soft:#fff}
   body{font-size:10pt;line-height:1.34}
   .wrap{max-width:none;padding:0}
-  .fork,.after,.callout,.signup,footer,.frame p:last-child,.no-print,
+  .fork,.after,.callout,.signup,footer,.frame p:last-child,
   .why,.why.open,.whybtn,.nav,.done{display:none !important}
   .step{display:block !important}
   header.top{padding:0;border-bottom:2px solid #000;padding-bottom:.35rem}
