@@ -1,6 +1,7 @@
 # Entry Page Brief — "Someone's coming over"
 
-**Status:** Built 2026-09-20. Not yet tested with a reader, and no traffic source.
+**Status:** Built 2026-09-20. [Sequence](../emails/guests-sequence.md) active per owner
+2026-09-22. Not yet tested with a reader, and no traffic source.
 **URL:** `/guests.html`
 **Implements:** [ADR-015](../../../planning/decisions.md#adr-015--the-win-comes-before-the-email)
 — the first page built to that architecture.
@@ -57,8 +58,9 @@ as an afterthought. It's the hinge of the whole page — it names what the reade
 just did and why they'll need it again — so it now gets a bordered block of its
 own, visually distinct from the amber safety note.
 
-**The offer is smaller, not bigger.** The printable plus *"Dave's ten minutes a
-night."* Per ADR-015, never a bigger pile of guides.
+**The offer is smaller, not bigger.** *"Dave's week on one page"* —
+[The Week](../../print/the-week.html), led by his ten minutes a night. Per
+ADR-015, never a bigger pile of guides.
 
 **One amber safety note**, on mixing bleach with ammonia or vinegar. It clears the
 [depth rule](../../../content/README.md) — a competent person would simply tell
@@ -91,11 +93,6 @@ addresses the shame directly, and it's placed after the labour rather than befor
 
 ### Not built yet
 
-- **Draft 4 of the welcome sequence.** The form tags this entry as `guides=guests`,
-  but [ADR-016](../../../planning/decisions.md#adr-016--the-sequence-shrinks-unconditionally)
-  withdrew Draft 3 and nothing replaces it. **Signups currently have no sequence to
-  receive.** This is the blocking gap before the page should be promoted anywhere.
-- **The printable** the signup promises. Needs generating from this page.
 - **The $9 maintenance product** the section gestures at.
 - **Traffic.** There is none. The page is a bet on search intent that has nothing
   pointing at it yet.
