@@ -43,7 +43,7 @@ Each item is tagged with its [roadmap](roadmap.md) phase and primary
 | The 20-minute reset routine | Home | Emergency recovery, high emotional value |
 | Nightly kitchen reset | Home/Food | The keystone habit; teach it first |
 | Weekly reset routine | Time | The other keystone |
-| Laundry, fully explained | Home | Universal gap; sorting, settings, stains, cadence |
+| ~~Laundry, fully explained~~ | Home | **Drafted + designed** 2026-09-18 → [guide](../products/checklists/laundry/) |
 | ~~Ten meals anyone can cook~~ | Food | **Drafted + designed** 2026-09-18 → [guide](../products/checklists/ten-meals/) |
 | ~~Stocked pantry list~~ | Food | **Folded into** [ten-meals](../products/checklists/ten-meals/) — they belong together |
 | Annual home maintenance calendar | Maintenance | Apartment and house versions |
