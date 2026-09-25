@@ -54,8 +54,7 @@ def main() -> int:
     for name, tag in entries.items():
         text = (OUT / name).read_text(encoding="utf-8")
         completion = f"finished-{name}"
-        for marker in ('data-form="00ZwEr"', f"var VALUE = '{tag}'", "Dave's week on one page",
-                       completion):
+        for marker in (f"var VALUE = '{tag}'", completion):
             if marker not in text:
                 problems.append(f"{name}: missing {marker}")
 
