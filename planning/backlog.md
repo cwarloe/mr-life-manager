@@ -21,7 +21,7 @@ Each item is tagged with its [roadmap](roadmap.md) phase and primary
 |---|---|---|---|
 | **Record Dave** | Source | 0 | **The critical path.** Questions are ready — [session guide](../source-material/interviews/dave-session-guide.md). Nothing blocking but the calendar. |
 | ~~Import existing written notes~~ | Source | 0 | **Found 2026-09-19** → [verbatim](../source-material/2023-07-17-dave-webster-cleanup-notes.md) |
-| **Resolve three source contradictions with Dave** | Source | 0 | Bulk vs. smallest size · 25 products vs. nine · scented vs. unscented. See [analysis](../source-material/2023-07-17-analysis.md). |
+| **Resolve three source contradictions with Dave** | Source | 0 | Bulk vs. smallest size · ten cleaning agents vs. the guide's nine (the old "~25" was our miscount) · scented vs. unscented. See [analysis](../source-material/2023-07-17-analysis.md). |
 | Retrieve the `Do it now.jpg` attachment | Source | 0 | On the 2023-07-17 email; not yet pulled |
 | ~~Plain-language permissions page~~ | Business | 0 | **Done** 2026-09-08 → [PERMISSIONS.md](../PERMISSIONS.md). Needs contact details before launch. |
 | ~~Decide the faith-framing question~~ | Decision | 0 | **Done** 2026-09-08 → [ADR-009](decisions.md#adr-009--faith-framing-convictions-inform-the-work-belief-is-never-required-to-use-it). |
