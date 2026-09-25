@@ -30,12 +30,19 @@ earn the right to sell — in that order.
 
 | Product | Format | Notes |
 |---|---|---|
-| **First Apartment Checklist** | 2–4 pg PDF | Flagship lead magnet. Everything to buy, do, and set up in week one. |
-| **Cleaning Supply Starter List** | 1 pg PDF | What to actually buy, what to skip, roughly what it costs. |
-| **The 20-Minute Reset** | 1 pg PDF | Emergency routine for when the place has gotten away from you. |
-| **How Often Should I…?** | 1 pg reference | Sheets, towels, filters, oil, vacuum, fridge, dentist. Extremely shareable. |
-| **Move-Out Checklist** | 2 pg PDF | Get the deposit back. Seasonal, urgent, highly searched. |
-| Articles / short videos | Web | Same content, discoverable. |
+| **Entry pages** — first night, guests, one room, underwater | Web; prints from the page, no PDF | The front door. One action each, ungated. |
+| **The Week** | 1 pg PDF | Dave's weekly rhythm. Linked in email 1 of every entry sequence. |
+| **First Apartment Checklist** | 4 pg PDF | Everything to buy, do, and set up in week one. |
+| **How Often Should I…?** | 3 pg PDF | Sheets, towels, filters, oil, vacuum, fridge, dentist. Extremely shareable. |
+| **Cleaning Supply Starter List** | 3 pg PDF | What to actually buy, what to skip, roughly what it costs. |
+| **What Is This Room For?** | 2 pg PDF | One room: its job, what fights it, three things to do. |
+| **The Light Is the Problem** | 2 pg PDF | Why a room feels wrong when nothing in it is dirty. |
+| **Laundry, Solved** | 4 pg PDF | Sorting, settings, detergent, stains, the laundry chair. |
+| **Ten Meals and a Stocked Kitchen** | 4 pg PDF | The four-slot pattern, ten meals, the pantry list. |
+| **The Household Agreement** | 5 pg PDF | Worksheet. Decide it once, together. |
+| **The 20-Minute Reset** | Not built | Emergency routine for when the place has gotten away from you. |
+| **Move-Out Checklist** | Not built | Get the deposit back. Seasonal, urgent, highly searched. |
+| Articles / short videos | Not built | The guides themselves are public at `/guides/`. |
 
 **Success looks like:** a thing that got done, then an email, then unprompted
 sharing — in that order. Downloads are explicitly *not* a success measure
