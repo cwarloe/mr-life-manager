@@ -56,7 +56,7 @@ Write a `brief.md` before building — see [../README.md](../README.md).
 ## Status
 
 **Seven designed, none reviewed or reader-tested.** Each printable `.html` is the
-source of truth; a `brief.md`, where present, holds intent and open questions.
+source of truth; its `brief.md` holds intent and open questions.
 Per [ADR-015](../../planning/decisions.md#adr-015--the-win-comes-before-the-email)
 they are archive and search surface at `/guides/`, not offers.
 
@@ -67,8 +67,8 @@ they are archive and search surface at `/guides/`, not offers.
 | [Cleaning Supply Starter List](cleaning-supplies/) | Draft 1, designed | Price-check the ranges |
 | [What Is This Room For?](room-for/) | Designed 2026-09-20 | See its brief |
 | [The Light Is the Problem](light/) | Designed 2026-09-20 | See its brief |
-| [Laundry, Solved](laundry/) | Designed | No brief yet |
-| [Ten Meals and a Stocked Kitchen](ten-meals/) | Designed | No brief yet |
+| [Laundry, Solved](laundry/) | Designed 2026-09-18 | See its brief |
+| [Ten Meals and a Stocked Kitchen](ten-meals/) | Designed 2026-09-18 | See its brief |
 
 They share one system: Archivo for mechanics, Source Serif for the teaching
 voice, blueprint blue for structure, amber spent only where money or safety is
