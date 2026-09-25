@@ -357,4 +357,6 @@ typing at a moment of transition.
   He's a real person. See *Who is speaking* above.
 - Does the name survive contact with the actual audience? **Still open, still
   empirical** — though ADR-011 materially reduces the risk.
-- Is he "Dave Webster" publicly, or only "Mr. Life Manager"? **Open.**
+- ~~Is he "Dave Webster" publicly, or only "Mr. Life Manager"?~~ **Settled for
+  copy** — "Dave," never the surname
+  ([content/README.md](../../content/README.md#referring-to-dave)).

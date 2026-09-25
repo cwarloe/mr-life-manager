@@ -97,8 +97,9 @@ sources and the citation count disguises what was never checked.
 
 ## Prompt 2 — Competitor landscape
 
-This is the real gap. Phases A–D of [competitor-notes.md](competitor-notes.md)
-remain unresearched, and the name scan was never going to answer them.
+Run 2026-09-05/06 as three passes, filed verbatim in [`inputs/`](inputs/) and
+synthesized in [competitor-notes.md § Findings](competitor-notes.md#findings).
+Reuse it for the gaps listed there.
 
 ```text
 You are mapping the competitive landscape for a content and curriculum
