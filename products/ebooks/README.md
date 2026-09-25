@@ -5,7 +5,7 @@ Multi-chapter guides. The **core of the MVP** and the revenue center of the
 
 ## The flagship
 
-### ★ First Place: The Practical Guide to Running Your First Home — $49
+### ★ First Place: The Practical Guide to Running Your First Home — $39
 
 A complete operating manual for someone running their own home for the first
 time. Covers setup, room by room, cleaning, food, laundry, maintenance, money,
@@ -14,7 +14,7 @@ paperwork, time, and hospitality.
 **Why this title works**
 - It names a **moment**, not a topic — and the moment is the buying trigger
 - It reads twice: your first place to live, *and* putting things in their place
-- Broad enough to justify $49, specific enough to be one clear promise
+- Broad enough to justify $39, specific enough to be one clear promise
 
 **Why this product**
 - It's the **spine of everything else.** The 30-Day Reset, the persona editions,

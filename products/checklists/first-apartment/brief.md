@@ -52,7 +52,7 @@ action easy · §8 dignity, not shame · §10 teach the why
 ### 6. Ladder position
 
 **Nothing before it — this is the front door.** After it: the room-by-room
-guides ($9) and *First Place* ($49). It must be complete and genuinely useful
+guides ($9) and *First Place* ($39). It must be complete and genuinely useful
 with **no upsell in the body**; a free asset that is really a sales pitch
 poisons the ladder, especially for an audience whose core barrier is
 embarrassment.
