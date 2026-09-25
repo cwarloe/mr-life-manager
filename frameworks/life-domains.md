@@ -225,7 +225,8 @@ not a new subject.
 ## How domains map to `content/`
 
 The content directory is intentionally **flatter** than the taxonomy — it groups
-by where someone would look, not by conceptual purity.
+by where someone would look, not by conceptual purity. None of these directories
+exist yet; each is created when its first file lands.
 
 | Domain | Directory |
 |---|---|
