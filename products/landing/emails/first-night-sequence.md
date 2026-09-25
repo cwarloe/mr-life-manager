@@ -111,8 +111,8 @@ which is the quiet point of the question.
 
 ## Not built — do not send until these are closed
 
-1. ~~**The printable.**~~ Done — published by the build at
-   <https://mrlifemanager.com/print/first-night.pdf>. Open it before sending.
+1. ~~**The printable.**~~ Done — Email 1 links
+   <https://mrlifemanager.com/print/the-week.pdf>. Open it before sending.
 2. **No paid offer.** Deliberate — the $9 product doesn't exist. Insertion point
    is after email 3.
 3. **MailerLite:** automation keyed on `guide=first-night`, 0 / 3 / 7 days, no
