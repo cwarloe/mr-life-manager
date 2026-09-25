@@ -17,10 +17,12 @@ quality, package many times. See
 |---|---|
 | `checklists/` | One- to four-page printable checklists. Free tier and $9 tier. |
 | `worksheets/` | Fill-in templates: agreements, calendars, planners, inventories. |
-| `ebooks/` | Multi-chapter guides. Includes the flagship, *First Place*. |
+| `ebooks/` | Multi-chapter guides, starting with the flagship, *First Place* (not yet written). |
 | `courses/` | Structured multi-module programs, text or video. |
 | `toolkits/` | Bundled systems — several artifacts solving one situation end to end. |
-| `landing/` | The landing page. Static HTML; see its [SETUP.md](landing/SETUP.md). |
+| `landing/` | The public site: router homepage, entry pages, email sequences. See [SETUP.md](landing/SETUP.md). |
+| `print/` | One-page printables with no web version (*The Week*). |
+| `guides-pdf/` | Rendered PDFs, published at `/print/`. Never edit; regenerate from the HTML. |
 
 ## Every product needs a brief
 
@@ -54,5 +56,22 @@ If you can't answer all eight, the product isn't ready to build.
 
 ## Status
 
-Empty. First build is the **First Apartment Checklist** in Phase 2 of the
-[roadmap](../planning/roadmap.md).
+As of 2026-09-24. Nothing is for sale, and nothing has been tested with a real
+reader. Under [ADR-015](../planning/decisions.md#adr-015--the-win-comes-before-the-email)
+the front door is a per-pain entry page; the guides are archive and search
+surface, not offers.
+
+- **Entry pages** — four, live: [first night](landing/first-night.html) ·
+  [someone's coming over](landing/guests.html) ·
+  [just underwater](landing/underwater.html) ·
+  [the room that became storage](landing/one-room.html). Each has a completion
+  page and its own [sequence](landing/emails/). Routes are in
+  [SETUP.md](landing/SETUP.md).
+- **Guides** — eight, at `/guides/`: seven [checklists](checklists/) and the
+  [Household Agreement](worksheets/household-agreement/) worksheet.
+- **Printables** — [`guides-pdf/`](guides-pdf/), at `/print/`: one PDF per guide,
+  [*The Week*](print/the-week.html) (what every sequence sends), and the
+  partner-pilot handouts.
+- **Paid** — none. [`first-place.html`](landing/first-place.html) takes
+  no-charge reservations for a planned $39 founding offer.
+- **Empty:** [ebooks](ebooks/), [courses](courses/), [toolkits](toolkits/).

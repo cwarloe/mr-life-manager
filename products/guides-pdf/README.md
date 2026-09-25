@@ -1,36 +1,34 @@
 # Guide PDFs
 
-Print-ready exports of the free-tier guides. **These are what MailerLite
-attaches to the day-0 welcome email.**
+Print-ready exports, published at `/print/`. Every entry sequence links one of
+them — `the-week.pdf` — in email 1 (see [SETUP.md](../landing/SETUP.md#mailerlite));
+the rest are archive, per
+[ADR-015](../../planning/decisions.md#adr-015--the-win-comes-before-the-email).
 
 | File | Pages | Source |
 |---|---|---|
-| `first-apartment-checklist.pdf` | 7 | [source](../checklists/first-apartment/first-apartment-checklist.html) |
-| `how-often-should-i.pdf` | 9 | [source](../checklists/how-often/how-often-should-i.html) |
-| `cleaning-supply-starter-list.pdf` | 6 | [source](../checklists/cleaning-supplies/cleaning-supply-starter-list.html) |
-| `household-agreement.pdf` | 7 | [source](../worksheets/household-agreement/household-agreement.html) |
-| `laundry-solved.pdf` | 6 | [source](../checklists/laundry/laundry-solved.html) |
-| `ten-meals.pdf` | 6 | [source](../checklists/ten-meals/ten-meals.html) |
+| `the-week.pdf` | 1 | [source](../print/the-week.html) |
+| `first-apartment-checklist.pdf` | 4 | [source](../checklists/first-apartment/first-apartment-checklist.html) |
+| `how-often-should-i.pdf` | 3 | [source](../checklists/how-often/how-often-should-i.html) |
+| `cleaning-supply-starter-list.pdf` | 3 | [source](../checklists/cleaning-supplies/cleaning-supply-starter-list.html) |
+| `what-is-this-room-for.pdf` | 2 | [source](../checklists/room-for/what-is-this-room-for.html) |
+| `the-light-is-the-problem.pdf` | 2 | [source](../checklists/light/the-light-is-the-problem.html) |
+| `laundry-solved.pdf` | 4 | [source](../checklists/laundry/laundry-solved.html) |
+| `ten-meals.pdf` | 4 | [source](../checklists/ten-meals/ten-meals.html) |
+| `household-agreement.pdf` | 5 | [source](../worksheets/household-agreement/household-agreement.html) |
+| `partner-pilot.pdf` | 4 | [generator](../../.github/scripts/generate_share_assets.py) |
 
-Only the first three go in the day-0 email. The household agreement, laundry and
-ten-meals guides are later assets — good candidates for the day-3 and day-7
-emails, or for a second signup incentive once the list is running.
+Entry pages have no PDF: the reader prints them from the page itself.
 
 ## Regenerating
 
-**The HTML is the source. Never edit a PDF.** After changing any guide, re-export:
+**The HTML is the source. Never edit a PDF.** After changing any guide:
 
 ```bash
-chrome --headless --disable-gpu --no-sandbox --no-pdf-header-footer \
-  --print-to-pdf="products/guides-pdf/NAME.pdf" \
-  --virtual-time-budget=8000 \
-  "file://$PWD/path/to/guide.html"
+python3 .github/scripts/render_all_pdfs.py
 ```
 
-`--no-pdf-header-footer` removes the browser's default URL and date chrome.
-`--virtual-time-budget` gives the Google Fonts request time to land — without it
-the export falls back to system fonts and looks wrong.
-
-Each guide's print stylesheet already drops it to black-on-white and holds
-sections together across page breaks, so the PDF is genuinely print-ready rather
-than a screenshot of a web page.
+It embeds the brand fonts, so the render doesn't depend on Google Fonts, and
+records source hashes that
+[`check_pdfs_fresh.py`](../../.github/scripts/check_pdfs_fresh.py) uses to fail CI
+when a PDF falls behind its HTML.

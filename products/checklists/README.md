@@ -3,11 +3,6 @@
 Printable checklists. The **free tier** and the **$9 tier** of the
 [product ladder](../../docs/business/product-ladder.md).
 
-*As built, these run six to nine printed pages — the "one to four pages" this
-file used to claim was never true of any of them. Left as a note rather than
-quietly corrected: if short is the actual requirement, the guides are wrong, not
-the standard, and that's a decision to make deliberately.*
-
 ## Why checklists matter more than their price suggests
 
 - **Cheapest possible validation.** A checklist takes a day to make. If nobody
@@ -22,12 +17,12 @@ the standard, and that's a decision to make deliberately.*
 ## Planned
 
 **Free**
-- ★ **First Apartment Checklist** — the flagship lead magnet
+- ★ ✓ **First Apartment Checklist** — the flagship lead magnet
 - ✓ **What Is This Room For?** — one room: its job, what fights it, three things
 - ✓ **The Light Is the Problem** — why a room feels wrong when nothing is dirty
-- Cleaning Supply Starter List
+- ✓ **Cleaning Supply Starter List**
 - The 20-Minute Reset
-- How Often Should I…? — the cadence reference
+- ✓ **How Often Should I…?** — the cadence reference
 - Move-Out Checklist
 
 **Paid ($9)**
@@ -60,16 +55,20 @@ Write a `brief.md` before building — see [../README.md](../README.md).
 
 ## Status
 
-**Two drafts written 2026-09-08. Neither is reviewed, designed, or tested.**
+**Seven designed, none reviewed or reader-tested.** Each printable `.html` is the
+source of truth; a `brief.md`, where present, holds intent and open questions.
+Per [ADR-015](../../planning/decisions.md#adr-015--the-win-comes-before-the-email)
+they are archive and search surface at `/guides/`, not offers.
 
-| Product | State | Next step |
+| Guide | State | Next step |
 |---|---|---|
-| [First Apartment Checklist](first-apartment/) | Draft 1 + **designed** | Read by someone who moved recently |
-| [How Often Should I…?](how-often/) | Draft 1, safety rows checked + **designed** | Second pass on the non-safety rows |
-| [Cleaning Supply Starter List](cleaning-supplies/) | Draft 1 + **designed** | Price-check the ranges |
-
-**The free tier is drafted and designed.** Three assets, each with a `brief.md`
-(intent) and a printable `.html` (SoT for the designed asset).
+| [First Apartment Checklist](first-apartment/) | Draft 1, designed | Read by someone who moved recently |
+| [How Often Should I…?](how-often/) | Draft 1, designed, safety rows checked | Second pass on the non-safety rows |
+| [Cleaning Supply Starter List](cleaning-supplies/) | Draft 1, designed | Price-check the ranges |
+| [What Is This Room For?](room-for/) | Designed 2026-09-20 | See its brief |
+| [The Light Is the Problem](light/) | Designed 2026-09-20 | See its brief |
+| [Laundry, Solved](laundry/) | Designed | No brief yet |
+| [Ten Meals and a Stocked Kitchen](ten-meals/) | Designed | No brief yet |
 
 They share one system: Archivo for mechanics, Source Serif for the teaching
 voice, blueprint blue for structure, amber spent only where money or safety is
@@ -77,12 +76,5 @@ at stake. Each footer carries the
 [ADR-013](../../planning/decisions.md#adr-013--licensing-revised-free-to-use-never-free-to-sell)
 permission line, so the licensing decision travels on the asset.
 
-**Still untested with a real reader**, and no contact details or capture
-mechanism yet.
-
-Both are drafted as **source material for `content/`**, not the reverse —
-`content/` is still empty, so sections should be extracted back into it once
-proven. Each brief lists its own open questions.
-
-Neither has been through: a second-pair-of-eyes read, design, print testing, or
-any contact with a real reader.
+They are **source material for `content/`**, not the reverse — sections should
+be extracted back into it once proven.
