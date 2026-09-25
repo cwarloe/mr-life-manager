@@ -26,7 +26,7 @@ Each item is tagged with its [roadmap](roadmap.md) phase and primary
 | ~~Plain-language permissions page~~ | Business | 0 | **Done** 2026-09-08 → [PERMISSIONS.md](../PERMISSIONS.md). Needs contact details before launch. |
 | ~~Decide the faith-framing question~~ | Decision | 0 | **Done** 2026-09-08 → [ADR-009](decisions.md#adr-009--faith-framing-convictions-inform-the-work-belief-is-never-required-to-use-it). |
 | ~~Name/trademark check on "Mr. Life Manager"~~ | Research | 0 | **Closed 2026-09-23 — name cleared by owner.** No "Mr. Life Manager" exists anywhere; the only nearby hits are generic "…Life Manager" names, a common term that is not a concern. Domain `.com` is ours. See [scan](../docs/research/brand-name-scan.md). |
-| Record MailerLite delivery health | Launch | 2 | Four automations are active per owner 2026-09-22. Record a controlled test of all four routes, three emails, the single `The Week` link, unsubscribe, footer and replies in `operations.md`. |
+| ~~Record MailerLite delivery health~~ | Launch | 2 | **Passed 2026-09-22** for all four routes → [operations.md](operations.md). |
 | Line up first 5 validation conversations | Research | 1 | Warm network first |
 | ~~Draft and design the First Apartment Checklist~~ | Product | 2 | **Done** 2026-09-09 → [product](../products/checklists/first-apartment/). Still needs real-reader review and testing. |
 
@@ -68,7 +68,7 @@ Each item is tagged with its [roadmap](roadmap.md) phase and primary
 | Item | Phase |
 |---|---|
 | 15–20 validation conversations | 1 |
-| Competitor research Phases A–C | 1 |
+| ~~Competitor research Phases A–C~~ — **done 2026-09-08** → [findings](../docs/research/competitor-notes.md#findings) | 1 |
 | Search-demand check on top topics | 1 |
 | Reddit/forum language mining | 1 |
 | Name reaction test with women in the audience | 1 |

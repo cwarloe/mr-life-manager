@@ -215,9 +215,11 @@ information needed for the next.
 
 - Is the audience reachable at acceptable cost, or is distribution the real
   constraint? (Almost certainly the latter — plan accordingly.)
-- The brand is built around Dave Webster, not the founder. Confirm whether his
-  full name and likeness are public-facing; the landing pages currently use his
-  full name.
+- The brand is built around Dave Webster, not the founder. Product copy calls
+  him "Dave," never the surname
+  ([content/README.md](../../content/README.md#referring-to-dave)); wider name
+  and likeness rights are §3 of the
+  [draft term sheet](dave-rights-term-sheet-draft.md).
 - Faith framing is settled by
   [ADR-009](../../planning/decisions.md#adr-009--faith-framing-convictions-inform-the-work-belief-is-never-required-to-use-it):
   belief is never required to use the material, general products do not contain

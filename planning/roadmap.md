@@ -11,42 +11,25 @@ one to have made money — only to have produced evidence.
 
 ---
 
-## Phase 0 — Foundation *(mostly complete)*
+## Phase 0 — Foundation *(done)*
 
-**Goal:** get the concept out of your head and into a form you can work with.
+Concept, mission, principles, audiences, frameworks, business model and product
+ladder are drafted. Dave's original documents are in
+[`source-material/`](../source-material/INVENTORY.md). Faith framing
+([ADR-009](decisions.md#adr-009--faith-framing-convictions-inform-the-work-belief-is-never-required-to-use-it))
+and Dave's participation
+([ADR-011](decisions.md#adr-011--mr-life-manager-is-a-real-person-dave-webster))
+are settled. The name was cleared by the owner and `mrlifemanager.com` secured
+2026-09-23 ([brand-name-scan.md](../docs/research/brand-name-scan.md)).
 
-- [x] Define the concept and scope
-- [x] Draft mission, principles, and audiences
-- [x] Draft the core frameworks
-- [x] Establish the repository and planning structure
-- [x] Draft business model and product ladder
-- [ ] **Record Dave — the critical path.** Every framework here is a
-      reconstruction from memory; the primary source is uncaptured.
+Carried forward:
+
+- [ ] **Record Dave — the critical path.** The recovered documents cover
+      cleaning, organizing and hospitality only.
       **A session guide with 28 ready questions is drafted** —
       [dave-session-guide.md](../source-material/interviews/dave-session-guide.md).
       Take it to the session; don't send it ahead.
-- [x] **Original notes recovered 2026-09-19** — Dave's email of 17 July 2023,
-      found in Gmail.
-      [Verbatim](../source-material/2023-07-17-dave-webster-cleanup-notes.md) ·
-      [analysis](../source-material/2023-07-17-analysis.md). Confirms the
-      frameworks are named from his actual words; surfaces three real
-      contradictions to put to him.
-- [x] Decide the faith-framing question — settled by
-      [ADR-009](decisions.md#adr-009--faith-framing-convictions-inform-the-work-belief-is-never-required-to-use-it):
-      belief is never required to use the material; the founder does not hide his
-- [x] Preliminary name scan — no exact collision found
-      ([brand-name-scan.md](../docs/research/brand-name-scan.md))
-- [ ] **Free USPTO search** at tmsearch.uspto.gov for "life manager," "mr life
-      manager," "Mr. Man" — **now a prerequisite, not a nice-to-have.** Under
-      [ADR-012](decisions.md#adr-012--licensing-permission-is-the-marketing) the
-      name is the primary protected asset.
-- [x] Dave's participation settled — discussed over years; he'll be compensated
-      ([ADR-011](decisions.md#adr-011--mr-life-manager-is-a-real-person-dave-webster)).
-      Putting it in writing eventually is worth doing, but it isn't blocking.
-- [ ] Domain and social handle availability check
-
-**Exit criteria:** the concept can be explained to a stranger in two minutes, and
-the source notes are in the repo.
+- [ ] Social handle availability check
 
 ---
 
@@ -304,10 +287,11 @@ those first.
 
 ## The next three things
 
-1. Record a controlled four-page MailerLite delivery test, enable minimal
-   visitor measurement, and begin one distribution experiment at a time.
-2. Complete the USPTO/name check, domain check, and social-handle check before
-   investing further in the brand.
+1. Enable minimal visitor measurement and begin one distribution experiment at
+   a time. (The four-route MailerLite delivery test passed 2026-09-22 —
+   [operations.md](operations.md).)
+2. Check social-handle availability before investing further in the brand; the
+   name and `.com` are settled.
 3. Record Dave and line up the first five Phase 1 conversations. Use what those
    conversations reveal before creating another product.
 

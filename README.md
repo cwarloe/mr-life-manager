@@ -203,7 +203,7 @@ verify it and learn from real people.
 - ⬜ **Record Dave.** The recovered documents cover cleaning, organizing and
       hospitality only. Money, food, paperwork, maintenance and transitions are
       still entirely unsourced, and he is still the critical path for them
-- ⬜ Complete the USPTO/name check and domain/social availability check
+- ⬜ Social-handle availability check (name cleared and `.com` secured 2026-09-23)
 - ⬜ No completed audience validation, paid customers, or revenue yet
 
 **Two honest caveats.** The products are designed prototypes, not validated

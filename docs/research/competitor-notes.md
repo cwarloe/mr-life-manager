@@ -1,11 +1,8 @@
 # Competitor Notes
 
-> **⚠️ This file contains no researched competitor facts.**
->
-> Nothing here describes any specific company's real pricing, audience size,
-> revenue, or strategy. It defines **categories to research** and a **method for
-> researching them**. Specific claims get added only after someone actually looks
-> — with a source and a date attached.
+> **Researched competitor facts live only in [Findings](#findings)**, each with a
+> source, date, and confidence. Everything above it is the categories and method
+> the research was run against.
 >
 > Fabricated competitive intelligence is worse than none: it produces confident
 > decisions built on nothing.
@@ -219,9 +216,8 @@ Verify before recording anything.**
 > **Partially addressed, 2026-09-06.** A preliminary name scan covered the last
 > two items below (name availability, trademark conflicts) in the *software and
 > app* category only. Findings and their limitations:
-> [brand-name-scan.md](brand-name-scan.md). The remaining Phase E items, and
-> **all of Phases A–D**, are still open — and A–D cover the content and
-> curriculum competitors that actually matter to this business.
+> [brand-name-scan.md](brand-name-scan.md). Phases A–C were substantially
+> answered 2026-09-08 — see [Findings](#findings) and its list of gaps.
 
 
 - [ ] Collect competitor taglines and positioning statements
@@ -259,7 +255,7 @@ gets labeled as inference.
 ## Findings
 
 **Synthesized 2026-09-08 from three independent research passes**
-([competitive-landscape/](competitive-landscape/)), run against Prompt 2 in
+(verbatim in [inputs/](inputs/)), run against Prompt 2 in
 [research-prompts.md](research-prompts.md).
 
 **Acceptance test: PASS.** Every claim independently checkable was checked and
@@ -478,7 +474,7 @@ changed or one pass misread. **Low confidence on that specific number.**
 
 | Document | Implication | Status |
 |---|---|---|
-| [ADR-003](../../planning/decisions.md) beachhead | **Under review** — right audience, wrong payer | Flagged, not changed |
+| [ADR-003](../../planning/decisions.md) beachhead | Right audience, wrong payer | Decided — [ADR-010](../../planning/decisions.md#adr-010--beachhead-keep-the-audience-change-the-payer) |
 | [brand-positioning.md](../business/brand-positioning.md) | "Nobody taught you" is occupied, not open | Flagged |
 | [product-ladder.md](../business/product-ladder.md) | $49 flagship sits above verified comparables | Flagged |
 | [revenue-ideas.md](../business/revenue-ideas.md) | Parent-gift and institutional channels strengthened; certification tier is new | Flagged |
@@ -502,6 +498,8 @@ changed or one pass misread. **Low confidence on that specific number.**
 > a gift and institutional channel.
 >
 > That is an ADR-003 decision, and it belongs to a person, not to this file.
+> **Decided 2026-09-08:** [ADR-010](../../planning/decisions.md#adr-010--beachhead-keep-the-audience-change-the-payer),
+> keep the audience, change the payer.
 
 **Related, but not findings in this file:**
 [brand-name-scan.md](brand-name-scan.md) records a preliminary name-availability

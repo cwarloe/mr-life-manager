@@ -850,9 +850,6 @@ Not yet ADRs. These need to be made, and each blocks something.
 |---|---|---|
 | Put Dave's arrangement in writing at some point — **not urgent, substance is settled** ([ADR-011](#adr-011--mr-life-manager-is-a-real-person-dave-webster)). It protects him and his family more than it protects the founder. | Nothing immediate | Low |
 | **Capture Dave's material before anything else.** He under-reports his own expertise by nature, so this needs method, not just time. | All content; the entire product line | **Highest** |
-| **Confirm whether he is publicly "Dave Webster" or only "Mr. Life Manager."** The current landing pages already use his full name; either record that permission or revise the pages. | Copy, the about page, how the face is used | **High** |
-| **Whose notes are in `source-material/`** — the founder's, Dave's, or the founder's record of Dave's teaching? | Attribution, and the file's name | **High** |
-| **Complete the trademark search.** The name is the primary protected asset under [ADR-013](#adr-013--licensing-revised-free-to-use-never-free-to-sell). | Licensing model, brand safety | **High** |
 | Is Health in scope, given liability and expertise limits? | Domain taxonomy, content plan | Low |
 | Does Transportation earn its own domain, or fold into Maintenance? | Taxonomy | Low |
 | Should the public-facing domain list compress from 13 to 5–6? | Marketing, product structure | Low |
@@ -864,10 +861,23 @@ commits to digital content products, and [backlog.md](backlog.md) lists an app a
 explicitly not being pursued. The name scan added a new argument for that
 position rather than reopening it.
 
+Also closed since this table was written (recorded in the tree, not as ADRs):
+
+- *Is he publicly "Dave Webster"?* — product copy calls him **"Dave," never the
+  surname** (founder's call 2026-09-20,
+  [content/README.md](../content/README.md#referring-to-dave)); the landing pages
+  no longer use his full name. Wider name and likeness rights are §3 of the
+  [draft term sheet](../docs/business/dave-rights-term-sheet-draft.md).
+- *Whose notes are in `source-material/`?* — **Dave's**, recovered 2026-09-19
+  ([INVENTORY](../source-material/INVENTORY.md)).
+- *Complete the trademark search* — **name cleared by the owner 2026-09-23**
+  ([brand-name-scan.md](../docs/research/brand-name-scan.md#addendum--2026-09-23-closed--name-cleared-by-owner)).
+
 **Recommended next action: capture Dave's material.**
 
-Not a decision — a task, and now the critical path. Every framework in this repo
-is a reconstruction from memory of what he taught. The primary source has not
+Not a decision — a task, and now the critical path. The documents recovered
+2026-09-19 cover cleaning, organizing and hospitality; money, food, paperwork,
+maintenance and transitions still rest on memory of what he taught. He has not
 been recorded, and
 [ADR-011](#adr-011--mr-life-manager-is-a-real-person-dave-webster) makes him the
 foundation of the brand.
