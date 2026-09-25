@@ -68,7 +68,7 @@ they are archive and search surface at `/guides/`, not offers.
 | [What Is This Room For?](room-for/) | Designed 2026-09-20 | See its brief |
 | [The Light Is the Problem](light/) | Designed 2026-09-20 | See its brief |
 | [Laundry, Solved](laundry/) | Designed 2026-09-18 | See its brief |
-| [Ten Meals and a Stocked Kitchen](ten-meals/) | Designed 2026-09-18 | See its brief |
+| [Six Meals and a Stocked Kitchen](ten-meals/) | Designed 2026-09-18 | See its brief |
 
 They share one system: Archivo for mechanics, Source Serif for the teaching
 voice, blueprint blue for structure, amber spent only where money or safety is

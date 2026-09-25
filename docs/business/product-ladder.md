@@ -38,7 +38,7 @@ earn the right to sell — in that order.
 | **What Is This Room For?** | 2 pg PDF | One room: its job, what fights it, three things to do. |
 | **The Light Is the Problem** | 2 pg PDF | Why a room feels wrong when nothing in it is dirty. |
 | **Laundry, Solved** | 4 pg PDF | Sorting, settings, detergent, stains, the laundry chair. |
-| **Ten Meals and a Stocked Kitchen** | 4 pg PDF | The four-slot pattern, ten meals, the pantry list. |
+| **Six Meals and a Stocked Kitchen** | 3 pg PDF | The four-slot pattern, six meals, the pantry list. |
 | **The Household Agreement** | 5 pg PDF | Worksheet. Decide it once, together. |
 | **The 20-Minute Reset** | Not built | Emergency routine for when the place has gotten away from you. |
 | **Move-Out Checklist** | Not built | Get the deposit back. Seasonal, urgent, highly searched. |
@@ -85,7 +85,7 @@ the first time.
 - Setting up: what to buy, what to skip, how to arrange a home around behavior
 - Room by room: how each space actually works
 - Cleaning: routines by frequency, not by perfectionism
-- Food: stocking, planning, ten meals, and the cleanup rhythm
+- Food: stocking, planning, six meals, and the cleanup rhythm
 - Laundry and clothing care
 - Maintenance: the annual calendar and what breaks when
 - Money: accounts, autopay, buffer, what things cost
