@@ -1,14 +1,5 @@
 #!/usr/bin/env python3
-"""Check that every outbound link in the published guides still resolves.
-
-Commerce rules require exact-product links, which rot when a retailer delists or
-relists an item. A dead link on a page whose credibility is its accuracy costs
-more than a missing one — so this fails loudly and the link gets pulled.
-
-Runs weekly. Automated deliberately: a person checking links by hand every two
-weeks is a person doing a machine's job, which is what this brand tells people
-not to do.
-"""
+"""Fail if outbound HTTPS links in published HTML no longer resolve. Runs weekly."""
 from __future__ import annotations
 import re, sys, urllib.error, urllib.request
 from pathlib import Path

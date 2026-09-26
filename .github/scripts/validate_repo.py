@@ -63,8 +63,6 @@ def validate_markdown_links() -> tuple[int, int]:
 
             if candidate.exists():
                 continue
-            if candidate.is_dir() and (candidate / "README.md").exists():
-                continue
 
             line = text.count("\n", 0, match.start()) + 1
             error(

@@ -1,20 +1,5 @@
 #!/usr/bin/env python3
-"""Every entry page must be complete before it ships.
-
-An entry page is any file in products/landing/ with a step list. They are easy
-to create by copying an older one, and every time that has happened something
-was silently missing:
-
-- the underwater page had the "Just the steps" button but none of the script
-  behind it, so the button did nothing
-- it had a one-line print block, so it printed three pages with the explanatory
-  text included while the others printed one page without
-- it collected email addresses with no tag and no sequence, so signups landed
-  nowhere and received nothing — the exact failure ADR-015 exists to prevent
-
-None of those are visible without opening the page and trying it. This checks
-them mechanically instead.
-"""
+"""Assert every entry page has required scripts, print styles, and signup wiring."""
 import re
 import sys
 from pathlib import Path

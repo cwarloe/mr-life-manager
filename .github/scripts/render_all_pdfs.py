@@ -1,11 +1,7 @@
 #!/usr/bin/env python3
-"""Regenerate every printable, with the brand fonts embedded.
+"""Regenerate printable PDFs with embedded brand fonts.
 
-Entry pages are NOT rendered here. Their printable is produced by the reader's
-own browser from the page's print stylesheet — one page, actions plus one line
-of reasoning each. Shipping a PDF of them as well would mean two copies of the
-same thing drifting apart, and the whole point of the fork is that the reader
-chooses paper or phone at the moment they commit.
+Entry pages are not rendered here — the reader's browser prints them from the page stylesheet.
 """
 import hashlib
 import json
@@ -32,10 +28,7 @@ SHEETS = [
 
 
 def main() -> int:
-    # Print sizes were hand-tuned downward until things fit, which left short
-    # sheets using about two-thirds of the paper. tune_print_scale.py measures
-    # the largest scale each one can take without gaining a page; anything under
-    # 5% is noise and not worth a zoom rule.
+    # Scales from tune_print_scale.py; under 5% gain is noise — skip the zoom rule.
     scale_file = OUT / ".print-scale.json"
     scales = json.loads(scale_file.read_text()) if scale_file.exists() else {}
 

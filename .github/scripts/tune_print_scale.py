@@ -1,12 +1,7 @@
 #!/usr/bin/env python3
-"""Find the largest print scale each printable can take without gaining a page.
+"""Binary-search the largest print scale per sheet within its page budget.
 
-Print sizes were hand-tuned downward until everything fit, which guaranteed the
-page count and left a lot of blank paper. This searches upward instead: the
-biggest type that still fits the page budget it already has.
-
-Writes products/guides-pdf/.print-scale.json, consumed by render_all_pdfs.py.
-Run it after a layout change; it takes a couple of minutes.
+Writes products/guides-pdf/.print-scale.json for render_all_pdfs.py.
 """
 import json
 import subprocess
@@ -42,7 +37,6 @@ def main() -> int:
                 continue
             budget = pages(s, 1.0, tmp)
             lo, hi = 1.0, 2.2
-            # widen only as far as it still fits
             while hi - lo > 0.02:
                 mid = (lo + hi) / 2
                 if pages(s, mid, tmp) <= budget:
