@@ -35,8 +35,16 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+      - name: Validate before publishing
+        run: |
+          python3 .github/scripts/validate_repo.py
+          python3 .github/scripts/check_pdfs_fresh.py
+          python3 .github/scripts/check_entry_pages.py
+
       - name: Build site
-        run: python3 .github/scripts/build_site.py
+        run: |
+          python3 .github/scripts/build_site.py
+          python3 .github/scripts/check_built_site.py
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
