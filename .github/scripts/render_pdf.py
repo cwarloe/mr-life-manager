@@ -1,14 +1,5 @@
 #!/usr/bin/env python3
-"""Render an HTML file to PDF with the brand fonts embedded.
-
-The pages link Google Fonts, which keeps them light on the web. That is the
-wrong dependency for a printable: if the CDN is slow, blocked, or the build runs
-somewhere without egress, Chrome silently falls back to DejaVu and Liberation and
-nobody notices until the PDF is already in someone's inbox. That is exactly what
-happened to the first set.
-
-So for PDFs we swap the <link> for base64 @font-face rules generated from the
-same families, and the render is then deterministic and offline.
+"""Render HTML to PDF with brand fonts embedded (offline @font-face, not CDN).
 
 Usage:  render_pdf.py <source.html> <out.pdf>
 """
@@ -50,9 +41,7 @@ def render(src: Path, out: Path, zoom: float = 1.0) -> None:
             [CHROME, "--headless", "--disable-gpu", "--no-sandbox",
              "--no-pdf-header-footer", f"--print-to-pdf={out}", str(staged)],
             check=True, capture_output=True)
-    # The first set of printables shipped in DejaVu and Liberation because the
-    # font CDN was unreachable and Chrome fell back without complaining. Assert
-    # the brand faces actually made it in, so that can never happen quietly again.
+    # Assert brand faces landed (Chrome can silently fall back without CDN).
     blob = out.read_bytes()
     missing = [f for f in (b"Archivo", b"SourceSerif4") if f not in blob]
     if missing:
