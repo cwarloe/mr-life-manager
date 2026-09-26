@@ -4,7 +4,12 @@ on:
   push:
     branches: [main]
     paths:
-      - "products/landing/**"
+      - "products/landing/*.html"
+      - "products/landing/assets/**"
+      - "products/landing/templates/**"
+      - "products/landing/favicon.svg"
+      - "products/landing/site.webmanifest"
+      - "products/landing/CNAME"
       - "products/checklists/**"
       - "products/worksheets/**"
       - "products/print/**"
