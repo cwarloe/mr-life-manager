@@ -38,14 +38,14 @@ Not recorded.
 
 Free guide, archive and search surface per ADR-015, not an offer. The
 [product ladder](../../../docs/business/product-ladder.md) lists *Kitchen That
-Works* (10 repeatable meals) at Rung 1 and food in *First Place*; how this guide
+Works* (6 repeatable meals) at Rung 1 and food in *First Place*; how this guide
 relates to either is not decided.
 
 ### 7. What content?
 
 The four-slot pattern (filling, protein, green, flavor) before any recipe; six
 meals under 30 minutes, each with the one thing that usually goes wrong; a
-stocked-kitchen list (cupboard, fridge and freezer); shopping so food gets
+stocked-kitchen list (pantry, fridge and freezer); shopping so food gets
 eaten; clean as you cook. The pantry list was folded in rather than split out
 ([backlog](../../../planning/backlog.md)). No source document cited.
 
@@ -59,6 +59,4 @@ Free. Footer: free to use, copy and teach from with credit, not for resale.
 
 ### Open
 
-- **British forms remain** despite the 2026-09-20 US-English sweep: *flavour*,
-  *tinned*, *mince*, *takeaway*, *chilli*.
 - **Untested:** that teaching the pattern first beats leading with recipes.

@@ -61,7 +61,7 @@ far less than the fact that it happened.
 | Product | Price | Notes |
 |---|---|---|
 | **Room-by-Room Setup Guides** (kitchen, bath, bedroom, living, laundry) | $9 ea / $29 bundle | Modular; the bundle is the real product. |
-| **Kitchen That Works** | $19 | Setup, stocking, 10 repeatable meals, cleanup rhythm. |
+| **Kitchen That Works** | $19 | Setup, stocking, 6 repeatable meals, cleanup rhythm. |
 | **Household Maintenance Calendar** | $12 | Annual/seasonal/monthly, apartment and house versions. |
 | **Roommate Agreement Kit** | $9 | Chores, standards, bills, conflict script. Enormous felt pain. |
 | **Laundry, Solved** | $9 | Sorting, settings, stains, cadence, fabric care. |
