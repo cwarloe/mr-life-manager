@@ -27,15 +27,15 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Validate HTML structure and local links
-        run: python .github/scripts/validate_repo.py
+        run: python3 .github/scripts/validate_repo.py
 
       - name: Printables match their sources
-        run: python .github/scripts/check_pdfs_fresh.py
+        run: python3 .github/scripts/check_pdfs_fresh.py
 
       - name: Entry pages are complete
-        run: python .github/scripts/check_entry_pages.py
+        run: python3 .github/scripts/check_entry_pages.py
 
       - name: Build and validate public site
         run: |
-          python .github/scripts/build_site.py
-          python .github/scripts/check_built_site.py
+          python3 .github/scripts/build_site.py
+          python3 .github/scripts/check_built_site.py
