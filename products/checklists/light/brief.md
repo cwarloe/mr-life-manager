@@ -3,7 +3,7 @@
 **Status:** Drafted and designed 2026-09-20. Not reviewed or reader-tested.
 **Tier:** Rung 0 — free ([product-ladder.md](../../../docs/business/product-ladder.md))
 **Files:** [`the-light-is-the-problem.html`](the-light-is-the-problem.html) ·
-[PDF](../../guides-pdf/the-light-is-the-problem.pdf) (4 pp)
+[PDF](../../guides-pdf/the-light-is-the-problem.pdf) (2 pp)
 
 ---
 

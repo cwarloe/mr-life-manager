@@ -5,7 +5,8 @@
 **Governed by** [ADR-016](../../../planning/decisions.md#adr-016--the-sequence-shrinks-unconditionally)
 and [ADR-015](../../../planning/decisions.md#adr-015--the-win-comes-before-the-email).
 
-**Replaces** the withdrawn [Draft 3](welcome-sequence.md) for this entry only.
+**Replaces** the withdrawn site-wide Draft 3 welcome sequence for this entry
+only ([ADR-016](../../../planning/decisions.md#adr-016--the-sequence-shrinks-unconditionally)).
 Under ADR-015 sequences are per-entry, not one welcome sequence for the site.
 
 ---
@@ -129,7 +130,9 @@ addresses with nothing to send them.
 this is and routes to entry pages; every entry page carries its own action and
 its own signup, and no entry page ships without a sequence.
 
-**Consequence, stated plainly: there is one door.** `/guests.html`. The page says
-so rather than pretending otherwise, and invites people to name the one they
+**Consequence, stated plainly: there are four live entry doors** (active
+2026-09-22): `/first-night.html`, `/guests.html`, `/underwater.html`, and
+`/one-room.html`. Each has its own three-email sequence. This file is the
+guests door only. The homepage router invites people to name the door they
 needed — which is both honest and the cheapest research available on what to
 build next.

@@ -47,8 +47,10 @@ Settings for all four:
 - Sender: **Charles**, from an address that accepts replies
 - No fourth email, promotion, win-back, or behavior-based branch
 
-The copy files are the source of truth. The withdrawn
-[`welcome-sequence.md`](welcome-sequence.md) must never be reactivated.
+The copy files are the source of truth. The original site-wide welcome
+sequence is withdrawn
+([ADR-016](../../../planning/decisions.md#adr-016--the-sequence-shrinks-unconditionally))
+and must never be reactivated.
 
 The *First Place* founding reservation is deliberately outside MailerLite. Its
 button opens a prefilled message to `hello@mrlifemanager.com`, so it cannot enter

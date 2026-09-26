@@ -59,6 +59,4 @@ Free. Footer: free to use, copy and teach from with credit, not for resale.
 
 ### Open
 
-- **British forms remain** despite the 2026-09-20 US-English sweep: *flavour*,
-  *tinned*, *mince*, *takeaway*, *chilli*.
 - **Untested:** that teaching the pattern first beats leading with recipes.

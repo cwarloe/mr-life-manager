@@ -58,9 +58,10 @@ same three-email sequence whether they signed up in reading mode or immediately
 after finishing in doing mode.
 
 The intended account state is documented in
-[`emails/MAILERLITE-SETUP.md`](emails/MAILERLITE-SETUP.md). Do **not** wire
-[`emails/welcome-sequence.md`](emails/welcome-sequence.md) — that draft is
-withdrawn. Live copy is in the four entry-specific sequence files.
+[`emails/MAILERLITE-SETUP.md`](emails/MAILERLITE-SETUP.md). The original
+site-wide welcome sequence is withdrawn
+([ADR-016](../../planning/decisions.md#adr-016--the-sequence-shrinks-unconditionally));
+do not reactivate it. Live copy is in the four entry-specific sequence files.
 
 The owner reported all four automations active on 2026-09-22. Each sends one PDF
 link in email 1 — `/print/the-week.pdf` — not a copy of the action page. The

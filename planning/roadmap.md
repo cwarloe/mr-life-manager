@@ -115,10 +115,11 @@ what you make.
       reported active 2026-09-22. Each sends one PDF link in email 1: `The Week`.
       Keep the last controlled delivery-test result in
       [operations.md](operations.md).
-- [x] **Entry-specific sequences — active.** The original site-wide
-      [welcome sequence](../products/landing/emails/welcome-sequence.md) is
-      withdrawn. Each door now has three emails; the final email asks one easy
-      research question and then the sequence stops.
+- [x] **Entry-specific sequences — active.** The original site-wide welcome
+      sequence is withdrawn
+      ([ADR-016](decisions.md#adr-016--the-sequence-shrinks-unconditionally)).
+      Each door now has three emails; the final email asks one easy research
+      question and then the sequence stops.
 - [x] **Parent-facing referral page — deployed** 2026-09-16
       ([index-parents.html](../products/landing/index-parents.html)). It collects
       no email; a parent forwards the matching door. This tests the
