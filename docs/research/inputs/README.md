@@ -37,8 +37,7 @@ drift?*
 
 | File | Source | Date | Synthesized into |
 |---|---|---|---|
-| [2026-09-05-brand-name-research-summary.md](2026-09-05-brand-name-research-summary.md) | AI research assistant, web search | 2026-09-05 | [brand-name-scan.md](../brand-name-scan.md) |
-| *(full report — not yet provided)* | | | |
+| [2026-09-05-brand-name-research-summary.md](2026-09-05-brand-name-research-summary.md) | AI research assistant, web search | 2026-09-05 | [brand-name-scan.md](../brand-name-scan.md) — name closed 2026-09-23; full report abandoned (summary was sufficient) |
 | [2026-09-05-competitive-landscape-claude-opus-5.md](2026-09-05-competitive-landscape-claude-opus-5.md) | Claude Opus 5 (high effort), web research, Prompt 2 | 2026-09-05 | [competitor-notes.md § Findings](../competitor-notes.md#findings) |
 | [2026-09-05-competitive-landscape-adult-life-systems.md](2026-09-05-competitive-landscape-adult-life-systems.md) | AI research pass (model not recorded), Prompt 2 | 2026-09-05 | [competitor-notes.md § Findings](../competitor-notes.md#findings) |
 | [2026-09-06-competitive-landscape.md](2026-09-06-competitive-landscape.md) | AI research pass (model not recorded), Prompt 2 | 2026-09-06 | [competitor-notes.md § Findings](../competitor-notes.md#findings) |

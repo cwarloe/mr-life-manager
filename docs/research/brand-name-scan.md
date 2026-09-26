@@ -12,10 +12,11 @@
 **Is:** a preliminary availability check on the name, in the *software and app*
 category, via web search.
 
-**Is not:** a trademark search, and not the competitor research this project
-actually needs. Phases A–D of [competitor-notes.md](competitor-notes.md) remain
-untouched. See [Limitations](#limitations) — they're significant enough to read
-before weighting anything below.
+**Is not:** a formal trademark opinion, and not the competitor research this
+project needed. Competitor Phases A–C are done
+([competitor-notes.md § Findings](competitor-notes.md#findings)); Phase D
+(institutional) remains open. See [Limitations](#limitations) — they're
+significant enough to read before weighting anything below.
 
 ---
 
@@ -33,7 +34,7 @@ positioning.
 GitHub, app stores, and social media — not business registries or trademark
 databases. Absence of evidence in those channels is weak evidence of absence.
 
-**Action:** none yet. Confirm with a free USPTO search (below).
+**Action:** closed — owner cleared the name 2026-09-23 (see addendum).
 
 ### 2. "Life manager" is generic and crowded in the software category ★
 
@@ -142,8 +143,9 @@ inflates the apparent depth of the research.
 software and apps. Mr. Life Manager is a **content and curriculum** business. The
 competitive set that matters — adulting books, home-economics content, personal
 finance educators, campus life-skills curricula, church young-adult programs — was
-not examined. That set is defined in
-[competitor-notes.md](competitor-notes.md) and remains **entirely unresearched.**
+not examined *by this scan*. That set is defined in
+[competitor-notes.md](competitor-notes.md); Phases A–C were filled 2026-09-08.
+Church/institutional depth (Phase D) is still a real gap.
 
 **5. It confirms more than it discovers.** Findings #1, #5, and most of the
 recommendation restate what
@@ -164,8 +166,8 @@ exactly the question this method cannot answer.
 |---|---|---|
 | [ADR-001](../../planning/decisions.md) | Evidence subsection added; decision unchanged | Done |
 | [brand-positioning.md](../business/brand-positioning.md) | SEO finding, descriptiveness, nearest adjacent product | Done |
-| [competitor-notes.md](competitor-notes.md) | Phase E partially addressed; A–D still open | Done |
-| [roadmap.md](../../planning/roadmap.md) | Phase 1 search task sharpened toward transition queries | Pending |
+| [competitor-notes.md](competitor-notes.md) | Phase E name items closed; A–C done; D still open | Done |
+| [roadmap.md](../../planning/roadmap.md) | Phase 1 search task sharpened toward transition queries | Done |
 
 **What does not change:** the name, the beachhead, the product ladder, or the
 roadmap sequence. The scan supports the existing plan rather than redirecting it.
@@ -174,40 +176,34 @@ roadmap sequence. The scan supports the existing plan rather than redirecting it
 
 ## Recommended next steps
 
-Prompts for the two research jobs below, plus an acceptance test to apply
-before trusting any result, are in
-[research-prompts.md](research-prompts.md).
+**Settled (do not re-open without new evidence)**
 
-**Do now — free, ~1 hour total**
+- **Name kept** — owner cleared 2026-09-23; no exact collision; generic "…Life
+  Manager" neighbors are not a concern.
+- **Domain ours** — `mrlifemanager.com` and `hello@mrlifemanager.com` are live.
+- **Competitor Phases A–C done** — see
+  [competitor-notes.md § Findings](competitor-notes.md#findings). Phase D
+  (institutional) is the remaining research gap, tracked there.
+- **Persona** — Dave is a real person ([ADR-011](../../planning/decisions.md));
+  not a character block on copy.
 
-1. **USPTO search.** tmsearch.uspto.gov, free. Search "life manager," "mr life
-   manager," and "Mr. Man." This is the single highest-value missing step, and it
-   closes limitation #2 yourself.
-2. **Domain and handle check.** `mrlifemanager.com` and the matching social
-   handles. Availability is a real input to the naming decision and costs nothing
-   to check. Note `#mrlife` is occupied (finding #7).
-3. **Record the persona decision** — character or stylistic quirk. It's already an
-   open item in [decisions.md](../../planning/decisions.md) and it blocks
-   copywriting.
+**Still useful if validation needs it**
 
-**Do in Phase 1 — the real test**
+1. **Audience name test**, especially women aged 20–30. Not "do you like it?"
+   but: show the name plus one line of positioning, and ask what they expect to
+   find and who they think it's for. Watch for *butler*, *app*, and *this isn't
+   for me*. Use
+   [customer-interview-script.md](interviews/customer-interview-script.md).
+2. **Transition-query search demand** (not brand queries) — sharpen against
+   Findings; optional once real entry-page traffic exists.
 
-4. **Test the name with the actual audience**, especially women aged 20–30. Not
-   "do you like it?" but: show the name plus one line of positioning, and ask
-   what they expect to find and who they think it's for. Watch for *butler*,
-   *app*, and *this isn't for me*.
-5. **Test transition-query search demand**, not brand queries.
-6. **Run competitor research Phases A–D**, which this scan did not touch and which
-   remains the larger gap.
+**Later — not now**
 
-**Do later — not now**
-
-7. **Trademark counsel.** Correct step, wrong phase. It costs real money and the
-   answer doesn't change anything you'd do before Phase 3. Bring the USPTO
-   results and the "Mr. Man" item when you go.
-8. **Naming alternatives.** Deliberately deferred — see below.
-
----
+3. **Trademark counsel** if the brand is ever formalized. Bring the "Mr. Man"
+   adjacent item. Not needed before launch.
+4. **Naming alternatives.** Deliberately deferred — see below.
+5. **Social handles** (optional hygiene) — `#mrlife` is occupied (finding #7);
+   matching handles are not a naming decision.
 
 ## Why we are not generating naming alternatives yet
 
