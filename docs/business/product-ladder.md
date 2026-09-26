@@ -38,7 +38,7 @@ earn the right to sell — in that order.
 | **What Is This Room For?** | 2 pg PDF | One room: its job, what fights it, three things to do. |
 | **The Light Is the Problem** | 2 pg PDF | Why a room feels wrong when nothing in it is dirty. |
 | **Laundry, Solved** | 4 pg PDF | Sorting, settings, detergent, stains, the laundry chair. |
-| **Six Meals and a Stocked Kitchen** | 3 pg PDF | The four-slot pattern, six meals, the pantry list. |
+| **Six Meals and a Stocked Kitchen** | 3 pg PDF | The four-slot pattern, six meals, the pantry list. Also covers *Kitchen That Works*, which is free and folded in here (Charles, 2026-09-26). |
 | **The Household Agreement** | 5 pg PDF | Worksheet. Decide it once, together. |
 | **The 20-Minute Reset** | Not built | Emergency routine for when the place has gotten away from you. |
 | **Move-Out Checklist** | Not built | Get the deposit back. Seasonal, urgent, highly searched. |
@@ -61,11 +61,15 @@ far less than the fact that it happened.
 | Product | Price | Notes |
 |---|---|---|
 | **Room-by-Room Setup Guides** (kitchen, bath, bedroom, living, laundry) | $9 ea / $29 bundle | Modular; the bundle is the real product. |
-| **Kitchen That Works** | $19 | Setup, stocking, 6 repeatable meals, cleanup rhythm. |
 | **Household Maintenance Calendar** | $12 | Annual/seasonal/monthly, apartment and house versions. |
 | **Roommate Agreement Kit** | $9 | Chores, standards, bills, conflict script. Enormous felt pain. |
 | **Laundry, Solved** | $9 | Sorting, settings, stains, cadence, fabric care. |
 | **Paperwork Starter Kit** | $19 | What documents exist, why, where they live, what to shred. |
+
+**Kitchen That Works is no longer on this rung.** It promised the same six meals
+as the free guide, so per Charles (2026-09-26) it's free and folded into
+[Six Meals and a Stocked Kitchen](../../products/checklists/ten-meals/) at Rung 0
+rather than sold at $19. Revenue for this area is TBD with marketing.
 
 **Success looks like:** conversion rate from the free list, and repeat purchases
 across the low tier (the strongest signal that the mid-tier will work).
@@ -157,7 +161,7 @@ purchasing committee.
    ★ $39  ┤ FIRST PLACE                                   ← revenue core
 ──────────┼──────────────────────────────────────────────
      $29  ┤ Room-by-room bundle
-     $19  ┤ Kitchen That Works · Paperwork Kit
+     $19  ┤ Paperwork Kit
       $9  ┤ Single guides · Roommate kit
 ──────────┼──────────────────────────────────────────────
       $0  ┤ First Apartment Checklist · Supply list ·      ← the whole funnel

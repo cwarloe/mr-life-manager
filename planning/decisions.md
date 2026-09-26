@@ -1034,3 +1034,33 @@ word, with nothing attached. Then stop.
 
 **Consequence.** The welcome sequence needs a Draft 4. Draft 3's day-3 email is
 withdrawn.
+
+---
+
+## ADR-017 — Kitchen That Works is free, folded into Six Meals
+
+**Status:** Accepted
+**Date:** 2026-09-26
+**Scope:** Product ladder, Rung 0 and Rung 1. Kitchen That Works only; no other
+product or price changes.
+
+**Context.** On 2026-09-25 the free guide became
+[Six Meals and a Stocked Kitchen](../products/checklists/ten-meals/), and the $19
+Rung 1 product *Kitchen That Works* was brought in line to promise the same six
+repeatable meals. That left a paid product promising what the free guide
+already gives away.
+
+**Decision.**
+
+> 2026-09-26, Charles: Kitchen That Works is free. It promises the same six
+> meals as the free guide Six Meals and a Stocked Kitchen, so it's folded into
+> that guide rather than sold at $19. Revenue for this area deferred; Charles
+> will work it out with marketing.
+
+**Consequences.** Kitchen That Works leaves Rung 1 and the $19 line of the
+[product ladder](../docs/business/product-ladder.md). The guide's
+[brief](../products/checklists/ten-meals/brief.md) no longer carries an open
+question about how it relates to Kitchen That Works. How it relates to
+*First Place*'s food section stays open.
+
+**Revisit when:** Charles and marketing settle how food earns revenue.

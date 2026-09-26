@@ -104,7 +104,7 @@ Each item is tagged with its [roadmap](roadmap.md) phase and primary
 ### Product
 
 - Room-by-room bundle ($29)
-- Kitchen That Works ($19)
+- ~~Kitchen That Works ($19)~~ — **free, folded into** [Six Meals and a Stocked Kitchen](../products/checklists/ten-meals/) (Charles, 2026-09-26; revenue TBD with marketing)
 - Paperwork Starter Kit ($19)
 - Maintenance calendar product ($12)
 - 30-Day Life Reset ($79)

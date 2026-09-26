@@ -37,9 +37,12 @@ Not recorded.
 ### 6. Where on the ladder?
 
 Free guide, archive and search surface per ADR-015, not an offer. The
-[product ladder](../../../docs/business/product-ladder.md) lists *Kitchen That
-Works* (6 repeatable meals) at Rung 1 and food in *First Place*; how this guide
-relates to either is not decided.
+[product ladder](../../../docs/business/product-ladder.md) used to list *Kitchen
+That Works* (6 repeatable meals, $19) at Rung 1. It's now free and folded into
+this guide (Charles, 2026-09-26,
+[ADR-017](../../../planning/decisions.md#adr-017--kitchen-that-works-is-free-folded-into-six-meals));
+revenue for this area is TBD with marketing. The ladder also lists food in
+*First Place*; how this guide relates to that is not decided.
 
 ### 7. What content?
 
@@ -56,6 +59,7 @@ Free. Footer: free to use, copy and teach from with credit, not for resale.
 ### Decisions
 
 - 2026-09-25, Charles: cut from ten meals to six. Ten was too many to hold in your head, and every meal must take 30 minutes or less. Cut: sheet-pan chicken (over 30 min), baked potato (an hour), canned soup and breakfast for dinner (overlap with grilled cheese and eggs).
+- 2026-09-26, Charles: Kitchen That Works is free. It promises the same six meals as this guide, so it's folded in here rather than sold at $19. Revenue for this area deferred; Charles will work it out with marketing.
 
 ### Open
 
