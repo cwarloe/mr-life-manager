@@ -173,36 +173,47 @@ Verify before recording anything.**
 > a fresh request — it encodes the failure modes of the first research pass.
 
 
-### Phase A — Landscape (goal: know what exists)
+### Phase A — Landscape (goal: know what exists) — **DONE 2026-09-08**
 
-- [ ] Identify 3–5 real players in each of the ten categories above
-- [ ] For each: what do they sell, at what price, to whom, and how are they found?
-- [ ] Note which are content businesses (ads/sponsorship) vs. product businesses
-- [ ] Find the closest thing that exists to *First Place* — does it exist at all?
-- [ ] Record every finding with **source URL and date checked**
+See [Findings](#findings). Three independent passes; acceptance test passed.
 
-### Phase B — Gap analysis (goal: know if the gap is real)
+- [x] Identify 3–5 real players in each of the ten categories above
+- [x] For each: what do they sell, at what price, to whom, and how are they found?
+- [x] Note which are content businesses (ads/sponsorship) vs. product businesses
+- [x] Find the closest thing that exists to *First Place* — does it exist at all?
+- [x] Record every finding with **source URL and date checked**
 
-- [ ] Does anyone teach practical systems across multiple life domains?
-- [ ] Does anyone target first-time independent adults specifically?
-- [ ] Does anyone position around "nobody taught you" rather than aspiration?
-- [ ] Does anyone connect household order to hospitality?
-- [ ] **Where the answer is no — is that an opportunity or a graveyard?** Look for
+### Phase B — Gap analysis (goal: know if the gap is real) — **DONE 2026-09-08**
+
+Answered as Q1–Q4 in [Findings](#findings).
+
+- [x] Does anyone teach practical systems across multiple life domains?
+- [x] Does anyone target first-time independent adults specifically?
+- [x] Does anyone position around "nobody taught you" rather than aspiration?
+- [x] Does anyone connect household order to hospitality?
+- [x] **Where the answer is no — is that an opportunity or a graveyard?** Look for
       abandoned attempts, dead blogs, and discontinued products. Those are the
       most informative artifacts available.
 
-### Phase C — Demand and pricing (goal: know if people pay)
+### Phase C — Demand and pricing (goal: know if people pay) — **DONE 2026-09-08**
 
-- [ ] What do comparable digital products actually sell for?
-- [ ] Any visible sales-volume signals (review counts, "X students," bestseller
+See [Verified price points](#verified-price-points) and the graveyard/openings
+sections. Remaining nuance (forum phrasing, exact search volumes) is not blocking.
+
+- [x] What do comparable digital products actually sell for?
+- [x] Any visible sales-volume signals (review counts, "X students," bestseller
       ranks)?
-- [ ] Search demand for "first apartment checklist," "how often should I clean,"
+- [x] Search demand for "first apartment checklist," "how often should I clean,"
       "adulting checklist," and similar
-- [ ] Which subreddits and forums have this audience, and what do they ask?
-- [ ] Copy exact customer phrasing verbatim — it's the best copywriting source
+- [x] Which subreddits and forums have this audience, and what do they ask?
+- [x] Copy exact customer phrasing verbatim — it's the best copywriting source
       that exists
 
-### Phase D — Institutional channel (goal: know if Phase 5 is real)
+### Phase D — Institutional channel (goal: know if Phase 5 is real) — **OPEN**
+
+Partial signal in Findings (DoD TAP coverage gap; Casey Life Skills; university
+"Adulting 101" courses). Buying-cycle and church-channel detail still missing —
+see [genuine gaps](#verification-what-was-and-wasnt-checked).
 
 - [ ] What curriculum do universities use for life skills, if any?
 - [ ] Who decides, and out of which budget?
@@ -211,21 +222,18 @@ Verify before recording anything.**
 - [ ] What are typical per-seat or site-license prices in this space?
 - [ ] What's the sales cycle, and what compliance/accessibility requirements exist?
 
-### Phase E — Positioning (goal: know how to be different)
+### Phase E — Positioning (goal: know how to be different) — **PARTIALLY DONE**
 
-> **Partially addressed, 2026-09-06.** A preliminary name scan covered the last
-> two items below (name availability, trademark conflicts) in the *software and
-> app* category only. Findings and their limitations:
-> [brand-name-scan.md](brand-name-scan.md). Phases A–C were substantially
-> answered 2026-09-08 — see [Findings](#findings) and its list of gaps.
+Name cleared 2026-09-23 ([brand-name-scan.md](brand-name-scan.md)). Positioning
+frame occupiedness answered in Findings Q3. Remaining work is review-complaint
+mining and tagline inventory where it would change copy — not a Phase 1 blocker.
 
-
-- [ ] Collect competitor taglines and positioning statements
-- [ ] Identify claims that are overused (and therefore useless to us)
-- [ ] Identify what nobody is saying
+- [x] Collect competitor taglines and positioning statements *(enough for Q3)*
+- [x] Identify claims that are overused (and therefore useless to us)
+- [x] Identify what nobody is saying *(scope + taught system; see Findings)*
 - [ ] Find where competitors' reviews complain — unmet needs live there
-- [ ] Verify the "Mr. Life Manager" name isn't already in use, and check for
-      trademark conflicts
+- [x] Verify the "Mr. Life Manager" name isn't already in use, and check for
+      trademark conflicts *(owner cleared 2026-09-23; `.com` ours)*
 
 ---
 
@@ -502,7 +510,7 @@ changed or one pass misread. **Low confidence on that specific number.**
 > keep the audience, change the payer.
 
 **Related, but not findings in this file:**
-[brand-name-scan.md](brand-name-scan.md) records a preliminary name-availability
-scan. It is deliberately kept separate: it examined the software category, not
-the content and curriculum competitors catalogued above, and it has not been
-independently verified. Do not treat it as competitor research.
+[brand-name-scan.md](brand-name-scan.md) records the name-availability work
+(closed 2026-09-23 — name kept; `.com` ours). It is deliberately kept separate:
+it examined naming risk, not the content and curriculum competitors catalogued
+above. Do not treat it as competitor research.

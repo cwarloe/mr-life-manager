@@ -1,17 +1,19 @@
 # Content
 
-Teaching content, organized by life domain. This is the **raw material** of the
-business.
+**House rules and build standards** for teaching, entry pages, printables, and
+email voice. Domain teaching files are not here yet — validated guides and entry
+pages live under [`products/`](../products/) until real-reader evidence justifies
+extracting reusable domain material into this tree.
 
 ## Content vs. Products
 
-- **`content/`** — reusable teaching material, written once, organized by domain.
-  One piece of content can feed several products.
-- **[`products/`](../products/)** — that material assembled and packaged into
-  something a customer downloads or buys.
+- **`content/`** — standards for how we write and ship. When domain files land
+  here, they will be reusable teaching material organized by life domain.
+- **[`products/`](../products/)** — what a customer downloads, buys, or completes
+  today (guides, entry pages, printables, sequences).
 
-A product should rarely contain teaching that doesn't exist here first. Write the
-content, then package it.
+Do not pause validation to invent an empty domain tree. Write where the reader
+is; extract here only after something survives contact with real people.
 
 ## Writing standards
 

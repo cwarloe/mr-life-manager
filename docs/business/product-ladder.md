@@ -171,21 +171,29 @@ purchasing committee.
      $19  ┤ Paperwork Kit
       $9  ┤ Single guides · Roommate kit
 ──────────┼──────────────────────────────────────────────
-      $0  ┤ First Apartment Checklist · Supply list ·      ← the whole funnel
-          │ 20-Minute Reset · How Often Should I…?            depends on this
+      $0  ┤ Entry pages (front door) · The Week ·           ← the whole funnel
+          │ guides as archive/search surface                  depends on this
 ```
 
 ## Build order (and why)
 
-1. **First Apartment Checklist** — free. Validates audience and builds the list.
-2. **Three low-cost guides** — proves willingness to pay at minimal risk, and
-   reveals *which topic* people actually buy.
-3. **First Place** — assembled largely from #1 and #2, expanded and sequenced.
+Aligned with [ADR-015](../../planning/decisions.md#adr-015--the-win-comes-before-the-email):
+the front door is a completed action, not a lead-magnet PDF.
+
+1. **Entry pages** — free, ungated, one pain each. Prove completion and earn the
+   email after a win. (Live: first night, guests, underwater, one room.)
+2. **Paid tests at low cost** — small offers that prove willingness to pay and
+   reveal *which topic* people actually buy. Minimal risk.
+3. **First Place** — the $39 flagship, assembled from proven free wins and paid
+   tests, expanded and sequenced.
 4. **30-Day Life Reset** — repackages *First Place* into a daily format; near-zero
    new content, meaningfully higher price.
 5. **Coaching** — sell before you feel ready; it's research that pays.
 6. **Toolkits and editions** — variations on proven material.
 7. **Institutional licensing** — once there's proof.
+
+Free guides (First Apartment Checklist and the rest of Rung 0) stay as archive
+and search surface — useful, shareable, not the funnel entrance.
 
 Note how much of the ladder is **the same content in different containers.** That
 is the point. Write once at high quality; package many times.

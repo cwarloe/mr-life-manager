@@ -79,21 +79,23 @@ matters.
 Mr. Life Manager replaces reaction with **light, repeatable systems** — so that
 the right action is the easy action, and the crisis mostly never arrives.
 
-## Initial product direction
+## Product direction
 
-The first flagship product is planned as:
+The flagship is planned as:
 
-> **First Place: The Practical Guide to Running Your First Home**
+> **First Place: The Practical Guide to Running Your First Home** — $39
 
 A structured, room-by-room, domain-by-domain guide for someone setting up and
 running their own place for the first time — supplies, setup, routines,
 maintenance calendar, money basics, and hosting.
 
-Ahead of it: a free lead magnet (**First Apartment Checklist**) to validate the
-audience and build a list. Behind it: a product family of checklists, toolkits,
-courses, and eventually coaching or consultation.
-
-See [`planning/roadmap.md`](planning/roadmap.md).
+The free front door is **not** a lead-magnet PDF. Per
+[ADR-015](planning/decisions.md#adr-015--the-win-comes-before-the-email),
+visitors land on **per-pain entry pages** (one ungated action each); the email
+ask comes after a completed win. Free guides remain public archive/search
+surface. Behind the free tier: paid tests, then *First Place*, then the rest of
+the ladder — see [`docs/business/product-ladder.md`](docs/business/product-ladder.md)
+and [`planning/roadmap.md`](planning/roadmap.md).
 
 ## The major life domains
 
@@ -123,19 +125,20 @@ mr-life-manager/
 │   ├── vision/              Mission, principles, outcomes, audiences
 │   ├── business/            Model, product ladder, positioning, revenue
 │   └── research/            Customer problems, competitor research plan
-├── content/                 Teaching content by life domain (house rules only, so far)
-├── products/                Packaged deliverables
-│   ├── ebooks/ checklists/ worksheets/ courses/ toolkits/
+├── content/                 House rules and build standards (no domain teaching files yet)
+├── products/                Packaged deliverables — guides, entry pages, printables
+│   ├── ebooks/ checklists/ worksheets/ courses/ toolkits/ landing/ print/
 ├── frameworks/              The durable conceptual models
 ├── source-material/         Original, unedited source notes
 └── planning/                Roadmap, backlog, decision log
 ```
 
-**`content/` vs `products/`** — `content/` is the raw teaching material,
-organized by life domain and written to be reusable. `products/` is where that
-material gets assembled into something a customer buys or downloads. One piece
-of content may appear in several products; a product should rarely contain
-teaching that doesn't exist in `content/`.
+**`content/` vs `products/`** — `content/` holds **house rules and build
+standards** for how teaching is written and how entry pages / printables /
+emails are built. It does **not** yet hold domain teaching files; validated
+guides and entry pages live under `products/` today. When domain files land
+here, they will be reusable raw material that products assemble — one piece of
+content may feed several products.
 
 **`frameworks/` vs `docs/vision/principles.md`** — `principles.md` states what
 we believe. `frameworks/` explains how to actually apply a belief. Principles
