@@ -89,7 +89,7 @@ the first time.
 - Setting up: what to buy, what to skip, how to arrange a home around behavior
 - Room by room: how each space actually works
 - Cleaning: routines by frequency, not by perfectionism
-- Food: stocking, planning, six meals, and the cleanup rhythm
+- Food: stocking, planning, and the cleanup rhythm
 - Laundry and clothing care
 - Maintenance: the annual calendar and what breaks when
 - Money: accounts, autopay, buffer, what things cost
@@ -98,6 +98,13 @@ the first time.
 - Hospitality: how to have people over without a panic
 
 *Editions:* student, solo, couples. Same spine, adjusted framing and examples.
+
+**The six meals aren't part of First Place.** They're free in
+[Six Meals and a Stocked Kitchen](../../products/checklists/ten-meals/) at Rung 0,
+so per Charles (2026-09-26,
+[ADR-018](../../planning/decisions.md#adr-018--six-meals-removed-from-first-place))
+First Place doesn't sell them again. They can move back into a paid product
+later. Price unchanged at $39.
 
 ### Other mid-tier products
 
