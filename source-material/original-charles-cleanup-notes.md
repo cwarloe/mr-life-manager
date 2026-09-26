@@ -1,14 +1,5 @@
 # Original Cleanup & Household Notes
 
-> **⚠️ PLACEHOLDER — the actual source material has not been added yet.**
->
-> This file is a container waiting for content. Nothing below is a
-> reconstruction, paraphrase, or guess at what the original notes contain,
-> because inventing source material would defeat the entire purpose of keeping
-> source material.
-
----
-
 ## ✅ FOUND — 2026-09-19
 
 **The original notes were recovered from Gmail.** They are Dave's, written for
@@ -39,15 +30,16 @@ under [ADR-012](../planning/decisions.md#adr-012--licensing-permission-is-the-ma
 which asks others to credit their sources, this project should be scrupulous
 about crediting its own.
 
-**Do not rename or reorganize this file until that is answered.** If material
+**Answered 2026-09-19:** these are Dave's notes (see FOUND above). If material
 from both people ends up here, keep it in **separate files** with distinct
 headers — never merged.
 
-## ⚠️ Capturing Dave's material: read this first
+## Capturing Dave's material: read this first
 
-**This is now the critical path.** Every framework in this repository is a
-reconstruction from memory of what Dave taught. The primary source has not been
-recorded.
+Primary sources are now in this folder (recovered 2026-09-19). Further capture —
+especially domains not yet covered — still matters. Session design and question
+patterns live in [interviews/dave-session-guide.md](interviews/dave-session-guide.md);
+the theory below stays as rulebook context.
 
 ### The problem, in his own words
 
@@ -178,15 +170,6 @@ the whole repository.
 5. **Date and label everything.** When was it written, in what context, for whom.
 6. **One file per distinct source.** Don't merge separate documents into one.
 
-## How to add the notes
-
-1. Paste the original text into this file, or add a new file in this directory
-   if the material is substantial enough to stand alone.
-2. Add the header block below.
-3. Commit with a message like `Add original household cleanup notes`.
-4. **Then** — separately — trace which frameworks derive from which parts, and
-   note anything in the original that hasn't yet made it into the derived work.
-
 ## Header template
 
 ```markdown
@@ -203,33 +186,6 @@ the whole repository.
 ```
 
 ---
-
-## Source material index
-
-| File | Description | Date written | Added |
-|---|---|---|---|
-| *(none yet)* | | | |
-
----
-
-## When the notes are added, look for
-
-A short checklist for the pass that should follow the import:
-
-- [ ] **Cadences and frequencies.** "How often should I…" is the single
-      highest-demand content in this category
-      ([customer-problems.md](../docs/research/customer-problems.md)). Original
-      notes usually contain real ones.
-- [ ] **Specific products, tools, and techniques** — the concrete details that
-      generalization tends to erase.
-- [ ] **Phrasing worth keeping.** Original voice is almost always better than
-      rewritten voice.
-- [ ] **Sequences.** What order things were done in, and why.
-- [ ] **Anything the frameworks missed.** Ideas in the source that didn't make it
-      into [`frameworks/`](../frameworks/) — these are the most interesting
-      finds, and the reason for doing the pass at all.
-- [ ] **Anything the frameworks got wrong.** Places where the abstraction drifted
-      from what was actually meant.
 
 ## Related
 
