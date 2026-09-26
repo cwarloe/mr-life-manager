@@ -1034,3 +1034,71 @@ word, with nothing attached. Then stop.
 
 **Consequence.** The welcome sequence needs a Draft 4. Draft 3's day-3 email is
 withdrawn.
+
+---
+
+## ADR-017 — Kitchen That Works is free, folded into Six Meals
+
+**Status:** Accepted
+**Date:** 2026-09-26
+**Scope:** Product ladder, Rung 0 and Rung 1. Kitchen That Works only; no other
+product or price changes.
+
+**Context.** On 2026-09-25 the free guide became
+[Six Meals and a Stocked Kitchen](../products/checklists/ten-meals/), and the $19
+Rung 1 product *Kitchen That Works* was brought in line to promise the same six
+repeatable meals. That left a paid product promising what the free guide
+already gives away.
+
+**Decision.**
+
+> 2026-09-26, Charles: Kitchen That Works is free. It promises the same six
+> meals as the free guide Six Meals and a Stocked Kitchen, so it's folded into
+> that guide rather than sold at $19. Revenue for this area deferred; Charles
+> will work it out with marketing.
+
+**Consequences.** Kitchen That Works leaves Rung 1 and the $19 line of the
+[product ladder](../docs/business/product-ladder.md). The guide's
+[brief](../products/checklists/ten-meals/brief.md) no longer carries an open
+question about how it relates to Kitchen That Works. How it relates to
+*First Place*'s food section stays open.
+
+**Revisit when:** Charles and marketing settle how food earns revenue.
+
+---
+
+## ADR-018 — Six meals removed from First Place
+
+**Status:** Accepted
+**Date:** 2026-09-26
+**Scope:** *First Place* only. Removes the six repeatable meals from its
+promise; no price change.
+**Follows** [ADR-017](#adr-017--kitchen-that-works-is-free-folded-into-six-meals),
+which left the relationship to *First Place*'s food section open.
+
+**Context.** The free guide
+[Six Meals and a Stocked Kitchen](../products/checklists/ten-meals/) gives away
+six repeatable meals. *First Place* ($39) also promised "six repeatable meals",
+on its [founding-offer page](../products/landing/first-place.html) and in the
+[product ladder](../docs/business/product-ladder.md). That conflicts with the
+ladder's own "Nothing sold twice" check.
+
+**Decision.**
+
+> 2026-09-26, Charles: "so take it off the first place (which we haven't even
+> built out yet.). we can always move it to revenue generation later"
+
+**Rationale.** *First Place* isn't built out yet, so nothing sold or written
+has to change; only the promise does. Removing the meals now keeps the paid
+product from charging for what the free guide already gives away.
+
+**Consequences.** *First Place* no longer promises the six meals: the
+founding-offer page, the parent gift page, and the ladder's *First Place*
+contents drop them. The page URL (`/first-place.html`) is unchanged, and the
+price stays $39. The guide's
+[brief](../products/checklists/ten-meals/brief.md) no longer carries an open
+question about *First Place*. Food still earns no revenue; the meals can move
+back to revenue generation later.
+
+**Revisit when:** *First Place* is built out, or Charles and marketing decide
+where food earns revenue.
