@@ -52,6 +52,4 @@ Free. Footer: free to use, copy and teach from with credit, not for resale.
 
 ### Open
 
-- **British forms remain** despite the 2026-09-20 US-English sweep: *odour*,
-  *labelled*, *grey*.
 - **Untested:** that the laundry-chair section (the "real problem") lands.

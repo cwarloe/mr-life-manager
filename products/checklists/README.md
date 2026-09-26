@@ -1,6 +1,10 @@
 # Checklists
 
-Printable checklists. The **free tier** and the **$9 tier** of the
+Printable checklists and guides. Per
+[ADR-015](../../planning/decisions.md#adr-015--the-win-comes-before-the-email)
+they are **archive and search surface** at `/guides/`, not the front door —
+entry pages carry the action. Placement on the free tier (and any future paid
+checklist ideas) lives on the
 [product ladder](../../docs/business/product-ladder.md).
 
 ## Why checklists matter more than their price suggests
@@ -16,20 +20,15 @@ Printable checklists. The **free tier** and the **$9 tier** of the
 
 ## Planned
 
-**Free**
-- ★ ✓ **First Apartment Checklist** — the flagship lead magnet
-- ✓ **What Is This Room For?** — one room: its job, what fights it, three things
-- ✓ **The Light Is the Problem** — why a room feels wrong when nothing is dirty
-- ✓ **Cleaning Supply Starter List**
+Unbuilt only (shipped guides are under Status):
+
 - The 20-Minute Reset
-- ✓ **How Often Should I…?** — the cadence reference
 - Move-Out Checklist
 
-**Paid ($9)**
-- Room-by-room setup checklists
-- Seasonal maintenance checklists
-- Hosting checklist
-- Moving checklist (complete)
+Paid checklist ideas (room-by-room setup, seasonal maintenance, hosting, moving)
+are tracked on the
+[product ladder](../../docs/business/product-ladder.md) at Rung 1 — not here
+until briefed.
 
 ## Standards
 
@@ -55,7 +54,7 @@ Write a `brief.md` before building — see [../README.md](../README.md).
 
 ## Status
 
-**Seven designed, none reviewed or reader-tested.** Each printable `.html` is the
+**Seven shipped, none reviewed or reader-tested.** Each printable `.html` is the
 source of truth; its `brief.md` holds intent and open questions.
 Per [ADR-015](../../planning/decisions.md#adr-015--the-win-comes-before-the-email)
 they are archive and search surface at `/guides/`, not offers.
