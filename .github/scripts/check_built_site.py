@@ -7,19 +7,18 @@ import re
 import sys
 from pathlib import Path
 
+from site_catalog import (
+    ENTRY_ROUTES,
+    MAILERLITE_FORM_ATTR,
+    public_url as catalog_public_url,
+)
+
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "_site"
-ORIGIN = "https://mrlifemanager.com"
 
 
 def public_url(path: Path) -> str:
-    rel = path.relative_to(OUT)
-    if rel.name == "index.html":
-        parent = rel.parent.as_posix()
-        suffix = "/" if parent == "." else f"/{parent}/"
-    else:
-        suffix = f"/{rel.as_posix()}"
-    return ORIGIN + suffix
+    return catalog_public_url(path, OUT)
 
 
 def main() -> int:
@@ -45,21 +44,17 @@ def main() -> int:
             if marker not in text:
                 problems.append(f"{rel}: missing {marker}")
 
-    entries = {
-        "first-night.html": "first-night",
-        "guests.html": "guests",
-        "underwater.html": "underwater",
-        "one-room.html": "one-room",
-    }
-    for name, tag in entries.items():
+    for route in ENTRY_ROUTES:
+        name = route.page
+        tag = route.slug
         text = (OUT / name).read_text(encoding="utf-8")
-        completion = f"finished-{name}"
+        completion = route.completion_page
         for marker in (f"var VALUE = '{tag}'", completion):
             if marker not in text:
                 problems.append(f"{name}: missing {marker}")
 
         completion_text = (OUT / completion).read_text(encoding="utf-8")
-        for marker in ('data-form="00ZwEr"', f"var VALUE = '{tag}'", "One thing finished",
+        for marker in (MAILERLITE_FORM_ATTR, f"var VALUE = '{tag}'", "One thing finished",
                        "/first-place.html", "navigator.share", f"shared-{tag}",
                        'name="robots" content="noindex,nofollow"'):
             if marker not in completion_text:
