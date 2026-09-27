@@ -47,14 +47,14 @@ doesn't:
 
 | Must have | Why |
 |---|---|
-| The doing-mode script | Otherwise "Just the steps" is a button that does nothing |
+| Shared `/assets/entry.js` + `data-guide` / `data-completion-url` on `<html>` | Otherwise "Just the steps" is a button that does nothing |
 | `.go-do` / `.go-print` buttons | The mode switch, placed after the framing, before step 1 |
 | Viewport-locked doing layout | So Next can never be pushed off a phone screen |
 | `content:attr(data-n)` numbering | CSS counters skip hidden steps; without it every card reads "1" |
 | Print hides `.why` and `.whybtn` | The sheet is for doing, not reading |
 | Print forces all steps visible | Otherwise it prints only the step you were on |
 | `@page{size:Letter}` and a print zoom | US paper, and fill it — see below |
-| A `VALUE` tag on the signup | Untagged signups land nowhere |
+| A `data-guide` tag (wired by entry.js) | Untagged signups land nowhere |
 | A matching `<tag>-sequence.md` | A page that collects addresses and sends nothing is worse than no page |
 
 **After creating one, run

@@ -11,10 +11,10 @@ from urllib.request import Request, urlopen
 BASE = "https://mrlifemanager.com"
 PAGES = {
     "/": ("Run your home without carrying all of it in your head",),
-    "/first-night.html": ('data-form="00ZwEr"', "var VALUE = 'first-night'", "Dave's week on one page"),
-    "/guests.html": ('data-form="00ZwEr"', "var VALUE = 'guests'", "Dave's week on one page"),
-    "/underwater.html": ('data-form="00ZwEr"', "var VALUE = 'underwater'", "Dave's week on one page"),
-    "/one-room.html": ('data-form="00ZwEr"', "var VALUE = 'one-room'", "Dave's week on one page"),
+    "/first-night.html": ('data-form="00ZwEr"', 'data-guide="first-night"', 'src="/assets/entry.js"', "Dave's week on one page"),
+    "/guests.html": ('data-form="00ZwEr"', 'data-guide="guests"', 'src="/assets/entry.js"', "Dave's week on one page"),
+    "/underwater.html": ('data-form="00ZwEr"', 'data-guide="underwater"', 'src="/assets/entry.js"', "Dave's week on one page"),
+    "/one-room.html": ('data-form="00ZwEr"', 'data-guide="one-room"', 'src="/assets/entry.js"', "Dave's week on one page"),
     "/finished-first-night.html": ('data-form="00ZwEr"', "var VALUE = 'first-night'", "One thing finished"),
     "/finished-guests.html": ('data-form="00ZwEr"', "var VALUE = 'guests'", "One thing finished"),
     "/finished-underwater.html": ('data-form="00ZwEr"', "var VALUE = 'underwater'", "One thing finished"),
