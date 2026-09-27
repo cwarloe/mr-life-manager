@@ -44,7 +44,7 @@ Each item is tagged with its [roadmap](roadmap.md) phase and primary
 | Nightly kitchen reset | Home/Food | The keystone habit; teach it first |
 | Weekly reset routine | Time | The other keystone |
 | ~~Laundry, fully explained~~ | Home | **Drafted + designed** 2026-09-18 → [guide](../products/checklists/laundry/) |
-| ~~Ten meals anyone can cook~~ | Food | **Drafted + designed** 2026-09-18 → [guide](../products/checklists/ten-meals/) |
+| ~~Six Meals and a Stocked Kitchen~~ | Food | **Drafted + designed** 2026-09-18 → [guide](../products/checklists/ten-meals/) |
 | ~~Stocked pantry list~~ | Food | **Folded into** [ten-meals](../products/checklists/ten-meals/) — they belong together |
 | Annual home maintenance calendar | Maintenance | Apartment and house versions |
 | What documents to keep, where, how long | Paperwork | High anxiety, low information available |

@@ -355,8 +355,13 @@ typing at a moment of transition.
   his likeness is available. [ADR-011](../../planning/decisions.md#adr-011--mr-life-manager-is-a-real-person-dave-webster)
 - ~~Is "Mr. Life Manager" a persona or a brand name?~~ **Settled — neither.**
   He's a real person. See *Who is speaking* above.
-- Does the name survive contact with the actual audience? **Still open, still
-  empirical** — though ADR-011 materially reduces the risk.
+- ~~Name clearance / conflict scan~~ **Closed 2026-09-23** — owner cleared
+  "Mr. Life Manager"; see
+  [brand-name-scan.md](../research/brand-name-scan.md). Clearance is settled;
+  further name work is not needed before launch.
+- Does the name survive contact with the actual audience? **Still empirical**
+  (audience reaction test), separate from clearance — ADR-011 materially reduces
+  the risk.
 - ~~Is he "Dave Webster" publicly, or only "Mr. Life Manager"?~~ **Settled for
   copy** — "Dave," never the surname
   ([content/README.md](../../content/README.md#referring-to-dave)).

@@ -46,7 +46,9 @@ Don't re-derive these — read them:
   web pages, how to refer to Dave
 - [`planning/decisions.md`](planning/decisions.md) — the ADRs. ADR-014
   (completion converts), ADR-015 (the win comes before the email), ADR-016
-  (the sequence shrinks unconditionally) govern most product decisions
+  (the sequence shrinks unconditionally), ADR-017 (Kitchen That Works free,
+  folded into Six Meals), ADR-018 (six meals off First Place; First Place stays
+  $39) govern most product decisions
 - [`docs/business/commerce-rules.md`](docs/business/commerce-rules.md) —
   affiliate and pricing rules
 - [`source-material/`](source-material/INVENTORY.md) — Dave's original
