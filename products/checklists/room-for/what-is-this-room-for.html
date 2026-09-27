@@ -62,7 +62,6 @@ h1{font-size:clamp(2.1rem,6vw,3.1rem);font-weight:700;line-height:1.02;letter-sp
 h3{font-size:.76rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--blue);
   margin:2rem 0 .8rem;padding-bottom:.3rem;border-bottom:1px solid var(--rule)}
 
-/* tick lists */
 ul.tick{list-style:none;margin:0;padding:0;display:grid;gap:.42rem 1.75rem;
   grid-template-columns:repeat(auto-fill,minmax(18.5rem,1fr))}
 ul.tick.one{grid-template-columns:1fr}
@@ -72,13 +71,6 @@ ul.tick li::before{content:"";position:absolute;left:0;top:.18em;width:.85rem;he
 ul.tick li b{font-weight:600}
 ul.tick li .why{color:var(--slate);font-size:.87rem;display:block;line-height:1.4}
 
-/* room card */
-.room{border:1px solid var(--rule);border-radius:4px;background:var(--surface);
-  padding:1.1rem 1.2rem 1.25rem;margin:0 0 1rem;break-inside:avoid}
-.room h4{font-size:1.02rem;font-weight:700;margin:0 0 .15rem;letter-spacing:-.01em}
-.room .jobline{font-family:var(--serif);font-size:.92rem;color:var(--slate);margin:0 0 .85rem}
-.room .sub{font-size:.68rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
-  color:var(--slate);margin:.9rem 0 .45rem}
 
 .dolist{width:100%;border-collapse:collapse;font-size:.92rem;margin:.4rem 0 0}
 .dolist thead th{font-size:.66rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
@@ -102,8 +94,6 @@ footer b{color:var(--ink);font-weight:600}
   .dolist{font-size:.86rem}
 }
 @media print{
-  /* Printables are not the web page. The page persuades; the sheet reminds.
-     See content/README.md — "Printables are not the web page". */
   @page{size:Letter;margin:0.45in}
   :root{--ink:#000;--paper:#fff;--surface:#fff;--slate:#333;--rule:#bbb;--rule-strong:#666;
     --blue:#1F4E79;--blue-soft:#fff;--amber:#7a4d0a;--amber-soft:#fff}
@@ -141,8 +131,6 @@ footer b{color:var(--ink);font-weight:600}
   ul.tick li,.simple li{font-size:8.6pt;line-height:1.28}
   ul.tick{gap:.22rem 1rem}
 
-  .printfoot{display:block !important;margin-top:.45rem;padding-top:.25rem;
-    border-top:1px solid #999;font-size:7.5pt;color:#333}
   /* Section gaps are set as full-shorthand margins on the screen styles, so the
      bottom half survives a margin-top override. Reset all sides explicitly. */
   .sec,.band,.part,.rule,.room{margin:.5rem 0 0 !important}
@@ -188,7 +176,6 @@ footer b{color:var(--ink);font-weight:600}
     half-done in a notebook you never open again.
   </div>
 
-  <!-- 1 -->
   <section class="band">
     <div class="band-head"><span class="band-tag">1</span><h2>Pick the room</h2><span class="mins">1 minute</span></div>
     <p class="band-note">Not the worst one. <strong>The one you're in most.</strong>
@@ -198,7 +185,6 @@ footer b{color:var(--ink);font-weight:600}
     inside the room.</p>
   </section>
 
-  <!-- 2 -->
   <section class="band">
     <div class="band-head"><span class="band-tag">2</span><h2>What's its job?</h2><span class="mins">3 minutes</span></div>
     <p class="band-note">Pick <strong>one</strong>. Rooms can do two things, but only
@@ -221,7 +207,6 @@ footer b{color:var(--ink);font-weight:600}
     </div>
   </section>
 
-  <!-- 3 -->
   <section class="band">
     <div class="band-head"><span class="band-tag">3</span><h2>What's fighting it?</h2><span class="mins">10 minutes</span></div>
     <p class="band-note">Tick what's true <strong>in this room</strong>. These six
@@ -236,7 +221,6 @@ footer b{color:var(--ink);font-weight:600}
     </ul>
   </section>
 
-  <!-- 4 -->
   <section class="band">
     <div class="band-head"><span class="band-tag">4</span><h2>Three things, with a date</h2><span class="mins">5 minutes</span></div>
     <p class="band-note">Not everything you ticked. <strong>Three.</strong> A list of
