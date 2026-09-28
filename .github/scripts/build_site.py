@@ -207,12 +207,21 @@ def main() -> int:
                     .replace("__GUIDE__", guide)
                     .replace("__BACK__", back))
         (OUT / filename).write_text(rendered)
-    tokens = tokens_from(ROOT / GUIDES[0][1])
+    printable_css = ROOT / "products" / "print" / "printable.css"
+    if not printable_css.is_file():
+        sys.exit(f"missing {printable_css}")
+    tokens = tokens_from(printable_css)
     cards = []
     for slug, src, title, blurb in GUIDES:
         html = (ROOT / src).read_text()
         if "</body>" not in html:
             sys.exit(f"{src}: no </body>")
+        # Source HTML uses a relative path into products/print/; published guides
+        # live at /guides/, so rewrite to the copied absolute site path.
+        html = html.replace(
+            'href="../../print/printable.css"',
+            'href="/print/printable.css"',
+        )
         html = html.replace("</body>", CTA + "</body>")
         (OUT / "guides" / f"{slug}.html").write_text(html)
         cards.append(
@@ -257,6 +266,7 @@ def main() -> int:
     if not pdfs:
         sys.exit("no printables found in products/guides-pdf/")
     (OUT / "print").mkdir(parents=True, exist_ok=True)
+    shutil.copy2(printable_css, OUT / "print" / "printable.css")
     rows = []
     for pdf in pdfs:
         shutil.copy2(pdf, OUT / "print" / pdf.name)
