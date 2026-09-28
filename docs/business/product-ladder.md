@@ -37,9 +37,9 @@ earn the right to sell — in that order.
 | **Cleaning Supply Starter List** | 3 pg PDF | What to actually buy, what to skip, roughly what it costs. |
 | **What Is This Room For?** | 2 pg PDF | One room: its job, what fights it, three things to do. |
 | **The Light Is the Problem** | 2 pg PDF | Why a room feels wrong when nothing in it is dirty. |
-| **Laundry, Solved** | 4 pg PDF | Sorting, settings, detergent, stains, the laundry chair. |
+| **Laundry, Solved** | 4 pg PDF | Sorting, settings, detergent, stains, the laundry chair. Free only; the $9 paid version is gone for now ([ADR-019](../../planning/decisions.md#adr-019--laundry-solved-and-the-roommate-kit-are-free-only)). |
 | **Six Meals and a Stocked Kitchen** | 3 pg PDF | The four-slot pattern, six meals, the pantry list. Also covers *Kitchen That Works*, which is free and folded in here (Charles, 2026-09-26). |
-| **The Household Agreement** | 5 pg PDF | Worksheet. Decide it once, together. |
+| **The Household Agreement** | 5 pg PDF | Worksheet. Decide it once, together. This is the *Roommate Agreement Kit*: free only, no $9 version for now ([ADR-019](../../planning/decisions.md#adr-019--laundry-solved-and-the-roommate-kit-are-free-only)). |
 | **The 20-Minute Reset** | Not built | Emergency routine for when the place has gotten away from you. |
 | **Move-Out Checklist** | Not built | Get the deposit back. Seasonal, urgent, highly searched. |
 | Articles / short videos | Not built | The guides themselves are public at `/guides/`. |
@@ -62,14 +62,19 @@ far less than the fact that it happened.
 |---|---|---|
 | **Room-by-Room Setup Guides** (kitchen, bath, bedroom, living, laundry) | $9 ea / $29 bundle | Modular; the bundle is the real product. |
 | **Household Maintenance Calendar** | $12 | Annual/seasonal/monthly, apartment and house versions. |
-| **Roommate Agreement Kit** | $9 | Chores, standards, bills, conflict script. Enormous felt pain. |
-| **Laundry, Solved** | $9 | Sorting, settings, stains, cadence, fabric care. |
 | **Paperwork Starter Kit** | $19 | What documents exist, why, where they live, what to shred. |
 
 **Kitchen That Works is no longer on this rung.** It promised the same six meals
 as the free guide, so per Charles (2026-09-26) it's free and folded into
-[Six Meals and a Stocked Kitchen](../../products/checklists/ten-meals/) at Rung 0
+[Six Meals and a Stocked Kitchen](../../products/checklists/six-meals/) at Rung 0
 rather than sold at $19. Revenue for this area is TBD with marketing.
+
+**Laundry, Solved and the Roommate Agreement Kit are no longer on this rung.**
+Both were listed free at Rung 0 and again at $9 here. Per Charles (2026-09-28,
+[ADR-019](../../planning/decisions.md#adr-019--laundry-solved-and-the-roommate-kit-are-free-only))
+each is free only: *Laundry, Solved* is the free guide, and the roommate kit is
+the free [Household Agreement](../../products/worksheets/household-agreement/).
+Pricing is free for now; marketing will revisit it.
 
 **Success looks like:** conversion rate from the free list, and repeat purchases
 across the low tier (the strongest signal that the mid-tier will work).
@@ -100,7 +105,7 @@ the first time.
 *Editions:* student, solo, couples. Same spine, adjusted framing and examples.
 
 **The six meals aren't part of First Place.** They're free in
-[Six Meals and a Stocked Kitchen](../../products/checklists/ten-meals/) at Rung 0,
+[Six Meals and a Stocked Kitchen](../../products/checklists/six-meals/) at Rung 0,
 so per Charles (2026-09-26,
 [ADR-018](../../planning/decisions.md#adr-018--six-meals-removed-from-first-place))
 First Place doesn't sell them again. They can move back into a paid product
@@ -169,7 +174,7 @@ purchasing committee.
 ──────────┼──────────────────────────────────────────────
      $29  ┤ Room-by-room bundle
      $19  ┤ Paperwork Kit
-      $9  ┤ Single guides · Roommate kit
+      $9  ┤ Single room-by-room guides
 ──────────┼──────────────────────────────────────────────
       $0  ┤ Entry pages (front door) · The Week ·           ← the whole funnel
           │ guides as archive/search surface                  depends on this

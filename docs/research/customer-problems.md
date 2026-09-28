@@ -249,7 +249,7 @@ Highest frequency × highest pain × highest teachability:
 1. **Cadence reference** — how often to do everything ("How Often Should I…?")
 2. **First apartment supply and setup list**
 3. **Cleaning routines by frequency**, not by room
-4. **[Six Meals and a Stocked Kitchen](../../products/checklists/ten-meals/)**
+4. **[Six Meals and a Stocked Kitchen](../../products/checklists/six-meals/)**
 5. **Laundry, fully explained**
 6. **Annual maintenance calendar**
 7. **Paperwork: what to keep, where, how long**

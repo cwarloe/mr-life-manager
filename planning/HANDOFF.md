@@ -19,7 +19,8 @@ pushes deploy via GitHub Actions.
 - `planning/decisions.md` — the ADRs. ADR-014 completion converts; ADR-015 the
   win comes before the email ask; ADR-016 the follow-up sequence shrinks
   unconditionally; ADR-017 Kitchen That Works is free, folded into Six Meals;
-  ADR-018 six meals taken off First Place (First Place stays $39).
+  ADR-018 six meals taken off First Place (First Place stays $39); ADR-019
+  Laundry, Solved and the roommate kit are free only (no $9 tier for now).
 - `source-material/INVENTORY.md` — every known Dave document and its state.
   Everything under `source-material/` is **verbatim, never edited, not even for
   spelling.** Interpretation goes in separate analysis files.

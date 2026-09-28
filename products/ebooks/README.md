@@ -28,7 +28,6 @@ available in the entire plan.
 ## Also planned
 
 - Room-by-room setup guides ($9 each, $29 bundle)
-- Laundry, Solved ($9)
 - Paperwork Starter Kit ($19)
 - Starting Over Toolkit ($49)
 

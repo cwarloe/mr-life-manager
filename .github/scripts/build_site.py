@@ -5,7 +5,7 @@ import html as html_lib
 import re, shutil, sys
 from pathlib import Path
 
-from guide_inventory import GUIDES, PDF_TITLES
+from guide_inventory import GUIDES, LEGACY_GUIDE_SLUGS, PDF_TITLES
 from site_catalog import (
     ORIGIN,
     completion_pages,
@@ -17,6 +17,7 @@ from site_catalog import (
 ROOT = Path(__file__).resolve().parents[2]
 LANDING = ROOT / "products" / "landing"
 OUT = ROOT / "_site"
+REDIRECT_MARKER = 'data-mlm-redirect="1"'
 DEFAULT_DESCRIPTION = (
     "Practical adult-life systems for people who were never explicitly taught them."
 )
@@ -42,7 +43,7 @@ def add_public_metadata() -> int:
     for path in sorted(OUT.rglob("*.html")):
         rel = path.relative_to(OUT)
         text = path.read_text(encoding="utf-8")
-        if 'data-mlm-meta="1"' in text:
+        if 'data-mlm-meta="1"' in text or REDIRECT_MARKER in text:
             continue
         title_match = re.search(r"<title>(.*?)</title>", text, re.I | re.S)
         title = re.sub(r"<[^>]+>", "", title_match.group(1)).strip() if title_match else "Mr. Life Manager"
@@ -82,6 +83,25 @@ def add_public_metadata() -> int:
         path.write_text(text.replace("</head>", block + "</head>", 1), encoding="utf-8")
         count += 1
     return count
+
+
+def redirect_page(target_path: str, title: str) -> str:
+    """Static redirect for a retired URL: meta refresh plus canonical to the target."""
+    target_url = ORIGIN + target_path
+    t = html_lib.escape(title)
+    href = html_lib.escape(target_path, quote=True)
+    return (
+        "<!doctype html>\n<html lang=\"en\"><head><meta charset=\"utf-8\">\n"
+        f"<meta {REDIRECT_MARKER} http-equiv=\"refresh\" content=\"0; url={href}\">\n"
+        f"<link rel=\"canonical\" href=\"{html_lib.escape(target_url, quote=True)}\">\n"
+        "<meta name=\"robots\" content=\"noindex\">\n"
+        "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n"
+        f"<title>{t} — Mr. Life Manager</title>\n"
+        "</head><body>\n"
+        f"<p>This page has moved to <a href=\"{href}\">{t}</a>.</p>\n"
+        f"<script>location.replace({target_path!r} + location.search + location.hash)</script>\n"
+        "</body></html>\n"
+    )
 
 
 def tokens_from(path: Path) -> str:
@@ -181,6 +201,10 @@ def main() -> int:
             f"<a class='card' href='/guides/{slug}.html'><h2>{title}</h2>"
             f"<p>{blurb}</p><span class='go'>Read it →</span></a>"
         )
+    guide_titles = {slug: title for slug, _src, title, _blurb in GUIDES}
+    for old, new in LEGACY_GUIDE_SLUGS.items():
+        (OUT / "guides" / f"{old}.html").write_text(
+            redirect_page(f"/guides/{new}.html", guide_titles[new]))
     extra = (
         ".list{display:grid;gap:1rem;margin:2rem 0 3rem}"
         "a.card{border:2px solid var(--rule-strong);border-radius:3px;padding:1.3rem 1.5rem;"
@@ -225,6 +249,11 @@ def main() -> int:
         shutil.copy2(pdf, OUT / "print" / pdf.name)
         label = PDF_TITLES.get(pdf.name, pdf.stem.replace("-", " ").title())
         rows.append(f"<li><a class='file' href='/print/{pdf.name}'>{label}<span>PDF</span></a></li>")
+    # Retired PDF names keep resolving (a PDF can't meta-refresh); unlisted.
+    for old, new in LEGACY_GUIDE_SLUGS.items():
+        current_pdf = pdf_src / f"{new}.pdf"
+        if current_pdf.is_file():
+            shutil.copy2(current_pdf, OUT / "print" / f"{old}.pdf")
     extra_p = (
         "ul{list-style:none;padding:0;margin:1.5rem 0 3rem}"
         "li{border-top:1px solid var(--rule)}"

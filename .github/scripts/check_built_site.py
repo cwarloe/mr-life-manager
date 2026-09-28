@@ -7,8 +7,10 @@ import re
 import sys
 from pathlib import Path
 
+from guide_inventory import LEGACY_GUIDE_SLUGS
 from site_catalog import (
     ENTRY_ROUTES,
+    ORIGIN,
     MAILERLITE_FORM_ATTR,
     public_url as catalog_public_url,
 )
@@ -28,7 +30,34 @@ def main() -> int:
         print("_site has no HTML; run build_site.py first", file=sys.stderr)
         return 1
 
+    legacy_pages = {
+        OUT / "guides" / f"{old}.html": f"/guides/{new}.html"
+        for old, new in LEGACY_GUIDE_SLUGS.items()
+    }
+    sitemap = (OUT / "sitemap.xml").read_text(encoding="utf-8")
+    for path, target in legacy_pages.items():
+        rel = path.relative_to(OUT)
+        if not path.is_file():
+            problems.append(f"missing legacy redirect: {rel} -> {target}")
+            continue
+        text = path.read_text(encoding="utf-8")
+        if not (OUT / target.lstrip("/")).is_file():
+            problems.append(f"{rel}: redirect target {target} was not built")
+        for marker in ('data-mlm-redirect="1"',
+                       f'http-equiv="refresh" content="0; url={target}"',
+                       f'<link rel="canonical" href="{ORIGIN}{target}">',
+                       'name="robots" content="noindex"'):
+            if marker not in text:
+                problems.append(f"{rel}: missing {marker}")
+        if public_url(path) in sitemap:
+            problems.append(f"sitemap.xml: legacy redirect {rel} must stay out of search")
+    for old, new in LEGACY_GUIDE_SLUGS.items():
+        if (OUT / "print" / f"{new}.pdf").is_file() and not (OUT / "print" / f"{old}.pdf").is_file():
+            problems.append(f"missing legacy PDF alias: print/{old}.pdf")
+
     for path in pages:
+        if path in legacy_pages:
+            continue
         text = path.read_text(encoding="utf-8")
         rel = path.relative_to(OUT)
         expected = public_url(path)
@@ -105,7 +134,6 @@ def main() -> int:
         if not (OUT / name).is_file():
             problems.append(f"missing generated public file: {name}")
 
-    sitemap = (OUT / "sitemap.xml").read_text(encoding="utf-8")
     if "finished-" in sitemap:
         problems.append("sitemap.xml: completion pages must stay out of search")
 
@@ -115,7 +143,9 @@ def main() -> int:
             print(f"- {problem}", file=sys.stderr)
         return 1
 
-    print(f"Validated {len(pages)} generated pages, four entry routes, the partner path and the founding offer.")
+    print(f"Validated {len(pages) - len(legacy_pages)} generated pages, "
+          f"{len(legacy_pages)} legacy redirect(s), four entry routes, "
+          "the partner path and the founding offer.")
     return 0
 
 

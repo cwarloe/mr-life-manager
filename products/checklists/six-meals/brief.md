@@ -3,9 +3,10 @@
 **Status:** Drafted and designed 2026-09-18. Not reviewed or reader-tested.
 Brief written after the fact from the HTML.
 **Tier:** Rung 0 — free ([product-ladder.md](../../../docs/business/product-ladder.md))
-**Files:** [`ten-meals.html`](ten-meals.html) ·
-[PDF](../../guides-pdf/ten-meals.pdf) (3 pp) · public at
-`/guides/ten-meals.html`
+**Files:** [`six-meals.html`](six-meals.html) ·
+[PDF](../../guides-pdf/six-meals.pdf) (3 pp) · public at
+`/guides/six-meals.html` (the old `/guides/ten-meals.html` and
+`/print/ten-meals.pdf` still resolve; see Decisions)
 
 ---
 
@@ -19,7 +20,7 @@ repertoire: *"Not skill — repertoire."*
 [Cooking and food](../../../docs/research/customer-problems.md#cooking-and-food):
 no repeatable meals, no idea what a stocked pantry holds, every dinner a fresh
 decision, aspirational shopping, no clean-as-you-cook. Listed as MVP priority 4
-("Ten meals + a stocked pantry").
+(originally "Ten meals + a stocked pantry").
 
 ### 3. What outcome does it produce?
 
@@ -64,6 +65,7 @@ Free. Footer: free to use, copy and teach from with credit, not for resale.
 - 2026-09-25, Charles: cut from ten meals to six. Ten was too many to hold in your head, and every meal must take 30 minutes or less. Cut: sheet-pan chicken (over 30 min), baked potato (an hour), canned soup and breakfast for dinner (overlap with grilled cheese and eggs).
 - 2026-09-26, Charles: Kitchen That Works is free. It promises the same six meals as this guide, so it's folded in here rather than sold at $19. Revenue for this area deferred; Charles will work it out with marketing.
 - 2026-09-26, Charles: the six meals come off *First Place*, which isn't built out yet. They can move back to revenue generation later. *First Place* stays $39.
+- 2026-09-28, Charles: slug renamed `ten-meals` → `six-meals` to match the content. The folder, HTML, PDF and public URL moved; `/guides/ten-meals.html` is a static redirect (meta refresh, canonical to the new page, noindex) and `/print/ten-meals.pdf` is an unlisted copy of the current PDF, both generated from `LEGACY_GUIDE_SLUGS` in `.github/scripts/guide_inventory.py`.
 
 ### Open
 
