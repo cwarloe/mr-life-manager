@@ -23,7 +23,7 @@ Each item is tagged with its [roadmap](roadmap.md) phase and primary
 | ~~Import existing written notes~~ | Source | 0 | **Found 2026-09-19** → [verbatim](../source-material/2023-07-17-dave-webster-cleanup-notes.md) |
 | **Resolve three source contradictions with Dave** | Source | 0 | Bulk vs. smallest size · ten cleaning agents vs. the guide's nine (the old "~25" was our miscount) · scented vs. unscented. See [analysis](../source-material/2023-07-17-analysis.md). |
 | Retrieve the `Do it now.jpg` attachment | Source | 0 | On the 2023-07-17 email; not yet pulled |
-| ~~Plain-language permissions page~~ | Business | 0 | **Done** 2026-09-08 → [PERMISSIONS.md](../PERMISSIONS.md). Needs contact details before launch. |
+| ~~Plain-language permissions page~~ | Business | 0 | **Done** 2026-09-08 → [PERMISSIONS.md](../PERMISSIONS.md) (contact: hello@mrlifemanager.com). |
 | ~~Decide the faith-framing question~~ | Decision | 0 | **Done** 2026-09-08 → [ADR-009](decisions.md#adr-009--faith-framing-convictions-inform-the-work-belief-is-never-required-to-use-it). |
 | ~~Name/trademark check on "Mr. Life Manager"~~ | Research | 0 | **Closed 2026-09-23 — name cleared by owner.** No "Mr. Life Manager" exists anywhere; the only nearby hits are generic "…Life Manager" names, a common term that is not a concern. Domain `.com` is ours. See [scan](../docs/research/brand-name-scan.md). |
 | ~~Record MailerLite delivery health~~ | Launch | 2 | **Passed 2026-09-22** for all four routes → [operations.md](operations.md). |

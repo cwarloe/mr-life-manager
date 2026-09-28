@@ -115,7 +115,7 @@ different landing page.
 ## MVP recommendation
 
 **Do now (🟢)**
-1. Free **First Apartment Checklist** — audience validation and list building.
+1. Free **First Apartment Checklist** — audience validation as archive/shareable; win-first entry pages capture email after the win ([ADR-015](../../planning/decisions.md#adr-015--the-win-comes-before-the-email)).
 2. Two or three **$9–$19 guides** — first revenue, and a read on which topics sell.
 3. ***First Place* at $39** — the core bet.
 4. **5–10 coaching or $99 audit slots** — cash, research, and testimonials.

@@ -88,9 +88,10 @@ struggled to let go of is the most useful thing we could learn about this
 audience, and it's a question people generally enjoy answering. "Let go of"
 covers the give-away pile as well as the trash pile.
 
-## Not done
+## Still open
 
 1. **No paid offer** — the $9 product doesn't exist. Insertion point is after
    email 3.
-2. **MailerLite:** group `entry-one-room`, automation on `guide=one-room`,
-   0 / 3 / 7 days, no re-entry, resend-to-unopeners off.
+2. ~~**MailerLite automation.**~~ **Done** 2026-09-22 (Active per owner). Live
+   ops spec: [MAILERLITE-SETUP.md](MAILERLITE-SETUP.md). Keep
+   resend-to-unopeners off — it violates ADR-016.

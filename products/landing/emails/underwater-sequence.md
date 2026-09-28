@@ -86,9 +86,10 @@ Then it ends. **Silence means stop.**
 
 ---
 
-## Not done
+## Still open
 
 1. **No paid offer**, deliberately — the $9 product doesn't exist. Insertion
    point is after email 3.
-2. **MailerLite:** group `entry-underwater`, automation keyed on
-   `guide=underwater`, 0 / 3 / 7 days, no re-entry, resend-to-unopeners off.
+2. ~~**MailerLite automation.**~~ **Done** 2026-09-22 (Active per owner). Live
+   ops spec: [MAILERLITE-SETUP.md](MAILERLITE-SETUP.md). Keep
+   resend-to-unopeners off — it violates ADR-016.

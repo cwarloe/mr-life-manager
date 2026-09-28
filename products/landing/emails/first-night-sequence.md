@@ -109,15 +109,15 @@ which is the quiet point of the question.
 
 ---
 
-## Not built — do not send until these are closed
+## Still open
 
 1. ~~**The printable.**~~ Done — Email 1 links
    <https://mrlifemanager.com/print/the-week.pdf>. Open it before sending.
 2. **No paid offer.** Deliberate — the $9 product doesn't exist. Insertion point
    is after email 3.
-3. **MailerLite:** automation keyed on `guide=first-night`, 0 / 3 / 7 days, no
-   re-entry, and **"resend to unopens" must stay off** — it's a standard feature
-   and it directly violates ADR-016.
+3. ~~**MailerLite automation.**~~ **Done** 2026-09-22 (Active per owner). Live
+   ops spec: [MAILERLITE-SETUP.md](MAILERLITE-SETUP.md). Keep
+   "resend to unopens" off — it violates ADR-016.
 
 ## Factual claims to verify before sending
 

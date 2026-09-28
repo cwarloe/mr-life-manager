@@ -37,6 +37,9 @@ active per owner confirmation on 2026-09-22. Each sends one PDF link in email 1:
 and is never promised by email.
 
 CI scripts enforce the invariants — run them before committing:
+- Public origin + the four entry routes live in
+  `.github/scripts/site_catalog.py` — import from there; don't hardcode the
+  doors in new checks
 - `python3 .github/scripts/validate_repo.py` (HTML + internal links)
 - `python3 .github/scripts/check_entry_pages.py` (each page has doing-mode,
   mode buttons, print rules, a signup tag, AND a matching `<tag>-sequence.md`)
