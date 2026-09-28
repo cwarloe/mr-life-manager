@@ -8,20 +8,27 @@ ROOT = Path(__file__).resolve().parents[2]
 LANDING = ROOT / "products" / "landing"
 EMAILS = LANDING / "emails"
 ENTRY_JS = LANDING / "assets" / "entry.js"
+ENTRY_CSS = LANDING / "assets" / "entry.css"
 
 REQUIRED = [
+    ("shared entry stylesheet", 'href="/assets/entry.css"'),
     ("shared entry script", 'src="/assets/entry.js"'),
     ("mode buttons", 'class="go-do"'),
-    ("viewport-locked layout", "body.doing .steps{flex:1"),
-    ("step numbering fix", "content:attr(data-n)"),
-    ("print hides the reasoning", ".why,.why.open,.whybtn"),
-    ("print forces all steps", ".step{display:block !important}"),
-    ("Letter page size", "@page{size:Letter"),
     ("print scale", "body{zoom:"),
     ("MailerLite form", 'data-form="00ZwEr"'),
     ("one-PDF promise", "Dave's week on one page"),
     ("post-completion destination", 'data-completion-url="/finished-'),
     ("guide tag config", 'data-guide="'),
+]
+
+ENTRY_CSS_REQUIRED = [
+    ("viewport-locked layout", "body.doing .steps{flex:1"),
+    ("step numbering fix", "content:attr(data-n)"),
+    ("print hides the reasoning", ".why,.why.open,.whybtn"),
+    ("print forces all steps", ".step{display:block !important}"),
+    ("Letter page size", "@page{size:Letter"),
+    ("text-size-adjust", "-webkit-text-size-adjust"),
+    ("prefers-reduced-motion", "prefers-reduced-motion"),
 ]
 
 ENTRY_JS_REQUIRED = [
@@ -43,6 +50,14 @@ def main() -> int:
         for label, needle in ENTRY_JS_REQUIRED:
             if needle not in js:
                 problems.append(f"entry.js: missing {label}")
+
+    if not ENTRY_CSS.is_file():
+        problems.append(f"missing shared stylesheet: {ENTRY_CSS.relative_to(ROOT)}")
+    else:
+        css = ENTRY_CSS.read_text()
+        for label, needle in ENTRY_CSS_REQUIRED:
+            if needle not in css:
+                problems.append(f"entry.css: missing {label}")
 
     pages = sorted(p for p in LANDING.glob("*.html")
                    if 'class="steps"' in p.read_text())
