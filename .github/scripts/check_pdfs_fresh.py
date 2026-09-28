@@ -37,7 +37,7 @@ def source_digest(src: Path) -> str:
 
 def current() -> dict:
     sys.path.insert(0, str(ROOT / ".github" / "scripts"))
-    from render_all_pdfs import SHEETS  # noqa: E402
+    from guide_inventory import SHEETS  # noqa: E402
     return {stem: source_digest(ROOT / src) for src, stem in SHEETS}
 
 

@@ -5,6 +5,7 @@ import html as html_lib
 import re, shutil, sys
 from pathlib import Path
 
+from guide_inventory import GUIDES, PDF_TITLES
 from site_catalog import (
     ORIGIN,
     completion_pages,
@@ -19,54 +20,6 @@ OUT = ROOT / "_site"
 DEFAULT_DESCRIPTION = (
     "Practical adult-life systems for people who were never explicitly taught them."
 )
-
-GUIDES = [
-    ("first-apartment-checklist",
-     "products/checklists/first-apartment/first-apartment-checklist.html",
-     "The First Apartment Checklist",
-     "Everything to do, buy, and find out — in the order you'll need it."),
-    ("how-often-should-i",
-     "products/checklists/how-often/how-often-should-i.html",
-     "How Often Should I…?",
-     "Sheets, filters, towels, the dryer vent. Every cadence in one place."),
-    ("cleaning-supply-starter-list",
-     "products/checklists/cleaning-supplies/cleaning-supply-starter-list.html",
-     "Cleaning Supply Starter List",
-     "The nine products that do the work — and the ones you can skip."),
-    ("what-is-this-room-for",
-     "products/checklists/room-for/what-is-this-room-for.html",
-     "What Is This Room For?",
-     "One room, twenty minutes, three things to do about it."),
-    ("the-light-is-the-problem",
-     "products/checklists/light/the-light-is-the-problem.html",
-     "The Light Is the Problem",
-     "Why a room feels wrong when nothing in it is dirty."),
-    ("laundry-solved",
-     "products/checklists/laundry/laundry-solved.html",
-     "Laundry, Solved",
-     "Sorting, settings, stains, and the step everyone actually skips."),
-    ("ten-meals",
-     "products/checklists/ten-meals/ten-meals.html",
-     "Six Meals and a Stocked Kitchen",
-     "Enough to stop deciding what's for dinner every single night."),
-    ("household-agreement",
-     "products/worksheets/household-agreement/household-agreement.html",
-     "The Household Agreement",
-     "Decide it once, together, before it's a problem."),
-]
-
-PDF_TITLES = {
-    "cleaning-supply-starter-list.pdf": "Cleaning Supply Starter List",
-    "first-apartment-checklist.pdf": "The First Apartment Checklist",
-    "household-agreement.pdf": "The Household Agreement",
-    "how-often-should-i.pdf": "How Often Should I…?",
-    "laundry-solved.pdf": "Laundry, Solved",
-    "partner-pilot.pdf": "Five-Person Pilot Handouts",
-    "ten-meals.pdf": "Six Meals and a Stocked Kitchen",
-    "the-light-is-the-problem.pdf": "The Light Is the Problem",
-    "the-week.pdf": "The Week",
-    "what-is-this-room-for.pdf": "What Is This Room For?",
-}
 
 COMPLETION_PAGES = completion_pages()
 

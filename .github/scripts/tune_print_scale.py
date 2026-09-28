@@ -26,7 +26,7 @@ def pages(src: Path, zoom: float, tmp: Path) -> int:
 
 def main() -> int:
     sys.path.insert(0, str(ROOT / ".github" / "scripts"))
-    from render_all_pdfs import SHEETS
+    from guide_inventory import SHEETS
 
     scales = {}
     with tempfile.TemporaryDirectory() as td:
