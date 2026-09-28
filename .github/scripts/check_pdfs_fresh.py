@@ -23,10 +23,22 @@ def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()[:16]
 
 
+def source_digest(src: Path) -> str:
+    """Hash HTML plus any local stylesheets it links (PDF render inlines them)."""
+    sys.path.insert(0, str(ROOT / ".github" / "scripts"))
+    from render_pdf import linked_local_stylesheets  # noqa: E402
+    h = hashlib.sha256()
+    h.update(src.read_bytes())
+    for css in linked_local_stylesheets(src):
+        h.update(b"\0")
+        h.update(css.read_bytes())
+    return h.hexdigest()[:16]
+
+
 def current() -> dict:
     sys.path.insert(0, str(ROOT / ".github" / "scripts"))
     from render_all_pdfs import SHEETS  # noqa: E402
-    return {stem: digest(ROOT / src) for src, stem in SHEETS}
+    return {stem: source_digest(ROOT / src) for src, stem in SHEETS}
 
 
 def main() -> int:
