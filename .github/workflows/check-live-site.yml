@@ -7,6 +7,11 @@ on:
   schedule:
     - cron: "17 15 * * 1"
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/scripts/check_live_site.py"
+      - ".github/workflows/check-live-site.yml"
 
 permissions:
   contents: read

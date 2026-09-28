@@ -47,10 +47,12 @@ Practical Guide to Running Your First Home.*
 **What it is.** Single-purpose printables: first apartment checklist, cleaning
 supply list, chore agreement, maintenance calendar, move-out checklist.
 
-- **Economics:** ~100% margin. $0 (lead magnet) to $12.
+- **Economics:** ~100% margin. $0 (free entry / post-win printable) to $12.
 - **Effort:** Low per item. Design quality matters more than length.
 - **Pros:** Fast to produce and test — the cheapest way to learn what people
-  actually want. Ideal lead magnets. Very shareable. Natural bundles.
+  actually want. Fit the win-first funnel
+  ([ADR-015](../../planning/decisions.md#adr-015--the-win-comes-before-the-email)):
+  entry actions ungated; guides as archive. Very shareable. Natural bundles.
 - **Cons:** Low price point; needs volume. Easy for anyone to copy.
 - **Verdict:** **Yes — as the free tier and as fast validation.** Don't expect
   meaningful direct revenue.
@@ -200,8 +202,10 @@ train-the-trainer packages. Long sales cycles, budget seasons, procurement.
 
 ## Recommended sequence
 
-1. **Free checklist** → prove the audience exists and build a list.
-2. **One paid digital product** ($29–$49) → prove people will pay.
+1. **Win-first entry pages** → prove reach and completion; ask for email after
+   the win ([ADR-015](../../planning/decisions.md#adr-015--the-win-comes-before-the-email)).
+2. **One paid digital product** — current *First Place* bet is **$39** → prove
+   people will pay.
 3. **5–10 coaching clients** → learn what's actually broken, get testimonials,
    generate cash.
 4. **Toolkits and a product family** → increase revenue per customer.

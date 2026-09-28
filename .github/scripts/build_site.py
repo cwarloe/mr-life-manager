@@ -5,10 +5,17 @@ import html as html_lib
 import re, shutil, sys
 from pathlib import Path
 
+from site_catalog import (
+    ORIGIN,
+    completion_pages,
+    entry_social_images,
+    public_url as catalog_public_url,
+    sitemap_core_urls,
+)
+
 ROOT = Path(__file__).resolve().parents[2]
 LANDING = ROOT / "products" / "landing"
 OUT = ROOT / "_site"
-ORIGIN = "https://mrlifemanager.com"
 DEFAULT_DESCRIPTION = (
     "Practical adult-life systems for people who were never explicitly taught them."
 )
@@ -61,46 +68,19 @@ PDF_TITLES = {
     "what-is-this-room-for.pdf": "What Is This Room For?",
 }
 
-COMPLETION_PAGES = [
-    ("finished-first-night.html", "Your first night",
-     "You handled the things that cost most to miss on a first night.",
-     "first-night", "/first-night.html"),
-    ("finished-guests.html", "Someone's coming over",
-     "The door can open now. Whatever did not get done can wait.",
-     "guests", "/guests.html"),
-    ("finished-underwater.html", "Just underwater",
-     "You put a floor under the week. That is different from fixing everything.",
-     "underwater", "/underwater.html"),
-    ("finished-one-room.html", "The room that became storage",
-     "You reclaimed a usable part of the room. One finished zone is real progress.",
-     "one-room", "/one-room.html"),
-]
+COMPLETION_PAGES = completion_pages()
 
 SOCIAL_IMAGES = {
     "index.html": "home.png",
-    "first-night.html": "first-night.png",
-    "finished-first-night.html": "first-night.png",
-    "guests.html": "guests.png",
-    "finished-guests.html": "guests.png",
-    "underwater.html": "underwater.png",
-    "finished-underwater.html": "underwater.png",
-    "one-room.html": "one-room.png",
-    "finished-one-room.html": "one-room.png",
     "first-place.html": "first-place.png",
     "partners.html": "partners.png",
     "index-parents.html": "partners.png",
+    **entry_social_images(),
 }
 
 
-
 def public_url(path: Path) -> str:
-    rel = path.relative_to(OUT)
-    if rel.name == "index.html":
-        parent = rel.parent.as_posix()
-        suffix = "/" if parent == "." else f"/{parent}/"
-    else:
-        suffix = f"/{rel.as_posix()}"
-    return ORIGIN + suffix
+    return catalog_public_url(path, OUT)
 
 
 def add_public_metadata() -> int:
@@ -302,22 +282,10 @@ def main() -> int:
     ).replace("__TOKENS__", tokens)
     (OUT / "print" / "index.html").write_text(print_index)
     (OUT / "robots.txt").write_text(
-        "User-agent: *\nAllow: /\n\nSitemap: https://mrlifemanager.com/sitemap.xml\n"
+        f"User-agent: *\nAllow: /\n\nSitemap: {ORIGIN}/sitemap.xml\n"
     )
-    urls = [
-        "https://mrlifemanager.com/",
-        "https://mrlifemanager.com/index-parents.html",
-        "https://mrlifemanager.com/partners.html",
-        "https://mrlifemanager.com/first-night.html",
-        "https://mrlifemanager.com/one-room.html",
-        "https://mrlifemanager.com/guests.html",
-        "https://mrlifemanager.com/underwater.html",
-        "https://mrlifemanager.com/first-place.html",
-        "https://mrlifemanager.com/privacy.html",
-        "https://mrlifemanager.com/guides/",
-        "https://mrlifemanager.com/print/",
-    ]
-    urls += [f"https://mrlifemanager.com/guides/{slug}.html" for slug, *_ in GUIDES]
+    urls = sitemap_core_urls()
+    urls += [f"{ORIGIN}/guides/{slug}.html" for slug, *_ in GUIDES]
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',

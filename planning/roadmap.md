@@ -87,10 +87,12 @@ different from the *user*.
 
 ---
 
-## Phase 2 — Free lead magnet
+## Phase 2 — Win-first entry (prove reach)
 
-**Goal:** prove you can reach the audience and that they'll trade an email for
-what you make.
+**Goal:** prove you can reach the audience and that they'll complete one action
+on the page — the win — before you ask for an email
+([ADR-015](decisions.md#adr-015--the-win-comes-before-the-email)). Guides stay as
+archive and search surface; subscribers come after the win.
 
 ### Build
 
@@ -135,11 +137,11 @@ what you make.
 
 ### Exit criteria
 
-- 200+ downloads (any real number beats zero; this is a threshold for *signal*,
-  not success)
+- Measurable completions / wins on entry pages (any real number beats zero; this
+  is a threshold for *signal*, not success)
 - Measurable organic sharing
 - Replies from real people
-- A list you can email
+- Subscribers earned after the win (not a gated download list)
 
 **If it fails:** the constraint is distribution, not product. Solve reach before
 building anything else. **This is the most likely failure point in the plan** —
@@ -160,7 +162,7 @@ content businesses die of obscurity, not of bad content.
 - [ ] Payment and delivery (Gumroad, Podia, Lemon Squeezy — pick the boring one)
 - [ ] Sales page written from
       [customer-outcomes.md](../docs/vision/customer-outcomes.md)
-- [ ] Launch sequence to the Phase 2 list
+- [ ] Launch sequence to Phase 2 subscribers (earned after the win)
 
 ### Why *First Place* is the right flagship
 
@@ -190,7 +192,7 @@ learned that for the cost of a landing page instead of three months.
 - Buyers who report actual outcomes
 
 **If it fails:** distinguish "wrong product" from "wrong price" from "no traffic."
-Talk to people who downloaded but didn't buy — that's where the answer is.
+Talk to people who completed (or visited) but didn't buy — that's where the answer is.
 
 ---
 
@@ -254,7 +256,7 @@ Talk to people who downloaded but didn't buy — that's where the answer is.
 |---|---|---|
 | 0 — Foundation | 2–4 weeks | Month 1 |
 | 1 — Validate | 4–6 weeks | Month 2–3 |
-| 2 — Lead magnet | 4–8 weeks | Month 4–5 |
+| 2 — Win-first entry | 4–8 weeks | Month 4–5 |
 | 3 — First paid product | 8–12 weeks | Month 6–8 |
 | 4 — User testing | 8–12 weeks | Month 9–11 |
 | 5 — Product family | Ongoing | Year 2 |
@@ -264,7 +266,7 @@ as sequence, not schedule. The order is the valuable part.
 
 **Seasonality is real and should drive timing.** August–September (move-in) and
 December–January (new year) are the two windows when this audience is actively
-looking. Aim to have the free asset ready before one of them.
+looking. Aim to have a win-first entry page ready before one of them.
 
 ---
 

@@ -137,12 +137,10 @@ footer b{color:var(--ink);font-weight:600}
   table{font-size:.88rem}
 }
 @media print{
-  /* Printables are not the web page. The page persuades; the sheet reminds.
-     See content/README.md — "Printables are not the web page". */
   @page{size:Letter;margin:0.45in}
   :root{--ink:#000;--paper:#fff;--surface:#fff;--slate:#333;--rule:#bbb;--rule-strong:#666;
     --blue:#1F4E79;--blue-soft:#fff;--amber:#7a4d0a;--amber-soft:#fff}
-  body{font-size:9pt;line-height:1.3}
+  body{font-size:8.4pt;line-height:1.3}
   .sheet{max-width:none;padding:0}
 
   /* Chrome that only makes sense on a screen */
@@ -176,8 +174,6 @@ footer b{color:var(--ink);font-weight:600}
   ul.tick li,.simple li{font-size:8.6pt;line-height:1.28}
   ul.tick{gap:.22rem 1rem}
 
-  .printfoot{display:block !important;margin-top:.45rem;padding-top:.25rem;
-    border-top:1px solid #999;font-size:7.5pt;color:#333}
   /* Section gaps are set as full-shorthand margins on the screen styles, so the
      bottom half survives a margin-top override. Reset all sides explicitly. */
   .sec,.band,.part,.rule,.room{margin:.5rem 0 0 !important}
@@ -199,9 +195,6 @@ footer b{color:var(--ink);font-weight:600}
   .key-note,.warn,.aisle-row,.meal,.tip,.fill,.line,tr,li{break-inside:avoid}
   .sec-head,.band-head,.part-head,h3{break-after:avoid}
 
-}
-@media print{
-  body{font-size:8.4pt}
   h1{font-size:17pt}
   .why{-webkit-line-clamp:1;font-size:7.4pt}
   .sec{margin-top:.34rem}

@@ -8,27 +8,46 @@ import time
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
-BASE = "https://mrlifemanager.com"
-PAGES = {
-    "/": ("Run your home without carrying all of it in your head",),
-    "/first-night.html": ('data-form="00ZwEr"', 'data-guide="first-night"', 'src="/assets/entry.js"', "Dave's week on one page"),
-    "/guests.html": ('data-form="00ZwEr"', 'data-guide="guests"', 'src="/assets/entry.js"', "Dave's week on one page"),
-    "/underwater.html": ('data-form="00ZwEr"', 'data-guide="underwater"', 'src="/assets/entry.js"', "Dave's week on one page"),
-    "/one-room.html": ('data-form="00ZwEr"', 'data-guide="one-room"', 'src="/assets/entry.js"', "Dave's week on one page"),
-    "/finished-first-night.html": ('data-form="00ZwEr"', "var VALUE = 'first-night'", "One thing finished"),
-    "/finished-guests.html": ('data-form="00ZwEr"', "var VALUE = 'guests'", "One thing finished"),
-    "/finished-underwater.html": ('data-form="00ZwEr"', "var VALUE = 'underwater'", "One thing finished"),
-    "/finished-one-room.html": ('data-form="00ZwEr"', "var VALUE = 'one-room'", "One thing finished"),
-    "/first-place.html": ("First%20Place%20%2439%20founding%20reservation", "Reserve the $39 founding version", "planned founding price"),
-    "/partners.html": ("Pilot it with five", "data-source-link", "Five-person pilot", "/print/partner-pilot.pdf"),
-    "/privacy.html": ("MailerLite stores", "The Week"),
-}
+from site_catalog import ENTRY_ROUTES, MAILERLITE_FORM_ATTR, ORIGIN
+
+BASE = ORIGIN
+
+def _entry_pages() -> dict[str, tuple[str, ...]]:
+    pages: dict[str, tuple[str, ...]] = {
+        "/": ("Run your home without carrying all of it in your head",),
+    }
+    for route in ENTRY_ROUTES:
+        pages[f"/{route.page}"] = (
+            MAILERLITE_FORM_ATTR,
+            f'data-guide="{route.slug}"',
+            'src="/assets/entry.js"',
+            "Dave's week on one page",
+        )
+    for route in ENTRY_ROUTES:
+        pages[f"/{route.completion_page}"] = (
+            MAILERLITE_FORM_ATTR,
+            f"var VALUE = '{route.slug}'",
+            "One thing finished",
+        )
+    pages["/first-place.html"] = (
+        "First%20Place%20%2439%20founding%20reservation",
+        "Reserve the $39 founding version",
+        "planned founding price",
+    )
+    pages["/partners.html"] = (
+        "Pilot it with five",
+        "data-source-link",
+        "Five-person pilot",
+        "/print/partner-pilot.pdf",
+    )
+    pages["/privacy.html"] = ("MailerLite stores", "The Week")
+    return pages
+
+
+PAGES = _entry_pages()
 SITEMAP_URLS = (
     f"{BASE}/",
-    f"{BASE}/first-night.html",
-    f"{BASE}/guests.html",
-    f"{BASE}/underwater.html",
-    f"{BASE}/one-room.html",
+    *(f"{BASE}/{route.page}" for route in ENTRY_ROUTES),
     f"{BASE}/privacy.html",
 )
 
