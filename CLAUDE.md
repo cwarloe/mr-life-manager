@@ -56,6 +56,9 @@ Don't re-derive these — read them:
 
 ## Mechanics
 
+- Public origin + the four entry routes live in
+  `.github/scripts/site_catalog.py` — import from there; don't hardcode the
+  doors in new checks
 - `python3 .github/scripts/build_site.py` — assemble `_site/`
 - `python3 .github/scripts/validate_repo.py` — HTML + internal links; run before
   committing

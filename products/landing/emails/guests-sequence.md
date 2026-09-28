@@ -6,8 +6,8 @@
 and [ADR-015](../../../planning/decisions.md#adr-015--the-win-comes-before-the-email).
 
 **Replaces** the withdrawn site-wide Draft 3 welcome sequence for this entry
-only ([ADR-016](../../../planning/decisions.md#adr-016--the-sequence-shrinks-unconditionally)).
-Under ADR-015 sequences are per-entry, not one welcome sequence for the site.
+only — see [ADR-016](../../../planning/decisions.md#adr-016--the-sequence-shrinks-unconditionally).
+Per-entry sequences (not one site-wide welcome) per [ADR-015](../../../planning/decisions.md#adr-015--the-win-comes-before-the-email).
 
 ---
 
@@ -107,7 +107,7 @@ genuinely doable and it's the only real research we have.
 
 ---
 
-## Not built — do not send until these are closed
+## Still open
 
 1. ~~**The printable.**~~ Done — Email 1 links
    <https://mrlifemanager.com/print/the-week.pdf>. Open it before sending.
@@ -116,23 +116,9 @@ genuinely doable and it's the only real research we have.
    maintenance version) **does not exist yet**. Inserting a placeholder offer
    would break the shrinking rule and sell something we can't deliver. The
    natural insertion point is after email 3, once there's something real.
-3. **MailerLite:** a group or automation keyed on `guide=guests`, three emails at
-   0 / 3 / 7 days, no re-entry, and no "resend to unopens" — that last one is a
-   standard feature and it directly violates ADR-016.
+3. ~~**MailerLite automation.**~~ **Done** 2026-09-22 (Active per owner). Live
+   ops spec: [MAILERLITE-SETUP.md](MAILERLITE-SETUP.md). Keep
+   "resend to unopens" off — it violates ADR-016.
 
-## Resolved 2026-09-20 — the main page is a router
-
-The landing page previously captured email directly and offered a three-way
-picker whose three paths had no sequence once Draft 3 was withdrawn — collecting
-addresses with nothing to send them.
-
-**Both email forms have been removed from the main page.** It now explains what
-this is and routes to entry pages; every entry page carries its own action and
-its own signup, and no entry page ships without a sequence.
-
-**Consequence, stated plainly: there are four live entry doors** (active
-2026-09-22): `/first-night.html`, `/guests.html`, `/underwater.html`, and
-`/one-room.html`. Each has its own three-email sequence. This file is the
-guests door only. The homepage router invites people to name the door they
-needed — which is both honest and the cheapest research available on what to
-build next.
+Homepage is the pain router to four entry doors (ADR-016); this file is the
+guests door only.

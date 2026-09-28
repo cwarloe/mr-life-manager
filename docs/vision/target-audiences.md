@@ -37,7 +37,7 @@ figured out.
 - Not being the person who forgot to pay the internet bill
 
 **Likely products**
-- **First Apartment Checklist** (free lead magnet) — highest-fit entry point
+- **First Apartment Checklist** (free archive / shareable) — highest-fit free guide; entry pages are the front door ([ADR-015](../../planning/decisions.md#adr-015--the-win-comes-before-the-email))
 - Cleaning-supply starter list + roommate chore agreement template
 - Room-by-room setup guide
 - Low-cost ebook: *First Place* (student edition)

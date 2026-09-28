@@ -14,8 +14,6 @@ a facilitator can run a session around a worksheet.
 
 ## Planned
 
-- **Household Operating Agreement** — division of labor, standards, cadences,
-  who owns what. High-value for roommates *and* couples.
 - **Annual Maintenance Calendar** — fill-in, apartment and house versions
 - **Document Inventory** — what you have, where it lives
 - **Account Inventory** — what exists, what has your card
