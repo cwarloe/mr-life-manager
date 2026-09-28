@@ -1045,7 +1045,7 @@ withdrawn.
 product or price changes.
 
 **Context.** On 2026-09-25 the free guide became
-[Six Meals and a Stocked Kitchen](../products/checklists/ten-meals/), and the $19
+[Six Meals and a Stocked Kitchen](../products/checklists/six-meals/), and the $19
 Rung 1 product *Kitchen That Works* was brought in line to promise the same six
 repeatable meals. That left a paid product promising what the free guide
 already gives away.
@@ -1059,7 +1059,7 @@ already gives away.
 
 **Consequences.** Kitchen That Works leaves Rung 1 and the $19 line of the
 [product ladder](../docs/business/product-ladder.md). The guide's
-[brief](../products/checklists/ten-meals/brief.md) no longer carries an open
+[brief](../products/checklists/six-meals/brief.md) no longer carries an open
 question about how it relates to Kitchen That Works. How it relates to
 *First Place*'s food section stays open.
 
@@ -1077,7 +1077,7 @@ promise; no price change.
 which left the relationship to *First Place*'s food section open.
 
 **Context.** The free guide
-[Six Meals and a Stocked Kitchen](../products/checklists/ten-meals/) gives away
+[Six Meals and a Stocked Kitchen](../products/checklists/six-meals/) gives away
 six repeatable meals. *First Place* ($39) also promised "six repeatable meals",
 on its [founding-offer page](../products/landing/first-place.html) and in the
 [product ladder](../docs/business/product-ladder.md). That conflicts with the
@@ -1096,9 +1096,41 @@ product from charging for what the free guide already gives away.
 founding-offer page, the parent gift page, and the ladder's *First Place*
 contents drop them. The page URL (`/first-place.html`) is unchanged, and the
 price stays $39. The guide's
-[brief](../products/checklists/ten-meals/brief.md) no longer carries an open
+[brief](../products/checklists/six-meals/brief.md) no longer carries an open
 question about *First Place*. Food still earns no revenue; the meals can move
 back to revenue generation later.
 
 **Revisit when:** *First Place* is built out, or Charles and marketing decide
 where food earns revenue.
+
+---
+
+## ADR-019 — Laundry, Solved and the Roommate Kit are free only
+
+**Status:** Accepted
+**Date:** 2026-09-28
+**Scope:** Product ladder, Rung 0 and Rung 1. *Laundry, Solved* and the
+*Roommate Agreement Kit* only. *First Place* ($39) and every $49 product are
+unchanged.
+
+**Context.** Both products were listed twice: free at Rung 0 (*Laundry, Solved*
+as the free guide, the roommate kit as the free
+[Household Agreement](../products/worksheets/household-agreement/) worksheet)
+and again as $9 products at Rung 1 of the
+[product ladder](../docs/business/product-ladder.md). *Laundry, Solved* ($9)
+was also in the [ebooks README](../products/ebooks/README.md). Nothing had been
+sold at $9.
+
+**Decision.** Per Charles (2026-09-28): remove the $9 paid option wherever
+either is listed both free and $9, so each is listed as free only. Pricing is
+free for now; marketing will revisit it.
+
+**Consequences.** Both leave Rung 1 and the $9 line of the ladder at a glance,
+and *Laundry, Solved* leaves the ebooks README's planned list. The
+[laundry brief](../products/checklists/laundry/brief.md) no longer carries an
+open question about a paid version. The room-by-room setup guides ($9 each,
+$29 bundle, including a laundry-room guide) are a separate product and are not
+touched here.
+
+**Revisit when:** marketing settles pricing for laundry and roommate material.
+

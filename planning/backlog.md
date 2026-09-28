@@ -44,8 +44,8 @@ Each item is tagged with its [roadmap](roadmap.md) phase and primary
 | Nightly kitchen reset | Home/Food | The keystone habit; teach it first |
 | Weekly reset routine | Time | The other keystone |
 | ~~Laundry, fully explained~~ | Home | **Drafted + designed** 2026-09-18 → [guide](../products/checklists/laundry/) |
-| ~~Six Meals and a Stocked Kitchen~~ | Food | **Drafted + designed** 2026-09-18 → [guide](../products/checklists/ten-meals/) |
-| ~~Stocked pantry list~~ | Food | **Folded into** [ten-meals](../products/checklists/ten-meals/) — they belong together |
+| ~~Six Meals and a Stocked Kitchen~~ | Food | **Drafted + designed** 2026-09-18 → [guide](../products/checklists/six-meals/) |
+| ~~Stocked pantry list~~ | Food | **Folded into** [six-meals](../products/checklists/six-meals/) — they belong together |
 | Annual home maintenance calendar | Maintenance | Apartment and house versions |
 | What documents to keep, where, how long | Paperwork | High anxiety, low information available |
 | Money setup: accounts, autopay, buffer | Money | Keep it to one page; resist scope creep |
@@ -104,7 +104,7 @@ Each item is tagged with its [roadmap](roadmap.md) phase and primary
 ### Product
 
 - Room-by-room bundle ($29)
-- ~~Kitchen That Works ($19)~~ — **free, folded into** [Six Meals and a Stocked Kitchen](../products/checklists/ten-meals/) (Charles, 2026-09-26; revenue TBD with marketing)
+- ~~Kitchen That Works ($19)~~ — **free, folded into** [Six Meals and a Stocked Kitchen](../products/checklists/six-meals/) (Charles, 2026-09-26; revenue TBD with marketing)
 - Paperwork Starter Kit ($19)
 - Maintenance calendar product ($12)
 - 30-Day Life Reset ($79)

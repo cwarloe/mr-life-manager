@@ -35,10 +35,12 @@ Not recorded.
 
 ### 6. Where on the ladder?
 
-Free guide, archive and search surface per ADR-015, not an offer. The
-[product ladder](../../../docs/business/product-ladder.md) and
-[ebooks README](../../ebooks/README.md) also list a paid *Laundry, Solved* at
-Rung 1; how that relates to this free guide is not decided.
+Free guide, archive and search surface per ADR-015, not an offer. The paid
+$9 *Laundry, Solved* that used to sit at Rung 1 of the
+[product ladder](../../../docs/business/product-ladder.md) and in the
+[ebooks README](../../ebooks/README.md) is gone: it's free only for now, and
+marketing will revisit pricing
+([ADR-019](../../../planning/decisions.md#adr-019--laundry-solved-and-the-roommate-kit-are-free-only)).
 
 ### 7. What content?
 
@@ -48,7 +50,8 @@ rhythm (good enough / better), laundromats. No source document cited.
 
 ### 8. Price?
 
-Free. Footer: free to use, copy and teach from with credit, not for resale.
+Free, and free only for now (Charles, 2026-09-28). Footer: free to use, copy
+and teach from with credit, not for resale.
 
 ### Open
 

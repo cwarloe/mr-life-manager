@@ -48,7 +48,8 @@ Don't re-derive these — read them:
   (completion converts), ADR-015 (the win comes before the email), ADR-016
   (the sequence shrinks unconditionally), ADR-017 (Kitchen That Works free,
   folded into Six Meals), ADR-018 (six meals off First Place; First Place stays
-  $39) govern most product decisions
+  $39), ADR-019 (Laundry, Solved and the roommate kit free only) govern most
+  product decisions
 - [`docs/business/commerce-rules.md`](docs/business/commerce-rules.md) —
   affiliate and pricing rules
 - [`source-material/`](source-material/INVENTORY.md) — Dave's original

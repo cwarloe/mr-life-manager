@@ -2,7 +2,8 @@
 """Single source for guide and printable inventories.
 
 Derives GUIDES (publish-as-guide /guides/ pages), SHEETS (Chrome-rendered PDFs),
-and PDF_TITLES (print-index labels). Keep this out of site_catalog — that module
+and PDF_TITLES (print-index labels). LEGACY_GUIDE_SLUGS keeps retired /guides/
+and /print/ URLs working after a rename. Keep this out of site_catalog — that module
 owns origin/entry routes only.
 """
 from __future__ import annotations
@@ -77,9 +78,9 @@ INVENTORY: tuple[InventoryItem, ...] = (
         render_as_pdf=True,
     ),
     InventoryItem(
-        stem="ten-meals",
+        stem="six-meals",
         title="Six Meals and a Stocked Kitchen",
-        html_src="products/checklists/ten-meals/ten-meals.html",
+        html_src="products/checklists/six-meals/six-meals.html",
         blurb="Enough to stop deciding what's for dinner every single night.",
         publish_as_guide=True,
         render_as_pdf=True,
@@ -116,3 +117,19 @@ SHEETS: list[tuple[str, str]] = [
 PDF_TITLES: dict[str, str] = {
     f"{item.stem}.pdf": item.title for item in INVENTORY
 }
+
+
+# Retired guide stem -> current stem. build_site.py publishes a static redirect
+# at /guides/<old>.html (meta refresh + canonical to the new page, noindex, out
+# of the sitemap) and a copy of the current PDF at /print/<old>.pdf, unlisted.
+LEGACY_GUIDE_SLUGS: dict[str, str] = {
+    # Renamed 2026-09-28: the guide has been six meals since 2026-09-25.
+    "ten-meals": "six-meals",
+}
+
+_GUIDE_STEMS = {slug for slug, *_ in GUIDES}
+for _old, _new in LEGACY_GUIDE_SLUGS.items():
+    if _new not in _GUIDE_STEMS:
+        raise SystemExit(f"LEGACY_GUIDE_SLUGS: {_old!r} points at unknown guide {_new!r}")
+    if _old in _GUIDE_STEMS:
+        raise SystemExit(f"LEGACY_GUIDE_SLUGS: {_old!r} is still a live guide")
