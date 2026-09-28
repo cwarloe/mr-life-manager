@@ -47,7 +47,7 @@ doesn't:
 
 | Must have | Why |
 |---|---|
-| Shared `/assets/entry.js` + `data-guide` / `data-completion-url` on `<html>` | Otherwise "Just the steps" is a button that does nothing |
+| Shared `/assets/entry.css` + `/assets/entry.js` + `data-guide` / `data-completion-url` on `<html>` | Shared sheet + script; page-local print zoom (and one-room `.says`) only |
 | `.go-do` / `.go-print` buttons | The mode switch, placed after the framing, before step 1 |
 | Viewport-locked doing layout | So Next can never be pushed off a phone screen |
 | `content:attr(data-n)` numbering | CSS counters skip hidden steps; without it every card reads "1" |

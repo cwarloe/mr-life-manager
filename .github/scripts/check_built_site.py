@@ -53,13 +53,23 @@ def main() -> int:
             if marker not in entry_js:
                 problems.append(f"assets/entry.js: missing {marker}")
 
+    if not (OUT / "assets" / "entry.css").is_file():
+        problems.append("missing generated public file: assets/entry.css")
+    else:
+        entry_css = (OUT / "assets" / "entry.css").read_text(encoding="utf-8")
+        for marker in ("body.doing .steps{flex:1", "content:attr(data-n)",
+                       ".why,.why.open,.whybtn", "@page{size:Letter",
+                       "-webkit-text-size-adjust", "prefers-reduced-motion"):
+            if marker not in entry_css:
+                problems.append(f"assets/entry.css: missing {marker}")
+
     for route in ENTRY_ROUTES:
         name = route.page
         tag = route.slug
         text = (OUT / name).read_text(encoding="utf-8")
         completion = route.completion_page
         for marker in (f'data-guide="{tag}"', f'data-completion-url="/{completion}"',
-                       'src="/assets/entry.js"', completion):
+                       'href="/assets/entry.css"', 'src="/assets/entry.js"', completion):
             if marker not in text:
                 problems.append(f"{name}: missing {marker}")
 
