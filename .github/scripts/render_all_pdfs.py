@@ -9,22 +9,11 @@ import subprocess
 import sys
 from pathlib import Path
 
+from guide_inventory import SHEETS
+
 ROOT = Path(__file__).resolve().parents[2]
 RENDER = ROOT / ".github" / "scripts" / "render_pdf.py"
 OUT = ROOT / "products" / "guides-pdf"
-
-# (source html, output stem)
-SHEETS = [
-    ("products/print/the-week.html", "the-week"),
-    ("products/checklists/first-apartment/first-apartment-checklist.html", "first-apartment-checklist"),
-    ("products/checklists/how-often/how-often-should-i.html", "how-often-should-i"),
-    ("products/checklists/cleaning-supplies/cleaning-supply-starter-list.html", "cleaning-supply-starter-list"),
-    ("products/checklists/room-for/what-is-this-room-for.html", "what-is-this-room-for"),
-    ("products/checklists/light/the-light-is-the-problem.html", "the-light-is-the-problem"),
-    ("products/checklists/laundry/laundry-solved.html", "laundry-solved"),
-    ("products/checklists/ten-meals/ten-meals.html", "ten-meals"),
-    ("products/worksheets/household-agreement/household-agreement.html", "household-agreement"),
-]
 
 
 def main() -> int:
