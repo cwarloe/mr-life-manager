@@ -4,6 +4,8 @@ import re
 import sys
 from pathlib import Path
 
+from site_catalog import MAILERLITE_FORM_ATTR
+
 ROOT = Path(__file__).resolve().parents[2]
 LANDING = ROOT / "products" / "landing"
 EMAILS = LANDING / "emails"
@@ -15,7 +17,7 @@ REQUIRED = [
     ("shared entry script", 'src="/assets/entry.js"'),
     ("mode buttons", 'class="go-do"'),
     ("print scale", "body{zoom:"),
-    ("MailerLite form", 'data-form="00ZwEr"'),
+    ("MailerLite form", MAILERLITE_FORM_ATTR),
     ("one-PDF promise", "Dave's week on one page"),
     ("post-completion destination", 'data-completion-url="/finished-'),
     ("guide tag config", 'data-guide="'),

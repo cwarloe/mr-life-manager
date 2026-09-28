@@ -35,7 +35,7 @@ class EntryRoute:
         return f"/{self.slug}.html"
 
 
-# Order matches former COMPLETION_PAGES / check_live_site entry lists.
+# Published entry order — keep stable (completion + live-check lists).
 ENTRY_ROUTES: tuple[EntryRoute, ...] = (
     EntryRoute(
         slug="first-night",
@@ -71,15 +71,17 @@ ENTRY_ROUTES: tuple[EntryRoute, ...] = (
     ),
 )
 
-# Sitemap core locs before /guides/{slug}.html — order matches former build_site list.
+# Sitemap core locs before /guides/{slug}.html.
+# Entry paths come from ENTRY_ROUTES; order is published/sitemap order — keep stable.
+_ENTRY_PAGE_BY_SLUG = {route.slug: f"/{route.page}" for route in ENTRY_ROUTES}
 SITEMAP_CORE_PATHS: tuple[str, ...] = (
     "/",
     "/index-parents.html",
     "/partners.html",
-    "/first-night.html",
-    "/one-room.html",
-    "/guests.html",
-    "/underwater.html",
+    _ENTRY_PAGE_BY_SLUG["first-night"],
+    _ENTRY_PAGE_BY_SLUG["one-room"],
+    _ENTRY_PAGE_BY_SLUG["guests"],
+    _ENTRY_PAGE_BY_SLUG["underwater"],
     "/first-place.html",
     "/privacy.html",
     "/guides/",
