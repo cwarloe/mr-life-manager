@@ -39,7 +39,9 @@ def main() -> int:
             print(r.stdout.strip())
     # Record what each PDF was rendered from, so check_pdfs_fresh.py can tell
     # when a source has moved on without the printable being regenerated.
-    manifest = {stem: hashlib.sha256((ROOT / src).read_bytes()).hexdigest()[:16]
+    sys.path.insert(0, str(ROOT / ".github" / "scripts"))
+    from check_pdfs_fresh import source_digest  # noqa: E402
+    manifest = {stem: source_digest(ROOT / src)
                 for src, stem in SHEETS if (ROOT / src).exists()}
     (OUT / ".sources.json").write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n")
 
