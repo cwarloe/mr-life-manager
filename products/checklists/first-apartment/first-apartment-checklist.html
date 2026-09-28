@@ -41,7 +41,6 @@ body{
 }
 .sheet{max-width:52rem;margin:0 auto;padding:3rem 1.5rem 5rem}
 
-/* ---- masthead ---- */
 .mast{border-bottom:3px solid var(--ink);padding-bottom:1.25rem;margin-bottom:.75rem}
 .eyebrow{
   font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
@@ -61,7 +60,6 @@ h1{
 }
 .standfirst strong{font-weight:600}
 
-/* ---- legend ---- */
 .legend{
   display:flex;flex-wrap:wrap;gap:1.25rem;
   border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
@@ -71,7 +69,6 @@ h1{
 .legend b{color:var(--ink);font-weight:600}
 .star{color:var(--amber);font-weight:700}
 
-/* ---- part headers: the time sequence ---- */
 .part{margin:0 0 3rem;break-inside:avoid}
 .part-head{display:flex;align-items:baseline;gap:.9rem;border-bottom:2px solid var(--ink);padding-bottom:.5rem;margin-bottom:.35rem}
 .part-num{
@@ -91,7 +88,6 @@ h3{
 }
 .lead-in{margin:0 0 .9rem;font-size:.95rem}
 
-/* ---- checkable items ---- */
 ul.checks{list-style:none;margin:0;padding:0;display:grid;gap:.45rem}
 ul.checks.two{grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:.45rem 1.75rem}
 ul.checks li{
@@ -107,7 +103,6 @@ li.key::before{border-color:var(--amber);border-width:2px}
 li.key::after{content:"★";position:absolute;left:1.15rem;top:.02em;color:var(--amber);font-size:.6rem}
 li.key{padding-left:2.1rem}
 
-/* ---- the teacher's aside ---- */
 .why{
   font-family:var(--serif);font-size:.95rem;line-height:1.55;
   border-left:3px solid var(--blue);background:var(--blue-soft);
@@ -117,7 +112,6 @@ li.key{padding-left:2.1rem}
 .why b{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.1em;
   text-transform:uppercase;color:var(--blue);display:block;margin-bottom:.3rem}
 
-/* ---- money table ---- */
 .cost{margin:0;padding:0;list-style:none;counter-reset:c;display:grid;gap:.7rem}
 .cost li{
   counter-increment:c;position:relative;padding-left:2.4rem;font-size:.95rem;
@@ -132,7 +126,6 @@ li.key{padding-left:2.1rem}
 }
 .cost li strong{font-weight:600}
 
-/* ---- closer ---- */
 .closer{
   border:2px solid var(--ink);padding:1.5rem 1.6rem;margin:3.5rem 0 0;
   border-radius:3px;break-inside:avoid;background:var(--surface)
@@ -160,8 +153,6 @@ footer b{color:var(--ink);font-weight:600}
   .when{width:100%}
 }
 @media print{
-  /* Printables are not the web page. The page persuades; the sheet reminds.
-     See content/README.md — "Printables are not the web page". */
   @page{size:Letter;margin:0.45in}
   :root{--ink:#000;--paper:#fff;--surface:#fff;--slate:#333;--rule:#bbb;--rule-strong:#666;
     --blue:#1F4E79;--blue-soft:#fff;--amber:#7a4d0a;--amber-soft:#fff}
@@ -199,8 +190,6 @@ footer b{color:var(--ink);font-weight:600}
   ul.tick li,.simple li{font-size:8.6pt;line-height:1.28}
   ul.tick{gap:.22rem 1rem}
 
-  .printfoot{display:block !important;margin-top:.45rem;padding-top:.25rem;
-    border-top:1px solid #999;font-size:7.5pt;color:#333}
   /* Section gaps are set as full-shorthand margins on the screen styles, so the
      bottom half survives a margin-top override. Reset all sides explicitly. */
   .sec,.band,.part,.rule,.room{margin:.5rem 0 0 !important}
@@ -249,7 +238,6 @@ footer b{color:var(--ink);font-weight:600}
     <span><span class="star">★</span> &nbsp;<b>You'll miss this in the first 24 hours</b></span>
   </div>
 
-  <!-- PART 1 -->
   <section class="part">
     <div class="part-head">
       <span class="part-num">Part 1</span>
@@ -287,7 +275,6 @@ footer b{color:var(--ink);font-weight:600}
     </div>
   </section>
 
-  <!-- PART 2 -->
   <section class="part">
     <div class="part-head">
       <span class="part-num">Part 2</span>
@@ -326,7 +313,6 @@ footer b{color:var(--ink);font-weight:600}
     </ul>
   </section>
 
-  <!-- PART 3 -->
   <section class="part">
     <div class="part-head">
       <span class="part-num">Part 3</span>
@@ -373,7 +359,6 @@ footer b{color:var(--ink);font-weight:600}
     </ul>
   </section>
 
-  <!-- PART 4 -->
   <section class="part">
     <div class="part-head">
       <span class="part-num">Part 4</span>
@@ -468,7 +453,6 @@ footer b{color:var(--ink);font-weight:600}
     </ul>
   </section>
 
-  <!-- PART 5 -->
   <section class="part">
     <div class="part-head">
       <span class="part-num">Part 5</span>
@@ -494,7 +478,6 @@ footer b{color:var(--ink);font-weight:600}
     </div>
   </section>
 
-  <!-- PART 6 -->
   <section class="part">
     <div class="part-head">
       <span class="part-num">Part 6</span>
@@ -537,7 +520,6 @@ footer b{color:var(--ink);font-weight:600}
     </ul>
   </section>
 
-  <!-- COSTS -->
   <section class="part">
     <div class="part-head">
       <span class="part-num">Costly</span>

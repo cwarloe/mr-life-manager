@@ -86,8 +86,6 @@ footer{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--rule);font-
 footer b{color:var(--ink);font-weight:600}
 @media (max-width:34rem){.sheet{padding:2rem 1.1rem 3rem}table{font-size:.87rem}td.k{white-space:normal}}
 @media print{
-  /* Printables are not the web page. The page persuades; the sheet reminds.
-     See content/README.md — "Printables are not the web page". */
   @page{size:Letter;margin:0.45in}
   :root{--ink:#000;--paper:#fff;--surface:#fff;--slate:#333;--rule:#bbb;--rule-strong:#666;
     --blue:#1F4E79;--blue-soft:#fff;--amber:#7a4d0a;--amber-soft:#fff}
@@ -125,8 +123,6 @@ footer b{color:var(--ink);font-weight:600}
   ul.tick li,.simple li{font-size:8.6pt;line-height:1.28}
   ul.tick{gap:.22rem 1rem}
 
-  .printfoot{display:block !important;margin-top:.45rem;padding-top:.25rem;
-    border-top:1px solid #999;font-size:7.5pt;color:#333}
   /* Section gaps are set as full-shorthand margins on the screen styles, so the
      bottom half survives a margin-top override. Reset all sides explicitly. */
   .sec,.band,.part,.rule,.room{margin:.5rem 0 0 !important}
