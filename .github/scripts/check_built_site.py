@@ -44,12 +44,22 @@ def main() -> int:
             if marker not in text:
                 problems.append(f"{rel}: missing {marker}")
 
+    if not (OUT / "assets" / "entry.js").is_file():
+        problems.append("missing generated public file: assets/entry.js")
+    else:
+        entry_js = (OUT / "assets" / "entry.js").read_text(encoding="utf-8")
+        for marker in ("classList.add('doing')", "fields[guide]", "ml-fallback",
+                       "new URLSearchParams(window.location.search).get('from')"):
+            if marker not in entry_js:
+                problems.append(f"assets/entry.js: missing {marker}")
+
     for route in ENTRY_ROUTES:
         name = route.page
         tag = route.slug
         text = (OUT / name).read_text(encoding="utf-8")
         completion = route.completion_page
-        for marker in (f"var VALUE = '{tag}'", completion):
+        for marker in (f'data-guide="{tag}"', f'data-completion-url="/{completion}"',
+                       'src="/assets/entry.js"', completion):
             if marker not in text:
                 problems.append(f"{name}: missing {marker}")
 
