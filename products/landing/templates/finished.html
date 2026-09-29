@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-guide="__GUIDE__">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,28 +43,14 @@ ml('account','2635985');
     <h2>Want the week written down?</h2>
     <p>I'll send one thing worth printing: Dave's week on one page. It gives the home a ten-minute closing shift and one job a day. Two shorter follow-ups come after that, and then they stop.</p>
     <div class="ml-embedded" data-form="00ZwEr"></div>
+    <p class="ml-fallback" hidden>Form not loading? Email
+      <a href="mailto:hello@mrlifemanager.com?subject=__GUIDE__">hello@mrlifemanager.com</a>
+      and I'll send it over.</p>
     <p class="fine">One PDF link in the first email. No pack of downloads. Unsubscribe whenever. <a href="/privacy.html">How your email is used.</a></p>
   </section>
 </div></main>
 <footer><div class="wrap">Mr. Life Manager · <a href="mailto:hello@mrlifemanager.com">hello@mrlifemanager.com</a> · <a href="/privacy.html">Privacy</a></div></footer>
-<script>
-(function () {
-  var VALUE = '__GUIDE__';
-  function tag(form) {
-    ['fields[guide]', 'guide'].forEach(function (name) {
-      if (form.querySelector('input[name="' + name + '"]')) return;
-      var input = document.createElement('input');
-      input.type = 'hidden'; input.name = name; input.value = VALUE;
-      form.appendChild(input);
-    });
-  }
-  var tries = 0;
-  var timer = setInterval(function () {
-    var forms = document.querySelectorAll('.ml-embedded form');
-    if (forms.length) { forms.forEach(tag); clearInterval(timer); }
-    if (++tries > 50) clearInterval(timer);
-  }, 200);
-})();
-</script>
+<script src="/assets/entry.js"></script>
 </body>
 </html>
+
