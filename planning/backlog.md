@@ -72,6 +72,8 @@ Each item is tagged with its [roadmap](roadmap.md) phase and primary
 | Search-demand check on top topics | 1 |
 | Reddit/forum language mining | 1 |
 | Name reaction test with women in the audience | 1 |
+| Validation conversations with cybersecurity coworkers (high-intensity niche) — [analysis](../docs/research/high-intensity-professionals.md#where-to-validate) | 1 |
+| Ask Dave: what his Air Force Academy volunteer role allows, plus seniors' vocabulary and calendar — [questions](../docs/research/service-academy-grads.md#open-questions-for-dave) | 1 |
 
 ---
 
@@ -102,6 +104,8 @@ Each item is tagged with its [roadmap](roadmap.md) phase and primary
 - Moving: the complete sequence
 
 ### Product
+
+- **Travel Mode** entry page — pre-trip shutdown + first-hour-home reset. Evidence-backed candidate ([analysis](../docs/research/high-intensity-professionals.md#implications)); build only after validation, per the roadmap.
 
 - Room-by-room bundle ($29)
 - ~~Kitchen That Works ($19)~~ — **free, folded into** [Six Meals and a Stocked Kitchen](../products/checklists/six-meals/) (Charles, 2026-09-26; revenue TBD with marketing)

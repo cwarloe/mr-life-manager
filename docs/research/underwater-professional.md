@@ -71,6 +71,10 @@ The [five validation conversations](../../planning/backlog.md) settle that.
 
 ## Related brainstorm, still open (2026-09-29)
 
+Continued in [niche-strategy.md](../business/niche-strategy.md),
+[service-academy-grads.md](service-academy-grads.md) and
+[high-intensity-professionals.md](high-intensity-professionals.md).
+
 Not decided — recorded so it isn't lost.
 
 - **Channel:** college ministries Charles is connected to, strictly as
