@@ -9,6 +9,11 @@ Governed by [ADR-010](../../planning/decisions.md#adr-010--beachhead-keep-the-au
 and [principles](../vision/principles.md) 7, 8 and 11. Where this page
 conflicts with them, they win.
 
+**Parked 2026-09-29:** segment B ("I don't have people over") is parked by
+Charles. Work continues on segment A only: people with a visit already
+planned sometime this week. Segment B's material below stays for reference
+and is not in use.
+
 ---
 
 ## Who this is
