@@ -3,7 +3,8 @@
 **Status:** Drafted and designed 2026-09-20. Not reviewed or reader-tested.
 **Tier:** Rung 0 — free ([product-ladder.md](../../../docs/business/product-ladder.md))
 **Files:** [`the-light-is-the-problem.html`](the-light-is-the-problem.html) ·
-[PDF](../../guides-pdf/the-light-is-the-problem.pdf) (2 pp)
+[PDF](../../guides-pdf/the-light-is-the-problem.pdf) (2 pp) · public at
+`/guides/the-light-is-the-problem.html`
 
 ---
 
@@ -54,7 +55,7 @@ rule of thumb rather than physics. The dimmer advice names the real gotcha —
 dimmable bulb *and* an LED-rated switch, or it buzzes and it isn't the bulb's
 fault.
 
-**No product links, no brands, no prices beyond "about forty pounds and an
+**No product links, no brands, no prices beyond "about forty dollars and an
 evening."** Consistent with
 [commerce-rules.md](../../../docs/business/commerce-rules.md): basics carry no
 commission, so there's nothing to distort and no reason to link.
@@ -79,3 +80,4 @@ still feels wrong after fixing the light, the question is what the room is *for*
 swept across the whole free tier and recorded in
 [content/README.md](../../../content/README.md). `source-material/` is exempt —
 Dave's documents stay verbatim, spelling and typos included.
+
