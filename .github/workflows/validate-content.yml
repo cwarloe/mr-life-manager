@@ -10,6 +10,7 @@ on:
       - "products/guides-pdf/**"
       - ".github/scripts/build_site.py"
       - ".github/scripts/site_catalog.py"
+      - ".github/scripts/guide_inventory.py"
       - ".github/scripts/check_built_site.py"
       - ".github/scripts/validate_repo.py"
       - ".github/scripts/check_pdfs_fresh.py"
