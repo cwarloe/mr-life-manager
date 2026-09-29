@@ -176,6 +176,9 @@ for a done-with-you setup. Buys on trust, so she needs proof — reviews, a stro
 free resource, a real person behind the brand. Reached through newsletters,
 podcasts, LinkedIn, and word of mouth.
 
+> **Evidence check (2026-09-29):** the pattern holds; the "lacked discipline"
+> diagnosis does not. See [underwater-professional.md](../research/underwater-professional.md).
+
 > **Strategic note:** Dana is not the beachhead, but she is the reason the
 > premium tier exists. Keep the door open for her from day one; don't build the
 > brand so tightly around 20-year-olds that a 34-year-old feels condescended to.

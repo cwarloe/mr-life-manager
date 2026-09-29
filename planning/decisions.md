@@ -850,6 +850,7 @@ Not yet ADRs. These need to be made, and each blocks something.
 |---|---|---|
 | Put Dave's arrangement in writing at some point — **not urgent, substance is settled** ([ADR-011](#adr-011--mr-life-manager-is-a-real-person-dave-webster)). It protects him and his family more than it protects the founder. | Nothing immediate | Low |
 | **Capture Dave's material before anything else.** He under-reports his own expertise by nature, so this needs method, not just time. | All content; the entire product line | **Highest** |
+| **Is First Place comprehensive or small?** A ten-domain manual may be exactly what the underwater professional has already failed to finish ([analysis](../docs/research/underwater-professional.md#implications)). Decide who it is for before writing it. | Writing First Place | Medium |
 | Is Health in scope, given liability and expertise limits? | Domain taxonomy, content plan | Low |
 | Does Transportation earn its own domain, or fold into Maintenance? | Taxonomy | Low |
 | Should the public-facing domain list compress from 13 to 5–6? | Marketing, product structure | Low |
