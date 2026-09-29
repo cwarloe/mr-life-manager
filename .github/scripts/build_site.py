@@ -5,7 +5,7 @@ import html as html_lib
 import re, shutil, sys
 from pathlib import Path
 
-from guide_inventory import GUIDES, LEGACY_GUIDE_SLUGS, PDF_TITLES
+from guide_inventory import GUIDES, LEGACY_GUIDE_SLUGS, PDF_TITLES, UNLISTED_PDFS
 from site_catalog import (
     ORIGIN,
     completion_pages,
@@ -247,6 +247,8 @@ def main() -> int:
     rows = []
     for pdf in pdfs:
         shutil.copy2(pdf, OUT / "print" / pdf.name)
+        if pdf.name in UNLISTED_PDFS:
+            continue  # published for posting, not offered to readers
         label = PDF_TITLES.get(pdf.name, pdf.stem.replace("-", " ").title())
         rows.append(f"<li><a class='file' href='/print/{pdf.name}'>{label}<span>PDF</span></a></li>")
     # Retired PDF names keep resolving (a PDF can't meta-refresh); unlisted.
