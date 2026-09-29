@@ -45,6 +45,9 @@ This is a checklist to run over any line, not a rulebook.
    knows.
 5. **Test each line by asking what it tells them.** If the answer is nothing,
    cut it. If they'd have to guess, add words.
+6. **Keep the subject and verb in any line a stranger reads first.** Don't drop
+   words to sound casual; that reads as trying too hard. Mid-task step headings
+   are the exception, because the page supplies the missing words (§1).
 
 **Why the edits have yo-yoed.** The copy was written from inside the team's
 context: we know what "the page," "The Week," and "Dave's week" refer to, and
@@ -98,8 +101,8 @@ success message.**
 **A. Plain friend who's been there (the apprentice).** What brand-positioning
 already specifies: "a competent older sibling or a good RA." First person,
 admits what it didn't know, credits Dave.
-- *Someone coming over? Here's where to start.* / *Want a weekly cleaning plan
-  that keeps it this way?* / *Sent. Check your inbox for your weekly cleaning
+- *Is someone coming over? Here's where to start.* / *Do you want a weekly
+  cleaning plan that keeps it this way?* / *Sent. Check your inbox for your weekly cleaning
   plan.*
 - **Strengths:** fits ADR-011's apprentice structure, is the least shaming
   voice, and is sustainable.
@@ -115,8 +118,9 @@ admits what it didn't know, credits Dave.
 
 **C. Dry honest-ad (*Crazy People*).** Tells you the true, slightly unflattering
 thing, and wins trust by doing it.
-- *Having people over? Step one is the trash.* / *A one-page cleaning plan by
-  email. Not a newsletter.* / *Sent. One cleaning plan, no daily emails.*
+- *Are you having people over? Step one is the trash.* / *We'll email you a
+  one-page cleaning plan. It isn't a newsletter.* / *It's sent. You'll get one
+  cleaning plan, not daily emails.*
 - **Strengths:** the most trustworthy voice where readers expect a trick
   (signup, frequency, unsubscribe).
 - **Risks:** irony. "Clever, ironic" is a brand Don't, and a joke at the place
@@ -283,19 +287,19 @@ Anyone can apply this to any line.
 its own heading right above the embed, so the form's heading is a second,
 conflicting one. If MailerLite requires a heading, use *Get a one-page weekly
 cleaning plan*. The page heading, "Want the week written down?", fails
-principle 1 in its own right, because "the week" is our word. Consider *Want a
-weekly cleaning plan to print?*
+principle 1 in its own right, because "the week" is our word. Consider *Do you want a
+one-page weekly cleaning plan you can print?*
 
 **Under the email box (pick):** *We'll email you a one-page weekly cleaning plan
 to print, plus two short follow-ups over the next week.* It names the thing,
 says what else will arrive, and promises nothing we'd have to retract when a
 reply turns into a conversation.
 
-**Success message (pick, for double opt-in):** *Almost done. Check your inbox
+**Success message (pick, for double opt-in):** *You're almost done. Check your inbox
 and click Confirm, and we'll send your weekly cleaning plan.* It gives the
 action first, then what they get, and it replaces "3 guides." If double opt-in
-turns out to be off, the same principles give: *Done. Your one-page weekly
-cleaning plan is on its way to your inbox.*
+turns out to be off, the same principles give: *Your one-page weekly cleaning
+plan is on its way to your inbox.*
 
 **Confirmation email (pick).** Sender: **Mr. Life Manager**, with no personal
 signature. This is a system step, and a person signing it would be pretending
@@ -307,7 +311,7 @@ otherwise. The personal "— Charles" signature starts at email 1.
 - **Button:** *Confirm my email*
 
 **Email 1 subject, all four sequences.** Change *Here's the thing worth
-printing* to ***Your one-page weekly cleaning plan.*** The old subject is all
+printing* to ***Here's your one-page weekly cleaning plan.*** The old subject is all
 vague nouns ("the thing"), and it names nothing the reader asked for.
 
 **Other lines in `products/landing/emails/*-sequence.md` flagged under the
@@ -338,7 +342,7 @@ principles.** These are suggestions only, and none has been edited.
   - *"The next one is smaller than you think"* (one-room): what next one?
 
   Name the content: *"If ten minutes a night is too much"*, *"Unpack one
-  drawer"*, *"Your next zone: one shelf."*
+  drawer"*, *"Your next zone can be one shelf."*
 - ***"So here's the version that fits anywhere"*** (guests, underwater). The
   version of what? The next line already says it, so cut this one.
 - **Email 3:**
@@ -361,13 +365,15 @@ still use the old wording and should be brought in line with it:
   is a mess."*
 
 **Flyer (PR #54)**
-- (a) Keep *Having people over?* with the new caption.
-- (b) *Someone coming over? Start here.*
-- (c) *People coming over, and the place isn't ready?*
+- (a) *Are you having people over?* with the new caption. This is the live PR
+  #54 headline, "Having people over?", with the subject and verb restored per
+  principle 6. The same change would apply to the tear tabs.
+- (b) *Is someone coming over? Start here.*
+- (c) *Are people coming over, and the place isn't ready?*
 
-**Pick: (a).** Three words, no shame, and the caption now carries the
+**Pick: (a).** It's short, carries no shame, and the caption now carries the
 explanation. The risk is that it reads as party planning, so test it against
-(c).
+(c). PR #54 itself hasn't been changed.
 
 **Finished pages.** Keep *That counts.* Replace *Do not turn the win into a new
 list.* with *That's enough for today.*
@@ -403,8 +409,8 @@ list.* with *That's enough for today.*
   question. The swing will continue until the rule is attached to moments (§1).
 - **No time word on the flyer.** Agreed, but the mismatch then moves to
   guests.html, which is written for the day of the visit ("stop when they
-  knock"). Fix it there with one line: *Coming later this week? Do these on the
-  day.*
+  knock"). Fix it there with one line: *Are they coming later this week? Do these
+  on the day they arrive.*
 - **Keeping the support line.** Acceptable, but it's the one flyer line over the
   glance budget. If anything goes after testing, it goes first.
 - **Dave's apostrophe.** "Everything has it's place" is verbatim from 2009, but
