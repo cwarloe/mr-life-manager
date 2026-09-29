@@ -67,6 +67,49 @@ It does not promise or deliver a second PDF. This distinction implements
 [ADR-015](../../../planning/decisions.md#adr-015--the-win-comes-before-the-email):
 the reader has already acted; email supplies the reusable maintenance system.
 
+## Referral lines (draft, pending approval)
+
+**Status:** Not live. Nothing below has been changed in MailerLite. Make these
+edits only after Charles approves placements 2 and 3 of the referral placement
+proposal (PR #50). No rewards, no share buttons, no `navigator.share`, no QR code.
+
+**1. Form success message.** The text shown after an email is submitted lives
+only in MailerLite. No page in this repository renders or rewrites it.
+
+- Forms → Embedded forms → the form with ID `00ZwEr` → edit the **Success**
+  view.
+- Keep the existing success text. Add one line under it, exactly:
+  `Know someone starting out? Send them the page you just used.`
+- Plain text is enough. If it is a link, make it a plain text link to
+  `https://mrlifemanager.com/`. This one form serves all eight pages, so it
+  cannot link to the specific page each reader used.
+- Saving the form updates every embed right away. There is no separate publish
+  step.
+
+**2. Email footer line.** Add this line, exactly, to the footer of all 12
+entry emails (4 automations × 3 emails):
+`Free to share: mrlifemanager.com`
+
+MailerLite has no linked footer block. A saved block is a copy, so editing it
+does not change emails that already use it. The only shared edit is the account
+default:
+
+- **Preferred, one edit:** Account settings → Default settings → *Email
+  unsubscribe disclaimer*. Add the line to the disclaimer text. On save, choose
+  to force-update **ongoing automation emails** only. This works only if the 12
+  emails use the standard footer with the default disclaimer. Check one email
+  in preview first. The line will also appear in every future email.
+- **Fallback, 12 edits:** In each of the four automations, triggered by
+  `entry-guests`, `entry-first-night`, `entry-underwater` and `entry-one-room`,
+  open emails 1, 2 and 3. Add the line as plain text in the footer block, above the
+  unsubscribe link, not in the body. Then save each email. The automations can
+  stay active.
+
+After either route, send a test of one email to an internal address to check
+that the line sits in the footer and that email 1 still carries one PDF link.
+Don't use a real subscriber for this. Record the date in
+[`planning/operations.md`](../../../planning/operations.md).
+
 ## Operational verification
 
 The public-site monitor verifies that all four pages load, contain the correct
