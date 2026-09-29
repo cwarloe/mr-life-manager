@@ -15,7 +15,7 @@ quality, package many times. See
 
 | Directory | What lives here |
 |---|---|
-| `checklists/` | One- to four-page printable checklists. Free tier and $9 tier. |
+| `checklists/` | Printable free guides (archive/search). Paid ideas live on [product-ladder](../docs/business/product-ladder.md). |
 | `worksheets/` | Fill-in templates: agreements, calendars, planners, inventories. |
 | `ebooks/` | Multi-chapter guides, starting with the flagship, *First Place* (not yet written). |
 | `courses/` | Structured multi-module programs, text or video. |
@@ -75,3 +75,4 @@ surface, not offers.
 - **Paid** — none. [`first-place.html`](landing/first-place.html) takes
   no-charge reservations for a planned $39 founding offer.
 - **Empty:** [ebooks](ebooks/), [courses](courses/), [toolkits](toolkits/).
+
