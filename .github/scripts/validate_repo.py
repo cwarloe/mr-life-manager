@@ -38,6 +38,30 @@ def validate_html() -> int:
     return len(files)
 
 
+def validate_share_qr() -> None:
+    """Each sheet's inline footer QR must match products/print/share-qr.svg.
+
+    generate_share_assets.py writes both; this catches a hand edit or a sheet
+    added to guide_inventory.SHEETS without re-running it.
+    """
+    sys.path.insert(0, str(ROOT / ".github" / "scripts"))
+    from guide_inventory import SHEETS  # noqa: E402
+
+    svg_path = ROOT / "products" / "print" / "share-qr.svg"
+    if not svg_path.is_file():
+        error("products/print/share-qr.svg: missing (run generate_share_assets.py)")
+        return
+    svg = svg_path.read_text(encoding="utf-8").strip()
+    block = re.compile(r"<!-- share-qr:start -->(.*?)<!-- share-qr:end -->", re.DOTALL)
+    for src, _stem in SHEETS:
+        found = block.findall((ROOT / src).read_text(encoding="utf-8"))
+        if len(found) != 1:
+            error(f"{src}: expected one share-qr block, found {len(found)}")
+        elif found[0] != svg:
+            error(f"{src}: inline share QR differs from products/print/share-qr.svg "
+                  "(run generate_share_assets.py)")
+
+
 def validate_markdown_links() -> tuple[int, int]:
     files = sorted(ROOT.rglob("*.md"))
     checked = 0
@@ -76,6 +100,7 @@ def validate_markdown_links() -> tuple[int, int]:
 def main() -> int:
     html_count = validate_html()
     markdown_count, link_count = validate_markdown_links()
+    validate_share_qr()
 
     if ERRORS:
         print("Repository validation failed:")

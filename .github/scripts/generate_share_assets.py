@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-"""Generate social share images and the printable partner pilot handout."""
+"""Generate social share images, the printable partner pilot handout, and the
+footer share QR used by The Week and the free guides.
+
+The footer QR is written to products/print/share-qr.svg and copied inline
+between the share-qr markers in every sheet listed in guide_inventory.SHEETS
+(render_pdf.py prints from a temp copy, so an <img> path would not resolve).
+validate_repo.py fails if an inline copy drifts from the committed SVG.
+"""
 
 from __future__ import annotations
 
@@ -14,10 +21,16 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen import canvas
 
+from guide_inventory import SHEETS
+
 ROOT = Path(__file__).resolve().parents[2]
 SHARE_DIR = ROOT / "products" / "landing" / "assets" / "share"
 PDF_PATH = ROOT / "products" / "guides-pdf" / "partner-pilot.pdf"
 TMP = ROOT / "tmp" / "pdfs"
+SHARE_QR_URL = "https://mrlifemanager.com/"
+SHARE_QR_PATH = ROOT / "products" / "print" / "share-qr.svg"
+SHARE_QR_START = "<!-- share-qr:start -->"
+SHARE_QR_END = "<!-- share-qr:end -->"
 
 INK = "#12161C"
 PAPER = "#FBF9F4"
@@ -98,6 +111,51 @@ def make_qr(url: str, path: Path) -> None:
     code.make_image(fill_color=INK, back_color="white").convert("RGB").save(path)
 
 
+def share_qr_svg(url: str) -> str:
+    """One-path SVG of the footer QR: same library and error correction as
+    make_qr, 2-module quiet zone, modules drawn in currentColor on white."""
+    code = qrcode.QRCode(version=None, border=2, error_correction=qrcode.constants.ERROR_CORRECT_M)
+    code.add_data(url)
+    code.make(fit=True)
+    matrix = code.get_matrix()
+    size = len(matrix)
+    runs: list[str] = []
+    for y, row in enumerate(matrix):
+        x = 0
+        while x < size:
+            if not row[x]:
+                x += 1
+                continue
+            start = x
+            while x < size and row[x]:
+                x += 1
+            runs.append(f"M{start} {y}h{x - start}v1h-{x - start}z")
+    return (
+        f'<svg class="share-qr" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {size} {size}" '
+        f'role="img" aria-label="QR code for mrlifemanager.com" shape-rendering="crispEdges">'
+        f'<rect width="{size}" height="{size}" fill="#fff"/>'
+        f'<path fill="currentColor" d="{"".join(runs)}"/></svg>'
+    )
+
+
+def sync_share_qr(svg: str) -> int:
+    """Write the committed SVG and refresh each sheet's inline copy."""
+    SHARE_QR_PATH.write_text(svg + "\n")
+    updated = 0
+    for src, stem in SHEETS:
+        path = ROOT / src
+        html = path.read_text()
+        if html.count(SHARE_QR_START) != 1 or html.count(SHARE_QR_END) != 1:
+            raise SystemExit(f"{src}: expected one {SHARE_QR_START} ... {SHARE_QR_END} block")
+        head, rest = html.split(SHARE_QR_START)
+        _, tail = rest.split(SHARE_QR_END)
+        new = f"{head}{SHARE_QR_START}{svg}{SHARE_QR_END}{tail}"
+        if new != html:
+            path.write_text(new)
+            updated += 1
+    return updated
+
+
 def draw_pdf_page(pdf: canvas.Canvas, audience: str, source: str, intro: str) -> None:
     width, height = letter
     url = f"https://mrlifemanager.com/partners.html?from={source}"
@@ -171,6 +229,8 @@ def draw_pdf_page(pdf: canvas.Canvas, audience: str, source: str, intro: str) ->
     pdf.setFillColor(HexColor(SLATE))
     pdf.setFont("MlmSans", 9.5)
     pdf.drawRightString(570, 66, "Practical systems for running a home")
+    pdf.setFont("MlmSans", 8.5)
+    pdf.drawString(42, 50, "Free to use, copy, and teach from \u2014 with credit. Not for resale.")
     pdf.showPage()
 
 
@@ -182,6 +242,8 @@ def main() -> int:
     TMP.mkdir(parents=True, exist_ok=True)
     for filename, (kicker, headline) in SHARES.items():
         social_image(kicker, headline, SHARE_DIR / filename)
+
+    qr_updates = sync_share_qr(share_qr_svg(SHARE_QR_URL))
 
     PDF_PATH.parent.mkdir(parents=True, exist_ok=True)
     pdf = canvas.Canvas(str(PDF_PATH), pagesize=letter, pageCompression=1)
@@ -200,6 +262,7 @@ def main() -> int:
         parent.rmdir()
 
     print(f"Generated {len(SHARES)} social images and {PDF_PATH.relative_to(ROOT)}")
+    print(f"Wrote {SHARE_QR_PATH.relative_to(ROOT)}; refreshed the inline copy in {qr_updates} of {len(SHEETS)} sheets")
     return 0
 
 
