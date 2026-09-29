@@ -67,26 +67,18 @@ It does not promise or deliver a second PDF. This distinction implements
 [ADR-015](../../../planning/decisions.md#adr-015--the-win-comes-before-the-email):
 the reader has already acted; email supplies the reusable maintenance system.
 
-## Referral lines (draft, pending approval)
+## Referral line (draft, pending approval)
 
-**Status:** Not live. Nothing below has been changed in MailerLite. Make these
-edits only after Charles approves placements 2 and 3 of the referral placement
-proposal (PR #50). No rewards, no share buttons, no `navigator.share`, no QR code.
+**Status:** Not live. Nothing below has been changed in MailerLite. Make this
+edit only after Charles approves. No rewards, no share buttons, no
+`navigator.share`, no QR code.
 
-**1. Form success message.** The text shown after an email is submitted lives
-only in MailerLite. No page in this repository renders or rewrites it.
+**Form success message: no change.** The success view on form `00ZwEr` stays
+as it is. Growth Steward owns all customer-facing wording and will supply
+replacement copy about the reader's own next step. Until then, leave it
+untouched.
 
-- Forms → Embedded forms → the form with ID `00ZwEr` → edit the **Success**
-  view.
-- Keep the existing success text. Add one line under it, exactly:
-  `Know someone starting out? Send them the page you just used.`
-- Plain text is enough. If it is a link, make it a plain text link to
-  `https://mrlifemanager.com/`. This one form serves all eight pages, so it
-  cannot link to the specific page each reader used.
-- Saving the form updates every embed right away. There is no separate publish
-  step.
-
-**2. Email footer line.** Add this line, exactly, to the footer of all 12
+**Email footer line.** Add this line, exactly, to the footer of all 12
 entry emails (4 automations × 3 emails):
 `Free to share: mrlifemanager.com`
 
