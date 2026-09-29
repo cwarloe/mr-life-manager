@@ -18,7 +18,7 @@ Sources: [principles](../vision/principles.md),
 [brand-positioning](brand-positioning.md),
 [target-audiences](../vision/target-audiences.md), ADR-010/014/015/016,
 [customer-problems](../research/customer-problems.md), live copy on `main`
-(2ca2775), and the PR #54 flyer. The MailerLite form heading, success message and
+(2ca2775; the Guests H1 is as of c5faa90), and the PR #54 flyer. The MailerLite form heading, success message and
 confirmation email live in the account, not the repo, so they are quoted as
 reported.
 
@@ -194,8 +194,8 @@ budget table:
   or what the week is. Announcing an end is an internal rule, and it overstates,
   since a reply starts a conversation. It works against the ongoing
   relationship we actually want.
-- **"Disaster"** (the guests page H1). It works as a search query and fails
-  everywhere else (§6, §7).
+- **"Disaster"** on the links into the Guests page. The H1 itself is fixed on
+  main, but the homepage and parents-page tiles still say it (§6).
 - **Commanding register.** ADR-015 says "plain, not commanding." Yet
   underwater.html says "Do not…" five times, and the finished pages end on an
   order. Where doc and copy disagree, the doc wins.
@@ -348,14 +348,17 @@ principles.** These are suggestions only, and none has been edited.
   - *"There's nothing attached to this one"* describes our email instead of
     telling the reader anything. Cut it.
 
-**Guests page H1**
-- (a) Keep *…and your place is a disaster.*
-- (b) *Someone's coming over and the place is a mess.*
-- (c) *…and the place isn't ready.*
-
-**Pick: (b).** It's the word people say out loud, it's about the place rather
-than the person, and the page's own meta description already uses it. (c) is a
-euphemism, and euphemisms read as marketing.
+**Guests page H1. Decided and live:** *Someone's coming over and your place
+isn't ready.* This is Charles's call, now on main. The tradeoff is that it's
+gentler than the words people are likely to type into a search, which is
+acceptable because it's about the place and not the person. Three surfaces
+still use the old wording and should be brought in line with it:
+- **Homepage tile** (`products/landing/index.html:126`): *"Someone's coming over
+  and the place is a disaster."*
+- **Parents page tile** (`products/landing/index-parents.html:59`): the same
+  wording.
+- **Guests meta description** (`products/landing/guests.html:6`): *"…your place
+  is a mess."*
 
 **Flyer (PR #54)**
 - (a) Keep *Having people over?* with the new caption.
@@ -386,8 +389,9 @@ list.* with *That's enough for today.*
 - **ADR-010 vs target-audiences.** ADR-010 aims the marketing at Dana. The
   target-audiences prioritization table still says "Build the MVP for Tyler."
   Flagged.
-- **ADR-015's "my place is a disaster."** Right as a query, wrong as the H1 that
-  every surface lands on. Principle #8 should outrank a working title.
+- **ADR-015's "my place is a disaster."** It is still recorded as the first
+  niche's wording, but the live H1 is now "isn't ready." The ADR's phrasing
+  should be treated as a working title, not as copy.
 - **The index fails principle #11's offer filter.** It makes four asks:
   - the picker
   - the $39 First Place link, which carries PR #48's open $9-vs-$39 flag
