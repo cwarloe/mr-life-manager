@@ -103,7 +103,8 @@ def main() -> int:
                 problems.append(f"{name}: missing {marker}")
 
         completion_text = (OUT / completion).read_text(encoding="utf-8")
-        for marker in (MAILERLITE_FORM_ATTR, f"var VALUE = '{tag}'", "One thing finished",
+        for marker in (MAILERLITE_FORM_ATTR, f'data-guide="{tag}"',
+                       'src="/assets/entry.js"', "ml-fallback", "One thing finished",
                        'name="robots" content="noindex,nofollow"'):
             if marker not in completion_text:
                 problems.append(f"{completion}: missing {marker}")
@@ -154,3 +155,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
