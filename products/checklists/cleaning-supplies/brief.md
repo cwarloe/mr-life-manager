@@ -4,7 +4,9 @@
 real reader; price examples still need a freshness check before distribution.
 **Tier:** Rung 0 — free ([product-ladder.md](../../../docs/business/product-ladder.md))
 **Format:** printable, black-and-white, US Letter
-**Files:** [`cleaning-supply-starter-list.html`](cleaning-supply-starter-list.html) (designed, printable)
+**Files:** [`cleaning-supply-starter-list.html`](cleaning-supply-starter-list.html) ·
+[PDF](../../guides-pdf/cleaning-supply-starter-list.pdf) (3 pp) · public at
+`/guides/cleaning-supply-starter-list.html`
 
 **Design:** buy / tools / laundry as priced tables with right-aligned tabular
 figures, then **Skip** gets an amber tag and its own visual weight — it's the
@@ -45,7 +47,7 @@ Home (cleaning) — narrow by design. It's a single-purpose reference.
 
 ### 6. Ladder position
 
-Rung 0, beside the other two free assets. Leads to room-by-room guides ($9) and
+Rung 0, beside the other free guides. Leads to room-by-room guides ($9) and
 *First Place* ($39).
 
 ### 7. Content drawn on
@@ -101,3 +103,4 @@ vinegar are genuinely dangerous and widely unknown. Two sentences, no lecture.
       combinations are dangerous and why. Wrong depth — replaced with the rule
       that actually keeps people safe: don't mix anything. See
       [content scope](../../../content/README.md#scope-how-deep-is-too-deep).
+
