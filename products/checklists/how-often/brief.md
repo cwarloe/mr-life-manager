@@ -5,7 +5,9 @@ reviewed or tested with a real reader.
 **Tier:** Rung 0 — free ([product-ladder.md](../../../docs/business/product-ladder.md))
 **Format:** printable reference, black-and-white, US Letter. Designed to be
 **taped inside a cabinet door.**
-**Files:** [`how-often-should-i.html`](how-often-should-i.html) (designed, printable)
+**Files:** [`how-often-should-i.html`](how-often-should-i.html) ·
+[PDF](../../guides-pdf/how-often-should-i.pdf) (3 pp) · public at
+`/guides/how-often-should-i.html`
 
 **Design:** frequency bands as the structure, each with a stamped tag — daily,
 weekly, monthly, seasonal, annual, vehicle, now. Good-enough and better are
@@ -108,3 +110,4 @@ consequence of skipping is categorically different from "it gets dirty."
 - [ ] Add an apartment/renter version that drops homeowner-only rows?
 - [ ] Consider a fridge-magnet or cabinet-card physical format later — print-on-
       demand only, no inventory.
+
