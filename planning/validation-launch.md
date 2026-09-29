@@ -12,9 +12,10 @@ a time. Do not build another guide merely to create something to announce.
 | Church or young-adult ministry | `https://mrlifemanager.com/partners.html?from=church` |
 | Campus or residence-life contact | `https://mrlifemanager.com/partners.html?from=campus` |
 
-The `from` value follows a reader from the partner page to a free task, through
-the completion page, and into the subject of a founding-reservation email. It
-does not create a cookie, subscriber field, or visitor profile.
+The `from` value follows a reader from the partner page to a free task and its
+completion page, and from the partner page's founding-offer link into the subject
+of a founding-reservation email. It does not create a cookie, subscriber field,
+or visitor profile.
 
 ## Ready-to-send introductions
 

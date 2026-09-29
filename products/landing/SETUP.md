@@ -70,9 +70,10 @@ action and its print option have already been delivered before signup.
 The founding-offer page uses a prefilled email to `hello@mrlifemanager.com`.
 That keeps the demand test live without a fifth automation or a risk that a
 reservation receives an unrelated free sequence. Treat each sent message as a
-reservation, not revenue. A safe `from` query value is carried through the task
-and completion pages into the reservation subject so a reply can be attributed
-without cookies or a visitor profile.
+reservation, not revenue. A safe `from` query value on the founding-offer URL is
+carried into the reservation subject so a reply can be attributed without
+cookies or a visitor profile. Completion pages carry the email signup only and
+do not link to the founding offer.
 
 The repository's live-site monitor proves that the public pages, route tags,
 form containers and PDF are present. Private MailerLite routing and delivery
