@@ -89,15 +89,8 @@ footer{margin:3.5rem 0 0;padding:1.3rem 0 3.5rem;border-top:1px solid var(--rule
 footer a{color:var(--blue);font-weight:600;text-decoration:none}
 
 @media (min-width:40rem){ body{font-size:18px} .wrap{padding:0 1.5rem} }
-@media print{
-  :root{--ink:#000;--paper:#fff;--surface:#fff;--slate:#444;--rule:#bbb;--rule-strong:#666;
-    --blue-soft:#fff;--amber:#7a4d0a;--amber-soft:#fff}
-  body{font-size:10.5pt}.signup,footer{display:none}
-  .step{page-break-inside:avoid}
-}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
-/* the paper/phone fork */
 .fork{margin:1.6rem 0 0;padding:.95rem 1.1rem;border:1px dashed var(--rule-strong);border-radius:4px}
 .fork-lead{font-size:.95rem;font-weight:700;margin:0 0 .25rem;letter-spacing:-.01em}
 
@@ -137,7 +130,6 @@ footer a{color:var(--blue);font-weight:600;text-decoration:none}
 }
 .printfoot{display:none}
 
-/* doing mode: hide why, bigger type, one step at a time */
 .fork-sub{font-family:var(--serif);font-size:.92rem;line-height:1.45;color:var(--slate);margin:.2rem 0 .8rem}
 .fork-btns{display:flex;flex-wrap:wrap;gap:.55rem;margin:0}
 .fork-btns button{font-family:var(--sans);font-size:1rem;font-weight:700;letter-spacing:-.01em;
@@ -159,7 +151,6 @@ body.doing .why.open{display:block}
 body.doing .whybtn{display:inline-block}
 body.doing header.top .sub{display:none}
 
-/* doing mode: header + pinned nav; step scrolls between */
 html:has(body.doing){height:100%}
 body.doing{height:100dvh;overflow:hidden;display:flex;flex-direction:column}
 @supports not (height:100dvh){body.doing{height:100vh}}
@@ -178,7 +169,6 @@ body.doing .step-head h2{font-size:clamp(1.65rem,7vw,2.3rem);line-height:1.1}
 body.doing .step-head::before{font-size:1.5rem;min-width:2.1rem;height:2.1rem}
 body.doing .mins{font-size:.82rem;align-self:flex-start;margin-top:.35rem}
 
-/* doing mode: one sentence per line */
 body.doing .do{font-size:clamp(1.15rem,4.6vw,1.45rem);line-height:1.42;margin-top:1.1rem;
   padding-left:0}
 body.doing .do .s{display:block}
@@ -213,3 +203,4 @@ body.doing .step-head::before{content:attr(data-n)}
   border-radius:4px;border:2px solid var(--ink);cursor:pointer}
 .done .complete{display:inline-block;background:var(--ink);color:var(--paper);text-decoration:none;margin-right:.45rem}
 .done button{background:transparent;color:var(--ink)}
+
