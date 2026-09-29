@@ -45,7 +45,7 @@ def validate_share_qr() -> None:
     added to guide_inventory.SHEETS without re-running it.
     """
     sys.path.insert(0, str(ROOT / ".github" / "scripts"))
-    from guide_inventory import SHEETS  # noqa: E402
+    from guide_inventory import FLYER_QRS, SHARE_QR_SHEETS, SHEETS  # noqa: E402
 
     svg_path = ROOT / "products" / "print" / "share-qr.svg"
     if not svg_path.is_file():
@@ -53,13 +53,38 @@ def validate_share_qr() -> None:
         return
     svg = svg_path.read_text(encoding="utf-8").strip()
     block = re.compile(r"<!-- share-qr:start -->(.*?)<!-- share-qr:end -->", re.DOTALL)
+    with_share = {src for src, _stem in SHARE_QR_SHEETS}
     for src, _stem in SHEETS:
+        if src not in with_share and block.search((ROOT / src).read_text(encoding="utf-8")):
+            error(f"{src}: must not carry a share QR (one QR, one offer)")
+    for src, _stem in SHARE_QR_SHEETS:
         found = block.findall((ROOT / src).read_text(encoding="utf-8"))
         if len(found) != 1:
             error(f"{src}: expected one share-qr block, found {len(found)}")
         elif found[0] != svg:
             error(f"{src}: inline share QR differs from products/print/share-qr.svg "
                   "(run generate_share_assets.py)")
+
+
+def validate_flyer_qrs() -> None:
+    """Each flyer carries one QR destination, repeated identically, and names it.
+
+    The QR itself is drawn by generate_share_assets.py (qrcode is not installed
+    in CI), so this checks the label it writes rather than decoding the image.
+    """
+    sys.path.insert(0, str(ROOT / ".github" / "scripts"))
+    from guide_inventory import FLYER_QRS  # noqa: E402
+
+    block = re.compile(r"<!-- flyer-qr:start -->(.*?)<!-- flyer-qr:end -->", re.DOTALL)
+    for src, url in FLYER_QRS.items():
+        found = block.findall((ROOT / src).read_text(encoding="utf-8"))
+        if not found:
+            error(f"{src}: no flyer-qr block (run generate_share_assets.py)")
+            continue
+        if len(set(found)) != 1:
+            error(f"{src}: flyer QR copies differ (run generate_share_assets.py)")
+        if f'aria-label="QR code for {url}"' not in found[0]:
+            error(f"{src}: flyer QR is not labeled for {url} (run generate_share_assets.py)")
 
 
 def validate_markdown_links() -> tuple[int, int]:
@@ -101,6 +126,7 @@ def main() -> int:
     html_count = validate_html()
     markdown_count, link_count = validate_markdown_links()
     validate_share_qr()
+    validate_flyer_qrs()
 
     if ERRORS:
         print("Repository validation failed:")

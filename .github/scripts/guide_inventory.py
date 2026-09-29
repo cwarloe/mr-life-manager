@@ -19,6 +19,9 @@ class InventoryItem:
     blurb: str = ""
     publish_as_guide: bool = False
     render_as_pdf: bool = False  # headless Chrome via render_all_pdfs
+    share_qr: bool = True  # footer share QR (generate_share_assets.py)
+    print_index: bool = True  # listed on /print/; False still publishes the PDF
+    qr_url: str = ""  # flyers: the one QR destination, synced between flyer-qr markers
 
 
 # Order: print-only sheet, then /guides/ publish order, then generated title-only.
@@ -93,6 +96,17 @@ INVENTORY: tuple[InventoryItem, ...] = (
         publish_as_guide=True,
         render_as_pdf=True,
     ),
+    # Posted flyer: one QR to one entry page, no footer share QR, not listed
+    # on /print/ (it is for posting, not for readers). Draft, pending approval.
+    InventoryItem(
+        stem="flyer-someones-coming",
+        title="Flyer: Having People Over",
+        html_src="products/print/flyer-someones-coming.html",
+        render_as_pdf=True,
+        share_qr=False,
+        print_index=False,
+        qr_url="https://mrlifemanager.com/guests.html?from=flyer-guests",
+    ),
     # Title-only: PDF from generate_share_assets.py, not Chrome / not a /guides/ page.
     InventoryItem(
         stem="partner-pilot",
@@ -113,6 +127,23 @@ SHEETS: list[tuple[str, str]] = [
     for item in INVENTORY
     if item.render_as_pdf
 ]
+
+# Sheets that carry the footer share QR. Flyers do not: one QR, one offer.
+SHARE_QR_SHEETS: list[tuple[str, str]] = [
+    (item.html_src, item.stem)
+    for item in INVENTORY
+    if item.render_as_pdf and item.share_qr
+]
+
+# Flyer source -> its single QR destination.
+FLYER_QRS: dict[str, str] = {
+    item.html_src: item.qr_url for item in INVENTORY if item.qr_url
+}
+
+# Published under /print/ but left off the /print/ index.
+UNLISTED_PDFS: set[str] = {
+    f"{item.stem}.pdf" for item in INVENTORY if not item.print_index
+}
 
 PDF_TITLES: dict[str, str] = {
     f"{item.stem}.pdf": item.title for item in INVENTORY
