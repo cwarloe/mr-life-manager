@@ -16,6 +16,7 @@ on:
       - "products/guides-pdf/**"
       - ".github/scripts/build_site.py"
       - ".github/scripts/site_catalog.py"
+      - ".github/scripts/guide_inventory.py"
       - ".github/workflows/deploy-landing.yml"
   workflow_dispatch:
 
