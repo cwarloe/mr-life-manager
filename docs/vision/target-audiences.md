@@ -38,7 +38,7 @@ figured out.
 
 **Likely products**
 - **First Apartment Checklist** (free archive / shareable) — highest-fit free guide; entry pages are the front door ([ADR-015](../../planning/decisions.md#adr-015--the-win-comes-before-the-email))
-- Cleaning-supply starter list + roommate chore agreement template
+- **Cleaning Supply Starter List** (free archive / shareable) + **Household Agreement** worksheet (roommate kit; free-only per [ADR-019](../../planning/decisions.md#adr-019--laundry-solved-and-the-roommate-kit-are-free-only))
 - Room-by-room setup guide
 - Low-cost ebook: *First Place* (student edition)
 
@@ -255,3 +255,4 @@ and not five:
 
 **The transition is the trigger.** Marketing, timing, and partnerships should all
 be built around moments of transition, not around evergreen interest in tidiness.
+
