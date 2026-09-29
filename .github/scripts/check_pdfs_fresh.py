@@ -19,10 +19,6 @@ ROOT = Path(__file__).resolve().parents[2]
 MANIFEST = ROOT / "products" / "guides-pdf" / ".sources.json"
 
 
-def digest(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()[:16]
-
-
 def source_digest(src: Path) -> str:
     """Hash HTML plus any local stylesheets it links (PDF render inlines them)."""
     sys.path.insert(0, str(ROOT / ".github" / "scripts"))
@@ -69,3 +65,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
