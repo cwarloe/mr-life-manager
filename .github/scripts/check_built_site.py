@@ -104,10 +104,13 @@ def main() -> int:
 
         completion_text = (OUT / completion).read_text(encoding="utf-8")
         for marker in (MAILERLITE_FORM_ATTR, f"var VALUE = '{tag}'", "One thing finished",
-                       "/first-place.html", "navigator.share", f"shared-{tag}",
                        'name="robots" content="noindex,nofollow"'):
             if marker not in completion_text:
                 problems.append(f"{completion}: missing {marker}")
+        # One ask after the win (principle 11): the signup is the only offer.
+        for marker in ("/first-place.html", "navigator.share", "Where%20I%20stopped"):
+            if marker in completion_text:
+                problems.append(f"{completion}: must carry only the signup ask, found {marker}")
 
     offer = (OUT / "first-place.html").read_text(encoding="utf-8")
     for marker in ('mailto:hello@mrlifemanager.com?subject=First%20Place%20%2439',
