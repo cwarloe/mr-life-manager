@@ -1,7 +1,9 @@
 # Product Brief — First Apartment Checklist
 
 **Status:** Draft 1 text + **designed HTML** (2026-09-09). Not reviewed, not tested.
-**Files:** [`first-apartment-checklist.html`](first-apartment-checklist.html) (designed, printable)
+**Files:** [`first-apartment-checklist.html`](first-apartment-checklist.html) ·
+[PDF](../../guides-pdf/first-apartment-checklist.pdf) (4 pp) · public at
+`/guides/first-apartment-checklist.html`
 
 **Design direction:** a building punch list — which is literally what Part 3 is.
 Blueprint blue carries structure; amber is spent only on the two money signals
@@ -51,11 +53,12 @@ action easy · §8 dignity, not shame · §10 teach the why
 
 ### 6. Ladder position
 
-**Nothing before it — this is the front door.** After it: the room-by-room
-guides ($9) and *First Place* ($39). It must be complete and genuinely useful
-with **no upsell in the body**; a free asset that is really a sales pitch
-poisons the ladder, especially for an audience whose core barrier is
-embarrassment.
+Free archive/search guide per [ADR-015](../../../planning/decisions.md#adr-015--the-win-comes-before-the-email)
+(entry pages are the front door; this checklist is not). After it on the ladder:
+the room-by-room guides ($9) and *First Place* ($39). It must be complete and
+genuinely useful with **no upsell in the body**; a free asset that is really a
+sales pitch poisons the ladder, especially for an audience whose core barrier
+is embarrassment.
 
 ### 7. Content drawn on
 
@@ -104,3 +107,4 @@ should presume its answer.
       the breaker-panel line. The rest sat at the right depth.
 - [ ] Test the title. "First Apartment Checklist" is the searched phrase, but it
       is also what every competitor calls theirs.
+

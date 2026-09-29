@@ -3,9 +3,11 @@
 **Status:** Drafted and designed 2026-09-20. Not yet reviewed or tested with a
 real reader.
 **Tier:** Rung 0 — free ([product-ladder.md](../../../docs/business/product-ladder.md))
-**Format:** printable checklist, black-and-white, US Letter. Four parts, one
-sitting, ~45 minutes.
-**Files:** [`what-is-this-room-for.html`](what-is-this-room-for.html) (designed, printable)
+**Format:** printable checklist, black-and-white, US Letter. Four steps, one
+sitting, ~20 minutes.
+**Files:** [`what-is-this-room-for.html`](what-is-this-room-for.html) ·
+[PDF](../../guides-pdf/what-is-this-room-for.pdf) (2 pp) · public at
+`/guides/what-is-this-room-for.html`
 
 ---
 
@@ -70,3 +72,4 @@ complaint the cleaning advice can't: *"I clean and it still doesn't feel right."
   [content/README.md](../../../content/README.md).
 - **Untested:** that "pick the room you're in most, not the worst one" is
   followed. The instinct will be to pick the worst one.
+
