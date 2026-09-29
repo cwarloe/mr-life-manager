@@ -22,12 +22,13 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen import canvas
 
 from guide_inventory import SHEETS
+from site_catalog import ORIGIN
 
 ROOT = Path(__file__).resolve().parents[2]
 SHARE_DIR = ROOT / "products" / "landing" / "assets" / "share"
 PDF_PATH = ROOT / "products" / "guides-pdf" / "partner-pilot.pdf"
 TMP = ROOT / "tmp" / "pdfs"
-SHARE_QR_URL = "https://mrlifemanager.com/"
+SHARE_QR_URL = f"{ORIGIN}/"
 SHARE_QR_PATH = ROOT / "products" / "print" / "share-qr.svg"
 SHARE_QR_START = "<!-- share-qr:start -->"
 SHARE_QR_END = "<!-- share-qr:end -->"
@@ -158,7 +159,7 @@ def sync_share_qr(svg: str) -> int:
 
 def draw_pdf_page(pdf: canvas.Canvas, audience: str, source: str, intro: str) -> None:
     width, height = letter
-    url = f"https://mrlifemanager.com/partners.html?from={source}"
+    url = f"{ORIGIN}/partners.html?from={source}"
     qr_path = TMP / f"pilot-{source}.png"
     make_qr(url, qr_path)
 
@@ -268,3 +269,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
