@@ -8,9 +8,14 @@ import time
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
-from site_catalog import ENTRY_ROUTES, MAILERLITE_FORM_ATTR, ORIGIN, required_share_images
+from site_catalog import (
+    ENTRY_ROUTES,
+    MAILERLITE_FORM_ATTR,
+    ORIGIN,
+    required_share_images,
+    sitemap_core_urls,
+)
 
-BASE = ORIGIN
 
 def _entry_pages() -> dict[str, tuple[str, ...]]:
     pages: dict[str, tuple[str, ...]] = {
@@ -47,10 +52,11 @@ def _entry_pages() -> dict[str, tuple[str, ...]]:
 
 
 PAGES = _entry_pages()
+# Live check expects home + entry doors + privacy (subset of sitemap_core_urls).
 SITEMAP_URLS = (
-    f"{BASE}/",
-    *(f"{BASE}/{route.page}" for route in ENTRY_ROUTES),
-    f"{BASE}/privacy.html",
+    f"{ORIGIN}/",
+    *(f"{ORIGIN}/{route.page}" for route in ENTRY_ROUTES),
+    f"{ORIGIN}/privacy.html",
 )
 
 
@@ -60,16 +66,27 @@ def fetch(url: str) -> tuple[str, str, bytes]:
         return response.geturl(), response.headers.get_content_type(), response.read()
 
 
+def _expect_pdf(url: str, problems: list[str]) -> None:
+    try:
+        final, content_type, body = fetch(url)
+        if final != url:
+            problems.append(f"{url}: unexpected final URL {final}")
+        if content_type != "application/pdf" or not body.startswith(b"%PDF-"):
+            problems.append(f"{url}: response is not a PDF")
+    except (HTTPError, URLError, TimeoutError) as exc:
+        problems.append(f"{url}: {exc}")
+
+
 def run_once() -> list[str]:
     problems: list[str] = []
     for path, markers in PAGES.items():
-        url = BASE + path
+        url = ORIGIN + path
         try:
             final, content_type, body = fetch(url)
         except (HTTPError, URLError, TimeoutError) as exc:
             problems.append(f"{url}: {exc}")
             continue
-        if not final.startswith(BASE):
+        if not final.startswith(ORIGIN):
             problems.append(f"{url}: redirected outside canonical domain to {final}")
         if content_type != "text/html":
             problems.append(f"{url}: content type {content_type}, expected text/html")
@@ -82,28 +99,11 @@ def run_once() -> list[str]:
         if path != "/privacy.html" and 'href="/privacy.html"' not in text:
             problems.append(f"{url}: missing privacy link")
 
-    pdf_url = BASE + "/print/the-week.pdf"
-    try:
-        final, content_type, body = fetch(pdf_url)
-        if final != pdf_url:
-            problems.append(f"{pdf_url}: unexpected final URL {final}")
-        if content_type != "application/pdf" or not body.startswith(b"%PDF-"):
-            problems.append(f"{pdf_url}: response is not a PDF")
-    except (HTTPError, URLError, TimeoutError) as exc:
-        problems.append(f"{pdf_url}: {exc}")
-
-    partner_pdf_url = BASE + "/print/partner-pilot.pdf"
-    try:
-        final, content_type, body = fetch(partner_pdf_url)
-        if final != partner_pdf_url:
-            problems.append(f"{partner_pdf_url}: unexpected final URL {final}")
-        if content_type != "application/pdf" or not body.startswith(b"%PDF-"):
-            problems.append(f"{partner_pdf_url}: response is not a PDF")
-    except (HTTPError, URLError, TimeoutError) as exc:
-        problems.append(f"{partner_pdf_url}: {exc}")
+    _expect_pdf(ORIGIN + "/print/the-week.pdf", problems)
+    _expect_pdf(ORIGIN + "/print/partner-pilot.pdf", problems)
 
     for share_name in required_share_images():
-        share_url = BASE + f"/assets/share/{share_name}"
+        share_url = ORIGIN + f"/assets/share/{share_name}"
         try:
             final, content_type, body = fetch(share_url)
             if final != share_url:
@@ -113,7 +113,7 @@ def run_once() -> list[str]:
         except (HTTPError, URLError, TimeoutError) as exc:
             problems.append(f"{share_url}: {exc}")
 
-    sitemap_url = BASE + "/sitemap.xml"
+    sitemap_url = ORIGIN + "/sitemap.xml"
     try:
         final, content_type, body = fetch(sitemap_url)
         if final != sitemap_url:
@@ -123,13 +123,21 @@ def run_once() -> list[str]:
         sitemap = body.decode("utf-8", errors="replace")
         if "finished-" in sitemap:
             problems.append(f"{sitemap_url}: completion pages must stay out of search")
+        # Require the live smoke subset; also confirm catalog core URLs that
+        # overlap this subset stay aligned (guards against ORIGIN drift).
+        expected = set(SITEMAP_URLS)
+        core_overlap = expected & set(sitemap_core_urls())
+        if core_overlap != expected:
+            problems.append(
+                f"{sitemap_url}: SITEMAP_URLS not a subset of sitemap_core_urls()"
+            )
         for loc in SITEMAP_URLS:
             if loc not in sitemap:
                 problems.append(f"{sitemap_url}: missing {loc}")
     except (HTTPError, URLError, TimeoutError) as exc:
         problems.append(f"{sitemap_url}: {exc}")
 
-    robots_url = BASE + "/robots.txt"
+    robots_url = ORIGIN + "/robots.txt"
     try:
         final, _, body = fetch(robots_url)
         robots = body.decode("utf-8", errors="replace")
@@ -141,8 +149,8 @@ def run_once() -> list[str]:
     for start in ("http://mrlifemanager.com/", "https://www.mrlifemanager.com/"):
         try:
             final, _, _ = fetch(start)
-            if final != BASE + "/":
-                problems.append(f"{start}: ended at {final}, expected {BASE}/")
+            if final != ORIGIN + "/":
+                problems.append(f"{start}: ended at {final}, expected {ORIGIN}/")
         except (HTTPError, URLError, TimeoutError) as exc:
             problems.append(f"{start}: {exc}")
     return problems
@@ -153,7 +161,11 @@ def main() -> int:
     for attempt in range(3):
         problems = run_once()
         if not problems:
-            print("Production smoke test passed: twelve pages, four routes, one partner path, one founding offer, two PDFs, share images, sitemap, robots and canonical redirects.")
+            print(
+                f"Production smoke test passed: {len(PAGES)} pages, "
+                f"{len(ENTRY_ROUTES)} routes, one partner path, one founding offer, "
+                "two PDFs, share images, sitemap, robots and canonical redirects."
+            )
             return 0
         if attempt < 2:
             time.sleep(10)
