@@ -345,23 +345,20 @@ typing at a moment of transition.
   category.
 - **Diagrams over prose** wherever a diagram will do the job.
 
-## Open positioning questions
+## Positioning questions
 
-- ~~How explicit should the Christian stewardship and hospitality convictions
-  be?~~ **Settled** —
-  [ADR-009](../../planning/decisions.md#adr-009--faith-framing-convictions-inform-the-work-belief-is-never-required-to-use-it).
-  See *Faith framing* below.
-- ~~Does the brand need a visible human face?~~ **Settled** — it's Dave's, and
-  his likeness is available. [ADR-011](../../planning/decisions.md#adr-011--mr-life-manager-is-a-real-person-dave-webster)
-- ~~Is "Mr. Life Manager" a persona or a brand name?~~ **Settled — neither.**
-  He's a real person. See *Who is speaking* above.
-- ~~Name clearance / conflict scan~~ **Closed 2026-09-23** — owner cleared
-  "Mr. Life Manager"; see
-  [brand-name-scan.md](../research/brand-name-scan.md). Clearance is settled;
-  further name work is not needed before launch.
+### Still open
+
 - Does the name survive contact with the actual audience? **Still empirical**
   (audience reaction test), separate from clearance — ADR-011 materially reduces
   the risk.
-- ~~Is he "Dave Webster" publicly, or only "Mr. Life Manager"?~~ **Settled for
-  copy** — "Dave," never the surname
-  ([content/README.md](../../content/README.md#referring-to-dave)).
+
+### Closed
+
+- Faith framing / Christian stewardship visibility — **Settled**
+  [ADR-009](../../planning/decisions.md#adr-009--faith-framing-convictions-inform-the-work-belief-is-never-required-to-use-it).
+- Visible human face — **Settled** (Dave's; [ADR-011](../../planning/decisions.md#adr-011--mr-life-manager-is-a-real-person-dave-webster)).
+- Persona vs brand name — **Settled — neither** (real person; see *Who is speaking*).
+- Name clearance — **Closed 2026-09-23** ([brand-name-scan.md](../research/brand-name-scan.md)).
+- Public "Dave Webster" vs "Mr. Life Manager" — **Settled for copy** ("Dave," never
+  the surname; [content/README.md](../../content/README.md#referring-to-dave)).

@@ -26,7 +26,7 @@ deserve different treatment.
 
 A single license for all three is probably the wrong answer.
 
-## Options and their real implications
+## Options and their real implications (historical — pre-decision)
 
 ### Option A — All rights reserved (no license file)
 
@@ -56,7 +56,7 @@ A single license for all three is probably the wrong answer.
 - **Downside:** Kills the most valuable use case (a college adapting a checklist
   for its own orientation program).
 
-### Option D — Split license (recommended shape, not yet adopted)
+### Option D — Split license (historical exploration; ADR-013 settled the model)
 
 - `frameworks/` and `docs/vision/` → **CC BY 4.0** or **CC BY-SA 4.0**
   (spreadable ideas, attribution required)
@@ -75,14 +75,20 @@ protects a specific expression, not the idea of teaching adults to run a home.
 Anyone can write their own first-apartment checklist. Nobody else should be able
 to call theirs Mr. Life Manager.
 
-## What has to be true before deciding
+## What had to be true before deciding (closed)
 
-- [ ] Is `products/` going to live in this public repo at all, or only in a
-      private build repo? (This is the biggest fork in the road.)
-- [ ] Do we want colleges, churches, and military transition programs to be able
-      to use material for free, or should that always be a paid license?
-- [ ] Is a name/trademark search worth doing before publicizing the brand?
+Pre-decision checklist — kept for history. Model settled in ADR-013; name
+clearance closed 2026-09-23 ([brand-name-scan.md](docs/research/brand-name-scan.md)).
+
+- [x] Is `products/` going to live in this public repo at all, or only in a
+      private build repo? → Public repo; free tier published; paid offer pages live.
+- [x] Do we want colleges, churches, and military transition programs to be able
+      to use material for free, or should that always be a paid license? → Free to
+      use / teach (ADR-013); commercial sale requires asking.
+- [x] Is a name/trademark search worth doing before publicizing the brand? → Done
+      2026-09-23; owner cleared "Mr. Life Manager."
 - [ ] Do we want outside contributors? (If yes, a CLA or license is required.)
+      Still open if/when contributors arrive; not blocking current distribution.
 
 ## Decision (2026-09-08)
 

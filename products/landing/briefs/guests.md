@@ -93,6 +93,6 @@ addresses the shame directly, and it's placed after the labour rather than befor
 
 ### Not built yet
 
-- **The $9 maintenance product** the section gestures at.
+- ~~**The $9 maintenance product** the section gestures at.~~ **Parked** — First Place is $39; standalone $9 guide is a separate later idea, not an open ship item.
 - **Traffic.** There is none. The page is a bet on search intent that has nothing
   pointing at it yet.

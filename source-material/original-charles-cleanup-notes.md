@@ -1,11 +1,8 @@
 # Original Cleanup & Household Notes
 
-> **⚠️ PLACEHOLDER — the actual source material has not been added yet.**
->
-> This file is a container waiting for content. Nothing below is a
-> reconstruction, paraphrase, or guess at what the original notes contain,
-> because inventing source material would defeat the entire purpose of keeping
-> source material.
+> **Rulebook for this folder** — not a Dave verbatim file. Recovered Dave notes
+> live in sibling files listed in [INVENTORY.md](INVENTORY.md). Do not invent
+> source material here.
 
 ---
 
@@ -20,28 +17,12 @@ Charles, in an email dated 17 July 2023 titled "All that I could find."
 The provenance question below is answered: they are **Dave's notes**, addressed
 to Charles by name throughout. This file stays as the folder's rulebook.
 
-## ~~⚠️ Provenance question, opened 2026-09-08~~ (answered above)
+## Provenance (answered 2026-09-19)
 
-[ADR-011](../planning/decisions.md#adr-011--mr-life-manager-is-a-real-person-dave-webster)
-establishes that **Mr. Life Manager is Dave Webster**, a real person, and that
-the founder's role is the apprentice who learned from him.
-
-That makes this file's name and contents an open question:
-
-- Are these notes **the founder's own**?
-- Are they **Dave's**, in his words?
-- Are they **the founder's record of Dave's teaching** — which is a third thing,
-  and the most likely?
-
-**It matters, for three reasons.** Attribution has to be accurate. Dave's own
-words are primary source material of a different order than notes about him. And
-under [ADR-012](../planning/decisions.md#adr-012--licensing-permission-is-the-marketing),
-which asks others to credit their sources, this project should be scrupulous
-about crediting its own.
-
-**Do not rename or reorganize this file until that is answered.** If material
-from both people ends up here, keep it in **separate files** with distinct
-headers — never merged.
+**Settled:** the recovered cleanup notes are **Dave's**, addressed to Charles
+([ADR-011](../planning/decisions.md#adr-011--mr-life-manager-is-a-real-person-dave-webster)).
+This file remains the folder rulebook; Dave verbatim text stays in separate
+sibling files — never merged into this one.
 
 ## ⚠️ Capturing Dave's material: read this first
 
@@ -206,9 +187,9 @@ the whole repository.
 
 ## Source material index
 
-| File | Description | Date written | Added |
-|---|---|---|---|
-| *(none yet)* | | | |
+See **[INVENTORY.md](INVENTORY.md)** for the full recovered Dave document list,
+outstanding attachments, and retrieval notes. This file is the rulebook; it does
+not duplicate that inventory.
 
 ---
 
