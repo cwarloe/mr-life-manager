@@ -130,6 +130,14 @@ def entry_social_images() -> dict[str, str]:
     return images
 
 
+
+def required_share_images() -> tuple[str, ...]:
+    """All share PNG filenames that must exist under assets/share/."""
+    names = {"home.png", "first-place.png", "partners.png"}
+    names.update(entry_social_images().values())
+    return tuple(sorted(names))
+
+
 def completion_pages() -> list[tuple[str, str, str, str, str]]:
     """Tuples matching former COMPLETION_PAGES shape."""
     return [

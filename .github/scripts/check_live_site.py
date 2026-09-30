@@ -8,7 +8,7 @@ import time
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
-from site_catalog import ENTRY_ROUTES, MAILERLITE_FORM_ATTR, ORIGIN
+from site_catalog import ENTRY_ROUTES, MAILERLITE_FORM_ATTR, ORIGIN, required_share_images
 
 BASE = ORIGIN
 
@@ -102,15 +102,16 @@ def run_once() -> list[str]:
     except (HTTPError, URLError, TimeoutError) as exc:
         problems.append(f"{partner_pdf_url}: {exc}")
 
-    share_url = BASE + "/assets/share/home.png"
-    try:
-        final, content_type, body = fetch(share_url)
-        if final != share_url:
-            problems.append(f"{share_url}: unexpected final URL {final}")
-        if content_type != "image/png" or not body.startswith(b"\x89PNG\r\n\x1a\n"):
-            problems.append(f"{share_url}: response is not a PNG")
-    except (HTTPError, URLError, TimeoutError) as exc:
-        problems.append(f"{share_url}: {exc}")
+    for share_name in required_share_images():
+        share_url = BASE + f"/assets/share/{share_name}"
+        try:
+            final, content_type, body = fetch(share_url)
+            if final != share_url:
+                problems.append(f"{share_url}: unexpected final URL {final}")
+            if content_type != "image/png" or not body.startswith(b"\x89PNG\r\n\x1a\n"):
+                problems.append(f"{share_url}: response is not a PNG")
+        except (HTTPError, URLError, TimeoutError) as exc:
+            problems.append(f"{share_url}: {exc}")
 
     sitemap_url = BASE + "/sitemap.xml"
     try:
