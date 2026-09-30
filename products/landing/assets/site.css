@@ -1,0 +1,48 @@
+/* Shared marketing chrome: brand tokens, bar, footer, type baseline. */
+:root{
+  --ink:#12161C; --paper:#FBF9F4; --surface:#FFFFFF;
+  --blue:#1F4E79; --blue-soft:#E7EEF5;
+  --amber:#B4741A; --amber-soft:#F7EEDD;
+  --slate:#6B7280; --rule:#D9D5CC; --rule-strong:#B8B2A6;
+  --sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
+    --blue:#8FB6DA; --blue-soft:#1D2833;
+    --amber:#E3A94E; --amber-soft:#2A2418;
+    --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+}
+body{
+  background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;
+  line-height:1.55;margin:0;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:60rem;margin:0 auto;padding:0 1.5rem}
+.narrow{max-width:42rem}
+.bar{border-bottom:1px solid var(--rule)}
+.bar .wrap{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-top:1rem;padding-bottom:1rem;
+}
+.brand{font-weight:700;font-size:.95rem;letter-spacing:-.01em;text-decoration:none;color:inherit}
+.brand span{color:var(--blue)}
+.bar a{font-size:.85rem;color:var(--slate);text-decoration:none;font-weight:500}
+.bar a:hover{color:var(--blue)}
+.kicker,.eyebrow{
+  font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--blue);margin:0 0 1rem;
+}
+.fine{font-size:.82rem;color:var(--slate)}
+.fine a{color:var(--blue);font-weight:600}
+.ml-fallback a{color:var(--blue);font-weight:600}
+footer{border-top:1px solid var(--rule);padding:2rem 0 3rem;font-size:.82rem;color:var(--slate)}
+footer a{color:var(--slate)}
+footer b{color:var(--ink);font-weight:600}
