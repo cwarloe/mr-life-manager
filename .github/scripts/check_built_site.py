@@ -152,7 +152,7 @@ def main() -> int:
         return 1
 
     print(f"Validated {len(pages) - len(legacy_pages)} generated pages, "
-          f"{len(legacy_pages)} legacy redirect(s), four entry routes, "
+          f"{len(legacy_pages)} legacy redirect(s), {len(ENTRY_ROUTES)} entry routes, "
           "the partner path and the founding offer.")
     return 0
 
