@@ -11,18 +11,12 @@
   --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
 }
 @media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
+  :root{
     --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
     --blue:#8FB6DA; --blue-soft:#1D2833;
     --amber:#E3A94E; --amber-soft:#2A2418;
     --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
   }
-}
-:root[data-theme="dark"]{
-  --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
-  --blue:#8FB6DA; --blue-soft:#1D2833;
-  --amber:#E3A94E; --amber-soft:#2A2418;
-  --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
 }
 *{box-sizing:border-box}
 body{
