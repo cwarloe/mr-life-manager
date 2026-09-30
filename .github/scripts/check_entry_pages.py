@@ -4,7 +4,11 @@ import re
 import sys
 from pathlib import Path
 
-from site_catalog import MAILERLITE_FORM_ATTR
+from site_catalog import (
+    ENTRY_CSS_MARKERS,
+    ENTRY_JS_MARKERS,
+    MAILERLITE_FORM_ATTR,
+)
 
 ROOT = Path(__file__).resolve().parents[2]
 LANDING = ROOT / "products" / "landing"
@@ -23,23 +27,6 @@ REQUIRED = [
     ("guide tag config", 'data-guide="'),
 ]
 
-ENTRY_CSS_REQUIRED = [
-    ("viewport-locked layout", "body.doing .steps{flex:1"),
-    ("step numbering fix", "content:attr(data-n)"),
-    ("print hides the reasoning", ".why,.why.open,.whybtn"),
-    ("print forces all steps", ".step{display:block !important}"),
-    ("Letter page size", "@page{size:Letter"),
-    ("text-size-adjust", "-webkit-text-size-adjust"),
-    ("prefers-reduced-motion", "prefers-reduced-motion"),
-]
-
-ENTRY_JS_REQUIRED = [
-    ("doing-mode", "classList.add('doing')"),
-    ("source attribution handoff", "new URLSearchParams(window.location.search).get('from')"),
-    ("MailerLite dual-field tag", "fields[guide]"),
-    ("MailerLite fallback", "ml-fallback"),
-    ("guide VALUE wiring", "var VALUE = guide"),
-]
 
 
 def main() -> int:
@@ -49,7 +36,7 @@ def main() -> int:
         problems.append(f"missing shared script: {ENTRY_JS.relative_to(ROOT)}")
     else:
         js = ENTRY_JS.read_text()
-        for label, needle in ENTRY_JS_REQUIRED:
+        for label, needle in ENTRY_JS_MARKERS:
             if needle not in js:
                 problems.append(f"entry.js: missing {label}")
 
@@ -57,7 +44,7 @@ def main() -> int:
         problems.append(f"missing shared stylesheet: {ENTRY_CSS.relative_to(ROOT)}")
     else:
         css = ENTRY_CSS.read_text()
-        for label, needle in ENTRY_CSS_REQUIRED:
+        for label, needle in ENTRY_CSS_MARKERS:
             if needle not in css:
                 problems.append(f"entry.css: missing {label}")
 

@@ -9,6 +9,8 @@ from pathlib import Path
 
 from guide_inventory import LEGACY_GUIDE_SLUGS
 from site_catalog import (
+    ENTRY_CSS_MARKERS,
+    ENTRY_JS_MARKERS,
     ENTRY_ROUTES,
     ORIGIN,
     MAILERLITE_FORM_ATTR,
@@ -77,20 +79,17 @@ def main() -> int:
         problems.append("missing generated public file: assets/entry.js")
     else:
         entry_js = (OUT / "assets" / "entry.js").read_text(encoding="utf-8")
-        for marker in ("classList.add('doing')", "fields[guide]", "ml-fallback",
-                       "new URLSearchParams(window.location.search).get('from')"):
-            if marker not in entry_js:
-                problems.append(f"assets/entry.js: missing {marker}")
+        for label, needle in ENTRY_JS_MARKERS:
+            if needle not in entry_js:
+                problems.append(f"assets/entry.js: missing {label}")
 
     if not (OUT / "assets" / "entry.css").is_file():
         problems.append("missing generated public file: assets/entry.css")
     else:
         entry_css = (OUT / "assets" / "entry.css").read_text(encoding="utf-8")
-        for marker in ("body.doing .steps{flex:1", "content:attr(data-n)",
-                       ".why,.why.open,.whybtn", "@page{size:Letter",
-                       "-webkit-text-size-adjust", "prefers-reduced-motion"):
-            if marker not in entry_css:
-                problems.append(f"assets/entry.css: missing {marker}")
+        for label, needle in ENTRY_CSS_MARKERS:
+            if needle not in entry_css:
+                problems.append(f"assets/entry.css: missing {label}")
 
     for route in ENTRY_ROUTES:
         name = route.page

@@ -71,6 +71,27 @@ ENTRY_ROUTES: tuple[EntryRoute, ...] = (
     ),
 )
 
+
+# Shared entry.js / entry.css body needles for check_entry_pages (source)
+# and check_built_site (_site copies). Keep one list so markers cannot drift.
+ENTRY_JS_MARKERS: tuple[tuple[str, str], ...] = (
+    ("doing-mode", "classList.add('doing')"),
+    ("source attribution handoff", "new URLSearchParams(window.location.search).get('from')"),
+    ("MailerLite dual-field tag", "fields[guide]"),
+    ("MailerLite fallback", "ml-fallback"),
+    ("guide VALUE wiring", "var VALUE = guide"),
+)
+
+ENTRY_CSS_MARKERS: tuple[tuple[str, str], ...] = (
+    ("viewport-locked layout", "body.doing .steps{flex:1"),
+    ("step numbering fix", "content:attr(data-n)"),
+    ("print hides the reasoning", ".why,.why.open,.whybtn"),
+    ("print forces all steps", ".step{display:block !important}"),
+    ("Letter page size", "@page{size:Letter"),
+    ("text-size-adjust", "-webkit-text-size-adjust"),
+    ("prefers-reduced-motion", "prefers-reduced-motion"),
+)
+
 # Sitemap core locs before /guides/{slug}.html.
 # Entry paths come from ENTRY_ROUTES; order is published/sitemap order — keep stable.
 _ENTRY_PAGE_BY_SLUG = {route.slug: f"/{route.page}" for route in ENTRY_ROUTES}
