@@ -3,7 +3,6 @@
 
 Entry pages are not rendered here — the reader's browser prints them from the page stylesheet.
 """
-import hashlib
 import json
 import subprocess
 import sys
