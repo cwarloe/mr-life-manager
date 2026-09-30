@@ -3,15 +3,17 @@
 You are continuing work on **mr-life-manager**, Charles Warloe's business that
 teaches the practical systems of adulthood, derived from his friend Dave
 Webster's real teaching documents. Repo lives at `/home/user/mr-life-manager`
-(note: the shell may open in a different repo — `cd` in first). Branch: `main`,
-pushes deploy via GitHub Actions.
+(note: the shell may open in a different repo — `cd` in first). Work on a
+branch and open a PR; **do not merge to `main` without Charles.** Deploys run
+via GitHub Actions when changes land on `main`.
 
 ## Read these before doing anything
 
 - `CLAUDE.md` — the working agreement. The two rules that matter most:
-  (1) You make changes and push; a bot does everything downstream (MailerLite,
-  any live account). Never hand Charles manual steps or a chore list. End with
-  a short plain-prose note for the bot. (2) Keep replies short by default.
+  (1) You make changes and open a PR (never merge to `main` without Charles); a
+  bot does everything downstream (MailerLite, any live account). Never hand
+  Charles manual steps or a chore list. End with a short plain-prose note for
+  the bot. (2) Keep replies short by default.
 - `content/README.md` — house style: depth rule, US English, email voice
   (full sentences, never clipped AI fragments), printables ≠ web pages, how to
   refer to Dave (first name, "decades," never his last name, mentioned only
@@ -57,13 +59,15 @@ single promised PDF without submitting the MailerLite form.
 
 1. **Roommate-agreement material.** Searched Gmail 2026-09-22. Four documents
    found, none Dave's, all in `.doc/.docx` attachments the Gmail connector can
-   list but not download. Best two: Charles's own 2024 Boise roommate agreement
-   (thread `18fd06c6c2a00d54`, he calls it "the template") and Micah Stroh's
-   2011 "tenant house rules" behavior policy (thread `1315e9526d510865`). To use
-   either, Charles must "Add to Drive" from Gmail, then the Drive connector can
-   read the text (same path used for Dave's four guides). Don't turn this into a
-   chore list — offer it once. Note: there's already a `household-agreement`
-   printable in the repo.
+   list but not download (see `source-material/INVENTORY.md`). Best two: the
+   2024 Boise roommate agreement (thread `18fd06c6c2a00d54` — Charles adapted
+   Chad Morgan's versions; forwarded 2025 as "the template," but **recipient
+   unconfirmed** / not Dave's known address; **contents never read**, so nothing
+   in the repo is built from it) and Micah Stroh's 2011 "tenant house rules"
+   behavior policy (thread `1315e9526d510865`). To use either, Charles must "Add
+   to Drive" from Gmail, then the Drive connector can read the text. Don't turn
+   this into a chore list — offer it once. Note: there's already a
+   `household-agreement` printable in the repo.
 2. **The "mail thing."** Searched thoroughly — subject, phrases, Dave's
    addresses. Nothing. Dave's "earlier papers on mail" (referenced in the 2009
    weekly schedule) remains unfound. Treat as a dead end unless Charles locates
@@ -80,9 +84,10 @@ funnel check live in [`operations.md`](operations.md). Monthly evidence lives in
 
 ## The workflow
 
-Do the work, run the CI scripts, commit, push to `main`. End your reply with a
-2–3 line note telling the bot what changed and what (if anything) to update in
-MailerLite. Commit trailer to use:
+Do the work, run the CI scripts, commit on a branch, and open a PR. **Do not
+merge to `main` without Charles.** End your reply with a 2–3 line note telling
+the bot what changed and what (if anything) to update in MailerLite. Commit
+trailer to use:
 
     Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>
     Claude-Session: <session url>
