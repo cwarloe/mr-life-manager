@@ -15,6 +15,7 @@ from site_catalog import (
     ORIGIN,
     MAILERLITE_FORM_ATTR,
     public_url as catalog_public_url,
+    required_share_images,
 )
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -132,10 +133,14 @@ def main() -> int:
             problems.append(f"privacy.html: missing {marker}")
 
     for name in ("favicon.svg", "site.webmanifest", "robots.txt", "sitemap.xml",
-                 "assets/share/home.png", "assets/share/partners.png",
                  "print/partner-pilot.pdf"):
         if not (OUT / name).is_file():
             problems.append(f"missing generated public file: {name}")
+
+    for share_name in required_share_images():
+        rel = f"assets/share/{share_name}"
+        if not (OUT / rel).is_file():
+            problems.append(f"missing generated public file: {rel}")
 
     if "finished-" in sitemap:
         problems.append("sitemap.xml: completion pages must stay out of search")
