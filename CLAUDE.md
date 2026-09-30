@@ -2,14 +2,15 @@
 
 ## Division of labor
 
-**Claude makes the changes and pushes to GitHub. A bot does everything
+**Claude makes the changes and opens a PR on GitHub. A bot does everything
 downstream.** The bot handles MailerLite, verification, and anything that
 touches a live account.
 
 So:
 
-- **Do the work, commit it, push it.** GitHub Actions deploys the site on push
-  to `main`.
+- **Do the work, commit it, open a PR.** Free to create a branch and open a PR;
+  **do not merge to `main` without Charles.** GitHub Actions deploys the site
+  when changes land on `main`.
 - **End with a short prompt for the bot** — a few lines, plain prose, saying
   what changed and what to update. Not a checklist, not a runbook.
 - **Never hand Charles manual steps.** No "open this in a browser," no "send
@@ -54,6 +55,8 @@ Don't re-derive these — read them:
   affiliate and pricing rules
 - [`source-material/`](source-material/INVENTORY.md) — Dave's original
   documents. **Verbatim, never edited**, not even for spelling
+- [`planning/HANDOFF.md`](planning/HANDOFF.md) — session handoff: where things
+  stand, open threads, workflow
 
 ## Mechanics
 
