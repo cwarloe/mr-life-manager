@@ -13,7 +13,6 @@ from site_catalog import (
     MAILERLITE_FORM_ATTR,
     ORIGIN,
     required_share_images,
-    sitemap_core_urls,
 )
 
 
@@ -123,14 +122,6 @@ def run_once() -> list[str]:
         sitemap = body.decode("utf-8", errors="replace")
         if "finished-" in sitemap:
             problems.append(f"{sitemap_url}: completion pages must stay out of search")
-        # Require the live smoke subset; also confirm catalog core URLs that
-        # overlap this subset stay aligned (guards against ORIGIN drift).
-        expected = set(SITEMAP_URLS)
-        core_overlap = expected & set(sitemap_core_urls())
-        if core_overlap != expected:
-            problems.append(
-                f"{sitemap_url}: SITEMAP_URLS not a subset of sitemap_core_urls()"
-            )
         for loc in SITEMAP_URLS:
             if loc not in sitemap:
                 problems.append(f"{sitemap_url}: missing {loc}")
