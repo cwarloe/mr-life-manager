@@ -8,6 +8,8 @@ on:
       - "**/*.html"
       - "**/*.md"
       - "products/guides-pdf/**"
+      - "products/landing/assets/**"
+      - "products/print/**"
       - ".github/scripts/build_site.py"
       - ".github/scripts/site_catalog.py"
       - ".github/scripts/guide_inventory.py"
@@ -16,6 +18,7 @@ on:
       - ".github/scripts/check_pdfs_fresh.py"
       - ".github/scripts/check_entry_pages.py"
       - ".github/workflows/validate-content.yml"
+      - ".github/workflows/reuse-validate-build.yml"
   workflow_dispatch:
 
 permissions:
@@ -23,21 +26,4 @@ permissions:
 
 jobs:
   validate:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Validate HTML structure and local links
-        run: python3 .github/scripts/validate_repo.py
-
-      - name: Printables match their sources
-        run: python3 .github/scripts/check_pdfs_fresh.py
-
-      - name: Entry pages are complete
-        run: python3 .github/scripts/check_entry_pages.py
-
-      - name: Build and validate public site
-        run: |
-          python3 .github/scripts/build_site.py
-          python3 .github/scripts/check_built_site.py
+    uses: ./.github/workflows/reuse-validate-build.yml
