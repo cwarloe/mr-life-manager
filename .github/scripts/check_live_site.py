@@ -10,8 +10,11 @@ from urllib.request import Request, urlopen
 
 from site_catalog import (
     ENTRY_ROUTES,
+    FIRST_PLACE_LIVE_MARKERS,
     MAILERLITE_FORM_ATTR,
     ORIGIN,
+    PARTNERS_LIVE_MARKERS,
+    PRIVACY_LIVE_MARKERS,
     required_share_images,
     sitemap_core_urls,
 )
@@ -36,18 +39,9 @@ def _entry_pages() -> dict[str, tuple[str, ...]]:
             "ml-fallback",
             "One thing finished",
         )
-    pages["/first-place.html"] = (
-        "First%20Place%20%2439%20founding%20reservation",
-        "Reserve the $39 founding version",
-        "planned founding price",
-    )
-    pages["/partners.html"] = (
-        "Pilot it with five",
-        "data-source-link",
-        "Five-person pilot",
-        "/print/partner-pilot.pdf",
-    )
-    pages["/privacy.html"] = ("MailerLite stores", "The Week")
+    pages["/first-place.html"] = FIRST_PLACE_LIVE_MARKERS
+    pages["/partners.html"] = PARTNERS_LIVE_MARKERS
+    pages["/privacy.html"] = PRIVACY_LIVE_MARKERS
     return pages
 
 
