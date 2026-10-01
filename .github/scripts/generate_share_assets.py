@@ -22,7 +22,7 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen import canvas
 
 from guide_inventory import SHEETS
-from site_catalog import ORIGIN
+from site_catalog import ORIGIN, required_share_images
 
 ROOT = Path(__file__).resolve().parents[2]
 SHARE_DIR = ROOT / "products" / "landing" / "assets" / "share"
@@ -236,6 +236,14 @@ def draw_pdf_page(pdf: canvas.Canvas, audience: str, source: str, intro: str) ->
 
 
 def main() -> int:
+    catalog_names = set(required_share_images())
+    if set(SHARES) != catalog_names:
+        missing = catalog_names - set(SHARES)
+        extra = set(SHARES) - catalog_names
+        raise SystemExit(
+            "SHARES keys must match required_share_images(): "
+            f"missing={sorted(missing)} extra={sorted(extra)}"
+        )
     pdfmetrics.registerFont(TTFont("MlmSans", PDF_SANS))
     pdfmetrics.registerFont(TTFont("MlmSansBold", PDF_SANS_BOLD))
     pdfmetrics.registerFont(TTFont("MlmSerif", PDF_SERIF))
