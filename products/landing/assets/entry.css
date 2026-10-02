@@ -138,6 +138,7 @@ footer a{color:var(--blue);font-weight:600;text-decoration:none}
 .fork-btns .go-print{background:transparent;color:var(--ink)}
 .fork-btns button:hover{border-color:var(--blue);background:var(--blue);color:#fff}
 .fork-btns button:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.nav button:focus-visible,.done .complete:focus-visible,.done button:focus-visible,.whybtn:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
 
 .whybtn{display:none;margin:.5rem 0 0;font-family:var(--sans);font-size:.78rem;font-weight:600;
   letter-spacing:.02em;color:var(--slate);background:none;border:0;border-bottom:1px dotted var(--rule-strong);
