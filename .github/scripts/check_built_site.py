@@ -10,8 +10,11 @@ from pathlib import Path
 from guide_inventory import LEGACY_GUIDE_SLUGS
 from site_catalog import (
     ENTRY_ROUTES,
+    FIRST_PLACE_BUILT_MARKERS,
     ORIGIN,
     MAILERLITE_FORM_ATTR,
+    PARTNERS_BUILT_MARKERS,
+    PRIVACY_BUILT_MARKERS,
     public_url as catalog_public_url,
     required_share_images,
 )
@@ -102,21 +105,17 @@ def main() -> int:
                 problems.append(f"{completion}: must carry only the signup ask, found {marker}")
 
     offer = (OUT / "first-place.html").read_text(encoding="utf-8")
-    for marker in ('mailto:hello@mrlifemanager.com?subject=First%20Place%20%2439',
-                   "planned founding price", "No charge today",
-                   "Reserve the $39 founding version", "How I found this:"):
+    for marker in FIRST_PLACE_BUILT_MARKERS:
         if marker not in offer:
             problems.append(f"first-place.html: missing {marker}")
 
     partners = (OUT / "partners.html").read_text(encoding="utf-8")
-    for marker in ("Pilot it with five", "data-source-link", "Five-person pilot",
-                   "new URLSearchParams", "/first-place.html?from=partner"):
+    for marker in PARTNERS_BUILT_MARKERS:
         if marker not in partners:
             problems.append(f"partners.html: missing {marker}")
 
     privacy = (OUT / "privacy.html").read_text(encoding="utf-8")
-    for marker in ("The Week", "MailerLite stores", "just underwater", "room that became storage",
-                   "founding reservation"):
+    for marker in PRIVACY_BUILT_MARKERS:
         if marker not in privacy:
             problems.append(f"privacy.html: missing {marker}")
 

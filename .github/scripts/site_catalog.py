@@ -110,6 +110,47 @@ SITEMAP_CORE_PATHS: tuple[str, ...] = (
 )
 
 
+
+# Built-site and live-site page markers (exact strings used by the checkers).
+# Keep identical to prior hardcodes — do not invent new copy here.
+FIRST_PLACE_BUILT_MARKERS: tuple[str, ...] = (
+    "mailto:hello@mrlifemanager.com?subject=First%20Place%20%2439",
+    "planned founding price",
+    "No charge today",
+    "Reserve the $39 founding version",
+    "How I found this:",
+)
+FIRST_PLACE_LIVE_MARKERS: tuple[str, ...] = (
+    "First%20Place%20%2439%20founding%20reservation",
+    "Reserve the $39 founding version",
+    "planned founding price",
+)
+PARTNERS_BUILT_MARKERS: tuple[str, ...] = (
+    "Pilot it with five",
+    "data-source-link",
+    "Five-person pilot",
+    "new URLSearchParams",
+    "/first-place.html?from=partner",
+)
+PARTNERS_LIVE_MARKERS: tuple[str, ...] = (
+    "Pilot it with five",
+    "data-source-link",
+    "Five-person pilot",
+    "/print/partner-pilot.pdf",
+)
+PRIVACY_BUILT_MARKERS: tuple[str, ...] = (
+    "The Week",
+    "MailerLite stores",
+    "just underwater",
+    "room that became storage",
+    "founding reservation",
+)
+PRIVACY_LIVE_MARKERS: tuple[str, ...] = (
+    "MailerLite stores",
+    "The Week",
+)
+
+
 def public_url(path: Path, site_root: Path) -> str:
     """Absolute public URL for a file under the built site root (_site)."""
     rel = path.relative_to(site_root)
