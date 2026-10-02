@@ -9,6 +9,7 @@ from site_catalog import (
     ENTRY_JS_MARKERS,
     ENTRY_ROUTES,
     MAILERLITE_FORM_ATTR,
+    MAILERLITE_JS_URL,
 )
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -23,6 +24,7 @@ REQUIRED = [
     ("mode buttons", 'class="go-do"'),
     ("print scale", "body{zoom:"),
     ("MailerLite form", MAILERLITE_FORM_ATTR),
+    ("MailerLite CDN", MAILERLITE_JS_URL),
     ("one-PDF promise", "Dave's week on one page"),
     ("guide tag config", 'data-guide="'),
 ]
