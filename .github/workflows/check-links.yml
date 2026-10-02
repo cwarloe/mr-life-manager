@@ -9,6 +9,7 @@ on:
     paths:
       - "products/**/*.html"
       - ".github/scripts/check_links.py"
+      - ".github/scripts/site_catalog.py"
       - ".github/workflows/check-links.yml"
 
 permissions:

@@ -13,6 +13,7 @@ from pathlib import Path
 ORIGIN = "https://mrlifemanager.com"
 MAILERLITE_FORM_ID = "00ZwEr"
 MAILERLITE_FORM_ATTR = f'data-form="{MAILERLITE_FORM_ID}"'
+MAILERLITE_JS_URL = "https://assets.mailerlite.com/js/universal.js"
 
 
 @dataclass(frozen=True)
