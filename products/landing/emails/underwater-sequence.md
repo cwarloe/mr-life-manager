@@ -88,8 +88,9 @@ Then it ends. **Silence means stop.**
 
 ## Still open
 
-1. **No paid offer**, deliberately — the $9 product doesn't exist. Insertion
-   point is after email 3.
+1. ~~**No paid offer / $9 product.**~~ **Parked** — First Place founding is $39;
+   the $9 standalone guide is a later idea, not an open ship item and not in
+   this sequence.
 2. ~~**MailerLite automation.**~~ **Done** 2026-09-22 (Active per owner). Live
    ops spec: [MAILERLITE-SETUP.md](MAILERLITE-SETUP.md). Keep
    resend-to-unopeners off — it violates ADR-016.

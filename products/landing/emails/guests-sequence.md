@@ -111,11 +111,10 @@ genuinely doable and it's the only real research we have.
 
 1. ~~**The printable.**~~ Done — Email 1 links
    <https://mrlifemanager.com/print/the-week.pdf>. Open it before sending.
-2. **No paid offer appears anywhere in this sequence**, deliberately. ADR-015
-   says the paid step is smaller and in the same domain; that product ($9, the
-   maintenance version) **does not exist yet**. Inserting a placeholder offer
-   would break the shrinking rule and sell something we can't deliver. The
-   natural insertion point is after email 3, once there's something real.
+2. ~~**No paid offer / $9 maintenance product.**~~ **Parked** — First Place
+   founding is $39; the $9 standalone guide is a later idea, not an open ship
+   item. These sequences stay free-task only (ADR-015 shrinking rule still
+   applies if a same-domain paid step is ever un-parked).
 3. ~~**MailerLite automation.**~~ **Done** 2026-09-22 (Active per owner). Live
    ops spec: [MAILERLITE-SETUP.md](MAILERLITE-SETUP.md). Keep
    "resend to unopens" off — it violates ADR-016.
