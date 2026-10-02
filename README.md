@@ -207,8 +207,9 @@ verify it and learn from real people.
 - ⬜ No completed audience validation, paid customers, or revenue yet
 
 **Two honest caveats.** The products are designed prototypes, not validated
-products. And the frameworks are the apprentice's reconstruction, not the
-primary source — that gets fixed by recording Dave, not by more writing.
+products. Cleaning, organizing, and hospitality frameworks are now documented
+from the recovered sources; the remaining life domains still need Dave
+recorded — that gets fixed by talking to him, not by more writing.
 
 ## Next steps
 
