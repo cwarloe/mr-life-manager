@@ -1,0 +1,25 @@
+name: Reusable validate and build
+
+on:
+  workflow_call:
+
+jobs:
+  validate-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate HTML structure and local links
+        run: python3 .github/scripts/validate_repo.py
+
+      - name: Printables match their sources
+        run: python3 .github/scripts/check_pdfs_fresh.py
+
+      - name: Entry pages are complete
+        run: python3 .github/scripts/check_entry_pages.py
+
+      - name: Build and validate public site
+        run: |
+          python3 .github/scripts/build_site.py
+          python3 .github/scripts/check_built_site.py
