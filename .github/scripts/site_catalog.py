@@ -74,7 +74,8 @@ ENTRY_ROUTES: tuple[EntryRoute, ...] = (
 
 
 # Shared entry.js / entry.css body needles for check_entry_pages (source)
-# and check_built_site (_site copies). Keep one list so markers cannot drift.
+# only — built-site no longer re-checks these (#75). Keep one list so markers
+# cannot drift.
 ENTRY_JS_MARKERS: tuple[tuple[str, str], ...] = (
     ("doing-mode", "classList.add('doing')"),
     ("source attribution handoff", "new URLSearchParams(window.location.search).get('from')"),

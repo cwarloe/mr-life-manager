@@ -13,6 +13,7 @@ from site_catalog import (
     FIRST_PLACE_BUILT_MARKERS,
     ORIGIN,
     MAILERLITE_FORM_ATTR,
+    MAILERLITE_JS_URL,
     PARTNERS_BUILT_MARKERS,
     PRIVACY_BUILT_MARKERS,
     public_url as catalog_public_url,
@@ -94,7 +95,7 @@ def main() -> int:
                 problems.append(f"{name}: missing {marker}")
 
         completion_text = (OUT / completion).read_text(encoding="utf-8")
-        for marker in (MAILERLITE_FORM_ATTR, f'data-guide="{tag}"',
+        for marker in (MAILERLITE_FORM_ATTR, MAILERLITE_JS_URL, f'data-guide="{tag}"',
                        'src="/assets/entry.js"', "ml-fallback", "One thing finished",
                        'name="robots" content="noindex,nofollow"'):
             if marker not in completion_text:
