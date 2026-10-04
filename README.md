@@ -52,8 +52,9 @@ leaving dorms, young adults on their own, newlyweds — but it is not the whole 
 it. Plenty of people have been running a household for a decade and never had
 these systems either.
 
-**Who the marketing addresses and who pays is a separate question**, settled in
-[ADR-010](planning/decisions.md#adr-010--beachhead-keep-the-audience-change-the-payer):
+**Who the marketing addresses and who pays is a separate question** — see
+[ADR-010](planning/decisions.md#adr-010--beachhead-keep-the-audience-change-the-payer)
+(under review as of 2026-10-03; check the Status line in the decision log):
 competitive research found that every commercial success in this space sells to
 the adult already running a household and overwhelmed by it, while every attempt
 to sell to the 22-year-old directly underperformed or failed. So the content
@@ -156,12 +157,16 @@ verify it and learn from real people.
 - ✅ Concept, audiences, principles, and frameworks drafted
 - ✅ Competitive research done — three independent passes, acceptance test passed
       ([findings](docs/research/competitor-notes.md#findings))
-- ✅ Foundational decisions settled: faith framing, beachhead and payer, the
-      person behind the brand, and the intended licensing model
-      ([decision log](planning/decisions.md))
+- ✅ Foundational decisions settled: faith framing, the person behind the brand,
+      and the intended licensing model ([decision log](planning/decisions.md)).
+      Beachhead and payer
+      ([ADR-010](planning/decisions.md#adr-010--beachhead-keep-the-audience-change-the-payer))
+      are under review as of 2026-10-03.
 - ✅ Eight free-tier guides drafted and designed — see
       [`products/checklists/`](products/checklists/). They are now **archive and
-      search surface, not offers** ([ADR-015](planning/decisions.md#adr-015--the-win-comes-before-the-email))
+      search surface, not offers** ([ADR-015](planning/decisions.md#adr-015--the-win-comes-before-the-email);
+      under review as of 2026-10-03 — keep existing pages; don't cite as settled
+      for new work until re-decided)
 - ✅ **Dave's original documents recovered** — four guides he wrote in 2009–2010,
       plus the 2023 re-send and the 2019 thread where the name was coined. The
       frameworks are documented rather than reconstructed
@@ -169,7 +174,9 @@ verify it and learn from real people.
 - ✅ **Funnel rebuilt around the win, not the email** — the main page routes to
       per-pain entry pages; the action is free and ungated; signup comes after
       ([ADR-015](planning/decisions.md#adr-015--the-win-comes-before-the-email),
-      [ADR-016](planning/decisions.md#adr-016--the-sequence-shrinks-unconditionally))
+      [ADR-016](planning/decisions.md#adr-016--the-sequence-shrinks-unconditionally);
+      both under review as of 2026-10-03 — keep existing pages and emails; don't
+      cite as settled for new work until re-decided)
 - ✅ Four entry pages live, each with its own sequence drafted —
       [first night](products/landing/first-night.html) ·
       [someone's coming over](products/landing/guests.html) ·
