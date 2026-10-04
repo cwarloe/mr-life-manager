@@ -23,6 +23,9 @@ via GitHub Actions when changes land on `main`.
   unconditionally; ADR-017 Kitchen That Works is free, folded into Six Meals;
   ADR-018 six meals taken off First Place (First Place stays $39); ADR-019
   Laundry, Solved and the roommate kit are free only (no $9 tier for now).
+  **ADR-010, ADR-015 and ADR-016 are under review as of 2026-10-03**
+  (buyers, revenue model and marketing strategy being reworked); don't build
+  new work on them until they're re-decided.
 - `source-material/INVENTORY.md` — every known Dave document and its state.
   Everything under `source-material/` is **verbatim, never edited, not even for
   spelling.** Interpretation goes in separate analysis files.
