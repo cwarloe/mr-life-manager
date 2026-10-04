@@ -51,6 +51,10 @@ Don't re-derive these — read them:
   folded into Six Meals), ADR-018 (six meals off First Place; First Place stays
   $39), ADR-019 (Laundry, Solved and the roommate kit free only) govern most
   product decisions
+  - **ADR-010, ADR-015 and ADR-016 are under review (2026-10-03).** Charles
+    is reworking buyers, the revenue model and marketing strategy. Keep
+    existing pages and emails as they are, but don't build new work on these
+    three or cite them as settled until they're re-decided.
 - [`docs/business/commerce-rules.md`](docs/business/commerce-rules.md) —
   affiliate and pricing rules
 - [`source-material/`](source-material/INVENTORY.md) — Dave's original

@@ -496,7 +496,8 @@ practice.
 
 ## ADR-010 — Beachhead: keep the audience, change the payer
 
-**Status:** Accepted
+**Status:** Under review (2026-10-03). Charles has put this on hold while the buyers, revenue model and marketing strategy are reworked with Growth Steward and outside consultants. Don't treat it as a settled rule or build new work on it until it is re-decided.
+**Previously:** Accepted
 **Date:** 2026-09-08
 **Supersedes the open review on** [ADR-003](#adr-003--initial-beachhead-market-first-time-independent-adults)
 
@@ -891,7 +892,8 @@ obvious and he'll mean it. Capture guidance is in
 
 ## ADR-015 — The win comes before the email
 
-**Status:** Accepted
+**Status:** Under review (2026-10-03). Charles has put this on hold while the buyers, revenue model and marketing strategy are reworked with Growth Steward and outside consultants. Don't treat it as a settled rule or build new work on it until it is re-decided.
+**Previously:** Accepted
 **Date:** 2026-09-20
 **Scope:** Funnel architecture, landing pages, email sequences, guide design.
 **Implements** [ADR-014](#adr-014--completion-is-what-converts).
@@ -980,7 +982,8 @@ way until something tests it.
 
 ## ADR-016 — The sequence shrinks unconditionally
 
-**Status:** Accepted
+**Status:** Under review (2026-10-03). Charles has put this on hold while the buyers, revenue model and marketing strategy are reworked with Growth Steward and outside consultants. Don't treat it as a settled rule or build new work on it until it is re-decided.
+**Previously:** Accepted
 **Date:** 2026-09-20
 **Scope:** All email sequences.
 **Implements** [ADR-014](#adr-014--completion-is-what-converts) and
