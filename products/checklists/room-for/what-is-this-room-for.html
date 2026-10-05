@@ -26,8 +26,7 @@ ul.tick li{font-size:.93rem;line-height:1.45;padding-left:1.6rem;position:relati
 ul.tick li::before{content:"";position:absolute;left:0;top:.18em;width:.85rem;height:.85rem;
   border:1.5px solid var(--rule-strong);border-radius:2px;background:var(--surface)}
 ul.tick li b{font-weight:600}
-ul.tick li .why{color:var(--slate);font-size:.87rem;display:block;line-height:1.4;border:0;background:none;
-  padding:0;margin:0;border-radius:0}
+ul.tick li .desc{font-family:var(--serif);color:var(--slate);font-size:.87rem;display:block;line-height:1.4}
 .dolist{width:100%;border-collapse:collapse;font-size:.92rem;margin:.4rem 0 0}
 .dolist thead th{font-size:.66rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
   color:var(--slate);text-align:left;padding:0 .7rem .45rem 0;border-bottom:1px solid var(--rule-strong)}
@@ -42,6 +41,7 @@ ul.tick li .why{color:var(--slate);font-size:.87rem;display:block;line-height:1.
 @media print{
   ul.tick li{font-size:8.6pt;line-height:1.28}
   ul.tick{gap:.22rem 1rem}
+  ul.tick li .desc{font-family:var(--sans);font-size:7.8pt;line-height:1.25;color:var(--slate)}
 }
 </style>
 </head>
@@ -80,13 +80,13 @@ ul.tick li .why{color:var(--slate);font-size:.87rem;display:block;line-height:1.
     one of them wins when they disagree — and deciding which now is the entire point
     of this exercise.</p>
     <ul class="tick">
-      <li><b>Sleeping</b> <span class="why">And nothing else. Everything else in here is a guest.</span></li>
+      <li><b>Sleeping</b> <span class="desc">And nothing else. Everything else in here is a guest.</span></li>
       <li><b>Cooking and eating</b></li>
-      <li><b>Sitting with other people</b> <span class="why">Talking, eating, watching something together.</span></li>
-      <li><b>Sitting on your own</b> <span class="why">Reading, watching, recovering.</span></li>
+      <li><b>Sitting with other people</b> <span class="desc">Talking, eating, watching something together.</span></li>
+      <li><b>Sitting on your own</b> <span class="desc">Reading, watching, recovering.</span></li>
       <li><b>Working or studying</b></li>
-      <li><b>Getting in and out</b> <span class="why">Keys, shoes, coat, mail, bag.</span></li>
-      <li><b>Storing things</b> <span class="why">A real answer. A room that's honestly storage beats one pretending to be a study.</span></li>
+      <li><b>Getting in and out</b> <span class="desc">Keys, shoes, coat, mail, bag.</span></li>
+      <li><b>Storing things</b> <span class="desc">A real answer. A room that's honestly storage beats one pretending to be a study.</span></li>
     </ul>
     <div class="key-note">
       <b>Say it out loud</b>
@@ -101,12 +101,12 @@ ul.tick li .why{color:var(--slate);font-size:.87rem;display:block;line-height:1.
     <p class="band-note">Tick what's true <strong>in this room</strong>. These six
     cover almost everything — they're the failure modes, not a list of chores.</p>
     <ul class="tick one">
-      <li><b>Something in here has no home.</b> <span class="why">It gets moved, never put away, because there's nowhere to put it away to. Usually it's most of the clutter.</span></li>
-      <li><b>Furniture is doing a job it wasn't meant for.</b> <span class="why">The coffee table is storage. The dining table is a desk. The chair is a laundry pile.</span></li>
-      <li><b>You clear it before you can use it.</b> <span class="why">If starting the room's actual job needs a tidy-up first, the room isn't doing its job.</span></li>
-      <li><b>There's a pile nobody owns.</b> <span class="why">It's been there weeks. Nobody put it there and nobody will move it.</span></li>
-      <li><b>One light, in the ceiling.</b> <span class="why">The cheapest thing on this list to fix and the one that changes the room most.</span></li>
-      <li><b>The room has two jobs and they're losing to each other.</b> <span class="why">Work and rest in the same space is the common one. Neither happens properly.</span></li>
+      <li><b>Something in here has no home.</b> <span class="desc">It gets moved, never put away, because there's nowhere to put it away to. Usually it's most of the clutter.</span></li>
+      <li><b>Furniture is doing a job it wasn't meant for.</b> <span class="desc">The coffee table is storage. The dining table is a desk. The chair is a laundry pile.</span></li>
+      <li><b>You clear it before you can use it.</b> <span class="desc">If starting the room's actual job needs a tidy-up first, the room isn't doing its job.</span></li>
+      <li><b>There's a pile nobody owns.</b> <span class="desc">It's been there weeks. Nobody put it there and nobody will move it.</span></li>
+      <li><b>One light, in the ceiling.</b> <span class="desc">The cheapest thing on this list to fix and the one that changes the room most.</span></li>
+      <li><b>The room has two jobs and they're losing to each other.</b> <span class="desc">Work and rest in the same space is the common one. Neither happens properly.</span></li>
     </ul>
   </section>
 

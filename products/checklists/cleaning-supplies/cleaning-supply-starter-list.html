@@ -19,8 +19,7 @@
 table{font-size:.93rem}
 thead th.p{width:5.5rem;text-align:right;padding-right:0}
 td.item{font-weight:600;white-space:nowrap}
-td.why{color:var(--slate);font-size:.9rem;border-left:0;background:none;padding:.52rem .7rem .52rem 0;
-  margin:0;border-radius:0;font-family:var(--sans);line-height:inherit}
+td.desc{color:var(--slate);font-size:.9rem}
 td.price{text-align:right;padding-right:0;font-variant-numeric:tabular-nums;
   color:var(--slate);white-space:nowrap;font-size:.88rem}
 tr.star td.item{color:var(--amber)}
@@ -49,15 +48,15 @@ tr.star td.item::before{content:"★ ";font-size:.75em}
   font-weight:700;font-size:1.15rem;line-height:1}
 .skips b{display:block;font-weight:600;font-size:.95rem;margin-bottom:.12rem}
 .skips span{font-family:var(--serif);font-size:.93rem;color:var(--slate);line-height:1.5}
-.warn{border:2px solid var(--amber);background:var(--amber-soft);padding:1.1rem 1.3rem;
+.warn{border:2px solid var(--amber);padding:1.1rem 1.3rem;
   border-radius:3px;margin:3rem 0 0;border-left:2px solid var(--amber)}
 .warn b{margin-bottom:.5rem}
 .warn p{font-family:var(--serif);font-size:1rem;line-height:1.55;margin:0 0 .7rem}
 .warn p:last-child{margin-bottom:0}
 .warn strong{font-weight:600}
 .note{border-left:3px solid var(--blue);background:var(--blue-soft);padding:.9rem 1.1rem;
-  margin:1.4rem 0 0;border-radius:0 3px 3px 0;font-family:var(--serif);font-size:.96rem;line-height:1.55}
-.note b{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.1em;
+  margin:1.4rem 0 0;border-radius:0 3px 3px 0;line-height:1.55}
+.note b{font-size:.72rem;font-weight:700;letter-spacing:.1em;
   text-transform:uppercase;color:var(--blue);display:block;margin-bottom:.3rem}
 .where{display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));margin:1.2rem 0 0}
 .room{border:1px solid var(--rule-strong);border-radius:3px;padding:.85rem 1rem;background:var(--surface)}
@@ -83,7 +82,7 @@ ol.upgrade b{font-weight:600}
 @media print{
   body{font-size:8.4pt}
   h1{font-size:17pt}
-  .why{-webkit-line-clamp:1;font-size:7.4pt}
+  td.desc{font-family:var(--sans);font-size:9.5pt;line-height:1.3;color:var(--slate)}
   .sec{margin-top:.34rem}
   .aisle-row{padding:.18rem 0 !important;gap:.1rem .8rem !important;
     grid-template-columns:8.5rem 1fr !important;font-size:8pt}
@@ -114,15 +113,15 @@ ol.upgrade b{font-weight:600}
     <div class="scroll"><table>
       <thead><tr><th>What</th><th>Why</th><th class="p">Roughly</th></tr></thead>
       <tbody>
-        <tr><td class="item">All-purpose cleaner</td><td class="why">Counters, tables, appliances, most surfaces. Your workhorse.</td><td class="price">$4–6</td></tr>
-        <tr><td class="item">Dish soap</td><td class="why">Dishes — and a decent spot cleaner besides</td><td class="price">$3–5</td></tr>
-        <tr><td class="item">Bathroom cleaner</td><td class="why">Soap scum and mildew need something stronger</td><td class="price">$4–6</td></tr>
-        <tr><td class="item">Toilet bowl cleaner</td><td class="why">Plus a brush</td><td class="price">$3–5</td></tr>
-        <tr><td class="item">Glass cleaner</td><td class="why">Optional — a damp microfiber does most of it</td><td class="price">$3–5</td></tr>
-        <tr><td class="item">Baking soda</td><td class="why">Scrubbing without scratching. Absurdly useful.</td><td class="price">$1–2</td></tr>
-        <tr><td class="item">White vinegar</td><td class="why">Descaling, hard water, shower heads, coffee maker</td><td class="price">$3–4</td></tr>
-        <tr class="star"><td class="item">Microfiber cloths</td><td class="why"><strong>The best purchase on this list.</strong> Six to twelve. Replaces most paper towels.</td><td class="price">$10–15</td></tr>
-        <tr><td class="item">Sponges or scrub pads</td><td class="why">Replace every 1–2 weeks</td><td class="price">$3–5</td></tr>
+        <tr><td class="item">All-purpose cleaner</td><td class="desc">Counters, tables, appliances, most surfaces. Your workhorse.</td><td class="price">$4–6</td></tr>
+        <tr><td class="item">Dish soap</td><td class="desc">Dishes — and a decent spot cleaner besides</td><td class="price">$3–5</td></tr>
+        <tr><td class="item">Bathroom cleaner</td><td class="desc">Soap scum and mildew need something stronger</td><td class="price">$4–6</td></tr>
+        <tr><td class="item">Toilet bowl cleaner</td><td class="desc">Plus a brush</td><td class="price">$3–5</td></tr>
+        <tr><td class="item">Glass cleaner</td><td class="desc">Optional — a damp microfiber does most of it</td><td class="price">$3–5</td></tr>
+        <tr><td class="item">Baking soda</td><td class="desc">Scrubbing without scratching. Absurdly useful.</td><td class="price">$1–2</td></tr>
+        <tr><td class="item">White vinegar</td><td class="desc">Descaling, hard water, shower heads, coffee maker</td><td class="price">$3–4</td></tr>
+        <tr class="star"><td class="item">Microfiber cloths</td><td class="desc"><strong>The best purchase on this list.</strong> Six to twelve. Replaces most paper towels.</td><td class="price">$10–15</td></tr>
+        <tr><td class="item">Sponges or scrub pads</td><td class="desc">Replace every 1–2 weeks</td><td class="price">$3–5</td></tr>
       </tbody>
     </table></div>
   </section>
@@ -203,14 +202,14 @@ ol.upgrade b{font-weight:600}
     <div class="scroll"><table>
       <thead><tr><th>What</th><th>Notes</th><th class="p">Roughly</th></tr></thead>
       <tbody>
-        <tr><td class="item">Broom and dustpan</td><td class="why"></td><td class="price">$15–20</td></tr>
-        <tr><td class="item">Vacuum</td><td class="why">A cheap one you'll actually pull out beats an expensive one in a closet</td><td class="price">$40–150</td></tr>
-        <tr><td class="item">Mop and bucket</td><td class="why">A flat spray mop is fine for an apartment</td><td class="price">$15–30</td></tr>
-        <tr><td class="item">Rubber gloves</td><td class="why">Makes the unpleasant jobs less unpleasant</td><td class="price">$3–5</td></tr>
-        <tr><td class="item">Toilet brush and holder</td><td class="why"></td><td class="price">$5</td></tr>
-        <tr class="star"><td class="item">Plunger</td><td class="why"><strong>Buy it before you need it.</strong> You will not want to go out for one at 11pm.</td><td class="price">$8–12</td></tr>
-        <tr><td class="item">Trash bags</td><td class="why">Check your can size first</td><td class="price">$8–12</td></tr>
-        <tr><td class="item">Paper towels</td><td class="why">You'll use far fewer with microfiber</td><td class="price">$8–12</td></tr>
+        <tr><td class="item">Broom and dustpan</td><td class="desc"></td><td class="price">$15–20</td></tr>
+        <tr><td class="item">Vacuum</td><td class="desc">A cheap one you'll actually pull out beats an expensive one in a closet</td><td class="price">$40–150</td></tr>
+        <tr><td class="item">Mop and bucket</td><td class="desc">A flat spray mop is fine for an apartment</td><td class="price">$15–30</td></tr>
+        <tr><td class="item">Rubber gloves</td><td class="desc">Makes the unpleasant jobs less unpleasant</td><td class="price">$3–5</td></tr>
+        <tr><td class="item">Toilet brush and holder</td><td class="desc"></td><td class="price">$5</td></tr>
+        <tr class="star"><td class="item">Plunger</td><td class="desc"><strong>Buy it before you need it.</strong> You will not want to go out for one at 11pm.</td><td class="price">$8–12</td></tr>
+        <tr><td class="item">Trash bags</td><td class="desc">Check your can size first</td><td class="price">$8–12</td></tr>
+        <tr><td class="item">Paper towels</td><td class="desc">You'll use far fewer with microfiber</td><td class="price">$8–12</td></tr>
       </tbody>
     </table></div>
   </section>
@@ -220,10 +219,10 @@ ol.upgrade b{font-weight:600}
     <div class="scroll"><table>
       <thead><tr><th>What</th><th>Notes</th><th class="p">Roughly</th></tr></thead>
       <tbody>
-        <tr><td class="item">Laundry detergent</td><td class="why">Use less than the cap suggests — almost everyone overdoses it</td><td class="price">$10–15</td></tr>
-        <tr><td class="item">Stain remover</td><td class="why">Works on fresh stains, rarely on set ones</td><td class="price">$4–6</td></tr>
-        <tr><td class="item">Dryer sheets or wool balls</td><td class="why">Wool balls last years</td><td class="price">$5–10</td></tr>
-        <tr><td class="item">Mesh bags for delicates</td><td class="why"></td><td class="price">$5</td></tr>
+        <tr><td class="item">Laundry detergent</td><td class="desc">Use less than the cap suggests — almost everyone overdoses it</td><td class="price">$10–15</td></tr>
+        <tr><td class="item">Stain remover</td><td class="desc">Works on fresh stains, rarely on set ones</td><td class="price">$4–6</td></tr>
+        <tr><td class="item">Dryer sheets or wool balls</td><td class="desc">Wool balls last years</td><td class="price">$5–10</td></tr>
+        <tr><td class="item">Mesh bags for delicates</td><td class="desc"></td><td class="price">$5</td></tr>
       </tbody>
     </table></div>
   </section>
