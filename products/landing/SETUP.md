@@ -82,8 +82,9 @@ still require a controlled account-level test; record the last result in
 
 ## Domain
 
-DNS already points at GitHub Pages (`185.199.108–111.153`). The `CNAME` file
-in this directory must stay in the published root.
+DNS already points at GitHub Pages (`185.199.108–111.153`). The custom domain
+is set in the repository's Pages settings. The site publishes from a GitHub
+Actions workflow, so a `CNAME` file in the artifact is ignored and not needed.
 
 If the certificate or HTTPS checkbox ever falls off: Settings → Pages →
 confirm `mrlifemanager.com` → Enforce HTTPS.
