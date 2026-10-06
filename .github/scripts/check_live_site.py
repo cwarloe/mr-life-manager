@@ -12,6 +12,7 @@ from site_catalog import (
     ENTRY_ROUTES,
     FIRST_PLACE_LIVE_MARKERS,
     MAILERLITE_FORM_ATTR,
+    MAILERLITE_JS_URL,
     ORIGIN,
     PARTNERS_LIVE_MARKERS,
     PRIVACY_LIVE_MARKERS,
@@ -33,6 +34,7 @@ def _entry_pages() -> dict[str, tuple[str, ...]]:
     for route in ENTRY_ROUTES:
         pages[f"/{route.completion_page}"] = (
             MAILERLITE_FORM_ATTR,
+            MAILERLITE_JS_URL,
             f'data-guide="{route.slug}"',
             'src="/assets/entry.js"',
             "ml-fallback",

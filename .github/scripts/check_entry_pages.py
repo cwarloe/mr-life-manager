@@ -95,6 +95,18 @@ def main() -> int:
                 f'{path.name}: has class="steps" but is not in ENTRY_ROUTES'
             )
 
+    # Pre-build: completion template must keep the MailerLite CDN URL (#80 gap).
+    finished_tmpl = LANDING / "templates" / "finished.html"
+    if not finished_tmpl.is_file():
+        problems.append(
+            f"missing completion template: {finished_tmpl.relative_to(ROOT)}"
+        )
+    elif MAILERLITE_JS_URL not in finished_tmpl.read_text():
+        problems.append(
+            f"{finished_tmpl.relative_to(ROOT)}: missing MailerLite CDN "
+            f"({MAILERLITE_JS_URL})"
+        )
+
     if not catalog_pages and not problems:
         print("no ENTRY_ROUTES pages found — did the catalog change?", file=sys.stderr)
         return 1
