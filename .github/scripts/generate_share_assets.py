@@ -27,7 +27,6 @@ from site_catalog import ORIGIN, required_share_images
 ROOT = Path(__file__).resolve().parents[2]
 SHARE_DIR = ROOT / "products" / "landing" / "assets" / "share"
 PDF_PATH = ROOT / "products" / "guides-pdf" / "partner-pilot.pdf"
-TMP = ROOT / "tmp" / "pdfs"
 SHARE_QR_URL = f"{ORIGIN}/"
 SHARE_QR_PATH = ROOT / "products" / "print" / "share-qr.svg"
 SHARE_QR_START = "<!-- share-qr:start -->"
@@ -105,11 +104,11 @@ def social_image(kicker: str, headline: str, output: Path) -> None:
     image.save(output, format="PNG", optimize=True)
 
 
-def make_qr(url: str, path: Path) -> None:
+def make_qr(url: str) -> Image.Image:
     code = qrcode.QRCode(version=None, box_size=9, border=3, error_correction=qrcode.constants.ERROR_CORRECT_M)
     code.add_data(url)
     code.make(fit=True)
-    code.make_image(fill_color=INK, back_color="white").convert("RGB").save(path)
+    return code.make_image(fill_color=INK, back_color="white").convert("RGB")
 
 
 def share_qr_svg(url: str) -> str:
@@ -160,8 +159,6 @@ def sync_share_qr(svg: str) -> int:
 def draw_pdf_page(pdf: canvas.Canvas, audience: str, source: str, intro: str) -> None:
     width, height = letter
     url = f"{ORIGIN}/partners.html?from={source}"
-    qr_path = TMP / f"pilot-{source}.png"
-    make_qr(url, qr_path)
 
     pdf.setFillColor(HexColor(PAPER))
     pdf.rect(0, 0, width, height, fill=1, stroke=0)
@@ -208,7 +205,7 @@ def draw_pdf_page(pdf: canvas.Canvas, audience: str, source: str, intro: str) ->
     pdf.setFillColor(HexColor("#FFFFFF"))
     pdf.setStrokeColor(HexColor("#B8B2A6"))
     pdf.roundRect(42, 170, 528, 150, 6, fill=1, stroke=1)
-    pdf.drawImage(ImageReader(str(qr_path)), 61, 188, 112, 112, preserveAspectRatio=True, mask="auto")
+    pdf.drawImage(ImageReader(make_qr(url)), 61, 188, 112, 112, preserveAspectRatio=True, mask="auto")
     pdf.setFillColor(HexColor(INK))
     pdf.setFont("MlmSansBold", 16)
     pdf.drawString(197, 276, "Scan to choose the right starting page")
@@ -248,7 +245,6 @@ def main() -> int:
     pdfmetrics.registerFont(TTFont("MlmSansBold", PDF_SANS_BOLD))
     pdfmetrics.registerFont(TTFont("MlmSerif", PDF_SERIF))
     SHARE_DIR.mkdir(parents=True, exist_ok=True)
-    TMP.mkdir(parents=True, exist_ok=True)
     for filename, (kicker, headline) in SHARES.items():
         social_image(kicker, headline, SHARE_DIR / filename)
 
@@ -261,14 +257,6 @@ def main() -> int:
     for page in PILOT_PAGES:
         draw_pdf_page(pdf, *page)
     pdf.save()
-
-    for path in TMP.glob("pilot-*.png"):
-        path.unlink()
-    if TMP.exists() and not any(TMP.iterdir()):
-        TMP.rmdir()
-    parent = TMP.parent
-    if parent.exists() and not any(parent.iterdir()):
-        parent.rmdir()
 
     print(f"Generated {len(SHARES)} social images and {PDF_PATH.relative_to(ROOT)}")
     print(f"Wrote {SHARE_QR_PATH.relative_to(ROOT)}; refreshed the inline copy in {qr_updates} of {len(SHEETS)} sheets")
