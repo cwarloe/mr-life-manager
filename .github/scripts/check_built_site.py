@@ -78,22 +78,9 @@ def main() -> int:
             if marker not in text:
                 problems.append(f"{rel}: missing {marker}")
 
-    if not (OUT / "assets" / "entry.js").is_file():
-        problems.append("missing generated public file: assets/entry.js")
-
-    if not (OUT / "assets" / "entry.css").is_file():
-        problems.append("missing generated public file: assets/entry.css")
-
     for route in ENTRY_ROUTES:
-        name = route.page
         tag = route.slug
-        text = (OUT / name).read_text(encoding="utf-8")
         completion = route.completion_page
-        for marker in (f'data-guide="{tag}"', f'data-completion-url="/{completion}"',
-                       'href="/assets/entry.css"', 'src="/assets/entry.js"', completion):
-            if marker not in text:
-                problems.append(f"{name}: missing {marker}")
-
         completion_text = (OUT / completion).read_text(encoding="utf-8")
         for marker in (MAILERLITE_FORM_ATTR, MAILERLITE_JS_URL, f'data-guide="{tag}"',
                        'src="/assets/entry.js"', "ml-fallback", "One thing finished",
@@ -121,7 +108,8 @@ def main() -> int:
             problems.append(f"privacy.html: missing {marker}")
 
     for name in ("favicon.svg", "site.webmanifest", "robots.txt", "sitemap.xml",
-                 "print/partner-pilot.pdf"):
+                 "print/partner-pilot.pdf", "assets/entry.js", "assets/entry.css",
+                 *(route.page for route in ENTRY_ROUTES)):
         if not (OUT / name).is_file():
             problems.append(f"missing generated public file: {name}")
 
