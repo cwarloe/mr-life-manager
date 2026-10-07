@@ -3,6 +3,8 @@
 
 Usage:  render_pdf.py <source.html> <out.pdf>
 """
+import hashlib
+import json
 import re
 import shutil
 import subprocess
@@ -12,6 +14,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 FONT_CSS = ROOT / "products" / "print" / "fonts" / "embedded-fonts.css"
+PRINT_SCALE = ROOT / "products" / "guides-pdf" / ".print-scale.json"
+# Scales from tune_print_scale.py; under 5% gain is noise, so render at 1.0.
+MIN_ZOOM = 1.05
 CHROME_CANDIDATES = (
     "/opt/pw-browsers/chromium-1194/chrome-linux/chrome",
     "/usr/bin/google-chrome",
@@ -79,6 +84,32 @@ def linked_local_stylesheets(src: Path) -> list[Path]:
         if css_path.is_file():
             out.append(css_path)
     return out
+
+
+def print_scales() -> dict[str, float]:
+    """Per-sheet scales written by tune_print_scale.py (empty if never tuned)."""
+    return json.loads(PRINT_SCALE.read_text()) if PRINT_SCALE.exists() else {}
+
+
+def effective_zoom(stem: str, scales: dict[str, float]) -> float:
+    """The zoom render_all_pdfs.py actually prints a sheet at."""
+    zoom = float(scales.get(stem, 1.0))
+    return zoom if zoom >= MIN_ZOOM else 1.0
+
+
+def source_digest(src: Path, zoom: float) -> str:
+    """Hash everything a render reads: the HTML, the local stylesheets it links,
+    the embedded-fonts CSS and the zoom. check_pdfs_fresh.py compares this with
+    what render_all_pdfs.py recorded in .sources.json."""
+    h = hashlib.sha256()
+    h.update(src.read_bytes())
+    for css in linked_local_stylesheets(src):
+        h.update(b"\0")
+        h.update(css.read_bytes())
+    h.update(b"\0")
+    h.update(FONT_CSS.read_bytes() if FONT_CSS.is_file() else b"")
+    h.update(f"\0zoom={zoom}".encode())
+    return h.hexdigest()[:16]
 
 
 def render(src: Path, out: Path, zoom: float = 1.0) -> None:
