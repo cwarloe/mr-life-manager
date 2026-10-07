@@ -13,12 +13,15 @@ not the number of products, platforms, or channels.
 | GitHub Pages | Public website and PDFs | Repository `main` and deployment workflow |
 | Cloudflare | DNS for `mrlifemanager.com` | Private account; do not store credentials here |
 | Zoho | `hello@mrlifemanager.com` mailbox | Private account |
-| MailerLite | One form, four route groups, four three-email automations | [`MAILERLITE-SETUP.md`](../products/landing/emails/MAILERLITE-SETUP.md) |
+| MailerLite | One form, four route groups, four three-email automations; the office door's `entry-office` group and automation are not created yet | [`MAILERLITE-SETUP.md`](../products/landing/emails/MAILERLITE-SETUP.md) |
 | GitHub Actions | Build, validation, deployment and public-site monitoring | [`.github/workflows/`](../.github/workflows/) |
 
 **Email state reported by owner 2026-09-22:** all four automations are active.
 Email 1 contains one PDF link, [`The Week`](https://mrlifemanager.com/print/the-week.pdf).
 The entry-page action and print option happen before signup.
+
+**Office door (added 2026-10-06):** its `entry-office` group and automation are
+not created yet, so it has not had a route test.
 
 **Last private account-level funnel test:** 2026-09-22 — **pass** for all four entry routes (confirm → correct `entry-*` group → Email 1 with [`The Week`](https://mrlifemanager.com/print/the-week.pdf)). Test subscribers removed. Guests/first-night verified earlier the same week; underwater/one-room completed on this date.
 
@@ -78,7 +81,7 @@ These obligations stay dormant until their trigger occurs.
 
 | Trigger | Activate then |
 |---|---|
-| Before broader email distribution | Recorded four-route delivery test; DMARC monitoring; valid postal footer; privacy text matches the live account |
+| Before broader email distribution | Recorded delivery test for every entry route; DMARC monitoring; valid postal footer; privacy text matches the live account |
 | Before distributing the founding-offer page | Monitored `hello@` inbox; privacy text matches the live page; a simple count of unique reservation senders |
 | Before the first sale | Checkout terms; refund policy; assumed-name/entity check; separate transaction records; tax and bookkeeping decision |
 | After ten customers | FAQ from actual questions; three saved support replies; product version log |
@@ -96,15 +99,16 @@ burden.
 The scheduled live-site workflow checks:
 
 - HTTPS and canonical redirects;
-- the homepage, four entry pages and privacy page;
+- the homepage, every entry page in `site_catalog.py` and the privacy page;
 - the MailerLite form marker and page-specific `guide` value;
 - the single promised PDF;
 - required privacy and contact links; and
 - `/sitemap.xml` and `/robots.txt` (sitemap lists the public doors; completion pages stay out).
 
 That catches public breakage. It cannot see MailerLite's private groups or
-delivered inbox messages. An account operator performs the controlled four-route
-test and records only its date and pass/fail result here—never test addresses.
+delivered inbox messages. An account operator performs the controlled test of
+every entry route and records only its date and pass/fail result here—never
+test addresses.
 
 ## Incident response
 

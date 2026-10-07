@@ -85,7 +85,7 @@ prevented:
 | `.no-print` on sections that aren't for the printed context | A shopping list doesn't need "where to keep it" — that's for when you're home |
 
 **What's worth printing is what gets used again.** A sheet for something someone
-does once has no reason to exist. That is why all four email sequences hand over
+does once has no reason to exist. That is why every email sequence hands over
 The Week rather than a copy of the page the reader just finished.
 
 ## Email voice: write full sentences

@@ -61,11 +61,13 @@ reader. Under [ADR-015](../planning/decisions.md#adr-015--the-win-comes-before-t
 the front door is a per-pain entry page; the guides are archive and search
 surface, not offers.
 
-- **Entry pages** — four, live: [first night](landing/first-night.html) ·
+- **Entry pages**, live: [first night](landing/first-night.html) ·
   [someone's coming over](landing/guests.html) ·
   [just underwater](landing/underwater.html) ·
-  [the room that became storage](landing/one-room.html). Each has a completion
-  page and its own [sequence](landing/emails/). Routes are in
+  [the room that became storage](landing/one-room.html) ·
+  [the office that got away from you](landing/office.html) (added 2026-10-06;
+  not linked from the homepage picker; MailerLite group not wired yet). Each has
+  a completion page and its own [sequence](landing/emails/). Routes are in
   [SETUP.md](landing/SETUP.md).
 - **Guides** — eight, at `/guides/`: seven [checklists](checklists/) and the
   [Household Agreement](worksheets/household-agreement/) worksheet.
