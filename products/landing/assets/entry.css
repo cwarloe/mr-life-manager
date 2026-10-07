@@ -94,7 +94,7 @@ footer a{color:var(--blue);font-weight:600;text-decoration:none}
 .fork{margin:1.6rem 0 0;padding:.95rem 1.1rem;border:1px dashed var(--rule-strong);border-radius:4px}
 .fork-lead{font-size:.95rem;font-weight:700;margin:0 0 .25rem;letter-spacing:-.01em}
 
-/* printed action sheet: keep actions + short why; hide chrome */
+/* printed action sheet: actions only; hide the why and page chrome */
 @media print{
   @page{size:Letter;margin:0.5in}
   :root{--ink:#000;--paper:#fff;--surface:#fff;--slate:#333;--rule:#bbb;
@@ -205,3 +205,13 @@ body.doing .step-head::before{content:attr(data-n)}
 .done .complete{display:inline-block;background:var(--ink);color:var(--paper);text-decoration:none;margin-right:.45rem}
 .done button{background:transparent;color:var(--ink)}
 
+/* .says: the lines a reader will hear themselves say (one-room, office).
+   Kept last so it sits where the page-local copies did in the cascade. */
+.says{list-style:none;margin:.55rem 0 0;padding:0}
+.says li{font-family:var(--serif);font-style:italic;font-size:1.02rem;line-height:1.4;margin:0 0 .28rem;padding:0;color:var(--ink)}
+body.doing .says{margin-top:1rem}
+body.doing .says li{font-size:clamp(1.12rem,4.2vw,1.35rem);margin:0 0 .45rem}
+@media print{
+  .says{margin:.12rem 0 0;padding-left:1.55rem}
+  .says li{font-size:9.5pt;line-height:1.28;margin:0}
+}
