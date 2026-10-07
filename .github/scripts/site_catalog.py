@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
-"""Single source for public origin, URL helper, and the four entry routes.
+"""Single source for public origin, URL helper, and the entry routes.
 
-Published behavior must stay identical to the prior hardcodes in
-build_site / check_built_site / check_live_site. Guide/printable inventories
-live elsewhere — do not fold them in here.
+Guide/printable inventories live elsewhere — do not fold them in here.
 """
 from __future__ import annotations
 
@@ -31,12 +29,8 @@ class EntryRoute:
     def completion_page(self) -> str:
         return f"finished-{self.slug}.html"
 
-    @property
-    def back_path(self) -> str:
-        return f"/{self.slug}.html"
 
-
-# Published entry order — keep stable (completion + live-check lists).
+# Entry routes in homepage picker order; the sitemap lists them in this order.
 ENTRY_ROUTES: tuple[EntryRoute, ...] = (
     EntryRoute(
         slug="first-night",
@@ -45,6 +39,14 @@ ENTRY_ROUTES: tuple[EntryRoute, ...] = (
             "You handled the things that cost most to miss on a first night."
         ),
         share_image="first-night.png",
+    ),
+    EntryRoute(
+        slug="one-room",
+        door_title="The room that became storage",
+        completion_message=(
+            "You reclaimed a usable part of the room. One finished zone is real progress."
+        ),
+        share_image="one-room.png",
     ),
     EntryRoute(
         slug="guests",
@@ -63,14 +65,6 @@ ENTRY_ROUTES: tuple[EntryRoute, ...] = (
         share_image="underwater.png",
     ),
     EntryRoute(
-        slug="one-room",
-        door_title="The room that became storage",
-        completion_message=(
-            "You reclaimed a usable part of the room. One finished zone is real progress."
-        ),
-        share_image="one-room.png",
-    ),
-    EntryRoute(
         slug="office",
         door_title="The office that got away from you",
         completion_message=(
@@ -81,9 +75,7 @@ ENTRY_ROUTES: tuple[EntryRoute, ...] = (
 )
 
 
-# Shared entry.js / entry.css body needles for check_entry_pages (source)
-# only — built-site no longer re-checks these (#75). Keep one list so markers
-# cannot drift.
+# Needles check_entry_pages looks for in the shared entry.js / entry.css.
 ENTRY_JS_MARKERS: tuple[tuple[str, str], ...] = (
     ("doing-mode", "classList.add('doing')"),
     ("source attribution handoff", "new URLSearchParams(window.location.search).get('from')"),
@@ -102,18 +94,12 @@ ENTRY_CSS_MARKERS: tuple[tuple[str, str], ...] = (
     ("prefers-reduced-motion", "prefers-reduced-motion"),
 )
 
-# Sitemap core locs before /guides/{slug}.html.
-# Entry paths come from ENTRY_ROUTES; order is published/sitemap order — keep stable.
-_ENTRY_PAGE_BY_SLUG = {route.slug: f"/{route.page}" for route in ENTRY_ROUTES}
+# Sitemap core locs before /guides/{slug}.html. Entry pages follow ENTRY_ROUTES.
 SITEMAP_CORE_PATHS: tuple[str, ...] = (
     "/",
     "/index-parents.html",
     "/partners.html",
-    _ENTRY_PAGE_BY_SLUG["first-night"],
-    _ENTRY_PAGE_BY_SLUG["one-room"],
-    _ENTRY_PAGE_BY_SLUG["guests"],
-    _ENTRY_PAGE_BY_SLUG["underwater"],
-    _ENTRY_PAGE_BY_SLUG["office"],
+    *(f"/{route.page}" for route in ENTRY_ROUTES),
     "/first-place.html",
     "/privacy.html",
     "/guides/",
@@ -121,9 +107,8 @@ SITEMAP_CORE_PATHS: tuple[str, ...] = (
 )
 
 
-
 # Built-site and live-site page markers (exact strings used by the checkers).
-# Keep identical to prior hardcodes — do not invent new copy here.
+# Do not invent new copy here.
 FIRST_PLACE_BUILT_MARKERS: tuple[str, ...] = (
     "mailto:hello@mrlifemanager.com?subject=First%20Place%20%2439",
     "planned founding price",
@@ -182,26 +167,11 @@ def entry_social_images() -> dict[str, str]:
     return images
 
 
-
 def required_share_images() -> tuple[str, ...]:
     """All share PNG filenames that must exist under assets/share/."""
     names = {"home.png", "first-place.png", "partners.png"}
     names.update(entry_social_images().values())
     return tuple(sorted(names))
-
-
-def completion_pages() -> list[tuple[str, str, str, str, str]]:
-    """Tuples matching former COMPLETION_PAGES shape."""
-    return [
-        (
-            route.completion_page,
-            route.door_title,
-            route.completion_message,
-            route.slug,
-            route.back_path,
-        )
-        for route in ENTRY_ROUTES
-    ]
 
 
 def sitemap_core_urls() -> list[str]:
