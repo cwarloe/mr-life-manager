@@ -4,7 +4,7 @@
 or reader-tested. Brief written after the fact from the HTML.
 **Tier:** Rung 0 — free ([product-ladder.md](../../../docs/business/product-ladder.md))
 **Files:** [`laundry-solved.html`](laundry-solved.html) ·
-[PDF](../../guides-pdf/laundry-solved.pdf) (4 pp) · public at
+[PDF](../../guides-pdf/laundry-solved.pdf) · public at
 `/guides/laundry-solved.html`
 
 ---

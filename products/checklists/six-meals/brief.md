@@ -4,7 +4,7 @@
 Brief written after the fact from the HTML.
 **Tier:** Rung 0 — free ([product-ladder.md](../../../docs/business/product-ladder.md))
 **Files:** [`six-meals.html`](six-meals.html) ·
-[PDF](../../guides-pdf/six-meals.pdf) (3 pp) · public at
+[PDF](../../guides-pdf/six-meals.pdf) · public at
 `/guides/six-meals.html` (the old `/guides/ten-meals.html` and
 `/print/ten-meals.pdf` still resolve; see Decisions)
 
