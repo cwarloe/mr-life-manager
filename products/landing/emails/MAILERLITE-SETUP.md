@@ -1,7 +1,9 @@
 # MailerLite — operating specification
 
 **Account:** `2635985` · **Embedded form:** `00ZwEr`
-**Status reported by owner 2026-09-22:** four entry automations are active. Each
+**Status reported by owner 2026-09-22:** four entry automations are active.
+**2026-10-07:** a fifth entry page, `/office.html`, went live; its group and
+automation still need to be created to match the table below. Each
 sequence sends one PDF link in email 1 —
 [`The Week`](https://mrlifemanager.com/print/the-week.pdf) — followed by two
 smaller emails and then stops. The entry-page action sheet is available before
@@ -14,8 +16,8 @@ account has been brought back to this specification.
 
 ## Routing
 
-The same form is embedded after the completed action on all four pages and on
-the four no-index completion pages. Page code sends the tag under both
+The same form is embedded after the completed action on all five pages and on
+the five no-index completion pages. Page code sends the tag under both
 `fields[guide]` and `guide` because
 MailerLite's rendered field naming has varied.
 
@@ -25,6 +27,7 @@ MailerLite's rendered field naming has varied.
 | `/guests.html` | `guests` | `entry-guests` | [`guests-sequence.md`](guests-sequence.md) |
 | `/underwater.html` | `underwater` | `entry-underwater` | [`underwater-sequence.md`](underwater-sequence.md) |
 | `/one-room.html` | `one-room` | `entry-one-room` | [`one-room-sequence.md`](one-room-sequence.md) |
+| `/office.html` | `office` | `entry-office` | [`office-sequence.md`](office-sequence.md) — **added 2026-10-07, not yet wired** |
 | missing or unknown | anything else | `entry-unknown` | none; investigate |
 
 `entry-unknown` is an alarm. It should stay empty.
@@ -39,7 +42,7 @@ Each automation triggers when a subscriber joins its matching group:
 | 2 | Three days later | Ask less than email 1 |
 | 3 | Four days later | One easy reply question, then stop |
 
-Settings for all four:
+Settings for all of them:
 
 - Allow re-entry: **off**
 - Resend to unopens: **off**
@@ -69,7 +72,7 @@ the reader has already acted; email supplies the reusable maintenance system.
 
 ## Operational verification
 
-The public-site monitor verifies that all four pages load, contain the correct
+The public-site monitor verifies that all entry pages load, contain the correct
 form and route tag, and that `The Week` resolves as a PDF. A controlled external
 account check is still the only way to prove private MailerLite behavior:
 

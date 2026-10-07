@@ -70,6 +70,14 @@ ENTRY_ROUTES: tuple[EntryRoute, ...] = (
         ),
         share_image="one-room.png",
     ),
+    EntryRoute(
+        slug="office",
+        door_title="The office that got away from you",
+        completion_message=(
+            "You cleared one surface at work. One finished desk is real progress."
+        ),
+        share_image="office.png",
+    ),
 )
 
 
@@ -105,6 +113,7 @@ SITEMAP_CORE_PATHS: tuple[str, ...] = (
     _ENTRY_PAGE_BY_SLUG["one-room"],
     _ENTRY_PAGE_BY_SLUG["guests"],
     _ENTRY_PAGE_BY_SLUG["underwater"],
+    _ENTRY_PAGE_BY_SLUG["office"],
     "/first-place.html",
     "/privacy.html",
     "/guides/",

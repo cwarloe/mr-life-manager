@@ -52,6 +52,7 @@ SHARES = {
     "guests.png": ("Start here", "Someone's coming over. Start here."),
     "underwater.png": ("Start here", "You're not lazy. You're underwater."),
     "one-room.png": ("Start here", "Take back one usable part of the room."),
+    "office.png": ("Start here", "You can't see your desk anymore."),
     "first-place.png": ("First Place - planned founding price $39", "Your first 30 days, already decided."),
     "partners.png": ("For parents, mentors, churches, and campuses", "Give them one useful page, not another talk."),
 }
