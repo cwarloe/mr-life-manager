@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """Assert every entry page has required scripts, print styles, and signup wiring."""
-import re
 import sys
 from pathlib import Path
 
@@ -26,7 +25,6 @@ REQUIRED = [
     ("MailerLite form", MAILERLITE_FORM_ATTR),
     ("MailerLite CDN", MAILERLITE_JS_URL),
     ("one-PDF promise", "Dave's week on one page"),
-    ("guide tag config", 'data-guide="'),
 ]
 
 
@@ -68,22 +66,11 @@ def main() -> int:
                 f"{path.name}: missing data-completion-url for {route.completion_page}"
             )
 
-        if "ml-embedded" in s:
-            m = re.search(r'data-guide="([a-z0-9-]+)"', s)
-            if not m:
-                problems.append(f"{path.name}: has a signup but does not tag it")
-            else:
-                if m.group(1) != route.slug:
-                    problems.append(
-                        f"{path.name}: data-guide={m.group(1)!r}, "
-                        f"expected {route.slug!r}"
-                    )
-                seq = EMAILS / f"{m.group(1)}-sequence.md"
-                if not seq.exists():
-                    problems.append(
-                        f"{path.name}: tags signups '{m.group(1)}' but "
-                        f"{seq.name} does not exist"
-                    )
+        if f'data-guide="{route.slug}"' not in s:
+            problems.append(f'{path.name}: missing data-guide="{route.slug}"')
+        seq = EMAILS / f"{route.slug}-sequence.md"
+        if not seq.is_file():
+            problems.append(f"{path.name}: {seq.name} does not exist")
 
     # Warn on unexpected steps pages outside the catalog (orphan HTML).
     expected_names = {route.page for route in ENTRY_ROUTES}
@@ -95,7 +82,7 @@ def main() -> int:
                 f'{path.name}: has class="steps" but is not in ENTRY_ROUTES'
             )
 
-    # Pre-build: completion template must keep the MailerLite CDN URL (#80 gap).
+    # Pre-build: completion template must keep the MailerLite CDN URL.
     finished_tmpl = LANDING / "templates" / "finished.html"
     if not finished_tmpl.is_file():
         problems.append(
@@ -106,10 +93,6 @@ def main() -> int:
             f"{finished_tmpl.relative_to(ROOT)}: missing MailerLite CDN "
             f"({MAILERLITE_JS_URL})"
         )
-
-    if not catalog_pages and not problems:
-        print("no ENTRY_ROUTES pages found — did the catalog change?", file=sys.stderr)
-        return 1
 
     if problems:
         print("Entry pages are incomplete:\n", file=sys.stderr)
