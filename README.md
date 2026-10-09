@@ -177,11 +177,14 @@ verify it and learn from real people.
       [ADR-016](planning/decisions.md#adr-016--the-sequence-shrinks-unconditionally);
       both under review as of 2026-10-03 — keep existing pages and emails; don't
       cite as settled for new work until re-decided)
-- ✅ Four entry pages live, each with its own sequence drafted —
+- ✅ Entry pages live, each with its own sequence drafted —
       [first night](products/landing/first-night.html) ·
       [someone's coming over](products/landing/guests.html) ·
       [just underwater](products/landing/underwater.html) ·
-      [the room that became storage](products/landing/one-room.html).
+      [the room that became storage](products/landing/one-room.html) ·
+      [the office that got away from you](products/landing/office.html)
+      (added 2026-10-06; not linked from the homepage picker; MailerLite group
+      not wired yet).
       Completeness is enforced by
       [`check_entry_pages.py`](.github/scripts/check_entry_pages.py)
 - ✅ **Post-completion path added** — doing mode now ends at a distinct,
@@ -203,8 +206,9 @@ verify it and learn from real people.
 - ✅ Custom domain live at https://mrlifemanager.com (HTTPS)
 - ✅ Customer-interview script and Dave recording guide ready
 - ✅ **Four MailerLite automations are active**, per owner confirmation on
-      2026-09-22. Each entry page routes to its own three-email sequence; email
-      1 links only `The Week`. The private account state is not machine-verifiable
+      2026-09-22, one for each of the first four entry pages; the office page's
+      group and automation are not set up yet. Each sequence is three emails;
+      email 1 links only `The Week`. The private account state is not machine-verifiable
       from this public repository, so the last controlled delivery-test result
       is tracked in [`planning/operations.md`](planning/operations.md)
 - ⬜ **Record Dave.** The recovered documents cover cleaning, organizing and

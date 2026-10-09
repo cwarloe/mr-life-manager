@@ -15,6 +15,7 @@ entry pages, after the action
 | `/guests.html` | Entry page + signup |
 | `/underwater.html` | Entry page + signup |
 | `/one-room.html` | Entry page + signup |
+| `/office.html` | Entry page + signup. Added 2026-10-06; not linked from the homepage picker; MailerLite group not wired yet |
 | `/index-parents.html` | Parent page — send them a door, no form |
 | `/partners.html?from=<source>` | Small-pilot page for mentors, churches and campuses |
 | `/guides/` | Archive of the free guides |
@@ -51,7 +52,7 @@ Pillow, ReportLab, and `qrcode`.
 **Account ID:** `2635985`  
 **Embedded form ID:** `00ZwEr`
 
-The form is embedded on all four entry pages and their four completion pages.
+The form is embedded on every entry page and its completion page.
 Do not put it back on the homepage or the *First Place* founding-offer page. The
 completion pages reuse the originating door tag, so the reader receives the
 same three-email sequence whether they signed up in reading mode or immediately
@@ -61,14 +62,16 @@ The intended account state is documented in
 [`emails/MAILERLITE-SETUP.md`](emails/MAILERLITE-SETUP.md). The original
 site-wide welcome sequence is withdrawn
 ([ADR-016](../../planning/decisions.md#adr-016--the-sequence-shrinks-unconditionally));
-do not reactivate it. Live copy is in the four entry-specific sequence files.
+do not reactivate it. Live copy is in the entry-specific sequence files.
 
 The owner reported all four automations active on 2026-09-22. Each sends one PDF
 link in email 1 — `/print/the-week.pdf` — not a copy of the action page. The
-action and its print option have already been delivered before signup.
+action and its print option have already been delivered before signup. The
+office page (added 2026-10-06) has a drafted sequence but no MailerLite group or
+automation yet.
 
 The founding-offer page uses a prefilled email to `hello@mrlifemanager.com`.
-That keeps the demand test live without a fifth automation or a risk that a
+That keeps the demand test live without another automation or a risk that a
 reservation receives an unrelated free sequence. Treat each sent message as a
 reservation, not revenue. A safe `from` query value on the founding-offer URL is
 carried into the reservation subject so a reply can be attributed without
@@ -91,7 +94,7 @@ confirm `mrlifemanager.com` → Enforce HTTPS.
 
 ## External operating items
 
-- [ ] Record a four-page MailerLite delivery test and footer/unsubscribe check
+- [ ] Record a MailerLite delivery test for every entry page and a footer/unsubscribe check
 - [x] Confirm SPF/DKIM and MailerLite domain verification (DNS checked 2026-09-22)
 - [ ] Add DMARC in monitoring mode, then verify MailerLite and Zoho alignment
 - [ ] Add privacy-first visitor analytics and Search Console verification

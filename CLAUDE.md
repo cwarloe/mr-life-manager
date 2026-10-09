@@ -64,7 +64,7 @@ Don't re-derive these — read them:
 
 ## Mechanics
 
-- Public origin + the four entry routes live in
+- Public origin + the entry routes live in
   `.github/scripts/site_catalog.py` — import from there; don't hardcode the
   doors in new checks
 - `python3 .github/scripts/build_site.py` — assemble `_site/`
@@ -83,7 +83,7 @@ Don't re-derive these — read them:
   older than its source HTML. Runs in CI. **Change a guide's HTML and you must
   re-render**, or the emails link to the old version
 - `python3 .github/scripts/check_built_site.py` — run after `build_site.py`; it
-  verifies canonical/share metadata, the four MailerLite routes, privacy copy
+  verifies canonical/share metadata, every entry route's MailerLite wiring, privacy copy
   and public support files
 - `python3 .github/scripts/check_live_site.py` — production smoke test. GitHub
   Actions runs it after Pages deployment and weekly; it never submits a form

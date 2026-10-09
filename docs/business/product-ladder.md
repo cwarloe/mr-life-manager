@@ -30,7 +30,7 @@ earn the right to sell — in that order.
 
 | Product | Format | Notes |
 |---|---|---|
-| **Entry pages** — first night, guests, one room, underwater | Web; prints from the page, no PDF | The front door. One action each, ungated. |
+| **Entry pages** — first night, guests, one room, underwater, office (added 2026-10-06; not in the homepage picker; MailerLite group not wired yet) | Web; prints from the page, no PDF | The front door. One action each, ungated. |
 | **The Week** | 1 pg PDF | Dave's weekly rhythm. Linked in email 1 of every entry sequence. |
 | **First Apartment Checklist** | PDF | Everything to buy, do, and set up in week one. |
 | **How Often Should I…?** | PDF | Sheets, towels, filters, oil, vacuum, fridge, dentist. Extremely shareable. |
@@ -186,7 +186,9 @@ Aligned with [ADR-015](../../planning/decisions.md#adr-015--the-win-comes-before
 the front door is a completed action, not a lead-magnet PDF.
 
 1. **Entry pages** — free, ungated, one pain each. Prove completion and earn the
-   email after a win. (Live: first night, guests, underwater, one room.)
+   email after a win. (Live: first night, guests, underwater, one room, and
+   office since 2026-10-06, which isn't in the homepage picker and has no
+   MailerLite group yet.)
 2. **Paid tests at low cost** — small offers that prove willingness to pay and
    reveal *which topic* people actually buy. Minimal risk.
 3. **First Place** — the $39 flagship, assembled from proven free wins and paid

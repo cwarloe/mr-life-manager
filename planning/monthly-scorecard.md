@@ -7,7 +7,7 @@ One page for deciding what to do next. This is not an analytics warehouse.
 | Measure | Meaning |
 |---|---|
 | Visitors | Human visits reported by the selected privacy-first analytics service |
-| Task completions | Visits to the four explicit post-completion pages; a directional measure, not proof every step was performed |
+| Task completions | Visits to the explicit post-completion pages (`/finished-*.html`); a directional measure, not proof every step was performed |
 | Subscribers | New MailerLite subscribers, excluding tests |
 | Replies | Human replies to the three-email sequences |
 | Founding reservations | People who explicitly said they would seriously consider *First Place* at $39; interest, not revenue |
@@ -16,7 +16,7 @@ One page for deciding what to do next. This is not an analytics warehouse.
 | Sales | Completed paid transactions, once a paid offer exists |
 | Support hours | Inbox, refunds, delivery help and other customer administration |
 
-Do not use open rate for product decisions. Record the four MailerLite route
+Do not use open rate for product decisions. Record the MailerLite route
 groups separately only when diagnosing a door. Reservation and pilot email
 subjects may contain a short source label such as `parent`, `church`, `campus`,
 or `shared-first-night`; use it only to compare routes, not to profile people.
