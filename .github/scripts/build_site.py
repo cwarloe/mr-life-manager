@@ -7,8 +7,8 @@ from pathlib import Path
 
 from guide_inventory import GUIDES, LEGACY_GUIDE_SLUGS, PDF_TITLES
 from site_catalog import (
+    ENTRY_ROUTES,
     ORIGIN,
-    completion_pages,
     entry_social_images,
     public_url as catalog_public_url,
     sitemap_core_urls,
@@ -21,8 +21,6 @@ REDIRECT_MARKER = 'data-mlm-redirect="1"'
 DEFAULT_DESCRIPTION = (
     "Practical adult-life systems for people who were never explicitly taught them."
 )
-
-COMPLETION_PAGES = completion_pages()
 
 SOCIAL_IMAGES = {
     "index.html": "home.png",
@@ -173,13 +171,13 @@ def main() -> int:
     if assets.is_dir():
         shutil.copytree(assets, OUT / "assets")
     completion_template = (LANDING / "templates" / "finished.html").read_text()
-    for filename, door, message, guide, back in COMPLETION_PAGES:
+    for route in ENTRY_ROUTES:
         rendered = (completion_template
-                    .replace("__DOOR__", door)
-                    .replace("__MESSAGE__", message)
-                    .replace("__GUIDE__", guide)
-                    .replace("__BACK__", back))
-        (OUT / filename).write_text(rendered)
+                    .replace("__DOOR__", route.door_title)
+                    .replace("__MESSAGE__", route.completion_message)
+                    .replace("__GUIDE__", route.slug)
+                    .replace("__BACK__", f"/{route.page}"))
+        (OUT / route.completion_page).write_text(rendered)
     printable_css = ROOT / "products" / "print" / "printable.css"
     if not printable_css.is_file():
         sys.exit(f"missing {printable_css}")
