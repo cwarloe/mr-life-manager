@@ -32,14 +32,14 @@ earn the right to sell — in that order.
 |---|---|---|
 | **Entry pages** — first night, guests, one room, underwater | Web; prints from the page, no PDF | The front door. One action each, ungated. |
 | **The Week** | 1 pg PDF | Dave's weekly rhythm. Linked in email 1 of every entry sequence. |
-| **First Apartment Checklist** | 4 pg PDF | Everything to buy, do, and set up in week one. |
-| **How Often Should I…?** | 3 pg PDF | Sheets, towels, filters, oil, vacuum, fridge, dentist. Extremely shareable. |
-| **Cleaning Supply Starter List** | 3 pg PDF | What to actually buy, what to skip, roughly what it costs. |
-| **What Is This Room For?** | 2 pg PDF | One room: its job, what fights it, three things to do. |
-| **The Light Is the Problem** | 2 pg PDF | Why a room feels wrong when nothing in it is dirty. |
-| **Laundry, Solved** | 4 pg PDF | Sorting, settings, detergent, stains, the laundry chair. Free only; the $9 paid version is gone for now ([ADR-019](../../planning/decisions.md#adr-019--laundry-solved-and-the-roommate-kit-are-free-only)). |
-| **Six Meals and a Stocked Kitchen** | 3 pg PDF | The four-slot pattern, six meals, the pantry list. Also covers *Kitchen That Works*, which is free and folded in here (Charles, 2026-09-26). |
-| **The Household Agreement** | 5 pg PDF | Worksheet. Decide it once, together. This is the *Roommate Agreement Kit*: free only, no $9 version for now ([ADR-019](../../planning/decisions.md#adr-019--laundry-solved-and-the-roommate-kit-are-free-only)). |
+| **First Apartment Checklist** | PDF | Everything to buy, do, and set up in week one. |
+| **How Often Should I…?** | PDF | Sheets, towels, filters, oil, vacuum, fridge, dentist. Extremely shareable. |
+| **Cleaning Supply Starter List** | PDF | What to actually buy, what to skip, roughly what it costs. |
+| **What Is This Room For?** | PDF | One room: its job, what fights it, three things to do. |
+| **The Light Is the Problem** | PDF | Why a room feels wrong when nothing in it is dirty. |
+| **Laundry, Solved** | PDF | Sorting, settings, detergent, stains, the laundry chair. Free only; the $9 paid version is gone for now ([ADR-019](../../planning/decisions.md#adr-019--laundry-solved-and-the-roommate-kit-are-free-only)). |
+| **Six Meals and a Stocked Kitchen** | PDF | The four-slot pattern, six meals, the pantry list. Also covers *Kitchen That Works*, which is free and folded in here (Charles, 2026-09-26). |
+| **The Household Agreement** | PDF | Worksheet. Decide it once, together. This is the *Roommate Agreement Kit*: free only, no $9 version for now ([ADR-019](../../planning/decisions.md#adr-019--laundry-solved-and-the-roommate-kit-are-free-only)). |
 | **The 20-Minute Reset** | Not built | Emergency routine for when the place has gotten away from you. |
 | **Move-Out Checklist** | Not built | Get the deposit back. Seasonal, urgent, highly searched. |
 | Articles / short videos | Not built | The guides themselves are public at `/guides/`. |

@@ -6,7 +6,7 @@ real reader.
 **Format:** printable checklist, black-and-white, US Letter. Four steps, one
 sitting, ~20 minutes.
 **Files:** [`what-is-this-room-for.html`](what-is-this-room-for.html) ·
-[PDF](../../guides-pdf/what-is-this-room-for.pdf) (2 pp) · public at
+[PDF](../../guides-pdf/what-is-this-room-for.pdf) · public at
 `/guides/what-is-this-room-for.html`
 
 ---

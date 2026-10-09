@@ -6,7 +6,7 @@ reviewed or tested with a real reader.
 **Format:** printable reference, black-and-white, US Letter. Designed to be
 **taped inside a cabinet door.**
 **Files:** [`how-often-should-i.html`](how-often-should-i.html) ·
-[PDF](../../guides-pdf/how-often-should-i.pdf) (3 pp) · public at
+[PDF](../../guides-pdf/how-often-should-i.pdf) · public at
 `/guides/how-often-should-i.html`
 
 **Design:** frequency bands as the structure, each with a stamped tag — daily,

@@ -5,7 +5,7 @@ real reader; price examples still need a freshness check before distribution.
 **Tier:** Rung 0 — free ([product-ladder.md](../../../docs/business/product-ladder.md))
 **Format:** printable, black-and-white, US Letter
 **Files:** [`cleaning-supply-starter-list.html`](cleaning-supply-starter-list.html) ·
-[PDF](../../guides-pdf/cleaning-supply-starter-list.pdf) (3 pp) · public at
+[PDF](../../guides-pdf/cleaning-supply-starter-list.pdf) · public at
 `/guides/cleaning-supply-starter-list.html`
 
 **Design:** buy / tools / laundry as priced tables with right-aligned tabular

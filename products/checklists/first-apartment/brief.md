@@ -2,7 +2,7 @@
 
 **Status:** Draft 1 text + **designed HTML** (2026-09-09). Not reviewed, not tested.
 **Files:** [`first-apartment-checklist.html`](first-apartment-checklist.html) ·
-[PDF](../../guides-pdf/first-apartment-checklist.pdf) (4 pp) · public at
+[PDF](../../guides-pdf/first-apartment-checklist.pdf) · public at
 `/guides/first-apartment-checklist.html`
 
 **Design direction:** a building punch list — which is literally what Part 3 is.
@@ -14,7 +14,7 @@ stylesheet goes black-on-white and holds sections together across pages. Footer
 carries the [ADR-013](../../../planning/decisions.md#adr-013--licensing-revised-free-to-use-never-free-to-sell)
 permission line.
 **Tier:** Rung 0 — free ([product-ladder.md](../../../docs/business/product-ladder.md))
-**Format:** 4-page printable PDF, black-and-white, US Letter
+**Format:** printable PDF, black-and-white, US Letter
 
 ---
 
