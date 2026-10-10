@@ -70,6 +70,41 @@ It does not promise or deliver a second PDF. This distinction implements
 [ADR-015](../../../planning/decisions.md#adr-015--the-win-comes-before-the-email):
 the reader has already acted; email supplies the reusable maintenance system.
 
+## Referral line (draft, pending approval)
+
+**Status:** Not live. Nothing below has been changed in MailerLite. Make this
+edit only after Charles approves. No rewards, no share buttons, no
+`navigator.share`, no QR code.
+
+**Form success message: no change.** The success view on form `00ZwEr` stays
+as it is. Growth Steward owns all customer-facing wording and will supply
+replacement copy about the reader's own next step. Until then, leave it
+untouched.
+
+**Email footer line.** Add this line, exactly, to the footer of all 12
+entry emails (4 automations × 3 emails):
+`Free to share: mrlifemanager.com`
+
+MailerLite has no linked footer block. A saved block is a copy, so editing it
+does not change emails that already use it. The only shared edit is the account
+default:
+
+- **Preferred, one edit:** Account settings → Default settings → *Email
+  unsubscribe disclaimer*. Add the line to the disclaimer text. On save, choose
+  to force-update **ongoing automation emails** only. This works only if the 12
+  emails use the standard footer with the default disclaimer. Check one email
+  in preview first. The line will also appear in every future email.
+- **Fallback, 12 edits:** In each of the four automations, triggered by
+  `entry-guests`, `entry-first-night`, `entry-underwater` and `entry-one-room`,
+  open emails 1, 2 and 3. Add the line as plain text in the footer block, above the
+  unsubscribe link, not in the body. Then save each email. The automations can
+  stay active.
+
+After either route, send a test of one email to an internal address to check
+that the line sits in the footer and that email 1 still carries one PDF link.
+Don't use a real subscriber for this. Record the date in
+[`planning/operations.md`](../../../planning/operations.md).
+
 ## Operational verification
 
 The public-site monitor verifies that all entry pages load, contain the correct
