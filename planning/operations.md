@@ -20,8 +20,10 @@ not the number of products, platforms, or channels.
 Email 1 contains one PDF link, [`The Week`](https://mrlifemanager.com/print/the-week.pdf).
 The entry-page action and print option happen before signup.
 
-**Office door (added 2026-10-06):** its `entry-office` group and automation are
-not created yet, so it has not had a route test.
+**Office door (added 2026-10-06):** deliberate one-off (Charles, 2026-10-08) —
+direct-link only. Its `entry-office` group and automation are not created yet,
+so it has not had a route test. For a one-off, ask Charles whether a MailerLite
+group is wanted before wiring one.
 
 **Last private account-level funnel test:** 2026-09-22 — **pass** for all four entry routes (confirm → correct `entry-*` group → Email 1 with [`The Week`](https://mrlifemanager.com/print/the-week.pdf)). Test subscribers removed. Guests/first-night verified earlier the same week; underwater/one-room completed on this date.
 

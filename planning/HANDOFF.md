@@ -34,15 +34,16 @@ via GitHub Actions when changes land on `main`.
 
 The funnel is: one pain → one entry page → one action → one win → then the
 email ask. The entry pages in `site_catalog.py` are live and CI-complete
-(`first-night`, `guests`, `one-room`, `underwater`, and `office`, added
-2026-10-06 and not linked from the homepage picker), each with a phone "doing
-mode" (one step per screen, Next/Back, `Why?` toggles) and a real one-page
-printable. Nine printables render to PDF from HTML via headless Chromium with
-brand fonts embedded (`.github/scripts/render_all_pdfs.py`). Four MailerLite
-email sequences are active per owner confirmation on 2026-09-22; the office
-sequence is drafted, but its MailerLite group and automation are not set up
-yet. Each sequence sends one PDF link in email 1: `/print/the-week.pdf`. The
-entry-page action sheet is available before signup and is never promised by
+(`first-night`, `guests`, `one-room`, `underwater`, and `office`), each with a
+phone "doing mode" (one step per screen, Next/Back, `Why?` toggles) and a real
+one-page printable. `office` (added 2026-10-06) is a deliberate one-off
+(Charles, 2026-10-08): keep it direct-link only; do not add it to the homepage,
+parents, or partners pickers. Nine printables render to PDF from HTML via
+headless Chromium with brand fonts embedded (`.github/scripts/render_all_pdfs.py`).
+Four MailerLite email sequences are active per owner confirmation on 2026-09-22;
+the office sequence is drafted, but its MailerLite group and automation are not
+set up yet. Each sequence sends one PDF link in email 1: `/print/the-week.pdf`.
+The entry-page action sheet is available before signup and is never promised by
 email.
 
 CI scripts enforce the invariants — run them before committing:
@@ -95,5 +96,5 @@ merge to `main` without Charles.** End your reply with a 2–3 line note telling
 the bot what changed and what (if anything) to update in MailerLite. Commit
 trailer to use:
 
-    Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>
+    Co-Authored-By: <model name> <noreply@anthropic.com>
     Claude-Session: <session url>

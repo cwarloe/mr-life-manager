@@ -11,7 +11,7 @@ revisiting a decision means re-examining an argument rather than re-inventing on
 
 ```
 ## ADR-NNN — Title
-Status:   Proposed | Accepted | Superseded by ADR-NNN | Rejected
+Status:   Proposed | Accepted | Under review | Superseded by ADR-NNN | Rejected
 Date:     YYYY-MM-DD
 Context:  What situation forced a decision
 Decision: What was decided
@@ -21,9 +21,10 @@ Revisit when: The condition that should reopen this
 ```
 
 **Status legend:** *Accepted* means we're acting on it. *Proposed* means it's
-written down but not committed. Nothing here is permanent — but changing an
-Accepted decision means writing a new ADR that supersedes it, not quietly
-editing this one.
+written down but not committed. *Under review* means paused — keep what exists;
+build nothing new on it or cite it as settled until it is re-decided. Nothing
+here is permanent — but changing an Accepted decision means writing a new ADR
+that supersedes it, not quietly editing this one.
 
 ---
 
