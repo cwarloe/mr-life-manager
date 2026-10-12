@@ -9,6 +9,8 @@ import sys
 import tempfile
 from pathlib import Path
 
+from guide_inventory import SHEETS
+
 ROOT = Path(__file__).resolve().parents[2]
 RENDER = ROOT / ".github" / "scripts" / "render_pdf.py"
 OUT = ROOT / "products" / "guides-pdf"
@@ -25,9 +27,6 @@ def pages(src: Path, zoom: float, tmp: Path) -> int:
 
 
 def main() -> int:
-    sys.path.insert(0, str(ROOT / ".github" / "scripts"))
-    from guide_inventory import SHEETS
-
     scales = {}
     with tempfile.TemporaryDirectory() as td:
         tmp = Path(td) / "probe.pdf"

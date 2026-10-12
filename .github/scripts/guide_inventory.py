@@ -101,7 +101,6 @@ INVENTORY: tuple[InventoryItem, ...] = (
 )
 
 
-# Shapes match the former hardcodes in build_site.py / render_all_pdfs.py.
 GUIDES: list[tuple[str, str, str, str]] = [
     (item.stem, item.html_src, item.title, item.blurb)
     for item in INVENTORY

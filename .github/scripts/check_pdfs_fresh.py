@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fail if a committed printable is older than the HTML it came from.
+"""Fail if a committed printable no longer matches the sources it was rendered from.
 
 The email sequences link straight at these PDFs, so a stale one means a reader
 is handed corrected copy on the site and the uncorrected version in their inbox.
