@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tell me what to build next — Mr. Life Manager</title>
+<!--
+  MR. LIFE MANAGER — FEEDBACK PAGE
+  ================================
+  SETUP (5 minutes, one time):
+  1. Go to https://formspree.io and create a free form. Copy your endpoint.
+  2. Below, find  action="https://formspree.io/f/xqpewdyy"
+     and replace xqpewdyy with your real form ID. That's the only edit needed.
+  3. Save this file as  feedback.html  in the repo root (next to guests.html),
+     commit, and push. It goes live at https://mrlifemanager.com/feedback.html
+  4. THEN print the flyer — the QR code points at that URL.
+
+  Everything on this page is optional for the visitor. Nothing is required.
+  That is deliberate: people should be free to act and leave.
+-->
+<style>
+  :root{
+    --cream:#FBF9F4; --ink:#12161C; --blue:#1F4E79; --amber:#B4741A; --line:#e5ded1;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--cream); color:var(--ink);
+    font-family:Georgia,'Times New Roman',serif; font-size:18px; line-height:1.6;
+  }
+  .wrap{max-width:640px; margin:0 auto; padding:32px 20px 64px;}
+  h1{font-size:34px; line-height:1.2; margin:0 0 12px;}
+  .lede{font-size:19px; margin:0 0 8px;}
+  .sub{color:#4a4a44; margin:0 0 28px;}
+  fieldset{border:1px solid var(--line); border-radius:10px; padding:18px 18px 14px; margin:0 0 18px; background:#fff;}
+  legend{font-weight:bold; padding:0 8px;}
+  label{display:block; margin:0 0 6px;}
+  .radio label{display:flex; gap:10px; align-items:flex-start; margin:10px 0; cursor:pointer;}
+  .radio input{margin-top:6px; width:18px; height:18px; accent-color:var(--blue);}
+  input[type=text], input[type=email], textarea{
+    width:100%; font:inherit; padding:12px; border:1px solid var(--line); border-radius:8px;
+    background:var(--cream); color:var(--ink); margin-top:6px;
+  }
+  textarea{min-height:96px; resize:vertical;}
+  input:focus, textarea:focus{outline:2px solid var(--blue); border-color:var(--blue);}
+  .hint{font-size:15px; color:#6a675c; margin:4px 0 0;}
+  button{
+    display:block; width:100%; font:inherit; font-size:20px; font-weight:bold; cursor:pointer;
+    background:var(--blue); color:#fff; border:none; border-radius:10px; padding:16px; margin-top:8px;
+  }
+  button:active{background:#173c5e;}
+  .thanks{border:1px solid var(--line); border-radius:10px; background:#fff; padding:28px 22px; text-align:center;}
+  .thanks h2{margin-top:0;}
+  footer{margin-top:48px; padding-top:16px; border-top:1px solid var(--line); font-size:15px; color:#6a675c;}
+  footer a{color:var(--blue);}
+  .hidden{position:absolute; left:-9999px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Tell me what to build next.</h1>
+  <p class="lede">Mr. Life Manager exists to give you one useful action at a time.</p>
+  <p class="sub">Before I build more, I want to hear what's actually going on in your home. Six questions, about two minutes. Answer what you want — nothing here is required.</p>
+
+  <form id="feedback-form" action="https://formspree.io/f/xqpewdyy" method="POST">
+    <input type="hidden" name="_subject" value="New feedback from mrlifemanager.com">
+    <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off">
+
+    <fieldset class="radio">
+      <legend>1. Which best describes your situation right now?</legend>
+      <label><input type="radio" name="situation" value="Moving into a new place"> Moving into a new place</label>
+      <label><input type="radio" name="situation" value="Guests coming over"> Guests coming over</label>
+      <label><input type="radio" name="situation" value="Home feels underwater"> Home feels underwater</label>
+      <label><input type="radio" name="situation" value="Just looking around"> Just looking around</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. What's the most stressful part of running your home right now?</legend>
+      <input type="text" name="stressful_part" autocomplete="off">
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Have you tried one of the free task pages? Which one — and did it help?</legend>
+      <input type="text" name="tried_task" autocomplete="off">
+      <p class="hint">The guest, first-night, and underwater pages — or none yet. All answers useful.</p>
+    </fieldset>
+
+    <fieldset>
+      <legend>4. What's one situation you wish the site covered that it doesn't?</legend>
+      <input type="text" name="missing_situation" autocomplete="off">
+    </fieldset>
+
+    <fieldset>
+      <legend>5. If there were a paid guide that solved that situation completely, what would it need to include for you to buy it?</legend>
+      <textarea name="paid_guide"></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>6. Anything else you'd tell me?</legend>
+      <textarea name="anything_else"></textarea>
+      <p class="hint" style="margin-top:12px;">If you're open to one follow-up question, leave your email. Optional.</p>
+      <input type="email" name="email" placeholder="you@example.com" autocomplete="email">
+    </fieldset>
+
+    <button type="submit">Send feedback</button>
+  </form>
+
+  <div id="thanks" class="thanks" hidden>
+    <h2>Got it. Thank you.</h2>
+    <p>That's genuinely useful — it decides what gets built next.</p>
+    <p><a href="/">Back to Mr. Life Manager</a></p>
+  </div>
+
+  <footer>
+    <a href="/">mrlifemanager.com</a> — the practical systems of running a life, written down.
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var form = document.getElementById('feedback-form');
+  var thanks = document.getElementById('thanks');
+  form.addEventListener('submit', function(e){
+    // If the form was never configured, don't silently swallow the answers.
+    if (form.action.indexOf('xqpewdyy') !== -1) { return; }
+    e.preventDefault();
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function(res){
+      if (res.ok) { form.hidden = true; thanks.hidden = false; window.scrollTo(0,0); }
+      else { form.submit(); } // fall back to a normal POST
+    }).catch(function(){ form.submit(); });
+  });
+})();
+</script>
+</body>
+</html>
