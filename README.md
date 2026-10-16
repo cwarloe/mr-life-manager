@@ -187,7 +187,8 @@ verify it and learn from real people.
       [just underwater](products/landing/underwater.html) ·
       [the room that became storage](products/landing/one-room.html) ·
       [the office that got away from you](products/landing/office.html)
-      (added 2026-10-06; not linked from the homepage picker; MailerLite group
+      (added 2026-10-06; deliberate one-off per Charles 2026-10-08 — direct-link
+      only; do not add to homepage/parents/partners pickers; MailerLite group
       not wired yet).
       Completeness is enforced by
       [`check_entry_pages.py`](.github/scripts/check_entry_pages.py)

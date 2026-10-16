@@ -40,7 +40,7 @@ earn the right to sell — in that order.
 
 | Product | Format | Notes |
 |---|---|---|
-| **Entry pages** — first night, guests, one room, underwater, office (added 2026-10-06; not in the homepage picker; MailerLite group not wired yet) | Web; prints from the page, no PDF | The front door. One action each, ungated. |
+| **Entry pages** — first night, guests, one room, underwater, office (added 2026-10-06; deliberate one-off per Charles 2026-10-08 — direct-link only, not in homepage/parents/partners pickers; MailerLite group not wired yet) | Web; prints from the page, no PDF | The front door for the public funnel (office is a one-off, not a fifth marketing door). One action each, ungated. |
 | **The Week** | 1 pg PDF | Dave's weekly rhythm. Linked in email 1 of every entry sequence. |
 | **First Apartment Checklist** | PDF | Everything to buy, do, and set up in week one. |
 | **How Often Should I…?** | PDF | Sheets, towels, filters, oil, vacuum, fridge, dentist. Extremely shareable. |
@@ -184,8 +184,8 @@ the front door is a completed action, not a lead-magnet PDF.
 
 1. **Entry pages** — free, ungated, one pain each. Prove completion and earn the
    email after a win. (Live: first night, guests, underwater, one room, and
-   office since 2026-10-06, which isn't in the homepage picker and has no
-   MailerLite group yet.)
+   office since 2026-10-06. Office is a deliberate one-off — direct-link only,
+   not part of the public funnel; no MailerLite group yet.)
 2. **Paid tests at low cost** — small offers that prove willingness to pay and
    reveal *which topic* people actually buy. Minimal risk.
 3. **House-in-order system** — the flagship (cleaning, organizing, dishes,
