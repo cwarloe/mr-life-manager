@@ -114,7 +114,7 @@ Three habits to watch, all of them mine:
    drops them to sound tighter; speech keeps them.
 
 **This applies to emails, not to the guides.** On a printed checklist a fragment
-is a label and it works — *"Bin out. Window open."* is correct there. In an inbox
+is a label and it works — *"Take the trash out and open a window."* works there. In an inbox
 the same construction sounds like a robot. Different register, different rules.
 
 ## US English, throughout
