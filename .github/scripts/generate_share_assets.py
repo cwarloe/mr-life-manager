@@ -39,7 +39,6 @@ BLUE_SOFT = "#E7EEF5"
 AMBER = "#B4741A"
 SLATE = "#6B7280"
 
-SANS = "/usr/share/fonts/opentype/urw-base35/NimbusSans-Regular.otf"
 SANS_BOLD = "/usr/share/fonts/opentype/urw-base35/NimbusSans-Bold.otf"
 SERIF = "/usr/share/fonts/opentype/urw-base35/NimbusRoman-Regular.otf"
 PDF_SANS = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
@@ -142,7 +141,7 @@ def sync_share_qr(svg: str) -> int:
     """Write the committed SVG and refresh each sheet's inline copy."""
     SHARE_QR_PATH.write_text(svg + "\n")
     updated = 0
-    for src, stem in SHEETS:
+    for src, _stem in SHEETS:
         path = ROOT / src
         html = path.read_text()
         if html.count(SHARE_QR_START) != 1 or html.count(SHARE_QR_END) != 1:

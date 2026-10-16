@@ -8,6 +8,8 @@ import sys
 from pathlib import Path
 from urllib.parse import unquote
 
+from guide_inventory import SHEETS
+
 ROOT = Path(__file__).resolve().parents[2]
 ERRORS: list[str] = []
 
@@ -44,9 +46,6 @@ def validate_share_qr() -> None:
     generate_share_assets.py writes both; this catches a hand edit or a sheet
     added to guide_inventory.SHEETS without re-running it.
     """
-    sys.path.insert(0, str(ROOT / ".github" / "scripts"))
-    from guide_inventory import SHEETS  # noqa: E402
-
     svg_path = ROOT / "products" / "print" / "share-qr.svg"
     if not svg_path.is_file():
         error("products/print/share-qr.svg: missing (run generate_share_assets.py)")

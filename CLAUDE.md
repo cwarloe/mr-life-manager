@@ -70,7 +70,8 @@ Don't re-derive these — read them:
   `.github/scripts/site_catalog.py` — import from there; don't hardcode the
   doors in new checks
 - `python3 .github/scripts/build_site.py` — assemble `_site/`
-- `python3 .github/scripts/validate_repo.py` — HTML + internal links; run before
+- `python3 .github/scripts/validate_repo.py` — HTML + internal links, and each
+  sheet's inline share QR matches `products/print/share-qr.svg`; run before
   committing
 - `python3 .github/scripts/render_all_pdfs.py` — regenerate printables with the
   brand fonts embedded; it refuses to write a PDF missing them
@@ -81,8 +82,9 @@ Don't re-derive these — read them:
 - `python3 .github/scripts/check_entry_pages.py` — every entry page carries the
   doing-mode script, the print rules, a signup tag and a matching sequence.
   Runs in CI. **New entry page? Copy `guests.html`**, don't build from scratch
-- `python3 .github/scripts/check_pdfs_fresh.py` — fails if a committed PDF is
-  older than its source HTML. Runs in CI. **Change a guide's HTML and you must
+- `python3 .github/scripts/check_pdfs_fresh.py` — fails if a committed PDF's
+  source hash (HTML + linked CSS + embedded-fonts CSS + print zoom) no longer
+  matches `.sources.json`. Runs in CI. **Change a guide's HTML and you must
   re-render**, or the emails link to the old version
 - `python3 .github/scripts/check_built_site.py` — run after `build_site.py`; it
   verifies canonical/share metadata, every entry route's MailerLite wiring, privacy copy

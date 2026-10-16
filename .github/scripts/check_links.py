@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Fail if outbound HTTPS links in published HTML no longer resolve. Runs weekly."""
 from __future__ import annotations
-import re, sys, urllib.error, urllib.request
+import re
+import urllib.error
+import urllib.request
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Render HTML to PDF with brand fonts embedded (offline @font-face, not CDN).
 
-Usage:  render_pdf.py <source.html> <out.pdf>
+Usage:  render_pdf.py <source.html> <out.pdf> [zoom]
 """
 import hashlib
 import json
