@@ -21,12 +21,12 @@ this file exists to catch ideas that don't fit neatly there.
 
 | Idea | Est. price | Fit |
 |---|---|---|
-| Single-topic PDF guides | $9–$19 | 🟢 Fastest possible first revenue |
-| *First Place* flagship ebook | $39 | 🟢 The core MVP bet |
+| Single-topic PDF guides | $9–$19 | 🟢 Offered only after a free win in that domain (ADR-020) |
+| House-in-order system (cleaning, organizing, dishes, laundry) | Not set | 🟢 The flagship per ADR-020 (Proposed) |
 | Guide bundles (room-by-room, etc.) | $29–$59 | 🟢 Free revenue from existing assets |
 | Notion / Google Sheets templates | $19–$49 | 🟡 Good margin; support burden |
 | Printable planner + calendar pack | $12–$29 | 🟡 Seasonal spikes (Aug/Sep, Jan) |
-| Editions by persona (student / couples / starting over) | $39 | 🟡 High leverage: one spine, three markets |
+| Editions by persona (student / couples / starting over) | Not set | 🟡 Needs re-deciding after ADR-020 |
 | Audiobook version | $19 | 🔴 Wait for a proven text product |
 | Physical printed book | $24 | 🔴 Print-on-demand possible, but a distraction |
 
@@ -117,12 +117,12 @@ different landing page.
 **Do now (🟢)**
 1. Free **First Apartment Checklist** — audience validation as archive/shareable; win-first entry pages capture email after the win ([ADR-015](../../planning/decisions.md#adr-015--the-win-comes-before-the-email)).
 2. Two or three **$9–$19 guides** — first revenue, and a read on which topics sell.
-3. ***First Place* at $39** — the core bet.
+3. **The house-in-order system** — the flagship (ADR-020, Proposed). Price not set.
 4. **5–10 coaching or $99 audit slots** — cash, research, and testimonials.
 5. **Parent-gift positioning** for the student market — a landing page test.
 
 **Prepare (🟡)**
-- Persona editions of the flagship
+- Persona editions of the flagship (re-decide after ADR-020)
 - Group coaching cohort once the list supports it
 - Church / campus ministry conversations through existing relationships
 - Affiliate starter-kit lists, with disclosure rules written before launch

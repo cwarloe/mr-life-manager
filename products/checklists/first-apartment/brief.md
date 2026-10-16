@@ -55,7 +55,7 @@ action easy · §8 dignity, not shame · §10 teach the why
 
 Free archive/search guide per [ADR-015](../../../planning/decisions.md#adr-015--the-win-comes-before-the-email)
 (entry pages are the front door; this checklist is not). After it on the ladder:
-the room-by-room guides ($9) and *First Place* ($39). It must be complete and
+the room-by-room guides ($9) and the house-in-order flagship (ADR-020). It must be complete and
 genuinely useful with **no upsell in the body**; a free asset that is really a
 sales pitch poisons the ladder, especially for an audience whose core barrier
 is embarrassment.

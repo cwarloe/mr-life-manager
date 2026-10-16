@@ -851,7 +851,7 @@ Not yet ADRs. These need to be made, and each blocks something.
 |---|---|---|
 | Put Dave's arrangement in writing at some point — **not urgent, substance is settled** ([ADR-011](#adr-011--mr-life-manager-is-a-real-person-dave-webster)). It protects him and his family more than it protects the founder. | Nothing immediate | Low |
 | **Capture Dave's material before anything else.** He under-reports his own expertise by nature, so this needs method, not just time. | All content; the entire product line | **Highest** |
-| **Is First Place comprehensive or small?** A ten-domain manual may be exactly what the underwater professional has already failed to finish ([analysis](../docs/research/underwater-professional.md#implications)). Decide who it is for before writing it. **Candidate answer (2026-09-29): both, for different readers** — comprehensive for people leaving structure, small for people with no margin ([niche strategy](../docs/business/niche-strategy.md#same-content-two-containers-matched-to-capacity)). | Writing First Place | Medium |
+| **Is the flagship comprehensive or small?** *(Reframed 2026-10-15: ADR-020, Proposed, makes the flagship the home-domain house-in-order system.)* A ten-domain manual may be exactly what the underwater professional has already failed to finish ([analysis](../docs/research/underwater-professional.md#implications)). Decide who it is for before writing it. **Candidate answer (2026-09-29): both, for different readers** — comprehensive for people leaving structure, small for people with no margin ([niche strategy](../docs/business/niche-strategy.md#same-content-two-containers-matched-to-capacity)). | Writing the flagship | Medium |
 | Is Health in scope, given liability and expertise limits? | Domain taxonomy, content plan | Low |
 | Does Transportation earn its own domain, or fold into Maintenance? | Taxonomy | Low |
 | Should the public-facing domain list compress from 13 to 5–6? | Marketing, product structure | Low |
@@ -1083,7 +1083,7 @@ which left the relationship to *First Place*'s food section open.
 **Context.** The free guide
 [Six Meals and a Stocked Kitchen](../products/checklists/six-meals/) gives away
 six repeatable meals. *First Place* ($39) also promised "six repeatable meals",
-on its [founding-offer page](../products/landing/first-place.html) and in the
+on its founding-offer page (`/first-place.html`, deleted 2026-10-15 under ADR-020) and in the
 [product ladder](../docs/business/product-ladder.md). That conflicts with the
 ladder's own "Nothing sold twice" check.
 
@@ -1138,3 +1138,52 @@ touched here.
 
 **Revisit when:** marketing settles pricing for laundry and roommate material.
 
+---
+
+## ADR-020 — Win before wallet; retire the $39 flagship
+
+**Status:** Proposed — not yet accepted
+**Date:** 2026-10-15
+**Scope:** The paid side of the product ladder. Retires *First Place* ($39) and
+its no-charge reservation page and demand test. Free pages are unchanged.
+**Relates to** [ADR-015](#adr-015--the-win-comes-before-the-email) (under
+review), which set the $9 first step and the $39 *First Place*. Once accepted,
+ADR-020 supersedes ADR-015's $39 *First Place* parts. ADR-015's status is not
+changed here. Also follows
+[ADR-018](#adr-018--six-meals-removed-from-first-place), whose subject no longer
+exists.
+
+**Context.** The $39 *First Place* comprehensive guide priced above verified
+category comparables and bundled everything into one complex offer — the
+opposite of the brand's single-issue, directive shape. Per
+[competitor notes](../docs/research/competitor-notes.md#verified-price-points),
+$9–19 is the proven band for guides in this category.
+
+**Decision.**
+
+- **Free tier:** single-issue task pages and basic checklists. One pain, one
+  directive solution, one clear end state. Free forever.
+- **Paid tier:** deeper $9–19 guides per domain, offered only after the free win
+  has delivered real value.
+- **Flagship:** the house-in-order system — cleaning, organizing, dishes,
+  laundry. The physical work autopay can't do.
+- **Principle:** we don't charge for what costs us nothing to make, and we don't
+  sell to people who won't use it.
+- **Subscription** only if action-gated: the next unlocks when the last is done.
+  No dopamine without doing.
+
+**Consequences.** The [product ladder](../docs/business/product-ladder.md), the
+README, business model, revenue ideas, roadmap, backlog and briefs drop the $39
+*First Place* rung. The reservation page (`/first-place.html`), its share image
+and its site checks are deleted; the built-site check now fails if the page or a
+link to it comes back. Dave's principles remain the cross-domain content engine
+(a friend's office-cleanup request became a live page in 30 minutes); the
+flagship stays in the home domain. The flagship's name, price and format are not
+set. The room-by-room bundle moves from $29 to $19 to fit the band (Charles,
+2026-10-15). Draft source: [adr-020-win-before-wallet.md](adr-020-win-before-wallet.md).
+
+**Status of the evidence.** Reasoning plus verified competitor prices. No reader
+has seen the new ladder.
+
+**Revisit when:** Charles accepts or rejects this, or the revenue and marketing
+rework lands.

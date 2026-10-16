@@ -74,8 +74,8 @@ The niches split cleanly by how much capacity the reader has right now:
 |---|---|---|
 | Who | Underwater professional; high-intensity worker mid-crunch | Academy grad; anyone leaving a structured environment |
 | What they'll finish | The smallest thing that still works in a bad week | A comprehensive manual |
-| Container | *The Floor*, *The Reset*, *Travel Mode* | *First Place* |
+| Container | *The Floor*, *The Reset*, *Travel Mode* | The house-in-order flagship (ADR-020) |
 
 This is a candidate answer to the open question of whether
-[First Place is comprehensive or small](../../planning/decisions.md#open-decisions):
+[the flagship is comprehensive or small](../../planning/decisions.md#open-decisions):
 **both, for different readers.** Still to be decided.

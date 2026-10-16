@@ -111,8 +111,8 @@ genuinely doable and it's the only real research we have.
 
 1. ~~**The printable.**~~ Done — Email 1 links
    <https://mrlifemanager.com/print/the-week.pdf>. Open it before sending.
-2. ~~**No paid offer / $9 maintenance product.**~~ **Parked** — First Place
-   founding is $39; the $9 standalone guide is a later idea, not an open ship
+2. ~~**No paid offer / $9 maintenance product.**~~ **Parked** — under ADR-020
+   (Proposed) a $9–19 guide is offered only after a free win; it is a later idea, not an open ship
    item. These sequences stay free-task only (ADR-015 shrinking rule still
    applies if a same-domain paid step is ever un-parked).
 3. ~~**MailerLite automation.**~~ **Done** 2026-09-22 (Active per owner). Live

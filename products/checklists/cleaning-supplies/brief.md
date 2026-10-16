@@ -47,8 +47,8 @@ Home (cleaning) — narrow by design. It's a single-purpose reference.
 
 ### 6. Ladder position
 
-Rung 0, beside the other free guides. Leads to room-by-room guides ($9) and
-*First Place* ($39).
+Rung 0, beside the other free guides. Leads to room-by-room guides ($9) and the
+house-in-order flagship (ADR-020).
 
 ### 7. Content drawn on
 

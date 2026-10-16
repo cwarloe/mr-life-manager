@@ -5,6 +5,12 @@
 > question about the reader's situation, not a menu. All guides remain public at
 > `/guides/`; *public* and *offered* are different decisions. See
 > [commerce-rules.md](commerce-rules.md) for the ladder as operated.
+>
+> **Reworked 2026-10-15 per [ADR-020](../../planning/decisions.md#adr-020--win-before-wallet-retire-the-39-flagship)
+> (Proposed — not yet accepted).** Win before wallet: free single-issue wins stay
+> free forever; deeper $9–19 guides per domain are offered only after a free win
+> has delivered real value; the flagship is the house-in-order system. Principle: we don't charge for what costs us
+> nothing to make, and we don't sell to people who won't use it.
 
 A value ladder moves someone from *never heard of us* to *paid us a lot*, one
 small trust increment at a time. Each rung should deliver a complete win on its
@@ -16,7 +22,11 @@ especially for an audience whose core wound is being talked down to.
 
 ---
 
-## Rung 0 — Free (attract and prove)
+## Rung 0 — Free (attract and prove) — free forever
+
+Single-issue task pages and basic checklists: one pain, one directive solution,
+one clear end state. Per ADR-020 these stay free forever; they are never moved
+behind a paywall later.
 
 **Purpose:** get something *done*, today, for free. Then earn the email, then
 earn the right to sell — in that order.
@@ -53,14 +63,16 @@ sell.
 
 ---
 
-## Rung 1 — Low-cost ($9–$29) (first transaction)
+## Rung 1 — Deeper guides per domain ($9–19), after the free win
 
-**Purpose:** convert a reader into a customer. The size of the purchase matters
-far less than the fact that it happened.
+**Purpose:** go deeper in a domain where a free win has already delivered real
+value. Per ADR-020 a paid guide is **offered only after** the reader has finished
+a free win in that domain — never as the first thing they see, and never to
+someone who hasn't used the free version.
 
 | Product | Price | Notes |
 |---|---|---|
-| **Room-by-Room Setup Guides** (kitchen, bath, bedroom, living, laundry) | $9 ea / $29 bundle | Modular; the bundle is the real product. |
+| **Room-by-Room Setup Guides** (kitchen, bath, bedroom, living, laundry) | $9 ea / $19 bundle | Modular; the bundle is the real product. |
 | **Household Maintenance Calendar** | $12 | Annual/seasonal/monthly, apartment and house versions. |
 | **Paperwork Starter Kit** | $19 | What documents exist, why, where they live, what to shred. |
 
@@ -81,35 +93,16 @@ across the low tier (the strongest signal that the mid-tier will work).
 
 ---
 
-## Rung 2 — Mid-tier ($39–$149) (the core offer)
+## Rung 2 — Flagship: the house-in-order system
 
-**Purpose:** the flagship. Comprehensive, sequenced, and transformative rather
-than referential. This is where most revenue should come from.
+**Purpose:** the flagship. The house-in-order system — **cleaning, organizing,
+dishes, laundry.** The physical work autopay can't do. It stays in the home
+domain ([ADR-020](../../planning/decisions.md#adr-020--win-before-wallet-retire-the-39-flagship)).
 
-### ★ First Place: The Practical Guide to Running Your First Home — $39
-
-The flagship. A complete operating manual for someone running their own home for
-the first time.
-
-- Setting up: what to buy, what to skip, how to arrange a home around behavior
-- Room by room: how each space actually works
-- Cleaning: routines by frequency, not by perfectionism
-- Food: stocking, planning, and the cleanup rhythm
-- Laundry and clothing care
-- Maintenance: the annual calendar and what breaks when
-- Money: accounts, autopay, buffer, what things cost
-- Paperwork and admin: what to keep, where, and for how long
-- Time and calendar: the weekly reset
-- Hospitality: how to have people over without a panic
-
-*Editions:* student, solo, couples. Same spine, adjusted framing and examples.
-
-**The six meals aren't part of First Place.** They're free in
-[Six Meals and a Stocked Kitchen](../../products/checklists/six-meals/) at Rung 0,
-so per Charles (2026-09-26,
-[ADR-018](../../planning/decisions.md#adr-018--six-meals-removed-from-first-place))
-First Place doesn't sell them again. They can move back into a paid product
-later. Price unchanged at $39.
+Price, format and name are **not set**. Don't invent them; they get decided once
+the free tier and the $9–19 guides show what people actually finish. If a
+subscription is ever used here it must be **action-gated**: the next part
+unlocks only when the last is done. No dopamine without doing.
 
 ### Other mid-tier products
 
@@ -120,7 +113,12 @@ later. Price unchanged at $39.
 | **Starting Over Toolkit** | $49 | Sequenced rebuild after a major transition. Gentler tone. |
 | **Hosting Without Panic** | $49 | Hospitality as a system: the 48-hour plan, three menus, guest-ready home. |
 
-**Success looks like:** *First Place* sells consistently without discounting, and
+> These mid-tier products and prices pre-date ADR-020 and have not been
+> re-decided against it.
+
+**Success looks like:** the flagship is used — the house actually gets in order —
+and completion/outcome reports are strong enough to produce real testimonials,
+without discounting. Until then, nothing is sold that hasn't been earned.
 completion/outcome reports are strong enough to produce real testimonials.
 
 ---
@@ -170,13 +168,12 @@ purchasing committee.
 ──────────┼──────────────────────────────────────────────
      $99  ┤ Household Operating System (couples)
      $79  ┤ 30-Day Life Reset
-   ★ $39  ┤ FIRST PLACE                                   ← revenue core
+      ★   ┤ HOUSE-IN-ORDER SYSTEM (price not set)         ← flagship
 ──────────┼──────────────────────────────────────────────
-     $29  ┤ Room-by-room bundle
-     $19  ┤ Paperwork Kit
-      $9  ┤ Single room-by-room guides
+     $19  ┤ Room-by-room bundle · Paperwork Kit  ← deeper guides,
+      $9  ┤ Single room-by-room guides         only after a free win
 ──────────┼──────────────────────────────────────────────
-      $0  ┤ Entry pages (front door) · The Week ·           ← the whole funnel
+      $0  ┤ Entry pages (front door) · The Week ·           ← free forever; the whole funnel
           │ guides as archive/search surface                  depends on this
 ```
 
@@ -191,10 +188,10 @@ the front door is a completed action, not a lead-magnet PDF.
    MailerLite group yet.)
 2. **Paid tests at low cost** — small offers that prove willingness to pay and
    reveal *which topic* people actually buy. Minimal risk.
-3. **First Place** — the $39 flagship, assembled from proven free wins and paid
-   tests, expanded and sequenced.
-4. **30-Day Life Reset** — repackages *First Place* into a daily format; near-zero
-   new content, meaningfully higher price.
+3. **House-in-order system** — the flagship (cleaning, organizing, dishes,
+   laundry), assembled from proven free wins and the $9–19 guides people
+   actually finished (ADR-020, Proposed).
+4. **30-Day Life Reset** — its source material needs re-deciding under ADR-020.
 5. **Coaching** — sell before you feel ready; it's research that pays.
 6. **Toolkits and editions** — variations on proven material.
 7. **Institutional licensing** — once there's proof.
@@ -206,6 +203,9 @@ Note how much of the ladder is **the same content in different containers.** Tha
 is the point. Write once at high quality; package many times.
 
 ## ⚠️ Pricing reality check (2026-09-08)
+
+> *Historical record (2026-09-08), kept as the evidence ADR-020 cites. The
+> flagship priced here no longer exists.*
 
 Verified competitor prices from
 [competitor research](../research/competitor-notes.md#verified-price-points).
@@ -253,7 +253,9 @@ currently doesn't contain.
 - **Average revenue per customer** should rise as the ladder fills out — if it
   doesn't, the rungs are too far apart.
 - **No orphan rungs.** Every product should name the product before and after it.
-- **No cannibalization.** If the $29 bundle makes the $39 flagship pointless,
+- **No cannibalization.** If a $9–19 guide makes the flagship pointless,
   restructure.
+- **Win before wallet.** No paid offer is shown to someone who hasn't finished
+  a free win in that domain (ADR-020).
 - **Nothing sold twice.** If a mid-tier buyer feels they paid again for what they
   already had, the ladder is broken.

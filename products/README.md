@@ -17,7 +17,7 @@ quality, package many times. See
 |---|---|
 | `checklists/` | Printable free guides (archive/search). Paid ideas live on [product-ladder](../docs/business/product-ladder.md). |
 | `worksheets/` | Fill-in templates: agreements, calendars, planners, inventories. |
-| `ebooks/` | Multi-chapter guides, starting with the flagship, *First Place* (not yet written). |
+| `ebooks/` | Multi-chapter guides, starting with the flagship, the house-in-order system (not yet written; ADR-020). |
 | `courses/` | Structured multi-module programs, text or video. |
 | `toolkits/` | Bundled systems — several artifacts solving one situation end to end. |
 | `landing/` | The public site: router homepage, entry pages, email sequences. See [SETUP.md](landing/SETUP.md). |
@@ -74,7 +74,6 @@ surface, not offers.
 - **Printables** — [`guides-pdf/`](guides-pdf/), at `/print/`: one PDF per guide,
   [*The Week*](print/the-week.html) (what every sequence sends), and the
   partner-pilot handouts.
-- **Paid** — none. [`first-place.html`](landing/first-place.html) takes
-  no-charge reservations for a planned $39 founding offer.
+- **Paid** — none.
 - **Empty:** [ebooks](ebooks/), [courses](courses/), [toolkits](toolkits/).
 

@@ -24,7 +24,6 @@ entry pages, after the action
 | `/print/<slug>.pdf` | A specific printable |
 | `/print/partner-pilot.pdf` | Four audience-specific, QR-coded pilot handouts |
 | `/finished-<door>.html` | No-index completion destination for each entry page |
-| `/first-place.html` | No-charge reservation for the planned $39 founding offer |
 | `/privacy.html` | What an email is used for |
 
 `index.html` is the main page. `index-parents.html` is the parent-facing
@@ -53,7 +52,7 @@ Pillow, ReportLab, and `qrcode`.
 **Embedded form ID:** `00ZwEr`
 
 The form is embedded on every entry page and its completion page.
-Do not put it back on the homepage or the *First Place* founding-offer page. The
+Do not put it back on the homepage. The
 completion pages reuse the originating door tag, so the reader receives the
 same three-email sequence whether they signed up in reading mode or immediately
 after finishing in doing mode.

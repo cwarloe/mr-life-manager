@@ -26,9 +26,8 @@ people actually get stuck on, and generates testimonials. It's the right first
 ## Planned
 
 - **The 30-Day Life Reset** ($79) — one small action per day, daily email plus
-  workbook. **Near-zero new content** — it's *First Place* repackaged into a
-  daily format at a higher price. Do this before any video.
-- **First Place, the course** — video version, only after the book sells
+  workbook. Source material needs re-deciding under ADR-020. Do this before any
+  video.
 - **Hosting Without Panic** ($49)
 - **Household Operating System, couples** ($99)
 

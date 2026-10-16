@@ -48,9 +48,11 @@ Don't re-derive these — read them:
 - [`planning/decisions.md`](planning/decisions.md) — the ADRs. ADR-014
   (completion converts), ADR-015 (the win comes before the email), ADR-016
   (the sequence shrinks unconditionally), ADR-017 (Kitchen That Works free,
-  folded into Six Meals), ADR-018 (six meals off First Place; First Place stays
-  $39), ADR-019 (Laundry, Solved and the roommate kit free only) govern most
+  folded into Six Meals), ADR-018 (six meals off the old paid flagship), ADR-019 (Laundry, Solved and the roommate kit free only) govern most
   product decisions
+  - **ADR-020 (win before wallet) is Proposed — not yet accepted.** It retires
+    the $39 flagship and sets the ladder: free single-issue wins forever,
+    $9–19 guides only after a free win, house-in-order flagship.
   - **ADR-010, ADR-015 and ADR-016 are under review (2026-10-03).** Charles
     is reworking buyers, the revenue model and marketing strategy. Keep
     existing pages and emails as they are, but don't build new work on these

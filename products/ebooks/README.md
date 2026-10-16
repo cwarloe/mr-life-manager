@@ -5,29 +5,14 @@ Multi-chapter guides. The **core of the MVP** and the revenue center of the
 
 ## The flagship
 
-### ★ First Place: The Practical Guide to Running Your First Home — $39
-
-A complete operating manual for someone running their own home for the first
-time. Covers setup, room by room, cleaning, food, laundry, maintenance, money,
-paperwork, time, and hospitality.
-
-**Why this title works**
-- It names a **moment**, not a topic — and the moment is the buying trigger
-- It reads twice: your first place to live, *and* putting things in their place
-- Broad enough to justify $39, specific enough to be one clear promise
-
-**Why this product**
-- It's the **spine of everything else.** The 30-Day Reset, the persona editions,
-  and eventually a course are all repackagings of it.
-- It's the **licensable asset.** Institutions buy curriculum, not tips.
-
-**Planned editions:** student, solo, couples — same spine, adjusted framing and
-examples. Roughly 20% new writing for a new market, which is the highest-ROI move
-available in the entire plan.
+The flagship is the **house-in-order system** — cleaning, organizing, dishes,
+laundry ([ADR-020](../../planning/decisions.md#adr-020--win-before-wallet-retire-the-39-flagship),
+Proposed — not yet accepted). Name, price and format are not set. Write it only
+after free wins and $9–19 guides show what people actually finish.
 
 ## Also planned
 
-- Room-by-room setup guides ($9 each, $29 bundle)
+- Room-by-room setup guides ($9 each, $19 bundle)
 - Paperwork Starter Kit ($19)
 - Starting Over Toolkit ($49)
 

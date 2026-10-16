@@ -155,33 +155,32 @@ content businesses die of obscurity, not of bad content.
 
 ### Build
 
-- [ ] **Two or three $9–$19 guides** — lead with these. They test which topic
-      sells before anything long gets written.
-- [ ] **Presell or waitlist *First Place*** — do not write it first
-      (decided 2026-09-08). Build demand, then produce to it.
+- [ ] **Two or three $9–$19 guides** — lead with these, each offered only
+      after a free win in its domain ([ADR-020](decisions.md#adr-020--win-before-wallet-retire-the-39-flagship), Proposed). They
+      test which topic sells before anything long gets written.
+- [ ] **Show demand for the house-in-order flagship before writing it**
+      (decided 2026-09-08; flagship per ADR-020).
 - [ ] Payment and delivery (Gumroad, Podia, Lemon Squeezy — pick the boring one)
 - [ ] Sales page written from
       [customer-outcomes.md](../docs/vision/customer-outcomes.md)
 - [ ] Launch sequence to Phase 2 subscribers (earned after the win)
 
-### Why *First Place* is the right flagship
+### The flagship: the house-in-order system
 
-- **Names the moment.** Not a topic — a life transition. That's the buying
-  trigger.
-- **The title works twice:** your first place to live, and putting things in
-  their place.
-- **Comprehensive enough to justify $39** while remaining one clear promise.
-- **It's the spine of everything else.** The 30-Day Reset, the couples edition,
-  the student edition, and eventually a course are all repackagings of it.
-- **It's the licensable asset.** Institutions buy curriculum, not tips.
+Per [ADR-020](decisions.md#adr-020--win-before-wallet-retire-the-39-flagship) (Proposed — not yet accepted), the flagship is the
+house-in-order system — **cleaning, organizing, dishes, laundry**, the physical
+work autopay can't do.
+Price, format and name are not set. If it is ever a subscription, it is
+action-gated: the next part unlocks only when the last is done.
 
 **Decided 2026-09-08: no book until there is demand.** Build demand first, then
 produce to it. A 40-page guide that sells beats a 200-page book that doesn't, and
 you find out in a fraction of the time.
 
-Practically, that means Phase 3 leads with the **small paid guides** and a
-**presell or waitlist** for *First Place* — not with writing it. If the waitlist
-fills, write the book to an audience that already exists. If it doesn't, you
+Practically, that means Phase 3 leads with the **small paid guides**, each
+offered only after a free win — not with writing the flagship. If people finish
+the free wins and buy the guides, build the house-in-order system for an
+audience that already exists. If it doesn't, you
 learned that for the cost of a landing page instead of three months.
 
 ### Exit criteria
@@ -224,8 +223,8 @@ Talk to people who completed (or visited) but didn't buy — that's where the an
 
 ### Consumer
 
-- [ ] Persona editions of *First Place* (student, couples, starting over) —
-      highest ROI available: ~20% new writing for a new market
+- [ ] Persona editions — whether they apply to the house-in-order flagship is
+      open (ADR-020)
 - [ ] **The 30-Day Life Reset** ($79) — repackage, don't rewrite
 - [ ] Toolkits: Household Operating System, Paperwork, Hosting
 - [ ] Bundles and a full ladder
@@ -277,7 +276,7 @@ looking. Aim to have a win-first entry page ready before one of them.
 | **Can't reach the audience** | **High** | Phase 2 exists to test this first; use warm networks; institutional channel as fallback |
 | Audience won't pay individually | Medium-High | Parent-as-buyer; institutional licensing; premium personas |
 | Building before validating | **High** | The phase gates; presell before writing |
-| Scope creep across 13 domains | High | Ship *First Place* narrow; domains are a map, not a checklist |
+| Scope creep across 13 domains | High | Ship the house-in-order flagship narrow (home domain only, ADR-020); domains are a map, not a checklist |
 | Founder time | High | Small products, real deadlines, no video until text works |
 | Perfectionism | **High** | Ship the 80% version. The framework applies to the founder too. |
 | Category is crowded / gap is a graveyard | Medium | Phase 1 competitor research, honestly read |

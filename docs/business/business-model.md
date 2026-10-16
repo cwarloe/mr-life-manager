@@ -29,8 +29,10 @@ starting point.
 
 ## Model 1 — Ebooks and digital guides
 
-**What it is.** PDF/EPUB guides sold direct. The flagship: *First Place: The
-Practical Guide to Running Your First Home.*
+**What it is.** PDF/EPUB guides sold direct. The flagship is the house-in-order
+system (cleaning, organizing, dishes, laundry), per [ADR-020](../../planning/decisions.md#adr-020--win-before-wallet-retire-the-39-flagship)
+(Proposed). Deeper single-domain guides sit in the $9–19 band and are offered
+only after a free win.
 
 - **Economics:** ~100% gross margin. Price $19–$49.
 - **Effort:** High up front (writing, editing, design), near-zero to fulfill.
@@ -75,7 +77,7 @@ kit. Delivered as PDFs plus Notion/Google Sheets/Calendar templates.
 
 ## Model 4 — Video courses
 
-**What it is.** Structured multi-module courses: *First Place*, *30-Day Life
+**What it is.** Structured multi-module courses: *30-Day Life
 Reset*, *Hosting Without Panic*.
 
 - **Economics:** High margin minus platform fees (Teachable/Podia/Kajabi,
@@ -204,8 +206,10 @@ train-the-trainer packages. Long sales cycles, budget seasons, procurement.
 
 1. **Win-first entry pages** → prove reach and completion; ask for email after
    the win ([ADR-015](../../planning/decisions.md#adr-015--the-win-comes-before-the-email)).
-2. **One paid digital product** — current *First Place* bet is **$39** → prove
-   people will pay.
+2. **Deeper $9–19 guides per domain**, offered only after a free win has
+   delivered real value ([ADR-020](../../planning/decisions.md#adr-020--win-before-wallet-retire-the-39-flagship), Proposed) → prove people
+   will pay for what they've already started using. The flagship (house-in-order
+   system) comes after.
 3. **5–10 coaching clients** → learn what's actually broken, get testimonials,
    generate cash.
 4. **Toolkits and a product family** → increase revenue per customer.

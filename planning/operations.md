@@ -30,11 +30,8 @@ not created yet, so it has not had a route test.
 those page visits as a directional completion measure. They prove the reader
 reached and acknowledged the end state, not that every physical action occurred.
 
-**Paid-demand test:** `/first-place.html` names a planned $39 founding price and
-collects no-charge reservations as prefilled emails to the monitored inbox. A
-reservation is not a sale and must never be reported as revenue or paid demand.
-The optional source label in the subject records the route that produced the
-message; it is attribution, not identity tracking.
+**Paid-demand test:** none live. Per ADR-020 (Proposed) a paid guide is only
+offered after a free win; no reservation or price page is running.
 
 ## The cadence
 
