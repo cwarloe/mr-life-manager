@@ -23,7 +23,7 @@ via GitHub Actions when changes land on `main`.
   unconditionally; ADR-017 Kitchen That Works is free, folded into Six Meals;
   ADR-018 six meals taken off the old paid flagship; ADR-019
   Laundry, Solved and the roommate kit are free only (no $9 tier for now).
-  ADR-020 win before wallet is **Proposed — not yet accepted** (retires the $39
+  ADR-020 win before wallet is **Accepted (2026-10-15)** (retires the $39
   flagship; house-in-order system is the flagship).
   **ADR-010, ADR-015 and ADR-016 are under review as of 2026-10-03**
   (buyers, revenue model and marketing strategy being reworked); don't build

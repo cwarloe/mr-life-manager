@@ -7,7 +7,7 @@ Multi-chapter guides. The **core of the MVP** and the revenue center of the
 
 The flagship is the **house-in-order system** — cleaning, organizing, dishes,
 laundry ([ADR-020](../../planning/decisions.md#adr-020--win-before-wallet-retire-the-39-flagship),
-Proposed — not yet accepted). Name, price and format are not set. Write it only
+Accepted 2026-10-15). Name, price and format are not set. Write it only
 after free wins and $9–19 guides show what people actually finish.
 
 ## Also planned

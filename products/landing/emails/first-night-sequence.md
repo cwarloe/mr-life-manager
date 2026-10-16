@@ -113,7 +113,7 @@ which is the quiet point of the question.
 
 1. ~~**The printable.**~~ Done — Email 1 links
    <https://mrlifemanager.com/print/the-week.pdf>. Open it before sending.
-2. ~~**No paid offer / $9 product.**~~ **Parked** — under ADR-020 (Proposed) a
+2. ~~**No paid offer / $9 product.**~~ **Parked** — under ADR-020 (Accepted) a
    $9–19 guide is offered only after a free win; it is a later idea, not an open ship item and not in
    this sequence.
 3. ~~**MailerLite automation.**~~ **Done** 2026-09-22 (Active per owner). Live
