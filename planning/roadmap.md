@@ -156,7 +156,7 @@ content businesses die of obscurity, not of bad content.
 ### Build
 
 - [ ] **Two or three $9–$19 guides** — lead with these, each offered only
-      after a free win in its domain ([ADR-020](decisions.md#adr-020--win-before-wallet-retire-the-39-flagship), Proposed). They
+      after a free win in its domain ([ADR-020](decisions.md#adr-020--win-before-wallet-retire-the-39-flagship), Accepted). They
       test which topic sells before anything long gets written.
 - [ ] **Show demand for the house-in-order flagship before writing it**
       (decided 2026-09-08; flagship per ADR-020).
@@ -167,7 +167,7 @@ content businesses die of obscurity, not of bad content.
 
 ### The flagship: the house-in-order system
 
-Per [ADR-020](decisions.md#adr-020--win-before-wallet-retire-the-39-flagship) (Proposed — not yet accepted), the flagship is the
+Per [ADR-020](decisions.md#adr-020--win-before-wallet-retire-the-39-flagship) (Accepted 2026-10-15), the flagship is the
 house-in-order system — **cleaning, organizing, dishes, laundry**, the physical
 work autopay can't do.
 Price, format and name are not set. If it is ever a subscription, it is

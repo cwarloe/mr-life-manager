@@ -851,7 +851,7 @@ Not yet ADRs. These need to be made, and each blocks something.
 |---|---|---|
 | Put Dave's arrangement in writing at some point — **not urgent, substance is settled** ([ADR-011](#adr-011--mr-life-manager-is-a-real-person-dave-webster)). It protects him and his family more than it protects the founder. | Nothing immediate | Low |
 | **Capture Dave's material before anything else.** He under-reports his own expertise by nature, so this needs method, not just time. | All content; the entire product line | **Highest** |
-| **Is the flagship comprehensive or small?** *(Reframed 2026-10-15: ADR-020, Proposed, makes the flagship the home-domain house-in-order system.)* A ten-domain manual may be exactly what the underwater professional has already failed to finish ([analysis](../docs/research/underwater-professional.md#implications)). Decide who it is for before writing it. **Candidate answer (2026-09-29): both, for different readers** — comprehensive for people leaving structure, small for people with no margin ([niche strategy](../docs/business/niche-strategy.md#same-content-two-containers-matched-to-capacity)). | Writing the flagship | Medium |
+| **Is the flagship comprehensive or small?** *(Reframed 2026-10-15: ADR-020, Accepted, makes the flagship the home-domain house-in-order system.)* A ten-domain manual may be exactly what the underwater professional has already failed to finish ([analysis](../docs/research/underwater-professional.md#implications)). Decide who it is for before writing it. **Candidate answer (2026-09-29): both, for different readers** — comprehensive for people leaving structure, small for people with no margin ([niche strategy](../docs/business/niche-strategy.md#same-content-two-containers-matched-to-capacity)). | Writing the flagship | Medium |
 | Is Health in scope, given liability and expertise limits? | Domain taxonomy, content plan | Low |
 | Does Transportation earn its own domain, or fold into Maintenance? | Taxonomy | Low |
 | Should the public-facing domain list compress from 13 to 5–6? | Marketing, product structure | Low |
@@ -893,6 +893,7 @@ obvious and he'll mean it. Capture guidance is in
 ## ADR-015 — The win comes before the email
 
 **Status:** Under review (2026-10-03). Charles has put this on hold while the buyers, revenue model and marketing strategy are reworked with Growth Steward and outside consultants. Don't treat it as a settled rule or build new work on it until it is re-decided.
+**Superseded in part by [ADR-020](#adr-020--win-before-wallet-retire-the-39-flagship)** (2026-10-15): its $39 *First Place* parts.
 **Previously:** Accepted
 **Date:** 2026-09-20
 **Scope:** Funnel architecture, landing pages, email sequences, guide design.
@@ -1142,14 +1143,14 @@ touched here.
 
 ## ADR-020 — Win before wallet; retire the $39 flagship
 
-**Status:** Proposed — not yet accepted
+**Status:** Accepted (2026-10-15)
 **Date:** 2026-10-15
 **Scope:** The paid side of the product ladder. Retires *First Place* ($39) and
 its no-charge reservation page and demand test. Free pages are unchanged.
 **Relates to** [ADR-015](#adr-015--the-win-comes-before-the-email) (under
-review), which set the $9 first step and the $39 *First Place*. Once accepted,
-ADR-020 supersedes ADR-015's $39 *First Place* parts. ADR-015's status is not
-changed here. Also follows
+review), which set the $9 first step and the $39 *First Place*. ADR-020
+supersedes ADR-015's $39 *First Place* parts; the rest of ADR-015 stays under
+review. Also follows
 [ADR-018](#adr-018--six-meals-removed-from-first-place), whose subject no longer
 exists.
 

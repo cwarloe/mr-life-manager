@@ -30,7 +30,7 @@ not created yet, so it has not had a route test.
 those page visits as a directional completion measure. They prove the reader
 reached and acknowledged the end state, not that every physical action occurred.
 
-**Paid-demand test:** none live. Per ADR-020 (Proposed) a paid guide is only
+**Paid-demand test:** none live. Per ADR-020 (Accepted) a paid guide is only
 offered after a free win; no reservation or price page is running.
 
 ## The cadence

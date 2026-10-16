@@ -1,6 +1,6 @@
 # ADR-020 — Win before wallet; retire the $39 flagship
 Date: 2026-10-15
-Status: Proposed
+Status: Accepted (2026-10-15)
 
 ## Context
 The $39 "First Place" comprehensive guide priced above verified category comparables and bundled everything into one complex offer — the opposite of the brand's single-issue, directive shape. (See competitor-notes.md: verified price points; $9–19 is the proven band for guides in this category.)

@@ -31,7 +31,7 @@ starting point.
 
 **What it is.** PDF/EPUB guides sold direct. The flagship is the house-in-order
 system (cleaning, organizing, dishes, laundry), per [ADR-020](../../planning/decisions.md#adr-020--win-before-wallet-retire-the-39-flagship)
-(Proposed). Deeper single-domain guides sit in the $9–19 band and are offered
+(Accepted). Deeper single-domain guides sit in the $9–19 band and are offered
 only after a free win.
 
 - **Economics:** ~100% gross margin. Price $19–$49.
@@ -207,7 +207,7 @@ train-the-trainer packages. Long sales cycles, budget seasons, procurement.
 1. **Win-first entry pages** → prove reach and completion; ask for email after
    the win ([ADR-015](../../planning/decisions.md#adr-015--the-win-comes-before-the-email)).
 2. **Deeper $9–19 guides per domain**, offered only after a free win has
-   delivered real value ([ADR-020](../../planning/decisions.md#adr-020--win-before-wallet-retire-the-39-flagship), Proposed) → prove people
+   delivered real value ([ADR-020](../../planning/decisions.md#adr-020--win-before-wallet-retire-the-39-flagship), Accepted) → prove people
    will pay for what they've already started using. The flagship (house-in-order
    system) comes after.
 3. **5–10 coaching clients** → learn what's actually broken, get testimonials,

@@ -60,7 +60,7 @@ Each item is tagged with its [roadmap](roadmap.md) phase and primary
 | ~~Four entry-specific email sequences~~ | 2 | **Active in MailerLite**, three emails each. Email 1 links only `The Week`; reader validation remains open. |
 | ~~Parent-facing gift landing page~~ | 2 | **Deployed and connected** 2026-09-16 → [index-parents.html](../products/landing/index-parents.html) |
 | 2–3 low-cost guides ($9–$19) | 3 | Tests which topic sells before committing to a book |
-| House-in-order flagship validation | 3 | Per ADR-020 (Proposed). Build only after free wins and $9–19 guides show what people finish. Price not set. |
+| House-in-order flagship validation | 3 | Per ADR-020 (Accepted). Build only after free wins and $9–19 guides show what people finish. Price not set. |
 | Payment + delivery setup | 3 | Gumroad or similar; pick and move on |
 
 ### Research

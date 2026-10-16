@@ -82,7 +82,7 @@ the right action is the easy action, and the crisis mostly never arrives.
 
 ## Product direction
 
-Win before wallet ([ADR-020](planning/decisions.md#adr-020--win-before-wallet-retire-the-39-flagship), Proposed — not yet accepted):
+Win before wallet ([ADR-020](planning/decisions.md#adr-020--win-before-wallet-retire-the-39-flagship), Accepted 2026-10-15):
 
 - **Free forever:** single-issue task pages and basic checklists. One pain, one
   directive solution, one clear end state.

@@ -7,7 +7,7 @@
 > [commerce-rules.md](commerce-rules.md) for the ladder as operated.
 >
 > **Reworked 2026-10-15 per [ADR-020](../../planning/decisions.md#adr-020--win-before-wallet-retire-the-39-flagship)
-> (Proposed — not yet accepted).** Win before wallet: free single-issue wins stay
+> (Accepted 2026-10-15).** Win before wallet: free single-issue wins stay
 > free forever; deeper $9–19 guides per domain are offered only after a free win
 > has delivered real value; the flagship is the house-in-order system. Principle: we don't charge for what costs us
 > nothing to make, and we don't sell to people who won't use it.
@@ -190,7 +190,7 @@ the front door is a completed action, not a lead-magnet PDF.
    reveal *which topic* people actually buy. Minimal risk.
 3. **House-in-order system** — the flagship (cleaning, organizing, dishes,
    laundry), assembled from proven free wins and the $9–19 guides people
-   actually finished (ADR-020, Proposed).
+   actually finished (ADR-020, Accepted).
 4. **30-Day Life Reset** — its source material needs re-deciding under ADR-020.
 5. **Coaching** — sell before you feel ready; it's research that pays.
 6. **Toolkits and editions** — variations on proven material.
