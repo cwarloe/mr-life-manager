@@ -233,8 +233,8 @@ Also slightly adversarial.
 - **Primary:** *The life skills nobody thought to teach you.*
 - **Descriptor (homepage subhead, institutional decks):** *Practical systems for
   everyday adulthood.*
-- **Product-specific:** *First Place: The Practical Guide to Running Your First
-  Home.*
+- **Product-specific:** the house-in-order system (cleaning, organizing,
+  dishes, laundry). Name not set (ADR-020).
 
 Retire "Run your life. Don't let it run you." unless testing says otherwise.
 

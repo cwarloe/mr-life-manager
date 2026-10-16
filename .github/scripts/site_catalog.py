@@ -100,7 +100,6 @@ SITEMAP_CORE_PATHS: tuple[str, ...] = (
     "/index-parents.html",
     "/partners.html",
     *(f"/{route.page}" for route in ENTRY_ROUTES),
-    "/first-place.html",
     "/privacy.html",
     "/guides/",
     "/print/",
@@ -109,24 +108,11 @@ SITEMAP_CORE_PATHS: tuple[str, ...] = (
 
 # Built-site and live-site page markers (exact strings used by the checkers).
 # Do not invent new copy here.
-FIRST_PLACE_BUILT_MARKERS: tuple[str, ...] = (
-    "mailto:hello@mrlifemanager.com?subject=First%20Place%20%2439",
-    "planned founding price",
-    "No charge today",
-    "Reserve the $39 founding version",
-    "How I found this:",
-)
-FIRST_PLACE_LIVE_MARKERS: tuple[str, ...] = (
-    "First%20Place%20%2439%20founding%20reservation",
-    "Reserve the $39 founding version",
-    "planned founding price",
-)
 PARTNERS_BUILT_MARKERS: tuple[str, ...] = (
     "Pilot it with five",
     "data-source-link",
     "Five-person pilot",
     "new URLSearchParams",
-    "/first-place.html?from=partner",
 )
 PARTNERS_LIVE_MARKERS: tuple[str, ...] = (
     "Pilot it with five",
@@ -139,7 +125,6 @@ PRIVACY_BUILT_MARKERS: tuple[str, ...] = (
     "MailerLite stores",
     "just underwater",
     "room that became storage",
-    "founding reservation",
 )
 PRIVACY_LIVE_MARKERS: tuple[str, ...] = (
     "MailerLite stores",
@@ -169,7 +154,7 @@ def entry_social_images() -> dict[str, str]:
 
 def required_share_images() -> tuple[str, ...]:
     """All share PNG filenames that must exist under assets/share/."""
-    names = {"home.png", "first-place.png", "partners.png"}
+    names = {"home.png", "partners.png"}
     names.update(entry_social_images().values())
     return tuple(sorted(names))
 

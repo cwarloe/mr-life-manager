@@ -82,20 +82,24 @@ the right action is the easy action, and the crisis mostly never arrives.
 
 ## Product direction
 
-The flagship is planned as:
+Win before wallet ([ADR-020](planning/decisions.md#adr-020--win-before-wallet-retire-the-39-flagship), Proposed — not yet accepted):
 
-> **First Place: The Practical Guide to Running Your First Home** — $39
+- **Free forever:** single-issue task pages and basic checklists. One pain, one
+  directive solution, one clear end state.
+- **Paid:** deeper $9–19 guides per domain, offered only after a free win has
+  delivered real value.
+- **Flagship:** the house-in-order system — cleaning, organizing, dishes,
+  laundry. The physical work autopay can't do. Price and format not set.
 
-A structured, room-by-room, domain-by-domain guide for someone setting up and
-running their own place for the first time — supplies, setup, routines,
-maintenance calendar, money basics, and hosting.
+We don't charge for what costs us nothing to make, and we don't sell to people
+who won't use it.
 
 The free front door is **not** a lead-magnet PDF. Per
 [ADR-015](planning/decisions.md#adr-015--the-win-comes-before-the-email),
 visitors land on **per-pain entry pages** (one ungated action each); the email
 ask comes after a completed win. Free guides remain public archive/search
-surface. Behind the free tier: paid tests, then *First Place*, then the rest of
-the ladder — see [`docs/business/product-ladder.md`](docs/business/product-ladder.md)
+surface. Behind the free tier: deeper $9–19 guides after a free win, then the
+house-in-order flagship, then the rest of the ladder — see [`docs/business/product-ladder.md`](docs/business/product-ladder.md)
 and [`planning/roadmap.md`](planning/roadmap.md).
 
 ## The major life domains
@@ -189,12 +193,8 @@ verify it and learn from real people.
       [`check_entry_pages.py`](.github/scripts/check_entry_pages.py)
 - ✅ **Post-completion path added** — doing mode now ends at a distinct,
       no-index completion page for each door. Those pages expose the earned
-      email ask and the planned paid next step instead of sending a finisher
+      email ask instead of sending a finisher
       back to the top of the free page.
-- ✅ ***First Place* founding offer published** — a no-charge reservation page
-      names the planned $39 price and tests serious interest without calling a
-      reservation a sale. Reservations go directly to the monitored mailbox,
-      so the live demand test has no unconfigured automation dependency.
 - ✅ **Distribution path added** — parents, mentors, churches, and campuses can
       run a five-person free pilot from `partners.html`. Safe source labels carry
       through a completed task into reservation emails without cookies, and a

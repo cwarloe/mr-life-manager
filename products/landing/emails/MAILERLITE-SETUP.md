@@ -55,10 +55,6 @@ sequence is withdrawn
 ([ADR-016](../../../planning/decisions.md#adr-016--the-sequence-shrinks-unconditionally))
 and must never be reactivated.
 
-The *First Place* founding reservation is deliberately outside MailerLite. Its
-button opens a prefilled message to `hello@mrlifemanager.com`, so it cannot enter
-one of these sequences accidentally.
-
 ## Delivery promise
 
 The website gives the immediate task and print option before signup. Email 1

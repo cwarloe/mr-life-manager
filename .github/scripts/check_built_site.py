@@ -10,7 +10,6 @@ from pathlib import Path
 from guide_inventory import LEGACY_GUIDE_SLUGS
 from site_catalog import (
     ENTRY_ROUTES,
-    FIRST_PLACE_BUILT_MARKERS,
     ORIGIN,
     MAILERLITE_FORM_ATTR,
     MAILERLITE_JS_URL,
@@ -92,10 +91,12 @@ def main() -> int:
             if marker in completion_text:
                 problems.append(f"{completion}: must carry only the signup ask, found {marker}")
 
-    offer = (OUT / "first-place.html").read_text(encoding="utf-8")
-    for marker in FIRST_PLACE_BUILT_MARKERS:
-        if marker not in offer:
-            problems.append(f"first-place.html: missing {marker}")
+    # The $39 First Place offer was removed (ADR-020): no page may come back or link to it.
+    if (OUT / "first-place.html").exists():
+        problems.append("first-place.html: removed offer page is back in the build")
+    for page in OUT.rglob("*.html"):
+        if "/first-place.html" in page.read_text(encoding="utf-8"):
+            problems.append(f"{page.relative_to(OUT)}: links to removed /first-place.html")
 
     partners = (OUT / "partners.html").read_text(encoding="utf-8")
     for marker in PARTNERS_BUILT_MARKERS:
@@ -129,7 +130,7 @@ def main() -> int:
 
     print(f"Validated {len(pages) - len(legacy_pages)} generated pages, "
           f"{len(legacy_pages)} legacy redirect(s), {len(ENTRY_ROUTES)} entry routes, "
-          "the partner path and the founding offer.")
+          "and the partner path.")
     return 0
 
 

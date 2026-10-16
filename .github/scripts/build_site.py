@@ -24,7 +24,6 @@ DEFAULT_DESCRIPTION = (
 
 SOCIAL_IMAGES = {
     "index.html": "home.png",
-    "first-place.html": "first-place.png",
     "partners.html": "partners.png",
     "index-parents.html": "partners.png",
     **entry_social_images(),

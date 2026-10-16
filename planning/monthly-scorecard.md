@@ -10,7 +10,6 @@ One page for deciding what to do next. This is not an analytics warehouse.
 | Task completions | Visits to the explicit post-completion pages (`/finished-*.html`); a directional measure, not proof every step was performed |
 | Subscribers | New MailerLite subscribers, excluding tests |
 | Replies | Human replies to the three-email sequences |
-| Founding reservations | People who explicitly said they would seriously consider *First Place* at $39; interest, not revenue |
 | Five-person pilots | Partners who agreed to try the free pages with up to five people and report aggregate results |
 | Unsubscribes/complaints | Deliverability and trust warning signs |
 | Sales | Completed paid transactions, once a paid offer exists |
