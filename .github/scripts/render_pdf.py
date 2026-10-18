@@ -67,14 +67,14 @@ def inline_local_stylesheets(html: str, src: Path) -> tuple[str, int]:
         if not css_path.is_file():
             sys.exit(f"{src}: missing stylesheet {href} ({css_path})")
         count += 1
-        return "<style>\n" + css_path.read_text() + "\n</style>\n"
+        return "<style>\n" + css_path.read_text(encoding="utf-8") + "\n</style>\n"
 
     return LOCAL_CSS_LINK.sub(repl, html), count
 
 
 def linked_local_stylesheets(src: Path) -> list[Path]:
     """Return local stylesheet paths referenced by src (for freshness hashing)."""
-    html = src.read_text()
+    html = src.read_text(encoding="utf-8")
     out: list[Path] = []
     for match in LOCAL_CSS_LINK.finditer(html):
         href = match.group(1) or match.group(2)
@@ -88,7 +88,7 @@ def linked_local_stylesheets(src: Path) -> list[Path]:
 
 def print_scales() -> dict[str, float]:
     """Per-sheet scales written by tune_print_scale.py (empty if never tuned)."""
-    return json.loads(PRINT_SCALE.read_text()) if PRINT_SCALE.exists() else {}
+    return json.loads(PRINT_SCALE.read_text(encoding="utf-8")) if PRINT_SCALE.exists() else {}
 
 
 def effective_zoom(stem: str, scales: dict[str, float]) -> float:
@@ -102,12 +102,13 @@ def source_digest(src: Path, zoom: float) -> str:
     the embedded-fonts CSS and the zoom. check_pdfs_fresh.py compares this with
     what render_all_pdfs.py recorded in .sources.json."""
     h = hashlib.sha256()
-    h.update(src.read_bytes())
+    h.update(src.read_bytes().replace(b"\r\n", b"\n"))
     for css in linked_local_stylesheets(src):
         h.update(b"\0")
-        h.update(css.read_bytes())
+        h.update(css.read_bytes().replace(b"\r\n", b"\n"))
     h.update(b"\0")
-    h.update(FONT_CSS.read_bytes() if FONT_CSS.is_file() else b"")
+    font_bytes = FONT_CSS.read_bytes() if FONT_CSS.is_file() else b""
+    h.update(font_bytes.replace(b"\r\n", b"\n"))
     h.update(f"\0zoom={zoom}".encode())
     return h.hexdigest()[:16]
 

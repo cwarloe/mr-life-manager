@@ -60,7 +60,7 @@ ENTRY_ROUTES: tuple[EntryRoute, ...] = (
         slug="underwater",
         door_title="Just underwater",
         completion_message=(
-            "You put a floor under the week. That is different from fixing everything."
+            "You stopped the spiral and hit reset. That is different from fixing everything."
         ),
         share_image="underwater.png",
     ),

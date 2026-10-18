@@ -23,8 +23,8 @@ There's no move and no guest arriving — they've just been underwater for a whi
 which means shame is closest to the surface here. Nothing in this sequence
 references how they got there or how long it's been.
 
-The page's "floor" is a foundation under the week, not a mopped floor. Email 1
-has to say that in the page's own words, or it reads like we think they cleaned.
+The page resets the house to baseline. Email 1 reinforces that win
+in the page's own words.
 
 ---
 
@@ -32,7 +32,7 @@ has to say that in the page's own words, or it reads like we think they cleaned.
 
 **Subject:** Here's the thing worth printing
 
-> You put a floor under the week tonight. Here's the thing that keeps it there.
+> You stopped the spiral and hit reset tonight. Here's the simple routine that keeps things under control.
 >
 > https://mrlifemanager.com/print/the-week.pdf
 >

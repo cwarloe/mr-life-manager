@@ -102,7 +102,7 @@ def redirect_page(target_path: str, title: str) -> str:
 
 
 def tokens_from(path: Path) -> str:
-    css = path.read_text()
+    css = path.read_text(encoding="utf-8")
     m = re.search(r"(:root\{.*?)\*\{box-sizing", css, re.S)
     if not m:
         sys.exit(f"could not lift design tokens from {path}")
@@ -169,21 +169,21 @@ def main() -> int:
     assets = LANDING / "assets"
     if assets.is_dir():
         shutil.copytree(assets, OUT / "assets")
-    completion_template = (LANDING / "templates" / "finished.html").read_text()
+    completion_template = (LANDING / "templates" / "finished.html").read_text(encoding="utf-8")
     for route in ENTRY_ROUTES:
         rendered = (completion_template
                     .replace("__DOOR__", route.door_title)
                     .replace("__MESSAGE__", route.completion_message)
                     .replace("__GUIDE__", route.slug)
                     .replace("__BACK__", f"/{route.page}"))
-        (OUT / route.completion_page).write_text(rendered)
+        (OUT / route.completion_page).write_text(rendered, encoding="utf-8")
     printable_css = ROOT / "products" / "print" / "printable.css"
     if not printable_css.is_file():
         sys.exit(f"missing {printable_css}")
     tokens = tokens_from(printable_css)
     cards = []
     for slug, src, title, blurb in GUIDES:
-        html = (ROOT / src).read_text()
+        html = (ROOT / src).read_text(encoding="utf-8")
         if "</body>" not in html:
             sys.exit(f"{src}: no </body>")
         # Source HTML uses a relative path into products/print/; published guides
@@ -193,7 +193,7 @@ def main() -> int:
             'href="/print/printable.css"',
         )
         html = html.replace("</body>", CTA + "</body>")
-        (OUT / "guides" / f"{slug}.html").write_text(html)
+        (OUT / "guides" / f"{slug}.html").write_text(html, encoding="utf-8")
         cards.append(
             f"<a class='card' href='/guides/{slug}.html'><h2>{title}</h2>"
             f"<p>{blurb}</p><span class='go'>Read it →</span></a>"
@@ -201,7 +201,9 @@ def main() -> int:
     guide_titles = {slug: title for slug, _src, title, _blurb in GUIDES}
     for old, new in LEGACY_GUIDE_SLUGS.items():
         (OUT / "guides" / f"{old}.html").write_text(
-            redirect_page(f"/guides/{new}.html", guide_titles[new]))
+            redirect_page(f"/guides/{new}.html", guide_titles[new]),
+            encoding="utf-8",
+        )
     extra = (
         ".list{display:grid;gap:1rem;margin:2rem 0 3rem}"
         "a.card{border:2px solid var(--rule-strong);border-radius:3px;padding:1.3rem 1.5rem;"
@@ -234,7 +236,7 @@ def main() -> int:
             ),
         },
     ).replace("__TOKENS__", tokens)
-    (OUT / "guides" / "index.html").write_text(guides_index)
+    (OUT / "guides" / "index.html").write_text(guides_index, encoding="utf-8")
     pdf_src = ROOT / "products" / "guides-pdf"
     pdfs = sorted(pdf_src.glob("*.pdf"))
     if not pdfs:
@@ -269,9 +271,10 @@ def main() -> int:
             "main": "<main class='wrap'><ul>" + "".join(rows) + "</ul></main>",
         },
     ).replace("__TOKENS__", tokens)
-    (OUT / "print" / "index.html").write_text(print_index)
+    (OUT / "print" / "index.html").write_text(print_index, encoding="utf-8")
     (OUT / "robots.txt").write_text(
-        f"User-agent: *\nAllow: /\n\nSitemap: {ORIGIN}/sitemap.xml\n"
+        f"User-agent: *\nAllow: /\n\nSitemap: {ORIGIN}/sitemap.xml\n",
+        encoding="utf-8",
     )
     urls = sitemap_core_urls()
     urls += [f"{ORIGIN}/guides/{slug}.html" for slug, *_ in GUIDES]
@@ -281,7 +284,7 @@ def main() -> int:
     ]
     lines += [f"  <url><loc>{u}</loc></url>" for u in urls]
     lines.append("</urlset>\n")
-    (OUT / "sitemap.xml").write_text("\n".join(lines))
+    (OUT / "sitemap.xml").write_text("\n".join(lines), encoding="utf-8")
     metadata_count = add_public_metadata()
     print(
         f"Built _site/ — {len(GUIDES)} guides, {len(pdfs)} printables, "
