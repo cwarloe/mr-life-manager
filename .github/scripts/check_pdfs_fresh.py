@@ -34,7 +34,7 @@ def main() -> int:
               file=sys.stderr)
         return 1
 
-    recorded = json.loads(MANIFEST.read_text())
+    recorded = json.loads(MANIFEST.read_text(encoding="utf-8"))
     now = current()
     stale = sorted(k for k in now if recorded.get(k) != now[k])
     missing = sorted(k for k in now
