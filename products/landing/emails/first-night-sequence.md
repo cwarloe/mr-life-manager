@@ -33,7 +33,7 @@ Shrinks unconditionally. Nobody is branched on opens or clicks. A **reply** or a
 >
 > It's one page, and it's Dave's whole system. The top of it is the ten minutes you do before bed — empty the sink, wipe the counters, walk one lap and put things back. Underneath that there's one job for each day of the week, and two days with nothing on them at all.
 >
-> Don't start it yet. You've got boxes. But stick it inside a cabinet door now, while you're still deciding where things go, because it's a lot easier to build a place around a routine than to bolt one on later.
+> Don't start it yet. You've got boxes. But stick it inside a cabinet door now, while you're still deciding where things go, because it's a lot easier to build a place around a routine than to add one later later.
 >
 > Now, about tomorrow.
 >

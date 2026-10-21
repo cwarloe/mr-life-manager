@@ -44,7 +44,7 @@ ENTRY_ROUTES: tuple[EntryRoute, ...] = (
         slug="one-room",
         door_title="The room that became storage",
         completion_message=(
-            "You reclaimed a usable part of the room. One finished zone is real progress."
+            "You cleared one zone of the room, and you can use it again. One finished zone is real progress."
         ),
         share_image="one-room.png",
     ),
@@ -52,21 +52,21 @@ ENTRY_ROUTES: tuple[EntryRoute, ...] = (
         slug="guests",
         door_title="Someone's coming over",
         completion_message=(
-            "The door can open now. Whatever did not get done can wait."
+            "You're ready for them. Whatever did not get done can wait."
         ),
         share_image="guests.png",
     ),
     EntryRoute(
         slug="underwater",
-        door_title="Just underwater",
+        door_title="The whole house needs doing",
         completion_message=(
-            "You stopped the spiral and hit reset. That is different from fixing everything."
+            "The house is livable again. That is different from fixing everything."
         ),
         share_image="underwater.png",
     ),
     EntryRoute(
         slug="office",
-        door_title="The office that got away from you",
+        door_title="Clear your desk",
         completion_message=(
             "You cleared one surface at work. One finished desk is real progress."
         ),
@@ -123,7 +123,7 @@ PARTNERS_LIVE_MARKERS: tuple[str, ...] = (
 PRIVACY_BUILT_MARKERS: tuple[str, ...] = (
     "The Week",
     "MailerLite stores",
-    "just underwater",
+    "whole house needing work",
     "room that became storage",
 )
 PRIVACY_LIVE_MARKERS: tuple[str, ...] = (

@@ -54,7 +54,7 @@ think the next zone has to be another whole afternoon, and never start it.
 >
 > Throw away, give away, or it belongs somewhere else. No fourth pile.
 >
-> You've already made most of the hard calls — what you keep, what you don't, where things live. The second pass is mostly execution, and it goes about twice as fast as the first.
+> You've already made most of the hard decisions — what you keep, what you don't, where things live. The second pass is mostly doing, and it goes about twice as fast as the first.
 >
 > And if it doesn't happen this week, nothing is lost. The zone you did is still done.
 >

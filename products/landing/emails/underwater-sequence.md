@@ -32,7 +32,7 @@ in the page's own words.
 
 **Subject:** Here's the thing worth printing
 
-> You stopped the spiral and hit reset tonight. Here's the simple routine that keeps things under control.
+> You got the house back to livable tonight. Here's how to keep it that way.
 >
 > https://mrlifemanager.com/print/the-week.pdf
 >
