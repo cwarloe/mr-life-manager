@@ -38,7 +38,7 @@ of the sequence and into a conversation. Nothing else does.
 >
 > It's one page, and it's Dave's whole system. The top of it is the ten minutes you do before bed — empty the sink, wipe the counters, walk one lap and put things back. Underneath that there's one job for each day of the week, and two days with nothing on them at all.
 >
-> Print it and stick it inside a cabinet door. It's the thing that means nobody ever has to do tonight again.
+> Print it and stick it inside a cabinet door. It's what keeps you from having to rush like tonight again.
 >
 > — Charles
 

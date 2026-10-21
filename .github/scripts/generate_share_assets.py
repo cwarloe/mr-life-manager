@@ -49,8 +49,8 @@ SHARES = {
     "home.png": ("Practical systems for running a home", "Run your home without carrying all of it in your head."),
     "first-night.png": ("Start here", "Your first night in a new place."),
     "guests.png": ("Start here", "Someone's coming over. Start here."),
-    "underwater.png": ("Start here", "You're not lazy. You're underwater."),
-    "one-room.png": ("Start here", "Take back one usable part of the room."),
+    "underwater.png": ("Start here", "The whole house needs doing. Start with six things."),
+    "one-room.png": ("Start here", "Clear one part of the room you stopped using."),
     "office.png": ("Start here", "You can't see your desk anymore."),
     "partners.png": ("For parents, mentors, churches, and campuses", "Give them one useful page, not another talk."),
 }

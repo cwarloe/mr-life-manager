@@ -54,7 +54,7 @@ every day, so the desk refills unless the tray actually gets emptied.
 >
 > Do one drawer. Give it twenty minutes. Same three piles as before: throw away, return, or it stays.
 >
-> You've already made most of the hard calls about what you keep and where it goes. The second pass is mostly doing, and it goes about twice as fast as the first.
+> You've already made most of the hard decisions about what you keep and where it goes. The second pass is mostly doing, and it goes about twice as fast as the first.
 >
 > And if it doesn't happen this week, nothing is lost. The desk is still clear.
 >
