@@ -14,6 +14,124 @@ progress replaces the action that the feeling should have started.
 These readers can't act right now. The page should help them choose a time to
 do the steps at home, so reading on the bus does not count as doing.
 
+## Marketing for people who are not home
+
+**Added 2026-10-23 from Charles's direction.** For QR flyers (coffee shops,
+community boards) and for social video, we assume the reader is **not home**.
+The ad makes them want the checklist. The site then holds the steps back on
+purpose until the reader is home and ready, and checks that they are ready
+before it shows the steps. The delay is there to help the reader finish. It is
+not a gate: the steps page always stays one tap away, and email is never
+required.
+
+### 1. The video and flyer script (about 18 seconds)
+
+No steps appear in the ad. The ad sells the moment and the reminder.
+
+| Time | On screen (and spoken) |
+|---|---|
+| 0–3 s | **Do you want to get your home in order?** |
+| 3–7 s | **People are coming over tonight, and the house isn't ready.** |
+| 7–11 s | **There's a room in your house that nobody uses anymore.** |
+| 11–15 s | **The whole house needs doing, and you don't know where to start.** |
+| 15–18 s | **Not home yet? Scan this, pick yours, and we'll remind you when you're home.** |
+
+- The flyer prints the same five lines, with the QR code next to the last line.
+  The QR code opens `mrlifemanager.com/start?from=flyer`.
+- On video, the last frame shows the QR code and the profile link. The profile
+  link opens `/start?from=social`.
+- The three moments match three existing pages: guests, one-room and underwater.
+- We use "isn't ready," never "mess," which follows the site wording rule.
+
+### 2. The landing flow for `?from=flyer` and `?from=social`
+
+**Screen 1: "What's going on right now?"** There are three buttons, one for each
+moment in the ad:
+- People are coming over tonight.
+- There's a room nobody uses anymore.
+- The whole house needs doing.
+
+**Screen 2: the reminder choice, not the steps.**
+> **When will you be home?** Pick a time, and your calendar will remind you with
+> the checklist.
+- Buttons: **Tonight at 7** · **Tomorrow at 9 am** · **Saturday at 10 am**.
+  Each one opens a Google Calendar link or downloads an `.ics` file.
+- A small link below: **I'm home now. Show me the steps.**
+
+**The guests exception.** Guests are coming *tonight*, so a reminder tomorrow is
+no use. The guests choice offers **In 1 hour** · **At 5 pm**, and also
+**I'm home now. Show me the steps.**
+
+**Screen 3: the readiness check.** The calendar event links to the page with
+`?from=reminder`. Before the steps, the page asks:
+> **Are you home with about [time for that checklist]?**
+- **Yes, show me the steps** opens the checklist at step one.
+- **Not yet** opens screen 2 again, so the reader can pick a new time.
+
+Use the checklist's own time: about 35 minutes for guests, about 40 minutes for
+underwater, and the one-room page's stated time for one-room.
+
+**What stays the same:** visitors without `?from=flyer`, `?from=social` or
+`?from=reminder` (search, direct, shared links) go straight to the page as
+today. The plain entry-page URLs always show the steps.
+
+### 3. Mechanisms compared
+
+| Mechanism | Works on iPhone? | Data we hold | Cost | Verdict |
+|---|---|---|---|---|
+| **Calendar link / `.ics`** | Yes | None | About a day to build, no service | **Pick** |
+| Email reminder | Yes | Email address | New field, group, automation | Charles's decision (see below) |
+| Web push | Only after "Add to Home Screen" | Push token | Service worker, permission prompt | No. Most iPhone readers can't get it |
+| SMS | Yes | Phone number | Paid service, TCPA consent, 10DLC registration | No. Too much cost and data |
+
+**Email reminder needs an exception to ADR-020.** ADR-020 puts the email ask
+after the win, and the MailerLite specification says the checklist is never
+promised by email. An exception for away-from-home scans only is **Charles's
+decision**. If he approves it, the hand-off to Mailer Bot would be:
+
+- New form, separate from `00ZwEr`, shown only on screen 2 for
+  `?from=flyer|social`, as an alternative to the calendar buttons (still one
+  offer on the screen: "remind me").
+- Fields: `email`, `guide` (`guests` | `one-room` | `underwater`),
+  `remind_at` (date and time, in the reader's local time zone, from the button
+  they picked).
+- Group: `reminder-<guide>`. It does **not** join the entry sequence groups.
+- Automation: wait until `remind_at`, then send one email: subject "Your
+  [checklist name] is ready when you are." The body has one link to
+  `/<guide>.html?from=reminder`. Then it stops. No follow-up, no re-entry,
+  resend to unopens off.
+- Consent text under the field: "We'll send one email at the time you picked,
+  with the link to your checklist. Nothing else unless you sign up later."
+- After the email, the subscriber is deleted, or kept only if they later sign up
+  through the normal form after finishing.
+
+### 4. Why this fits the principles
+
+- **Principle 11, completion converts:** reading the steps on a bus feels like
+  progress and isn't. Holding them until the reader is home protects the
+  feeling that should drive the action. It is one offer on each screen.
+- **Principle 8, dignity:** "Not home yet?" and "Not yet" describe the situation.
+  They never judge the reader.
+- **No squeeze:** there is no countdown and no "don't miss out," and email is
+  never required. "I'm home now. Show me the steps." is always on screen, and
+  the plain page URL always shows the steps. The delay is offered for the
+  reader's success, and the reader can always skip it.
+- **Principle 9, simple:** three screens and three times, with no account.
+
+### 5. Measurement
+
+Track these five numbers for each moment and each source (`flyer`, `social`):
+
+1. **Scans or visits** to `/start` with `?from=flyer` or `?from=social`
+2. **Reminders saved:** calendar buttons tapped
+3. **Reminder returns:** visits with `?from=reminder`
+4. **Readiness yes:** "Yes, show me the steps" tapped
+5. **Completions:** the last step checked. **This is the number that matters.**
+
+Also track "I'm home now" taps and "Not yet" reschedules. A high "Not yet"
+rate means the reminder times are wrong. Use a separate QR code for each flyer
+location (`?from=flyer-<place>`) to see which locations work.
+
 ## What already exists, and what limits the design
 
 - Each entry page opens with "Ready to start?" and two buttons: "Just the
