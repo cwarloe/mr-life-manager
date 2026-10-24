@@ -65,7 +65,7 @@
       b.type = 'button'; b.className = 'whybtn'; b.textContent = 'Why?';
       b.addEventListener('click', function () {
         var open = why.classList.toggle('open');
-        b.textContent = open ? 'Hide' : 'Why?';
+        b.textContent = open ? 'Hide explanation' : 'Why?';
       });
       why.parentNode.insertBefore(b, why);
     });
@@ -78,10 +78,19 @@
     var nav = document.createElement('div');
     nav.className = 'nav';
     nav.innerHTML =
+      '<div class="stepper-track"></div>' +
       '<button type="button" class="back">Back</button>' +
       '<button type="button" class="next">Next step</button>' +
       '<span class="count"></span>' +
       '<button type="button" class="exit">Show the whole page again</button>';
+
+    var stepper = nav.querySelector('.stepper-track');
+    for (var p = 0; p < steps.length; p++) {
+      var pip = document.createElement('span');
+      pip.className = 'stepper-pip';
+      stepper.appendChild(pip);
+    }
+
     var done = document.createElement('div');
     done.className = 'done';
     var source = new URLSearchParams(window.location.search).get('from');
@@ -103,6 +112,11 @@
       nav.querySelector('.next').textContent = i === steps.length - 1 ? 'Done' : 'Next step';
       nav.querySelector('.back').disabled = i === 0;
       nav.querySelector('.count').textContent = end ? '' : (i + 1) + ' of ' + steps.length;
+      var pips = stepper.querySelectorAll('.stepper-pip');
+      for (var pIdx = 0; pIdx < pips.length; pIdx++) {
+        pips[pIdx].classList.toggle('complete', pIdx < i);
+        pips[pIdx].classList.toggle('active', pIdx === i);
+      }
       nav.style.display = end ? 'none' : '';
       window.scrollTo(0, 0);
     }

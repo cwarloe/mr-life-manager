@@ -18,22 +18,28 @@ h1{font-size:clamp(2.4rem,7vw,4rem);font-weight:800;line-height:1.02;letter-spac
 .sub{font-family:var(--serif);font-size:clamp(1.1rem,2.4vw,1.35rem);line-height:1.5;
   color:var(--slate);margin:1.4rem 0 0;max-width:46ch}
 .sub strong{color:var(--ink);font-weight:600}
-.picker{display:grid;gap:.75rem;margin:2rem 0 0}
 .cta-row{margin:2rem 0 0}
 a.cta{display:inline-block;font-weight:700;font-size:1.05rem;letter-spacing:-.01em;
-  color:var(--paper);background:var(--ink);padding:.85rem 1.35rem;border-radius:3px;
-  text-decoration:none;line-height:1.3}
-a.cta:hover{background:var(--blue)}
-.onedoor{margin:1.6rem 0 0;border-left:3px solid var(--rule-strong);padding-left:1rem}
+  color:#fff;background:var(--blue);padding:.85rem 1.4rem;border-radius:4px;
+  text-decoration:none;line-height:1.3;box-shadow:var(--shadow-sm);transition:all .15s ease}
+a.cta:hover{background:#123250;box-shadow:var(--shadow-md);transform:translateY(-1px)}
+.picker{display:grid;gap:.85rem;margin:2rem 0 0}
+a.pick{display:grid;gap:.4rem;border:1px solid var(--rule);border-radius:6px;
+  padding:1.25rem 1.45rem;background:var(--surface);text-decoration:none;color:inherit;
+  box-shadow:var(--shadow-sm);transition:all .15s ease}
+a.pick:hover{border-color:var(--blue);box-shadow:var(--shadow-md);transform:translateY(-1px)}
+.pick-meta{display:flex;align-items:center;gap:.5rem;margin-bottom:.1rem}
+.badge{display:inline-block;font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;padding:.2rem .55rem;border-radius:3px}
+.badge-reset{background:var(--badge-reset-bg);color:var(--badge-reset-text);border:1px solid var(--badge-reset-border)}
+.badge-setup{background:var(--badge-setup-bg);color:var(--badge-setup-text);border:1px solid var(--badge-setup-border)}
+a.pick .q{font-size:1.15rem;font-weight:700;letter-spacing:-.015em;line-height:1.25}
+a.pick .a{font-family:var(--serif);font-size:.96rem;line-height:1.45;color:var(--slate)}
+.onedoor{margin:1.8rem 0 0;border-left:3px solid var(--rule-strong);padding-left:1.1rem}
 .onedoor p{font-family:var(--serif);font-size:.98rem;line-height:1.6;margin:0;color:var(--slate)}
 .onedoor p + p{margin-top:.6rem}
 .onedoor b{font-family:var(--sans);font-weight:700;color:var(--ink)}
 .onedoor a{color:var(--blue);font-weight:600}
-a.pick{display:grid;gap:.3rem;border:2px solid var(--rule-strong);border-radius:3px;
-  padding:1.15rem 1.4rem;background:var(--surface);text-decoration:none;color:inherit}
-a.pick:hover{border-color:var(--blue)}
-a.pick .q{font-size:1.12rem;font-weight:700;letter-spacing:-.01em;line-height:1.25}
-a.pick .a{font-family:var(--serif);font-size:.95rem;line-height:1.45;color:var(--slate)}
 .fine{margin:.75rem 0 0}
 section{padding:4rem 0}
 section + section{border-top:1px solid var(--rule)}
@@ -78,21 +84,25 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space-be
   the thing to do on it — no sign-up, no download, nothing to decide.</p>
   <div class="picker">
     <a class="pick" href="/first-night.html">
+      <div class="pick-meta"><span class="badge badge-setup">Setup · First Night</span></div>
       <span class="q">I just moved in and it's my first night here</span>
       <span class="a">Six things tonight, in order of what costs most to skip —
       and the first one is worth actual money</span>
     </a>
     <a class="pick" href="/one-room.html">
+      <div class="pick-meta"><span class="badge badge-setup">2-Hour Project · Storage</span></div>
       <span class="q">There's a room I stopped using</span>
       <span class="a">Garage, spare room, closet — Dave's three-pile method, one
       zone at a time, about two hours</span>
     </a>
     <a class="pick" href="/guests.html">
+      <div class="pick-meta"><span class="badge badge-reset">35-Min Reset · Panic Clean</span></div>
       <span class="q">Someone's coming over and the place isn't ready</span>
       <span class="a">Six things, in order, about thirty-five minutes — and it still
       works if you've only got ten</span>
     </a>
     <a class="pick" href="/underwater.html">
+      <div class="pick-meta"><span class="badge badge-reset">40-Min Reset · Emergency Triage</span></div>
       <span class="q">Nothing particular happened. The whole house just needs doing</span>
       <span class="a">Six things that make the house livable again —
       about forty minutes, and the first two change tomorrow morning</span>

@@ -16,11 +16,15 @@
 h1{font-size:clamp(2.4rem,7vw,4rem);font-weight:800;line-height:1.02;letter-spacing:-.03em;margin:0;text-wrap:balance;max-width:19ch}
 .sub{font-family:var(--serif);font-size:clamp(1.1rem,2.4vw,1.35rem);line-height:1.5;color:var(--slate);margin:1.4rem 0 0;max-width:46ch}
 .sub strong{color:var(--ink);font-weight:600}
-.picker{display:grid;gap:.75rem;margin:2rem 0 0;max-width:36rem}
-a.pick{display:grid;gap:.3rem;border:2px solid var(--rule-strong);border-radius:3px;padding:1.15rem 1.4rem;background:var(--surface);text-decoration:none;color:inherit}
-a.pick:hover{border-color:var(--blue)}
-a.pick .q{font-size:1.12rem;font-weight:700}
-a.pick .a{font-family:var(--serif);font-size:.95rem;color:var(--slate)}
+.picker{display:grid;gap:.85rem;margin:2rem 0 0;max-width:36rem}
+a.pick{display:grid;gap:.4rem;border:1px solid var(--rule);border-radius:6px;padding:1.25rem 1.45rem;background:var(--surface);text-decoration:none;color:inherit;box-shadow:var(--shadow-sm);transition:all .15s ease}
+a.pick:hover{border-color:var(--blue);box-shadow:var(--shadow-md);transform:translateY(-1px)}
+.pick-meta{display:flex;align-items:center;gap:.5rem;margin-bottom:.1rem}
+.badge{display:inline-block;font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px}
+.badge-reset{background:var(--badge-reset-bg);color:var(--badge-reset-text);border:1px solid var(--badge-reset-border)}
+.badge-setup{background:var(--badge-setup-bg);color:var(--badge-setup-text);border:1px solid var(--badge-setup-border)}
+a.pick .q{font-size:1.15rem;font-weight:700;letter-spacing:-.015em;line-height:1.25}
+a.pick .a{font-family:var(--serif);font-size:.96rem;line-height:1.45;color:var(--slate)}
 .fine{margin:1.4rem 0 0;max-width:42rem}
 section{padding:4rem 0}
 section+section{border-top:1px solid var(--rule)}
@@ -49,18 +53,22 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space-be
   the speech.</p>
   <div class="picker">
     <a class="pick" href="/first-night.html?from=parent">
+      <div class="pick-meta"><span class="badge badge-setup">Setup · First Night</span></div>
       <span class="q">It's their first night in the place</span>
       <span class="a">Six things tonight, in order of what costs most to skip. Send them this page. No account.</span>
     </a>
     <a class="pick" href="/guests.html?from=parent">
+      <div class="pick-meta"><span class="badge badge-reset">35-Min Reset · Panic Clean</span></div>
       <span class="q">Someone's coming over and the place isn't ready</span>
       <span class="a">Six things, about thirty-five minutes — still works if they've only got ten.</span>
     </a>
     <a class="pick" href="/underwater.html?from=parent">
+      <div class="pick-meta"><span class="badge badge-reset">40-Min Reset · Emergency Triage</span></div>
       <span class="q">Nothing particular happened. Their whole place just needs doing</span>
       <span class="a">Six things that make the house livable again. Forward this one when nothing in particular happened and they are worn out.</span>
     </a>
     <a class="pick" href="/one-room.html?from=parent">
+      <div class="pick-meta"><span class="badge badge-setup">2-Hour Project · Storage</span></div>
       <span class="q">A room of theirs has turned into storage</span>
       <span class="a">Garage, spare room, closet. Dave's three-pile method, one zone at a time, about two hours.</span>
     </a>

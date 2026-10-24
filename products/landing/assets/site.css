@@ -1,9 +1,13 @@
 /* Shared marketing chrome: brand tokens, bar, footer, type baseline. */
 :root{
-  --ink:#12161C; --paper:#FBF9F4; --surface:#FFFFFF;
-  --blue:#1F4E79; --blue-soft:#E7EEF5;
-  --amber:#B4741A; --amber-soft:#F7EEDD;
-  --slate:#6B7280; --rule:#D9D5CC; --rule-strong:#B8B2A6;
+  --ink:#14181F; --paper:#F9F7F2; --surface:#FFFFFF;
+  --blue:#1A446C; --blue-soft:#EBF1F7;
+  --amber:#A65E12; --amber-soft:#FDF6EC;
+  --slate:#5A6270; --rule:#E0DBD1; --rule-strong:#BCB6A8;
+  --badge-reset-bg:#FDF4E7; --badge-reset-text:#964F0A; --badge-reset-border:#F0D9BC;
+  --badge-setup-bg:#EDF3F8; --badge-setup-text:#1B456D; --badge-setup-border:#D0DFEC;
+  --shadow-sm:0 1px 3px rgba(20,24,31,0.05);
+  --shadow-md:0 4px 12px rgba(20,24,31,0.07);
   --sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
   --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
 }
@@ -13,6 +17,10 @@
     --blue:#8FB6DA; --blue-soft:#1D2833;
     --amber:#E3A94E; --amber-soft:#2A2418;
     --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
+    --badge-reset-bg:#262016; --badge-reset-text:#E3A94E; --badge-reset-border:#423624;
+    --badge-setup-bg:#16222E; --badge-setup-text:#8FB6DA; --badge-setup-border:#27384A;
+    --shadow-sm:0 1px 3px rgba(0,0,0,0.3);
+    --shadow-md:0 4px 12px rgba(0,0,0,0.4);
   }
 }
 *{box-sizing:border-box}
@@ -27,7 +35,7 @@ body{
 }
 .wrap{max-width:60rem;margin:0 auto;padding:0 1.5rem}
 .narrow{max-width:42rem}
-.bar{border-bottom:1px solid var(--rule)}
+.bar{border-bottom:1px solid var(--rule);background:var(--paper)}
 .bar .wrap{
   display:flex;justify-content:space-between;align-items:center;
   padding-top:1rem;padding-bottom:1rem;
