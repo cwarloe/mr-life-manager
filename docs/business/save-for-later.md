@@ -75,35 +75,60 @@ underwater, and the one-room page's stated time for one-room.
 `?from=reminder` (search, direct, shared links) go straight to the page as
 today. The plain entry-page URLs always show the steps.
 
-### 3. Mechanisms compared
+### 3. Mechanisms compared, and the pick
 
-| Mechanism | Works on iPhone? | Data we hold | Cost | Verdict |
+**Revised 2026-10-23 per Charles.** Screen 2 offers **one choice: "Remind me
+when I'm home."** The reader picks a time, then picks how to be reminded:
+**Add to my calendar** or **Email me the checklist at that time**. Both deliver
+the same thing at the same time, so this is one offer with two ways to receive it.
+
+| Mechanism | Timing | Data we hold | Cost | Verdict |
 |---|---|---|---|---|
-| **Calendar link / `.ics`** | Yes | None | About a day to build, no service | **Pick** |
-| Email reminder | Yes | Email address | New field, group, automation | Charles's decision (see below) |
-| Web push | Only after "Add to Home Screen" | Push token | Service worker, permission prompt | No. Most iPhone readers can't get it |
-| SMS | Yes | Phone number | Paid service, TCPA consent, 10DLC registration | No. Too much cost and data |
+| **Calendar link / `.ics`** | Good, in the reader's own calendar | None | About a day to build | **Offered** |
+| **Timed email** | Good, arrives at the chosen time | Email address, until sent | Separate MailerLite group and automation | **Offered** (pending Charles's approval of the spec below) |
+| SMS | Best: texts are read within minutes | Phone number, the most personal data | About 1–2 cents per text, plus US 10DLC brand and campaign registration (fees and weeks of review) and TCPA written consent | **Defer** until reminder usage is proven |
+| Web push | Poor on iPhone: works only after "Add to Home Screen" | Push token | Service worker and permission prompt | No |
 
-**Email reminder needs an exception to ADR-020.** ADR-020 puts the email ask
-after the win, and the MailerLite specification says the checklist is never
-promised by email. An exception for away-from-home scans only is **Charles's
-decision**. If he approves it, the hand-off to Mailer Bot would be:
+**SMS, honestly:** it has the best timing of any option. It is deferred, not
+rejected. Revisit it once calendar and email reminders show that people save
+reminders and come back to finish. If returns are high but email open rates are
+low, SMS is the next test.
 
-- New form, separate from `00ZwEr`, shown only on screen 2 for
-  `?from=flyer|social`, as an alternative to the calendar buttons (still one
-  offer on the screen: "remind me").
-- Fields: `email`, `guide` (`guests` | `one-room` | `underwater`),
-  `remind_at` (date and time, in the reader's local time zone, from the button
-  they picked).
-- Group: `reminder-<guide>`. It does **not** join the entry sequence groups.
-- Automation: wait until `remind_at`, then send one email: subject "Your
-  [checklist name] is ready when you are." The body has one link to
-  `/<guide>.html?from=reminder`. Then it stops. No follow-up, no re-entry,
-  resend to unopens off.
-- Consent text under the field: "We'll send one email at the time you picked,
-  with the link to your checklist. Nothing else unless you sign up later."
-- After the email, the subscriber is deleted, or kept only if they later sign up
-  through the normal form after finishing.
+**ADR-020 fits.** ADR-020 is about list signup before the win. A timed email
+that sends one checklist at a time the reader chose is a delivery, not a
+signup. It stays separate from the newsletter and entry sequences. See the
+clarifying note proposed in `planning/adr-020-win-before-wallet.md`.
+
+#### Hand-off to Mailer Bot: PENDING CHARLES'S APPROVAL. Do not build yet.
+
+- **Form:** a new embedded form `reminder`, separate from `00ZwEr`. It is shown
+  only on screen 2 after the reader taps "Email me the checklist at that time."
+- **Fields:**
+  - `email` (required)
+  - `moment`: `guests` | `one-room` | `underwater`
+  - `remind_at`: date and time in ISO 8601 with the reader's UTC offset, set by
+    the time button. The reader never types it.
+- **Group:** `reminder-<moment>`. **Not** `entry-*`, and not any newsletter
+  group.
+- **Automation (one per group):** trigger when a subscriber joins the group →
+  wait until the date in `remind_at` → send one email → remove the subscriber
+  from the group. Re-entry on (a reader can set a new reminder). Resend to
+  unopens off. No second email.
+- **Email copy draft:**
+  - From: Mr. Life Manager. No signature.
+  - Subject: **Your [guests / one-room / fresh-start] checklist is ready when you are**
+  - Body: "You asked us to send this now. When you're home and have about
+    [35 / NN / 40] minutes, open the checklist and start at step one.
+    [Open the checklist] → `/<moment>.html?from=reminder`
+    This is the only email we'll send for this reminder."
+  - Footer: the standard MailerLite unsubscribe link and address.
+- **Consent line under the field:** "We'll send one email at the time you
+  picked, with the link to your checklist. We won't add you to any list unless
+  you sign up later."
+- **Data:** after the email is sent, delete the subscriber unless they are also
+  in an `entry-*` group because they signed up through the normal form.
+- **Never:** add reminder subscribers to the entry sequences, a newsletter or
+  any promotion.
 
 ### 4. Why this fits the principles
 
@@ -113,7 +138,7 @@ decision**. If he approves it, the hand-off to Mailer Bot would be:
 - **Principle 8, dignity:** "Not home yet?" and "Not yet" describe the situation.
   They never judge the reader.
 - **No squeeze:** there is no countdown and no "don't miss out," and email is
-  never required. "I'm home now. Show me the steps." is always on screen, and
+  optional, never required. "I'm home now. Show me the steps." is always on screen, and
   the plain page URL always shows the steps. The delay is offered for the
   reader's success, and the reader can always skip it.
 - **Principle 9, simple:** three screens and three times, with no account.
@@ -188,24 +213,14 @@ The reader types an email address, and the checklist arrives at 7 pm their time.
   remember." Principle 4 says systems beat memory. It also has different steps
   on iPhone and Android.
 
-## The pick: A, the calendar reminder
+## The pick (revised 2026-10-23)
 
-The calendar reminder is the only option that adds no email ask, no new data
-and no rule conflict. The reminder arrives when the reader is home, which is the
-point of the feature.
-
-- **Principle 11, completion converts:** the reminder brings the reader back to
-  do the steps, not to read more. It is one offer, and it replaces nothing.
-- **Principle 8, dignity:** "Not home yet?" describes the situation. It does not
-  judge the reader.
-- **Principle 9, simple:** one button and three times. Nothing to maintain.
-- **Principle 4, systems beat memory:** the calendar does the remembering.
-- **ADR-020:** the email form stays where it is, after the win.
-
-Option B should not be offered next to A. Two save options would break
-"one offer at a time." If Charles still wants email, the only honest version
-needs a decision to change the MailerLite specification, so it is not part of
-this proposal.
+**Superseded:** the earlier pick was calendar only. The current pick is in
+"Marketing for people who are not home," section 3: one choice, "Remind me
+when I'm home," delivered by calendar or by a single timed email. The pick
+serves principle 11 (one offer, paced behind readiness), principle 8 (no
+judgment), principle 9 (simple) and principle 4 (a system does the
+remembering). SMS is deferred.
 
 ## Where the reminder appears
 
@@ -259,19 +274,19 @@ Until an analytics tool is chosen, step 2 shows up in server or host logs as
 
 ## MailerLite
 
-**No changes are needed.** The pick uses no form, field, group or automation.
-No hand-off to Mailer Bot is needed. If Charles chooses option B later, it would
-need a new hand-off: a `remind_at` field, a new group and a timed automation,
-plus an amendment to the MailerLite specification and ADR-020.
+The calendar option needs nothing. The timed email option needs the new
+`reminder-<moment>` groups and automation in the hand-off above, **pending
+Charles's approval**. The entry sequences and form `00ZwEr` don't change.
 
 ## Conflicts found
 
-- Option B conflicts with ADR-020 and with the MailerLite specification line
-  "the entry-page action sheet is available before signup and is never
-  promised by email." This is why B is not the pick.
-- ADR-016 is under review. This proposal does not depend on how that review
-  ends.
-- The measurement steps depend on Charles's open analytics-tool decision.
+- ADR-020: resolved by Charles's clarification that a timed delivery is not a
+  list signup. A clarifying note is proposed in the ADR file (docs only).
+- `MAILERLITE-SETUP.md` says the checklist is "never promised by email." That
+  line covers the entry sequences. It needs a matching note once the reminder
+  group is approved.
+- ADR-016 is under review. This proposal doesn't depend on how it ends.
+- The measurement depends on Charles's open decision about an analytics tool.
 
 ## Next step, if approved
 
