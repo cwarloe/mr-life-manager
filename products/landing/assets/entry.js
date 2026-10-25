@@ -54,7 +54,7 @@
       if (parts.length > 1) {
         d.innerHTML = parts.map(function (t) {
           return '<span class="s">' + t + '</span>';
-        }).join('');
+        }).join(' ');
       }
     });
 
