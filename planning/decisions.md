@@ -1296,5 +1296,22 @@ anyone can join**, from the start. If only one person shows up, it's a small
 group that week, not a one-to-one service. The call is built so everyone
 benefits from everyone else's wins, setbacks and ideas. Price: not yet set.
 
+**Orientation and the weekly call (Charles, 2026-10-26).**
+
+- **A recorded orientation, clearly labeled as recorded**, about ten minutes:
+  what the site is, how the checklists work, how the weekly call runs. It ends
+  with an action (pick one checklist and an exact time, then come to the next
+  live call), not a pitch.
+- **Real interaction without Charles present:** after the orientation, people
+  can send in a win or a question with a short form, answered on the next live
+  call, by name if they agree.
+- **The live call stays live.** When there isn't one, say so plainly and point
+  to last week's recording.
+- **Never imply presence that isn't real.** This is an ethical line, so it's
+  absolute: no fake chat messages, no invented attendee counts, no countdowns to
+  a "live" event that is a recording, and nothing called live that isn't.
+  "Evergreen" or "automated" webinars that pretend to be live are the model we
+  don't copy.
+
 **Revisit when:** the first paid level has run long enough to show what people
 actually use.

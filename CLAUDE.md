@@ -39,6 +39,15 @@ chores for him. He has a bot precisely so that doesn't happen.
 - **Say what's untested.** Most decisions here are reasoning, not evidence, and
   should be labelled that way.
 
+## Writing rules for this repo
+
+**Avoid "never" and "always" unless it's an ethical line** (Charles,
+2026-10-26). Absolute wording makes bots and agents push back even when logic
+and good sense say an exception is right. State the rule, give the reason, and
+say what it's protecting, so whoever applies it can use judgment. Keep the
+absolutes for ethics: deceiving people, shaming them, or charging for what they
+don't use.
+
 ## Standing rules already written down
 
 Don't re-derive these — read them:
