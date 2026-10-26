@@ -2,7 +2,7 @@
 
 **Status:** Draft, 2026-10-26. Built only from Dave's recovered documents in
 [`source-material/`](../source-material/INVENTORY.md). **Not yet reviewed by
-Dave** — see [The rule about Dave's words](#the-rule-about-daves-words).
+Dave** — see [Principles, not a persona](#principles-not-a-persona).
 
 **What it's for:** applying Dave's method to a domain he never wrote about, the
 way the [office page](../products/landing/office.html) applied his garage
@@ -223,19 +223,19 @@ Flexible days, fixed deadline. Small daily, bigger weekly.
 
 - **Domain facts.** It gives the shape; facts need sources.
 - **Content Dave never wrote about.** See the gaps table below.
-- **Dave's approval.** See the next section.
+- **New principles.** Only Dave can add those.
 
-## The rule about Dave's words
+## Principles, not a persona
 
-"What would Dave say?" is a good question for us to ask while writing. It must
-never become a claim about what Dave said.
+This is a set of ideas Dave has stated, pulled out so they can be applied to
+areas he never wrote about. It is not a model of Dave, and nothing built with it
+claims he said anything new. Pages built this way are ours, using his method.
 
-- **Quote Dave only word for word**, from `source-material/`, with the source.
-- **Anything generated from the engine is our application.** On a page it reads
-  as "here's how Dave does it" only when the step really is his method (like the
-  three piles). New-domain specifics are written as ours.
-- **Dave is a real person** ([ADR-011](../planning/decisions.md#adr-011--mr-life-manager-is-a-real-person-dave-webster)).
-  Before a whole new domain goes out under his name, he should see it.
+Two working rules follow from that:
+
+- **When a page quotes Dave, use his exact words** from `source-material/`.
+- **Keep learning from him directly.** The engine is for the meantime. Every
+  conversation with Dave can confirm, correct, or add to the principles here.
 
 ---
 
