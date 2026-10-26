@@ -341,6 +341,11 @@ so a maintenance product can't be judged for weeks. **Inference:** offer the
 start call for the *next* task, framed as a new goal, not as "more of the
 same," and never on a timer.
 
+> **Decided 2026-10-26 (Charles):** the start call begins one-to-one while
+> there are only a few people, then becomes **one weekly group call that anyone
+> can join**. See [ADR-022](../../../planning/decisions.md#adr-022--price-follows-what-it-costs-us-to-deliver).
+> Price for the weekly call is not yet set.
+
 ### 3.5 Conflicts this section raises
 
 | # | Vision says | Current decision says | Status |

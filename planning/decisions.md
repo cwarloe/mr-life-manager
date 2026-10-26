@@ -1291,5 +1291,11 @@ puts lower. The product ladder's old Rung 3 prices ($299–2,500) need
 re-deciding against this ladder. Interventions as content need a written
 consent process before the first one.
 
+**First paid level (Charles, 2026-10-26).** Start with one-to-one "start"
+calls while there are only a few people. As they grow, they become **one weekly
+group call that anyone can join**. The one-to-one calls show what people
+actually get stuck on; the weekly call serves many people in the same hour of
+Charles's week. Price for the weekly call: not yet set.
+
 **Revisit when:** the first paid level has run long enough to show what people
 actually use.
