@@ -15,6 +15,8 @@ from site_catalog import (
     MAILERLITE_JS_URL,
     PARTNERS_BUILT_MARKERS,
     PRIVACY_BUILT_MARKERS,
+    UMAMI_SCRIPT_URL,
+    UMAMI_WEBSITE_ID,
     public_url as catalog_public_url,
     required_share_images,
 )
@@ -118,6 +120,20 @@ def main() -> int:
         rel = f"assets/share/{share_name}"
         if not (OUT / rel).is_file():
             problems.append(f"missing generated public file: {rel}")
+
+    # Analytics: all-or-nothing, and the privacy page must match reality.
+    privacy_text = (OUT / "privacy.html").read_text(encoding="utf-8")
+    for path in pages:
+        if path in legacy_pages:
+            continue
+        has = UMAMI_SCRIPT_URL in path.read_text(encoding="utf-8")
+        if bool(UMAMI_WEBSITE_ID) != has:
+            problems.append(f"{path.relative_to(OUT)}: analytics script "
+                            f"{'missing' if UMAMI_WEBSITE_ID else 'present without an ID'}")
+    if UMAMI_WEBSITE_ID and "Umami" not in privacy_text:
+        problems.append("privacy.html: analytics is on but the page doesn't describe it")
+    if not UMAMI_WEBSITE_ID and ("data-analytics-only" in privacy_text or "Umami" in privacy_text):
+        problems.append("privacy.html: describes analytics that isn't running")
 
     if "finished-" in sitemap:
         problems.append("sitemap.xml: completion pages must stay out of search")

@@ -5,6 +5,36 @@
   var guide = root.getAttribute('data-guide') || '';
   var completionUrl = root.getAttribute('data-completion-url') || '';
 
+  // Event counts for the funnel (Umami, when configured in site_catalog.py).
+  // No cookies and nothing personal: the page, its QR source tag, and what
+  // the reader chose. Events wait briefly for the deferred Umami script and
+  // are simply dropped if it never loads.
+  var fromTag = new URLSearchParams(location.search).get('from') || '';
+  if (!/^[a-z0-9-]{1,40}$/.test(fromTag)) fromTag = '';
+  var trackQueue = [], trackTries = 0, trackTimer = null;
+  function flushTrack() {
+    if (window.umami && typeof window.umami.track === 'function') {
+      while (trackQueue.length) {
+        var e = trackQueue.shift();
+        try { window.umami.track(e[0], e[1]); } catch (err) {}
+      }
+      return;
+    }
+    if (trackTimer || trackTries >= 20) return;
+    trackTimer = setTimeout(function () { trackTimer = null; trackTries++; flushTrack(); }, 500);
+  }
+  function track(name, data) {
+    data = data || {};
+    data.page = guide || location.pathname;
+    if (fromTag) data.from = fromTag;
+    trackQueue.push([name, data]);
+    flushTrack();
+  }
+  if (/^\/finished-/.test(location.pathname)) {
+    var donePath = new URLSearchParams(location.search).get('path');
+    track('finished', {path: donePath === 'appointment' || donePath === 'now' ? donePath : 'unknown'});
+  }
+
   // Ad blockers often leave the embed empty — reveal mailto fallback if so.
   addEventListener('load', function () {
     setTimeout(function () {
@@ -124,6 +154,7 @@
         pips[pIdx].classList.toggle('active', pIdx === i);
       }
       nav.style.display = end ? 'none' : '';
+      if (end) track('reached-end', {path: resuming ? 'appointment' : 'now'});
       window.scrollTo(0, 0);
     }
     function startAt(n) { body.classList.add('doing'); show(n); }
@@ -137,8 +168,8 @@
 
     var goDo = document.querySelector('.go-do');
     var goPrint = document.querySelector('.go-print');
-    if (goDo) goDo.addEventListener('click', start);
-    if (goPrint) goPrint.addEventListener('click', function () { window.print(); });
+    if (goDo) goDo.addEventListener('click', function () { track('start-now'); start(); });
+    if (goPrint) goPrint.addEventListener('click', function () { track('print'); window.print(); });
     nav.querySelector('.next').addEventListener('click', function () { show(i + 1); });
     nav.querySelector('.back').addEventListener('click', function () { show(i - 1); });
     Array.prototype.forEach.call(document.querySelectorAll('.exit'), function (b) {
@@ -262,13 +293,14 @@
         b.type = 'button';
         b.innerHTML = '<span class="when-name">' + c[0] + '</span><span class="when-time">' +
           esc(label(c[1])) + '</span>';
-        b.addEventListener('click', function () { decide(c[1]); });
+        b.addEventListener('click', function () { track('time-picked', {choice: c[0]}); decide(c[1]); });
         picks.appendChild(b);
       });
       later.querySelector('.when-use').addEventListener('click', function () {
         var v = later.querySelector('.when-input').value;
         var d = v ? new Date(v) : null;
         if (!d || isNaN(d) || d <= new Date()) { later.querySelector('.when-input').focus(); return; }
+        track('time-picked', {choice: 'Custom'});
         decide(d);
       });
 
@@ -284,9 +316,12 @@
           '<a class="cal-google" target="_blank" rel="noopener" href="' + googleUrl(when, url) + '">Google Calendar</a>' +
           '</p>' +
           '<p class="decided-share"><button type="button" class="share-checker">Send it to someone who\u2019ll check on you</button></p>' +
-          '<p class="fine">Nothing is stored on this site. The reminder lives in your calendar.</p>';
+          '<p class="fine">This site doesn\u2019t keep the time you picked. The reminder lives in your calendar.</p>';
         box.hidden = false;
+        box.querySelector('.cal-ics').addEventListener('click', function () { track('calendar-added', {kind: 'ics'}); });
+        box.querySelector('.cal-google').addEventListener('click', function () { track('calendar-added', {kind: 'google'}); });
         box.querySelector('.share-checker').addEventListener('click', function () {
+          track('shared-with-checker');
           var text = 'I\u2019ve set aside ' + label(when) + ' to ' + task.charAt(0).toLowerCase() +
             task.slice(1) + '. Check on me after?';
           var page = location.origin + location.pathname;
@@ -301,6 +336,7 @@
       var bailNote = later.querySelector('.bail-note');
       var bailNoteText = root.getAttribute('data-bail-note') || '';
       goLater.addEventListener('click', function () {
+        track('not-right-now');
         resumeAt = 0;
         bailNote.hidden = true;
         var nowPart = later.querySelector('.later-now');
@@ -322,7 +358,8 @@
       bail.addEventListener('click', function () {
         var at = i;
         stop();
-        if (resuming && moved >= MAX_MOVES) return;
+        if (resuming && moved >= MAX_MOVES) { track('stopped-at-limit', {step: String(at + 1)}); return; }
+        track('rescheduled', {where: 'mid-task', step: String(at + 1), moved: String(resuming ? moved + 1 : 0)});
         if (resuming) { moved += 1; bailLabel(); }
         resumeAt = Math.min(at, steps.length - 1);
         // Stopping mid-sort leaves a mess: say what to do before leaving.
@@ -358,9 +395,14 @@
       }
       var top = document.querySelector('header.top');
       top.parentNode.insertBefore(card, top.nextSibling);
-      card.querySelector('.resume-start').addEventListener('click', function () { startAt(firstAtHome); });
+      track('came-back', {moved: String(moved), step: String(firstAtHome + 1)});
+      card.querySelector('.resume-start').addEventListener('click', function () {
+        track('started-from-reminder', {moved: String(moved)});
+        startAt(firstAtHome);
+      });
       var move = card.querySelector('.resume-move');
       if (move) move.addEventListener('click', function () {
+        track('rescheduled', {where: 'on-return', moved: String(moved + 1)});
         moved += 1;
         bailLabel();
         bailNote.hidden = true;
@@ -372,6 +414,7 @@
       });
       var drop = card.querySelector('.resume-drop');
       if (drop) drop.addEventListener('click', function () {
+        track('let-go');
         card.innerHTML = '<h2>Okay. It\u2019s let go.</h2>' +
           '<p>No more reminders will come from this. If it comes back to you, this page will still be here.</p>';
       });

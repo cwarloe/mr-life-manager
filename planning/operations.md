@@ -140,11 +140,32 @@ repository work:
   MailerLite verification and DKIM were already resolved.
 - Postal address in MailerLite footers confirmed 2026-09-22 (6621 West Holiday
   Drive, Boise).
-- Privacy-first visitor analytics: **not installed** as of 2026-09-22. Default
-  choice is Cloudflare Web Analytics (existing DNS account, no extra vendor).
-  Domain is GitHub Pages IPs, not Cloudflare-proxied, so a JS beacon token from
-  the Cloudflare dashboard is required before the privacy page can name a live
-  service. Do not invent a snippet.
+- Privacy-first visitor analytics: **Umami Cloud, code ready, not yet
+  switched on** (2026-10-26). Replaces the earlier default, Cloudflare Web
+  Analytics, which [does not record query strings](https://developers.cloudflare.com/web-analytics/faq/)
+  (so it would drop the `from=` QR tags) and has no custom events (so it can't
+  tell "start now" from "pick a time").
+  - **Plan:** Hobby, free: 1 website, 100,000 events a month, 6 months of
+    history ([pricing](https://umami.is/pricing), checked 2026-10-26). Record
+    the monthly scorecard before data ages out.
+  - **Commercial use is allowed.** Terms checked 2026-10-26: "for any lawful
+    personal or business purpose, including commercial purposes" and "nothing in
+    these Legal Terms restricts commercial use of the Services"
+    ([terms](https://umami.is/terms)). An older version seen in search results
+    said "personal, non-commercial use or internal business purpose"; recheck if
+    the terms change.
+  - **To switch it on (one step):** create the Umami Cloud account, add the
+    site `mrlifemanager.com`, and paste its website ID into `UMAMI_WEBSITE_ID`
+    in `.github/scripts/site_catalog.py`. The build then adds the script to
+    every page and shows the analytics paragraph on the privacy page;
+    `check_built_site.py` fails if those two ever disagree. Tracking only runs
+    on `mrlifemanager.com`, never in tests or previews.
+  - **Events sent** (no cookies, nothing personal; each carries `page` and the
+    QR `from` tag): `start-now`, `not-right-now`, `time-picked` (choice),
+    `calendar-added` (ics or google), `shared-with-checker`, `came-back` (moved,
+    step), `started-from-reminder`, `rescheduled` (mid-task or on-return, step,
+    moved), `stopped-at-limit`, `let-go`, `print`, `reached-end` (path),
+    `finished` (path).
 - Google Search Console: **not verified in the console** as of 2026-09-22.
   Public precheck **pass**: `/`, `/first-night.html`, `/guests.html`,
   `/underwater.html`, `/one-room.html`, and `/privacy.html` return HTTPS 200;

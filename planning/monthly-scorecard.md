@@ -7,7 +7,8 @@ One page for deciding what to do next. This is not an analytics warehouse.
 | Measure | Meaning |
 |---|---|
 | Visitors | Human visits reported by the selected privacy-first analytics service |
-| Task completions | Visits to the explicit post-completion pages (`/finished-*.html`); a directional measure, not proof every step was performed |
+| Task completions | Umami `finished` events (visits to `/finished-*.html`); a directional measure, not proof every step was performed. Split by `path` (now / appointment) and `from` (QR location) |
+| Appointments | `time-picked` events, and how many of those led to `came-back`. That ratio is the test of the "Not right now" flow ([ADR-021](decisions.md#adr-021--when-the-reader-cant-act-yet-ask-for-a-when)) |
 | Subscribers | New MailerLite subscribers, excluding tests |
 | Replies | Human replies to the three-email sequences |
 | Five-person pilots | Partners who agreed to try the free pages with up to five people and report aggregate results |

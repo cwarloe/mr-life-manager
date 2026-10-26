@@ -13,6 +13,13 @@ MAILERLITE_FORM_ID = "00ZwEr"
 MAILERLITE_FORM_ATTR = f'data-form="{MAILERLITE_FORM_ID}"'
 MAILERLITE_JS_URL = "https://assets.mailerlite.com/js/universal.js"
 
+# Umami Cloud (privacy-first analytics with custom events; chosen 2026-10-26,
+# see planning/operations.md). Leave the ID empty and nothing is loaded or sent.
+# To turn tracking on, paste the website ID from the Umami dashboard here.
+UMAMI_WEBSITE_ID = ""
+UMAMI_SCRIPT_URL = "https://cloud.umami.is/script.js"
+ANALYTICS_DOMAIN = "mrlifemanager.com"
+
 
 @dataclass(frozen=True)
 class EntryRoute:

@@ -7,8 +7,11 @@ from pathlib import Path
 
 from guide_inventory import GUIDES, LEGACY_GUIDE_SLUGS, PDF_TITLES
 from site_catalog import (
+    ANALYTICS_DOMAIN,
     ENTRY_ROUTES,
     ORIGIN,
+    UMAMI_SCRIPT_URL,
+    UMAMI_WEBSITE_ID,
     entry_social_images,
     public_url as catalog_public_url,
     sitemap_core_urls,
@@ -79,6 +82,33 @@ def add_public_metadata() -> int:
             sys.exit(f"{path.relative_to(ROOT)}: no </head>")
         path.write_text(text.replace("</head>", block + "</head>", 1), encoding="utf-8")
         count += 1
+    return count
+
+
+ANALYTICS_ONLY = re.compile(r"\s*<p data-analytics-only>.*?</p>", re.S)
+
+
+def apply_analytics() -> int:
+    """Load Umami on every page when a website ID is configured; otherwise
+    remove the privacy text that describes it, so the page never claims a
+    service that isn't running."""
+    count = 0
+    for path in sorted(OUT.rglob("*.html")):
+        text = path.read_text(encoding="utf-8")
+        if REDIRECT_MARKER in text:
+            continue
+        new = text
+        if UMAMI_WEBSITE_ID:
+            if UMAMI_SCRIPT_URL not in new:
+                tag = (f'\n<script defer src="{UMAMI_SCRIPT_URL}" '
+                       f'data-website-id="{html_lib.escape(UMAMI_WEBSITE_ID, quote=True)}" '
+                       f'data-domains="{ANALYTICS_DOMAIN}"></script>\n')
+                new = new.replace("</head>", tag + "</head>", 1)
+                count += 1
+        else:
+            new = ANALYTICS_ONLY.sub("", new)
+        if new != text:
+            path.write_text(new, encoding="utf-8")
     return count
 
 
@@ -285,10 +315,12 @@ def main() -> int:
     lines += [f"  <url><loc>{u}</loc></url>" for u in urls]
     lines.append("</urlset>\n")
     (OUT / "sitemap.xml").write_text("\n".join(lines), encoding="utf-8")
+    analytics_count = apply_analytics()
     metadata_count = add_public_metadata()
     print(
         f"Built _site/ — {len(GUIDES)} guides, {len(pdfs)} printables, "
-        f"metadata on {metadata_count} pages."
+        f"metadata on {metadata_count} pages, "
+        + (f"analytics on {analytics_count} pages." if UMAMI_WEBSITE_ID else "analytics off (no Umami ID).")
     )
     return 0
 
