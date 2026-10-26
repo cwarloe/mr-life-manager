@@ -272,3 +272,7 @@ body.doing .nav .bail{display:block;width:100%;flex:0 0 100%;margin:0;min-height
   font-family:var(--sans);font-size:.85rem;font-weight:700;color:var(--blue);background:none;border:0;
   padding:.1rem 0 0;text-align:left;cursor:pointer;text-decoration:underline}
 .later-now[hidden]{display:none}
+.bail-note{font-family:var(--sans)!important;font-size:1rem!important;line-height:1.5;color:var(--ink)!important;
+  background:var(--amber-soft);border-left:3px solid var(--amber);padding:.75rem .9rem;margin:0 0 1.2rem!important}
+.bail-note[hidden]{display:none}
+.bail-note b{color:var(--amber)}

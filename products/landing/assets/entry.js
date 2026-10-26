@@ -247,7 +247,7 @@
             return '<li><b>' + (h ? h.innerHTML : '') + '</b> ' + (d ? d.innerHTML : '') + '</li>';
           }).join('') + '</ol><p>Done? Now pick the time for the rest.</p></div>';
       }
-      later.innerHTML = portableHtml +
+      later.innerHTML = '<p class="bail-note" hidden></p>' + portableHtml +
         '<h2>When will you do it?</h2>' +
         '<p class="later-sub">Pick a day and a time. \u201cLater\u201d isn\u2019t a time.</p>' +
         '<div class="when-picks"></div>' +
@@ -298,8 +298,11 @@
       }
 
       function openLater() { later.hidden = false; later.scrollIntoView({block: 'start'}); }
+      var bailNote = later.querySelector('.bail-note');
+      var bailNoteText = root.getAttribute('data-bail-note') || '';
       goLater.addEventListener('click', function () {
         resumeAt = 0;
+        bailNote.hidden = true;
         var nowPart = later.querySelector('.later-now');
         if (nowPart) nowPart.hidden = false;
         later.querySelector('.decided').hidden = true;
@@ -322,6 +325,13 @@
         if (resuming && moved >= MAX_MOVES) return;
         if (resuming) { moved += 1; bailLabel(); }
         resumeAt = Math.min(at, steps.length - 1);
+        // Stopping mid-sort leaves a mess: say what to do before leaving.
+        if (bailNoteText && steps[resumeAt].hasAttribute('data-midway')) {
+          bailNote.innerHTML = '<b>Before you go:</b> ' + esc(bailNoteText);
+          bailNote.hidden = false;
+        } else {
+          bailNote.hidden = true;
+        }
         var nowPart = later.querySelector('.later-now');
         if (nowPart) nowPart.hidden = true;
         later.querySelector('.decided').hidden = true;
@@ -353,6 +363,7 @@
       if (move) move.addEventListener('click', function () {
         moved += 1;
         bailLabel();
+        bailNote.hidden = true;
         card.hidden = true;
         resumeAt = firstAtHome;
         var nowPart = later.querySelector('.later-now');
