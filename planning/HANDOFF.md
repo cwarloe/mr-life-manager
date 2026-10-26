@@ -3,14 +3,15 @@
 You are continuing work on **mr-life-manager**, Charles Warloe's business that
 teaches the practical systems of adulthood, derived from his friend Dave
 Webster's real teaching documents. Repo lives at `/home/user/mr-life-manager`
-(note: the shell may open in a different repo — `cd` in first). Work on a
-branch and open a PR; **do not merge to `main` without Charles.** Deploys run
-via GitHub Actions when changes land on `main`.
+(note: the shell may open in a different repo — `cd` in first). Push to
+`main` after the checks pass (Charles, 2026-10-26: "you can push to main. I
+trust you. we can always revert."). Deploys run via GitHub Actions when changes
+land on `main`.
 
 ## Read these before doing anything
 
 - `CLAUDE.md` — the working agreement. The two rules that matter most:
-  (1) You make changes and open a PR (never merge to `main` without Charles); a
+  (1) You make changes and push to `main` once checks pass; a
   bot does everything downstream (MailerLite, any live account). Never hand
   Charles manual steps or a chore list. End with a short plain-prose note for
   the bot. (2) Keep replies short by default.

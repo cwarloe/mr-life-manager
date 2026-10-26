@@ -2,15 +2,16 @@
 
 ## Division of labor
 
-**Claude makes the changes and opens a PR on GitHub. A bot does everything
+**Claude makes the changes and pushes them. A bot does everything
 downstream.** The bot handles MailerLite, verification, and anything that
 touches a live account.
 
 So:
 
-- **Do the work, commit it, open a PR.** Free to create a branch and open a PR;
-  **do not merge to `main` without Charles.** GitHub Actions deploys the site
-  when changes land on `main`.
+- **Do the work, commit it, push to `main`.** Charles, 2026-10-26: "you can
+  push to main. I trust you. we can always revert." GitHub Actions deploys the
+  site when changes land on `main`, so run the checks first. A branch and PR
+  are still fine for anything large or uncertain.
 - **End with a short prompt for the bot** — a few lines, plain prose, saying
   what changed and what to update. Not a checklist, not a runbook.
 - **Never hand Charles manual steps.** No "open this in a browser," no "send
