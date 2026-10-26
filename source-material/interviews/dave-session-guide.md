@@ -4,6 +4,11 @@
 Reading the questions in advance gives him time to decide what's worth saying,
 and what he decides isn't worth saying is exactly what we're after.
 
+**Also bring [Dave's principles](../../frameworks/dave-principles.md)** (added
+2026-10-26). Read him each one and ask two things: *"Is that right?"* and
+*"Where doesn't it apply?"* Start with the ones marked **Single**. Reacting to
+something specific is easier for him than explaining what he thinks is obvious.
+
 ---
 
 ## Before you start

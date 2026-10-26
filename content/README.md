@@ -39,6 +39,9 @@ something was missing and nothing looked broken.
 
 Source of truth: [`products/landing/guests.html`](../products/landing/guests.html).
 
+**Derive the steps from [Dave's principles](../frameworks/dave-principles.md#using-the-engine-on-a-new-domain)**,
+and list the outside facts the page depends on so they get checked.
+
 An entry page is one pain, one action, the win before the email
 ([ADR-015](../planning/decisions.md#adr-015--the-win-comes-before-the-email)).
 Every one must carry all of this, and

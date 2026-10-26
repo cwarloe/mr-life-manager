@@ -59,6 +59,9 @@ Don't re-derive these — read them:
     three or cite them as settled until they're re-decided.
 - [`docs/business/commerce-rules.md`](docs/business/commerce-rules.md) —
   affiliate and pricing rules
+- [`frameworks/dave-principles.md`](frameworks/dave-principles.md) — the
+  engine for applying Dave's method to a new domain. Use it for any new page,
+  quote Dave only word for word, and label anything generated as ours
 - [`source-material/`](source-material/INVENTORY.md) — Dave's original
   documents. **Verbatim, never edited**, not even for spelling
 - [`planning/HANDOFF.md`](planning/HANDOFF.md) — session handoff: where things
