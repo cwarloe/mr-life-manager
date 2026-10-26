@@ -60,6 +60,25 @@ CI scripts enforce the invariants — run them before committing:
 - `python3 .github/scripts/check_built_site.py` (generated metadata, routes and
   offer invariants; run after the build)
 
+**Added 2026-10-26** — read these before touching the entry pages:
+
+- **"Not right now" flow** on all five task pages
+  ([ADR-021](decisions.md#adr-021--when-the-reader-cant-act-yet-ask-for-a-when),
+  [architecture](deferred-win-architecture.md)): the box above the buttons states
+  the time and place; "Not right now" picks an exact time and makes a calendar
+  invite; the invite returns the reader to the step they left; two moves, then
+  "start now or let it go." All in the shared `assets/entry.js`, opted in per page
+  with `data-defer`.
+- **Task pages never mention Dave**
+  ([content rules](../content/README.md#referring-to-dave)). He is introduced
+  after the win: completion page and emails.
+- **Analytics:** Umami event tracking is coded and off until a website ID is
+  set (see the "Waiting on the bot" list in [operations.md](operations.md)).
+- **Dave's principles engine** ([frameworks/dave-principles.md](../frameworks/dave-principles.md))
+  is how new pages are built from his method.
+- **What the bot needs to do** is listed in one place: the top of
+  [operations.md](operations.md#waiting-on-the-bot).
+
 Production monitoring runs automatically after Pages deploys and every Monday
 through `.github/workflows/check-live-site.yml`. It checks public pages and the
 single promised PDF without submitting the MailerLite form.

@@ -6,6 +6,24 @@ turning it into a full-time administrative job.
 **Operating constraint:** maximize useful outcomes and revenue per owner-hour,
 not the number of products, platforms, or channels.
 
+## Waiting on the bot
+
+**One list of everything that needs a live account.** Each item links to its
+full steps. Remove an item when it's done; add one when a change needs account
+work.
+
+| Item | Status | Steps |
+|---|---|---|
+| **Switch on Umami analytics** | Code live, switched off | Create the Umami Cloud account (free Hobby plan), add the site `mrlifemanager.com`, paste the website ID into `UMAMI_WEBSITE_ID` in `.github/scripts/site_catalog.py`, open a PR. See [External one-time items](#external-one-time-items). |
+| **Office page emails** | **Waiting on Charles** | The office page is a one-off (Charles, 2026-10-08). Ask him whether it should have a MailerLite group before creating `entry-office` from [`office-sequence.md`](../products/landing/emails/office-sequence.md). Until then, office signups get no emails. |
+| **Google Search Console** | Not verified | Needs Charles's Google login: verify the domain and submit `/sitemap.xml`. See [External one-time items](#external-one-time-items). |
+| **QR codes for fliers** | When fliers are made | Each printed code gets its own tag, `?from=qr-<place>-<page>`. Format and examples in the [deferred-win architecture](deferred-win-architecture.md#comparing-pages-and-places). |
+
+Nothing else needs a live account right now. MailerLite does **not** need
+changes for the "Not right now" flow, the new underwater headline, or the
+removal of Dave's name from the task pages: the web addresses, tags and email
+copy are unchanged.
+
 ## Current operating state
 
 | System | Current use | Source of truth |
