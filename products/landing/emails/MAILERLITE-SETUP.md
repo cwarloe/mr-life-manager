@@ -27,7 +27,7 @@ MailerLite's rendered field naming has varied.
 | `/guests.html` | `guests` | `entry-guests` | [`guests-sequence.md`](guests-sequence.md) |
 | `/underwater.html` | `underwater` | `entry-underwater` | [`underwater-sequence.md`](underwater-sequence.md) |
 | `/one-room.html` | `one-room` | `entry-one-room` | [`one-room-sequence.md`](one-room-sequence.md) |
-| `/office.html` | `office` | `entry-office` | [`office-sequence.md`](office-sequence.md) — **added 2026-10-07, not yet wired** |
+| `/office.html` | `office` | `entry-office` | [`office-sequence.md`](office-sequence.md) — approved for wiring 2026-10-26 |
 | missing or unknown | anything else | `entry-unknown` | none; investigate |
 
 `entry-unknown` is an alarm. It should stay empty.

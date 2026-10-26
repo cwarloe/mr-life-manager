@@ -14,7 +14,7 @@ work.
 
 | Item | Status | Steps |
 |---|---|---|
-| **Office page emails** | **Waiting on Charles** | The office page is a one-off (Charles, 2026-10-08). Ask him whether it should have a MailerLite group before creating `entry-office` from [`office-sequence.md`](../products/landing/emails/office-sequence.md). Until then, office signups get no emails. |
+| **Office page emails** | **To do (approved by Charles 2026-10-26)** | Create group `entry-office` in MailerLite and set up the 3-email automation matching [`office-sequence.md`](../products/landing/emails/office-sequence.md). Rule: trigger on group join, immediate email 1, day 3 email 2, day 7 email 3. |
 | **Google Search Console** | Not verified | Needs Charles's Google login: verify the domain and submit `/sitemap.xml`. See [External one-time items](#external-one-time-items). |
 | **QR codes for fliers** | When fliers are made | Each printed code gets its own tag, `?from=qr-<place>-<page>`. Format and examples in the [deferred-win architecture](deferred-win-architecture.md#comparing-pages-and-places). |
 
