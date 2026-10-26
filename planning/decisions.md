@@ -1189,3 +1189,40 @@ has seen the new ladder.
 
 **Revisit when:** Charles accepts or rejects this, or the revenue and marketing
 rework lands.
+
+---
+
+## ADR-021 — When the reader can't act yet, ask for a when
+
+**Status:** Accepted (2026-10-26, Charles)
+**Date:** 2026-10-26
+**Relates to** [ADR-015](#adr-015--the-win-comes-before-the-email) and
+[ADR-016](#adr-016--the-sequence-shrinks-unconditionally), both under review.
+
+**Context.** QR codes in cafés, bookstores and campuses mean many readers will
+see a page where they can't act on it. User feedback says the same. A strict
+reading of ADR-015 (no ask before the win) would leave those readers with
+nothing but something to read, and reading alone is how "someday" happens. See
+[deferred-win.md](../docs/research/deferred-win.md).
+
+**Decision.**
+
+- **The win-first principle stays the default, and it does not override getting
+  the reader to a win at all.** When the reader can't act yet, the page may ask
+  for a time and a way to reach them *before* the task is done. They are signing
+  up to get the task back when they can do it, not for a newsletter, and the
+  reminder delivers only that task.
+- **No snoozing forever.** The reader can move the time a limited number of
+  times. Then the reminders end.
+- **Reading alone is not success.** Every page needs a path from reading to
+  doing.
+
+**Rationale.** About half of intentions never become action; a specific date
+and time closes much of that gap, and one well-timed specific reminder does
+most of the work (research in deferred-win.md).
+
+**Consequences.** A reminder flow is now in scope. Its design, the channels, and
+the snooze cap are not yet decided.
+
+**Revisit when:** completion data shows whether readers who set a time finish
+more often than those who don't.
