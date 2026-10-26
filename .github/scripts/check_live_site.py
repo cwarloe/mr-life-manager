@@ -28,7 +28,7 @@ def _entry_pages() -> dict[str, tuple[str, ...]]:
             MAILERLITE_FORM_ATTR,
             f'data-guide="{route.slug}"',
             'src="/assets/entry.js"',
-            "Dave's week on one page",
+            "one thing worth printing: the week on one page",
         )
     for route in ENTRY_ROUTES:
         pages[f"/{route.completion_page}"] = (

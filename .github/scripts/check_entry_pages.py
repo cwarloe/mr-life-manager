@@ -24,7 +24,7 @@ REQUIRED = [
     ("print scale", "body{zoom:"),
     ("MailerLite form", MAILERLITE_FORM_ATTR),
     ("MailerLite CDN", MAILERLITE_JS_URL),
-    ("one-PDF promise", "Dave's week on one page"),
+    ("one-PDF promise", "one thing worth printing: the week on one page"),
 ]
 
 

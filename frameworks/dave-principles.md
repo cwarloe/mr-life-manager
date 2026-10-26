@@ -233,7 +233,10 @@ claims he said anything new. Pages built this way are ours, using his method.
 
 Two working rules follow from that:
 
-- **When a page quotes Dave, use his exact words** from `source-material/`.
+- **Task pages don't mention Dave at all** ([content rules](../content/README.md#referring-to-dave)).
+  The method shows up as plain instructions. Dave is introduced later, on the
+  completion page and in the emails.
+- **Wherever we do quote him, use his exact words** from `source-material/`.
 - **Keep learning from him directly.** The engine is for the meantime. Every
   conversation with Dave can confirm, correct, or add to the principles here.
 

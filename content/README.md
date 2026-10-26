@@ -155,9 +155,16 @@ someone who'd tell you over a coffee, not from an authority.
 to 2009, but that's the age of our archive, not the age of his practice. "Decades"
 is both truer and more interesting than counting.
 
-**Where he appears in a product, he appears after the reader has done something**,
-never as onboarding. Provenance is a reward; it is not an introduction. See
-[ADR-015](../planning/decisions.md#adr-015--the-win-comes-before-the-email).
+**Task pages never mention Dave** (Charles, 2026-10-26). A stranger doesn't know
+who he is, and it doesn't matter to them. The only job of an entry page is
+getting the task done. No "Dave's order," no "his test," no story about him, not
+even below the steps. Write the method as plain instructions.
+
+**He is introduced later**: on the completion page and in the emails, after the
+reader has finished something. Provenance is a reward, not an introduction.
+
+The [principles engine](../frameworks/dave-principles.md) is how we build
+pages from his method. That's for us; it doesn't show on the page.
 
 ## Scope: how deep is too deep
 
