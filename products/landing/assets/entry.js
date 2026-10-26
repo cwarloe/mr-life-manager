@@ -158,6 +158,9 @@
       var firstAtHome = 0;
       while (firstAtHome < steps.length && steps[firstAtHome].hasAttribute('data-portable')) firstAtHome++;
       if (firstAtHome >= steps.length) firstAtHome = 0;
+      var stepParam = parseInt(params.get('step'), 10);
+      if (resuming && stepParam >= 1 && stepParam <= steps.length) firstAtHome = Math.max(firstAtHome, stepParam - 1);
+      var resumeAt = 0;
       var fork = document.querySelector('.fork');
       var goLater = document.querySelector('.go-later');
       if (!fork || !goLater) return;
@@ -170,8 +173,13 @@
       function returnUrl(moves) {
         var q = ['resume=1'];
         if (moves) q.push('moved=' + moves);
+        if (resumeAt > 0) q.push('step=' + (resumeAt + 1));
         if (/^[a-z0-9-]{1,40}$/.test(source || '')) q.push('from=' + encodeURIComponent(source));
         return location.origin + location.pathname + '?' + q.join('&');
+      }
+      function duration() {
+        var hours = {60: 'An hour', 120: 'Two hours', 180: 'Three hours'};
+        return hours[minutes] || minutes + ' minutes';
       }
       function at(d, h, m) { var x = new Date(d); x.setHours(h, m, 0, 0); return x; }
       function nextDay(dow, h, m) {
@@ -290,13 +298,43 @@
       }
 
       function openLater() { later.hidden = false; later.scrollIntoView({block: 'start'}); }
-      goLater.addEventListener('click', openLater);
+      goLater.addEventListener('click', function () {
+        resumeAt = 0;
+        var nowPart = later.querySelector('.later-now');
+        if (nowPart) nowPart.hidden = false;
+        later.querySelector('.decided').hidden = true;
+        openLater();
+      });
+
+      // Way out from inside the steps: reschedule, and come back to this step.
+      var bail = document.createElement('button');
+      bail.type = 'button';
+      bail.className = 'bail';
+      nav.insertBefore(bail, nav.querySelector('.exit'));
+      function bailLabel() {
+        bail.textContent = resuming && moved >= MAX_MOVES ? 'Stop for now'
+          : 'Not ready? Pick another time';
+      }
+      bailLabel();
+      bail.addEventListener('click', function () {
+        var at = i;
+        stop();
+        if (resuming && moved >= MAX_MOVES) return;
+        if (resuming) { moved += 1; bailLabel(); }
+        resumeAt = Math.min(at, steps.length - 1);
+        var nowPart = later.querySelector('.later-now');
+        if (nowPart) nowPart.hidden = true;
+        later.querySelector('.decided').hidden = true;
+        var card = document.querySelector('.resume');
+        if (card) card.hidden = true;
+        openLater();
+      });
 
       // Coming back from the calendar invite.
       if (!resuming) return;
       var card = document.createElement('section');
       card.className = 'resume';
-      var where = firstAtHome ? 'Step ' + (firstAtHome + 1) + ' is ready.' : 'Step one is ready.';
+      var where = firstAtHome ? 'You\u2019re picking up at step ' + (firstAtHome + 1) + '.' : 'Step one is ready.';
       if (moved >= MAX_MOVES) {
         card.innerHTML = '<h2>This is the time you picked.</h2>' +
           '<p>You\u2019ve moved it twice already. Either start now, or let this one go.</p>' +
@@ -304,7 +342,7 @@
           '<button type="button" class="resume-drop">Let it go</button></p>';
       } else {
         card.innerHTML = '<h2>This is the time you picked.</h2>' +
-          '<p>' + minutes + ' minutes, set aside for this. ' + where + '</p>' +
+          '<p>' + duration() + ', set aside for this. ' + where + '</p>' +
           '<p class="resume-btns"><button type="button" class="resume-start">Start</button>' +
           '<button type="button" class="resume-move">I can\u2019t right now</button></p>';
       }
@@ -314,7 +352,11 @@
       var move = card.querySelector('.resume-move');
       if (move) move.addEventListener('click', function () {
         moved += 1;
+        bailLabel();
         card.hidden = true;
+        resumeAt = firstAtHome;
+        var nowPart = later.querySelector('.later-now');
+        if (nowPart) nowPart.hidden = true;
         openLater();
       });
       var drop = card.querySelector('.resume-drop');

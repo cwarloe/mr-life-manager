@@ -268,3 +268,7 @@ body.doing .says li{font-size:clamp(1.12rem,4.2vw,1.35rem);margin:0 0 .45rem}
 .later button:focus-visible,.later a:focus-visible,.resume button:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
 body.doing .later,body.doing .resume{display:none}
 @media print{.later,.resume,.fork-alt{display:none !important}}
+body.doing .nav .bail{display:block;width:100%;flex:0 0 100%;margin:0;min-height:0;box-shadow:none;
+  font-family:var(--sans);font-size:.85rem;font-weight:700;color:var(--blue);background:none;border:0;
+  padding:.1rem 0 0;text-align:left;cursor:pointer;text-decoration:underline}
+.later-now[hidden]{display:none}

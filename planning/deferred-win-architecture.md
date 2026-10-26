@@ -129,6 +129,14 @@ roll it to the rest.
 - All behavior lives in the shared `assets/entry.js`; styles in `entry.css`.
   `check_entry_pages.py` fails if a page turns it on without the button or
   settings, or if the script loses the calendar invite or the move cap.
+- **The commitment is the button.** The box above it states the time and the
+  place ("Ready to start? It takes about forty minutes. You need to be at
+  home…"), so pressing "Start now" means "I have the time." No step asks "do you
+  want this?" (Charles, 2026-10-26).
+- **A way out that reschedules.** Inside the steps, "Not ready? Pick another
+  time" opens the time picker; the invite brings them back to the step they
+  stopped on (`step=N`). When they came from an invite it counts as a move; at
+  the limit it becomes "Stop for now" with no new reminder.
 - Completion links carry `path=now` or `path=appointment`, alongside `from=`.
 - The return link in the invite is `?resume=1`, plus `moved=N` after a move and
   the original `from=` tag.
