@@ -1,7 +1,9 @@
 # Deferred Win — proposed architecture
 
-**Status:** Phase 1 **live on two pages**, 2026-10-26: [underwater](../products/landing/underwater.html)
-and [one-room](../products/landing/one-room.html). Scope is **the first win only**.
+**Status:** Phase 1 **live on all five task pages**, 2026-10-26 (piloted on
+underwater and one-room, then rolled out to first-night, guests and office the
+same day). "Before you go" appears on the three-pile pages (one-room, office)
+only. Scope is **the first win only**.
 **Problem and research:** [deferred-win.md](../docs/research/deferred-win.md) ·
 **Decision:** [ADR-021](decisions.md#adr-021--when-the-reader-cant-act-yet-ask-for-a-when)
 

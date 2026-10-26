@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-guide="office" data-completion-url="/finished-office.html">
+<html lang="en" data-guide="office" data-completion-url="/finished-office.html" data-defer="on" data-minutes="120" data-task="Clear my desk" data-bail-note="Take out the trash and walk the Return box around. Then nothing is left half-sorted on your desk, and picking up next time is easy.">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="/assets/entry.css">
 <style>
 @media print{
-  body{zoom:0.96}
+  body{zoom:1.01}
 }
 </style>
 <script>
@@ -46,21 +46,17 @@
 </div>
 
 <div class="fork">
-  <p class="fork-lead">Ready to start?</p>
-  <p class="fork-sub">The steps are below either way. Either button shows only the steps, ready to use or print.</p>
+  <p class="fork-lead">Ready to start? It takes about two hours.</p>
+  <p class="fork-sub">You need to be at your desk, with the time blocked off. If you're somewhere else, or now isn't the time, pick the exact time you'll do it.</p>
   <p class="fork-btns">
-    <button type="button" class="go-do">Just the steps</button>
-    <button type="button" class="go-print">Print it</button>
+    <button type="button" class="go-do">I'm there. Start now.</button>
+    <button type="button" class="go-later">Not right now</button>
   </p>
+  <p class="fork-alt"><button type="button" class="go-print">Print the steps instead</button></p>
 </div>
 
 <ol class="steps">
 
-  <li class="step">
-    <div class="step-head"><h2>Put two hours on your calendar.</h2><span class="mins">5 min</span></div>
-    <p class="do">Block it like a meeting, ideally at the end of a day or on a Friday afternoon. Set your status to busy. If someone will wonder where you are, tell them you're clearing your desk.</p>
-    <p class="why"><b>Why it comes first.</b> An office only gets cleaned in the gaps between real work, and there are no gaps. If it isn't scheduled, an urgent email will always come first. Half-finished is worse than not started: you lose the desk and gain a pile of decisions you've already made once.</p>
-  </li>
 
   <li class="step">
     <div class="step-head"><h2>Decide now what you'll do when you want to quit.</h2><span class="mins">10 min</span></div>
@@ -75,19 +71,19 @@
     <p class="why"><b>This is the part everyone skips, and it matters most.</b> If the shred bin or the file room is locked, that becomes the reason to stop. People rarely quit because the job is hard. They quit at the first reasonable-sounding obstacle, so you remove the obstacles before you start.</p>
   </li>
 
-  <li class="step">
+  <li class="step" data-midway>
     <div class="step-head"><h2>Sort everything on the desk into three piles.</h2><span class="mins">45 min</span></div>
     <p class="do">Start at one corner of the surface and work across. Everything goes into exactly one of three piles: <b>throw away or recycle</b>, <b>return</b> (it belongs to someone else, the lab, the shop, or the archive), or <b>stays here</b>. Anything staying stays put for now.</p>
     <p class="why"><b>Three piles are all you need.</b> A fourth pile called "decide later" is how the desk got this way. Every stack on it is a decision that got postponed, and adding one more stack doesn't change that.</p>
   </li>
 
-  <li class="step">
+  <li class="step" data-midway>
     <div class="step-head"><h2>When you're stuck on a piece of paper, check whether another copy exists.</h2><span class="mins">—</span></div>
     <p class="do">If the current version lives on the server or in the project file, the printout on your desk can go. If it's a <b>record</b> (signed, stamped, sealed, or the only copy), it goes in the Return box for the file room. If it's a task that takes a minute, do it now. <b>Spend no more than about five seconds deciding on each item.</b></p>
     <p class="why"><b>Most paper on an engineer's desk is a copy of something that lives somewhere else.</b> Old markups, superseded revisions, meeting handouts. Once the real one exists, the copy on your desk does nothing except hide what you need.</p>
   </li>
 
-  <li class="step">
+  <li class="step" data-midway>
     <div class="step-head"><h2>Clear the piles out of the office today.</h2><span class="mins">20 min</span></div>
     <p class="do">Trash and recycling out. Walk the Return box around: hand things back, drop records at the file room, return samples and tools to where they came from. <b>The box should be empty before you go home.</b></p>
     <p class="why"><b>A pile left in the office is not progress. It's a pile.</b> This step decides whether the desk stays clear or fills back up over the next two weeks. If you only have time for part of it, do the Return box, because that's the pile that ends up back on your desk.</p>
