@@ -51,7 +51,13 @@
       if (!d || d.dataset.split) return;
       d.dataset.split = '1';
       var parts = d.innerHTML.split(/(?<=[.!?])\s+(?=[A-Z])/);
-      if (parts.length > 1) {
+      // Only split when every piece keeps its own tags closed; a sentence
+      // break inside <b>...</b> would leave half the bold outside its span.
+      var whole = parts.every(function (t) {
+        return (t.match(/<[a-z][^>]*>/gi) || []).length ===
+          (t.match(/<\/[a-z][^>]*>/gi) || []).length;
+      });
+      if (parts.length > 1 && whole) {
         d.innerHTML = parts.map(function (t) {
           return '<span class="s">' + t + '</span>';
         }).join(' ');
