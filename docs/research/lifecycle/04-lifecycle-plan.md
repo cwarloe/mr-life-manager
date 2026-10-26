@@ -137,7 +137,7 @@ Change or check:
 
 | Item | Proposal | Label |
 |---|---|---|
-| **"Start now" stays visually primary;** "Not right now" stays secondary. | Guard against the planning-later licensing effect. Never style them as equals. | Inference from Medium evidence |
+| **"Start now" stays visually primary;** "Not right now" stays secondary. | Guard against the planning-later licensing effect. Don't style them as equals. | Inference from Medium evidence |
 | **First step is quick and sure** on every page. | Early progress that feels fast reduces drop-off; slow early progress raises it ([Villar et al. 2013](https://research.google/pubs/where-am-i-a-meta-analysis-of-experiments-on-the-effects-of-progress-indicators-for-web-surveys/), High). Audit each page's step 1. | Inference |
 | **Reading level check** (5th–7th grade) on each entry page. | Plain pages correlated with higher conversion ([Unbounce via MarketingProfs](https://marketingprofs.com/charts/2024/52374/landing-page-conversion-benchmarks), Medium, correlational) | Inference |
 | **Credit real progress on return** from a reminder: "You already picked the zone." | Endowed progress, honestly applied ([Nunes & Drèze 2006](https://knowledge.wharton.upenn.edu/podcast/knowledge-at-wharton-podcast/the-lowdown-on-customer-loyalty-programs-which-are-the-most-effective-and-why/), High). Never a fake head start. | Inference |
@@ -155,7 +155,7 @@ time" logic to the nightly ten minutes and expect the same effect (Carrera).
 These are the current rules (ADR-016, under review). The plan keeps all of them.
 
 1. Three emails: day 0, day 3, day 7. Each asks less than the one before.
-2. Never branch on opens or clicks. Only a reply or a purchase changes the path.
+2. Don't branch on opens or clicks; opens are unreliable since Apple Mail Privacy Protection. Only a reply or a purchase changes the path.
 3. Never ask a question with a wrong answer; never refer to what the reader did
    or didn't do.
 4. **Silence means stop.** No fourth email, promotion or win-back.
@@ -413,7 +413,7 @@ before move-in season." Rules:
   **Evidence (Medium):** 80% of Americans said they planned to spring clean in
   2024 ([ACI](https://www.businesswire.com/news/home/20240306966220/en/ACI-Survey-80-of-Americans-Now-Spring-Clean-Every-Year)).
 - One task per email, linked to a free page with `from=email-return-<season>`.
-- The start call may be mentioned once, below the task, never above it.
+- The start call may be mentioned once, below the task rather than above it.
 - **It ends after twelve months** unless the reader renews it with one click.
 
 ### 4.4 If a subscription is ever proposed
@@ -440,12 +440,12 @@ reader decides it, not us. We can't observe it and won't guess.
   line: "If the week is running on its own, you've graduated. Reply 'graduated'
   and I'll stop, or keep the seasonal emails."
 - After a win, Dave may appear: a graduation page with his story, as the vision
-  plans. Task pages still never mention him.
+  plans. Task pages still don't mention him.
 - A graduate is the best referrer: they are the person the vision's Jordan
   became, sending the page to roommates.
 - **Opinion:** the next step for graduates who want it is the stewardship
   curriculum, which lives in Charles's separate project (ADR-009). Mention it
-  only on the founder's own pages, never inside a product.
+  only on the founder's own pages, not inside a product.
 
 ---
 
@@ -483,7 +483,7 @@ text. Proposed changes:
    mechanic. Generated in the browser, like the reader's own invite; no data
    reaches us.
 3. **Keep the text task-and-time specific** ("I've set aside Saturday at 10 to
-   clear my desk. Check on me after?"), never identity-based. **Evidence
+   clear my desk. Check on me after?"), not identity-based. **Evidence
    (Medium):** announcing an identity goal can backfire
    ([Gollwitzer et al. 2009](https://stafforini.com/works/gollwitzer-2009-when-intentions-go/)).
 4. **Suggest someone respected.** One line: "Someone whose opinion you care
@@ -515,12 +515,12 @@ weekly 45-minute growth block in operations.md should go mostly here.
 ### 5.3 The moment to ask
 
 - **The checker:** at the moment the reader picks a time. Already live.
-- **Post-win share:** on the completion page, below the email form, never above
+- **Post-win share:** on the completion page, below the email form rather than above
   it. **Inference:** no study tests asking right after a win, but people share
   what makes them look good, and "I just did this" is a good look then.
 - **Charles's reply:** when a reader writes back pleased, one sentence: "The
   page is free to pass on." Human, once.
-- **Never** in the three emails as an ask of its own. It would make email 2 or
+- **Not** in the three emails as an ask of its own. It would make email 2 or
   3 ask more, not less.
 
 ### 5.4 Incentives: none to the referrer

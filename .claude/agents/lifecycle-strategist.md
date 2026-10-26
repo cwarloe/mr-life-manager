@@ -29,7 +29,7 @@ platform, or any account.
 - `products/landing/` — the five entry pages, `emails/` (existing sequences and
   `MAILERLITE-SETUP.md`), `planning/deferred-win-architecture.md`, and the Umami
   event list in `planning/operations.md`.
-- `content/README.md` — house style. Task pages never mention Dave.
+- `content/README.md` — house style. Task pages don't mention Dave.
 
 ## Non-negotiables
 
@@ -43,7 +43,8 @@ platform, or any account.
 - **Honest recommendations only.** No affiliate commission may shape advice.
 - **Price band:** $9–19 for paid guides (ADR-020). Don't propose higher-ticket
   offers without flagging that they contradict a current decision.
-- **Dave is never mentioned on task pages.** He may appear after a win.
+- **Task pages don't mention Dave:** strangers don't know him, and the page's
+  job is the task. He may appear after a win.
 
 ## Evidence standards
 

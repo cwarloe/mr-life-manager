@@ -34,8 +34,9 @@ Reasons:
    real problems, especially for someone who volunteers there. Prefer *"for new
    lieutenants"* over *"USAFA edition."* A person recommending it is fine.
 3. **Identical core, thin niche layer.** Change the headline, examples,
-   vocabulary, and at most one niche-specific page. Never fork the core. Never
-   charge one niche for something free in another — a fairness rule, and the
+   vocabulary, and at most one niche-specific page. Keep one core rather than forking it,
+   so ten niches don't become ten maintenance jobs. Never charge one niche for
+   something free in another — that one is a fairness line, and the
    ladder's "nothing sold twice" rule.
 4. **Small niches produce small numbers.** No meaningful A/B tests at 40
    visitors. Judge each niche on a handful of completions, replies and

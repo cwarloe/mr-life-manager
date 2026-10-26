@@ -7,7 +7,7 @@ automation still need to be created to match the table below. Each
 sequence sends one PDF link in email 1 —
 [`The Week`](https://mrlifemanager.com/print/the-week.pdf) — followed by two
 smaller emails and then stops. The entry-page action sheet is available before
-signup and is never promised by email.
+signup, so email doesn't promise it.
 
 This file describes the intended live state. The repository can verify the
 public pages and PDF, but it cannot inspect MailerLite's private automation
@@ -53,7 +53,7 @@ Settings for all of them:
 The copy files are the source of truth. The original site-wide welcome
 sequence is withdrawn
 ([ADR-016](../../../planning/decisions.md#adr-016--the-sequence-shrinks-unconditionally))
-and must never be reactivated.
+and stays withdrawn. Turning it back on would need a new decision.
 
 ## Delivery promise
 

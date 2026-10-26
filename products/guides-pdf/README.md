@@ -25,7 +25,7 @@ Entry pages have no PDF: the reader prints them from the page itself.
 
 ## Regenerating
 
-**The HTML is the source. Never edit a PDF.** After changing any guide:
+**The HTML is the source. Don't edit PDFs directly:** they're regenerated from the HTML, and CI flags any PDF that drifts from its source. After changing any guide:
 
 ```bash
 python3 .github/scripts/render_all_pdfs.py

@@ -22,7 +22,7 @@ quality, package many times. See
 | `toolkits/` | Bundled systems — several artifacts solving one situation end to end. |
 | `landing/` | The public site: router homepage, entry pages, email sequences. See [SETUP.md](landing/SETUP.md). |
 | `print/` | One-page printables with no web version (*The Week*). |
-| `guides-pdf/` | Rendered PDFs, published at `/print/`. Never edit; regenerate from the HTML. |
+| `guides-pdf/` | Rendered PDFs, published at `/print/`. Regenerate from the HTML rather than editing; CI flags drift. |
 
 ## Every product needs a brief
 

@@ -12,13 +12,13 @@ land on `main`.
 
 - `CLAUDE.md` — the working agreement. The two rules that matter most:
   (1) You make changes and push to `main` once checks pass; a
-  bot does everything downstream (MailerLite, any live account). Never hand
-  Charles manual steps or a chore list. End with a short plain-prose note for
+  bot does everything downstream (MailerLite, any live account). Don't hand
+  Charles manual steps or a chore list; that's what the bot is for. End with a short plain-prose note for
   the bot. (2) Keep replies short by default.
 - `content/README.md` — house style: depth rule, US English, email voice
-  (full sentences, never clipped AI fragments), printables ≠ web pages, how to
-  refer to Dave (first name, "decades," never his last name, mentioned only
-  after the win).
+  (full sentences, not clipped AI fragments), printables ≠ web pages, how to
+  refer to Dave (first name, "decades," not his last name; not on task pages,
+  only after the win).
 - `planning/decisions.md` — the ADRs. ADR-014 completion converts; ADR-015 the
   win comes before the email ask; ADR-016 the follow-up sequence shrinks
   unconditionally; ADR-017 Kitchen That Works is free, folded into Six Meals;
@@ -46,8 +46,8 @@ headless Chromium with brand fonts embedded (`.github/scripts/render_all_pdfs.py
 Four MailerLite email sequences are active per owner confirmation on 2026-09-22;
 the office sequence is drafted, but its MailerLite group and automation are not
 set up yet. Each sequence sends one PDF link in email 1: `/print/the-week.pdf`.
-The entry-page action sheet is available before signup and is never promised by
-email.
+The entry-page action sheet is available before signup, so email doesn't
+promise it.
 
 CI scripts enforce the invariants — run them before committing:
 - Public origin + the entry routes live in
@@ -70,7 +70,7 @@ CI scripts enforce the invariants — run them before committing:
   invite; the invite returns the reader to the step they left; two moves, then
   "start now or let it go." All in the shared `assets/entry.js`, opted in per page
   with `data-defer`.
-- **Task pages never mention Dave**
+- **Task pages don't mention Dave**
   ([content rules](../content/README.md#referring-to-dave)). He is introduced
   after the win: completion page and emails.
 - **Analytics:** Umami event tracking is coded and off until a website ID is

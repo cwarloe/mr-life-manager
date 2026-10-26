@@ -360,5 +360,5 @@ typing at a moment of transition.
 - Visible human face — **Settled** (Dave's; [ADR-011](../../planning/decisions.md#adr-011--mr-life-manager-is-a-real-person-dave-webster)).
 - Persona vs brand name — **Settled — neither** (real person; see *Who is speaking*).
 - Name clearance — **Closed 2026-09-23** ([brand-name-scan.md](../research/brand-name-scan.md)).
-- Public "Dave Webster" vs "Mr. Life Manager" — **Settled for copy** ("Dave," never
-  the surname; [content/README.md](../../content/README.md#referring-to-dave)).
+- Public "Dave Webster" vs "Mr. Life Manager" — **Settled for copy** ("Dave," first
+  name only; [content/README.md](../../content/README.md#referring-to-dave)).

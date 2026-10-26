@@ -176,7 +176,7 @@ repository work:
     in `.github/scripts/site_catalog.py`. The build then adds the script to
     every page and shows the analytics paragraph on the privacy page;
     `check_built_site.py` fails if those two ever disagree. Tracking only runs
-    on `mrlifemanager.com`, never in tests or previews.
+    on `mrlifemanager.com`, not in tests or previews.
   - **Events sent** (no cookies, nothing personal; each carries `page` and the
     QR `from` tag): `start-now`, `not-right-now`, `time-picked` (choice),
     `calendar-added` (ics or google), `shared-with-checker`, `came-back` (moved,

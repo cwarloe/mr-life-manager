@@ -155,7 +155,7 @@ someone who'd tell you over a coffee, not from an authority.
 to 2009, but that's the age of our archive, not the age of his practice. "Decades"
 is both truer and more interesting than counting.
 
-**Task pages never mention Dave** (Charles, 2026-10-26). A stranger doesn't know
+**Task pages don't mention Dave** (Charles, 2026-10-26). A stranger doesn't know
 who he is, and it doesn't matter to them. The only job of an entry page is
 getting the task done. No "Dave's order," no "his test," no story about him, not
 even below the steps. Write the method as plain instructions.

@@ -14,7 +14,7 @@ So:
   are still fine for anything large or uncertain.
 - **End with a short prompt for the bot** — a few lines, plain prose, saying
   what changed and what to update. Not a checklist, not a runbook.
-- **Never hand Charles manual steps.** No "open this in a browser," no "send
+- **Don't hand Charles manual steps.** No "open this in a browser," no "send
   yourself a test signup," no "inspect this element and tell me what it says."
   If something genuinely can't be verified from here, either remove the
   uncertainty in code or let the bot find out.
@@ -46,14 +46,22 @@ chores for him. He has a bot precisely so that doesn't happen.
 and good sense say an exception is right. State the rule, give the reason, and
 say what it's protecting, so whoever applies it can use judgment. Keep the
 absolutes for ethics: deceiving people, shaming them, or charging for what they
-don't use.
+don't use. Safety, privacy, consent, and the integrity of sources and data
+(verbatim source material, invented facts, credentials) count as ethical lines
+too.
+
+**Older text still has absolutes.** The ADRs are a historical record and aren't
+rewritten, and the frameworks are teaching material for readers. Where they say
+"never" or "always" about something that isn't an ethical line, read it as a
+strong default with a reason, not a wall: apply it unless good sense clearly
+says otherwise, and say so when you make an exception.
 
 ## Standing rules already written down
 
 Don't re-derive these — read them:
 
 - [`content/README.md`](content/README.md) — depth rule, US English, email
-  voice (full sentences, never clipped fragments), how printables differ from
+  voice (full sentences, not clipped fragments), how printables differ from
   web pages, how to refer to Dave
 - [`planning/decisions.md`](planning/decisions.md) — the ADRs. ADR-014
   (completion converts), ADR-015 (the win comes before the email), ADR-016

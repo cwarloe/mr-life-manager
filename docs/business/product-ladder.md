@@ -67,8 +67,9 @@ sell.
 
 **Purpose:** go deeper in a domain where a free win has already delivered real
 value. Per ADR-020 a paid guide is **offered only after** the reader has finished
-a free win in that domain — never as the first thing they see, and never to
-someone who hasn't used the free version.
+a free win in that domain — not as the first thing they see, and never to
+someone who hasn't used the free version (that would be charging for what
+they don't use).
 
 | Product | Price | Notes |
 |---|---|---|

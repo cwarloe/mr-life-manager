@@ -224,7 +224,7 @@ information needed for the next.
 - Is the audience reachable at acceptable cost, or is distribution the real
   constraint? (Almost certainly the latter — plan accordingly.)
 - The brand is built around Dave Webster, not the founder. Product copy calls
-  him "Dave," never the surname
+  him "Dave," first name only
   ([content/README.md](../../content/README.md#referring-to-dave)); wider name
   and likeness rights are §3 of the
   [draft term sheet](dave-rights-term-sheet-draft.md).

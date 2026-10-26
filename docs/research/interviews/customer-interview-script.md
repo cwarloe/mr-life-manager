@@ -16,7 +16,7 @@ polite, and polite answers are worthless.
 If they ask, say: *"I'm trying to understand how people learn to run a house —
 I'll tell you after, if you want."* Then actually tell them after.
 
-**Ask about the past, never the future.** "Would you buy…" predicts nothing.
+**Ask about the past, not the future.** "Would you buy…" predicts nothing.
 "What did you buy" is the only reliable signal there is.
 
 ---

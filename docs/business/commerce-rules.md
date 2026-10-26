@@ -141,7 +141,7 @@ microfiber cloths
 laundry detergent · a toilet bowl cleaner and brush
 
 Dedicated glass cleaner stays **optional**; a damp microfiber is the default.
-Never add a glass-cleaner link just to make the kit feel complete.
+Don't add a glass-cleaner link just to make the kit feel complete; padding a list costs trust.
 
 **No "full kit" that forces every possible item.** A low-cost starting point, and
 a clear checklist for shopping in person.
@@ -201,7 +201,7 @@ their floor type, pet needs, storage, and usage)
 specialty sprays, bulk cleaner packs, decorative gadgets, duplicates that solve
 no named problem.
 
-**Never "buy all upgrades."** The call to action is "See options" or "Consider
+**No "buy all upgrades."** It pushes people past what they need. The call to action is "See options" or "Consider
 this if [specific problem]."
 
 ---
