@@ -58,7 +58,7 @@ ENTRY_ROUTES: tuple[EntryRoute, ...] = (
     ),
     EntryRoute(
         slug="underwater",
-        door_title="The whole house needs doing",
+        door_title="Your place is a mess again",
         completion_message=(
             "The house is livable again. That is different from fixing everything."
         ),
@@ -82,6 +82,8 @@ ENTRY_JS_MARKERS: tuple[tuple[str, str], ...] = (
     ("MailerLite dual-field tag", "fields[guide]"),
     ("MailerLite fallback", "ml-fallback"),
     ("guide VALUE wiring", "var VALUE = guide"),
+    ("deferred appointment (ADR-021)", "BEGIN:VCALENDAR"),
+    ("deferred move cap", "MAX_MOVES"),
 )
 
 ENTRY_CSS_MARKERS: tuple[tuple[str, str], ...] = (

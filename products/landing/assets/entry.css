@@ -230,3 +230,41 @@ body.doing .says li{font-size:clamp(1.12rem,4.2vw,1.35rem);margin:0 0 .45rem}
   .says{margin:.12rem 0 0;padding-left:1.55rem}
   .says li{font-size:9.5pt;line-height:1.28;margin:0}
 }
+
+/* Deferred appointment (ADR-021): "Not right now" picks an exact time. */
+.fork-alt{margin:.85rem 0 0}
+.fork-alt .go-print{font-family:var(--sans);font-size:.85rem;font-weight:600;color:var(--slate);
+  background:none;border:0;padding:0;text-decoration:underline;cursor:pointer}
+.fork-btns .go-later{background:transparent;color:var(--ink);border-color:var(--rule-strong)}
+.fork-btns .go-later:hover{border-color:var(--ink);background:var(--surface)}
+.later,.resume{margin:1.4rem 0 0;padding:1.3rem 1.35rem;border:2px solid var(--blue);border-radius:6px;
+  background:var(--surface);box-shadow:var(--shadow-sm)}
+.later[hidden],.resume[hidden],.decided[hidden]{display:none}
+.later h2,.resume h2{font-size:1.3rem;letter-spacing:-.02em;margin:0 0 .4rem}
+.later p,.resume p{font-family:var(--serif);font-size:1rem;line-height:1.5;color:var(--slate);margin:0 0 .9rem}
+.later-sub{margin:0 0 1rem}
+.later-now{border-bottom:1px solid var(--rule);margin:0 0 1.2rem;padding:0 0 .4rem}
+.later-now ol{margin:.4rem 0 .9rem;padding-left:1.2rem;font-family:var(--serif);line-height:1.5}
+.later-now li{margin:0 0 .5rem}
+.when-picks{display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));gap:.6rem;margin:0 0 1rem}
+.when-picks button,.resume-btns button,.decided-btns a,.when-use,.share-checker{font-family:var(--sans);
+  font-size:1rem;font-weight:700;border-radius:5px;border:2px solid var(--blue);cursor:pointer;
+  padding:.8rem 1rem;text-decoration:none;display:inline-block;text-align:left}
+.when-picks button{background:var(--surface);color:var(--ink);border-color:var(--rule-strong);min-height:3.6rem}
+.when-picks button:hover{border-color:var(--blue);background:var(--blue-soft)}
+.when-name{display:block}
+.when-time{display:block;font-size:.85rem;font-weight:600;color:var(--slate);margin-top:.15rem}
+.when-own label{font-family:var(--sans);font-size:.92rem;font-weight:600;color:var(--ink)}
+.when-input{font:inherit;font-size:1rem;padding:.55rem;border:1px solid var(--rule-strong);border-radius:4px;
+  background:var(--paper);color:var(--ink);margin:.3rem 0 0;max-width:100%}
+.when-use{background:transparent;color:var(--blue);margin-top:.5rem;padding:.55rem .9rem}
+.decided{margin:1.2rem 0 0;padding:1.2rem 0 0;border-top:2px solid var(--ink)}
+.decided-when{font-family:var(--sans)!important;font-size:1.15rem!important;font-weight:800;color:var(--ink)!important}
+.decided-btns{display:flex;flex-wrap:wrap;gap:.6rem}
+.decided-btns .cal-ics,.resume-start{background:var(--blue);color:#fff}
+.decided-btns .cal-google,.resume-btns .resume-move,.resume-btns .resume-drop,.share-checker{
+  background:transparent;color:var(--ink);border-color:var(--rule-strong)}
+.resume-btns{display:flex;flex-wrap:wrap;gap:.6rem}
+.later button:focus-visible,.later a:focus-visible,.resume button:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+body.doing .later,body.doing .resume{display:none}
+@media print{.later,.resume,.fork-alt{display:none !important}}

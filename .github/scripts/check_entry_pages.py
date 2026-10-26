@@ -59,6 +59,13 @@ def main() -> int:
             if needle not in s:
                 problems.append(f"{path.name}: missing {label}")
 
+        if 'data-defer="on"' in s:
+            for label, needle in (("'Not right now' button", 'class="go-later"'),
+                                  ("appointment length", 'data-minutes="'),
+                                  ("calendar title", 'data-task="')):
+                if needle not in s:
+                    problems.append(f"{path.name}: data-defer is on but missing {label}")
+
         expected_completion = f"/{route.completion_page}"
         completion_attr = f'data-completion-url="{expected_completion}"'
         if completion_attr not in s:

@@ -1,6 +1,7 @@
 # Deferred Win — proposed architecture
 
-**Status:** Proposal, 2026-10-26. Not built. Scope is **the first win only**.
+**Status:** Phase 1 **live on two pages**, 2026-10-26: [underwater](../products/landing/underwater.html)
+and [one-room](../products/landing/one-room.html). Scope is **the first win only**.
 **Problem and research:** [deferred-win.md](../docs/research/deferred-win.md) ·
 **Decision:** [ADR-021](decisions.md#adr-021--when-the-reader-cant-act-yet-ask-for-a-when)
 
@@ -120,6 +121,34 @@ Works on the current static site and needs no new accounts.
 
 **Pilot on one page first** (office or underwater), compare completions, then
 roll it to the rest.
+
+### How Phase 1 was built
+
+- Opt-in per page: `data-defer="on"`, `data-minutes`, `data-task` on `<html>`.
+  Steps that can be done away from home carry `data-portable`.
+- All behavior lives in the shared `assets/entry.js`; styles in `entry.css`.
+  `check_entry_pages.py` fails if a page turns it on without the button or
+  settings, or if the script loses the calendar invite or the move cap.
+- Completion links carry `path=now` or `path=appointment`, alongside `from=`.
+- The return link in the invite is `?resume=1`, plus `moved=N` after a move and
+  the original `from=` tag.
+
+### Comparing pages and places
+
+The test is **which page gets traction in which places and populations**, not a
+true A/B test: each page reaches different people with a different problem.
+
+**Every printed QR code gets its own `from=` tag**, so places can be compared.
+Format: `qr-<place>-<page>`, lowercase, hyphens, 40 characters at most, no
+personal names. Examples:
+
+- `https://mrlifemanager.com/underwater.html?from=qr-boise-cafe-underwater`
+- `https://mrlifemanager.com/one-room.html?from=qr-bsu-board-one-room`
+
+The tag rides through the calendar invite and reaches the completion page, so a
+completion can be traced back to the flier that started it. **Note:** this only
+works once visitor measurement is turned on, and only if that service keeps the
+query string on page views. Check that when choosing it.
 
 ## Phase 2 — email reminder
 

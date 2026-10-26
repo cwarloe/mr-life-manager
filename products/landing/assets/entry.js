@@ -94,7 +94,13 @@
     var done = document.createElement('div');
     done.className = 'done';
     var source = new URLSearchParams(window.location.search).get('from');
-    if (/^[a-z0-9-]{1,40}$/.test(source || '')) completionUrl += '?from=' + encodeURIComponent(source);
+    var params = new URLSearchParams(window.location.search);
+    var resuming = params.get('resume') === '1';
+    var completionQuery = [];
+    if (/^[a-z0-9-]{1,40}$/.test(source || '')) completionQuery.push('from=' + encodeURIComponent(source));
+    // Which path the reader took, so completions can be compared (ADR-021).
+    if (root.getAttribute('data-defer') === 'on') completionQuery.push('path=' + (resuming ? 'appointment' : 'now'));
+    if (completionQuery.length) completionUrl += '?' + completionQuery.join('&');
     done.innerHTML = '<h2>That\u2019s everything.</h2>' +
       '<p>Whatever you got through is what there was time for. The order runs biggest ' +
       'difference first, so wherever you stopped is the right place to have stopped.</p>' +
@@ -120,7 +126,8 @@
       nav.style.display = end ? 'none' : '';
       window.scrollTo(0, 0);
     }
-    function start() { body.classList.add('doing'); show(0); }
+    function startAt(n) { body.classList.add('doing'); show(n); }
+    function start() { startAt(0); }
     function stop() {
       body.classList.remove('doing');
       steps.forEach(function (s) { s.classList.remove('current'); });
@@ -137,5 +144,184 @@
     Array.prototype.forEach.call(document.querySelectorAll('.exit'), function (b) {
       b.addEventListener('click', stop);
     });
+
+    // Deferred appointment (ADR-021): a reader who can't act where they are
+    // picks an exact date and time, gets a calendar invite, and comes back to
+    // the steps. Nothing is stored or sent; the reminder lives in their calendar.
+    if (root.getAttribute('data-defer') === 'on') deferred();
+
+    function deferred() {
+      var MAX_MOVES = 2;
+      var minutes = parseInt(root.getAttribute('data-minutes'), 10) || 40;
+      var task = root.getAttribute('data-task') || document.title;
+      var moved = Math.min(parseInt(params.get('moved'), 10) || 0, MAX_MOVES);
+      var firstAtHome = 0;
+      while (firstAtHome < steps.length && steps[firstAtHome].hasAttribute('data-portable')) firstAtHome++;
+      if (firstAtHome >= steps.length) firstAtHome = 0;
+      var fork = document.querySelector('.fork');
+      var goLater = document.querySelector('.go-later');
+      if (!fork || !goLater) return;
+
+      function esc(t) {
+        return String(t).replace(/[&<>"]/g, function (c) {
+          return {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c];
+        });
+      }
+      function returnUrl(moves) {
+        var q = ['resume=1'];
+        if (moves) q.push('moved=' + moves);
+        if (/^[a-z0-9-]{1,40}$/.test(source || '')) q.push('from=' + encodeURIComponent(source));
+        return location.origin + location.pathname + '?' + q.join('&');
+      }
+      function at(d, h, m) { var x = new Date(d); x.setHours(h, m, 0, 0); return x; }
+      function nextDay(dow, h, m) {
+        var now = new Date(), x = at(now, h, m);
+        var add = (dow - now.getDay() + 7) % 7;
+        x.setDate(x.getDate() + add);
+        if (x <= now) x.setDate(x.getDate() + 7);
+        return x;
+      }
+      function choices() {
+        var now = new Date(), list = [];
+        var tonight = at(now, 19, 0);
+        if (tonight - now < 30 * 60000) tonight = at(now, 20, 30);
+        if (tonight - now >= 30 * 60000) list.push(['Tonight', tonight]);
+        var tomorrow = at(now, 19, 0); tomorrow.setDate(tomorrow.getDate() + 1);
+        list.push(['Tomorrow evening', tomorrow]);
+        list.push(['Saturday morning', nextDay(6, 10, 0)]);
+        list.push(['Monday evening', nextDay(1, 19, 0)]);
+        var seen = {};
+        return list.filter(function (c) {
+          var k = c[1].getTime(); if (seen[k]) return false; seen[k] = 1; return true;
+        });
+      }
+      function label(d) {
+        return d.toLocaleString('en-US', {weekday: 'long', month: 'short', day: 'numeric',
+          hour: 'numeric', minute: '2-digit'});
+      }
+      function stamp(d) { return d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, ''); }
+      function icsText(t) { return String(t).replace(/\\/g, '\\\\').replace(/[,;]/g, '\\$&').replace(/\n/g, '\\n'); }
+      function fold(line) {
+        var out = [];
+        while (line.length > 73) { out.push(line.slice(0, 73)); line = ' ' + line.slice(73); }
+        out.push(line); return out.join('\r\n');
+      }
+      function invite(when, url) {
+        var end = new Date(when.getTime() + minutes * 60000);
+        var details = 'Time to start. Open this and pick up at the next step:\n' + url;
+        var lines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Mr. Life Manager//Appointment//EN',
+          'CALSCALE:GREGORIAN', 'METHOD:PUBLISH', 'BEGIN:VEVENT',
+          'UID:' + Date.now() + '-' + Math.random().toString(36).slice(2) + '@mrlifemanager.com',
+          'DTSTAMP:' + stamp(new Date()), 'DTSTART:' + stamp(when), 'DTEND:' + stamp(end),
+          'SUMMARY:' + icsText(task), 'DESCRIPTION:' + icsText(details), 'URL:' + url,
+          'BEGIN:VALARM', 'ACTION:DISPLAY', 'DESCRIPTION:' + icsText(task), 'TRIGGER:-PT0M', 'END:VALARM',
+          'END:VEVENT', 'END:VCALENDAR'];
+        return lines.map(fold).join('\r\n') + '\r\n';
+      }
+      function googleUrl(when, url) {
+        var end = new Date(when.getTime() + minutes * 60000);
+        return 'https://calendar.google.com/calendar/render?action=TEMPLATE' +
+          '&text=' + encodeURIComponent(task) +
+          '&dates=' + stamp(when) + '/' + stamp(end) +
+          '&details=' + encodeURIComponent('Time to start. Open this and pick up at the next step: ' + url);
+      }
+
+      // Panel shown after "Not right now".
+      var later = document.createElement('section');
+      later.className = 'later';
+      later.hidden = true;
+      var portable = steps.filter(function (s) { return s.hasAttribute('data-portable'); });
+      var portableHtml = '';
+      if (portable.length) {
+        portableHtml = '<div class="later-now"><h2>Do this part now, from right here.</h2><ol>' +
+          portable.map(function (s) {
+            var h = s.querySelector('.step-head h2'), d = s.querySelector('.do');
+            return '<li><b>' + (h ? h.innerHTML : '') + '</b> ' + (d ? d.innerHTML : '') + '</li>';
+          }).join('') + '</ol><p>Done? Now pick the time for the rest.</p></div>';
+      }
+      later.innerHTML = portableHtml +
+        '<h2>When will you do it?</h2>' +
+        '<p class="later-sub">Pick a day and a time. \u201cLater\u201d isn\u2019t a time.</p>' +
+        '<div class="when-picks"></div>' +
+        '<p class="when-own"><label>Or pick your own: <input type="datetime-local" class="when-input"></label> ' +
+        '<button type="button" class="when-use">Use this time</button></p>' +
+        '<div class="decided" hidden></div>';
+      fork.parentNode.insertBefore(later, fork.nextSibling);
+
+      var picks = later.querySelector('.when-picks');
+      choices().forEach(function (c) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.innerHTML = '<span class="when-name">' + c[0] + '</span><span class="when-time">' +
+          esc(label(c[1])) + '</span>';
+        b.addEventListener('click', function () { decide(c[1]); });
+        picks.appendChild(b);
+      });
+      later.querySelector('.when-use').addEventListener('click', function () {
+        var v = later.querySelector('.when-input').value;
+        var d = v ? new Date(v) : null;
+        if (!d || isNaN(d) || d <= new Date()) { later.querySelector('.when-input').focus(); return; }
+        decide(d);
+      });
+
+      function decide(when) {
+        var url = returnUrl(moved);
+        var box = later.querySelector('.decided');
+        var href = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(invite(when, url));
+        box.innerHTML = '<h2>That\u2019s decided.</h2>' +
+          '<p class="decided-when">' + esc(label(when)) + '</p>' +
+          '<p>Put it on your calendar now, so it comes back to you at that time with the steps ready.</p>' +
+          '<p class="decided-btns">' +
+          '<a class="cal-ics" download="mr-life-manager.ics" href="' + href + '">Add to my calendar</a>' +
+          '<a class="cal-google" target="_blank" rel="noopener" href="' + googleUrl(when, url) + '">Google Calendar</a>' +
+          '</p>' +
+          '<p class="decided-share"><button type="button" class="share-checker">Send it to someone who\u2019ll check on you</button></p>' +
+          '<p class="fine">Nothing is stored on this site. The reminder lives in your calendar.</p>';
+        box.hidden = false;
+        box.querySelector('.share-checker').addEventListener('click', function () {
+          var text = 'I\u2019ve set aside ' + label(when) + ' to ' + task.charAt(0).toLowerCase() +
+            task.slice(1) + '. Check on me after?';
+          var page = location.origin + location.pathname;
+          if (navigator.share) { navigator.share({title: task, text: text, url: page}).catch(function () {}); }
+          else { location.href = 'mailto:?subject=' + encodeURIComponent(task) + '&body=' +
+            encodeURIComponent(text + '\n\n' + page); }
+        });
+        box.scrollIntoView({block: 'start'});
+      }
+
+      function openLater() { later.hidden = false; later.scrollIntoView({block: 'start'}); }
+      goLater.addEventListener('click', openLater);
+
+      // Coming back from the calendar invite.
+      if (!resuming) return;
+      var card = document.createElement('section');
+      card.className = 'resume';
+      var where = firstAtHome ? 'Step ' + (firstAtHome + 1) + ' is ready.' : 'Step one is ready.';
+      if (moved >= MAX_MOVES) {
+        card.innerHTML = '<h2>This is the time you picked.</h2>' +
+          '<p>You\u2019ve moved it twice already. Either start now, or let this one go.</p>' +
+          '<p class="resume-btns"><button type="button" class="resume-start">Start now</button>' +
+          '<button type="button" class="resume-drop">Let it go</button></p>';
+      } else {
+        card.innerHTML = '<h2>This is the time you picked.</h2>' +
+          '<p>' + minutes + ' minutes, set aside for this. ' + where + '</p>' +
+          '<p class="resume-btns"><button type="button" class="resume-start">Start</button>' +
+          '<button type="button" class="resume-move">I can\u2019t right now</button></p>';
+      }
+      var top = document.querySelector('header.top');
+      top.parentNode.insertBefore(card, top.nextSibling);
+      card.querySelector('.resume-start').addEventListener('click', function () { startAt(firstAtHome); });
+      var move = card.querySelector('.resume-move');
+      if (move) move.addEventListener('click', function () {
+        moved += 1;
+        card.hidden = true;
+        openLater();
+      });
+      var drop = card.querySelector('.resume-drop');
+      if (drop) drop.addEventListener('click', function () {
+        card.innerHTML = '<h2>Okay. It\u2019s let go.</h2>' +
+          '<p>No more reminders will come from this. If it comes back to you, this page will still be here.</p>';
+      });
+    }
   })();
 })();
