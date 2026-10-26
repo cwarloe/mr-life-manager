@@ -1226,3 +1226,70 @@ the snooze cap are not yet decided.
 
 **Revisit when:** completion data shows whether readers who set a time finish
 more often than those who don't.
+
+---
+
+## ADR-022 — Price follows what it costs us to deliver
+
+**Status:** Accepted (2026-10-26, Charles)
+**Date:** 2026-10-26
+**Refines** [ADR-020](#adr-020--win-before-wallet-retire-the-39-flagship). Its
+principle line, "we don't charge for what costs us nothing to make," is
+replaced by the rule below. The rest of ADR-020 stands.
+**Resolves** conflicts C1 and C3 in the
+[lifecycle plan](../docs/research/lifecycle/04-lifecycle-plan.md#35-conflicts-this-section-raises).
+
+**Context.** The lifecycle plan found ADR-020 (paid tier = deeper guides; don't
+charge for what costs nothing) pulling against the
+[Vivid Vision](../docs/vision/vivid-vision-2029.md) (people pay gladly for help
+taking action). Charles's answer: both are true, at different levels, and the
+old principle was too absolute. Everything costs something; what matters is how
+much.
+
+**Decision.**
+
+- **The less something costs us in time and resources to make and deliver, the
+  less we charge for it, if anything.** Trivial cost: free or nearly free.
+  Real ongoing cost: priced accordingly. This is a principle, not a formula, and
+  it is not to be applied dogmatically.
+- **The ladder, from cheapest to deliver to most expensive:**
+
+  | Level | Example | Price |
+  |---|---|---|
+  | Free | Task pages, basic checklists | Free forever |
+  | Very low | A deeper guide; possibly the weekly checklist | A few dollars |
+  | Group check-in call | Several people, one call | Low |
+  | Facilitated group, online | A small group working through it together | More |
+  | Facilitated group, in person | The same, in a room | More |
+  | One-to-one, online or in person | Individual help | Most expensive, and mostly unnecessary |
+  | "Intervention" (Dave's word) | Applying the checklists and concepts in person, for someone who agrees to it; possibly nominated, voted on, or paid for by others | Case by case |
+  | Annual gathering | An in-person or online conference, once a year | Idea, not yet scoped |
+
+- **Everything we make gets reused.** Calls, interventions, groups, short videos
+  and writing are turned into free or paid content. Whether a piece is free,
+  paid, or a bonus can depend on where the reader is in the funnel.
+- **Recorded coaching is a gray area**, not automatically free: it cost real
+  time to make. It may go to frequent participants ("members," a frequent-flyer
+  idea) rather than being sold. Any membership must still follow the Vivid
+  Vision's rule: **if they're not using it, they don't pay for it.**
+- **Mastermind groups** are an open idea: participants name the need and also
+  develop and contribute what works, which becomes content.
+
+**Guardrails.**
+
+- **Interventions and anything that becomes content require the person's clear,
+  freely given consent,** and they keep the right to say no or withdraw. Being
+  nominated by others is an invitation, never an obligation. Nothing is ever
+  presented in a way that shames the person (principle 8, dignity not shame).
+- Group levels come before one-to-one: they're cheaper for the reader, cheaper
+  to deliver, and the group itself provides the "someone checks on you" that
+  Dave's method relies on.
+
+**Consequences.** The lifecycle plan's first paid offer (a one-to-one start
+call) should be weighed against a **group check-in call**, which this ladder
+puts lower. The product ladder's old Rung 3 prices ($299–2,500) need
+re-deciding against this ladder. Interventions as content need a written
+consent process before the first one.
+
+**Revisit when:** the first paid level has run long enough to show what people
+actually use.

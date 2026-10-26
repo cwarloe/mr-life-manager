@@ -345,9 +345,9 @@ same," and never on a timer.
 
 | # | Vision says | Current decision says | Status |
 |---|---|---|---|
-| C1 | People pay for help taking action (automated help, coaching) | ADR-020: paid tier is "deeper $9–19 guides per domain" | **Conflict.** This plan proposes help first, guides second. Charles decides. |
+| C1 | People pay for help taking action (automated help, coaching) | ADR-020: paid tier is "deeper $9–19 guides per domain" | **Resolved 2026-10-26 by [ADR-022](../../../planning/decisions.md#adr-022--price-follows-what-it-costs-us-to-deliver):** both, at different levels. Price follows cost to deliver: guides cheap, group help next, one-to-one most expensive. |
 | C2 | Coaching, by phone | ADR-020 sets no coaching price. The ladder's Rung 3 ($299–2,500) predates ADR-020 and was never re-decided. operations.md requires an agreement, cancellation policy, scheduling boundary and insurance review "before coaching." | **Open.** A $19 call fits the band; anything priced like market coaching contradicts it. |
-| C3 | Recorded coaching as something people pay for | ADR-020: "we don't charge for what costs us nothing to make" | **Conflict.** This plan proposes recordings free, live help paid. |
+| C3 | Recorded coaching as something people pay for | ADR-020: "we don't charge for what costs us nothing to make" | **Resolved 2026-10-26 by ADR-022:** a gray area, not automatically free; may go to frequent participants. Never a paid membership people don't use. |
 | C4 | Help when stuck | ADR-020: no wallet before a win | **Conflict at the struggle point.** Proposal: pre-win help free. |
 | C5 | No subscription people don't use | ADR-020: subscription only if action-gated | **Compatible; the vision is stricter.** See 4.4. |
 | C6 | The ladder's health check: 2–5% free-to-paid in 90 days | That figure is borrowed from software freemium (file 02, Low for us) | **Replace with counts** (section 6). |
