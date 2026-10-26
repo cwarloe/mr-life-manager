@@ -14,7 +14,6 @@ work.
 
 | Item | Status | Steps |
 |---|---|---|
-| **Switch on Umami analytics** | Code live, switched off | Create the Umami Cloud account (free Hobby plan), add the site `mrlifemanager.com`, paste the website ID into `UMAMI_WEBSITE_ID` in `.github/scripts/site_catalog.py`, open a PR. See [External one-time items](#external-one-time-items). |
 | **Office page emails** | **Waiting on Charles** | The office page is a one-off (Charles, 2026-10-08). Ask him whether it should have a MailerLite group before creating `entry-office` from [`office-sequence.md`](../products/landing/emails/office-sequence.md). Until then, office signups get no emails. |
 | **Google Search Console** | Not verified | Needs Charles's Google login: verify the domain and submit `/sitemap.xml`. See [External one-time items](#external-one-time-items). |
 | **QR codes for fliers** | When fliers are made | Each printed code gets its own tag, `?from=qr-<place>-<page>`. Format and examples in the [deferred-win architecture](deferred-win-architecture.md#comparing-pages-and-places). |
@@ -158,8 +157,8 @@ repository work:
   MailerLite verification and DKIM were already resolved.
 - Postal address in MailerLite footers confirmed 2026-09-22 (6621 West Holiday
   Drive, Boise).
-- Privacy-first visitor analytics: **Umami Cloud, code ready, not yet
-  switched on** (2026-10-26). Replaces the earlier default, Cloudflare Web
+- Privacy-first visitor analytics: **Umami Cloud, switched on 2026-10-26**
+  (account under charles.warloe@gmail.com, Hobby plan). Replaces the earlier default, Cloudflare Web
   Analytics, which [does not record query strings](https://developers.cloudflare.com/web-analytics/faq/)
   (so it would drop the `from=` QR tags) and has no custom events (so it can't
   tell "start now" from "pick a time").

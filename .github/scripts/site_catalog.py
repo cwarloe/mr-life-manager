@@ -16,7 +16,7 @@ MAILERLITE_JS_URL = "https://assets.mailerlite.com/js/universal.js"
 # Umami Cloud (privacy-first analytics with custom events; chosen 2026-10-26,
 # see planning/operations.md). Leave the ID empty and nothing is loaded or sent.
 # To turn tracking on, paste the website ID from the Umami dashboard here.
-UMAMI_WEBSITE_ID = ""
+UMAMI_WEBSITE_ID = "8aaa8b83-1a8f-431b-bd34-aceacf26f3a5"
 UMAMI_SCRIPT_URL = "https://cloud.umami.is/script.js"
 ANALYTICS_DOMAIN = "mrlifemanager.com"
 
