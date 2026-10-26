@@ -58,6 +58,12 @@ platform, or any account.
 - Note when a finding comes from a context unlike ours (big consumer apps,
   e-commerce) and how it might not transfer to a tiny, trust-based brand.
 
+## Working from research
+
+When `docs/research/lifecycle/` contains evidence files from the
+lifecycle-researcher agents, build on them: cite their findings, and only do new
+research to fill gaps they flagged.
+
 ## Output
 
 Write to `docs/research/lifecycle/`. Keep documents readable: plain US English,
