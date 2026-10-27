@@ -12,6 +12,7 @@ Recovered from Gmail 2026-09-19. Thread IDs are Gmail's, for re-retrieval.
 | 2009-11-04 | Weekly cleaning schedule (+ the golden-rules preface) | [2009-11-04-dave-webster-weekly-schedule.md](2009-11-04-dave-webster-weekly-schedule.md) |
 | 2009-11-10 | Cleaning materials list (per room) | [2009-11-10-dave-webster-materials-list.md](2009-11-10-dave-webster-materials-list.md) |
 | 2010-01-02 | House goals & fix-up — hospitality, light, focal points | [2010-01-02-dave-webster-house-goals.md](2010-01-02-dave-webster-house-goals.md) |
+| 2014-01-15 | The Vu intervention (video transcript) | [2014-01-15-dave-webster-vu-intervention.md](2014-01-15-dave-webster-vu-intervention.md) |
 | 2023-07-17 | Kitchen cleanup notes + materials list | [2023-07-17-dave-webster-cleanup-notes.md](2023-07-17-dave-webster-cleanup-notes.md) |
 
 **All four 2009–2010 `.docx` guides are recovered as of 2026-09-19.** The 2023
