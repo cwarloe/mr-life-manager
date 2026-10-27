@@ -1,8 +1,9 @@
 # Dave's Principles — the engine
 
-**Status:** Draft, 2026-10-26. Built only from Dave's recovered documents in
-[`source-material/`](../source-material/INVENTORY.md). **Not yet reviewed by
-Dave** — see [Principles, not a persona](#principles-not-a-persona).
+**Status:** Draft, updated 2026-10-27. Built from Dave's recovered documents and
+recorded teaching in [`source-material/`](../source-material/INVENTORY.md).
+The 2014 transcript was reviewed and approved for use by Charles on 2026-10-27.
+**This synthesis is not yet reviewed by Dave** — see [Principles, not a persona](#principles-not-a-persona).
 
 **What it's for:** applying Dave's method to a domain he never wrote about, the
 way the [office page](../products/landing/office.html) applied his garage
@@ -24,12 +25,14 @@ to change a filter) come from outside sources and have to be checked. See
 | **W** | [Weekly schedule + the golden rules](../source-material/2009-11-04-dave-webster-weekly-schedule.md) | 2009 |
 | **M** | [Cleaning materials list](../source-material/2009-11-10-dave-webster-materials-list.md) | 2009 |
 | **H** | [House goals and fix-up](../source-material/2010-01-02-dave-webster-house-goals.md) | 2010 |
+| **V** | [Recorded intervention](../source-material/2014-01-15-dave-webster-vu-intervention.md) | 2014 |
 | **E** | [The 2019 email exchange](../source-material/2019-04-05-naming-exchange.md) | 2019 |
 | **K** | [2023 archive: kitchen clean-up + materials note](../source-material/2023-07-17-dave-webster-cleanup-notes.md) | 2023 |
 
 **Strength** counts independent documents. K mostly re-sends W and H, so it
 counts only where it adds something new (the kitchen preliminaries and the
-materials note).
+materials note). V is one independent session; multiple timestamps do not count
+as multiple sources. Video observations below are paraphrases unless quoted.
 
 - **Strong:** three or more documents, or stated across many years
 - **Solid:** two documents
@@ -40,10 +43,13 @@ materials note).
 
 ## The five stages
 
-Dave's documents follow the same order every time: **decide, prepare, reset,
-place, maintain.** The garage document runs through stages 1–4. The weekly
-schedule is stage 5 and says outright that it only starts after stage 3 is
+The working model is **decide, prepare, reset, place, maintain.** The garage
+document runs through stages 1–4. The weekly schedule is stage 5 and says
+outright that it only starts after stage 3 is
 done. The house-goals document is stage 1 and stage 2 for a bigger project.
+The recorded session moves between preparation, sorting, and placement while
+planning a return visit (V, 10:42–11:49). Treat the stages as a guide to the work,
+not a claim that Dave completes each stage once, in order, in every visit.
 
 ### Stage 1 — Decide
 
@@ -52,10 +58,12 @@ done. The house-goals document is stage 1 and stage 2 for a bigger project.
 
 **Test question for a new domain:** what is the "do I really want this, and will I finish it?" question here?
 
-**2. Start from what the place is for, not from the mess.** — *Single (H)*
+**2. Start from what the place is for, not from the mess.** — *Solid (H, V)*
 > "I want to have a comfortable place to live and show hospitality that is neat, clean and enjoyable to be in." · "What is the focal point of each room?" · "Reduce size of table when no company is around" (H)
 
 Dave's goals are about people and how the space feels to them, not about tidiness.
+In the visit he asks about the person's goal, actual use, and available storage
+before deciding where things go (V, 03:58–07:40).
 **Test:** what is this space or system *for*, and who is it for?
 
 **3. Order is planned. It never happens by itself.** — *Solid (W, K)*
@@ -74,9 +82,11 @@ and belongs to Charles's stewardship project.
 Already its own framework: [remove-the-excuse.md](remove-the-excuse.md).
 **Test:** what will be the first reasonable-sounding reason to stop halfway, and how do you remove it today?
 
-**5. Plan it on paper and measure first.** — *Strong (G, K, H)*
+**5. Plan it on paper and measure first.** — *Strong (G, K, H, V)*
 > "You will need to sketch out the wall or walls..." (G) · "Draw a diagram of what your cupboards or kitchen will look like." (K) · "Take measurements of all the rooms" (H)
 
+In the visit, Dave makes a supply list and says the hanger count depends on how
+many clothes need hanging (V, 10:42–11:16; 13:25–13:58).
 **Test:** what has to be drawn, measured, or counted before anything is bought or moved?
 
 **6. Bring in competent help, and come prepared for them.** — *Single (H)*
@@ -100,20 +110,31 @@ The most important order in the whole method: maintenance is meaningless until
 the reset has happened.
 **Test:** what does "back to zero" look like here, and can it be reached in a day or a week?
 
-**9. Work in one direction and finish in one session.** — *Single (G, stated twice)*
+**9. Bound the job and work toward a finish.** — *Single (G) for the one-day plan; V shows a staged alternative*
 > "Start at one end of the garage and work toward the other end." · "Your plan is to have this done in one day or less, so start early in the morning." (G)
 
-**Test:** what is the "one end to the other" here, and what is the size of job that fits one session?
+The one-day target belongs to the garage plan. In the visit, Dave organizes now
+and plans to return with hangers and shelving (V, 10:42–11:49); some placement
+is still temporary at the end (30:01–30:25). Our application is to finish a
+bounded, usable area and name what remains, rather than require the whole home
+in one visit.
+**Test:** what can be left usable this session, and what needs a dated next step?
 
-**10. Three piles. Nothing goes in a fourth.** — *Solid (G, W)*
+**10. Sort into clear destinations.** — *Strong (G, W, V)*
 > "Pile one... thrown away. Pile two... give to friends, Good Will, Salvation Army. Pile three: These are items that need to be taken into the house and put away." (G) · "need to be thrown out, given away, or find a place to be stored." (W)
 
-**Test:** what are the three piles in this domain? (For the office: throw away, return, stays here.)
+In the visit he names four categories: throw away, give away, use all the time,
+and use some of the time (V, 11:49–12:53). The last two separate access needs
+for what stays. Three piles are the garage application, not a universal count.
+**Test:** which destinations make the next decision clear in this domain?
+(For the office: throw away, return, stays here.)
 
-**11. The use test.** — *Single (G, stated twice)*
+**11. The use test.** — *Solid (G, V)*
 > "Have I used this item in the last year, if not get rid of it. If functional and useful, keep." · "keep asking yourself 'when was the last time I used that'" (G)
 
-**Test:** what is the "used it in the last year?" question here? Is there a different time window that fits?
+In the visit Dave asks about recent and intended use of books, games, and
+instruments (V, 03:58–06:42; 13:25–14:28). The one-year cutoff is specific to G.
+**Test:** what is the useful time window here, and does intended future use have a concrete plan?
 
 **12. Be logical and honest about it.** — *Single (G)*
 > "this can be emotional for some so you have to be brutal on yourself and be logical and honest with yourself." (G)
@@ -136,20 +157,27 @@ the next reset.
 
 ### Stage 4 — Place
 
-**15. Everything has its place.** — *Strong (G, W, K, E — the first golden rule)*
+**15. Everything has its place.** — *Strong (G, W, K, E, V — the first golden rule)*
 > "Memorize the model, Do it now, Everything has a place." (G) · "Do not leave anything laying around the house that you do not intend to use, everything has it's place." (W, repeated daily)
 
 Framework: [everything-has-a-place.md](everything-has-a-place.md).
+The visit supplies the reason: returning things to the same place saves thought
+and time (V, 17:26–18:20).
 **Test:** does every item in this domain have one named home?
 
-**16. You can see what you have.** — *Single (G, stated twice)*
+**16. You can see what you have.** — *Solid (G, V)*
 > "Storage boxes are to be clear so that you can see all the items in the box from a distance." · "There are to be no items on the shelves that you can't tell their contents from a distance." (G)
 
-**Test:** from across the room (or at a glance), can you tell what's there?
+The visit explains clear boxes, visible quantities, and separated utensils:
+less opening, searching, and rummaging (V, 07:40–08:39; 24:31–25:47;
+28:44–30:01). Visibility is about recognizing and retrieving contents.
+**Test:** at a glance, can you tell what's there and get what you need?
 
-**17. Place by how often it's used and where it's used.** — *Single (G)*
+**17. Place by how often it's used and where it's used.** — *Solid (G, V)*
 > "least used at the top descending down to the most used items at easy to reach level." · "locations that are functional for that area" · "like things go with like things" (G)
 
+The visit repeats the access hierarchy and groups clothing, guitar equipment,
+and food by use (V, 07:13–07:40; 10:14–11:16; 15:08–15:41; 25:47–26:19).
 **Test:** what's used daily, what's used yearly, and where does each get used?
 
 **18. Surfaces are for using, not storing.** — *Strong (W, H, K)*
@@ -159,13 +187,17 @@ Framework: [everything-has-a-place.md](everything-has-a-place.md).
 
 ### Stage 5 — Maintain
 
-**19. Do it now.** — *Strong (G, W, E, K — the second golden rule)*
+**19. Do it now.** — *Strong (G, W, E, K, V — the second golden rule)*
 > "Do it now." (W, K) · "Glad you haven't forgotten Do it Now." (E)
 
 **Dave means it literally.** The chores happen "before going to bed," and
 "I will do it tomorrow" gets "yeah right!" Our framework
 [do-it-now.md](do-it-now.md) softens this to "decide now, do later." That is our
-interpretation, not his. See [Gaps](#gaps-and-pushback).
+interpretation of those written instructions. The recording adds nuance: Dave
+turns a future TV handoff into a written action to call Dad before bed
+(V, 12:53–13:25). That supports deciding a specific next action now; it does
+not establish our entire do/schedule/delegate/discard model as Dave's wording.
+See [Gaps](#gaps-and-pushback).
 
 **20. Putting it away now costs the same as later.** — *Single (W)*
 > "It takes the same amount of energy to put it in the dishwasher as it does the sink. Same applies to counters." (W)
@@ -184,10 +216,30 @@ Framework: [preventative-vs-crisis.md](preventative-vs-crisis.md).
 Flexible days, fixed deadline. Small daily, bigger weekly.
 **Test:** what is the ten-minute close-out at the end of each day, and what rotates through the week?
 
-**23. Set a date and have someone check you.** — *Solid (H, K; W's email subject: "will check your place to finish")*
+**23. Set a date and have someone check you.** — *Solid (H, V for a specific time; W's email subject supports checking)*
 > "Set date when you are going to start this due list and have it finished by. Have someone check you to see if you started and finished on time." (H)
 
+V shows the specific-time part in practice: call Dad before bed, written on the
+list (12:53–13:25). It does not show a later check or the call's completion.
 **Test:** what's the finish date, and who checks?
+
+---
+
+## What the live session adds
+
+The [timestamped analysis](../source-material/2014-01-15-analysis.md) records
+the evidence. Three observed moves help apply the existing stages:
+
+- **Ask before prescribing.** Learn the person's goal, use patterns, and storage
+  constraints before proposing a layout (V, 03:58–07:40).
+- **Create room and encouragement with an easy start.** Clear enough floor or
+  surface to work on the harder things (V, 08:09–10:14; 16:10–17:26).
+- **Make progress concrete.** Dave notices the new empty space as something
+  useful, rather than judging the person (V, 20:35–21:07).
+
+For a facilitated visit, use the [intervention session template](../content/intervention-template.md).
+Its blank forms, retrieval check, and follow-up process are our additions.
+The recording does not show long-term maintenance or validate a commercial service.
 
 ---
 
@@ -198,8 +250,9 @@ Flexible days, fixed deadline. Small daily, bigger weekly.
    from a principle is our idea. That's allowed, but label it as ours in the brief.
 3. **List the outside facts the plan depends on** (rules, safety, cadences) and
    check each one against a real source.
-4. **Keep the order:** decide, prepare, reset, place, maintain. A page that starts
-   with a routine skips the reset, and Dave says that can't work (rule 8).
+4. **Use the five stages:** decide, prepare, reset, place, maintain. Establish a
+   usable baseline before expecting a maintenance routine to preserve it (rule 8).
+   Preparation and placement may overlap with reset when supplies require a return visit.
 5. **Mark which rules are "Single"** and get Dave's confirmation before a paid
    product rests on them.
 
@@ -254,10 +307,10 @@ Mr. Life Manager wants to cover. In order of importance:
 | **Mail and paperwork: the source is lost.** The 2009 schedule says "refer back to earlier papers on mail." Those papers were never found. All we have is "Have mail sent to office" and "find a place in your office for mail." | Paperwork is a top problem for the audience. | Ask Dave; search for the earlier papers. |
 | **Food, cooking, groceries:** nothing beyond kitchen cleaning. | Six Meals is ours, not Dave's. | Record Dave, or keep labeling food content as ours. |
 | **Cadences beyond cleaning** (filters, car service, dentist): nothing. | "How Often Should I…?" is ours, fact-checked, not Dave's. | Fine as is; keep it labeled. |
-| **10 of the 23 principles rest on a single document**, mostly the garage. | Some may be how Dave thinks; some may be what one garage needed. | Read each "Single" rule to Dave and ask "is that always true?" |
-| **Our "Do it now" framework softens Dave.** He means literally now, before bed. We wrote "decide now, do later." | The engine and the framework currently disagree. | Decide which one we teach, or present Dave's version first and ours as the adaptation for people with no margin. |
+| **Some principles still rest on a single document**, mostly the garage. The video independently supports use, visibility, and placement, and qualifies the one-day target. | A useful observation is not proof of a universal rule. | Ask Dave which rules travel and where they need exceptions. |
+| **Our "Do it now" framework extends Dave.** Written chores are due before bed; the video also shows setting a specific future action. | The full do/schedule/delegate/discard model is still ours. | Keep the attribution clear and ask Dave about the distinction. |
 | **Voice.** Dave is blunter than the house style ("Get your ass moving," "be brutal on yourself"). | Strip it out entirely and the pages stop sounding like him. | Keep his bluntness aimed at excuses, never at the person (rule 13). |
-| **The reasoning is often missing.** Dave states rules, rarely why. Rule 20 is a rare exception. | The "why" is what makes a principle transfer to a new domain. | The Dave session: ask "why that way?" for each rule. |
+| **Some reasoning is still missing.** The video supplies reasons for visibility, stable homes, and easy starts; other rules remain terse. | Reasons help a principle transfer to a new domain. | Ask "why that way?" for the remaining rules. |
 
 **The best use of this list right now:** take it to the
 [Dave session](../source-material/interviews/dave-session-guide.md). Read him

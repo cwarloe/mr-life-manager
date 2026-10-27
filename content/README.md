@@ -15,6 +15,13 @@ extracting reusable domain material into this tree.
 Do not pause validation to invent an empty domain tree. Write where the reader
 is; extract here only after something survives contact with real people.
 
+## Facilitating an intervention
+
+Use the [intervention session template](intervention-template.md) to prepare
+and run a home-organizing visit, record concrete next actions, and capture
+lessons afterward. It is an internal facilitation standard derived from the
+2014 recording, with our additions labeled; it is not a validated product.
+
 ## Writing standards
 
 Every piece of content should:

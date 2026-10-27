@@ -20,6 +20,16 @@ email ("All that I could find") turns out to be an archive of this material, not
 independent later writing — its preface, its four goals and its completion rule
 all trace to these documents.
 
+### 2014 intervention: review and derived material
+
+Charles reviewed and approved the Drive `Transcript.txt` for use on 2026-10-27
+([Drive source](https://drive.google.com/file/d/1mXzFAoDpt_8Bke5vOBOFrd-j48zZmlzZ/view)).
+The archived transcript is unchanged, including its original automated-draft
+notice. Its [analysis](2014-01-15-analysis.md) now maps observations to timestamps
+and separates evidence from interpretation. The reusable
+[session template](../content/intervention-template.md) and updated
+[principles engine](../frameworks/dave-principles.md) derive from that source.
+
 ## Still outstanding
 
 | Date | Item | Where | Why it matters |

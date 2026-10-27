@@ -84,6 +84,17 @@ Production monitoring runs automatically after Pages deploys and every Monday
 through `.github/workflows/check-live-site.yml`. It checks public pages and the
 single promised PDF without submitting the MailerLite form.
 
+**Added 2026-10-27 — intervention template.** Charles reviewed and approved the
+Drive transcript for use. The [2014 analysis](../source-material/2014-01-15-analysis.md)
+now has timestamped observations and exact short quotes, without claiming a
+completed transformation or a validated service. The
+[session template](../content/intervention-template.md) supplies blank forms and
+a partial worked example. The [principles engine](../frameworks/dave-principles.md)
+now includes the video as evidence, four-category sorting as a valid application,
+and the return-visit qualification to a one-session reset. The transcript itself
+is unchanged. Charles's own retrospective and results from a new session remain
+to be captured; the template's prompts are ours. No MailerLite update is needed.
+
 ## Open threads (nothing is blocking)
 
 1. **Roommate-agreement material.** Searched Gmail 2026-09-22. Four documents

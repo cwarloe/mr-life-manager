@@ -153,6 +153,13 @@ are short; frameworks are working models.
 overwrites it. See
 [`source-material/original-charles-cleanup-notes.md`](source-material/original-charles-cleanup-notes.md).
 
+For a facilitated home-organizing visit, use the
+[intervention session template](content/intervention-template.md). It includes
+a session brief, action and supply lists, a worked example from the 2014
+recording, and a lessons-learned form. Its
+[source analysis](source-material/2014-01-15-analysis.md) links each observation
+to a timestamp; the template has not yet been tested in a new session.
+
 ## Current status
 
 **Pre-launch validation stage.** The free funnel exists; the next job is to
