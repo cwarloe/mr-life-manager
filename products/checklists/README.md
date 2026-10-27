@@ -54,6 +54,11 @@ Write a `brief.md` before building — see [../README.md](../README.md).
 
 ## Status
 
+**New Markdown draft, 2026-10-27:** [Reset Your Space](reset-your-space/checklist.md)
+turns the full January 2014 intervention method into twelve ordered actions for
+one usable area. See its [brief](reset-your-space/brief.md) for sources and
+adaptations. It has not been reader-tested or added to the public guide catalog.
+
 **Seven shipped, none reviewed or reader-tested.** Each printable `.html` is the
 source of truth; its `brief.md` holds intent and open questions.
 Per [ADR-015](../../planning/decisions.md#adr-015--the-win-comes-before-the-email)
