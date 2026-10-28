@@ -47,6 +47,9 @@ Food procedures use ready-cooked canned beans and package-directed rice and
 vegetables. Egg and leftover guidance was checked against
 [FDA egg safety](https://www.fda.gov/food/buy-store-serve-safe-food/what-you-need-know-about-egg-safety)
 and [FoodSafety.gov](https://www.foodsafety.gov/keep-food-safe/4-steps-to-food-safety).
+The two food-source URLs were accessible during research but returned errors
+to the CI runner. The reader guide retains their names without clickable links;
+the research links remain here for provenance.
 Lighting label guidance uses
 [ENERGY STAR](https://www.energystar.gov/products/learn-about-brightness).
 Laundry follows item and machine instructions; broad detergent doses,
