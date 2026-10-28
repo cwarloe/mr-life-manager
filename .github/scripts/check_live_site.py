@@ -3,8 +3,11 @@
 
 from __future__ import annotations
 
+import html
+import re
 import sys
 import time
+from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
@@ -19,9 +22,21 @@ from site_catalog import (
 )
 
 
+HOMEPAGE_SOURCE = Path(__file__).resolve().parents[2] / "products" / "landing" / "index.html"
+
+
+def _homepage_headline() -> str:
+    """Read the homepage <h1> from the repo so copy edits don't break this check."""
+    match = re.search(r"<h1[^>]*>(.*?)</h1>", HOMEPAGE_SOURCE.read_text(encoding="utf-8"), re.S)
+    if not match:
+        raise SystemExit(f"No <h1> found in {HOMEPAGE_SOURCE}")
+    text = html.unescape(re.sub(r"<[^>]+>", "", match.group(1)))
+    return " ".join(text.split()).rstrip(".")
+
+
 def _entry_pages() -> dict[str, tuple[str, ...]]:
     pages: dict[str, tuple[str, ...]] = {
-        "/": ("Run your home without carrying all of it in your head",),
+        "/": (_homepage_headline(),),
     }
     for route in ENTRY_ROUTES:
         pages[f"/{route.page}"] = (
