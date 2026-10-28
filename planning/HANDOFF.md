@@ -43,6 +43,26 @@ picker drift. Older entries below describe previous publication states.
   Everything under `source-material/` is **verbatim, never edited, not even for
   spelling.** Interpretation goes in separate analysis files.
 
+## Audit follow-through, 2026-10-28
+
+Charles authorized revisions to the five active checklists and asked the audit
+agent to review paused material as well. The
+[active revision brief](../products/landing/briefs/active-checklist-revisions.md)
+records the shipped changes. The pages keep six steps and full outcomes; they
+state supplies, clarify variable work, and use explicitly untested calendar
+planning blocks instead of narrow finish-time claims. Homepage, parent and
+partner blurbs no longer repeat the old timing or partial-finish promises;
+the shared Done screen asks the reader to check the complete task.
+
+The [paused audit](../docs/research/paused-checklist-completion-audit.md) covers
+seven paused entries, the organizing comparison, the full reset and its three
+variants (including drawers), and eight reference guides/worksheets. It does
+not revise or reactivate those products. Current publication remains five.
+Source/PDF freshness, mobile task flow, completion, calendar and one-page print
+checks pass; these are technical checks, not observed household completion.
+No participants were contacted, and no email-account changes were made.
+The next evidence step remains real-user full-task pilots from the audit.
+
 ## Completion audit, 2026-10-28
 
 Charles requested an agent review of cognitive load, time, and actual completion.

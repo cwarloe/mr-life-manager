@@ -67,7 +67,7 @@ ALL_ENTRY_ROUTES: tuple[EntryRoute, ...] = (
         slug="guests",
         door_title="Someone's coming over and the place isn't ready.",
         completion_message=(
-            "You're ready for company. Whatever you didn't get to doesn't matter."
+            "The sitting area is clear, the bathroom is clean, the sink is empty, and the trash is outside."
         ),
         share_image="guests.png",
     ),
@@ -75,7 +75,7 @@ ALL_ENTRY_ROUTES: tuple[EntryRoute, ...] = (
         slug="underwater",
         door_title="Your place is a mess. Again.",
         completion_message=(
-            "The house is livable again. You broke the backlog without burning out."
+            "You reset the kitchen, gathered loose clutter, made the bed, and planned tomorrow’s first task."
         ),
         share_image="underwater.png",
     ),

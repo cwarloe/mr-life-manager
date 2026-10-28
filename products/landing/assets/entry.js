@@ -138,8 +138,8 @@
     if (root.getAttribute('data-defer') === 'on') completionQuery.push('path=' + (resuming ? 'appointment' : 'now'));
     if (completionQuery.length) completionUrl += '?' + completionQuery.join('&');
     done.innerHTML = '<h2>That\u2019s everything.</h2>' +
-      '<p>Whatever you got through is what there was time for. The order runs biggest ' +
-      'difference first, so wherever you stopped is the right place to have stopped.</p>' +
+      '<p>Check that you have completed all six steps and reached the finish line on the page. ' +
+      'You can go back to check a step before marking this task finished.</p>' +
       '<a class="complete" href="' + completionUrl + '">I finished \u2014 what\u2019s next?</a>' +
       '<button type="button" class="exit">Show the whole page again</button>';
     var list = document.querySelector('.steps');

@@ -3,6 +3,15 @@
 Research and task analysis, 2026-10-28. Reviewed public copy at commit
 `baef666022ede50828bd4f4b59db66714122d063`, with an independent agent review.
 
+## Revision status
+
+The findings below describe the reviewed snapshot. The
+[active checklist revisions](../../products/landing/briefs/active-checklist-revisions.md)
+address the design issues; they do not establish participant completion rates or
+validate the new calendar planning blocks. A separate
+[paused-checklist audit](paused-checklist-completion-audit.md) covers the retained
+drafts and reference material. Those remain paused.
+
 ## Finding
 
 Do not mark all five as validated. Dinner has the strongest task design;
