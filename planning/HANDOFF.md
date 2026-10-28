@@ -97,6 +97,18 @@ to be captured; the template's prompts are ours. No MailerLite update is needed.
 
 ## Open threads (nothing is blocking)
 
+**Added 2026-10-27 — three organizing checklist drafts.** Charles asked to
+compare the same method in three spaces. The public
+[comparison page](../products/landing/organizing-ideas.html), at
+`/organizing-ideas.html`, contains eight-step versions for kitchen junk drawers,
+a household cupboard or closet where things disappear, and a dining table
+blocked by clutter. Each has an observable daily-life finish. The
+[shared brief](../products/checklists/reset-your-space/versions/brief.md) records
+source evidence and adaptations; the Markdown copies sit beside it. These are
+direct-link comparison drafts, not three registered entry pages or homepage
+choices. No winner or completion-time claim has been established. No new
+MailerLite setup is needed for this comparison page.
+
 1. **Roommate-agreement material.** Searched Gmail 2026-09-22. Four documents
    found, none Dave's, all in `.doc/.docx` attachments the Gmail connector can
    list but not download (see `source-material/INVENTORY.md`). Best two: the

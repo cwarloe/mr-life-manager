@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Three practical organizing checklists: kitchen junk drawers, things lost in a cupboard, and a table you have to clear before eating.">
+<meta name="color-scheme" content="light dark">
+<title>Three Ways to Get Your Space Back · Mr. Life Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+body{font-size:16px;line-height:1.65}
+main{max-width:52rem;margin:auto;padding:2.5rem 1.25rem 4rem}
+a{color:var(--blue)}
+a:focus-visible,input:focus-visible{outline:3px solid currentColor;outline-offset:4px}
+h1,h2{line-height:1.12;letter-spacing:-.025em;text-wrap:balance}
+h1{font-size:clamp(2.25rem,6vw,3.6rem);max-width:18ch;margin:.4rem 0 1rem}
+h2{font-size:clamp(1.9rem,5vw,2.8rem);margin:.4rem 0 1rem}
+.eyebrow{text-transform:uppercase;font-size:.72rem;letter-spacing:.12em;font-weight:700;color:var(--blue)}
+.intro{padding-bottom:2rem;border-bottom:3px solid var(--ink)}
+.intro .lede,.deck{font-family:var(--serif);font-size:1.18rem;max-width:52ch}
+.draft-note{font-size:.88rem;color:var(--slate)}
+nav{display:grid;gap:.8rem;margin:2rem 0 4rem}
+nav a{display:grid;grid-template-columns:2rem 1fr;gap:.3rem 1rem;padding:1rem 1.15rem;border:1px solid var(--rule);border-radius:5px;text-decoration:none;background:var(--surface);color:var(--ink)}
+nav a:hover{border-color:var(--blue)}
+nav strong{font-size:1.1rem}
+nav a>span:last-child{grid-column:2;font-size:.92rem;color:var(--slate)}
+.number{font-weight:700;color:var(--blue)}
+article{scroll-margin-top:1.5rem;margin:4rem 0 0;padding:2rem 0 0;border-top:3px solid var(--ink)}
+.setup{padding:.75rem 1rem;border-left:3px solid var(--blue);background:var(--surface)}
+.setup p{margin:.5rem 0}
+.checklist{list-style:none;padding:0;margin:1.75rem 0}
+.checklist li{padding:1rem 0;border-bottom:1px solid var(--rule)}
+.checklist label{display:flex;gap:.85rem;align-items:flex-start;cursor:pointer}
+.checklist input{width:1.1rem;height:1.1rem;flex:0 0 auto;margin:.3rem 0 0;accent-color:var(--blue)}
+.checklist strong{display:block;margin-bottom:.25rem}
+.finish{padding:1rem 1.2rem;border:2px solid var(--blue);margin-top:1.5rem}
+.finish h3{font-size:1rem;margin:0}
+.finish p{margin:.6rem 0 0}
+.next{font-size:.9rem;margin-top:1.5rem}
+.blank{display:block;border-bottom:1px solid var(--rule);min-height:1.5rem}
+.back{font-size:.9rem;margin:1.5rem 0 0}
+.sheet-credit{font-size:.75rem;color:var(--slate);margin-top:1rem}
+footer{border-top:1px solid var(--rule);margin-top:3rem;padding-top:1rem;font-size:.8rem;color:var(--slate)}
+@media print{
+ @page{size:Letter;margin:.5in}
+ :root{--ink:#000;--paper:#fff;--surface:#fff;--slate:#333;--rule:#aaa;--blue:#000}
+ body{font-size:10.5pt;line-height:1.3;background:#fff;color:#000}
+ main{padding:0;max-width:none}
+ .intro,nav,.back,footer{display:none}
+ article{margin:0;padding:0;border:0;break-before:page}
+ article:first-of-type{break-before:auto}
+ h2{font-size:20pt;margin:.2rem 0 .4rem}
+ .eyebrow{font-size:7pt;margin:0}
+ .deck{font-size:10pt;line-height:1.3;margin:.3rem 0 .5rem}
+ .setup{padding:.2rem .5rem}
+ .setup p{margin:.2rem 0}
+ .checklist{margin:.4rem 0}
+ .checklist li{padding:.35rem 0;break-inside:avoid}
+ .checklist strong{display:inline;margin:0}
+ .checklist label{gap:.5rem}
+ .checklist input{width:.7rem;height:.7rem;margin:.12rem 0 0}
+ .finish{padding:.4rem .5rem;margin-top:.5rem;break-inside:avoid}
+ .finish h3{font-size:9pt}
+ .finish p{margin:.2rem 0 0}
+ .next{font-size:8pt;margin-top:.5rem;break-inside:avoid}
+ .next p{margin:.3rem 0}
+ .blank{display:inline-block;min-width:65%;min-height:.7rem}
+ .sheet-credit{font-size:7pt;margin-top:.4rem}
+}
+</style>
+</head>
+<body>
+<main>
+<header class="intro">
+<p><a href="/">Mr. Life Manager</a></p>
+<p class="eyebrow">Three organizing checklists · Drafts</p>
+<h1>Get your space back for the things you do in it.</h1>
+<p class="lede">When finding things or using a table turns into a project, start with the problem you recognize. Each checklist ends with a useful part of daily life working again.</p>
+<p class="draft-note">These are three draft approaches to try. They have not yet been tested with readers. You can check the steps here or print this page for paper copies.</p>
+</header>
+<nav id="versions" aria-label="Choose a checklist">
+<a href="#junk-drawers"><span class="number">01</span><strong>Every drawer has become a junk drawer.</strong><span>You can prepare and eat a normal meal without searching several drawers for the basics. An unrelated drawer can still be untidy.</span></a>
+<a href="#cant-find-things"><span class="number">02</span><strong>I put things away. Then I can't find them.</strong><span>You can identify what is in the cupboard and retrieve the things you use, without opening every box. Missing items have a specific next action.</span></a>
+<a href="#clear-the-table"><span class="number">03</span><strong>I have to clear the table before we can eat.</strong><span>The people who normally eat here can sit down to a meal without clearing the table first. The objects that usually block it have named destinations.</span></a>
+</nav>
+<article id="junk-drawers" aria-labelledby="title-junk-drawers">
+<header class="version-head"><p class="eyebrow">Checklist 1 · Draft</p><h2 id="title-junk-drawers">Every drawer has become a junk drawer.</h2><p class="deck">Get your everyday kitchen tools out of the jumble, so making dinner starts with cooking instead of searching.</p></header>
+<div class="setup"><p><strong>Today's job:</strong> Work on the kitchen drawers you reach into to prepare and eat a normal meal. Leave the bedroom, office, and other drawers for another day. Finish one drawer before emptying the next.</p><p><strong>Have ready:</strong> A clear patch of counter, a cloth, a trash bag, and a box for things leaving the kitchen. Small containers you already own can serve as dividers.</p></div>
+<ol class="checklist"><li><label><input type="checkbox"><span><strong>1. Name what you keep hunting for.</strong> Write down the cooking and eating tools you regularly need: perhaps the can opener, measuring spoons, spatula, and forks. These are the things your finished drawers must make easy to find.</span></label></li>
+<li><label><input type="checkbox"><span><strong>2. Sort the first drawer.</strong> Empty one drawer onto the clear patch of counter. Separate trash, giveaways, things you use often, and things you use occasionally. Put items that belong outside the kitchen in the return box. Decide only about your own belongings or ask the owner.</span></label></li>
+<li><label><input type="checkbox"><span><strong>3. Group the keepers.</strong> Put utensils with utensils and cooking tools with cooking tools. Compare duplicates by what you actually use. Keep useful spares deliberately; you do not need to discard something merely to make the drawer look sparse.</span></label></li>
+<li><label><input type="checkbox"><span><strong>4. Clean the drawer and give it a job.</strong> Wipe it out. Choose what belongs here based on where you use it: eating utensils near where you set the table, or cooking tools near food preparation. Each drawer should have a job you can say in a few words.</span></label></li>
+<li><label><input type="checkbox"><span><strong>5. Put the everyday things back where you can see them.</strong> Separate groups with a tray or existing small containers where helpful. Keep the tools you reach for most easy to grasp, rather than buried under occasional-use tools. Put occasional-use items together in a less prominent, reachable spot.</span></label></li>
+<li><label><input type="checkbox"><span><strong>6. Repeat with the other meal-time drawers.</strong> Finish each drawer before opening the next. As matching tools turn up, put them in the home you just chose. If a drawer becomes overfull, move an occasional-use group to a named home elsewhere instead of pressing everything down to make it close.</span></label></li>
+<li><label><input type="checkbox"><span><strong>7. Finish the things that are leaving.</strong> Put the return-box items in their actual homes and take out the trash. Choose a recipient or destination for giveaways and write the next action with a specific time. Count and measure any dividers still needed; a purchase can wait if the drawers work now.</span></label></li>
+<li><label><input type="checkbox"><span><strong>8. Try getting ready to cook.</strong> Find the items on your list, take them out, and return them. If you have to dig or lift a pile, adjust that group. Close every drawer and leave the counter clear. You are finished when the tools for an ordinary meal are findable and have places to return to.</span></label></li></ol>
+<div class="finish"><h3>Your finished win</h3><p>You can prepare and eat a normal meal without searching several drawers for the basics. An unrelated drawer can still be untidy.</p><p><strong>Keep the result:</strong> Return each tool to its group after use. If a group keeps overflowing, revisit what needs daily access instead of starting a new junk drawer.</p></div>
+<div class="next"><p>What still needs action: <span class="blank"></span></p><p>Who will do it, and when: <span class="blank"></span></p></div>
+<p class="sheet-credit">Mr. Life Manager · Free to use, copy, and teach from — with credit. Not for resale.</p>
+<p class="back"><a href="#versions">Compare the other checklists ↑</a></p>
+</article>
+<article id="cant-find-things" aria-labelledby="title-cant-find-things">
+<header class="version-head"><p class="eyebrow">Checklist 2 · Draft</p><h2 id="title-cant-find-things">I put things away. Then I can't find them.</h2><p class="deck">Make the household cupboard or hall closet a place you can find things, rather than the place things disappear.</p></header>
+<div class="setup"><p><strong>Today's job:</strong> Work on the cupboard or closet where household odds and ends collect. Start with the things you repeatedly lose there. This is not a house-wide search or an inventory of everything you own.</p><p><strong>Have ready:</strong> A clear working surface, a cloth, a trash bag, paper for labels, and containers you already have. Leave other people's private belongings for them to decide about.</p></div>
+<ol class="checklist"><li><label><input type="checkbox"><span><strong>1. Write down five things you keep looking for.</strong> Choose real examples, such as tape, scissors, a charger, spare batteries, or light bulbs. This list gives the reset a purpose: finding the things that interrupt your day.</span></label></li>
+<li><label><input type="checkbox"><span><strong>2. Open one shelf or box at a time.</strong> Use a clear surface to examine a manageable section. Put obvious trash in the bag. Separate things to give away, things used often, and things used occasionally. Restore that section before opening another.</span></label></li>
+<li><label><input type="checkbox"><span><strong>3. Bring matching items together.</strong> Gather each category from the cupboard or closet: cables together, spare bulbs together, tape and wrapping supplies together. Check the usual nearby hiding places for the five missing items, but do not empty other rooms. If something is still missing, note it as a separate next action.</span></label></li>
+<li><label><input type="checkbox"><span><strong>4. Choose a home for each group.</strong> Put a group near where it is used when that is practical. Keep daily-use groups easy to reach; occasional supplies can go farther back or higher up. Put items that belong elsewhere in their actual homes.</span></label></li>
+<li><label><input type="checkbox"><span><strong>5. Make the contents recognizable.</strong> Wipe exposed shelves, then place groups so you can identify them. Use clear containers, open trays, or simple labels on opaque boxes. Put the label on the side you see when opening the door. A neat stack of unidentified boxes has not solved the search.</span></label></li>
+<li><label><input type="checkbox"><span><strong>6. Make putting things away easy too.</strong> Leave enough room to remove and return a group without dismantling the shelf. If a box holds unrelated things, separate them into smaller groups. Use existing containers first; list any real storage gaps with quantities or measurements.</span></label></li>
+<li><label><input type="checkbox"><span><strong>7. Finish the removals and missing-item decisions.</strong> Take out the trash. Choose where giveaways are going and write when the next handoff action will happen. For an item you could not find, write where you will check next and when. It remains unfinished rather than silently becoming a replacement purchase.</span></label></li>
+<li><label><input type="checkbox"><span><strong>8. Close the door and try the five-item test.</strong> Without rummaging through boxes, retrieve each item you found and return it. Adjust confusing labels or awkward placements. For any item still missing, check that its next action is written down. The cupboard is done when the things you have are findable and the gaps are explicit.</span></label></li></ol>
+<div class="finish"><h3>Your finished win</h3><p>You can identify what is in the cupboard and retrieve the things you use, without opening every box. Missing items have a specific next action.</p><p><strong>Keep the result:</strong> Put things back in the same named homes. If you share the storage, show the other people the arrangement so they can use it too.</p></div>
+<div class="next"><p>What still needs action: <span class="blank"></span></p><p>Who will do it, and when: <span class="blank"></span></p></div>
+<p class="sheet-credit">Mr. Life Manager · Free to use, copy, and teach from — with credit. Not for resale.</p>
+<p class="back"><a href="#versions">Compare the other checklists ↑</a></p>
+</article>
+<article id="clear-the-table" aria-labelledby="title-clear-the-table">
+<header class="version-head"><p class="eyebrow">Checklist 3 · Draft</p><h2 id="title-clear-the-table">I have to clear the table before we can eat.</h2><p class="deck">Get your table back for meals, and give the things that keep covering it somewhere to go.</p></header>
+<div class="setup"><p><strong>Today's job:</strong> Work on the dining table and the chairs needed for the people who normally eat there. Keep the rest of the room outside this job. The finish is sitting down to a meal without first relocating a pile.</p><p><strong>Have ready:</strong> A trash bag, a cleaning cloth, and a small box to carry things back to their homes. Use a scrap of paper for anything that needs a later action.</p></div>
+<ol class="checklist"><li><label><input type="checkbox"><span><strong>1. Make a small place to start.</strong> Remove obvious trash and take dishes to the kitchen. Clear enough of the tabletop to sort a small batch. Keep the route around the table open; putting the pile on the floor creates another obstacle.</span></label></li>
+<li><label><input type="checkbox"><span><strong>2. Sort what is left by its next destination.</strong> Work across the table in small batches. Separate things to throw away, give away, use regularly, and use occasionally. Ask before making decisions about someone else's belongings.</span></label></li>
+<li><label><input type="checkbox"><span><strong>3. Put things with homes back in them.</strong> Return the tools, clothes, bags, and other belongings that already have a place. Use the box to carry a batch, then empty it into those homes. Do not leave the box as the table's new storage system.</span></label></li>
+<li><label><input type="checkbox"><span><strong>4. Give the repeat offenders a home.</strong> Look at what keeps landing here because it has nowhere better to go. Put everyday items near where they are used: keys by the exit, work supplies in the work area. Keep papers needing action together in one visible tray and write a specific time to deal with them.</span></label></li>
+<li><label><input type="checkbox"><span><strong>5. Move occasional-use things out of the working space.</strong> Group the things you want to keep but seldom use and assign them a reachable storage spot away from the tabletop and eating chairs. Make the contents visible or label the container. Write down any missing storage and a temporary home that keeps the table usable.</span></label></li>
+<li><label><input type="checkbox"><span><strong>6. Wipe the table and free the seats.</strong> Lift the items that genuinely belong on the table, wipe underneath, and put them back only if the meal still fits. Clear the seats and enough room to pull them out. The table's useful space includes the people around it.</span></label></li>
+<li><label><input type="checkbox"><span><strong>7. Complete the exits.</strong> Take the trash out and finish returning the carry box. Choose a recipient or destination for giveaways, with a specific next-action time. If something still needs another person's decision, agree where it will wait and when to ask; keep the eating places clear.</span></label></li>
+<li><label><input type="checkbox"><span><strong>8. Set the table for the people who use it.</strong> Put out the places needed for an ordinary meal and sit down. If anything must move first, give it a home now. Leave the carry box empty. The job ends with a table ready to use, not a photograph of an empty surface.</span></label></li></ol>
+<div class="finish"><h3>Your finished win</h3><p>The people who normally eat here can sit down to a meal without clearing the table first. The objects that usually block it have named destinations.</p><p><strong>Keep the result:</strong> After using the table for another activity, return those materials to their homes. If the same object keeps landing here, make its home easier to use.</p></div>
+<div class="next"><p>What still needs action: <span class="blank"></span></p><p>Who will do it, and when: <span class="blank"></span></p></div>
+<p class="sheet-credit">Mr. Life Manager · Free to use, copy, and teach from — with credit. Not for resale.</p>
+<p class="back"><a href="#versions">Compare the other checklists ↑</a></p>
+</article>
+<footer><p><strong>Mr. Life Manager</strong> · Free to use, copy, and teach from — with credit. Not for resale.</p><p><a href="/">More ways to start</a> · <a href="/privacy.html">Privacy</a> · <a href="mailto:hello@mrlifemanager.com">Get in touch</a></p></footer>
+</main>
+</body>
+</html>

@@ -54,6 +54,15 @@ Write a `brief.md` before building — see [../README.md](../README.md).
 
 ## Status
 
+**Three organizing versions, 2026-10-27:**
+[junk drawers](reset-your-space/versions/junk-drawers.md),
+[things put away and lost](reset-your-space/versions/cant-find-things.md), and
+[a table blocked by clutter](reset-your-space/versions/clear-the-table.md).
+Each is eight actions with a different finished win. The
+[public comparison page](../landing/organizing-ideas.html) carries all three;
+the [shared brief](reset-your-space/versions/brief.md) records sources and
+what remains untested. They are comparison drafts, not three new homepage routes.
+
 **New Markdown draft, 2026-10-27:** [Reset Your Space](reset-your-space/checklist.md)
 turns the full January 2014 intervention method into twelve ordered actions for
 one usable area. See its [brief](reset-your-space/brief.md) for sources and
