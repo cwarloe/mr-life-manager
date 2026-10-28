@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Send your kid or mentee the practical thing you wish someone had handed you when you got your first place. No lecture, no signup.">
+<meta name="description" content="Send them the page that matches tonight: first night, guests, or a whole house that needs doing.">
 <meta name="color-scheme" content="light dark">
-<title>For Parents & Mentors — Mr. Life Manager</title>
+<title>Everything You Meant To Tell Them</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
@@ -13,45 +13,30 @@
 <style>
 .hero{padding:4.5rem 0 3.5rem;border-bottom:3px solid var(--ink)}
 .kicker{margin:0 0 1.2rem}
-h1{font-size:clamp(2.3rem,6.5vw,3.8rem);font-weight:800;line-height:1.05;letter-spacing:-.03em;
-  margin:0;text-wrap:balance;max-width:21ch}
-.sub{font-family:var(--serif);font-size:clamp(1.08rem,2.2vw,1.3rem);line-height:1.55;
-  color:var(--slate);margin:1.4rem 0 0;max-width:50ch}
+h1{font-size:clamp(2.4rem,7vw,4rem);font-weight:800;line-height:1.02;letter-spacing:-.03em;margin:0;text-wrap:balance;max-width:19ch}
+.sub{font-family:var(--serif);font-size:clamp(1.1rem,2.4vw,1.35rem);line-height:1.5;color:var(--slate);margin:1.4rem 0 0;max-width:46ch}
 .sub strong{color:var(--ink);font-weight:600}
-.picker{display:grid;gap:.85rem;margin:2rem 0 0}
-a.pick{display:grid;gap:.4rem;border:1px solid var(--rule);border-radius:6px;
-  padding:1.25rem 1.45rem;background:var(--surface);text-decoration:none;color:inherit;
-  box-shadow:var(--shadow-sm);transition:all .15s ease}
+.picker{display:grid;gap:.85rem;margin:2rem 0 0;max-width:36rem}
+a.pick{display:grid;gap:.4rem;border:1px solid var(--rule);border-radius:6px;padding:1.25rem 1.45rem;background:var(--surface);text-decoration:none;color:inherit;box-shadow:var(--shadow-sm);transition:all .15s ease}
 a.pick:hover{border-color:var(--blue);box-shadow:var(--shadow-md);transform:translateY(-1px)}
 .pick-meta{display:flex;align-items:center;gap:.5rem;margin-bottom:.1rem}
-.badge{display:inline-block;font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.06em;
-  text-transform:uppercase;padding:.2rem .55rem;border-radius:3px}
+.badge{display:inline-block;font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.2rem .55rem;border-radius:3px}
 .badge-reset{background:var(--badge-reset-bg);color:var(--badge-reset-text);border:1px solid var(--badge-reset-border)}
 .badge-setup{background:var(--badge-setup-bg);color:var(--badge-setup-text);border:1px solid var(--badge-setup-border)}
 a.pick .q{font-size:1.15rem;font-weight:700;letter-spacing:-.015em;line-height:1.25}
 a.pick .a{font-family:var(--serif);font-size:.96rem;line-height:1.45;color:var(--slate)}
-.fine{margin:1.8rem 0 0;font-family:var(--serif);font-size:.98rem;line-height:1.6;color:var(--slate)}
-.fine a{color:var(--blue);font-weight:600}
+.fine{margin:1.4rem 0 0;max-width:42rem}
 section{padding:4rem 0}
-section + section{border-top:1px solid var(--rule)}
+section+section{border-top:1px solid var(--rule)}
 .eyebrow{margin:0 0 .9rem}
-h2{font-size:clamp(1.6rem,3.6vw,2.2rem);font-weight:700;letter-spacing:-.02em;margin:0;
-  text-wrap:balance;max-width:22ch}
+h2{font-size:clamp(1.6rem,3.6vw,2.2rem);font-weight:700;letter-spacing:-.02em;margin:0;max-width:22ch}
 .lede{font-family:var(--serif);font-size:1.08rem;line-height:1.6;margin:1.1rem 0 0;max-width:58ch}
 p.body{font-family:var(--serif);font-size:1.03rem;line-height:1.65;margin:1.1rem 0 0;max-width:58ch}
-p.body strong{font-weight:600}
 .dave{background:var(--surface);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.pull{font-family:var(--serif);font-size:clamp(1.3rem,3.2vw,1.75rem);line-height:1.4;
-  font-style:italic;margin:1.6rem 0;padding-left:1.4rem;border-left:4px solid var(--amber);
-  max-width:34ch;text-wrap:balance}
-.attrib{font-family:var(--sans);font-style:normal;font-size:.8rem;font-weight:600;
-  letter-spacing:.08em;text-transform:uppercase;color:var(--slate);display:block;margin-top:.9rem}
+.pull{font-family:var(--serif);font-size:clamp(1.3rem,3.2vw,1.75rem);line-height:1.4;font-style:italic;margin:1.6rem 0;padding-left:1.4rem;border-left:4px solid var(--amber);max-width:34ch}
+.attrib{font-family:var(--sans);font-style:normal;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);display:block;margin-top:.9rem}
 .close{border-top:3px solid var(--ink);background:var(--surface)}
 footer .wrap{display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space-between}
-@media (max-width:34rem){
-  .hero{padding:3rem 0 2.5rem}
-  section{padding:3rem 0}
-}
 </style>
 </head>
 <body>
@@ -60,8 +45,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space-be
   <a href="/">The main page</a>
 </div></div>
 <header class="hero"><div class="wrap">
-  <p class="kicker">For parents, mentors, and anyone helping someone get set up</p>
-  <h1>The things they need to know that you don't want to nag them about.</h1>
+  <p class="kicker">For the kid who just moved out</p>
+  <h1>Everything you meant to tell them.</h1>
   <p class="sub">How often to wash the sheets. What to do before they sign a lease.
   What to photograph on the first night. <strong>You know all of it. You just never
   found the right moment to say it</strong> — and they'd rather use a page than sit through
@@ -69,33 +54,33 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space-be
   <div class="picker">
     <a class="pick" href="/first-night.html?from=parent">
       <div class="pick-meta"><span class="badge badge-setup">Setup · First Night</span></div>
-      <span class="q">It's their first night in the place.</span>
+      <span class="q">I just moved in and it's my first night here.</span>
       <span class="a">Six things tonight, in order of what costs most to skip. Send them this page. No account.</span>
     </a>
     <a class="pick" href="/guests.html?from=parent">
-      <div class="pick-meta"><span class="badge badge-reset">35-Min Reset · Company</span></div>
+      <div class="pick-meta"><span class="badge badge-reset">35-Min Reset · Panic Clean</span></div>
       <span class="q">Someone's coming over and the place isn't ready.</span>
       <span class="a">Six things, about thirty-five minutes — still works if they've only got ten.</span>
     </a>
     <a class="pick" href="/dinner.html?from=parent">
-      <div class="pick-meta"><span class="badge badge-reset">Quick Reset · Table</span></div>
+      <div class="pick-meta"><span class="badge badge-reset">Quick Reset · Dinner</span></div>
       <span class="q">Dinner's ready. There's nowhere to eat.</span>
-      <span class="a">Make room at the table and sit down to eat. The organizing can wait.</span>
+      <span class="a">Six steps to get the table back, without organizing the whole house.</span>
     </a>
     <a class="pick" href="/underwater.html?from=parent">
-      <div class="pick-meta"><span class="badge badge-reset">40-Min Reset · Recovery</span></div>
-      <span class="q">Their whole place got away from them.</span>
+      <div class="pick-meta"><span class="badge badge-reset">40-Min Reset · Emergency Triage</span></div>
+      <span class="q">Your place is a mess. Again.</span>
       <span class="a">Six things that make the house livable again. Forward this one when they're staring at the mess and don't know where to start.</span>
     </a>
     <a class="pick" href="/one-room.html?from=parent">
       <div class="pick-meta"><span class="badge badge-setup">2-Hour Project · Storage</span></div>
-      <span class="q">A room of theirs has turned into storage.</span>
+      <span class="q">There's a room I stopped using.</span>
       <span class="a">Garage, spare room, closet. The three-pile method, one zone at a time, about two hours.</span>
     </a>
   </div>
   <p class="fine">Do not sign up for them. Forward the page that matches tonight.
   If they want a printable later, the offer is at the bottom of the page they
-  actually used. The next guide is for moving in with someone. If you needed a different one,
+  actually used. We're focusing on these five checklists for now. If you needed a different one,
   <a href="mailto:charles@mrlifemanager.com?subject=The%20one%20they%20need">tell me which</a>.</p>
 </div></header>
 <section class="dave"><div class="wrap narrow">
@@ -118,13 +103,14 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space-be
 </div></section>
 <section class="close"><div class="wrap">
   <h2>Send them the link. You don't need to explain it.</h2>
-  <p class="lede">Pick the one that's true today and text it over. That's the whole
-  handoff. They get the thing to do, free and ungated, without having to ask.</p>
-  <p class="fine">Helping multiple people, or working in a formal setting? See the pilot page for
-  <a href="/partners.html?from=parents">mentors, churches, and campuses</a>.</p>
-  <p class="fine">Questions, or something you wish existed —
-  <a href="mailto:charles@mrlifemanager.com">charles@mrlifemanager.com</a> ·
-  <a href="/privacy.html">Privacy</a></p>
+  <p class="lede">One link, matched to what's actually going on.</p>
+  <div class="picker">
+    <a class="pick" href="/first-night.html?from=parent"><span class="q">I just moved in and it's my first night here.</span><span class="a">mrlifemanager.com/first-night.html</span></a>
+    <a class="pick" href="/guests.html?from=parent"><span class="q">Someone's coming over and the place isn't ready.</span><span class="a">mrlifemanager.com/guests.html</span></a>
+    <a class="pick" href="/dinner.html?from=parent"><span class="q">Dinner's ready. There's nowhere to eat.</span><span class="a">mrlifemanager.com/dinner.html</span></a>
+    <a class="pick" href="/underwater.html?from=parent"><span class="q">Your place is a mess. Again.</span><span class="a">mrlifemanager.com/underwater.html</span></a>
+    <a class="pick" href="/one-room.html?from=parent"><span class="q">There's a room I stopped using.</span><span class="a">mrlifemanager.com/one-room.html</span></a>
+  </div>
 </div></section>
 <footer><div class="wrap">
   <span><b>Mr. Life Manager</b> — <a href="mailto:charles@mrlifemanager.com">charles@mrlifemanager.com</a></span>
