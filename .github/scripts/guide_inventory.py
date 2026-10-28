@@ -101,7 +101,7 @@ INVENTORY: tuple[InventoryItem, ...] = (
 )
 
 
-GUIDES: list[tuple[str, str, str, str]] = [
+ALL_GUIDES: list[tuple[str, str, str, str]] = [
     (item.stem, item.html_src, item.title, item.blurb)
     for item in INVENTORY
     if item.publish_as_guide
@@ -118,17 +118,38 @@ PDF_TITLES: dict[str, str] = {
 }
 
 
+# Reference guides are paused for public use; retain their source/PDF inventory.
+# The Week remains available for existing email promises, and the partner
+# handout supports the active five-page pilot.
+REFERENCE_GUIDES_PAUSED = True
+GUIDES = [] if REFERENCE_GUIDES_PAUSED else ALL_GUIDES
+PAUSED_GUIDES = ALL_GUIDES if REFERENCE_GUIDES_PAUSED else []
+PUBLISHED_PDF_NAMES = {
+    "the-week.pdf", "partner-pilot.pdf",
+    *(f"{slug}.pdf" for slug, *_ in GUIDES),
+}
+
 # Retired guide stem -> current stem. build_site.py publishes a static redirect
 # at /guides/<old>.html (meta refresh + canonical to the new page, noindex, out
 # of the sitemap) and a copy of the current PDF at /print/<old>.pdf, unlisted.
-LEGACY_GUIDE_SLUGS: dict[str, str] = {
+KNOWN_LEGACY_GUIDE_SLUGS: dict[str, str] = {
     # Renamed 2026-09-28: the guide has been six meals since 2026-09-25.
     "ten-meals": "six-meals",
 }
 
-_GUIDE_STEMS = {slug for slug, *_ in GUIDES}
-for _old, _new in LEGACY_GUIDE_SLUGS.items():
+_GUIDE_STEMS = {slug for slug, *_ in ALL_GUIDES}
+for _old, _new in KNOWN_LEGACY_GUIDE_SLUGS.items():
     if _new not in _GUIDE_STEMS:
         raise SystemExit(f"LEGACY_GUIDE_SLUGS: {_old!r} points at unknown guide {_new!r}")
     if _old in _GUIDE_STEMS:
         raise SystemExit(f"LEGACY_GUIDE_SLUGS: {_old!r} is still a live guide")
+
+LEGACY_GUIDE_SLUGS = {
+    old: new for old, new in KNOWN_LEGACY_GUIDE_SLUGS.items()
+    if new in {slug for slug, *_ in GUIDES}
+}
+PAUSED_GUIDE_SLUGS = (
+    *(slug for slug, *_ in PAUSED_GUIDES),
+    *(old for old, new in KNOWN_LEGACY_GUIDE_SLUGS.items()
+      if new in {slug for slug, *_ in PAUSED_GUIDES}),
+)

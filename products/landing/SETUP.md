@@ -1,5 +1,10 @@
 # Landing Page — Setup
 
+**Current scope, 2026-10-27:** five active entrances, in order: first night,
+guests, dinner, underwater, and one room. Other task pages and reference guides
+are paused, with source retained. Old HTML links redirect to the homepage.
+Only The Week and the partner pilot handout remain published as PDFs.
+
 **Status (2026-09-21):** The public site is live at
 [https://mrlifemanager.com](https://mrlifemanager.com). HTTPS is on. HTTP
 redirects. `www` redirects to the apex.
@@ -16,19 +21,15 @@ entry pages, after the action
 | `/underwater.html` | Entry page + signup |
 | `/one-room.html` | Entry page + signup |
 | `/dinner.html` | Six-step table reset with a calendar option; completion ends at the win, with no signup |
-| `/laundry-pile.html` | Put one basket of clean clothes away and get tomorrow's outfit ready |
-| `/make-dinner.html` | Make a simple bean-wrap meal from stated ingredients |
-| `/cleaning-start.html` | Clean one kitchen work surface using a suitable product |
-| `/comfortable-room.html` | Make one sitting spot usable and comfortable |
-| `/kitchen-close.html` | Leave breakfast dishes and a working patch ready for morning |
-| `/shared-dishes.html` | Make one shared agreement about who owns the dishes |
-| `/office.html` | Entry page + signup. Added 2026-10-06; not linked from the homepage picker; MailerLite group not wired yet |
+| `/laundry-pile.html`, `/make-dinner.html`, `/cleaning-start.html` | Paused drafts; old URLs redirect to the active choices |
+| `/comfortable-room.html`, `/kitchen-close.html`, `/shared-dishes.html` | Paused drafts; old URLs redirect to the active choices |
+| `/office.html`, `/organizing-ideas.html` | Paused; old URLs redirect to the active choices |
 | `/index-parents.html` | Parent page — send them a door, no form |
 | `/partners.html?from=<source>` | Small-pilot page for mentors, churches and campuses |
-| `/guides/` | Archive of the free guides |
-| `/guides/<slug>.html` | Each guide |
-| `/print/` | Index of print-ready PDFs |
-| `/print/<slug>.pdf` | A specific printable |
+| `/guides/` | The five active checklists |
+| `/guides/<paused-slug>.html` | Redirect to the active choices; reference-guide source stays in the repo |
+| `/print/` | The Week and partner pilot handout |
+| `/print/the-week.pdf` | Weekly sheet promised by active email sequences |
 | `/print/partner-pilot.pdf` | Four audience-specific, QR-coded pilot handouts |
 | `/finished-<door>.html` | No-index completion destination for each entry page |
 | `/privacy.html` | What an email is used for |
@@ -62,10 +63,9 @@ The form is embedded on email-collecting entry routes and their completion pages
 The dinner route ends at the completed win. It does not collect addresses or
 need a new automation. Its “Not right now” option creates a calendar invite,
 using the shared deferred-start flow; the reminder stays in the reader's calendar.
-The six guide-derived routes listed above use the same no-signup completion
-and calendar pattern. Their 10- or 15-minute calendar blocks reserve time to
-begin, rather than promise a tested completion time. Existing signup routes
-and their email delivery remain unchanged.
+The six guide-derived draft routes retain their no-signup completion and
+calendar configuration in source, but are paused for publication. Existing
+active signup routes and their email delivery remain unchanged.
 Do not put it back on the homepage. The
 completion pages reuse the originating door tag, so the reader receives the
 same three-email sequence whether they signed up in reading mode or immediately

@@ -2,6 +2,11 @@
 
 **Practical adult-life systems for people who were never explicitly taught them.**
 
+**Current public focus (2026-10-27):** five checklists — first night, guests,
+dinner, underwater, and one room. Other entrances and reference guides are
+paused, with their source retained for later. The Week and the partner pilot
+handout remain available to support the active flows.
+
 ---
 
 ## What this is
@@ -203,12 +208,13 @@ verify it and learn from real people.
       no-index completion page for each door, instead of sending a finisher
       back to the top of the free page. Original email routes retain their
       signup; the newer quick-win routes end at the completed task.
-- ✅ **Felt-pain entrances added** — the dinner-table reset plus six actions
+- ✅ **Felt-pain entrances drafted** — the dinner-table reset plus six actions
       derived from the guide library: laundry piles, making a simple dinner,
       choosing a cleaner, a useful sitting spot, tomorrow's kitchen, and a
       shared dishes agreement. Each has six steps, a calendar option, a
       one-page print layout, and no new email automation. See the
       [coverage brief](products/landing/briefs/felt-pain-guides.md).
+      The six additional entrances are now paused; dinner remains active.
 - ✅ **Distribution path added** — parents, mentors, churches, and campuses can
       run a five-person free pilot from `partners.html`. Safe source labels carry
       through a completed task into reservation emails without cookies, and a

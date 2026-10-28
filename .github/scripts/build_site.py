@@ -5,10 +5,11 @@ import html as html_lib
 import re, shutil, sys
 from pathlib import Path
 
-from guide_inventory import GUIDES, LEGACY_GUIDE_SLUGS, PDF_TITLES
+from guide_inventory import GUIDES, LEGACY_GUIDE_SLUGS, PDF_TITLES, PAUSED_GUIDE_SLUGS, PUBLISHED_PDF_NAMES
 from site_catalog import (
     ANALYTICS_DOMAIN,
     ENTRY_ROUTES,
+    PAUSED_LANDING_PAGES,
     ORIGIN,
     UMAMI_SCRIPT_URL,
     UMAMI_WEBSITE_ID,
@@ -191,7 +192,7 @@ def main() -> int:
     if OUT.exists():
         shutil.rmtree(OUT)
     (OUT / "guides").mkdir(parents=True)
-    skip_landing = {"SETUP.md", "sitemap.xml", "robots.txt"}
+    skip_landing = {"SETUP.md", "sitemap.xml", "robots.txt", *PAUSED_LANDING_PAGES}
     for item in LANDING.iterdir():
         if item.is_dir() or item.name in skip_landing:
             continue
@@ -217,6 +218,12 @@ def main() -> int:
                     .replace("__NEXT_DESCRIPTION__", route.next_description)
                     .replace("__BACK__", f"/{route.page}"))
         (OUT / route.completion_page).write_text(rendered, encoding="utf-8")
+    # Old bookmarks land on the current choices, without publishing paused text.
+    for name in PAUSED_LANDING_PAGES:
+        (OUT / name).write_text(redirect_page("/", "Choose a current checklist"), encoding="utf-8")
+    for slug in PAUSED_GUIDE_SLUGS:
+        (OUT / "guides" / f"{slug}.html").write_text(
+            redirect_page("/", "Choose a current checklist"), encoding="utf-8")
     printable_css = ROOT / "products" / "print" / "printable.css"
     if not printable_css.is_file():
         sys.exit(f"missing {printable_css}")
@@ -257,10 +264,16 @@ def main() -> int:
         "border:2px solid var(--ink);border-radius:3px;background:var(--ink);color:var(--paper);text-decoration:none}"
         ".foot-cta a.ghost{background:transparent;color:var(--ink)}"
     )
+    if not GUIDES:
+        cards = [
+            f"<a class='card' href='/{route.page}'><h2>{html_lib.escape(route.door_title)}</h2>"
+            "<p>Follow the steps here, or print the action sheet.</p><span class='go'>Start here →</span></a>"
+            for route in ENTRY_ROUTES
+        ]
     guides_index = page(
         "All Guides — Mr. Life Manager",
-        "All the guides.",
-        "Read them here, print them, or forward them.",
+        "All the guides." if GUIDES else "Five ways to start.",
+        "Read them here, print them, or forward them." if GUIDES else "Pick the problem that is true today. One useful task, in order.",
         extra,
         {
             "nav": "<a class='cta' href='/print/'>Printables →</a>",
@@ -269,8 +282,8 @@ def main() -> int:
                 + "".join(cards)
                 + "</div></main>"
                 "<section class='foot-cta'><div class='wrap'>"
-                "<p>Every guide also exists as a PDF.</p>"
-                "<a href='/print/'>See the printables</a>"
+                "<p>Each active checklist has its own print option.</p>"
+                "<a href='/'>Choose your checklist</a>"
                 "<a class='ghost' href='/'>What's going on right now</a>"
                 "</div></section>"
             ),
@@ -278,7 +291,7 @@ def main() -> int:
     ).replace("__TOKENS__", tokens)
     (OUT / "guides" / "index.html").write_text(guides_index, encoding="utf-8")
     pdf_src = ROOT / "products" / "guides-pdf"
-    pdfs = sorted(pdf_src.glob("*.pdf"))
+    pdfs = sorted(pdf for pdf in pdf_src.glob("*.pdf") if pdf.name in PUBLISHED_PDF_NAMES)
     if not pdfs:
         sys.exit("no printables found in products/guides-pdf/")
     (OUT / "print").mkdir(parents=True, exist_ok=True)
@@ -304,7 +317,7 @@ def main() -> int:
     print_index = page(
         "Printables — Mr. Life Manager",
         "Printables.",
-        "Same guides, as PDFs. Open one, print it, tape it inside a cabinet door.",
+        "The weekly sheet and partner handout. The five active checklists print from their own pages.",
         extra_p,
         {
             "nav": "<a class='cta' href='/guides/'>All guides →</a>",

@@ -1,5 +1,17 @@
 # Working agreement
 
+## Current publication scope
+
+Charles selected five active checklists on 2026-10-27, in this order:
+`first-night`, `guests`, `dinner`, `underwater`, `one-room`. All other entry
+pages, the organizing comparison page, and reference guides are paused for
+public use. Keep their source files; old HTML URLs redirect to the current
+choices. `ACTIVE_ENTRY_SLUGS` in `site_catalog.py` controls the live entries;
+`guide_inventory.py` pauses reference-guide publication and their PDFs.
+Only `the-week.pdf` (promised by active emails) and `partner-pilot.pdf` remain
+published. Resume other material when Charles says it is ready. Older notes
+about live draft routes describe the previous state.
+
 ## Division of labor
 
 **Claude makes the changes and pushes them. A bot does everything

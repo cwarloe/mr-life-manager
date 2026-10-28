@@ -1,5 +1,12 @@
 # Checklists
 
+**Publication paused, 2026-10-27.** Charles is focusing the public site on
+first night, guests, dinner, underwater, and one room. The reference guides,
+their PDFs, the organizing comparison, and the six newer entrances are retained
+as source for later; they are not current public offers. Old HTML URLs lead to
+the five active choices. The Week and partner pilot handout stay published for
+the existing flows. Historical status notes below describe the drafts.
+
 Printable checklists and guides. Per
 [ADR-015](../../planning/decisions.md#adr-015--the-win-comes-before-the-email)
 they are **archive and search surface** at `/guides/`, not the front door —

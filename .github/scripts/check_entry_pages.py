@@ -4,6 +4,7 @@ import sys
 from pathlib import Path
 
 from site_catalog import (
+    ALL_ENTRY_ROUTES,
     ENTRY_CSS_MARKERS,
     ENTRY_JS_MARKERS,
     ENTRY_ROUTES,
@@ -91,7 +92,7 @@ def main() -> int:
                     problems.append(f"{path.name}: direct next step must have an existing target and descriptive copy")
 
     # Warn on unexpected steps pages outside the catalog (orphan HTML).
-    expected_names = {route.page for route in ENTRY_ROUTES}
+    expected_names = {route.page for route in ALL_ENTRY_ROUTES}
     for path in sorted(LANDING.glob("*.html")):
         if path.name in expected_names:
             continue

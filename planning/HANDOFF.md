@@ -10,6 +10,16 @@ land on `main`.
 
 ## Read these before doing anything
 
+**Current publication scope, 2026-10-27:** Charles selected five active
+entrances, in this order: first-night, guests, dinner, underwater, one-room.
+Other task pages (including office), the organizing comparison, and reference
+guides/PDFs are paused. Their source remains intact; old HTML URLs redirect to
+the homepage. Only The Week and partner pilot handout stay published as PDFs,
+to preserve active delivery promises. The homepage, parent page, partner page,
+and guide index all point to the five. `ACTIVE_ENTRY_SLUGS` and the reference
+publication flag control what ships; build checks reject paused content and
+picker drift. Older entries below describe previous publication states.
+
 - `CLAUDE.md` — the working agreement. The two rules that matter most:
   (1) You make changes and push to `main` once checks pass; a
   bot does everything downstream (MailerLite, any live account). Don't hand

@@ -45,11 +45,11 @@ class EntryRoute:
         return f"finished-{self.slug}.html"
 
 
-# Entry routes; the homepage groups these by present need. Sitemap uses this order.
-ENTRY_ROUTES: tuple[EntryRoute, ...] = (
+# Keep drafted routes here even while publication is paused.
+ALL_ENTRY_ROUTES: tuple[EntryRoute, ...] = (
     EntryRoute(
         slug="first-night",
-        door_title="Your first night",
+        door_title="I just moved in and it's my first night here.",
         completion_message=(
             "You handled the things that cost most to miss on a first night."
         ),
@@ -57,7 +57,7 @@ ENTRY_ROUTES: tuple[EntryRoute, ...] = (
     ),
     EntryRoute(
         slug="one-room",
-        door_title="The room that became storage",
+        door_title="There's a room I stopped using.",
         completion_message=(
             "You cleared one zone of the room, and you can use it again. One finished zone is real progress."
         ),
@@ -65,7 +65,7 @@ ENTRY_ROUTES: tuple[EntryRoute, ...] = (
     ),
     EntryRoute(
         slug="guests",
-        door_title="Someone's coming over",
+        door_title="Someone's coming over and the place isn't ready.",
         completion_message=(
             "You're ready for them. Whatever did not get done can wait."
         ),
@@ -73,7 +73,7 @@ ENTRY_ROUTES: tuple[EntryRoute, ...] = (
     ),
     EntryRoute(
         slug="underwater",
-        door_title="Your place is a mess again",
+        door_title="Your place is a mess. Again.",
         completion_message=(
             "The house is livable again. That is different from fixing everything."
         ),
@@ -138,6 +138,17 @@ ENTRY_ROUTES: tuple[EntryRoute, ...] = (
     ),
 )
 
+
+# Charles's active five, in public picker order. Paused source files stay intact.
+ACTIVE_ENTRY_SLUGS = ("first-night", "guests", "dinner", "underwater", "one-room")
+_ROUTES_BY_SLUG = {route.slug: route for route in ALL_ENTRY_ROUTES}
+ENTRY_ROUTES = tuple(_ROUTES_BY_SLUG[slug] for slug in ACTIVE_ENTRY_SLUGS)
+PAUSED_ENTRY_ROUTES = tuple(route for route in ALL_ENTRY_ROUTES if route.slug not in ACTIVE_ENTRY_SLUGS)
+PAUSED_LANDING_PAGES = (
+    *(route.page for route in PAUSED_ENTRY_ROUTES),
+    *(route.completion_page for route in PAUSED_ENTRY_ROUTES),
+    "organizing-ideas.html",
+)
 
 # Needles check_entry_pages looks for in the shared entry.js / entry.css.
 ENTRY_JS_MARKERS: tuple[tuple[str, str], ...] = (
