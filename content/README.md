@@ -67,6 +67,13 @@ doesn't:
 | A `data-guide` tag (wired by entry.js) | Untagged signups land nowhere |
 | A matching `<tag>-sequence.md` | A page that collects addresses and sends nothing is worse than no page |
 
+**Direct next-step routes:** an entry can lead to another free checklist instead
+of collecting email. Set `next_url`, `next_title`, and `next_description` in
+`site_catalog.py`; the builder uses `finished-next.html`. These routes keep the
+same doing mode, print controls, completion tracking, and public-page checks.
+They do not embed a signup or require an email sequence. The dinner route uses
+this path to the longer table checklist after the immediate win.
+
 **After creating one, run
 [`tune_print_scale.py`](../.github/scripts/tune_print_scale.py)** logic against
 it to set the print zoom — sizes hand-tuned downward leave a third of the sheet

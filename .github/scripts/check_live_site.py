@@ -25,20 +25,21 @@ def _entry_pages() -> dict[str, tuple[str, ...]]:
     }
     for route in ENTRY_ROUTES:
         pages[f"/{route.page}"] = (
-            MAILERLITE_FORM_ATTR,
             f'data-guide="{route.slug}"',
             'src="/assets/entry.js"',
-            "one thing worth printing: the week on one page",
         )
+        if route.collects_email:
+            pages[f"/{route.page}"] += (MAILERLITE_FORM_ATTR, "one thing worth printing: the week on one page")
     for route in ENTRY_ROUTES:
         pages[f"/{route.completion_page}"] = (
-            MAILERLITE_FORM_ATTR,
-            MAILERLITE_JS_URL,
             f'data-guide="{route.slug}"',
             'src="/assets/entry.js"',
-            "ml-fallback",
             "One thing finished",
         )
+        if route.collects_email:
+            pages[f"/{route.completion_page}"] += (MAILERLITE_FORM_ATTR, MAILERLITE_JS_URL, "ml-fallback")
+        else:
+            pages[f"/{route.completion_page}"] += (f'href="{route.next_url}"', route.next_title)
     pages["/partners.html"] = PARTNERS_LIVE_MARKERS
     pages["/privacy.html"] = PRIVACY_LIVE_MARKERS
     return pages

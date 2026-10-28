@@ -22,6 +22,9 @@ REQUIRED = [
     ("shared entry script", 'src="/assets/entry.js"'),
     ("mode buttons", 'class="go-do"'),
     ("print scale", "body{zoom:"),
+]
+
+EMAIL_REQUIRED = [
     ("MailerLite form", MAILERLITE_FORM_ATTR),
     ("MailerLite CDN", MAILERLITE_JS_URL),
     ("one-PDF promise", "one thing worth printing: the week on one page"),
@@ -55,7 +58,8 @@ def main() -> int:
             continue
         catalog_pages.append(path)
         s = path.read_text()
-        for label, needle in REQUIRED:
+        required = REQUIRED + EMAIL_REQUIRED if route.collects_email else REQUIRED
+        for label, needle in required:
             if needle not in s:
                 problems.append(f"{path.name}: missing {label}")
 
@@ -76,8 +80,14 @@ def main() -> int:
         if f'data-guide="{route.slug}"' not in s:
             problems.append(f'{path.name}: missing data-guide="{route.slug}"')
         seq = EMAILS / f"{route.slug}-sequence.md"
-        if not seq.is_file():
+        if route.collects_email and not seq.is_file():
             problems.append(f"{path.name}: {seq.name} does not exist")
+        if not route.collects_email:
+            if 'class="ml-embedded"' in s:
+                problems.append(f"{path.name}: direct-next route must not collect email")
+            target = ROOT / "products" / "landing" / route.next_url.lstrip("/").split("#", 1)[0]
+            if not target.is_file() or not route.next_title or not route.next_description:
+                problems.append(f"{path.name}: direct next step must have an existing target and descriptive copy")
 
     # Warn on unexpected steps pages outside the catalog (orphan HTML).
     expected_names = {route.page for route in ENTRY_ROUTES}

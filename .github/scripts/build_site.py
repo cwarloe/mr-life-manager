@@ -201,10 +201,15 @@ def main() -> int:
         shutil.copytree(assets, OUT / "assets")
     completion_template = (LANDING / "templates" / "finished.html").read_text(encoding="utf-8")
     for route in ENTRY_ROUTES:
-        rendered = (completion_template
+        template = ((LANDING / "templates" / "finished-next.html").read_text(encoding="utf-8")
+                    if route.next_url else completion_template)
+        rendered = (template
                     .replace("__DOOR__", route.door_title)
                     .replace("__MESSAGE__", route.completion_message)
                     .replace("__GUIDE__", route.slug)
+                    .replace("__NEXT_URL__", route.next_url)
+                    .replace("__NEXT_TITLE__", route.next_title)
+                    .replace("__NEXT_DESCRIPTION__", route.next_description)
                     .replace("__BACK__", f"/{route.page}"))
         (OUT / route.completion_page).write_text(rendered, encoding="utf-8")
     printable_css = ROOT / "products" / "print" / "printable.css"

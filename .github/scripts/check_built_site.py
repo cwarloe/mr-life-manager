@@ -83,9 +83,18 @@ def main() -> int:
         tag = route.slug
         completion = route.completion_page
         completion_text = (OUT / completion).read_text(encoding="utf-8")
-        for marker in (MAILERLITE_FORM_ATTR, MAILERLITE_JS_URL, f'data-guide="{tag}"',
-                       'src="/assets/entry.js"', "ml-fallback", "One thing finished",
-                       'name="robots" content="noindex,nofollow"'):
+        markers = (f'data-guide="{tag}"', 'src="/assets/entry.js"', "One thing finished",
+                   'name="robots" content="noindex,nofollow"')
+        if route.collects_email:
+            markers += (MAILERLITE_FORM_ATTR, MAILERLITE_JS_URL, "ml-fallback")
+        else:
+            markers += (f'href="{route.next_url}"', route.next_title)
+            if MAILERLITE_FORM_ATTR in completion_text or "ml-embedded" in completion_text:
+                problems.append(f"{completion}: direct-next route must not collect email")
+            next_path = OUT / route.next_url.lstrip("/").split("#", 1)[0]
+            if not next_path.is_file():
+                problems.append(f"{completion}: next-step target does not exist")
+        for marker in markers:
             if marker not in completion_text:
                 problems.append(f"{completion}: missing {marker}")
         # One ask after the win (principle 11): the signup is the only offer.

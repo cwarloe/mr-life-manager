@@ -97,6 +97,17 @@ to be captured; the template's prompts are ours. No MailerLite update is needed.
 
 ## Open threads (nothing is blocking)
 
+**Added 2026-10-27 — dinner entry point.** Charles chose “Dinner's ready.
+There's nowhere to eat.” The six-step page at `/dinner.html` is linked from
+the homepage and parent/partner pages. It makes the table and needed seats
+usable; the temporary basket is explicitly unfinished. Its completion page
+offers the longer table checklist directly, without collecting email or
+promising a new sequence. The route catalog supports this explicit direct-next
+path, while existing email routes keep their signup requirements. The three
+eight-step drafts and twelve-step guide remain unchanged. Browser checks cover
+mobile navigation, completion, source attribution, and the next-step link;
+print scale is tuned to one Letter page. Reader outcomes remain untested.
+
 **Added 2026-10-27 — three organizing checklist drafts.** Charles asked to
 compare the same method in three spaces. The public
 [comparison page](../products/landing/organizing-ideas.html), at

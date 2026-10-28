@@ -15,6 +15,7 @@ entry pages, after the action
 | `/guests.html` | Entry page + signup |
 | `/underwater.html` | Entry page + signup |
 | `/one-room.html` | Entry page + signup |
+| `/dinner.html` | Six-step table reset; completion links directly to the longer table checklist, with no signup |
 | `/office.html` | Entry page + signup. Added 2026-10-06; not linked from the homepage picker; MailerLite group not wired yet |
 | `/index-parents.html` | Parent page — send them a door, no form |
 | `/partners.html?from=<source>` | Small-pilot page for mentors, churches and campuses |
@@ -51,7 +52,9 @@ Pillow, ReportLab, and `qrcode`.
 **Account ID:** `2635985`  
 **Embedded form ID:** `00ZwEr`
 
-The form is embedded on every entry page and its completion page.
+The form is embedded on email-collecting entry routes and their completion pages.
+The dinner route instead offers the longer free table checklist directly; it
+does not collect addresses or need a new automation.
 Do not put it back on the homepage. The
 completion pages reuse the originating door tag, so the reader receives the
 same three-email sequence whether they signed up in reading mode or immediately
