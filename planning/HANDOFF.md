@@ -97,6 +97,18 @@ to be captured; the template's prompts are ours. No MailerLite update is needed.
 
 ## Open threads (nothing is blocking)
 
+**Added 2026-10-27 — guide-derived felt-pain entrances.** Six new six-step
+pages cover clean laundry piles, a simple bean-wrap dinner, a suitable cleaner
+for one kitchen surface, a useful sitting spot, a kitchen ready for breakfast,
+and one shared dishes agreement. The
+[coverage brief](../products/landing/briefs/felt-pain-guides.md) maps the full
+guide library to new or existing entrances. Each new route uses doing mode,
+Letter printing, a calendar option, and a no-signup completion page with no
+longer-checklist links. The homepage groups eleven choices by immediate need;
+office stays direct-link. Longer guides and PDFs are preserved. No new
+MailerLite setup or live-account work is needed. Reader appeal, completion,
+and lasting outcomes remain untested.
+
 **Updated 2026-10-27 — dinner links and calendar.** Charles asked to de-link
 the longer checklists for now. The dinner page and its completion page no
 longer link to them; all longer draft files remain intact. Dinner now opts into

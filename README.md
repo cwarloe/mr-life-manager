@@ -188,7 +188,7 @@ verify it and learn from real people.
       [ADR-016](planning/decisions.md#adr-016--the-sequence-shrinks-unconditionally);
       both under review as of 2026-10-03 — keep existing pages and emails; don't
       cite as settled for new work until re-decided)
-- ✅ Entry pages live, each with its own sequence drafted —
+- ✅ Original entry pages live, each with its own sequence drafted —
       [first night](products/landing/first-night.html) ·
       [someone's coming over](products/landing/guests.html) ·
       [just underwater](products/landing/underwater.html) ·
@@ -200,9 +200,15 @@ verify it and learn from real people.
       Completeness is enforced by
       [`check_entry_pages.py`](.github/scripts/check_entry_pages.py)
 - ✅ **Post-completion path added** — doing mode now ends at a distinct,
-      no-index completion page for each door. Those pages expose the earned
-      email ask instead of sending a finisher
-      back to the top of the free page.
+      no-index completion page for each door, instead of sending a finisher
+      back to the top of the free page. Original email routes retain their
+      signup; the newer quick-win routes end at the completed task.
+- ✅ **Felt-pain entrances added** — the dinner-table reset plus six actions
+      derived from the guide library: laundry piles, making a simple dinner,
+      choosing a cleaner, a useful sitting spot, tomorrow's kitchen, and a
+      shared dishes agreement. Each has six steps, a calendar option, a
+      one-page print layout, and no new email automation. See the
+      [coverage brief](products/landing/briefs/felt-pain-guides.md).
 - ✅ **Distribution path added** — parents, mentors, churches, and campuses can
       run a five-person free pilot from `partners.html`. Safe source labels carry
       through a completed task into reservation emails without cookies, and a

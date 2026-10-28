@@ -45,7 +45,7 @@ class EntryRoute:
         return f"finished-{self.slug}.html"
 
 
-# Entry routes in homepage picker order; the sitemap lists them in this order.
+# Entry routes; the homepage groups these by present need. Sitemap uses this order.
 ENTRY_ROUTES: tuple[EntryRoute, ...] = (
     EntryRoute(
         slug="first-night",
@@ -83,6 +83,48 @@ ENTRY_ROUTES: tuple[EntryRoute, ...] = (
         slug="dinner",
         door_title="Dinner's ready. There's nowhere to eat.",
         completion_message="You made room to sit down and eat. Enjoy the meal. The basket can wait until after dinner.",
+        share_image="home.png",
+        email_signup=False,
+    ),
+    EntryRoute(
+        slug="laundry-pile",
+        door_title="All my clean clothes are still in a pile.",
+        completion_message="One basket is empty, the clothes have homes, and tomorrow's outfit is ready.",
+        share_image="home.png",
+        email_signup=False,
+    ),
+    EntryRoute(
+        slug="make-dinner",
+        door_title="It's dinnertime. I don't know what to make.",
+        completion_message="You made and served a meal from beans and tortillas.",
+        share_image="home.png",
+        email_signup=False,
+    ),
+    EntryRoute(
+        slug="cleaning-start",
+        door_title="I don't know what to use to clean this.",
+        completion_message="One kitchen work surface is ready to use, and its cleaning supplies have a known home.",
+        share_image="home.png",
+        email_signup=False,
+    ),
+    EntryRoute(
+        slug="comfortable-room",
+        door_title="This room is clean. I still don't want to sit in it.",
+        completion_message="One seat has useful light, somewhere reachable to put an item, and room to sit comfortably.",
+        share_image="home.png",
+        email_signup=False,
+    ),
+    EntryRoute(
+        slug="kitchen-close",
+        door_title="I wake up to yesterday's kitchen mess.",
+        completion_message="Breakfast dishes and one usable working patch are ready for morning.",
+        share_image="home.png",
+        email_signup=False,
+    ),
+    EntryRoute(
+        slug="shared-dishes",
+        door_title="We keep arguing about the dishes.",
+        completion_message="Both people accept a written owner, a clear finish standard, and a first deadline for the dishes.",
         share_image="home.png",
         email_signup=False,
     ),

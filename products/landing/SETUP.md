@@ -16,6 +16,12 @@ entry pages, after the action
 | `/underwater.html` | Entry page + signup |
 | `/one-room.html` | Entry page + signup |
 | `/dinner.html` | Six-step table reset with a calendar option; completion ends at the win, with no signup |
+| `/laundry-pile.html` | Put one basket of clean clothes away and get tomorrow's outfit ready |
+| `/make-dinner.html` | Make a simple bean-wrap meal from stated ingredients |
+| `/cleaning-start.html` | Clean one kitchen work surface using a suitable product |
+| `/comfortable-room.html` | Make one sitting spot usable and comfortable |
+| `/kitchen-close.html` | Leave breakfast dishes and a working patch ready for morning |
+| `/shared-dishes.html` | Make one shared agreement about who owns the dishes |
 | `/office.html` | Entry page + signup. Added 2026-10-06; not linked from the homepage picker; MailerLite group not wired yet |
 | `/index-parents.html` | Parent page — send them a door, no form |
 | `/partners.html?from=<source>` | Small-pilot page for mentors, churches and campuses |
@@ -56,6 +62,10 @@ The form is embedded on email-collecting entry routes and their completion pages
 The dinner route ends at the completed win. It does not collect addresses or
 need a new automation. Its “Not right now” option creates a calendar invite,
 using the shared deferred-start flow; the reminder stays in the reader's calendar.
+The six guide-derived routes listed above use the same no-signup completion
+and calendar pattern. Their 10- or 15-minute calendar blocks reserve time to
+begin, rather than promise a tested completion time. Existing signup routes
+and their email delivery remain unchanged.
 Do not put it back on the homepage. The
 completion pages reuse the originating door tag, so the reader receives the
 same three-email sequence whether they signed up in reading mode or immediately

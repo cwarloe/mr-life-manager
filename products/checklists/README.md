@@ -54,6 +54,14 @@ Write a `brief.md` before building — see [../README.md](../README.md).
 
 ## Status
 
+**Felt-pain entrances, 2026-10-27:** the guide library now has six additional
+six-step action pages for laundry piles, making dinner, choosing a cleaner,
+a usable sitting spot, tomorrow's kitchen, and a shared dishes agreement.
+The [coverage brief](../landing/briefs/felt-pain-guides.md) maps every guide to
+its short entrance and distinguishes source content from our adaptations.
+The longer guide and PDF files remain intact; the new pages end at a small
+win without promoting longer checklists or collecting email.
+
 **Three organizing versions, 2026-10-27:**
 [junk drawers](reset-your-space/versions/junk-drawers.md),
 [things put away and lost](reset-your-space/versions/cant-find-things.md), and
