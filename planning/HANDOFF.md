@@ -43,6 +43,20 @@ picker drift. Older entries below describe previous publication states.
   Everything under `source-material/` is **verbatim, never edited, not even for
   spelling.** Interpretation goes in separate analysis files.
 
+## Completion audit, 2026-10-28
+
+Charles requested an agent review of cognitive load, time, and actual completion.
+The [sourced audit](../docs/research/checklist-completion-audit.md) combines an
+independent agent review with research and a route-by-route task analysis.
+Dinner is the strongest pilot candidate; first-night and guests are conditional;
+underwater and one-room need revision before their broad fixed-time promises
+are defensible. None has measured completion evidence from this audit. Keep the
+full outcomes: clarify prerequisites/workload and calibrate timing through
+observed full-task sessions rather than counting partial tasks as finished.
+The audit includes proposed corrections and an exploratory pilot protocol.
+Public pages, calendar durations and analytics were not changed by the audit;
+these remain open implementation work. No participants were contacted.
+
 ## Finish-line copy, 2026-10-28
 
 Each of the five active entry pages now states a concrete result before the
