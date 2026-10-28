@@ -8,6 +8,7 @@ import sys
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit
+from check_preview_site import check_preview_site
 
 from guide_inventory import LEGACY_GUIDE_SLUGS, PAUSED_GUIDE_SLUGS, PUBLISHED_PDF_NAMES, PDF_TITLES
 from site_catalog import (
@@ -192,7 +193,8 @@ def main() -> int:
         if path in legacy_pages:
             continue
         has = UMAMI_SCRIPT_URL in path.read_text(encoding="utf-8")
-        if bool(UMAMI_WEBSITE_ID) != has:
+        expected_analytics = bool(UMAMI_WEBSITE_ID) and not path.is_relative_to(OUT / "preview")
+        if expected_analytics != has:
             problems.append(f"{path.relative_to(OUT)}: analytics script "
                             f"{'missing' if UMAMI_WEBSITE_ID else 'present without an ID'}")
     if UMAMI_WEBSITE_ID and "Umami" not in privacy_text:
@@ -203,6 +205,7 @@ def main() -> int:
     if "finished-" in sitemap:
         problems.append("sitemap.xml: completion pages must stay out of search")
 
+    check_preview_site(OUT, problems)
     if problems:
         print("Built-site validation failed:", file=sys.stderr)
         for problem in problems:

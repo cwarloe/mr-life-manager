@@ -1,5 +1,7 @@
 # Landing Page — Setup
 
+Owner review: [unlisted draft previews](https://mrlifemanager.com/preview/) show the retained revisions outside the five-entry flow. Preview forms and production tracking are disabled; the ordinary paused URLs remain redirects.
+
 **Current scope, 2026-10-27:** five active entrances, in order: first night,
 guests, dinner, underwater, and one room. Other task pages and reference guides
 are paused, with source retained. Old HTML links redirect to the homepage.

@@ -11,6 +11,8 @@ on:
       - "products/landing/assets/**"
       - "products/print/**"
       - ".github/scripts/build_site.py"
+      - ".github/scripts/preview_site.py"
+      - ".github/scripts/check_preview_site.py"
       - ".github/scripts/site_catalog.py"
       - ".github/scripts/guide_inventory.py"
       - ".github/scripts/check_built_site.py"

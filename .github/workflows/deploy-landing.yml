@@ -14,6 +14,8 @@ on:
       - "products/print/**"
       - "products/guides-pdf/**"
       - ".github/scripts/build_site.py"
+      - ".github/scripts/preview_site.py"
+      - ".github/scripts/check_preview_site.py"
       - ".github/scripts/site_catalog.py"
       - ".github/scripts/guide_inventory.py"
       - ".github/workflows/deploy-landing.yml"

@@ -4,6 +4,16 @@ Revised 2026-10-28 following the
 [completion and cognitive-load audit](paused-checklist-completion-audit.md).
 Charles authorized preparing this material for later use, not reactivating it.
 
+## Live review
+
+Browse the revised material at [the preview index](https://mrlifemanager.com/preview/).
+Charles authorized this separate review section after the source revisions.
+It is outside normal navigation and the five-entry workflow, marked noindex,
+and has no signup forms or production analytics. Preview tasks, completion
+screens and calendar links stay within the review section; reference pages
+include the saved PDFs. Ordinary paused URLs continue to redirect home. These
+are public links for review, not a promotion into the standard offering.
+
 ## Current status
 
 All 20 audited source surfaces have been revised. They are prepared for a

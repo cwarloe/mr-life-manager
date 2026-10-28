@@ -4,6 +4,7 @@ from __future__ import annotations
 import html as html_lib
 import re, shutil, sys
 from pathlib import Path
+from preview_site import build_preview
 
 from guide_inventory import GUIDES, LEGACY_GUIDE_SLUGS, PDF_TITLES, PAUSED_GUIDE_SLUGS, PUBLISHED_PDF_NAMES
 from site_catalog import (
@@ -96,7 +97,7 @@ def apply_analytics() -> int:
     count = 0
     for path in sorted(OUT.rglob("*.html")):
         text = path.read_text(encoding="utf-8")
-        if REDIRECT_MARKER in text:
+        if REDIRECT_MARKER in text or path.is_relative_to(OUT / "preview"):
             continue
         new = text
         if UMAMI_WEBSITE_ID:
@@ -325,8 +326,9 @@ def main() -> int:
         },
     ).replace("__TOKENS__", tokens)
     (OUT / "print" / "index.html").write_text(print_index, encoding="utf-8")
+    build_preview(ROOT, OUT)
     (OUT / "robots.txt").write_text(
-        f"User-agent: *\nAllow: /\n\nSitemap: {ORIGIN}/sitemap.xml\n",
+        f"User-agent: *\nAllow: /\nDisallow: /preview/print/\n\nSitemap: {ORIGIN}/sitemap.xml\n",
         encoding="utf-8",
     )
     urls = sitemap_core_urls()

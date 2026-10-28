@@ -43,6 +43,28 @@ picker drift. Older entries below describe previous publication states.
   Everything under `source-material/` is **verbatim, never edited, not even for
   spelling.** Interpretation goes in separate analysis files.
 
+## Unlisted live review section, 2026-10-28
+
+Charles requested viewing the revised paused material live outside the standard
+workflow. `/preview/` now indexes twenty review choices: seven short tasks,
+four organizing drafts plus their comparison, and eight reference guides.
+Guide pages link to `/preview/print/` copies of the eight current saved PDFs.
+The full twelve-step Markdown checklist is rendered to HTML; the three longer
+variants remain on the synchronized comparison page with separate anchor links.
+
+`preview_site.py` builds from retained sources, adds draft/back-to-index chrome,
+noindex metadata and no sitemap entries. It removes forms/MailerLite, and uses
+a generated execution-script copy with production tracking/signup code removed.
+Completion pages and calendar return URLs stay inside `/preview/`; ordinary
+paused URLs and five normal choices are unchanged. Preview PDF crawling is
+excluded in robots.txt. `check_preview_site.py`, called by the normal built-site
+checker, guards inventory, noindex, local links, source PDF equality, tracking
+isolation and absence of links from the standard site. Workflow path filters
+include the new modules. Browser review covers320/375px, all seven task flows,
+calendar/resume, one-page printing, twelve full-reset and24variant checkboxes,
+three-page comparison printing and reference layouts. This is unlisted public
+review, not reader validation or approval to promote the drafts.
+
 ## Paused drafts revised, 2026-10-28
 
 Charles authorized improving the paused material for later use while keeping

@@ -12,6 +12,17 @@ Only `the-week.pdf` (promised by active emails) and `partner-pilot.pdf` remain
 published. Resume other material when Charles says it is ready. Older notes
 about live draft routes describe the previous state.
 
+## Owner review previews
+
+Charles authorized an unlisted live review section at `/preview/` on 2026-10-28.
+It displays retained drafts and guide PDFs without reactivating standard routes.
+`preview_site.py` generates it directly from the revised sources. Preview HTML
+is noindex, excluded from the sitemap and normal navigation, uses a preview
+copy of the execution script with events/signup helpers removed, and has no
+email forms or production analytics. Completion and calendar links stay within
+`/preview/`. Normal paused URLs still redirect home. This is a public review URL,
+not authentication or approval to add drafts to the five main choices.
+
 ## Division of labor
 
 **Claude makes the changes and pushes them. A bot does everything
