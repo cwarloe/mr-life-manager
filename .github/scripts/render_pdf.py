@@ -18,6 +18,8 @@ PRINT_SCALE = ROOT / "products" / "guides-pdf" / ".print-scale.json"
 # Scales from tune_print_scale.py; under 5% gain is noise, so render at 1.0.
 MIN_ZOOM = 1.05
 CHROME_CANDIDATES = (
+    "C:/Program Files/Google/Chrome/Application/chrome.exe",
+    "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe",
     "/opt/pw-browsers/chromium-1194/chrome-linux/chrome",
     "/usr/bin/google-chrome",
     "/usr/bin/google-chrome-stable",
