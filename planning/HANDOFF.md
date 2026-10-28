@@ -97,6 +97,14 @@ to be captured; the template's prompts are ours. No MailerLite update is needed.
 
 ## Open threads (nothing is blocking)
 
+**Updated 2026-10-27 — dinner links and calendar.** Charles asked to de-link
+the longer checklists for now. The dinner page and its completion page no
+longer link to them; all longer draft files remain intact. Dinner now opts into
+the shared “Not right now” calendar flow, reserving ten minutes to start and
+preserving source attribution and mid-task resume steps. Completion ends at
+the win, without an email signup or next-step offer. The route catalog now
+declares `email_signup` explicitly rather than inferring it from a next URL.
+
 **Added 2026-10-27 — dinner entry point.** Charles chose “Dinner's ready.
 There's nowhere to eat.” The six-step page at `/dinner.html` is linked from
 the homepage and parent/partner pages. It makes the table and needed seats

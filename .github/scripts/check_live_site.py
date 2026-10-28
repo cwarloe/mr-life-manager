@@ -38,7 +38,7 @@ def _entry_pages() -> dict[str, tuple[str, ...]]:
         )
         if route.collects_email:
             pages[f"/{route.completion_page}"] += (MAILERLITE_FORM_ATTR, MAILERLITE_JS_URL, "ml-fallback")
-        else:
+        elif route.next_url:
             pages[f"/{route.completion_page}"] += (f'href="{route.next_url}"', route.next_title)
     pages["/partners.html"] = PARTNERS_LIVE_MARKERS
     pages["/privacy.html"] = PRIVACY_LIVE_MARKERS

@@ -85,9 +85,10 @@ def main() -> int:
         if not route.collects_email:
             if 'class="ml-embedded"' in s:
                 problems.append(f"{path.name}: direct-next route must not collect email")
-            target = ROOT / "products" / "landing" / route.next_url.lstrip("/").split("#", 1)[0]
-            if not target.is_file() or not route.next_title or not route.next_description:
-                problems.append(f"{path.name}: direct next step must have an existing target and descriptive copy")
+            if route.next_url:
+                target = ROOT / "products" / "landing" / route.next_url.lstrip("/").split("#", 1)[0]
+                if not target.is_file() or not route.next_title or not route.next_description:
+                    problems.append(f"{path.name}: direct next step must have an existing target and descriptive copy")
 
     # Warn on unexpected steps pages outside the catalog (orphan HTML).
     expected_names = {route.page for route in ENTRY_ROUTES}

@@ -1,7 +1,8 @@
 # Entry brief — Dinner's ready. There's nowhere to eat.
 
-**Status:** Six-step entry point, 2026-10-27. Headline accepted by Charles;
-reader completion and timing remain untested. No completion-time estimate.
+**Status:** Six-step entry point, updated 2026-10-27. Headline accepted by Charles;
+reader completion and timing remain untested. The calendar reserves ten minutes
+to start; this is a planning block, not a tested completion-time estimate.
 
 ## Who, problem, and outcome
 
@@ -28,7 +29,8 @@ Primary domain: Home; secondary: Hospitality
 
 The basket is explicitly unfinished. The win is eating tonight, not solving
 storage. The [eight-step table checklist](../organizing-ideas.html#clear-the-table)
-is the optional next level when the reader has time to assign real homes.
+is preserved for a later level when the reader has time to assign real homes.
+Per Charles, the longer checklists are de-linked from the dinner flow for now.
 The [three eight-step drafts](../../checklists/reset-your-space/versions/brief.md)
 and [twelve-step guide](../../checklists/reset-your-space/checklist.md) remain intact.
 
@@ -52,11 +54,17 @@ the shared one-step-at-a-time doing mode and browser-printed action sheet.
 Homepage, parent, and partner pages link to `/dinner.html`.
 
 The completion path is `/finished-dinner.html`, generated from
-`finished-next.html`. It offers one direct link to the longer table checklist.
+`finished-next.html`. It ends at the win with no longer-checklist offer.
 This route collects no email, makes no delivery promise, and requires no new
 MailerLite setup. Existing email-collecting routes retain their requirements.
-This is a choice to deliver the next useful free task directly, not a pricing
-decision about tiers 2 or 3.
+This does not decide pricing for tiers 2 or 3.
+
+The shared “Not right now” flow lets the reader choose a specific date and time,
+download an ICS invite or open Google Calendar, and return to the task. A
+ten-minute block is reserved to start. The return URL preserves the source tag
+and the current step when rescheduling mid-task. The existing two-move limit
+also applies. No reminder is sent or scheduled by our site; the reader adds it
+to their own calendar.
 
 ## Still to learn
 

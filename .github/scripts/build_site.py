@@ -202,8 +202,13 @@ def main() -> int:
     completion_template = (LANDING / "templates" / "finished.html").read_text(encoding="utf-8")
     for route in ENTRY_ROUTES:
         template = ((LANDING / "templates" / "finished-next.html").read_text(encoding="utf-8")
-                    if route.next_url else completion_template)
-        rendered = (template
+                    if not route.collects_email else completion_template)
+        next_step = ('''<section class="next-step">
+<h2>__NEXT_TITLE__</h2>
+<p>__NEXT_DESCRIPTION__</p>
+<a href="__NEXT_URL__">Keep the next checklist for later →</a>
+</section>''' if route.next_url else "")
+        rendered = (template.replace("__NEXT_STEP__", next_step)
                     .replace("__DOOR__", route.door_title)
                     .replace("__MESSAGE__", route.completion_message)
                     .replace("__GUIDE__", route.slug)

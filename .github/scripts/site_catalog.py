@@ -27,13 +27,14 @@ class EntryRoute:
     door_title: str
     completion_message: str
     share_image: str
+    email_signup: bool = True
     next_url: str = ""
     next_title: str = ""
     next_description: str = ""
 
     @property
     def collects_email(self) -> bool:
-        return not self.next_url
+        return self.email_signup
 
     @property
     def page(self) -> str:
@@ -83,9 +84,7 @@ ENTRY_ROUTES: tuple[EntryRoute, ...] = (
         door_title="Dinner's ready. There's nowhere to eat.",
         completion_message="You made room to sit down and eat. Enjoy the meal. The basket can wait until after dinner.",
         share_image="home.png",
-        next_url="/organizing-ideas.html#clear-the-table",
-        next_title="Keep having to clear the table?",
-        next_description="When you have the time, give the things in that basket useful homes. The longer table checklist walks you through it.",
+        email_signup=False,
     ),
     EntryRoute(
         slug="office",

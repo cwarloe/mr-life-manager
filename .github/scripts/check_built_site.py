@@ -88,12 +88,15 @@ def main() -> int:
         if route.collects_email:
             markers += (MAILERLITE_FORM_ATTR, MAILERLITE_JS_URL, "ml-fallback")
         else:
-            markers += (f'href="{route.next_url}"', route.next_title)
             if MAILERLITE_FORM_ATTR in completion_text or "ml-embedded" in completion_text:
                 problems.append(f"{completion}: direct-next route must not collect email")
-            next_path = OUT / route.next_url.lstrip("/").split("#", 1)[0]
-            if not next_path.is_file():
-                problems.append(f"{completion}: next-step target does not exist")
+            if route.next_url:
+                markers += (f'href="{route.next_url}"', route.next_title)
+                next_path = OUT / route.next_url.lstrip("/").split("#", 1)[0]
+                if not next_path.is_file():
+                    problems.append(f"{completion}: next-step target does not exist")
+            elif 'class="next-step"' in completion_text:
+                problems.append(f"{completion}: unexpected next-step offer")
         for marker in markers:
             if marker not in completion_text:
                 problems.append(f"{completion}: missing {marker}")
