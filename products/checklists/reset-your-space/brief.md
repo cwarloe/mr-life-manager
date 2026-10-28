@@ -1,6 +1,7 @@
 # Product brief — Reset Your Space
 
-**Status:** Complete Markdown checklist draft, 2026-10-27. Not reader-tested.
+**Status:** Paused Markdown draft, revised after completion audit on 2026-10-28. Not reader-tested; no measured completion or timing claim.
+**Audit:** [Paused checklist review](../../../docs/research/paused-checklist-completion-audit.md).
 **File:** [checklist.md](checklist.md). Reader-facing wording is ours.
 
 ## Audience, problem, and outcome
@@ -54,7 +55,7 @@ See its [analysis](../../../source-material/2014-01-15-analysis.md) and the
 | 11: a specific time for the next action | 12:53–13:25 |
 | 12: final retrieval-and-return check | Our practical test of the placement principles |
 
-Bounding the work to one area, a finish time, labels as an alternative to clear
+Bounding the work to a named complete area, labels as an alternative to clear
 containers, completing trash removal, and a final usability check are our
 adaptations. The recording shows trash staged by the door, not its final
 removal. It does not establish a maintenance cadence or a lasting outcome.
@@ -68,3 +69,12 @@ Have a reader use the twelve actions on one real area. Check whether the four
 groups make sense, the area is left usable, and the chosen homes are easy to
 use afterward. Storage purchases and scheduled handoffs remain unfinished
 until they actually happen.
+
+## Completion-audit revisions
+
+The twelve actions remain. Before starting, the reader defines the complete area,
+checks capacity, staging, access and permission, and names a practical use test.
+Grouping stays within the boundary. Protected review items and pending handoffs
+have labeled waiting places, owners and times. A usable area is distinguished
+from actions that remain unfinished. These are our design revisions, not
+additional transcript claims. No public route or publication flag changed.

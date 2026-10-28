@@ -1,15 +1,16 @@
 # Product brief — three organizing checklist versions
 
-**Status:** Three complete comparison drafts, 2026-10-27; not reader-tested.
-**Public comparison page:** `/organizing-ideas.html`.
+**Status:** Three paused comparison drafts, revised after completion audit on 2026-10-28; not reader-tested.
+**Comparison URL:** `/organizing-ideas.html` redirects to current choices while paused.
+**Audit:** [Paused checklist review](../../../../docs/research/paused-checklist-completion-audit.md).
 **Source page:** [organizing-ideas.html](../../../landing/organizing-ideas.html).
 
 ## The three versions
 
 | Draft | Felt problem | Space and scope | Finished win |
 |---|---|---|---|
-| [Every drawer has become a junk drawer](junk-drawers.md) | Finding a basic tool means searching several drawers. | The kitchen drawers used for an ordinary meal, completed one drawer at a time. | Everyday cooking and eating tools are visible and easy to retrieve. |
-| [I put things away, then can't find them](cant-find-things.md) | Putting something away makes it disappear into storage. | One household cupboard or hall closet, anchored to five frequently sought items. | Contents are recognizable; available essentials are retrievable; missing items have specific next actions. |
+| [Every drawer has become a junk drawer](junk-drawers.md) | Finding a basic tool means searching several drawers. | The full named set of kitchen drawers for an ordinary meal, restored one drawer at a time. | Required tools are findable and returnable; missing required tools block the full win. |
+| [I put things away, then can't find them](cant-find-things.md) | Putting something away makes it disappear into storage. | A named cupboard or closet section, with up to five real target items. | Storage usability and found/missing targets are recorded as separate results. |
 | [I have to clear the table before we can eat](clear-the-table.md) | The table and chairs serve as storage instead of a place to eat. | One dining table and the seats normally needed for meals. | Set the places and sit down without moving a pile. |
 
 Eight actions each. This is not an experiment in whether six beats twelve
@@ -42,13 +43,14 @@ and 10 (teach the reason).
 
 Free task checklists under ADR-020 and ADR-022 in the
 [decision log](../../../../planning/decisions.md). They may become distinct entry
-points after review. This iteration publishes all three on one printable public
-comparison page. It does not choose a winner, add three homepage choices, or
+points after review. The retained printable comparison source contains all three. It remains paused
+and is not published as a task page. It does not choose a winner, add homepage choices, or
 create signup promises and automations. There is no new paid offer.
 
-The public page is direct-link for comparison, with semantic anchors for each
-version and browser checkboxes. It is a review surface, not a registered
-doing-mode entry page. Existing entry pages and email sequences continue to work.
+The retained HTML has semantic anchors and browser checkboxes for comparison,
+with task wording synchronized to these Markdown versions. It is a review
+surface, not a registered doing-mode entry page. Existing entry pages and
+email sequences continue to work.
 
 ## Sources and adaptations
 
@@ -81,3 +83,15 @@ whether they start and reach the specific finish: retrieve meal tools, retrieve
 household supplies, or sit down at the table. At follow-up, ask whether the homes
 are still usable. Headline preference, task completion, and durability are
 different observations; there is no winner or measured completion-time claim yet.
+
+## Completion-audit revisions
+
+All three variants keep eight steps and their full practical outcomes. Drawer
+work names the entire meal-tool drawer set before starting; the other versions
+name the full storage section or required seats. Capacity, staging, permission
+and accessible homes are checked up front. No rapid keep/discard rule or
+promised duration was added. Protected review belongings and pending handoffs
+are labeled with a waiting place, action, owner and time. A scheduled search is
+not a found item; usable storage is distinguished from pending work. The table
+version is a planned storage intervention, separate from the active dinner
+clear-off. These are our adaptations; reader trials and follow-up remain needed.

@@ -2,13 +2,15 @@
 
 Get your everyday kitchen tools out of the jumble, so making dinner starts with cooking instead of searching.
 
-**Today's job:** Work on the kitchen drawers you reach into to prepare and eat a normal meal. Leave the bedroom, office, and other drawers for another day. Finish one drawer before emptying the next.
+**Today's job:** Reset the full set of kitchen drawers used to prepare and eat an ordinary meal. Write down which drawers are included before opening the first. Leave other drawers and rooms outside this session. Finish one drawer before emptying the next; the job ends after the whole selected set passes the tool test.
 
-**Have ready:** A clear patch of counter, a cloth, a trash bag, and a box for things leaving the kitchen. Small containers you already own can serve as dividers.
+**Have ready:** Counter space for one drawer's contents, a suitable cleaning cloth, a trash bag, a return box, and paper for labels and pending actions. Existing small containers can serve as dividers.
 
-- [ ] **1. Name what you keep hunting for.** Write down the cooking and eating tools you regularly need: perhaps the can opener, measuring spoons, spatula, and forks. These are the things your finished drawers must make easy to find.
+**Before starting:** Check that the selected drawers and an accessible overflow spot have room for the keepers. Agree on shared drawer changes and disposal decisions with their owners. Arrange access before emptying anything. This is a planned storage reset, with no promised completion time.
 
-- [ ] **2. Sort the first drawer.** Empty one drawer onto the clear patch of counter. Separate trash, giveaways, things you use often, and things you use occasionally. Put items that belong outside the kitchen in the return box. Decide only about your own belongings or ask the owner.
+- [ ] **1. Name the tools and drawers for a real meal.** Write down the cooking and eating tools you need, such as the can opener, measuring spoons, spatula, and forks. Match them to your selected drawers. If a needed tool is missing, list it separately; do not turn this into a search through other rooms.
+
+- [ ] **2. Sort the first drawer.** Empty only this drawer onto the clear counter. Separate obvious trash, giveaways, frequent-use keepers, and occasional-use keepers. Put known misplaced items in the return box. Protect borrowed items or anything needing an owner's decision in a labeled review place, with a time to ask; do not discard them to finish faster.
 
 - [ ] **3. Group the keepers.** Put utensils with utensils and cooking tools with cooking tools. Compare duplicates by what you actually use. Keep useful spares deliberately; you do not need to discard something merely to make the drawer look sparse.
 
@@ -16,17 +18,19 @@ Get your everyday kitchen tools out of the jumble, so making dinner starts with 
 
 - [ ] **5. Put the everyday things back where you can see them.** Separate groups with a tray or existing small containers where helpful. Keep the tools you reach for most easy to grasp, rather than buried under occasional-use tools. Put occasional-use items together in a less prominent, reachable spot.
 
-- [ ] **6. Repeat with the other meal-time drawers.** Finish each drawer before opening the next. As matching tools turn up, put them in the home you just chose. If a drawer becomes overfull, move an occasional-use group to a named home elsewhere instead of pressing everything down to make it close.
+- [ ] **6. Finish every drawer on your selected list.** Repeat steps 2–5, restoring each drawer before opening the next. Put matching tools into the groups you chose. Use the checked overflow spot for occasional-use groups. If the keepers still do not fit, record the capacity problem; do not empty unrelated storage or force the drawer closed.
 
-- [ ] **7. Finish the things that are leaving.** Put the return-box items in their actual homes and take out the trash. Choose a recipient or destination for giveaways and write the next action with a specific time. Count and measure any dividers still needed; a purchase can wait if the drawers work now.
+- [ ] **7. Complete returns and record pending exits.** Empty the return box into the actual homes and take out the trash. Give pending giveaways and review items a labeled waiting place outside the work area, with a next action, owner, and exact time. Count or measure any storage gap. Pending items have not been removed or decided about yet.
 
-- [ ] **8. Try getting ready to cook.** Find the items on your list, take them out, and return them. If you have to dig or lift a pile, adjust that group. Close every drawer and leave the counter clear. You are finished when the tools for an ordinary meal are findable and have places to return to.
+- [ ] **8. Test all the selected drawers.** Retrieve and return every available tool on your meal list without digging through a pile. Adjust awkward groups, close every selected drawer, and leave the counter and return box clear. If a required tool is missing or lacks a usable home, record the blocker; the meal-tool win is not complete yet.
 
-**Your finished win:** You can prepare and eat a normal meal without searching several drawers for the basics. An unrelated drawer can still be untidy.
+**Your finished win:** The full selected drawer set works: the tools for your ordinary meal are findable, easy to return, and the counter is clear. Missing required tools remain unresolved; a written search plan is not a found tool.
 
 **Keep the result:** Return each tool to its group after use. If a group keeps overflowing, revisit what needs daily access instead of starting a new junk drawer.
 
-**What still needs action:** ____________________
+**Pending item and waiting place:** ____________________
+
+**Next action:** ____________________
 
 **Who will do it, and when:** ____________________
 

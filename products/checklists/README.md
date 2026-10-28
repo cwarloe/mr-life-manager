@@ -1,5 +1,7 @@
 # Checklists
 
+Current paused-draft revisions and review links: [readiness index](../../docs/research/paused-checklist-readiness.md). Revised sources remain unpublished pending later pilot/use testing.
+
 **Publication paused, 2026-10-27.** Charles is focusing the public site on
 first night, guests, dinner, underwater, and one room. The reference guides,
 their PDFs, the organizing comparison, and the six newer entrances are retained

@@ -2,9 +2,9 @@
 
 Make one area usable, with things you can find, reach, and put away.
 
-Start with one cabinet, closet section, work surface, or other manageable area.
-Choose an amount you can put back before you need to stop. Work through the
-list in order; repeat it for another area afterward.
+Choose and write down the complete area: a named cabinet, closet section, or work surface. Leave neighboring areas outside this session. Work through all twelve actions, including returns and the final use test. Another area is a separate session.
+
+**Before starting:** Check that the kept items have room to return, that you have a clear staging surface, and that you can move the contents safely. Ask before changing shared storage or deciding about someone else's belongings. If access or permission is missing, arrange it before emptying the area. This is a planned reset with no promised duration.
 
 **Have ready:** a trash bag, somewhere to collect giveaways, a cleaning cloth,
 and paper for an action list and a supply list. Use containers you already have
@@ -12,14 +12,14 @@ where they work. Find out what you need before shopping.
 
 ## Decide and make room
 
-- [ ] **1. Name the result you want.** Write: “When I'm finished, I can ______ here.” Choose a practical result, such as preparing food without moving a pile first.
-- [ ] **2. Look at what you actually use.** Identify frequent-use items, occasional-use items, and things you no longer want. Check which storage is available; plan for the space you have.
+- [ ] **1. Name the result and the area.** Write: “When I'm finished, I can ______ here.” Name the shelves, drawers, or surface included and the everyday items you need for that activity. Use this same boundary for the final test.
+- [ ] **2. Look at what you use and where it can fit.** Identify frequent-use items, occasional-use items, and available storage. Check the homes for items that will leave this area. Do not solve an overfull shelf by emptying another area; record any missing capacity before opening more storage.
 - [ ] **3. Clear a place to work.** Start with easy, obvious trash and enough floor or counter space to move and sort. Keep the exit clear. A little working room makes the harder decisions easier.
 
 ## Sort and clean
 
-- [ ] **4. Sort the chosen area into four groups.** Throw away unusable trash; give away things someone else can use; keep frequent-use items together; keep occasional-use items together. Decide only about your own belongings, or ask their owner.
-- [ ] **5. Gather like things together.** Put shirts with shirts, spices with spices, or equipment with its accessories. Bring matching items from elsewhere only if you can finish putting them away today.
+- [ ] **4. Sort one section into four groups.** Separate obvious trash, giveaways, frequent-use keepers, and occasional-use keepers. Restore each section before opening the next. Keep borrowed items, unfamiliar records, and belongings needing another person's decision together in a labeled review place; do not discard them to keep moving. Record who must decide and when you will ask.
+- [ ] **5. Gather like things within the chosen area.** Put shirts with shirts, spices with spices, or equipment with its accessories. Return known misplaced items to their homes in batches. If a matching item is elsewhere or missing, note it rather than opening another room's storage.
 - [ ] **6. Clean the space you've exposed.** Wipe the shelf, drawer, or surface before filling it again. Work through a small section at a time so the reset stays manageable.
 
 ## Give things useful homes
@@ -30,21 +30,21 @@ where they work. Find out what you need before shopping.
 
 ## Finish and keep the result
 
-- [ ] **10. Write down the storage gaps.** List the hangers, tray, boxes, or shelving still needed. Count or measure before buying. Give anything waiting for supplies a named temporary place.
-- [ ] **11. Complete the exits and date the next actions.** Take trash out. Arrange a recipient or destination for giveaways. If a handoff, purchase, or decision must wait, write the next action, who owns it, and exactly when it will happen.
-- [ ] **12. Try the space, then put it back.** Do the activity you named in step 1. Find an everyday item, use it, and return it to its home. Adjust anything that makes this awkward. Return items there after use so the next reset is smaller.
+- [ ] **10. Record storage gaps and pending work.** List supplies with quantities or dimensions before buying. Label the specific place where each unresolved group waits, with its next action, owner, and time. If needed everyday items still lack usable homes, the reset has not reached its finish; a supply list does not fix that gap.
+- [ ] **11. Complete returns and removals.** Put known-home items away and take trash out. Arrange a destination for giveaways. For a handoff that must wait, label its waiting place and record the next action, owner, and exact time. Leave staging and walking space clear. Record a pending handoff as pending, not removed.
+- [ ] **12. Test the full chosen area.** Do the activity from step 1: retrieve the everyday items you named, use them, and return them without moving a pile. Check that every opened section is restored and the staging surface is clear. Adjust awkward homes. If this test fails, record what blocks the finish instead of checking the reset off.
 
-**Good enough today:** the area works, everyday items are findable, and unfinished
-work has a specific next action. Better storage can follow; buying it is not a
-reason to postpone the useful work you can do now.
+**The usable-area finish:** the full chosen area supports its named activity and everyday items can be retrieved and returned. Existing labeled storage is enough if it passes that test.
+
+**Pending work is separate:** Giveaways awaiting collection, undecided belongings, and missing storage still need their written actions. A usable area does not mean those actions have happened.
 
 ### What still needs doing
 
-| Next action | Who | When exactly |
-|---|---|---|
-| | | |
-| | | |
-| | | |
+| Pending item / waiting place | Next action | Who | When exactly |
+|---|---|---|---|
+| | | | |
+| | | | |
+| | | | |
 
 | Supply needed | Quantity / dimensions |
 |---|---|

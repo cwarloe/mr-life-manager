@@ -6,6 +6,14 @@ inactive inventory. It reviews the retained source, not the redirect pages
 currently served at paused URLs. No participants were observed, no completion
 rates were measured, and no products or publication flags were changed.
 
+## Revision follow-through
+
+The audited issues below describe the earlier drafts. All 20 surfaces have
+since received the recommended design revisions; see the
+[revision status and source index](paused-checklist-readiness.md). They remain
+paused and await real-user tests. Keep this report as the earlier assessment,
+not a description of the current wording or a claim that effectiveness passed.
+
 ## Finding and scope
 
 Keep the material paused. Several drafts have promising bounded outcomes;

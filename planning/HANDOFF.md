@@ -43,6 +43,20 @@ picker drift. Older entries below describe previous publication states.
   Everything under `source-material/` is **verbatim, never edited, not even for
   spelling.** Interpretation goes in separate analysis files.
 
+## Paused drafts revised, 2026-10-28
+
+Charles authorized improving the paused material for later use while keeping
+it unpublished. All 20 audited source surfaces now have design revisions:
+seven paused entries, the comparison and four organizing drafts, and eight
+reference guides/worksheets. The [readiness index](../docs/research/paused-checklist-readiness.md)
+links each source and explains the changes, checks, and remaining real-user
+validation. The multi-drawer reset retains its full meal-tool win; recipe and
+reference procedures have concrete prerequisites and truthful outcomes.
+Eight retained reference PDFs are regenerated with updated scales and hashes.
+No active-entry source, verbatim source material, email sequence, publication
+flag, The Week PDF or partner PDF was changed. Paused URLs remain redirects;
+these are prepared for pilot review, not measured or approved for reactivation.
+
 ## Audit follow-through, 2026-10-28
 
 Charles authorized revisions to the five active checklists and asked the audit
