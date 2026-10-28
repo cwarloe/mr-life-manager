@@ -43,6 +43,18 @@ picker drift. Older entries below describe previous publication states.
   Everything under `source-material/` is **verbatim, never edited, not even for
   spelling.** Interpretation goes in separate analysis files.
 
+## Finish-line copy, 2026-10-28
+
+Each of the five active entry pages now states a concrete result before the
+start/calendar choice. Charles approved making the win clear, but rejected
+shorter finish lines for these tasks. Keep the full six steps; do not pitch
+completing only the first one or two as the finished job. Existing time blocks
+remain estimates (first night about an hour, guests 35 minutes, reset 40 minutes,
+one zone about two hours); dinner has no completion-time promise. The room
+promise is one fully finished zone, not the whole room. The task instructions,
+calendar flow, signup delivery, and publication scope are unchanged. Copy is
+an experiment, not evidence of improved completion.
+
 ## Where things stand
 
 The funnel is: one pain → one entry page → one action → one win → then the
