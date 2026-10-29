@@ -46,7 +46,7 @@ PDF_SANS_BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 PDF_SERIF = "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf"
 
 SHARES = {
-    "home.png": ("Practical systems for running a home", "Run your home without carrying all of it in your head."),
+    "home.png": ("Practical systems for running a home", "Run your home without burning brainpower on every little thing."),
     "first-night.png": ("Start here", "Your first night in a new place."),
     "guests.png": ("Start here", "Someone's coming over. Start here."),
     "underwater.png": ("Start here", "Your place is a mess. Again."),
