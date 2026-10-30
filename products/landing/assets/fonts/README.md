@@ -1,0 +1,1 @@
+Display fonts for the design-options preview only (`/preview/design.html`): Bangers (Comic Panel theme) and Saira Stencil One (Mission Board theme). Both SIL Open Font License 1.1; license texts alongside. Latin subsets in WOFF2, from github.com/google/fonts. The live site does not use them.

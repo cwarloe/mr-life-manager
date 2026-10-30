@@ -164,6 +164,7 @@ def build_preview(root: Path, out: Path) -> None:
         write(route.completion_page, completion)
 
     write('organizing-ideas.html', (root / 'products/landing/organizing-ideas.html').read_text())
+    write('design.html', (root / 'products/landing/templates/design-options.html').read_text())
     reset = markdown_checklist((root / 'products/checklists/reset-your-space/checklist.md').read_text())
     write('reset-your-space.html', shell('Reset Your Space', '<main class="review review-copy">' + reset + '</main>'))
 
@@ -185,6 +186,7 @@ def build_preview(root: Path, out: Path) -> None:
     content = ('<main class="review"><h1>Draft checklist previews</h1>'
                '<p>The revised drafts, gathered here for review. They remain outside the main site’s five entry points. '
                'Completion times and usefulness still need testing with readers.</p>'
+               '<h2>Design options</h2><div class="review-grid">' + card(PREFIX + 'design.html', 'Themes, layouts and colors', 'Home and a checklist page in three looks') + '</div>'
                '<h2>Short task pages</h2><div class="review-grid">' + entries + '</div>'
                '<h2>Longer organizing resets</h2><div class="review-grid">' + organizing + '</div>'
                '<h2>Reference guides and worksheets</h2><div class="review-grid">' + guides + '</div></main>')

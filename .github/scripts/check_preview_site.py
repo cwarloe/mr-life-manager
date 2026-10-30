@@ -26,6 +26,7 @@ def check_preview_site(out: Path, problems: list[str]) -> None:
     expected.update(r.page for r in PAUSED_ENTRY_ROUTES)
     expected.update(r.completion_page for r in PAUSED_ENTRY_ROUTES)
     expected.update(f'guides/{slug}.html' for slug, *_ in ALL_GUIDES)
+    expected.add('design.html')
     actual = {p.relative_to(preview).as_posix() for p in preview.rglob('*.html')}
     if actual != expected:
         problems.append('preview/: draft HTML inventory differs from the retained sources')
@@ -46,8 +47,8 @@ def check_preview_site(out: Path, problems: list[str]) -> None:
                 path = path / 'index.html'
             if not path.is_file():
                 problems.append(f'{page.relative_to(out)}: missing link target {url}')
-        if page == preview / 'index.html' and links.cards != 20:
-            problems.append('preview/index.html: expected twenty review cards')
+        if page == preview / 'index.html' and links.cards != 21:
+            problems.append('preview/index.html: expected twenty-one review cards (twenty drafts plus design options)')
     for route in PAUSED_ENTRY_ROUTES:
         path = preview / route.page
         if path.is_file():
