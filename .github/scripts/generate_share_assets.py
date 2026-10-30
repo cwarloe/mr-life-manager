@@ -22,7 +22,7 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen import canvas
 
 from guide_inventory import SHEETS
-from site_catalog import ORIGIN, required_share_images
+from site_catalog import ORIGIN, PAUSED_ENTRY_ROUTES, required_share_images
 
 ROOT = Path(__file__).resolve().parents[2]
 SHARE_DIR = ROOT / "products" / "landing" / "assets" / "share"
@@ -232,12 +232,15 @@ def draw_pdf_page(pdf: canvas.Canvas, audience: str, source: str, intro: str) ->
 
 
 def main() -> int:
+    # Paused doors keep their share image so the /preview/ copies and a later
+    # re-launch still have one; only the active set is required on the live site.
     catalog_names = set(required_share_images())
+    catalog_names.update(route.share_image for route in PAUSED_ENTRY_ROUTES)
     if set(SHARES) != catalog_names:
         missing = catalog_names - set(SHARES)
         extra = set(SHARES) - catalog_names
         raise SystemExit(
-            "SHARES keys must match required_share_images(): "
+            "SHARES keys must match required_share_images() plus paused entry images: "
             f"missing={sorted(missing)} extra={sorted(extra)}"
         )
     pdfmetrics.registerFont(TTFont("MlmSans", PDF_SANS))
