@@ -227,12 +227,10 @@ def main() -> int:
             path = OUT / name
             path.write_text(path.read_text(encoding="utf-8").replace("</head>", LOOK_HEAD + "</head>", 1),
                             encoding="utf-8")
-    # Audience landing pages (one per QR audience) publish to /for/.
-    audiences = LANDING / "audiences"
-    if audiences.is_dir():
-        (OUT / "for").mkdir()
-        for item in sorted(audiences.glob("*.html")):
-            shutil.copy2(item, OUT / "for" / item.name)
+    # Audience landing pages (one per QR audience) publish to /<name>/.
+    for item in sorted((LANDING / "audiences").glob("*.html")):
+        (OUT / item.stem).mkdir()
+        shutil.copy2(item, OUT / item.stem / "index.html")
     # Old bookmarks land on the current choices, without publishing paused text.
     for name in PAUSED_LANDING_PAGES:
         (OUT / name).write_text(redirect_page("/", "Choose a current checklist"), encoding="utf-8")

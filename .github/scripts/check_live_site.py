@@ -58,7 +58,7 @@ def _entry_pages() -> dict[str, tuple[str, ...]]:
             pages[f"/{route.completion_page}"] += (f'href="{route.next_url}"', route.next_title)
     audiences = Path(__file__).resolve().parents[2] / "products" / "landing" / "audiences"
     for path in sorted(audiences.glob("*.html")):
-        pages[f"/for/{path.name}"] = ('data-look="', 'class="door')
+        pages[f"/{path.stem}/"] = ('data-look="', 'class="door', "data-look-pick")
     pages["/partners.html"] = PARTNERS_LIVE_MARKERS
     pages["/privacy.html"] = PRIVACY_LIVE_MARKERS
     return pages

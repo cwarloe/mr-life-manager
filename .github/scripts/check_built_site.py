@@ -117,21 +117,33 @@ def main() -> int:
             if LOOK_HEAD not in (OUT / name).read_text(encoding="utf-8"):
                 problems.append(f"{name}: missing audience look support")
     published_doors = {f"/{route.page}" for route in PUBLISHED_ENTRY_ROUTES}
-    for path in sorted((OUT / "for").glob("*.html")):
+    for source in sorted((ROOT / "products" / "landing" / "audiences").glob("*.html")):
+        name = f"{source.stem}/index.html"
+        path = OUT / name
+        if not path.is_file():
+            problems.append(f"missing audience page: {name}")
+            continue
         text = path.read_text(encoding="utf-8")
         look = re.search(r'<html[^>]*data-look="([^"]+)"', text)
         if not look or look.group(1) not in LOOKS:
-            problems.append(f"for/{path.name}: needs data-look set to one of {LOOKS}")
+            problems.append(f"{name}: needs data-look set to one of LOOKS")
             continue
+        family = look.group(1).split("-")[0]
+        picks = re.findall(r'data-look-pick="([^"]+)"', text)
+        if len(picks) < 3 or look.group(1) not in picks:
+            problems.append(f"{name}: needs at least three color schemes, including the default")
+        for pick in picks:
+            if pick not in LOOKS or not pick.startswith(family + "-"):
+                problems.append(f"{name}: scheme {pick} is not a {family} look in LOOKS")
         doors = re.findall(r'<a class="door[^"]*" href="([^"]+)"', text)
         if not doors:
-            problems.append(f"for/{path.name}: no door links")
+            problems.append(f"{name}: no door links")
         for href in doors:
             parsed = urlsplit(html_lib.unescape(href))
             if parsed.path not in published_doors:
-                problems.append(f"for/{path.name}: door {parsed.path} is not a published checklist")
+                problems.append(f"{name}: door {parsed.path} is not a published checklist")
             if f"look={look.group(1)}" not in parsed.query or "from=" not in parsed.query:
-                problems.append(f"for/{path.name}: door {href} must carry look= and from=")
+                problems.append(f"{name}: door {href} must carry look= and from=")
     paused_urls = {f"/{name}" for name in PAUSED_LANDING_PAGES}
     paused_urls.update(f"/guides/{slug}.html" for slug in PAUSED_GUIDE_SLUGS)
     paused_urls.update(f"/print/{name}" for name in PDF_TITLES if name not in expected_pdfs)

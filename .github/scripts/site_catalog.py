@@ -155,10 +155,16 @@ PAUSED_LANDING_PAGES = (
     "organizing-ideas.html",
 )
 
-# Audience looks (assets/looks.css), chosen by ?look= on published task and
-# finish pages. Audience landing pages live in products/landing/audiences/
-# and publish to /for/. Classic is the default and needs no entry here.
-LOOKS = ("pro",)
+# Audience looks (assets/looks.css): <family>-<scheme>, chosen by ?look= on
+# published task and finish pages. Audience landing pages live in
+# products/landing/audiences/<name>.html and publish to /<name>/ (e.g.
+# /career/). Each offers at least three schemes of its family for now
+# (Charles, 2026-10-31). Classic is the default and needs no entry here.
+LOOKS = (
+    "career-teal", "career-navy", "career-plum",
+    "students-blue", "students-red", "students-green",
+    "military-olive", "military-navy", "military-steel",
+)
 LOOK_HEAD = (
     '<link rel="stylesheet" href="/assets/looks.css">\n'
     '<script>(function(){var l=new URLSearchParams(location.search).get("look");'

@@ -27,11 +27,12 @@ before the start button is one plain line ("Give it about an hour. Longer if
 the sink is full."), not a disclaimer (Charles: "stop being defensive").
 
 **Audience landing pages, 2026-10-31:** the main page stays; each QR audience
-gets its own landing page at `/for/<audience>.html` in its own look, and the
-look carries through the checklist, calendar return and finish page (Charles
-chose "carry it through"). First one: `/for/early-career.html`, `pro` look.
-Students (Comic Panel) and military (Mission Board) are next candidates. How
-to add one: [`products/landing/audiences/README.md`](../products/landing/audiences/README.md).
+gets its own landing page at `/<audience>` (`/career`, `/students`,
+`/military`) in its own look, with at least three color schemes every visitor
+can switch between for now. The look carries through the checklist, calendar
+return and finish page. The [audience tracker](../docs/business/audience-tracker.md)
+records wording and checklist changes to consider per audience. How to add a
+page: [`products/landing/audiences/README.md`](../products/landing/audiences/README.md).
 
 - `CLAUDE.md` — the working agreement. The two rules that matter most:
   (1) You make changes and push to `main` once checks pass; a
