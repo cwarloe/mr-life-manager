@@ -64,6 +64,19 @@ landing page, flier or ad through these questions:
 This is a strong default, not a wall: a line that fails it can stay when you
 can say how it gets someone to act today.
 
+**Plain speech (Charles, 2026-10-31).** Write the way people actually think
+and talk, not the way AI copy sounds.
+
+- **Every verb gets its object.** "Pick a time" alone leaves the reader
+  wondering what the time is for; "Pick a day and time to do the dishes"
+  doesn't. Don't use "it," "this" or "them" unless the thing was named in the
+  same sentence or the one just before.
+- **No clipped or clever lines.** "The floor is clothes" is not English; "There
+  are clothes all over the floor" is. No lists posing as sentences, no slogans,
+  no hiding the subject or object to sound punchy.
+- **Read it out loud.** If you wouldn't say it that way to a friend standing
+  next to you, rewrite it.
+
 ## Building a new entry page
 
 **Copy an existing entry page and change the content. Do not build one from
