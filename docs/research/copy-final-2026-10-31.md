@@ -1,6 +1,8 @@
 # Final copy: audience pages, fliers and task-page openings
 
-**Date:** 2026-10-31 · Ready to paste. The reasoning is in
+**Superseded in part (2026-10-31):** Charles rejected the clipped lines here ("the floor is clothes", "pick a time" without saying what for). See the plain-speech rule in `content/README.md`. Don't paste from this file without rewriting to that rule.
+
+**Date:** 2026-10-31. The reasoning is in
 [copy-review-2026-10-31.md](copy-review-2026-10-31.md).
 
 **Targeting (Charles, 2026-10-31):** these pages are for a person's first stretch
@@ -58,7 +60,7 @@ you land, so you come home to a plan instead of a mess.
 
 | # | Slug | Title | Time | Description | CTA |
 |---|---|---|---|---|---|
-| 1 | underwater | The sink is full, the floor is clothes, and the mail is unopened. | ~90 min | Start with the dishes, then do one room, your bed, the clothes and the mail, and stop there. | Get your place back → |
+| 1 | underwater | Your dishes are piling up, there are clothes all over the floor, and you haven't opened your mail. | ~90 min | Start with the dishes, then do one room, your bed, the clothes and the mail, and stop there. | Get your place back → |
 | 2 | guests | Friends are coming over, or your parents are visiting, and the place isn't ready. | ~1 hour | You'll do the room you'll sit in, the bathroom, the sink and the trash, so it's good enough for friends and for parents. | Get ready → |
 | 3 | dinner | You eat on your bed because the table's buried. | ~10 min | Clear the table and the chairs, and eat sitting down tonight. | Clear the table → |
 | 4 | first-night | You just got your first keys, and you're living out of boxes. | ~90 min | Get a made bed, shower stuff out, somewhere to sit and eat, and move-in photos for your deposit. | Get set up → |
