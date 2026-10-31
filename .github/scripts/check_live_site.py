@@ -13,6 +13,7 @@ from urllib.request import Request, urlopen
 
 from site_catalog import (
     ENTRY_ROUTES,
+    PUBLISHED_ENTRY_ROUTES,
     MAILERLITE_FORM_ATTR,
     MAILERLITE_JS_URL,
     ORIGIN,
@@ -38,14 +39,14 @@ def _entry_pages() -> dict[str, tuple[str, ...]]:
     pages: dict[str, tuple[str, ...]] = {
         "/": (_homepage_headline(),),
     }
-    for route in ENTRY_ROUTES:
+    for route in PUBLISHED_ENTRY_ROUTES:
         pages[f"/{route.page}"] = (
             f'data-guide="{route.slug}"',
             'src="/assets/entry.js"',
         )
         if route.collects_email:
             pages[f"/{route.page}"] += (MAILERLITE_FORM_ATTR, "one thing worth printing: the week on one page")
-    for route in ENTRY_ROUTES:
+    for route in PUBLISHED_ENTRY_ROUTES:
         pages[f"/{route.completion_page}"] = (
             f'data-guide="{route.slug}"',
             'src="/assets/entry.js"',

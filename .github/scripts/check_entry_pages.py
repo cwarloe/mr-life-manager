@@ -8,6 +8,7 @@ from site_catalog import (
     ENTRY_CSS_MARKERS,
     ENTRY_JS_MARKERS,
     ENTRY_ROUTES,
+    PUBLISHED_ENTRY_ROUTES,
     MAILERLITE_FORM_ATTR,
     MAILERLITE_JS_URL,
 )
@@ -52,7 +53,7 @@ def main() -> int:
                 problems.append(f"entry.css: missing {label}")
 
     catalog_pages = []
-    for route in ENTRY_ROUTES:
+    for route in PUBLISHED_ENTRY_ROUTES:
         path = LANDING / route.page
         if not path.is_file():
             problems.append(f"missing ENTRY_ROUTES page: {route.page}")

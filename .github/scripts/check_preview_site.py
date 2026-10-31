@@ -47,8 +47,8 @@ def check_preview_site(out: Path, problems: list[str]) -> None:
                 path = path / 'index.html'
             if not path.is_file():
                 problems.append(f'{page.relative_to(out)}: missing link target {url}')
-        if page == preview / 'index.html' and links.cards != 21:
-            problems.append('preview/index.html: expected twenty-one review cards (twenty drafts plus design options)')
+        if page == preview / 'index.html' and links.cards != len(PAUSED_ENTRY_ROUTES) + 14:
+            problems.append('preview/index.html: expected one card per paused task, thirteen organizing and reference drafts, and design options')
     for route in PAUSED_ENTRY_ROUTES:
         path = preview / route.page
         if path.is_file():

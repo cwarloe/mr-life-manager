@@ -20,6 +20,12 @@ and guide index all point to the five. `ACTIVE_ENTRY_SLUGS` and the reference
 publication flag control what ships; build checks reject paused content and
 picker drift. Older entries below describe previous publication states.
 
+**2026-10-31:** office is published again as a direct-link page
+(`DIRECT_LINK_SLUGS` in `site_catalog.py`): live at `/office.html`, not in
+pickers or the sitemap, so the link that office already has works. Time copy
+before the start button is one plain line ("Give it about an hour. Longer if
+the sink is full."), not a disclaimer (Charles: "stop being defensive").
+
 - `CLAUDE.md` — the working agreement. The two rules that matter most:
   (1) You make changes and push to `main` once checks pass; a
   bot does everything downstream (MailerLite, any live account). Don't hand

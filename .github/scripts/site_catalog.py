@@ -143,7 +143,12 @@ ALL_ENTRY_ROUTES: tuple[EntryRoute, ...] = (
 ACTIVE_ENTRY_SLUGS = ("first-night", "guests", "dinner", "underwater", "one-room")
 _ROUTES_BY_SLUG = {route.slug: route for route in ALL_ENTRY_ROUTES}
 ENTRY_ROUTES = tuple(_ROUTES_BY_SLUG[slug] for slug in ACTIVE_ENTRY_SLUGS)
-PAUSED_ENTRY_ROUTES = tuple(route for route in ALL_ENTRY_ROUTES if route.slug not in ACTIVE_ENTRY_SLUGS)
+# Published for a direct link or QR code only: not in pickers or the sitemap.
+# Office is the one-off for a specific office (Charles, 2026-10-08).
+DIRECT_LINK_SLUGS = ("office",)
+DIRECT_LINK_ROUTES = tuple(_ROUTES_BY_SLUG[slug] for slug in DIRECT_LINK_SLUGS)
+PUBLISHED_ENTRY_ROUTES = ENTRY_ROUTES + DIRECT_LINK_ROUTES
+PAUSED_ENTRY_ROUTES = tuple(route for route in ALL_ENTRY_ROUTES if route not in PUBLISHED_ENTRY_ROUTES)
 PAUSED_LANDING_PAGES = (
     *(route.page for route in PAUSED_ENTRY_ROUTES),
     *(route.completion_page for route in PAUSED_ENTRY_ROUTES),
@@ -223,7 +228,7 @@ def public_url(path: Path, site_root: Path) -> str:
 def entry_social_images() -> dict[str, str]:
     """Entry + completion page → share PNG filename."""
     images: dict[str, str] = {}
-    for route in ENTRY_ROUTES:
+    for route in PUBLISHED_ENTRY_ROUTES:
         images[route.page] = route.share_image
         images[route.completion_page] = route.share_image
     return images

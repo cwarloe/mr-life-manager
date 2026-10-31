@@ -10,6 +10,7 @@ from guide_inventory import GUIDES, LEGACY_GUIDE_SLUGS, PDF_TITLES, PAUSED_GUIDE
 from site_catalog import (
     ANALYTICS_DOMAIN,
     ENTRY_ROUTES,
+    PUBLISHED_ENTRY_ROUTES,
     PAUSED_LANDING_PAGES,
     ORIGIN,
     UMAMI_SCRIPT_URL,
@@ -202,7 +203,7 @@ def main() -> int:
     if assets.is_dir():
         shutil.copytree(assets, OUT / "assets")
     completion_template = (LANDING / "templates" / "finished.html").read_text(encoding="utf-8")
-    for route in ENTRY_ROUTES:
+    for route in PUBLISHED_ENTRY_ROUTES:
         template = ((LANDING / "templates" / "finished-next.html").read_text(encoding="utf-8")
                     if not route.collects_email else completion_template)
         next_step = ('''<section class="next-step">

@@ -13,6 +13,7 @@ from check_preview_site import check_preview_site
 from guide_inventory import LEGACY_GUIDE_SLUGS, PAUSED_GUIDE_SLUGS, PUBLISHED_PDF_NAMES, PDF_TITLES
 from site_catalog import (
     ENTRY_ROUTES,
+    PUBLISHED_ENTRY_ROUTES,
     PAUSED_LANDING_PAGES,
     ORIGIN,
     MAILERLITE_FORM_ATTR,
@@ -104,7 +105,7 @@ def main() -> int:
         if links.picks != expected_entries * repeats:
             problems.append(f"{filename}: public picker does not match the active checklist order")
     step_pages = {path.name for path in OUT.glob("*.html") if 'class="steps"' in path.read_text(encoding="utf-8")}
-    if step_pages != {route.page for route in ENTRY_ROUTES}:
+    if step_pages != {route.page for route in PUBLISHED_ENTRY_ROUTES}:
         problems.append("published task pages do not match the active entry catalog")
     paused_urls = {f"/{name}" for name in PAUSED_LANDING_PAGES}
     paused_urls.update(f"/guides/{slug}.html" for slug in PAUSED_GUIDE_SLUGS)
@@ -133,7 +134,7 @@ def main() -> int:
             if marker not in text:
                 problems.append(f"{rel}: missing {marker}")
 
-    for route in ENTRY_ROUTES:
+    for route in PUBLISHED_ENTRY_ROUTES:
         tag = route.slug
         completion = route.completion_page
         completion_text = (OUT / completion).read_text(encoding="utf-8")
@@ -178,7 +179,7 @@ def main() -> int:
 
     for name in ("favicon.svg", "site.webmanifest", "robots.txt", "sitemap.xml",
                  "print/partner-pilot.pdf", "assets/entry.js", "assets/entry.css",
-                 *(route.page for route in ENTRY_ROUTES)):
+                 *(route.page for route in PUBLISHED_ENTRY_ROUTES)):
         if not (OUT / name).is_file():
             problems.append(f"missing generated public file: {name}")
 
