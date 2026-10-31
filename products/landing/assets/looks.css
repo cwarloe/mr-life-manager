@@ -54,11 +54,23 @@ html[data-look="students-green"]{--blue:#1A6B3A; --blue-soft:#E5F1E9; --blue-dee
 
 /* military: mission board, light only */
 html[data-look^="military-"]{color-scheme:light}
-html[data-look="military-olive"]{
-  --ink:#1D2419; --paper:#E3DCC4; --surface:#F2ECD9; --slate:#4A5342;
-  --rule:#8A9378; --rule-strong:#2F3A28; --dark:#2F3A28; --on-dark:#F2ECD9;
-  --blue:#B8470F; --blue-soft:#EBE4CC; --blue-deep:#8F2F08; --on-blue:#FFFFFF;
-  --amber:#8F2F08; --amber-soft:#EBE4CC; --tape:#D9CF9E;
+html[data-look="military-scarlet"]{
+  --ink:#1E1416; --paper:#EFE9E1; --surface:#FAF7F2; --slate:#52464A;
+  --rule:#AC9C93; --rule-strong:#8C0B1F; --dark:#8C0B1F; --on-dark:#FFF7E3;
+  --blue:#FFC72C; --blue-soft:#F5EDE2; --blue-deep:#E8AE12; --on-blue:#2A0A0F;
+  --amber:#A50F25; --amber-soft:#F7E3E3; --tape:#FFD866;
+}
+html[data-look="military-black"]{
+  --ink:#141414; --paper:#ECEAE3; --surface:#F8F7F3; --slate:#4A4A44;
+  --rule:#9A968A; --rule-strong:#111111; --dark:#111111; --on-dark:#F8F7F3;
+  --blue:#FFCC01; --blue-soft:#F2EFE4; --blue-deep:#E0B400; --on-blue:#111111;
+  --amber:#755800; --amber-soft:#F7EFCF; --tape:#FFE07A;
+}
+html[data-look="military-blue"]{
+  --ink:#0D1B33; --paper:#E6EBF3; --surface:#F7F9FD; --slate:#43506A;
+  --rule:#93A2BD; --rule-strong:#00308F; --dark:#00308F; --on-dark:#F7F9FD;
+  --blue:#FFD100; --blue-soft:#EBF0F9; --blue-deep:#E6BC00; --on-blue:#0D1B33;
+  --amber:#00308F; --amber-soft:#E1E8F7; --tape:#FFE680;
 }
 html[data-look="military-navy"]{
   --ink:#0F1E33; --paper:#E4E9F1; --surface:#F6F8FC; --slate:#44536B;
@@ -66,11 +78,11 @@ html[data-look="military-navy"]{
   --blue:#F0AE1A; --blue-soft:#E9EDF5; --blue-deep:#D69A10; --on-blue:#10294A;
   --amber:#8A5A00; --amber-soft:#F9EFD2; --tape:#F4D98A;
 }
-html[data-look="military-steel"]{
-  --ink:#1A232C; --paper:#E3E7EB; --surface:#F4F6F8; --slate:#46525E;
-  --rule:#8D9AA8; --rule-strong:#2C3B4B; --dark:#2C3B4B; --on-dark:#F4F6F8;
-  --blue:#E8731A; --blue-soft:#EAEEF2; --blue-deep:#C9600F; --on-blue:#1A1208;
-  --amber:#A34A05; --amber-soft:#FBE9D8; --tape:#F6D2AE;
+html[data-look="military-silver"]{
+  --ink:#121419; --paper:#E4E6EA; --surface:#F5F6F8; --slate:#4A4F59;
+  --rule:#9AA0AA; --rule-strong:#1C1F26; --dark:#1C1F26; --on-dark:#F5F6F8;
+  --blue:#B4BAC3; --blue-soft:#ECEEF1; --blue-deep:#9AA1AC; --on-blue:#121419;
+  --amber:#2E4F8C; --amber-soft:#E3E8F2; --tape:#CDD2DA;
 }
 
 /* =====================================================================
@@ -184,6 +196,14 @@ html[data-look^="military-"] .done .complete{box-shadow:4px 5px 0 var(--dark)}
 html[data-look^="military-"] .fork-btns .go-later{background:transparent;color:var(--ink)}
 html[data-look^="military-"] .mins{border-color:var(--dark);color:var(--ink);border-radius:2px}
 html[data-look^="military-"] .bar{background:var(--dark);border-bottom:6px solid var(--blue)}
+/* Military fills (--blue) are light golds and silvers; text uses the dark accent. */
+html[data-look^="military-"] .whybtn,
+html[data-look^="military-"] .when-use,
+html[data-look^="military-"] body.doing .nav .bail,
+html[data-look^="military-"] .callout-label,
+html[data-look^="military-"] .ml-fallback a,
+html[data-look^="military-"] .fine a,
+html[data-look^="military-"] footer a{color:var(--amber)}
 html[data-look^="military-"] .bar a,
 html[data-look^="military-"] .bar .brand,
 html[data-look^="military-"] .bar .brand span{color:var(--on-dark)}

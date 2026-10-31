@@ -17,7 +17,7 @@ name (`from=career`).
 |---|---|---|---|---|---|---|---|---|
 | Early career: long hours, travel, on call | [/career](https://mrlifemanager.com/career/) | Career: teal and coral (default), navy and amber, plum and green | Your job gets your best hours. Here's what to do with what's left. | underwater ("back from a long week, or a trip"), dinner, guests, first-night ("new job, new city") | None yet | — | — | Live 2026-10-31 |
 | Students: dorm, apartment, first place | [/students](https://mrlifemanager.com/students/) | Comic Panel: blue (default), red, green | Six steps. Then you're done. | first-night ("move-in day"), underwater, guests, dinner | None yet | — | — | Live 2026-10-31 |
-| Military: new assignment, academy grads | [/military](https://mrlifemanager.com/military/) | Mission Board: olive and rust (default), navy and gold, steel and orange | You've passed a hundred inspections. Now you set the standard. | first-night ("new duty station"), underwater, guests, one-room | None yet | — | — | Live 2026-10-31 |
+| Military: new assignment, academy grads | [/military](https://mrlifemanager.com/military/) | Mission Board: scarlet and gold, black and gold, blue and yellow, navy and gold (default), black and silver. These follow the five service branches' colors; the page names them by color only | You've passed a hundred inspections. Now you set the standard. | first-night ("new duty station"), underwater, guests, one-room | None yet | — | — | Live 2026-10-31 |
 
 **Columns.** *Visits → started → finished*: page visits with that page's tags,
 then `start-now` plus `time-picked` events, then `finished` events. *Scheme

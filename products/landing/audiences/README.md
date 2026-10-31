@@ -17,7 +17,7 @@ and the wording and checklist changes to consider, are tracked in the
 |---|---|---|---|---|
 | [`career.html`](career.html) | `/career` | Early-career professionals: long hours, travel, on call ([research](../../../docs/research/high-intensity-professionals.md)) | career: clean, all sans, light and dark | teal, navy, plum |
 | [`students.html`](students.html) | `/students` | Dorm, apartment, first place | students: Comic Panel, light only | blue, red, green |
-| [`military.html`](military.html) | `/military` | New assignment, academy grads ([research](../../../docs/research/service-academy-grads.md)) | military: Mission Board, light only | olive, navy, steel |
+| [`military.html`](military.html) | `/military` | New assignment, academy grads ([research](../../../docs/research/service-academy-grads.md)) | military: Mission Board, light only | scarlet and gold, black and gold, blue and yellow, navy and gold (default), black and silver: the five service branches' colors, named by color only |
 
 ## Color schemes
 

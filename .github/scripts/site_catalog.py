@@ -163,7 +163,9 @@ PAUSED_LANDING_PAGES = (
 LOOKS = (
     "career-teal", "career-navy", "career-plum",
     "students-blue", "students-red", "students-green",
-    "military-olive", "military-navy", "military-steel",
+    # military schemes follow the five service branches' colors; the page
+    # names them by color only (Charles, 2026-10-31).
+    "military-scarlet", "military-black", "military-blue", "military-navy", "military-silver",
 )
 LOOK_HEAD = (
     '<link rel="stylesheet" href="/assets/looks.css">\n'
