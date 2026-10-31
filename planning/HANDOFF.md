@@ -26,6 +26,13 @@ pickers or the sitemap, so the link that office already has works. Time copy
 before the start button is one plain line ("Give it about an hour. Longer if
 the sink is full."), not a disclaimer (Charles: "stop being defensive").
 
+**Audience landing pages, 2026-10-31:** the main page stays; each QR audience
+gets its own landing page at `/for/<audience>.html` in its own look, and the
+look carries through the checklist, calendar return and finish page (Charles
+chose "carry it through"). First one: `/for/early-career.html`, `pro` look.
+Students (Comic Panel) and military (Mission Board) are next candidates. How
+to add one: [`products/landing/audiences/README.md`](../products/landing/audiences/README.md).
+
 - `CLAUDE.md` — the working agreement. The two rules that matter most:
   (1) You make changes and push to `main` once checks pass; a
   bot does everything downstream (MailerLite, any live account). Don't hand

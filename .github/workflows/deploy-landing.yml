@@ -7,6 +7,7 @@ on:
       - "products/landing/*.html"
       - "products/landing/assets/**"
       - "products/landing/templates/**"
+      - "products/landing/audiences/**"
       - "products/landing/favicon.svg"
       - "products/landing/site.webmanifest"
       - "products/checklists/**"

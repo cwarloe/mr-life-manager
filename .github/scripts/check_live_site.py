@@ -56,6 +56,9 @@ def _entry_pages() -> dict[str, tuple[str, ...]]:
             pages[f"/{route.completion_page}"] += (MAILERLITE_FORM_ATTR, MAILERLITE_JS_URL, "ml-fallback")
         elif route.next_url:
             pages[f"/{route.completion_page}"] += (f'href="{route.next_url}"', route.next_title)
+    audiences = Path(__file__).resolve().parents[2] / "products" / "landing" / "audiences"
+    for path in sorted(audiences.glob("*.html")):
+        pages[f"/for/{path.name}"] = ('data-look="', 'class="door')
     pages["/partners.html"] = PARTNERS_LIVE_MARKERS
     pages["/privacy.html"] = PRIVACY_LIVE_MARKERS
     return pages

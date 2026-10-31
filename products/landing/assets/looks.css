@@ -1,0 +1,73 @@
+/* Audience looks. A look is a token swap plus a few accents, scoped to
+   html[data-look="…"] and screen only, so printed pages stay plain.
+   Set by ?look=… (see LOOKS in site_catalog.py); entry.js carries it from
+   the audience landing page through the checklist, the calendar return
+   link and the finish page. Classic (no attribute) is unchanged. */
+
+/* ---------- pro: early-career professionals. Teal and coral. ---------- */
+@media screen{
+html[data-look="pro"]{
+  --ink:#0F1D2B; --paper:#F3F7F8; --surface:#FFFFFF;
+  --blue:#0B6E6E; --blue-soft:#E2F1EF; --blue-deep:#08504F;
+  --amber:#C2410C; --amber-soft:#FFF0E6;
+  --slate:#4A5A68; --rule:#D6E1E5; --rule-strong:#A9BCC4;
+  --badge-reset-bg:#FFF0E6; --badge-reset-text:#A9370A; --badge-reset-border:#F6CDB4;
+  --badge-setup-bg:#E2F1EF; --badge-setup-text:#08504F; --badge-setup-border:#B7DCD7;
+  --shadow-sm:0 1px 3px rgba(15,29,43,.06);
+  --shadow-md:0 8px 24px rgba(15,29,43,.10);
+  --serif:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  html[data-look="pro"]{
+    --ink:#E6EEF1; --paper:#0D161B; --surface:#14212A;
+    --blue:#4FC2BB; --blue-soft:#12302F; --blue-deep:#7AD6D0;
+    --amber:#FF9A62; --amber-soft:#2E1D13;
+    --slate:#9DB0BA; --rule:#22343D; --rule-strong:#3A5260;
+    --badge-reset-bg:#2E1D13; --badge-reset-text:#FF9A62; --badge-reset-border:#4A2E1E;
+    --badge-setup-bg:#12302F; --badge-setup-text:#7AD6D0; --badge-setup-border:#1F4746;
+  }
+}
+
+/* Full-width colored band behind the page header (checklist and finish). */
+html[data-look="pro"] header.top,
+html[data-look="pro"] main .kicker{position:relative}
+html[data-look="pro"] header.top{padding-bottom:1.6rem;
+  background:var(--blue-soft);box-shadow:0 0 0 100vmax var(--blue-soft);clip-path:inset(0 -100vmax)}
+html[data-look="pro"] .eyebrow,
+html[data-look="pro"] .kicker{display:inline-block;background:var(--blue);color:#fff;
+  padding:.3rem .65rem;border-radius:99px;letter-spacing:.1em}
+@media (prefers-color-scheme:dark){
+  html[data-look="pro"] .eyebrow,html[data-look="pro"] .kicker{color:#0D161B}
+}
+html[data-look="pro"] h1{color:var(--ink)}
+html[data-look="pro"] .frame{border-color:transparent;border-left:4px solid var(--amber);box-shadow:var(--shadow-sm)}
+html[data-look="pro"] .fork{border-color:transparent;border-top:4px solid var(--blue);box-shadow:var(--shadow-md)}
+
+/* Step numbers become colored tiles; the "why" rule picks up the accent. */
+html[data-look="pro"] .step-head::before{background:var(--blue);color:#fff;border-radius:10px}
+html[data-look="pro"] .why{border-left-color:var(--amber)}
+html[data-look="pro"] .mins{border-color:var(--blue);color:var(--blue)}
+
+/* Buttons: hover colors were hard-coded for classic blue. */
+html[data-look="pro"] .fork-btns .go-do:hover,
+html[data-look="pro"] .done .complete:hover{background:var(--blue-deep);border-color:var(--blue-deep)}
+html[data-look="pro"] .fork-btns button,
+html[data-look="pro"] .done .complete,
+html[data-look="pro"] body.doing .nav button{border-radius:10px}
+html[data-look="pro"] .fork-btns .go-later{background:transparent;color:var(--blue)}
+@media (prefers-color-scheme:dark){
+  html[data-look="pro"] .fork-btns .go-do,
+  html[data-look="pro"] .done .complete,
+  html[data-look="pro"] body.doing .step-head::before,
+  html[data-look="pro"] .step-head::before{color:#0D161B}
+}
+
+/* Doing mode: tinted header strip, accent progress. */
+html[data-look="pro"] body.doing header.top{box-shadow:none;clip-path:none;background:transparent;
+  border-bottom-color:var(--blue)}
+html[data-look="pro"] .stepper-pip.complete{background:var(--amber)}
+
+/* Finish page. */
+html[data-look="pro"] .bar{background:var(--blue-soft);border-bottom-color:transparent}
+html[data-look="pro"] .signup{border-top-color:var(--amber);border-radius:10px}
+}

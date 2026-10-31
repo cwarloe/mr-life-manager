@@ -4,6 +4,18 @@
   var root = document.documentElement;
   var guide = root.getAttribute('data-guide') || '';
   var completionUrl = root.getAttribute('data-completion-url') || '';
+  // Audience look (looks.css), set in <head> only for a known ?look= value.
+  // Carry it on internal links so the checklist and finish page match the
+  // landing page the reader came from.
+  var look = root.getAttribute('data-look') || '';
+  if (look) {
+    Array.prototype.forEach.call(document.querySelectorAll('a[href^="/"]'), function (a) {
+      if (a.getAttribute('href') === '/') return;
+      var u = new URL(a.getAttribute('href'), location.origin);
+      u.searchParams.set('look', look);
+      a.setAttribute('href', u.pathname + u.search + u.hash);
+    });
+  }
 
   // Event counts for the funnel (Umami, when configured in site_catalog.py).
   // No cookies and nothing personal: the page, its QR source tag, and what
@@ -136,6 +148,7 @@
     if (/^[a-z0-9-]{1,40}$/.test(source || '')) completionQuery.push('from=' + encodeURIComponent(source));
     // Which path the reader took, so completions can be compared (ADR-021).
     if (root.getAttribute('data-defer') === 'on') completionQuery.push('path=' + (resuming ? 'appointment' : 'now'));
+    if (look) completionQuery.push('look=' + look);
     if (completionQuery.length) completionUrl += '?' + completionQuery.join('&');
     done.innerHTML = '<h2>That\u2019s everything.</h2>' +
       '<p>Check that you have completed all six steps and reached the finish line on the page. ' +
@@ -212,6 +225,7 @@
         if (moves) q.push('moved=' + moves);
         if (resumeAt > 0) q.push('step=' + (resumeAt + 1));
         if (/^[a-z0-9-]{1,40}$/.test(source || '')) q.push('from=' + encodeURIComponent(source));
+        if (look) q.push('look=' + look);
         return location.origin + location.pathname + '?' + q.join('&');
       }
       function duration() {

@@ -155,6 +155,16 @@ PAUSED_LANDING_PAGES = (
     "organizing-ideas.html",
 )
 
+# Audience looks (assets/looks.css), chosen by ?look= on published task and
+# finish pages. Audience landing pages live in products/landing/audiences/
+# and publish to /for/. Classic is the default and needs no entry here.
+LOOKS = ("pro",)
+LOOK_HEAD = (
+    '<link rel="stylesheet" href="/assets/looks.css">\n'
+    '<script>(function(){var l=new URLSearchParams(location.search).get("look");'
+    f'if(/^({"|".join(LOOKS)})$/.test(l||""))document.documentElement.setAttribute("data-look",l)}})()</script>\n'
+)
+
 # Needles check_entry_pages looks for in the shared entry.js / entry.css.
 ENTRY_JS_MARKERS: tuple[tuple[str, str], ...] = (
     ("doing-mode", "classList.add('doing')"),

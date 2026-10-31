@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import html as html_lib
 import re
 import sys
 from html.parser import HTMLParser
@@ -13,6 +14,8 @@ from check_preview_site import check_preview_site
 from guide_inventory import LEGACY_GUIDE_SLUGS, PAUSED_GUIDE_SLUGS, PUBLISHED_PDF_NAMES, PDF_TITLES
 from site_catalog import (
     ENTRY_ROUTES,
+    LOOK_HEAD,
+    LOOKS,
     PUBLISHED_ENTRY_ROUTES,
     PAUSED_LANDING_PAGES,
     ORIGIN,
@@ -107,6 +110,28 @@ def main() -> int:
     step_pages = {path.name for path in OUT.glob("*.html") if 'class="steps"' in path.read_text(encoding="utf-8")}
     if step_pages != {route.page for route in PUBLISHED_ENTRY_ROUTES}:
         problems.append("published task pages do not match the active entry catalog")
+    # Audience looks: every published task and finish page honors ?look=, and
+    # each audience landing page uses a known look and only published doors.
+    for route in PUBLISHED_ENTRY_ROUTES:
+        for name in (route.page, route.completion_page):
+            if LOOK_HEAD not in (OUT / name).read_text(encoding="utf-8"):
+                problems.append(f"{name}: missing audience look support")
+    published_doors = {f"/{route.page}" for route in PUBLISHED_ENTRY_ROUTES}
+    for path in sorted((OUT / "for").glob("*.html")):
+        text = path.read_text(encoding="utf-8")
+        look = re.search(r'<html[^>]*data-look="([^"]+)"', text)
+        if not look or look.group(1) not in LOOKS:
+            problems.append(f"for/{path.name}: needs data-look set to one of {LOOKS}")
+            continue
+        doors = re.findall(r'<a class="door[^"]*" href="([^"]+)"', text)
+        if not doors:
+            problems.append(f"for/{path.name}: no door links")
+        for href in doors:
+            parsed = urlsplit(html_lib.unescape(href))
+            if parsed.path not in published_doors:
+                problems.append(f"for/{path.name}: door {parsed.path} is not a published checklist")
+            if f"look={look.group(1)}" not in parsed.query or "from=" not in parsed.query:
+                problems.append(f"for/{path.name}: door {href} must carry look= and from=")
     paused_urls = {f"/{name}" for name in PAUSED_LANDING_PAGES}
     paused_urls.update(f"/guides/{slug}.html" for slug in PAUSED_GUIDE_SLUGS)
     paused_urls.update(f"/print/{name}" for name in PDF_TITLES if name not in expected_pdfs)

@@ -10,6 +10,7 @@ from guide_inventory import GUIDES, LEGACY_GUIDE_SLUGS, PDF_TITLES, PAUSED_GUIDE
 from site_catalog import (
     ANALYTICS_DOMAIN,
     ENTRY_ROUTES,
+    LOOK_HEAD,
     PUBLISHED_ENTRY_ROUTES,
     PAUSED_LANDING_PAGES,
     ORIGIN,
@@ -220,6 +221,18 @@ def main() -> int:
                     .replace("__NEXT_DESCRIPTION__", route.next_description)
                     .replace("__BACK__", f"/{route.page}"))
         (OUT / route.completion_page).write_text(rendered, encoding="utf-8")
+    # Audience looks: published task and finish pages honor ?look=.
+    for route in PUBLISHED_ENTRY_ROUTES:
+        for name in (route.page, route.completion_page):
+            path = OUT / name
+            path.write_text(path.read_text(encoding="utf-8").replace("</head>", LOOK_HEAD + "</head>", 1),
+                            encoding="utf-8")
+    # Audience landing pages (one per QR audience) publish to /for/.
+    audiences = LANDING / "audiences"
+    if audiences.is_dir():
+        (OUT / "for").mkdir()
+        for item in sorted(audiences.glob("*.html")):
+            shutil.copy2(item, OUT / "for" / item.name)
     # Old bookmarks land on the current choices, without publishing paused text.
     for name in PAUSED_LANDING_PAGES:
         (OUT / name).write_text(redirect_page("/", "Choose a current checklist"), encoding="utf-8")
