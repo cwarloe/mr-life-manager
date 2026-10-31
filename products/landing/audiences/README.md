@@ -15,17 +15,33 @@ and the wording and checklist changes to consider, are tracked in the
 
 | File | URL | Audience | Look | Schemes |
 |---|---|---|---|---|
-| [`career.html`](career.html) | `/career` | Early-career professionals: long hours, travel, on call ([research](../../../docs/research/high-intensity-professionals.md)) | career: clean, all sans, light and dark | teal, navy, plum |
-| [`students.html`](students.html) | `/students` | Dorm, apartment, first place | students: Comic Panel, light only | blue, red, green |
-| [`military.html`](military.html) | `/military` | New assignment, academy grads ([research](../../../docs/research/service-academy-grads.md)) | military: Mission Board, light only | scarlet and gold, black and gold, blue and yellow, navy and gold (default), black and silver: the five service branches' colors, named by color only |
+| [`career.html`](career.html) | `/career` | First job, own place, long hours, travel ([research](../../../docs/research/high-intensity-professionals.md)) | career: clean, all sans, light and dark | teal, navy, plum, green |
+| [`students.html`](students.html) | `/students` | First apartment, first place on their own | students: Comic Panel, light only | blue, red, green, orange |
+| [`military.html`](military.html) | `/military` | First place off base, first assignment, academy grads ([research](../../../docs/research/service-academy-grads.md)) | military: Mission Board, light only | scarlet and gold, black and gold, blue and yellow, navy and gold (default), black and silver: the five service branches' colors, named by color only |
 
 ## Color schemes
 
-Every page offers **at least three color schemes** for now (Charles,
+Every page offers **four color schemes (five on military, one per branch's colors)** for now (Charles,
 2026-10-31), shown to every visitor as swatches in the top bar. A pick
 changes the page, carries into the checklist and finish page, and is counted
 in Umami as `scheme-picked`. When the numbers or reader feedback settle on
 one, drop the others.
+
+## Who the pages are for
+
+[ADR-023](../../../planning/decisions.md#adr-023--target-the-first-stretch-with-nobody-else-running-things):
+people at their first chance to be nearly completely unsupervised, with nobody
+telling them what to do or checking on them. Junior enlisted in barracks are
+not a target until they move off base.
+
+## School colors on campus fliers
+
+A campus flier's QR code can open `/students` in colors close to the
+school's: `mrlifemanager.com/students?look=students-<scheme>&from=qr-<place>`.
+If none of the schemes is close, add one named for its colors
+(`students-maroon`), never for the school. Colors only: no school names,
+mascots, logos or "for X students" copy, so nothing suggests the school
+sponsors it (ADR-023).
 
 ## Making a new one
 

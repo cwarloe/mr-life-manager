@@ -66,7 +66,7 @@ def main() -> int:
                 problems.append(f"{path.name}: missing {label}")
 
         if 'data-defer="on"' in s:
-            for label, needle in (("'Not right now' button", 'class="go-later"'),
+            for label, needle in (("'Pick a time' button", 'class="go-later"'),
                                   ("appointment length", 'data-minutes="'),
                                   ("calendar title", 'data-task="')):
                 if needle not in s:

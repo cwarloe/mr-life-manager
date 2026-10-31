@@ -39,6 +39,7 @@
     data = data || {};
     data.page = guide || location.pathname;
     if (fromTag) data.from = fromTag;
+    if (root.getAttribute('data-look')) data.look = root.getAttribute('data-look');
     trackQueue.push([name, data]);
     flushTrack();
   }
@@ -285,7 +286,7 @@
           '&details=' + encodeURIComponent('Time to start. Open this and pick up at the next step: ' + url);
       }
 
-      // Panel shown after "Not right now".
+      // Panel shown after "Not home yet? Pick a time" (.go-later).
       var later = document.createElement('section');
       later.className = 'later';
       later.hidden = true;

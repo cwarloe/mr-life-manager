@@ -235,8 +235,9 @@ body.doing .says li{font-size:clamp(1.12rem,4.2vw,1.35rem);margin:0 0 .45rem}
 .fork-alt{margin:.85rem 0 0}
 .fork-alt .go-print{font-family:var(--sans);font-size:.85rem;font-weight:600;color:var(--slate);
   background:none;border:0;padding:0;text-decoration:underline;cursor:pointer}
-.fork-btns .go-later{background:transparent;color:var(--ink);border-color:var(--rule-strong)}
-.fork-btns .go-later:hover{border-color:var(--ink);background:var(--surface)}
+/* Picking a time is a full action for someone who isn't home: solid, not an outline. */
+.fork-btns .go-later{background:var(--blue-soft);color:var(--blue);border-color:var(--blue-soft)}
+.fork-btns .go-later:hover{border-color:var(--blue)}
 .later,.resume{margin:1.4rem 0 0;padding:1.3rem 1.35rem;border:2px solid var(--blue);border-radius:6px;
   background:var(--surface);box-shadow:var(--shadow-sm)}
 .later[hidden],.resume[hidden],.decided[hidden]{display:none}

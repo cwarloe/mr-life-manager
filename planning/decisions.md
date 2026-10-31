@@ -1315,3 +1315,39 @@ benefits from everyone else's wins, setbacks and ideas. Price: not yet set.
 
 **Revisit when:** the first paid level has run long enough to show what people
 actually use.
+
+## ADR-023 — Target the first stretch with nobody else running things
+
+**Status:** Accepted (2026-10-31, Charles)
+**Date:** 2026-10-31
+
+**Context.** The audience pages (`/career`, `/students`, `/military`) and the
+copy review raised a question: the military page spoke to people who "set the
+standard" now, but junior enlisted mostly live in barracks with room
+inspections. Charles answered it for every audience, not just military.
+
+**Decision.** We target people at **their first chance to be nearly
+completely unsupervised**: nobody telling them what to do, checking on them or
+reminding them, so they're lost, confused or just not getting to it. In his
+words: "When the supervision goes down and there is no one else telling them
+what to do, that's what we are targeting." This is for every brand page and
+niche.
+
+- **Military:** officers and academy grads at a first assignment, and anyone
+  who has just moved off base. **Junior enlisted in barracks are not a target
+  until they move off base.** They have programs on base and room inspections.
+- **Students:** the first stretch without parents, RAs or a dorm schedule
+  running things. A first apartment fits better than a dorm.
+- **Career:** first job, first place alone, no structure outside work.
+
+**Consequences.** Copy names the situation of being on your own for the first
+time without blaming the person. Fliers go where this group is (off-base
+housing areas, apartment complexes near campus, coworking and office coffee
+shops), not into barracks or dorm-only spaces. Checklist gaps are judged by
+this group: a barracks-room checklist is not a priority; a first-apartment or
+first-place-off-base version is.
+
+**School and branch colors (same day).** Campus fliers can open a page in
+colors close to the school's, with `?look=`, and the military schemes follow
+the branches' colors. Colors only: no school or branch names, mascots, logos or
+"for X students" lines, so nothing implies sponsorship or endorsement.

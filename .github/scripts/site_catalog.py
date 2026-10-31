@@ -161,8 +161,8 @@ PAUSED_LANDING_PAGES = (
 # /career/). Each offers at least three schemes of its family for now
 # (Charles, 2026-10-31). Classic is the default and needs no entry here.
 LOOKS = (
-    "career-teal", "career-navy", "career-plum",
-    "students-blue", "students-red", "students-green",
+    "career-teal", "career-navy", "career-plum", "career-green",
+    "students-blue", "students-red", "students-green", "students-orange",
     # military schemes follow the five service branches' colors; the page
     # names them by color only (Charles, 2026-10-31).
     "military-scarlet", "military-black", "military-blue", "military-navy", "military-silver",
