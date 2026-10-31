@@ -79,6 +79,11 @@ rewritten, and the frameworks are teaching material for readers. Where they say
 strong default with a reason, not a wall: apply it unless good sense clearly
 says otherwise, and say so when you make an exception.
 
+**Site, ad and landing-page copy goes through the act-now filter** in
+[`content/README.md`](content/README.md#the-act-now-filter-site-ad-and-landing-page-copy):
+every line moves the reader to feel one problem today and start now or pick a
+time. Cut lines about later, someday, or things to agree with.
+
 ## Standing rules already written down
 
 Don't re-derive these — read them:

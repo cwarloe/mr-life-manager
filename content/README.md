@@ -38,6 +38,32 @@ Every piece of content should:
 6. **Be modular.** Assume it will be reused in three products and read out of
    order.
 
+## The act-now filter: site, ad and landing-page copy
+
+Charles, 2026-10-31. Picture the reader standing in a coffee shop, holding a
+flier from the dining hall, or opening a link a friend sent. The copy has one
+job: make them feel one problem they have **today**, tap it, and then either
+start now or pick a specific time and commit to it. Run every line on a
+landing page, flier or ad through these questions:
+
+1. **Does it move them toward tapping a door, starting, or picking a time?**
+   If not, cut it.
+2. **Is it about now?** Avoid lines about value they might find later, things
+   they'll use someday, or what to save for next time ("Moving every two or
+   three years? Save the first-night page." failed this: nothing in it matters
+   in the moment they're reading).
+3. **Does it ask them to agree, or to act?** A line they nod at ("good point")
+   but don't act on is a hook without a result. Insight is fine only when it
+   leads straight into the action.
+4. **Does every word earn its place?** That isn't a call for clipped,
+   noun-less fragments to sound punchy or save space; write full sentences a
+   person would say. Long copy is fine, and the evidence says long copy can
+   sell well, when the length is what gets them to act now. Length to keep
+   them reading is not the goal.
+
+This is a strong default, not a wall: a line that fails it can stay when you
+can say how it gets someone to act today.
+
 ## Building a new entry page
 
 **Copy an existing entry page and change the content. Do not build one from
