@@ -1,8 +1,11 @@
 # Flier and workflow wording (working draft)
 
-**Status:** Draft for Charles to mark up, 2026-10-31. Nothing here is on the
-site yet. When this is final, the fliers and every screen from the scan to the
-finish get built from it, word for word.
+**Status:** Recommended version for review, 2026-11-01 (first draft
+2026-10-31). Nothing here is on the site yet. When it's final, the fliers and
+every screen from the scan to the finish get built from it, word for word.
+The full text of the five checklists is in
+[`checklist-text-plain.md`](checklist-text-plain.md); read the two together.
+**Reviewers: start with [section 5](#5-for-reviewers).**
 
 **Rules:** the act-now filter and the plain-speech rule in
 [`content/README.md`](../../content/README.md). Every button and heading says
@@ -35,7 +38,7 @@ Bottom of every flier:
 | 1 | Your dishes are piling up, there are clothes all over the floor, and you haven't opened your mail. | Dishes and mess | about an hour and a half |
 | 2 | People are coming over tonight and your place isn't ready. | Company | about an hour |
 | 3 | Your kitchen table is covered with stuff and you end up eating on your bed. | Table | about 10 minutes |
-| 4 | You just moved in and you're still living out of boxes. | First night | about an hour and a half |
+| 4 | You just got your keys, and tonight is your first night in your new place. | First night | about an hour and a half |
 
 ### Career: "Working long hours and living on your own for the first time?"
 
@@ -44,7 +47,7 @@ Bottom of every flier:
 | 1 | You keep getting home late, and the dishes and mail keep piling up. | Dishes and mess | about an hour and a half |
 | 2 | Someone's coming over tonight and your place isn't ready. | Company | about an hour |
 | 3 | Your kitchen table is covered with stuff and you end up eating standing at the counter. | Table | about 10 minutes |
-| 4 | You moved for the job and you're still living out of boxes. | First night | about an hour and a half |
+| 4 | You just moved for a new job, and tonight is your first night in your new place. | First night | about an hour and a half |
 
 ### Military: "Living off base for the first time?"
 
@@ -225,19 +228,69 @@ If they drop it:
 
 ---
 
-## 4. Open questions
+## 4. Decisions in this version
 
-1. **"Living out of boxes" (students #4, career #4) vs. the first-night
-   checklist.** The checklist is built for the first night: photos before you
-   unpack, bed, shutoffs. Someone who's been there three weeks will find
-   "before you unpack anything else" a little off. Either change the flier
-   line to the first night ("You just got your keys, and tonight's your first
-   night in the new place."), or we need a "still unpacking" checklist.
-2. **Military #4, the spare room.** The checklist behind it was written for
-   "a room you stopped using." It fits a room of moving boxes, but it takes
-   three hours, which is a big ask from a flier. Keep it, or swap in the
-   table?
-3. **The checklist steps themselves** still have titles that break the
-   plain-speech rule, worst on the spare-room checklist ("Give the difficult
-   items a clear disposition," "Name the use and arrange the exit"). Section 3
-   has plain versions; the full step text needs the same pass.
+Charles hadn't answered these when this version was written. These are the
+recommendations, so reviewers can push back.
+
+1. **"Living out of boxes" is now "tonight is your first night."** The
+   first-night checklist is built for the first night (photos before you
+   unpack, the bed, the shutoffs). "Still living out of boxes" describes
+   someone three weeks in, who would find "before you unpack anything else"
+   off. The flier lines now match the checklist. The felt need of *still living
+   out of boxes weeks later* is real and has no checklist yet. It's on the
+   [audience tracker](../business/audience-tracker.md) as a gap.
+2. **Military #4 stays as the spare room.** It's the only door about a room
+   you can't use, and about three hours is something people schedule for a
+   Saturday morning, which is what "pick a day and time" is for. The flier
+   says the time plainly. If reviewers think three hours is too big an ask from
+   a flier, the swap is the 10-minute table.
+3. **The checklist text now has a plain-speech rewrite**
+   ([`checklist-text-plain.md`](checklist-text-plain.md)). Same steps, same
+   order, same safety lines.
+4. **Defensive time wording stays out.** Charles removed the "this is a
+   planning allowance" disclaimers on purpose. The times on the fliers and
+   pages are still estimates, so [section 5](#5-for-reviewers) asks reviewers to
+   time one themselves.
+
+---
+
+## 5. For reviewers
+
+**What we want back:** line edits and gut reactions. "This sounds off" is
+enough; you don't need to know why.
+
+**How to read it:** out loud, as if you were saying it to a friend standing
+next to you.
+
+**Check each line against these:**
+1. **Does every verb have its object?** No "pick a time" without what the time
+   is for. No "it" or "this" that points at nothing.
+2. **Would a person actually say this?** Mark anything stiff, clipped, or
+   "clever."
+3. **Is it about right now?** Cut anything about later, someday, or agreeing
+   with a point.
+4. **Is it true?** The flier lines have to match the checklist behind them.
+   The times have to be believable.
+5. **Is it kind?** It names the situation, never the person. Nothing should
+   make a reader feel they failed.
+
+**Questions we'd especially like answered:**
+- **Military #2, "Nobody inspects your place anymore, and it's gotten messy."**
+  Too blunt, or about right for someone on their own for the first time?
+- **Student #3, "...you end up eating on your bed."** Is this true to students
+  living on their own? Is the table the right problem, or is something else
+  more common?
+- **Career #3, "...you end up eating standing at the counter."** Same
+  question for people with long hours.
+- **"Nobody's checking."** The idea (ADR-023) is that people are on their own
+  for the first time. Does anything in the fliers make that feel like an
+  insult?
+- **The times.** Pick one checklist, do it, and time it. Tell us if the flier's
+  estimate is far off. Do it once with the page and once without looking at the
+  clock, if you can.
+- **The checklist steps** ([`checklist-text-plain.md`](checklist-text-plain.md)).
+  Anything unclear, anything you'd skip, anything missing?
+
+**Please don't spend time on** colors, fonts or layout. This round is wording
+only.

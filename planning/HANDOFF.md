@@ -26,6 +26,13 @@ pickers or the sitemap, so the link that office already has works. Time copy
 before the start button is one plain line ("Give it about an hour. Longer if
 the sink is full."), not a disclaimer (Charles: "stop being defensive").
 
+**Copy under review, 2026-11-01:** Charles rejected the clipped copy ("the floor
+is clothes", "pick a time" with no object). The fliers, every screen from scan
+to finish, and the five checklists are rewritten in plain speech in
+[`docs/copy/`](../docs/copy/README.md) for other reviewers. **Don't change the
+live pages' wording until that review is done**, then build the pages and
+fliers from it word for word. Rule: [`content/README.md`](../content/README.md).
+
 **Audience landing pages, 2026-10-31:** the main page stays; each QR audience
 gets its own landing page at `/<audience>` (`/career`, `/students`,
 `/military`) in its own look, with at least three color schemes every visitor

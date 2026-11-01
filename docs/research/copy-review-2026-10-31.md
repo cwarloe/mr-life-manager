@@ -2,6 +2,7 @@
 
 **Date:** 2026-10-31 · **Reviewer:** ad-copywriter agent (direct-response) ·
 **Status:** Recommendations. Nothing on the site was changed.
+**Superseded in part (2026-11-01):** the evidence sections hold up, but the headlines, door titles and flier lines in sections 3 to 5 use clipped wording Charles rejected. Current wording for review: [`docs/copy/`](../copy/README.md).
 **Governing rule:** [the act-now filter](../../content/README.md#the-act-now-filter-site-ad-and-landing-page-copy).
 **Pages reviewed:** `products/landing/audiences/{career,students,military}.html`,
 `products/landing/index.html` (hero), the opening block of the five live task
