@@ -53,8 +53,8 @@ These are the gaps and questions each audience raises.
 
 | Audience | Question or gap | Options | Decided |
 |---|---|---|---|
-| Students, career | The felt need "I moved in weeks ago and I'm still living out of boxes" has no checklist. The first-night checklist is for the first night (2026-11-01: fliers now say "tonight is your first night") | A "still unpacking" checklist: one room at a time, a place for each thing | — |
-| Students, career, military | The checklist steps were stiff and full of "it" (2026-11-01) | Plain-speech rewrite proposed in [`checklist-text-plain.md`](../copy/checklist-text-plain.md); the office and paused checklists get the same pass | Under review |
+| Students, career | The felt need "I moved in a while ago and I'm still living out of boxes" had no checklist. The first-night checklist is for the first night, so it becomes the move-in-season swap on the flier | A "still unpacking" checklist (one room at a time), built from the spare-room and first-night checklists | Drafted 2026-11-01: [workflow 6](../copy/workflows/06-still-unpacking.md), under review |
+| Students, career, military | The checklist steps were stiff and full of "it" (2026-11-01) | Plain-speech rewrite proposed inside each file in [`docs/copy/workflows/`](../copy/workflows/); the office and paused checklists get the same pass | Under review |
 | Career | No checklist for **before** a trip (leaving the place ready to come back to) | A six-step "leaving for a trip" checklist; the research says preparation is what makes travel go better | — |
 | Career | "Back from a trip" points to the general mess checklist | Keep it, or a shorter "first hour home" version | — |
 | Students | High school students mostly live at home; first-night doesn't fit them | Separate page for high school, or keep /students for college and first apartments | — |

@@ -28,8 +28,10 @@ the sink is full."), not a disclaimer (Charles: "stop being defensive").
 
 **Copy under review, 2026-11-01:** Charles rejected the clipped copy ("the floor
 is clothes", "pick a time" with no object). The fliers, every screen from scan
-to finish, and the five checklists are rewritten in plain speech in
-[`docs/copy/`](../docs/copy/README.md) for other reviewers. **Don't change the
+to finish, and the checklists are rewritten in plain speech in
+[`docs/copy/`](../docs/copy/README.md) for other reviewers: six files in
+`docs/copy/workflows/`, one per workflow, each with a Word copy. The sixth
+(still unpacking) is a new checklist built from two existing ones. **Don't change the
 live pages' wording until that review is done**, then build the pages and
 fliers from it word for word. Rule: [`content/README.md`](../content/README.md).
 

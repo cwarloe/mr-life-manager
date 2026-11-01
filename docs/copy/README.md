@@ -1,13 +1,13 @@
 # Copy under review
 
 Wording for the fliers and every screen a reader sees from the scan to the
-finish page, plus the five checklists, written in plain speech. **This is the
+finish page, plus the checklists, written in plain speech. **This is the
 folder for reviewers.** Nothing in here is on the live site yet.
 
 | File | What it is |
 |---|---|
-| [`workflow-wording.md`](workflow-wording.md) | Start here. The three fliers (students, career, military), the screens every checklist shares (scan, pick a day and time, calendar, reminder, finish), the five checklists in short, the decisions made, and what reviewers should check. |
-| [`checklist-text-plain.md`](checklist-text-plain.md) | The full text of the five checklists, rewritten. Same steps and safety lines as the live pages. |
+| [`workflow-wording.md`](workflow-wording.md) | The overview: the three fliers side by side, the decisions made, and what reviewers should check. |
+| [`workflows/`](workflows/) | **Start here.** Six files, one per workflow. Each one covers the whole path for one problem: the flier line, the page after the scan, picking a day and time, the calendar reminder, the full checklist, and the finish page. Each has a Word copy too. |
 
 **Rules the copy follows:** the act-now filter and the plain-speech rule in
 [`content/README.md`](../../content/README.md). In short: every verb gets its
