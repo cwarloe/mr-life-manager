@@ -6,6 +6,7 @@ folder for reviewers.** Nothing in here is on the live site yet.
 
 | File | What it is |
 |---|---|
+| [`social-launch-kit.md`](social-launch-kit.md) | Static social post drafts, matching task destinations, source labels, and publishing handoff. Builds on the workflows below; clarity and completed tasks govern the copy. |
 | [`workflow-wording.md`](workflow-wording.md) | The overview: the three fliers side by side, the decisions made, and what reviewers should check. |
 | [`workflows/`](workflows/) | **Start here.** Six files, one per workflow. Each one covers the whole path for one problem: the flier line, the page after the scan, picking a day and time, the calendar reminder, the full checklist, and the finish page. Each has a Word copy too. |
 
