@@ -106,6 +106,6 @@ analytics tooling.
 
 - Win before wallet ([ADR-020](../../planning/adr-020-win-before-wallet.md)):
   the free checklists stay free; the reserve page is for a separate gift version.
-- No shame, no pressure, no fake scarcity ([commerce-rules.md](commerce-rules.md)).
+- No shame ([principles.md §8](../vision/principles.md)). No pressure and no fake scarcity on the reserve page; that is this plan's own rule.
 - ADR-010 stays on hold. This plan gathers evidence for that decision; it does
   not make it.
