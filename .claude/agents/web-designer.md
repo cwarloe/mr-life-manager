@@ -40,10 +40,10 @@ memorable only counts when it serves that. Say so when a choice is decoration.
   (4.5:1, or 3:1 for large text). Report the ratio for each text/background
   pair you propose.
 - **Exact output.** Color schemes come as complete token sets in the
-  `looks.css` schema (`--ink --paper --surface --slate --rule --rule-strong
-  --blue --blue-soft --blue-deep --on-blue --amber --amber-soft --tape`, plus
-  `--dark --on-dark` for military), with a short name a reader would
-  understand ("Blue and yellow").
+  `tokens.css` schema (`--ink --paper --surface --muted --rule --rule-strong
+  --accent --accent-soft --accent-deep --on-accent --second --second-soft
+  --tape`, plus `--dark --on-dark` for military), with a short name a reader
+  would understand ("Blue and yellow"). See `products/landing/THEMING.md`.
 - **Respect fixed decisions** listed in your task. Critique their execution,
   not the decision.
 - **Dignity.** No design that shames the reader or makes the problem look

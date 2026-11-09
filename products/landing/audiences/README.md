@@ -50,8 +50,11 @@ sponsors it (ADR-023).
 2. Set `data-look` on `<html>` to the default look and list at least three
    `data-look-pick` buttons from the same family. Looks are named
    `<family>-<scheme>` and must be in `LOOKS` (`site_catalog.py`). For a new
-   family or scheme, add it to `LOOKS` and to
-   [`assets/looks.css`](../assets/looks.css).
+   family or scheme, add it to `LOOKS`, put its colors in
+   [`assets/tokens.css`](../assets/tokens.css) (see [THEMING.md](../THEMING.md))
+   and any layout rules in [`assets/looks.css`](../assets/looks.css). Swatch
+   buttons carry `data-look` on their two `<i>` elements; the colors come from
+   the scheme's `--swatch-1` and `--swatch-2`.
 3. Write the kicker, headline, lede and door copy for that audience. Door text
    can be in the audience's words; the checklist behind it stays the same.
 4. Each door links to a published checklist with `?look=<default>&from=<name>`.

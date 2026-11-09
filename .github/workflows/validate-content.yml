@@ -19,6 +19,9 @@ on:
       - ".github/scripts/validate_repo.py"
       - ".github/scripts/check_pdfs_fresh.py"
       - ".github/scripts/check_entry_pages.py"
+      - ".github/scripts/check_theme.py"
+      - ".github/scripts/theme_tokens.py"
+      - ".github/scripts/generate_share_assets.py"
       - ".github/workflows/validate-content.yml"
       - ".github/workflows/reuse-validate-build.yml"
   workflow_dispatch:

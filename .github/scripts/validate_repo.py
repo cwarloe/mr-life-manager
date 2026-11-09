@@ -8,6 +8,7 @@ import sys
 from pathlib import Path
 from urllib.parse import unquote
 
+from check_theme import scan as scan_theme
 from guide_inventory import SHEETS
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -61,6 +62,13 @@ def validate_share_qr() -> None:
                   "(run generate_share_assets.py)")
 
 
+def validate_theme() -> None:
+    """Colors, fonts and shadows come from tokens.css (check_theme.py)."""
+    findings, _prototypes = scan_theme()
+    for finding in findings:
+        error(f"raw color or font, use a token from tokens.css: {finding}")
+
+
 def validate_markdown_links() -> tuple[int, int]:
     files = sorted(ROOT.rglob("*.md"))
     checked = 0
@@ -100,6 +108,7 @@ def main() -> int:
     html_count = validate_html()
     markdown_count, link_count = validate_markdown_links()
     validate_share_qr()
+    validate_theme()
 
     if ERRORS:
         print("Repository validation failed:")

@@ -22,6 +22,7 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen import canvas
 
 from guide_inventory import SHEETS
+from theme_tokens import palette
 from site_catalog import ORIGIN, PAUSED_ENTRY_ROUTES, required_share_images
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -32,12 +33,18 @@ SHARE_QR_PATH = ROOT / "products" / "print" / "share-qr.svg"
 SHARE_QR_START = "<!-- share-qr:start -->"
 SHARE_QR_END = "<!-- share-qr:end -->"
 
-INK = "#12161C"
-PAPER = "#FBF9F4"
-BLUE = "#1F4E79"
-BLUE_SOFT = "#E7EEF5"
-AMBER = "#B4741A"
-SLATE = "#6B7280"
+# Colors come from tokens.css (the printables' palette), so a token change
+# reaches the share images and the handout on the next run.
+_T = palette("print")
+INK = _T["--ink"]
+PAPER = _T["--paper"]
+ACCENT = _T["--accent"]
+ACCENT_SOFT = _T["--accent-soft"]
+SECOND = _T["--second"]
+MUTED = _T["--muted"]
+SURFACE = _T["--surface"]
+RULE = _T["--rule"]
+RULE_STRONG = _T["--rule-strong"]
 
 SANS_BOLD = "/usr/share/fonts/opentype/urw-base35/NimbusSans-Bold.otf"
 SERIF = "/usr/share/fonts/opentype/urw-base35/NimbusRoman-Regular.otf"
@@ -88,18 +95,18 @@ def social_image(kicker: str, headline: str, output: Path) -> None:
     headline_font = ImageFont.truetype(SANS_BOLD, 72)
     footer_font = ImageFont.truetype(SERIF, 27)
 
-    draw.rectangle((0, 0, 22, 630), fill=AMBER)
+    draw.rectangle((0, 0, 22, 630), fill=SECOND)
     draw.rectangle((22, 0, 1200, 14), fill=INK)
     draw.text((78, 62), "MR. LIFE MANAGER", font=brand, fill=INK)
-    draw.text((78, 142), kicker.upper(), font=kicker_font, fill=BLUE)
+    draw.text((78, 142), kicker.upper(), font=kicker_font, fill=ACCENT)
 
     y = 205
     for line in wrapped(draw, headline, headline_font, 990):
         draw.text((78, y), line, font=headline_font, fill=INK)
         y += 82
 
-    draw.rectangle((78, 531, 1122, 533), fill="#D9D5CC")
-    draw.text((78, 554), "One useful action, in the order you need it.", font=footer_font, fill=SLATE)
+    draw.rectangle((78, 531, 1122, 533), fill=RULE)
+    draw.text((78, 554), "One useful action, in the order you need it.", font=footer_font, fill=MUTED)
     image.save(output, format="PNG", optimize=True)
 
 
@@ -132,7 +139,7 @@ def share_qr_svg(url: str) -> str:
     return (
         f'<svg class="share-qr" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {size} {size}" '
         f'role="img" aria-label="QR code for mrlifemanager.com" shape-rendering="crispEdges">'
-        f'<rect width="{size}" height="{size}" fill="#fff"/>'
+        f'<rect width="{size}" height="{size}" fill="#fff"/>'  # theme-ok: QR must stay black on white for scanners
         f'<path fill="currentColor" d="{"".join(runs)}"/></svg>'
     )
 
@@ -163,13 +170,13 @@ def draw_pdf_page(pdf: canvas.Canvas, audience: str, source: str, intro: str) ->
     pdf.rect(0, 0, width, height, fill=1, stroke=0)
     pdf.setFillColor(HexColor(INK))
     pdf.rect(0, height - 12, width, 12, fill=1, stroke=0)
-    pdf.setFillColor(HexColor(AMBER))
+    pdf.setFillColor(HexColor(SECOND))
     pdf.rect(0, 0, 10, height, fill=1, stroke=0)
 
     pdf.setFillColor(HexColor(INK))
     pdf.setFont("MlmSansBold", 13)
     pdf.drawString(42, 744, "MR. LIFE MANAGER")
-    pdf.setFillColor(HexColor(BLUE))
+    pdf.setFillColor(HexColor(ACCENT))
     pdf.setFont("MlmSansBold", 9)
     pdf.drawString(42, 715, audience.upper())
 
@@ -177,7 +184,7 @@ def draw_pdf_page(pdf: canvas.Canvas, audience: str, source: str, intro: str) ->
     pdf.setFont("MlmSansBold", 29)
     pdf.drawString(42, 670, "Give them one useful page,")
     pdf.drawString(42, 636, "not another talk.")
-    pdf.setFillColor(HexColor(SLATE))
+    pdf.setFillColor(HexColor(MUTED))
     pdf.setFont("MlmSerif", 13)
     pdf.drawString(42, 603, intro)
 
@@ -188,42 +195,42 @@ def draw_pdf_page(pdf: canvas.Canvas, audience: str, source: str, intro: str) ->
     ]
     y = 535
     for number, title, body in steps:
-        pdf.setFillColor(HexColor(BLUE_SOFT))
+        pdf.setFillColor(HexColor(ACCENT_SOFT))
         pdf.roundRect(42, y - 9, 30, 30, 4, fill=1, stroke=0)
-        pdf.setFillColor(HexColor(BLUE))
+        pdf.setFillColor(HexColor(ACCENT))
         pdf.setFont("MlmSansBold", 14)
         pdf.drawCentredString(57, y, number)
         pdf.setFillColor(HexColor(INK))
         pdf.setFont("MlmSansBold", 12)
         pdf.drawString(86, y + 6, title)
-        pdf.setFillColor(HexColor(SLATE))
+        pdf.setFillColor(HexColor(MUTED))
         pdf.setFont("MlmSerif", 10.5)
         pdf.drawString(86, y - 10, body)
         y -= 66
 
-    pdf.setFillColor(HexColor("#FFFFFF"))
-    pdf.setStrokeColor(HexColor("#B8B2A6"))
+    pdf.setFillColor(HexColor(SURFACE))
+    pdf.setStrokeColor(HexColor(RULE_STRONG))
     pdf.roundRect(42, 170, 528, 150, 6, fill=1, stroke=1)
     pdf.drawImage(ImageReader(make_qr(url)), 61, 188, 112, 112, preserveAspectRatio=True, mask="auto")
     pdf.setFillColor(HexColor(INK))
     pdf.setFont("MlmSansBold", 16)
     pdf.drawString(197, 276, "Scan to choose the right starting page")
-    pdf.setFillColor(HexColor(SLATE))
+    pdf.setFillColor(HexColor(MUTED))
     pdf.setFont("MlmSerif", 11)
     pdf.drawString(197, 251, "Try it with one person - or up to five - and tell us")
     pdf.drawString(197, 235, "only what helped and where someone stopped.")
-    pdf.setFillColor(HexColor(BLUE))
+    pdf.setFillColor(HexColor(ACCENT))
     pdf.setFont("MlmSansBold", 9.5)
     pdf.drawString(197, 205, url)
 
-    pdf.setFillColor(HexColor(SLATE))
+    pdf.setFillColor(HexColor(MUTED))
     pdf.setFont("MlmSerif", 9.5)
     pdf.drawString(42, 126, "Free learning pilot. No account, participant report, or institutional commitment.")
     pdf.drawString(42, 108, "The source label in the link identifies this route only; it does not create a visitor profile.")
     pdf.setFillColor(HexColor(INK))
     pdf.setFont("MlmSansBold", 9.5)
     pdf.drawString(42, 66, "mrlifemanager.com")
-    pdf.setFillColor(HexColor(SLATE))
+    pdf.setFillColor(HexColor(MUTED))
     pdf.setFont("MlmSans", 9.5)
     pdf.drawRightString(570, 66, "Practical systems for running a home")
     pdf.setFont("MlmSans", 8.5)

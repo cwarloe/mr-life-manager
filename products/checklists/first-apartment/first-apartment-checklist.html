@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-palette="print">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="../../landing/assets/tokens.css">
 <link rel="stylesheet" href="../../print/printable.css">
 <style>
 .sheet{max-width:52rem}
@@ -19,10 +20,10 @@
   display:flex;flex-wrap:wrap;gap:1.25rem;
   border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
   padding:.7rem 0;margin:2rem 0 2.5rem;
-  font-size:.78rem;color:var(--slate)
+  font-size:.78rem;color:var(--muted)
 }
 .legend b{color:var(--ink);font-weight:600}
-.star{color:var(--amber);font-weight:700}
+.star{color:var(--second);font-weight:700}
 .part{margin:0 0 3rem}
 .part-num{font-variant-numeric:tabular-nums}
 .part-head h2{font-size:1.4rem}
@@ -40,8 +41,8 @@ ul.checks li::before{
   width:.85rem;height:.85rem;border:1.5px solid var(--rule-strong);border-radius:2px
 }
 ul.checks li strong{font-weight:600}
-li.key::before{border-color:var(--amber);border-width:2px}
-li.key::after{content:"★";position:absolute;left:1.15rem;top:.02em;color:var(--amber);font-size:.6rem}
+li.key::before{border-color:var(--second);border-width:2px}
+li.key::after{content:"★";position:absolute;left:1.15rem;top:.02em;color:var(--second);font-size:.6rem}
 li.key{padding-left:2.1rem}
 .why{font-size:.95rem;margin:1.2rem 0 0}
 .cost{margin:0;padding:0;list-style:none;counter-reset:c;display:grid;gap:.7rem}
@@ -51,8 +52,8 @@ li.key{padding-left:2.1rem}
 }
 .cost li::before{
   content:counter(c);position:absolute;left:0;top:0;
-  font-family:var(--sans);font-weight:700;font-size:.8rem;
-  color:var(--amber);background:var(--amber-soft);
+  font-family:var(--font-ui);font-weight:700;font-size:.8rem;
+  color:var(--second);background:var(--second-soft);
   width:1.6rem;height:1.6rem;border-radius:50%;
   display:grid;place-items:center;font-variant-numeric:tabular-nums
 }
@@ -62,10 +63,10 @@ li.key{padding-left:2.1rem}
   border-radius:3px;break-inside:avoid;background:var(--surface)
 }
 .closer h2{font-size:1.15rem;font-weight:700;margin:0 0 .3rem;letter-spacing:-.01em}
-.closer p.sub{font-family:var(--serif);color:var(--slate);font-size:.92rem;margin:0 0 1.1rem}
+.closer p.sub{font-family:var(--font-text);color:var(--muted);font-size:.92rem;margin:0 0 1.1rem}
 .closer ol{margin:0;padding-left:1.3rem;display:grid;gap:.4rem;font-size:.95rem}
-.closer ol li::marker{font-weight:700;color:var(--blue)}
-.closer .kicker{font-family:var(--serif);font-size:.95rem;margin:1.2rem 0 0;padding-top:1rem;border-top:1px solid var(--rule)}
+.closer ol li::marker{font-weight:700;color:var(--accent)}
+.closer .kicker{font-family:var(--font-text);font-size:.95rem;margin:1.2rem 0 0;padding-top:1rem;border-top:1px solid var(--rule)}
 .signoff{max-width:38ch}
 footer{margin-top:3.5rem;align-items:baseline}
 @media (max-width:34rem){

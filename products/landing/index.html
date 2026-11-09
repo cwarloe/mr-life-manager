@@ -9,52 +9,53 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="/assets/tokens.css">
 <link rel="stylesheet" href="/assets/site.css">
 <style>
 .hero{padding:4.5rem 0 3.5rem;border-bottom:3px solid var(--ink)}
 .kicker{margin:0 0 1.2rem}
 h1{font-size:clamp(2.4rem,7vw,4rem);font-weight:800;line-height:1.02;letter-spacing:-.03em;
   margin:0;text-wrap:balance;max-width:19ch}
-.sub{font-family:var(--serif);font-size:clamp(1.1rem,2.4vw,1.35rem);line-height:1.5;
-  color:var(--slate);margin:1.4rem 0 0;max-width:46ch}
+.sub{font-family:var(--font-text);font-size:clamp(1.1rem,2.4vw,1.35rem);line-height:1.5;
+  color:var(--muted);margin:1.4rem 0 0;max-width:46ch}
 .sub strong{color:var(--ink);font-weight:600}
 .cta-row{margin:2rem 0 0}
 a.cta{display:inline-block;font-weight:700;font-size:1.05rem;letter-spacing:-.01em;
-  color:#fff;background:var(--blue);padding:.85rem 1.4rem;border-radius:4px;
+  color:var(--on-accent);background:var(--accent);padding:.85rem 1.4rem;border-radius:4px;
   text-decoration:none;line-height:1.3;box-shadow:var(--shadow-sm);transition:all .15s ease}
-a.cta:hover{background:#123250;box-shadow:var(--shadow-md);transform:translateY(-1px)}
+a.cta:hover{background:var(--accent-deep);box-shadow:var(--shadow-md);transform:translateY(-1px)}
 .picker{display:grid;gap:.85rem;margin:1rem 0 0}
 a.pick{display:grid;gap:.4rem;border:1px solid var(--rule);border-radius:6px;
   padding:1.25rem 1.45rem;background:var(--surface);text-decoration:none;color:inherit;
   box-shadow:var(--shadow-sm);transition:all .15s ease}
-a.pick:hover{border-color:var(--blue);box-shadow:var(--shadow-md);transform:translateY(-1px)}
+a.pick:hover{border-color:var(--accent);box-shadow:var(--shadow-md);transform:translateY(-1px)}
 .pick-meta{display:flex;align-items:center;gap:.5rem;margin-bottom:.1rem}
-.badge{display:inline-block;font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.06em;
+.badge{display:inline-block;font-family:var(--font-ui);font-size:.7rem;font-weight:700;letter-spacing:.06em;
   text-transform:uppercase;padding:.2rem .55rem;border-radius:3px}
 .badge-reset{background:var(--badge-reset-bg);color:var(--badge-reset-text);border:1px solid var(--badge-reset-border)}
 .badge-setup{background:var(--badge-setup-bg);color:var(--badge-setup-text);border:1px solid var(--badge-setup-border)}
 a.pick .q{font-size:1.15rem;font-weight:700;letter-spacing:-.015em;line-height:1.25}
-a.pick .a{font-family:var(--serif);font-size:.96rem;line-height:1.45;color:var(--slate)}
+a.pick .a{font-family:var(--font-text);font-size:.96rem;line-height:1.45;color:var(--muted)}
 .onedoor{margin:1.8rem 0 0;border-left:3px solid var(--rule-strong);padding-left:1.1rem}
-.onedoor p{font-family:var(--serif);font-size:.98rem;line-height:1.6;margin:0;color:var(--slate)}
+.onedoor p{font-family:var(--font-text);font-size:.98rem;line-height:1.6;margin:0;color:var(--muted)}
 .onedoor p + p{margin-top:.6rem}
-.onedoor b{font-family:var(--sans);font-weight:700;color:var(--ink)}
-.onedoor a{color:var(--blue);font-weight:600}
+.onedoor b{font-family:var(--font-ui);font-weight:700;color:var(--ink)}
+.onedoor a{color:var(--accent);font-weight:600}
 .fine{margin:.75rem 0 0}
 section{padding:4rem 0}
 section + section{border-top:1px solid var(--rule)}
 .eyebrow{margin:0 0 .9rem}
 h2{font-size:clamp(1.6rem,3.6vw,2.2rem);font-weight:700;letter-spacing:-.02em;margin:0;
   text-wrap:balance;max-width:22ch}
-.lede{font-family:var(--serif);font-size:1.08rem;line-height:1.6;margin:1.1rem 0 0;max-width:58ch}
-p.body{font-family:var(--serif);font-size:1.03rem;line-height:1.65;margin:1.1rem 0 0;max-width:58ch}
+.lede{font-family:var(--font-text);font-size:1.08rem;line-height:1.6;margin:1.1rem 0 0;max-width:58ch}
+p.body{font-family:var(--font-text);font-size:1.03rem;line-height:1.65;margin:1.1rem 0 0;max-width:58ch}
 p.body strong{font-weight:600}
 .dave{background:var(--surface);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.pull{font-family:var(--serif);font-size:clamp(1.3rem,3.2vw,1.75rem);line-height:1.4;
-  font-style:italic;margin:1.6rem 0;padding-left:1.4rem;border-left:4px solid var(--amber);
+.pull{font-family:var(--font-text);font-size:clamp(1.3rem,3.2vw,1.75rem);line-height:1.4;
+  font-style:italic;margin:1.6rem 0;padding-left:1.4rem;border-left:4px solid var(--second);
   max-width:34ch;text-wrap:balance}
-.attrib{font-family:var(--sans);font-style:normal;font-size:.8rem;font-weight:600;
-  letter-spacing:.08em;text-transform:uppercase;color:var(--slate);display:block;margin-top:.9rem}
+.attrib{font-family:var(--font-ui);font-style:normal;font-size:.8rem;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:block;margin-top:.9rem}
 .close{border-top:3px solid var(--ink);background:var(--surface)}
 .close h2{max-width:20ch}
 footer .wrap{display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space-between}

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-palette="print">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="../../landing/assets/tokens.css">
 <link rel="stylesheet" href="../../print/printable.css">
 <style>
 .sheet{max-width:54rem}
@@ -21,8 +22,8 @@ thead th.n{width:9.5rem}
 tbody td{padding:.5rem .7rem .5rem 0;font-variant-numeric:tabular-nums}
 td.task{font-weight:500}
 td.good{color:var(--ink)}
-td.better{color:var(--slate)}
-tr.flag td.task{color:var(--amber);font-weight:600}
+td.better{color:var(--muted)}
+tr.flag td.task{color:var(--second);font-weight:600}
 tr.flag td.task::after{content:" ⚠"}
 .signoff{max-width:40ch}
 @media (max-width:38rem){

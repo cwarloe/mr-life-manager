@@ -1,28 +1,5 @@
-/* Shared marketing chrome: brand tokens, bar, footer, type baseline. */
-:root{
-  --ink:#14181F; --paper:#F9F7F2; --surface:#FFFFFF;
-  --blue:#1A446C; --blue-soft:#EBF1F7;
-  --amber:#A65E12; --amber-soft:#FDF6EC;
-  --slate:#5A6270; --rule:#E0DBD1; --rule-strong:#BCB6A8;
-  --badge-reset-bg:#FDF4E7; --badge-reset-text:#964F0A; --badge-reset-border:#F0D9BC;
-  --badge-setup-bg:#EDF3F8; --badge-setup-text:#1B456D; --badge-setup-border:#D0DFEC;
-  --shadow-sm:0 1px 3px rgba(20,24,31,0.05);
-  --shadow-md:0 4px 12px rgba(20,24,31,0.07);
-  --sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
-}
-@media (prefers-color-scheme:dark){
-  :root{
-    --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
-    --blue:#8FB6DA; --blue-soft:#1D2833;
-    --amber:#E3A94E; --amber-soft:#2A2418;
-    --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
-    --badge-reset-bg:#262016; --badge-reset-text:#E3A94E; --badge-reset-border:#423624;
-    --badge-setup-bg:#16222E; --badge-setup-text:#8FB6DA; --badge-setup-border:#27384A;
-    --shadow-sm:0 1px 3px rgba(0,0,0,0.3);
-    --shadow-md:0 4px 12px rgba(0,0,0,0.4);
-  }
-}
+/* Shared marketing chrome: bar, footer, type baseline. Colors and fonts come
+   from tokens.css, which every page links first. */
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){
@@ -30,7 +7,7 @@ html{scroll-behavior:smooth}
   *{animation:none!important;transition:none!important}
 }
 body{
-  background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;
+  background:var(--paper);color:var(--ink);font-family:var(--font-ui);font-size:16px;
   line-height:1.55;margin:0;-webkit-font-smoothing:antialiased;
 }
 .wrap{max-width:60rem;margin:0 auto;padding:0 1.5rem}
@@ -41,22 +18,22 @@ body{
   padding-top:1rem;padding-bottom:1rem;
 }
 .brand{font-weight:700;font-size:.95rem;letter-spacing:-.01em;text-decoration:none;color:inherit}
-.brand span{color:var(--blue)}
-.bar a{font-size:.85rem;color:var(--slate);text-decoration:none;font-weight:500}
-.bar a:hover{color:var(--blue)}
+.brand span{color:var(--accent)}
+.bar a{font-size:.85rem;color:var(--muted);text-decoration:none;font-weight:500}
+.bar a:hover{color:var(--accent)}
 .kicker,.eyebrow{
   font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--blue);margin:0 0 1rem;
+  color:var(--accent);margin:0 0 1rem;
 }
-.fine{font-size:.82rem;color:var(--slate)}
-.fine a{color:var(--blue);font-weight:600}
-.ml-fallback a{color:var(--blue);font-weight:600}
-footer{border-top:1px solid var(--rule);padding:2rem 0 3rem;font-size:.82rem;color:var(--slate)}
-footer a{color:var(--slate)}
+.fine{font-size:.82rem;color:var(--muted)}
+.fine a{color:var(--accent);font-weight:600}
+.ml-fallback a{color:var(--accent);font-weight:600}
+footer{border-top:1px solid var(--rule);padding:2rem 0 3rem;font-size:.82rem;color:var(--muted)}
+footer a{color:var(--muted)}
 footer b{color:var(--ink);font-weight:600}
 
 /* Shared keyboard focus for marketing controls (index / partners). */
-a.pick:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
-a.cta:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
-a.reserve-button:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
-a.button:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+a.pick:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+a.cta:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+a.reserve-button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+a.button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}

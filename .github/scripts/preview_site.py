@@ -17,9 +17,9 @@ VARIANTS = (
 )
 
 CSS = """
-.preview-banner{font:14px/1.5 var(--sans,system-ui);padding:.65rem 1.1rem;
- background:var(--blue-soft,#EBF1F7);color:var(--ink,#14181F);border-bottom:1px solid var(--rule,#ddd)}
-.preview-banner a{color:var(--blue,#1A446C);font-weight:700}
+.preview-banner{font:14px/1.5 var(--font-ui);padding:.65rem 1.1rem;
+ background:var(--accent-soft);color:var(--ink);border-bottom:1px solid var(--rule)}
+.preview-banner a{color:var(--accent);font-weight:700}
 body.doing .preview-banner{display:none}
 .review{max-width:56rem;margin:auto;padding:2.5rem 1.2rem 4rem}
 .review h1{font-size:clamp(2rem,6vw,3rem);line-height:1.1;margin:0 0 1rem}
@@ -27,17 +27,17 @@ body.doing .preview-banner{display:none}
 .review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr));gap:.8rem}
 .review-card{display:block;padding:1rem 1.15rem;border:1px solid var(--rule);border-radius:5px;
  background:var(--surface);color:var(--ink);text-decoration:none}
-.review-card:hover{border-color:var(--blue)}
+.review-card:hover{border-color:var(--accent)}
 .review-card strong{display:block;line-height:1.35}
-.review-card span{display:block;font-size:.85rem;color:var(--slate);margin-top:.4rem}
-.review a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.review-card span{display:block;font-size:.85rem;color:var(--muted);margin-top:.4rem}
+.review a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .review-copy{max-width:44rem}.review-copy p,.review-copy li{line-height:1.65}
 .review-copy label{display:flex;align-items:flex-start;gap:.7rem}
 .review-copy input{flex:none;margin-top:.4rem;width:1rem;height:1rem}
 .review-copy .checks{list-style:none;padding:0}.review-copy .checks li{margin:1rem 0}
 .review-copy table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.9rem}
 .review-copy td,.review-copy th{border:1px solid var(--rule);padding:.6rem;min-width:2rem;height:2.5rem;text-align:left}
-.preview-pdf{max-width:50rem;margin:1rem auto;padding:0 1.2rem;font:15px/1.5 var(--sans)}
+.preview-pdf{max-width:50rem;margin:1rem auto;padding:0 1.2rem;font:15px/1.5 var(--font-ui)}
 @media print{.preview-banner,.preview-pdf{display:none!important}.review{padding:0}
  .review-copy h2{break-after:avoid}.review-copy li{break-inside:avoid}}
 """
@@ -47,6 +47,7 @@ def shell(title: str, body: str) -> str:
     return ("<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\">"
             '<meta name="viewport" content="width=device-width, initial-scale=1">'
             f"<title>{html.escape(title)} · Mr. Life Manager</title>"
+            '<link rel="stylesheet" href="/assets/tokens.css">'
             '<link rel="stylesheet" href="/assets/site.css">'
             '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;display=swap">'
             f"</head><body>{body}</body></html>")
@@ -149,6 +150,10 @@ def build_preview(root: Path, out: Path) -> None:
         for old, new in replacements.items():
             text = text.replace('"' + old, '"' + new).replace("'" + old, "'" + new)
         text = re.sub(r'<meta\b[^>]*name=["\']robots["\'][^>]*>\s*', '', text, flags=re.I)
+        # The banner's colors come from tokens.css. A page that doesn't link it
+        # (the design prototype) gets it first in <head>, so its own values win.
+        if '/assets/tokens.css' not in text:
+            text = re.sub(r'(<head\b[^>]*>)', r'\1<link rel="stylesheet" href="/assets/tokens.css">', text, count=1)
         text = text.replace('</head>', '<meta data-mlm-preview="1" name="robots" content="noindex,nofollow">'
                             '<link rel="stylesheet" href="/preview/assets/preview.css"></head>', 1)
         banner = '<aside class="preview-banner">Draft preview · <a href="/preview/">All previews</a> · Not part of the main checklist selection</aside>'
@@ -170,6 +175,7 @@ def build_preview(root: Path, out: Path) -> None:
 
     for slug, src, title, _ in ALL_GUIDES:
         text = (root / src).read_text().replace('href="../../print/printable.css"', 'href="/print/printable.css"')
+        text = text.replace('href="../../landing/assets/tokens.css"', 'href="/assets/tokens.css"')
         pdf = f'/preview/print/{slug}.pdf'
         text = text.replace('</body>', f'<p class="preview-pdf"><a href="{pdf}" rel="nofollow">Open the saved PDF</a></p></body>')
         write(f'guides/{slug}.html', text)

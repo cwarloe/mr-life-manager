@@ -215,10 +215,18 @@ def main() -> int:
             problems.append(f"privacy.html: missing {marker}")
 
     for name in ("favicon.svg", "site.webmanifest", "robots.txt", "sitemap.xml",
-                 "print/partner-pilot.pdf", "assets/entry.js", "assets/entry.css",
+                 "print/partner-pilot.pdf", "assets/entry.js", "assets/entry.css", "assets/tokens.css",
                  *(route.page for route in PUBLISHED_ENTRY_ROUTES)):
         if not (OUT / name).is_file():
             problems.append(f"missing generated public file: {name}")
+
+    # Colors and fonts live in tokens.css (products/landing/THEMING.md): a page that loads a
+    # shared stylesheet has to load the tokens before it, or it renders unstyled.
+    for page in sorted(OUT.rglob("*.html")):
+        text = page.read_text(encoding="utf-8")
+        shared = re.search(r'href=["\'][^"\']*/(?:site|entry|looks|printable)\.css["\']', text)
+        if shared and text.find("/assets/tokens.css") not in range(0, shared.start()):
+            problems.append(f"{page.relative_to(OUT)}: links a shared stylesheet without /assets/tokens.css before it")
 
     for share_name in required_share_images():
         rel = f"assets/share/{share_name}"

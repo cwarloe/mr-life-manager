@@ -19,6 +19,7 @@ on:
       - ".github/scripts/check_preview_site.py"
       - ".github/scripts/site_catalog.py"
       - ".github/scripts/guide_inventory.py"
+      - ".github/scripts/theme_tokens.py"
       - ".github/workflows/deploy-landing.yml"
       - ".github/workflows/reuse-validate-build.yml"
   workflow_dispatch:

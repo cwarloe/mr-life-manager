@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-palette="print">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,13 +9,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="../../landing/assets/tokens.css">
 <link rel="stylesheet" href="../../print/printable.css">
 <style>
 .sheet{max-width:54rem}
 .deck{max-width:44ch}
 .key-note{margin:1.75rem 0 0;padding:.9rem 1.1rem;font-size:.97rem}
-.key-note.warn{border-left-color:var(--amber);background:var(--amber-soft)}
-.key-note.warn b{color:var(--amber)}
+.key-note.warn{border-left-color:var(--second);background:var(--second-soft)}
+.key-note.warn b{color:var(--second)}
 .band{margin:3rem 0 0}
 .band-head h2{font-size:1.4rem}
 h3{margin:2rem 0 .8rem}
@@ -26,10 +27,10 @@ ul.tick li{font-size:.93rem;line-height:1.45;padding-left:1.6rem;position:relati
 ul.tick li::before{content:"";position:absolute;left:0;top:.18em;width:.85rem;height:.85rem;
   border:1.5px solid var(--rule-strong);border-radius:2px;background:var(--surface)}
 ul.tick li b{font-weight:600}
-ul.tick li .desc{font-family:var(--serif);color:var(--slate);font-size:.87rem;display:block;line-height:1.4}
+ul.tick li .desc{font-family:var(--font-text);color:var(--muted);font-size:.87rem;display:block;line-height:1.4}
 .dolist{width:100%;border-collapse:collapse;font-size:.92rem;margin:.4rem 0 0}
 .dolist thead th{font-size:.66rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
-  color:var(--slate);text-align:left;padding:0 .7rem .45rem 0;border-bottom:1px solid var(--rule-strong)}
+  color:var(--muted);text-align:left;padding:0 .7rem .45rem 0;border-bottom:1px solid var(--rule-strong)}
 .dolist td{padding:.85rem .7rem;border-bottom:1px solid var(--rule);height:2.4rem}
 .dolist th.w-when{width:9rem}.dolist th.w-who{width:9rem}
 .signoff{max-width:40ch}
@@ -41,7 +42,7 @@ ul.tick li .desc{font-family:var(--serif);color:var(--slate);font-size:.87rem;di
 @media print{
   ul.tick li{font-size:8.6pt;line-height:1.28}
   ul.tick{gap:.22rem 1rem}
-  ul.tick li .desc{font-family:var(--sans);font-size:7.8pt;line-height:1.25;color:var(--slate)}
+  ul.tick li .desc{font-family:var(--font-ui);font-size:7.8pt;line-height:1.25;color:var(--muted)}
 }
 </style>
 </head>

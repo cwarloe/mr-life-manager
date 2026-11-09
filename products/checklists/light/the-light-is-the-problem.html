@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-palette="print">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="../../landing/assets/tokens.css">
 <link rel="stylesheet" href="../../print/printable.css">
 <style>
 .sheet{max-width:54rem}
@@ -16,26 +17,26 @@
 .key-note{margin:1.75rem 0 0;padding:.9rem 1.1rem;font-size:.97rem}
 h3{margin:2rem 0 .8rem}
 .signoff{max-width:40ch}
-.lede-block{font-family:var(--serif);font-size:1.06rem;line-height:1.62;margin:1.6rem 0 0;max-width:62ch}
-.lede-block b{font-family:var(--sans);font-weight:600}
+.lede-block{font-family:var(--font-text);font-size:1.06rem;line-height:1.62;margin:1.6rem 0 0;max-width:62ch}
+.lede-block b{font-family:var(--font-ui);font-weight:600}
 .rule{margin:2.6rem 0 0}
 .rule h2{font-size:1.32rem;font-weight:700;letter-spacing:-.018em;margin:0 0 .6rem;line-height:1.25}
-.rule p{font-family:var(--serif);font-size:1rem;line-height:1.62;margin:0 0 .75rem;max-width:64ch}
+.rule p{font-family:var(--font-text);font-size:1rem;line-height:1.62;margin:0 0 .75rem;max-width:64ch}
 .rule p:last-child{margin-bottom:0}
-.rule b{font-family:var(--sans);font-weight:600}
+.rule b{font-family:var(--font-ui);font-weight:600}
 .spec{width:100%;border-collapse:collapse;font-size:.93rem;margin:1rem 0 .3rem}
-.spec th{font-size:.66rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--slate);
+.spec th{font-size:.66rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);
   text-align:left;padding:0 .7rem .45rem 0;border-bottom:1px solid var(--rule-strong)}
 .spec td{padding:.5rem .7rem .5rem 0;border-bottom:1px solid var(--rule);vertical-align:top}
 .spec td:first-child{font-weight:600;white-space:nowrap}
 .spec tr:last-child td{border-bottom:none}
 .action{border:2px solid var(--ink);border-radius:4px;padding:1.4rem 1.3rem;margin:3rem 0 0}
 .action .lab{font-size:.7rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
-  color:var(--blue);margin:0 0 .5rem}
+  color:var(--accent);margin:0 0 .5rem}
 .action h2{font-size:1.3rem;font-weight:800;letter-spacing:-.02em;margin:0 0 .7rem}
-.action p{font-family:var(--serif);font-size:1.02rem;line-height:1.6;margin:0 0 .7rem}
+.action p{font-family:var(--font-text);font-size:1.02rem;line-height:1.6;margin:0 0 .7rem}
 .action p:last-child{margin-bottom:0}
-.action b{font-family:var(--sans);font-weight:700}
+.action b{font-family:var(--font-ui);font-weight:700}
 @media (max-width:38rem){.sheet{padding:2rem 1.1rem 3rem}}
 @media print{
   body{font-size:8.6pt}

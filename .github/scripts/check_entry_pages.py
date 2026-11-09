@@ -20,6 +20,7 @@ ENTRY_JS = LANDING / "assets" / "entry.js"
 ENTRY_CSS = LANDING / "assets" / "entry.css"
 
 REQUIRED = [
+    ("design tokens (products/landing/THEMING.md)", 'href="/assets/tokens.css"'),
     ("shared entry stylesheet", 'href="/assets/entry.css"'),
     ("shared entry script", 'src="/assets/entry.js"'),
     ("mode buttons", 'class="go-do"'),

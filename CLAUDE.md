@@ -140,5 +140,9 @@ Don't re-derive these — read them:
   and public support files
 - `python3 .github/scripts/check_live_site.py` — production smoke test. GitHub
   Actions runs it after Pages deployment and weekly; it never submits a form
+- Colors, fonts and shadows live in `products/landing/assets/tokens.css`;
+  everything else uses `var(--token)`. `validate_repo.py` runs
+  `check_theme.py`, which fails on raw values elsewhere. The rule and the
+  exceptions: [`products/landing/THEMING.md`](products/landing/THEMING.md)
 - Entry-page action sheets are **not** committed as PDFs. They print from each
   page's own stylesheet, so the sheet can't drift from the page.
