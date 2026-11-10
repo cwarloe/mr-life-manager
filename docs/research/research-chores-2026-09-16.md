@@ -1,5 +1,5 @@
 > Imported from Google Drive on 2026-11-09. Source markdown: [research-chores-2026-09-16.md](https://drive.google.com/file/d/1VuqTLw4HRwAygvqcCnoSBhZfYiQzE--_/view). Matching Google Doc: [Research — USPTO domains handles 2026-09-16](https://docs.google.com/document/d/176BA3sdLxqExnvpGosFNcgi3TXSDCwARM0Mjq9TIz2g/edit).
-> The markdown includes a 2026-09-16 update that mrlifemanager.com had been registered. This report is the detailed USPTO, domain, and handle scan that [brand-name-scan.md](brand-name-scan.md) asked for as a follow-on step. It is not legal advice.
+> The markdown includes a 2026-09-16 update that mrlifemanager.com had been registered. Status in the TLDR, next steps, and domain table was updated so it says the domain is registered (Charles bought it, and the site is live), not still available. This report is the detailed USPTO, domain, and handle scan that [brand-name-scan.md](brand-name-scan.md) asked for as a follow-on step. It is not legal advice.
 
 # Mr. Life Manager — Research Chores (Trademark / Domain / Handles)
 
@@ -9,7 +9,7 @@
 
 **Prior work consulted:** `cwarloe/mr-life-manager` → `docs/research/brand-name-scan.md` (2026-09-06). That scan asked for USPTO + domain/handle checks as the next free step; this file closes that gap without duplicating the positioning/SEO analysis.
 
-**Methods:** USPTO public pages + aggregators (Trademarkia / TrademarkElite / Markinton / Furm / TSDR); Verisign/Public Interest Registry/Registry.co WHOIS; Idaho SOSBiz API; HTTP probes for social (TikTok/X/YouTube strong signals; IG/FB weaker). USPTO `tmsearch.uspto.gov` UI is JS-heavy (reachable but not scrapable here); results triangulated via TSDR + aggregators. Nothing purchased or filed.
+**Methods:** USPTO public pages + aggregators (Trademarkia / TrademarkElite / Markinton / Furm / TSDR); Verisign/Public Interest Registry/Registry.co WHOIS; Idaho SOSBiz API; HTTP probes for social (TikTok/X/YouTube strong signals; IG/FB weaker). USPTO `tmsearch.uspto.gov` UI is JS-heavy (reachable but not scrapable here); results triangulated via TSDR + aggregators. The scan itself purchased and filed nothing. After the scan, Charles registered mrlifemanager.com and the site is live.
 
 ---
 
@@ -18,11 +18,11 @@
 | Area | Signal | One-liner |
 |------|--------|-----------|
 | **Trademark risk** | **YELLOW** | No exact **“Mr. Life Manager”** federal mark found. Exact **“LIFE MANAGER”** has a **live** registration (SN 77258914 / Reg 3544555, Classes 35/36/42 — ads, finance info, personal-productivity ASP). Descriptive crowding + adjacent “Mr. Man” app = soft conflict on the bare phrase; whole mark still looks workable for curriculum/content (likely Class 41) but **attorney before filing**. |
-| **Best domain** | **GREEN** | **`mrlifemanager.com` available** (WHOIS: no match). Also free: `mr-life-manager.com`, `getmrlifemanager.com`, `mrlifemanager.net`, `mrlifemanager.org`, `themrlifemanager.com`, `mrlifemanager.co`. **`lifemanager.com` taken** (since 2002). `getlifemanager.com` taken (Mar 2026). |
+| **Best domain** | **GREEN** | **`mrlifemanager.com` is registered** (Charles bought it on 2026-09-16, and the site is live). At the time of this scan, also free: `mr-life-manager.com`, `getmrlifemanager.com`, `mrlifemanager.net`, `mrlifemanager.org`, `themrlifemanager.com`, `mrlifemanager.co`. **`lifemanager.com` taken** (since 2002). `getlifemanager.com` taken (Mar 2026). |
 | **Best handle set** | **YELLOW-GREEN** | Exact **`@mrlifemanager` looks free on TikTok, X, YouTube**. Instagram/Facebook inconclusive from bots (login walls / mirrors). Claim **@mrlifemanager** across platforms ASAP when ready; keep `@mr.lifemanager` / `@mr_life_manager` as backups. |
 
 **Recommended next steps (cheap → spend):**
-1. Register **`mrlifemanager.com`** (and optionally `.org` or `.net` as defensive) — *when Charles decides to spend*; not done here.
+1. **`mrlifemanager.com` is registered and live** (Charles bought it on 2026-09-16). Optionally register `.org` or `.net` as defensive.
 2. Claim **@mrlifemanager** on TikTok / X / YouTube (and try IG/FB manually).
 3. Continue using the name in Phase 1; **do not file USPTO** until counsel reviews SN 77258914 + intended classes (esp. 41 education / 9 or 42 if software later).
 4. Bring attorney the “Mr. Man” app note from the prior brand scan + this file.
@@ -91,11 +91,11 @@ Prior doc flagged **“Mr. Man: Life Tips & Coaching”** (iOS app, TAPTICGROUP 
 
 ## B) Domain + social handle availability
 
-### Domains (WHOIS / RDAP; nothing purchased)
+### Domains (WHOIS / RDAP at the time of the scan; mrlifemanager.com has since been registered)
 
 | Domain | Availability | Evidence |
 |--------|--------------|----------|
-| **mrlifemanager.com** | **AVAILABLE** | Verisign WHOIS: `No match for domain "MRLIFEMANAGER.COM"`. RDAP 404. |
+| **mrlifemanager.com** | **REGISTERED** | Charles bought it on 2026-09-16 (Cloudflare Registrar) and the site is live. The earlier WHOIS check in this scan found no match (`No match for domain "MRLIFEMANAGER.COM"`; RDAP 404) before the purchase. |
 | **mr-life-manager.com** | **AVAILABLE** | WHOIS no match; RDAP 404. |
 | **getmrlifemanager.com** | **AVAILABLE** | WHOIS no match; RDAP 404. |
 | **mrlifemanager.net** | **AVAILABLE** | WHOIS no match; RDAP 404. |
@@ -105,7 +105,7 @@ Prior doc flagged **“Mr. Man: Life Tips & Coaching”** (iOS app, TAPTICGROUP 
 | **lifemanager.com** | **TAKEN** | Registered 2002-04-27; expires 2027-04-27; Moniker; privacy; Microsoft 365 NS. |
 | **getlifemanager.com** | **TAKEN** | Registered 2026-03-14; Cloudflare; expires 2027-03-14. |
 
-**Best pick:** `mrlifemanager.com` (exact brand, available). Sensible defensive pair: `.org` or `.net`. Hyphenated and `get…` are fine backups, not primary.
+**Best pick:** `mrlifemanager.com` (exact brand; Charles registered it on 2026-09-16 and the site is live). Sensible defensive pair: `.org` or `.net`. Hyphenated and `get…` are fine backups, not primary.
 
 ### Social handles
 
@@ -127,7 +127,7 @@ Prior doc flagged **“Mr. Man: Life Tips & Coaching”** (iOS app, TAPTICGROUP 
 |------|----------|
 | `/workspace/mr-life-manager-bd/research-chores-2026-09-16.md` | This report (TLDR + full notes). |
 
-No trademarks filed. No domains purchased. No user messaging.
+No trademarks filed. Charles bought `mrlifemanager.com` on 2026-09-16 and the site is live. No user messaging.
 
 ---
 
@@ -147,11 +147,11 @@ No trademarks filed. No domains purchased. No user messaging.
 1. Intended goods: digital curriculum / education content / coaching-adjacent content (likely **Class 41**; confirm).
 2. This report + live **LIFE MANAGER** SN **77258914** (35/36/42).
 3. App: Mr. Man Life Tips & Coaching + SN **85886068** (MR. MAN, Class 41 adult reviews).
-4. Domains/handles you actually register.
+4. Domains/handles you actually register (`mrlifemanager.com` is already registered and live).
 5. Question to ask: Can we register **MR. LIFE MANAGER** as a unitary mark without disclaimer issues; any opposition risk from 77258914?
 
-**Bottom line:** Name remains usable for Phase 1. Domains and core handles look unusually clean for an exact brand string. Trademark risk is **yellow** because of the live bare LIFE MANAGER mark and descriptiveness — not a discovered exact “Mr. Life Manager” federal block. **Attorney before filing.**
+**Bottom line:** Name remains usable for Phase 1. `mrlifemanager.com` is registered and live. Other brand domains and core handles looked unusually clean for an exact brand string at the time of this scan. Trademark risk is **yellow** because of the live bare LIFE MANAGER mark and descriptiveness — not a discovered exact “Mr. Life Manager” federal block. **Attorney before filing.**
 
 ---
 
-**Update (2026-09-16):** `mrlifemanager.com` was registered on Cloudflare Registrar (~$10.46). Domain is owned. This research report is historical for the availability check.
+**Update (2026-09-16):** Charles registered `mrlifemanager.com` on Cloudflare Registrar (~$10.46). The domain is owned and the site is live. Status in the TLDR, next steps, and domain table was updated to match.
