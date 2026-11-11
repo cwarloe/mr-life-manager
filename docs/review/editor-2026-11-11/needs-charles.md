@@ -24,4 +24,12 @@ These are business decisions, not wording fixes. I have not suggested a rewrite 
 
 11. Are *The Floor*, *The Reset*, and *Travel Mode* in [niche-strategy.md](../../business/niche-strategy.md), lines 78 to 82, still candidate products, or should those names come out of the strategy doc until they are on the ladder?
 
+12. Is a scheduling path a good fit for the first-night checklist? [04-first-night.md](../../copy/workflows/04-first-night.md) still offers later times such as Saturday morning, then confirms them as setting the place up "for tonight."
+
+13. Does the 10-minute dinner checklist need a scheduling path, or should the live page and the draft lead with "start now"? The question is already in [03-dinner.md](../../copy/workflows/03-dinner.md), line 201.
+
+14. Should the dinner finish page stay without an email offer, as in [03-dinner.md](../../copy/workflows/03-dinner.md), line 187, and should the new still-unpacking finish page offer the weekly routine, as asked in [06-still-unpacking.md](../../copy/workflows/06-still-unpacking.md), line 230?
+
+15. Should the company flier keep "tonight," or should there be a version for a visit later in the week, as [02-guests.md](../../copy/workflows/02-guests.md), lines 226 to 227, already asks?
+
 More questions will be added as the later review notes land.
