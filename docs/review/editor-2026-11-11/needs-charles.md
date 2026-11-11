@@ -32,4 +32,8 @@ These are business decisions, not wording fixes. I have not suggested a rewrite 
 
 15. Should the company flier keep "tonight," or should there be a version for a visit later in the week, as [02-guests.md](../../copy/workflows/02-guests.md), lines 226 to 227, already asks?
 
+16. For social image copy only, does clarity still outrank complete sentences, as [social-launch-kit.md](../../copy/social-launch-kit.md), lines 4 to 5, states as owner direction? Do captions and account bios still need to follow the house rule?
+
+17. Should someone claim or check the @mrlifemanager handles now? The 16 September scan recommended doing that soon, and [social-launch-kit.md](../../copy/social-launch-kit.md), lines 31 to 33, still lists ownership as unverified.
+
 More questions will be added as the later review notes land.
