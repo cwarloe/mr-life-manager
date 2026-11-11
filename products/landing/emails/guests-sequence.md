@@ -26,6 +26,19 @@ of the sequence and into a conversation. Nothing else does.
 
 ---
 
+## Footer — all three emails (draft, pending approval)
+
+One static line in the footer of emails 1, 2 and 3: below the sign-off, in the
+footer area with MailerLite's unsubscribe text. It is not body copy. Plain text,
+no QR code, no button.
+
+> Free to share: mrlifemanager.com
+
+Not live until Charles approves. The MailerLite edit is in
+[MAILERLITE-SETUP.md](MAILERLITE-SETUP.md) under *Referral lines*.
+
+---
+
 ## Email 1 — immediate
 
 **Subject:** Here's the thing worth printing
