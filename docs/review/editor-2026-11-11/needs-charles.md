@@ -36,4 +36,6 @@ These are business decisions, not wording fixes. I have not suggested a rewrite 
 
 17. Should someone claim or check the @mrlifemanager handles now? The 16 September scan recommended doing that soon, and [social-launch-kit.md](../../copy/social-launch-kit.md), lines 31 to 33, still lists ownership as unverified.
 
+18. Should student and career door 4 stay as the first-night checklist year-round, as the live pages and [copy-final-2026-10-31.md](../../research/copy-final-2026-10-31.md), lines 37 and 66, do, or should those doors switch to still-unpacking, with first night only in move-in season, as [workflow-wording.md](../../copy/workflow-wording.md) proposes?
+
 More questions will be added as the later review notes land.

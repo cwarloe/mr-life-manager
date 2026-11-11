@@ -2,7 +2,7 @@
 
 This folder is a reader's pass over the newer Mr. Life Manager docs. I did not edit any source file. Suggested rewrites are for wording and for facts that already contradict the live site or each other. Anything that needs a business decision is only in [needs-charles.md](needs-charles.md).
 
-Notes now in this folder include the social launch kit. Notes on the remaining areas will follow in later commits on this branch.
+Notes now in this folder include the 31 October copy-final file. Notes on the remaining areas will follow in later commits on this branch.
 
 ## The five biggest problems
 
@@ -25,9 +25,10 @@ These five will be revised if later areas change the picture. The first pass alr
 | [brand-niche-ladder.md](brand-niche-ladder.md) | Brand positioning, niche strategy, product ladder | 7 | In this commit |
 | [copy-workflows.md](copy-workflows.md) | Flier overview and workflows 1 to 6 | 10 | In this commit |
 | [social-launch-kit.md](social-launch-kit.md) | Social launch kit | 3 | In this commit |
-| [needs-charles.md](needs-charles.md) | Business decisions only | 17 questions so far | Running list, will grow |
+| [research-copy-final.md](research-copy-final.md) | Copy final, 31 October | 4 | In this commit |
+| [needs-charles.md](needs-charles.md) | Business decisions only | 18 questions so far | Running list, will grow |
 
-Later notes, not in the folder yet: 31 October copy-final; audience pages; 9 November Drive import.
+Later notes, not in the folder yet: audience pages; 9 November Drive import.
 
 ## What I read and what I skipped
 
