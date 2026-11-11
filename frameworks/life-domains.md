@@ -258,9 +258,9 @@ project hasn't kept.
 ## Using the taxonomy
 
 - **Tag every piece of content** with a primary domain and up to two secondary.
-- **Products should name their domains.** *First Place* spans Home, Food, Money,
-  Time, Maintenance, Paperwork, and Hospitality — that breadth is exactly the
-  argument for it existing.
+- **Products should name their domains.** The house-in-order flagship
+  stays in the Home domain (ADR-020); single-issue pages can come from any
+  domain.
 - **Coverage is a roadmap tool.** Domains with no content are either gaps or
   deliberate exclusions. Know which.
 - **Scope defense.** If something fits no domain, it's probably not our business.

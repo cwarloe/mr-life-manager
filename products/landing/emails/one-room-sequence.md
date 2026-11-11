@@ -54,7 +54,7 @@ think the next zone has to be another whole afternoon, and never start it.
 >
 > Throw away, give away, or it belongs somewhere else. No fourth pile.
 >
-> You've already made most of the hard calls — what you keep, what you don't, where things live. The second pass is mostly execution, and it goes about twice as fast as the first.
+> You've already made most of the hard decisions — what you keep, what you don't, where things live. The second pass is mostly doing, and it goes about twice as fast as the first.
 >
 > And if it doesn't happen this week, nothing is lost. The zone you did is still done.
 >
@@ -90,8 +90,9 @@ covers the give-away pile as well as the trash pile.
 
 ## Still open
 
-1. **No paid offer** — the $9 product doesn't exist. Insertion point is after
-   email 3.
+1. ~~**No paid offer / $9 product.**~~ **Parked** — under ADR-020 (Accepted) a
+   $9–19 guide is offered only after a free win; it is a later idea, not an open ship item and not in
+   this sequence.
 2. ~~**MailerLite automation.**~~ **Done** 2026-09-22 (Active per owner). Live
    ops spec: [MAILERLITE-SETUP.md](MAILERLITE-SETUP.md). Keep
    resend-to-unopeners off — it violates ADR-016.

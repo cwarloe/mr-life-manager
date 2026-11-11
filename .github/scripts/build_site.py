@@ -2,13 +2,22 @@
 """Assemble the public site into _site/ for GitHub Pages."""
 from __future__ import annotations
 import html as html_lib
+import json
 import re, shutil, sys
 from pathlib import Path
+from preview_site import build_preview
+from theme_tokens import palette
 
-from guide_inventory import GUIDES, LEGACY_GUIDE_SLUGS, PDF_TITLES, UNLISTED_PDFS
+from guide_inventory import GUIDES, LEGACY_GUIDE_SLUGS, PDF_TITLES, PAUSED_GUIDE_SLUGS, PUBLISHED_PDF_NAMES, UNLISTED_PDFS
 from site_catalog import (
+    ANALYTICS_DOMAIN,
+    ENTRY_ROUTES,
+    LOOK_HEAD,
+    PUBLISHED_ENTRY_ROUTES,
+    PAUSED_LANDING_PAGES,
     ORIGIN,
-    completion_pages,
+    UMAMI_SCRIPT_URL,
+    UMAMI_WEBSITE_ID,
     entry_social_images,
     public_url as catalog_public_url,
     sitemap_core_urls,
@@ -18,15 +27,15 @@ ROOT = Path(__file__).resolve().parents[2]
 LANDING = ROOT / "products" / "landing"
 OUT = ROOT / "_site"
 REDIRECT_MARKER = 'data-mlm-redirect="1"'
+# Browsers read theme-color before any CSS, so it is a literal: the printables' ink.
+PRINT_TOKENS = palette("print")
+THEME_COLOR = PRINT_TOKENS["--ink"]
 DEFAULT_DESCRIPTION = (
     "Practical adult-life systems for people who were never explicitly taught them."
 )
 
-COMPLETION_PAGES = completion_pages()
-
 SOCIAL_IMAGES = {
     "index.html": "home.png",
-    "first-place.html": "first-place.png",
     "partners.html": "partners.png",
     "index-parents.html": "partners.png",
     **entry_social_images(),
@@ -63,7 +72,7 @@ def add_public_metadata() -> int:
             flags=re.I,
         )
         block = (
-            '\n<meta data-mlm-meta="1" name="theme-color" content="#12161C">'
+            f'\n<meta data-mlm-meta="1" name="theme-color" content="{THEME_COLOR}">'
             f'\n<link rel="canonical" href="{html_lib.escape(canonical, quote=True)}">'
             '\n<link rel="icon" href="/favicon.svg" type="image/svg+xml">'
             '\n<link rel="manifest" href="/site.webmanifest">'
@@ -82,6 +91,33 @@ def add_public_metadata() -> int:
             sys.exit(f"{path.relative_to(ROOT)}: no </head>")
         path.write_text(text.replace("</head>", block + "</head>", 1), encoding="utf-8")
         count += 1
+    return count
+
+
+ANALYTICS_ONLY = re.compile(r"\s*<p data-analytics-only>.*?</p>", re.S)
+
+
+def apply_analytics() -> int:
+    """Load Umami on every page when a website ID is configured; otherwise
+    remove the privacy text that describes it, so the page never claims a
+    service that isn't running."""
+    count = 0
+    for path in sorted(OUT.rglob("*.html")):
+        text = path.read_text(encoding="utf-8")
+        if REDIRECT_MARKER in text or path.is_relative_to(OUT / "preview"):
+            continue
+        new = text
+        if UMAMI_WEBSITE_ID:
+            if UMAMI_SCRIPT_URL not in new:
+                tag = (f'\n<script defer src="{UMAMI_SCRIPT_URL}" '
+                       f'data-website-id="{html_lib.escape(UMAMI_WEBSITE_ID, quote=True)}" '
+                       f'data-domains="{ANALYTICS_DOMAIN}"></script>\n')
+                new = new.replace("</head>", tag + "</head>", 1)
+                count += 1
+        else:
+            new = ANALYTICS_ONLY.sub("", new)
+        if new != text:
+            path.write_text(new, encoding="utf-8")
     return count
 
 
@@ -104,35 +140,28 @@ def redirect_page(target_path: str, title: str) -> str:
     )
 
 
-def tokens_from(path: Path) -> str:
-    css = path.read_text()
-    m = re.search(r"(:root\{.*?)\*\{box-sizing", css, re.S)
-    if not m:
-        sys.exit(f"could not lift design tokens from {path}")
-    return m.group(1).rstrip()
-
-
 def page(title, heading, sub, extra_css, body):
     return (
-        "<!doctype html><html lang='en'><head><meta charset='utf-8'>"
+        "<!doctype html><html lang='en' data-palette='print'><head><meta charset='utf-8'>"
         "<meta name='viewport' content='width=device-width, initial-scale=1'>"
         f"<title>{title}</title>"
         "<link rel='preconnect' href='https://fonts.googleapis.com'>"
         "<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>"
         "<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap'>"
-        "<style>__TOKENS__*{box-sizing:border-box}"
-        "body{background:var(--paper);color:var(--ink);font-family:var(--sans);"
+        "<link rel='stylesheet' href='/assets/tokens.css'>"
+        "<style>*{box-sizing:border-box}"
+        "body{background:var(--paper);color:var(--ink);font-family:var(--font-ui);"
         "font-size:16px;line-height:1.55;margin:0}"
         ".wrap{max-width:54rem;margin:0 auto;padding:0 1.5rem}"
         ".bar{border-bottom:1px solid var(--rule)}"
         ".bar .wrap{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.5rem}"
         ".brand{font-weight:700;font-size:.95rem;text-decoration:none;color:inherit}"
-        ".brand span{color:var(--blue)}"
-        ".bar a.cta{font-size:.85rem;color:var(--blue);text-decoration:none;font-weight:600}"
+        ".brand span{color:var(--accent)}"
+        ".bar a.cta{font-size:.85rem;color:var(--accent);text-decoration:none;font-weight:600}"
         "header.hero{padding:3rem 0 1.5rem;border-bottom:3px solid var(--ink)}"
         "h1{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:800;letter-spacing:-.03em;margin:0}"
-        ".sub{font-family:var(--serif);color:var(--slate);margin:1rem 0 0;max-width:50ch}"
-        "footer{padding:2rem 0 3rem;font-size:.82rem;color:var(--slate)}"
+        ".sub{font-family:var(--font-text);color:var(--muted);margin:1rem 0 0;max-width:50ch}"
+        "footer{padding:2rem 0 3rem;font-size:.82rem;color:var(--muted)}"
         f"{extra_css}</style></head><body>"
         "<div class='bar'><div class='wrap'>"
         "<a class='brand' href='/'>Mr.&nbsp;<span>Life Manager</span></a>"
@@ -154,7 +183,7 @@ CTA = """
 </div>
 <style>
 .mlm-cta{max-width:50rem;margin:0 auto;padding:1.6rem 1.5rem 3rem;border-top:2px solid var(--rule)}
-.mlm-cta-body{font-family:var(--serif);font-size:.95rem;line-height:1.55;color:var(--slate);margin:0}
+.mlm-cta-body{font-family:var(--font-text);font-size:.95rem;line-height:1.55;color:var(--muted);margin:0}
 @media print{.mlm-cta{display:none}}
 </style>
 """
@@ -164,29 +193,60 @@ def main() -> int:
     if OUT.exists():
         shutil.rmtree(OUT)
     (OUT / "guides").mkdir(parents=True)
-    skip_landing = {"SETUP.md", "sitemap.xml", "robots.txt"}
+    skip_landing = {"SETUP.md", "THEMING.md", "sitemap.xml", "robots.txt", *PAUSED_LANDING_PAGES}
     for item in LANDING.iterdir():
         if item.is_dir() or item.name in skip_landing:
             continue
         shutil.copy2(item, OUT / item.name)
+    # The manifest is JSON, so it can't read CSS: take its colors from tokens.css.
+    manifest_path = OUT / "site.webmanifest"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    manifest["background_color"] = PRINT_TOKENS["--paper"].lower()
+    manifest["theme_color"] = PRINT_TOKENS["--ink"].lower()
+    manifest_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     assets = LANDING / "assets"
     if assets.is_dir():
         shutil.copytree(assets, OUT / "assets")
-    completion_template = (LANDING / "templates" / "finished.html").read_text()
-    for filename, door, message, guide, back in COMPLETION_PAGES:
-        rendered = (completion_template
-                    .replace("__DOOR__", door)
-                    .replace("__MESSAGE__", message)
-                    .replace("__GUIDE__", guide)
-                    .replace("__BACK__", back))
-        (OUT / filename).write_text(rendered)
+    completion_template = (LANDING / "templates" / "finished.html").read_text(encoding="utf-8")
+    for route in PUBLISHED_ENTRY_ROUTES:
+        template = ((LANDING / "templates" / "finished-next.html").read_text(encoding="utf-8")
+                    if not route.collects_email else completion_template)
+        next_step = ('''<section class="next-step">
+<h2>__NEXT_TITLE__</h2>
+<p>__NEXT_DESCRIPTION__</p>
+<a href="__NEXT_URL__">Keep the next checklist for later →</a>
+</section>''' if route.next_url else "")
+        rendered = (template.replace("__NEXT_STEP__", next_step)
+                    .replace("__DOOR__", route.door_title)
+                    .replace("__MESSAGE__", route.completion_message)
+                    .replace("__GUIDE__", route.slug)
+                    .replace("__NEXT_URL__", route.next_url)
+                    .replace("__NEXT_TITLE__", route.next_title)
+                    .replace("__NEXT_DESCRIPTION__", route.next_description)
+                    .replace("__BACK__", f"/{route.page}"))
+        (OUT / route.completion_page).write_text(rendered, encoding="utf-8")
+    # Audience looks: published task and finish pages honor ?look=.
+    for route in PUBLISHED_ENTRY_ROUTES:
+        for name in (route.page, route.completion_page):
+            path = OUT / name
+            path.write_text(path.read_text(encoding="utf-8").replace("</head>", LOOK_HEAD + "</head>", 1),
+                            encoding="utf-8")
+    # Audience landing pages (one per QR audience) publish to /<name>/.
+    for item in sorted((LANDING / "audiences").glob("*.html")):
+        (OUT / item.stem).mkdir()
+        shutil.copy2(item, OUT / item.stem / "index.html")
+    # Old bookmarks land on the current choices, without publishing paused text.
+    for name in PAUSED_LANDING_PAGES:
+        (OUT / name).write_text(redirect_page("/", "Choose a current checklist"), encoding="utf-8")
+    for slug in PAUSED_GUIDE_SLUGS:
+        (OUT / "guides" / f"{slug}.html").write_text(
+            redirect_page("/", "Choose a current checklist"), encoding="utf-8")
     printable_css = ROOT / "products" / "print" / "printable.css"
     if not printable_css.is_file():
         sys.exit(f"missing {printable_css}")
-    tokens = tokens_from(printable_css)
     cards = []
     for slug, src, title, blurb in GUIDES:
-        html = (ROOT / src).read_text()
+        html = (ROOT / src).read_text(encoding="utf-8")
         if "</body>" not in html:
             sys.exit(f"{src}: no </body>")
         # Source HTML uses a relative path into products/print/; published guides
@@ -194,9 +254,9 @@ def main() -> int:
         html = html.replace(
             'href="../../print/printable.css"',
             'href="/print/printable.css"',
-        )
+        ).replace('href="../../landing/assets/tokens.css"', 'href="/assets/tokens.css"')
         html = html.replace("</body>", CTA + "</body>")
-        (OUT / "guides" / f"{slug}.html").write_text(html)
+        (OUT / "guides" / f"{slug}.html").write_text(html, encoding="utf-8")
         cards.append(
             f"<a class='card' href='/guides/{slug}.html'><h2>{title}</h2>"
             f"<p>{blurb}</p><span class='go'>Read it →</span></a>"
@@ -204,24 +264,32 @@ def main() -> int:
     guide_titles = {slug: title for slug, _src, title, _blurb in GUIDES}
     for old, new in LEGACY_GUIDE_SLUGS.items():
         (OUT / "guides" / f"{old}.html").write_text(
-            redirect_page(f"/guides/{new}.html", guide_titles[new]))
+            redirect_page(f"/guides/{new}.html", guide_titles[new]),
+            encoding="utf-8",
+        )
     extra = (
         ".list{display:grid;gap:1rem;margin:2rem 0 3rem}"
         "a.card{border:2px solid var(--rule-strong);border-radius:3px;padding:1.3rem 1.5rem;"
         "background:var(--surface);text-decoration:none;color:inherit;display:grid;gap:.4rem}"
-        "a.card:hover{border-color:var(--blue)}"
+        "a.card:hover{border-color:var(--accent)}"
         "a.card h2{font-size:1.2rem;font-weight:700;margin:0}"
-        "a.card p{font-family:var(--serif);font-size:.97rem;color:var(--slate);margin:0}"
-        "a.card .go{font-size:.83rem;font-weight:600;color:var(--blue)}"
+        "a.card p{font-family:var(--font-text);font-size:.97rem;color:var(--muted);margin:0}"
+        "a.card .go{font-size:.83rem;font-weight:600;color:var(--accent)}"
         ".foot-cta{border-top:3px solid var(--ink);background:var(--surface);padding:2.5rem 0 3rem}"
         ".foot-cta a{display:inline-block;font-weight:600;padding:.8rem 1.4rem;margin:0 .5rem .5rem 0;"
         "border:2px solid var(--ink);border-radius:3px;background:var(--ink);color:var(--paper);text-decoration:none}"
         ".foot-cta a.ghost{background:transparent;color:var(--ink)}"
     )
+    if not GUIDES:
+        cards = [
+            f"<a class='card' href='/{route.page}'><h2>{html_lib.escape(route.door_title)}</h2>"
+            "<p>Follow the steps here, or print the action sheet.</p><span class='go'>Start here →</span></a>"
+            for route in ENTRY_ROUTES
+        ]
     guides_index = page(
         "All Guides — Mr. Life Manager",
-        "All the guides.",
-        "Read them here, print them, or forward them.",
+        "All the guides." if GUIDES else "Five ways to start.",
+        "Read them here, print them, or forward them." if GUIDES else "Pick the problem that is true today. One useful task, in order.",
         extra,
         {
             "nav": "<a class='cta' href='/print/'>Printables →</a>",
@@ -230,16 +298,16 @@ def main() -> int:
                 + "".join(cards)
                 + "</div></main>"
                 "<section class='foot-cta'><div class='wrap'>"
-                "<p>Every guide also exists as a PDF.</p>"
-                "<a href='/print/'>See the printables</a>"
+                "<p>Each active checklist has its own print option.</p>"
+                "<a href='/'>Choose your checklist</a>"
                 "<a class='ghost' href='/'>What's going on right now</a>"
                 "</div></section>"
             ),
         },
-    ).replace("__TOKENS__", tokens)
-    (OUT / "guides" / "index.html").write_text(guides_index)
+    )
+    (OUT / "guides" / "index.html").write_text(guides_index, encoding="utf-8")
     pdf_src = ROOT / "products" / "guides-pdf"
-    pdfs = sorted(pdf_src.glob("*.pdf"))
+    pdfs = sorted(pdf for pdf in pdf_src.glob("*.pdf") if pdf.name in PUBLISHED_PDF_NAMES)
     if not pdfs:
         sys.exit("no printables found in products/guides-pdf/")
     (OUT / "print").mkdir(parents=True, exist_ok=True)
@@ -261,22 +329,24 @@ def main() -> int:
         "li{border-top:1px solid var(--rule)}"
         "a.file{display:flex;justify-content:space-between;padding:1rem 0;"
         "text-decoration:none;color:inherit;font-weight:600}"
-        "a.file:hover{color:var(--blue)}"
-        "a.file span{font-weight:500;color:var(--slate);font-size:.85rem}"
+        "a.file:hover{color:var(--accent)}"
+        "a.file span{font-weight:500;color:var(--muted);font-size:.85rem}"
     )
     print_index = page(
         "Printables — Mr. Life Manager",
         "Printables.",
-        "Same guides, as PDFs. Open one, print it, tape it inside a cabinet door.",
+        "The weekly sheet and partner handout. The five active checklists print from their own pages.",
         extra_p,
         {
             "nav": "<a class='cta' href='/guides/'>All guides →</a>",
             "main": "<main class='wrap'><ul>" + "".join(rows) + "</ul></main>",
         },
-    ).replace("__TOKENS__", tokens)
-    (OUT / "print" / "index.html").write_text(print_index)
+    )
+    (OUT / "print" / "index.html").write_text(print_index, encoding="utf-8")
+    build_preview(ROOT, OUT)
     (OUT / "robots.txt").write_text(
-        f"User-agent: *\nAllow: /\n\nSitemap: {ORIGIN}/sitemap.xml\n"
+        f"User-agent: *\nAllow: /\nDisallow: /preview/print/\n\nSitemap: {ORIGIN}/sitemap.xml\n",
+        encoding="utf-8",
     )
     urls = sitemap_core_urls()
     urls += [f"{ORIGIN}/guides/{slug}.html" for slug, *_ in GUIDES]
@@ -286,11 +356,13 @@ def main() -> int:
     ]
     lines += [f"  <url><loc>{u}</loc></url>" for u in urls]
     lines.append("</urlset>\n")
-    (OUT / "sitemap.xml").write_text("\n".join(lines))
+    (OUT / "sitemap.xml").write_text("\n".join(lines), encoding="utf-8")
+    analytics_count = apply_analytics()
     metadata_count = add_public_metadata()
     print(
         f"Built _site/ — {len(GUIDES)} guides, {len(pdfs)} printables, "
-        f"metadata on {metadata_count} pages."
+        f"metadata on {metadata_count} pages, "
+        + (f"analytics on {analytics_count} pages." if UMAMI_WEBSITE_ID else "analytics off (no Umami ID).")
     )
     return 0
 

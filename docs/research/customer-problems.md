@@ -250,11 +250,11 @@ Highest frequency × highest pain × highest teachability:
 2. **First apartment supply and setup list**
 3. **Cleaning routines by frequency**, not by room
 4. **[Six Meals and a Stocked Kitchen](../../products/checklists/six-meals/)**
-5. **Laundry, fully explained**
+5. **[Laundry, Solved](../../products/checklists/laundry/)** — drafted and live free ([ADR-019](../../planning/decisions.md#adr-019--laundry-solved-and-the-roommate-kit-are-free-only))
 6. **Annual maintenance calendar**
 7. **Paperwork: what to keep, where, how long**
 8. **Money basics: accounts, autopay, buffer**
-9. **Roommate/household agreement**
+9. **[Household Agreement](../../products/worksheets/household-agreement/)** (roommate kit) — drafted and live free ([ADR-019](../../planning/decisions.md#adr-019--laundry-solved-and-the-roommate-kit-are-free-only))
 10. **Hosting: the 48-hour plan**
 
 ## Research to do
@@ -266,3 +266,4 @@ Highest frequency × highest pain × highest teachability:
       r/adulting) for recurring questions and their exact phrasing
 - [ ] Track actual search volume on "how often should I…" queries
 - [ ] Validate which problems people will **pay** to solve, not just complain about
+

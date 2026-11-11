@@ -4,6 +4,49 @@
   var root = document.documentElement;
   var guide = root.getAttribute('data-guide') || '';
   var completionUrl = root.getAttribute('data-completion-url') || '';
+  // Audience look (looks.css), set in <head> only for a known ?look= value.
+  // Carry it on internal links so the checklist and finish page match the
+  // landing page the reader came from.
+  var look = root.getAttribute('data-look') || '';
+  if (look) {
+    Array.prototype.forEach.call(document.querySelectorAll('a[href^="/"]'), function (a) {
+      if (a.getAttribute('href') === '/') return;
+      var u = new URL(a.getAttribute('href'), location.origin);
+      u.searchParams.set('look', look);
+      a.setAttribute('href', u.pathname + u.search + u.hash);
+    });
+  }
+
+  // Event counts for the funnel (Umami, when configured in site_catalog.py).
+  // No cookies and nothing personal: the page, its QR source tag, and what
+  // the reader chose. Events wait briefly for the deferred Umami script and
+  // are simply dropped if it never loads.
+  var fromTag = new URLSearchParams(location.search).get('from') || '';
+  if (!/^[a-z0-9-]{1,40}$/.test(fromTag)) fromTag = '';
+  var trackQueue = [], trackTries = 0, trackTimer = null;
+  function flushTrack() {
+    if (window.umami && typeof window.umami.track === 'function') {
+      while (trackQueue.length) {
+        var e = trackQueue.shift();
+        try { window.umami.track(e[0], e[1]); } catch (err) {}
+      }
+      return;
+    }
+    if (trackTimer || trackTries >= 20) return;
+    trackTimer = setTimeout(function () { trackTimer = null; trackTries++; flushTrack(); }, 500);
+  }
+  function track(name, data) {
+    data = data || {};
+    data.page = guide || location.pathname;
+    if (fromTag) data.from = fromTag;
+    if (root.getAttribute('data-look')) data.look = root.getAttribute('data-look');
+    trackQueue.push([name, data]);
+    flushTrack();
+  }
+  if (/^\/finished-/.test(location.pathname)) {
+    var donePath = new URLSearchParams(location.search).get('path');
+    track('finished', {path: donePath === 'appointment' || donePath === 'now' ? donePath : 'unknown'});
+  }
 
   // Ad blockers often leave the embed empty — reveal mailto fallback if so.
   addEventListener('load', function () {
@@ -51,10 +94,16 @@
       if (!d || d.dataset.split) return;
       d.dataset.split = '1';
       var parts = d.innerHTML.split(/(?<=[.!?])\s+(?=[A-Z])/);
-      if (parts.length > 1) {
+      // Only split when every piece keeps its own tags closed; a sentence
+      // break inside <b>...</b> would leave half the bold outside its span.
+      var whole = parts.every(function (t) {
+        return (t.match(/<[a-z][^>]*>/gi) || []).length ===
+          (t.match(/<\/[a-z][^>]*>/gi) || []).length;
+      });
+      if (parts.length > 1 && whole) {
         d.innerHTML = parts.map(function (t) {
           return '<span class="s">' + t + '</span>';
-        }).join('');
+        }).join(' ');
       }
     });
 
@@ -65,7 +114,7 @@
       b.type = 'button'; b.className = 'whybtn'; b.textContent = 'Why?';
       b.addEventListener('click', function () {
         var open = why.classList.toggle('open');
-        b.textContent = open ? 'Hide' : 'Why?';
+        b.textContent = open ? 'Hide explanation' : 'Why?';
       });
       why.parentNode.insertBefore(b, why);
     });
@@ -78,17 +127,33 @@
     var nav = document.createElement('div');
     nav.className = 'nav';
     nav.innerHTML =
+      '<div class="stepper-track"></div>' +
       '<button type="button" class="back">Back</button>' +
       '<button type="button" class="next">Next step</button>' +
       '<span class="count"></span>' +
       '<button type="button" class="exit">Show the whole page again</button>';
+
+    var stepper = nav.querySelector('.stepper-track');
+    for (var p = 0; p < steps.length; p++) {
+      var pip = document.createElement('span');
+      pip.className = 'stepper-pip';
+      stepper.appendChild(pip);
+    }
+
     var done = document.createElement('div');
     done.className = 'done';
     var source = new URLSearchParams(window.location.search).get('from');
-    if (/^[a-z0-9-]{1,40}$/.test(source || '')) completionUrl += '?from=' + encodeURIComponent(source);
+    var params = new URLSearchParams(window.location.search);
+    var resuming = params.get('resume') === '1';
+    var completionQuery = [];
+    if (/^[a-z0-9-]{1,40}$/.test(source || '')) completionQuery.push('from=' + encodeURIComponent(source));
+    // Which path the reader took, so completions can be compared (ADR-021).
+    if (root.getAttribute('data-defer') === 'on') completionQuery.push('path=' + (resuming ? 'appointment' : 'now'));
+    if (look) completionQuery.push('look=' + look);
+    if (completionQuery.length) completionUrl += '?' + completionQuery.join('&');
     done.innerHTML = '<h2>That\u2019s everything.</h2>' +
-      '<p>Whatever you got through is what there was time for. The order runs biggest ' +
-      'difference first, so wherever you stopped is the right place to have stopped.</p>' +
+      '<p>Check that you have completed all six steps and reached the finish line on the page. ' +
+      'You can go back to check a step before marking this task finished.</p>' +
       '<a class="complete" href="' + completionUrl + '">I finished \u2014 what\u2019s next?</a>' +
       '<button type="button" class="exit">Show the whole page again</button>';
     var list = document.querySelector('.steps');
@@ -103,10 +168,17 @@
       nav.querySelector('.next').textContent = i === steps.length - 1 ? 'Done' : 'Next step';
       nav.querySelector('.back').disabled = i === 0;
       nav.querySelector('.count').textContent = end ? '' : (i + 1) + ' of ' + steps.length;
+      var pips = stepper.querySelectorAll('.stepper-pip');
+      for (var pIdx = 0; pIdx < pips.length; pIdx++) {
+        pips[pIdx].classList.toggle('complete', pIdx < i);
+        pips[pIdx].classList.toggle('active', pIdx === i);
+      }
       nav.style.display = end ? 'none' : '';
+      if (end) track('reached-end', {path: resuming ? 'appointment' : 'now'});
       window.scrollTo(0, 0);
     }
-    function start() { body.classList.add('doing'); show(0); }
+    function startAt(n) { body.classList.add('doing'); show(n); }
+    function start() { startAt(0); }
     function stop() {
       body.classList.remove('doing');
       steps.forEach(function (s) { s.classList.remove('current'); });
@@ -116,12 +188,257 @@
 
     var goDo = document.querySelector('.go-do');
     var goPrint = document.querySelector('.go-print');
-    if (goDo) goDo.addEventListener('click', start);
-    if (goPrint) goPrint.addEventListener('click', function () { window.print(); });
+    if (goDo) goDo.addEventListener('click', function () { track('start-now'); start(); });
+    if (goPrint) goPrint.addEventListener('click', function () { track('print'); window.print(); });
     nav.querySelector('.next').addEventListener('click', function () { show(i + 1); });
     nav.querySelector('.back').addEventListener('click', function () { show(i - 1); });
     Array.prototype.forEach.call(document.querySelectorAll('.exit'), function (b) {
       b.addEventListener('click', stop);
     });
+
+    // Deferred appointment (ADR-021): a reader who can't act where they are
+    // picks an exact date and time, gets a calendar invite, and comes back to
+    // the steps. Nothing is stored or sent; the reminder lives in their calendar.
+    if (root.getAttribute('data-defer') === 'on') deferred();
+
+    function deferred() {
+      var MAX_MOVES = 2;
+      var minutes = parseInt(root.getAttribute('data-minutes'), 10) || 40;
+      var task = root.getAttribute('data-task') || document.title;
+      var moved = Math.min(parseInt(params.get('moved'), 10) || 0, MAX_MOVES);
+      var firstAtHome = 0;
+      while (firstAtHome < steps.length && steps[firstAtHome].hasAttribute('data-portable')) firstAtHome++;
+      if (firstAtHome >= steps.length) firstAtHome = 0;
+      var stepParam = parseInt(params.get('step'), 10);
+      if (resuming && stepParam >= 1 && stepParam <= steps.length) firstAtHome = Math.max(firstAtHome, stepParam - 1);
+      var resumeAt = 0;
+      var fork = document.querySelector('.fork');
+      var goLater = document.querySelector('.go-later');
+      if (!fork || !goLater) return;
+
+      function esc(t) {
+        return String(t).replace(/[&<>"]/g, function (c) {
+          return {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c];
+        });
+      }
+      function returnUrl(moves) {
+        var q = ['resume=1'];
+        if (moves) q.push('moved=' + moves);
+        if (resumeAt > 0) q.push('step=' + (resumeAt + 1));
+        if (/^[a-z0-9-]{1,40}$/.test(source || '')) q.push('from=' + encodeURIComponent(source));
+        if (look) q.push('look=' + look);
+        return location.origin + location.pathname + '?' + q.join('&');
+      }
+      function duration() {
+        var hours = {60: 'An hour', 120: 'Two hours', 180: 'Three hours'};
+        return hours[minutes] || minutes + ' minutes';
+      }
+      function at(d, h, m) { var x = new Date(d); x.setHours(h, m, 0, 0); return x; }
+      function nextDay(dow, h, m) {
+        var now = new Date(), x = at(now, h, m);
+        var add = (dow - now.getDay() + 7) % 7;
+        x.setDate(x.getDate() + add);
+        if (x <= now) x.setDate(x.getDate() + 7);
+        return x;
+      }
+      function choices() {
+        var now = new Date(), list = [];
+        var tonight = at(now, 19, 0);
+        if (tonight - now < 30 * 60000) tonight = at(now, 20, 30);
+        if (tonight - now >= 30 * 60000) list.push(['Tonight', tonight]);
+        var tomorrow = at(now, 19, 0); tomorrow.setDate(tomorrow.getDate() + 1);
+        list.push(['Tomorrow evening', tomorrow]);
+        list.push(['Saturday morning', nextDay(6, 10, 0)]);
+        list.push(['Monday evening', nextDay(1, 19, 0)]);
+        var seen = {};
+        return list.filter(function (c) {
+          var k = c[1].getTime(); if (seen[k]) return false; seen[k] = 1; return true;
+        });
+      }
+      function label(d) {
+        return d.toLocaleString('en-US', {weekday: 'long', month: 'short', day: 'numeric',
+          hour: 'numeric', minute: '2-digit'});
+      }
+      function stamp(d) { return d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, ''); }
+      function icsText(t) { return String(t).replace(/\\/g, '\\\\').replace(/[,;]/g, '\\$&').replace(/\n/g, '\\n'); }
+      function fold(line) {
+        var out = [];
+        while (line.length > 73) { out.push(line.slice(0, 73)); line = ' ' + line.slice(73); }
+        out.push(line); return out.join('\r\n');
+      }
+      function invite(when, url) {
+        var end = new Date(when.getTime() + minutes * 60000);
+        var details = 'Time to start. Open this and pick up at the next step:\n' + url;
+        var lines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Mr. Life Manager//Appointment//EN',
+          'CALSCALE:GREGORIAN', 'METHOD:PUBLISH', 'BEGIN:VEVENT',
+          'UID:' + Date.now() + '-' + Math.random().toString(36).slice(2) + '@mrlifemanager.com',
+          'DTSTAMP:' + stamp(new Date()), 'DTSTART:' + stamp(when), 'DTEND:' + stamp(end),
+          'SUMMARY:' + icsText(task), 'DESCRIPTION:' + icsText(details), 'URL:' + url,
+          'BEGIN:VALARM', 'ACTION:DISPLAY', 'DESCRIPTION:' + icsText(task), 'TRIGGER:-PT0M', 'END:VALARM',
+          'END:VEVENT', 'END:VCALENDAR'];
+        return lines.map(fold).join('\r\n') + '\r\n';
+      }
+      function googleUrl(when, url) {
+        var end = new Date(when.getTime() + minutes * 60000);
+        return 'https://calendar.google.com/calendar/render?action=TEMPLATE' +
+          '&text=' + encodeURIComponent(task) +
+          '&dates=' + stamp(when) + '/' + stamp(end) +
+          '&details=' + encodeURIComponent('Time to start. Open this and pick up at the next step: ' + url);
+      }
+
+      // Panel shown after "Not home yet? Pick a time" (.go-later).
+      var later = document.createElement('section');
+      later.className = 'later';
+      later.hidden = true;
+      var portable = steps.filter(function (s) { return s.hasAttribute('data-portable'); });
+      var portableHtml = '';
+      if (portable.length) {
+        portableHtml = '<div class="later-now"><h2>Do this part now, from right here.</h2><ol>' +
+          portable.map(function (s) {
+            var h = s.querySelector('.step-head h2'), d = s.querySelector('.do');
+            return '<li><b>' + (h ? h.innerHTML : '') + '</b> ' + (d ? d.innerHTML : '') + '</li>';
+          }).join('') + '</ol><p>Done? Now pick the time for the rest.</p></div>';
+      }
+      later.innerHTML = '<p class="bail-note" hidden></p>' + portableHtml +
+        '<h2>When will you do it?</h2>' +
+        '<p class="later-sub">Pick a day and a time. \u201cLater\u201d isn\u2019t a time.</p>' +
+        '<div class="when-picks"></div>' +
+        '<p class="when-own"><label>Or pick your own: <input type="datetime-local" class="when-input"></label> ' +
+        '<button type="button" class="when-use">Use this time</button></p>' +
+        '<div class="decided" hidden></div>';
+      fork.parentNode.insertBefore(later, fork.nextSibling);
+
+      var picks = later.querySelector('.when-picks');
+      choices().forEach(function (c) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.innerHTML = '<span class="when-name">' + c[0] + '</span><span class="when-time">' +
+          esc(label(c[1])) + '</span>';
+        b.addEventListener('click', function () { track('time-picked', {choice: c[0]}); decide(c[1]); });
+        picks.appendChild(b);
+      });
+      later.querySelector('.when-use').addEventListener('click', function () {
+        var v = later.querySelector('.when-input').value;
+        var d = v ? new Date(v) : null;
+        if (!d || isNaN(d) || d <= new Date()) { later.querySelector('.when-input').focus(); return; }
+        track('time-picked', {choice: 'Custom'});
+        decide(d);
+      });
+
+      function decide(when) {
+        var url = returnUrl(moved);
+        var box = later.querySelector('.decided');
+        var href = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(invite(when, url));
+        box.innerHTML = '<h2>That\u2019s decided.</h2>' +
+          '<p class="decided-when">' + esc(label(when)) + '</p>' +
+          '<p>Put it on your calendar now, so it comes back to you at that time with the steps ready.</p>' +
+          '<p class="decided-btns">' +
+          '<a class="cal-ics" download="mr-life-manager.ics" href="' + href + '">Add to my calendar</a>' +
+          '<a class="cal-google" target="_blank" rel="noopener" href="' + googleUrl(when, url) + '">Google Calendar</a>' +
+          '</p>' +
+          '<p class="decided-share"><button type="button" class="share-checker">Send it to someone who\u2019ll check on you</button></p>' +
+          '<p class="fine">This site doesn\u2019t keep the time you picked. The reminder lives in your calendar.</p>';
+        box.hidden = false;
+        box.querySelector('.cal-ics').addEventListener('click', function () { track('calendar-added', {kind: 'ics'}); });
+        box.querySelector('.cal-google').addEventListener('click', function () { track('calendar-added', {kind: 'google'}); });
+        box.querySelector('.share-checker').addEventListener('click', function () {
+          track('shared-with-checker');
+          var text = 'I\u2019ve set aside ' + label(when) + ' to ' + task.charAt(0).toLowerCase() +
+            task.slice(1) + '. Check on me after?';
+          var page = location.origin + location.pathname;
+          if (navigator.share) { navigator.share({title: task, text: text, url: page}).catch(function () {}); }
+          else { location.href = 'mailto:?subject=' + encodeURIComponent(task) + '&body=' +
+            encodeURIComponent(text + '\n\n' + page); }
+        });
+        box.scrollIntoView({block: 'start'});
+      }
+
+      function openLater() { later.hidden = false; later.scrollIntoView({block: 'start'}); }
+      var bailNote = later.querySelector('.bail-note');
+      var bailNoteText = root.getAttribute('data-bail-note') || '';
+      goLater.addEventListener('click', function () {
+        track('not-right-now');
+        resumeAt = 0;
+        bailNote.hidden = true;
+        var nowPart = later.querySelector('.later-now');
+        if (nowPart) nowPart.hidden = false;
+        later.querySelector('.decided').hidden = true;
+        openLater();
+      });
+
+      // Way out from inside the steps: reschedule, and come back to this step.
+      var bail = document.createElement('button');
+      bail.type = 'button';
+      bail.className = 'bail';
+      nav.insertBefore(bail, nav.querySelector('.exit'));
+      function bailLabel() {
+        bail.textContent = resuming && moved >= MAX_MOVES ? 'Stop for now'
+          : 'Not ready? Pick another time';
+      }
+      bailLabel();
+      bail.addEventListener('click', function () {
+        var at = i;
+        stop();
+        if (resuming && moved >= MAX_MOVES) { track('stopped-at-limit', {step: String(at + 1)}); return; }
+        track('rescheduled', {where: 'mid-task', step: String(at + 1), moved: String(resuming ? moved + 1 : 0)});
+        if (resuming) { moved += 1; bailLabel(); }
+        resumeAt = Math.min(at, steps.length - 1);
+        // Stopping mid-sort leaves a mess: say what to do before leaving.
+        if (bailNoteText && steps[resumeAt].hasAttribute('data-midway')) {
+          bailNote.innerHTML = '<b>Before you go:</b> ' + esc(bailNoteText);
+          bailNote.hidden = false;
+        } else {
+          bailNote.hidden = true;
+        }
+        var nowPart = later.querySelector('.later-now');
+        if (nowPart) nowPart.hidden = true;
+        later.querySelector('.decided').hidden = true;
+        var card = document.querySelector('.resume');
+        if (card) card.hidden = true;
+        openLater();
+      });
+
+      // Coming back from the calendar invite.
+      if (!resuming) return;
+      var card = document.createElement('section');
+      card.className = 'resume';
+      var where = firstAtHome ? 'You\u2019re picking up at step ' + (firstAtHome + 1) + '.' : 'Step one is ready.';
+      if (moved >= MAX_MOVES) {
+        card.innerHTML = '<h2>This is the time you picked.</h2>' +
+          '<p>You\u2019ve moved it twice already. Either start now, or let this one go.</p>' +
+          '<p class="resume-btns"><button type="button" class="resume-start">Start now</button>' +
+          '<button type="button" class="resume-drop">Let it go</button></p>';
+      } else {
+        card.innerHTML = '<h2>This is the time you picked.</h2>' +
+          '<p>' + duration() + ', set aside for this. ' + where + '</p>' +
+          '<p class="resume-btns"><button type="button" class="resume-start">Start</button>' +
+          '<button type="button" class="resume-move">I can\u2019t right now</button></p>';
+      }
+      var top = document.querySelector('header.top');
+      top.parentNode.insertBefore(card, top.nextSibling);
+      track('came-back', {moved: String(moved), step: String(firstAtHome + 1)});
+      card.querySelector('.resume-start').addEventListener('click', function () {
+        track('started-from-reminder', {moved: String(moved)});
+        startAt(firstAtHome);
+      });
+      var move = card.querySelector('.resume-move');
+      if (move) move.addEventListener('click', function () {
+        track('rescheduled', {where: 'on-return', moved: String(moved + 1)});
+        moved += 1;
+        bailLabel();
+        bailNote.hidden = true;
+        card.hidden = true;
+        resumeAt = firstAtHome;
+        var nowPart = later.querySelector('.later-now');
+        if (nowPart) nowPart.hidden = true;
+        openLater();
+      });
+      var drop = card.querySelector('.resume-drop');
+      if (drop) drop.addEventListener('click', function () {
+        track('let-go');
+        card.innerHTML = '<h2>Okay. It\u2019s let go.</h2>' +
+          '<p>No more reminders will come from this. If it comes back to you, this page will still be here.</p>';
+      });
+    }
   })();
 })();

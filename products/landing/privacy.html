@@ -9,28 +9,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="/assets/tokens.css">
+<link rel="stylesheet" href="/assets/site.css">
 <style>
-:root{
-  --ink:#1a1a1a;--paper:#f7f4ef;--surface:#fffdf9;--slate:#5a5a5a;
-  --blue:#1d4ed8;--blue-soft:#dbe7ff;--rule:#e6e0d6;--rule-strong:#cfc6b8;
-  --sans:"Archivo",system-ui,sans-serif;--serif:"Source Serif 4",Georgia,serif;
-}
-*{box-sizing:border-box}
-body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;
-  line-height:1.55;margin:0;-webkit-font-smoothing:antialiased}
-.wrap{max-width:40rem;margin:0 auto;padding:0 1.5rem}
-.bar{border-bottom:1px solid var(--rule)}
-.bar .wrap{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.5rem}
-.brand{font-weight:700;font-size:.95rem;letter-spacing:-.01em;text-decoration:none;color:inherit}
-.brand span{color:var(--blue)}
-.bar a.cta{font-size:.85rem;color:var(--blue);text-decoration:none;font-weight:600}
+.wrap{max-width:40rem}
+.bar a.cta{color:var(--accent);font-weight:600}
 main{padding:3rem 0 4rem}
 h1{font-size:clamp(1.8rem,5vw,2.4rem);font-weight:800;letter-spacing:-.03em;margin:0 0 1rem}
-p,li{font-family:var(--serif);color:var(--slate);font-size:1.05rem;line-height:1.6}
+p,li{font-family:var(--font-text);color:var(--muted);font-size:1.05rem;line-height:1.6}
 ul{padding-left:1.2rem}
-a{color:var(--blue)}
-footer{padding:2rem 0 3rem;font-size:.82rem;color:var(--slate);border-top:1px solid var(--rule)}
-footer b{color:var(--ink);font-weight:600}
+a{color:var(--accent)}
 </style>
 </head>
 <body>
@@ -46,9 +34,9 @@ footer b{color:var(--ink);font-weight:600}
     <li>A few days later: one smaller action connected to where you started</li>
     <li>About a week later: one question you can answer in a word, then nothing else on a timer</li>
   </ul>
-  <p>Which emails you get depends on which page you signed up from: first night, someone coming over, just underwater, or a room that became storage. We do not send a pack of every guide. We do not branch on whether you opened the last email. We do not run a win-back campaign if you go quiet.</p>
-  <p>The <em>First Place</em> founding reservation is separate. Its button opens an email to <a href="mailto:hello@mrlifemanager.com">hello@mrlifemanager.com</a>; it does not add you to MailerLite. Sending that message records that you would seriously consider the planned $39 product. If you arrived through a parent, partner, or shared task link, the message includes that short source label so we can tell which route was useful. It does not charge you or create a purchase. We may reply only with concrete product news such as a real preorder, delivery date, or decision not to build it.</p>
-  <p>MailerLite stores addresses submitted through the four free entry pages and sends those sequences for us. You can <strong>unsubscribe anytime</strong> from any automated email or ask us to delete your address. We don't sell the list or share it for advertising. Replies go to a person at <a href="mailto:hello@mrlifemanager.com">hello@mrlifemanager.com</a>.</p>
+  <p>Which emails you get depends on which page you signed up from: first night, someone coming over, the whole house needing work, a room that became storage, or a desk you can't see anymore. We do not send a pack of every guide. We do not branch on whether you opened the last email. We do not run a win-back campaign if you go quiet.</p>
+  <p>MailerLite stores addresses submitted through the free entry pages and sends those sequences for us. You can <strong>unsubscribe anytime</strong> from any automated email or ask us to delete your address. We don't sell the list or share it for advertising. Answers to the feedback form are collected through Formspree. We use them to decide what to build next, and if you leave an email address there, we use it only to ask you one follow-up question. Replies go to a person at <a href="mailto:hello@mrlifemanager.com">hello@mrlifemanager.com</a>.</p>
+  <p data-analytics-only>We count visits and a few anonymous actions with Umami, a privacy-first analytics service: which page you used, the tag in the link if you came from a QR code, and which button you chose (start now, pick a time, finished). No cookies, no tracking across other sites, and nothing that identifies you. The time you pick for a reminder stays in your own calendar; this site doesn't keep it.</p>
   <p>Questions about this: same address.</p>
 </div></main>
 <footer><div class="wrap">

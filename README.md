@@ -2,6 +2,11 @@
 
 **Practical adult-life systems for people who were never explicitly taught them.**
 
+**Current public focus (2026-10-27):** five checklists — first night, guests,
+dinner, underwater, and one room. Other entrances and reference guides are
+paused, with their source retained for later. The Week and the partner pilot
+handout remain available to support the active flows.
+
 ---
 
 ## What this is
@@ -52,8 +57,9 @@ leaving dorms, young adults on their own, newlyweds — but it is not the whole 
 it. Plenty of people have been running a household for a decade and never had
 these systems either.
 
-**Who the marketing addresses and who pays is a separate question**, settled in
-[ADR-010](planning/decisions.md#adr-010--beachhead-keep-the-audience-change-the-payer):
+**Who the marketing addresses and who pays is a separate question** — see
+[ADR-010](planning/decisions.md#adr-010--beachhead-keep-the-audience-change-the-payer)
+(under review as of 2026-10-03; check the Status line in the decision log):
 competitive research found that every commercial success in this space sells to
 the adult already running a household and overwhelmed by it, while every attempt
 to sell to the 22-year-old directly underperformed or failed. So the content
@@ -81,20 +87,24 @@ the right action is the easy action, and the crisis mostly never arrives.
 
 ## Product direction
 
-The flagship is planned as:
+Win before wallet ([ADR-020](planning/decisions.md#adr-020--win-before-wallet-retire-the-39-flagship), Accepted 2026-10-15):
 
-> **First Place: The Practical Guide to Running Your First Home** — $39
+- **Free forever:** single-issue task pages and basic checklists. One pain, one
+  directive solution, one clear end state.
+- **Paid:** deeper $9–19 guides per domain, offered only after a free win has
+  delivered real value.
+- **Flagship:** the house-in-order system — cleaning, organizing, dishes,
+  laundry. The physical work autopay can't do. Price and format not set.
 
-A structured, room-by-room, domain-by-domain guide for someone setting up and
-running their own place for the first time — supplies, setup, routines,
-maintenance calendar, money basics, and hosting.
+We don't charge for what costs us nothing to make, and we don't sell to people
+who won't use it.
 
 The free front door is **not** a lead-magnet PDF. Per
 [ADR-015](planning/decisions.md#adr-015--the-win-comes-before-the-email),
 visitors land on **per-pain entry pages** (one ungated action each); the email
 ask comes after a completed win. Free guides remain public archive/search
-surface. Behind the free tier: paid tests, then *First Place*, then the rest of
-the ladder — see [`docs/business/product-ladder.md`](docs/business/product-ladder.md)
+surface. Behind the free tier: deeper $9–19 guides after a free win, then the
+house-in-order flagship, then the rest of the ladder — see [`docs/business/product-ladder.md`](docs/business/product-ladder.md)
 and [`planning/roadmap.md`](planning/roadmap.md).
 
 ## The major life domains
@@ -148,6 +158,13 @@ are short; frameworks are working models.
 overwrites it. See
 [`source-material/original-charles-cleanup-notes.md`](source-material/original-charles-cleanup-notes.md).
 
+For a facilitated home-organizing visit, use the
+[intervention session template](content/intervention-template.md). It includes
+a session brief, action and supply lists, a worked example from the 2014
+recording, and a lessons-learned form. Its
+[source analysis](source-material/2014-01-15-analysis.md) links each observation
+to a timestamp; the template has not yet been tested in a new session.
+
 ## Current status
 
 **Pre-launch validation stage.** The free funnel exists; the next job is to
@@ -156,12 +173,16 @@ verify it and learn from real people.
 - ✅ Concept, audiences, principles, and frameworks drafted
 - ✅ Competitive research done — three independent passes, acceptance test passed
       ([findings](docs/research/competitor-notes.md#findings))
-- ✅ Foundational decisions settled: faith framing, beachhead and payer, the
-      person behind the brand, and the intended licensing model
-      ([decision log](planning/decisions.md))
+- ✅ Foundational decisions settled: faith framing, the person behind the brand,
+      and the intended licensing model ([decision log](planning/decisions.md)).
+      Beachhead and payer
+      ([ADR-010](planning/decisions.md#adr-010--beachhead-keep-the-audience-change-the-payer))
+      are under review as of 2026-10-03.
 - ✅ Eight free-tier guides drafted and designed — see
       [`products/checklists/`](products/checklists/). They are now **archive and
-      search surface, not offers** ([ADR-015](planning/decisions.md#adr-015--the-win-comes-before-the-email))
+      search surface, not offers** ([ADR-015](planning/decisions.md#adr-015--the-win-comes-before-the-email);
+      under review as of 2026-10-03 — keep existing pages; don't cite as settled
+      for new work until re-decided)
 - ✅ **Dave's original documents recovered** — four guides he wrote in 2009–2010,
       plus the 2023 re-send and the 2019 thread where the name was coined. The
       frameworks are documented rather than reconstructed
@@ -169,22 +190,31 @@ verify it and learn from real people.
 - ✅ **Funnel rebuilt around the win, not the email** — the main page routes to
       per-pain entry pages; the action is free and ungated; signup comes after
       ([ADR-015](planning/decisions.md#adr-015--the-win-comes-before-the-email),
-      [ADR-016](planning/decisions.md#adr-016--the-sequence-shrinks-unconditionally))
-- ✅ Four entry pages live, each with its own sequence drafted —
+      [ADR-016](planning/decisions.md#adr-016--the-sequence-shrinks-unconditionally);
+      both under review as of 2026-10-03 — keep existing pages and emails; don't
+      cite as settled for new work until re-decided)
+- ✅ Original entry pages live, each with its own sequence drafted —
       [first night](products/landing/first-night.html) ·
       [someone's coming over](products/landing/guests.html) ·
       [just underwater](products/landing/underwater.html) ·
-      [the room that became storage](products/landing/one-room.html).
+      [the room that became storage](products/landing/one-room.html) ·
+      [the office that got away from you](products/landing/office.html)
+      (added 2026-10-06; deliberate one-off per Charles 2026-10-08 — direct-link
+      only; do not add to homepage/parents/partners pickers; MailerLite group
+      not wired yet).
       Completeness is enforced by
       [`check_entry_pages.py`](.github/scripts/check_entry_pages.py)
 - ✅ **Post-completion path added** — doing mode now ends at a distinct,
-      no-index completion page for each door. Those pages expose the earned
-      email ask and the planned paid next step instead of sending a finisher
-      back to the top of the free page.
-- ✅ ***First Place* founding offer published** — a no-charge reservation page
-      names the planned $39 price and tests serious interest without calling a
-      reservation a sale. Reservations go directly to the monitored mailbox,
-      so the live demand test has no unconfigured automation dependency.
+      no-index completion page for each door, instead of sending a finisher
+      back to the top of the free page. Original email routes retain their
+      signup; the newer quick-win routes end at the completed task.
+- ✅ **Felt-pain entrances drafted** — the dinner-table reset plus six actions
+      derived from the guide library: laundry piles, making a simple dinner,
+      choosing a cleaner, a useful sitting spot, tomorrow's kitchen, and a
+      shared dishes agreement. Each has six steps, a calendar option, a
+      one-page print layout, and no new email automation. See the
+      [coverage brief](products/landing/briefs/felt-pain-guides.md).
+      The six additional entrances are now paused; dinner remains active.
 - ✅ **Distribution path added** — parents, mentors, churches, and campuses can
       run a five-person free pilot from `partners.html`. Safe source labels carry
       through a completed task into reservation emails without cookies, and a
@@ -196,8 +226,9 @@ verify it and learn from real people.
 - ✅ Custom domain live at https://mrlifemanager.com (HTTPS)
 - ✅ Customer-interview script and Dave recording guide ready
 - ✅ **Four MailerLite automations are active**, per owner confirmation on
-      2026-09-22. Each entry page routes to its own three-email sequence; email
-      1 links only `The Week`. The private account state is not machine-verifiable
+      2026-09-22, one for each of the first four entry pages; the office page's
+      group and automation are not set up yet. Each sequence is three emails;
+      email 1 links only `The Week`. The private account state is not machine-verifiable
       from this public repository, so the last controlled delivery-test result
       is tracked in [`planning/operations.md`](planning/operations.md)
 - ⬜ **Record Dave.** The recovered documents cover cleaning, organizing and
@@ -207,8 +238,9 @@ verify it and learn from real people.
 - ⬜ No completed audience validation, paid customers, or revenue yet
 
 **Two honest caveats.** The products are designed prototypes, not validated
-products. And the frameworks are the apprentice's reconstruction, not the
-primary source — that gets fixed by recording Dave, not by more writing.
+products. Cleaning, organizing, and hospitality frameworks are now documented
+from the recovered sources; the remaining life domains still need Dave
+recorded — that gets fixed by talking to him, not by more writing.
 
 ## Next steps
 

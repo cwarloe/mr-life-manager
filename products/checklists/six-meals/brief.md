@@ -4,7 +4,7 @@
 Brief written after the fact from the HTML.
 **Tier:** Rung 0 — free ([product-ladder.md](../../../docs/business/product-ladder.md))
 **Files:** [`six-meals.html`](six-meals.html) ·
-[PDF](../../guides-pdf/six-meals.pdf) (3 pp) · public at
+[PDF](../../guides-pdf/six-meals.pdf) · public at
 `/guides/six-meals.html` (the old `/guides/ten-meals.html` and
 `/print/ten-meals.pdf` still resolve; see Decisions)
 
@@ -42,7 +42,7 @@ Free guide, archive and search surface per ADR-015, not an offer. The
 That Works* (6 repeatable meals, $19) at Rung 1. It's now free and folded into
 this guide (Charles, 2026-09-26,
 [ADR-017](../../../planning/decisions.md#adr-017--kitchen-that-works-is-free-folded-into-six-meals));
-revenue for this area is TBD with marketing. *First Place* no longer includes
+revenue for this area is TBD with marketing. No paid product includes
 the six meals (Charles, 2026-09-26,
 [ADR-018](../../../planning/decisions.md#adr-018--six-meals-removed-from-first-place)),
 so the meals aren't sold anywhere; they can move back to revenue generation

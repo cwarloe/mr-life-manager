@@ -15,14 +15,14 @@ quality, package many times. See
 
 | Directory | What lives here |
 |---|---|
-| `checklists/` | One- to four-page printable checklists. Free tier and $9 tier. |
+| `checklists/` | Printable free guides (archive/search). Paid ideas live on [product-ladder](../docs/business/product-ladder.md). |
 | `worksheets/` | Fill-in templates: agreements, calendars, planners, inventories. |
-| `ebooks/` | Multi-chapter guides, starting with the flagship, *First Place* (not yet written). |
+| `ebooks/` | Multi-chapter guides, starting with the flagship, the house-in-order system (not yet written; ADR-020). |
 | `courses/` | Structured multi-module programs, text or video. |
 | `toolkits/` | Bundled systems — several artifacts solving one situation end to end. |
 | `landing/` | The public site: router homepage, entry pages, email sequences. See [SETUP.md](landing/SETUP.md). |
 | `print/` | One-page printables with no web version (*The Week*). |
-| `guides-pdf/` | Rendered PDFs, published at `/print/`. Never edit; regenerate from the HTML. |
+| `guides-pdf/` | Rendered PDFs, published at `/print/`. Regenerate from the HTML rather than editing; CI flags drift. |
 
 ## Every product needs a brief
 
@@ -61,17 +61,19 @@ reader. Under [ADR-015](../planning/decisions.md#adr-015--the-win-comes-before-t
 the front door is a per-pain entry page; the guides are archive and search
 surface, not offers.
 
-- **Entry pages** — four, live: [first night](landing/first-night.html) ·
+- **Entry pages**, live: [first night](landing/first-night.html) ·
   [someone's coming over](landing/guests.html) ·
   [just underwater](landing/underwater.html) ·
-  [the room that became storage](landing/one-room.html). Each has a completion
-  page and its own [sequence](landing/emails/). Routes are in
+  [the room that became storage](landing/one-room.html) ·
+  [the office that got away from you](landing/office.html) (added 2026-10-06;
+  not linked from the homepage picker; MailerLite group not wired yet). Each has
+  a completion page and its own [sequence](landing/emails/). Routes are in
   [SETUP.md](landing/SETUP.md).
 - **Guides** — eight, at `/guides/`: seven [checklists](checklists/) and the
   [Household Agreement](worksheets/household-agreement/) worksheet.
 - **Printables** — [`guides-pdf/`](guides-pdf/), at `/print/`: one PDF per guide,
   [*The Week*](print/the-week.html) (what every sequence sends), and the
   partner-pilot handouts.
-- **Paid** — none. [`first-place.html`](landing/first-place.html) takes
-  no-charge reservations for a planned $39 founding offer.
+- **Paid** — none.
 - **Empty:** [ebooks](ebooks/), [courses](courses/), [toolkits](toolkits/).
+

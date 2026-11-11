@@ -1,21 +1,22 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-palette="print">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="One room. What it is for, what is fighting that, and three things to do about it. About twenty minutes.">
+<meta name="description" content="A planning worksheet for one room: its purpose, the obstacles, and specific next actions.">
 <meta name="color-scheme" content="light dark">
 <title>What Is This Room For?</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="../../landing/assets/tokens.css">
 <link rel="stylesheet" href="../../print/printable.css">
 <style>
 .sheet{max-width:54rem}
 .deck{max-width:44ch}
 .key-note{margin:1.75rem 0 0;padding:.9rem 1.1rem;font-size:.97rem}
-.key-note.warn{border-left-color:var(--amber);background:var(--amber-soft)}
-.key-note.warn b{color:var(--amber)}
+.key-note.warn{border-left-color:var(--second);background:var(--second-soft)}
+.key-note.warn b{color:var(--second)}
 .band{margin:3rem 0 0}
 .band-head h2{font-size:1.4rem}
 h3{margin:2rem 0 .8rem}
@@ -26,11 +27,10 @@ ul.tick li{font-size:.93rem;line-height:1.45;padding-left:1.6rem;position:relati
 ul.tick li::before{content:"";position:absolute;left:0;top:.18em;width:.85rem;height:.85rem;
   border:1.5px solid var(--rule-strong);border-radius:2px;background:var(--surface)}
 ul.tick li b{font-weight:600}
-ul.tick li .why{color:var(--slate);font-size:.87rem;display:block;line-height:1.4;border:0;background:none;
-  padding:0;margin:0;border-radius:0}
+ul.tick li .desc{font-family:var(--font-text);color:var(--muted);font-size:.87rem;display:block;line-height:1.4}
 .dolist{width:100%;border-collapse:collapse;font-size:.92rem;margin:.4rem 0 0}
 .dolist thead th{font-size:.66rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
-  color:var(--slate);text-align:left;padding:0 .7rem .45rem 0;border-bottom:1px solid var(--rule-strong)}
+  color:var(--muted);text-align:left;padding:0 .7rem .45rem 0;border-bottom:1px solid var(--rule-strong)}
 .dolist td{padding:.85rem .7rem;border-bottom:1px solid var(--rule);height:2.4rem}
 .dolist th.w-when{width:9rem}.dolist th.w-who{width:9rem}
 .signoff{max-width:40ch}
@@ -42,6 +42,7 @@ ul.tick li .why{color:var(--slate);font-size:.87rem;display:block;line-height:1.
 @media print{
   ul.tick li{font-size:8.6pt;line-height:1.28}
   ul.tick{gap:.22rem 1rem}
+  ul.tick li .desc{font-family:var(--font-ui);font-size:7.8pt;line-height:1.25;color:var(--muted)}
 }
 </style>
 </head>
@@ -51,7 +52,7 @@ ul.tick li .why{color:var(--slate);font-size:.87rem;display:block;line-height:1.
   <header class="mast">
     <p class="eyebrow">Mr. Life Manager · Free Guide</p>
     <h1>What Is This Room&nbsp;For?</h1>
-    <p class="deck">One room. Twenty minutes. Three things to do about it.</p>
+    <p class="deck">One room, a written purpose, and specific next actions.</p>
   </header>
 
   <p class="standfirst">Most advice about your home starts with cleaning. This starts
@@ -59,14 +60,14 @@ ul.tick li .why{color:var(--slate);font-size:.87rem;display:block;line-height:1.
   doing: <strong>what is this room actually for?</strong></p>
 
   <div class="key-note">
-    <b>One room. Not the house.</b>
+    <b>A planning session, not a room reset.</b> Bring paper and a pen or your phone. Involve the other people who use the room before agreeing on changes. The finish is a written plan; the physical work happens in separate sessions.<br><br><b>One room. Not the house.</b>
     Do this for a single room, finish it, and stop. You can run it again next week
     for the next one — but a house-wide audit in one sitting is how this ends up
     half-done in a notebook you never open again.
   </div>
 
   <section class="band">
-    <div class="band-head"><span class="band-tag">1</span><h2>Pick the room</h2><span class="mins">1 minute</span></div>
+    <div class="band-head"><span class="band-tag">1</span><h2>Pick the room</h2></div>
     <p class="band-note">Not the worst one. <strong>The one you're in most.</strong>
     Effort spent on a room you use daily pays back daily; the spare room can wait
     another year, as it has been doing.</p>
@@ -75,18 +76,18 @@ ul.tick li .why{color:var(--slate);font-size:.87rem;display:block;line-height:1.
   </section>
 
   <section class="band">
-    <div class="band-head"><span class="band-tag">2</span><h2>What's its job?</h2><span class="mins">3 minutes</span></div>
+    <div class="band-head"><span class="band-tag">2</span><h2>What's its job?</h2></div>
     <p class="band-note">Pick <strong>one</strong>. Rooms can do two things, but only
     one of them wins when they disagree — and deciding which now is the entire point
     of this exercise.</p>
     <ul class="tick">
-      <li><b>Sleeping</b> <span class="why">And nothing else. Everything else in here is a guest.</span></li>
+      <li><b>Sleeping</b> <span class="desc">Name any other uses that need space too.</span></li>
       <li><b>Cooking and eating</b></li>
-      <li><b>Sitting with other people</b> <span class="why">Talking, eating, watching something together.</span></li>
-      <li><b>Sitting on your own</b> <span class="why">Reading, watching, recovering.</span></li>
+      <li><b>Sitting with other people</b> <span class="desc">Talking, eating, watching something together.</span></li>
+      <li><b>Sitting on your own</b> <span class="desc">Reading, watching, recovering.</span></li>
       <li><b>Working or studying</b></li>
-      <li><b>Getting in and out</b> <span class="why">Keys, shoes, coat, mail, bag.</span></li>
-      <li><b>Storing things</b> <span class="why">A real answer. A room that's honestly storage beats one pretending to be a study.</span></li>
+      <li><b>Getting in and out</b> <span class="desc">Keys, shoes, coat, mail, bag.</span></li>
+      <li><b>Storing things</b> <span class="desc">A real answer. A room that's honestly storage beats one pretending to be a study.</span></li>
     </ul>
     <div class="key-note">
       <b>Say it out loud</b>
@@ -97,25 +98,24 @@ ul.tick li .why{color:var(--slate);font-size:.87rem;display:block;line-height:1.
   </section>
 
   <section class="band">
-    <div class="band-head"><span class="band-tag">3</span><h2>What's fighting it?</h2><span class="mins">10 minutes</span></div>
+    <div class="band-head"><span class="band-tag">3</span><h2>What's fighting it?</h2></div>
     <p class="band-note">Tick what's true <strong>in this room</strong>. These six
     cover almost everything — they're the failure modes, not a list of chores.</p>
     <ul class="tick one">
-      <li><b>Something in here has no home.</b> <span class="why">It gets moved, never put away, because there's nowhere to put it away to. Usually it's most of the clutter.</span></li>
-      <li><b>Furniture is doing a job it wasn't meant for.</b> <span class="why">The coffee table is storage. The dining table is a desk. The chair is a laundry pile.</span></li>
-      <li><b>You clear it before you can use it.</b> <span class="why">If starting the room's actual job needs a tidy-up first, the room isn't doing its job.</span></li>
-      <li><b>There's a pile nobody owns.</b> <span class="why">It's been there weeks. Nobody put it there and nobody will move it.</span></li>
-      <li><b>One light, in the ceiling.</b> <span class="why">The cheapest thing on this list to fix and the one that changes the room most.</span></li>
-      <li><b>The room has two jobs and they're losing to each other.</b> <span class="why">Work and rest in the same space is the common one. Neither happens properly.</span></li>
+      <li><b>Something in here has no home.</b> <span class="desc">It gets moved, never put away, because there's nowhere to put it away to. Usually it's most of the clutter.</span></li>
+      <li><b>Furniture is doing a job it wasn't meant for.</b> <span class="desc">The coffee table is storage. The dining table is a desk. The chair is a laundry pile.</span></li>
+      <li><b>You clear it before you can use it.</b> <span class="desc">If using the room requires a 15-minute cleanup every single time, the room is broken.</span></li>
+      <li><b>There's a pile nobody owns.</b> <span class="desc">It's been there weeks. Nobody put it there and nobody will move it.</span></li>
+      <li><b>One light, in the ceiling.</b> <span class="desc">Try the actual activity under the lighting you normally use; note any difficulty.</span></li>
+      <li><b>The room has two jobs and they're losing to each other.</b> <span class="desc">Work and rest in the same space is the common one. Neither happens properly.</span></li>
     </ul>
   </section>
 
   <section class="band">
-    <div class="band-head"><span class="band-tag">4</span><h2>Three things, with a date</h2><span class="mins">5 minutes</span></div>
-    <p class="band-note">Not everything you ticked. <strong>Three.</strong> A list of
-    three with dates gets done; a list of nine is a mood.</p>
+    <div class="band-head"><span class="band-tag">4</span><h2>Next actions, with a date</h2></div>
+    <p class="band-note">Choose the next concrete action for the problems you identified. Use up to three rows; leave unused rows blank. Name the action, a time, and who has agreed to do it. Keep disagreements as open questions.</p>
     <div class="scroll"><table class="dolist">
-      <thead><tr><th>What I'm going to do</th><th class="w-when">Done by</th><th class="w-who">Who's checking</th></tr></thead>
+      <thead><tr><th>What I'm going to do</th><th class="w-when">Done by</th><th class="w-who">Owner / support</th></tr></thead>
       <tbody>
         <tr><td></td><td></td><td></td></tr>
         <tr><td></td><td></td><td></td></tr>
@@ -123,10 +123,8 @@ ul.tick li .why{color:var(--slate);font-size:.87rem;display:block;line-height:1.
       </tbody>
     </table></div>
     <div class="key-note warn">
-      <b>The third column isn't decoration</b>
-      Name a real person and tell them. Ask them to check whether you
-      <em>started</em> on time, not just whether you finished — starting is the part
-      that goes wrong. A date nobody else knows about is a wish.
+      <b>Make support optional and agreed</b>
+      Name the person doing the job. If you want a check-in, ask someone willing to help; a phone reminder also works. A reminder supports starting but does not complete the action.
     </div>
   </section>
 
@@ -143,12 +141,10 @@ ul.tick li .why{color:var(--slate);font-size:.87rem;display:block;line-height:1.
     where the furniture sits, what's allowed on the surfaces and what the light is
     like are all yours. Paint and fittings aren't the part that decides how a place
     feels day to day.</p>
-    <p class="note"><b>Run it again when something changes.</b> A new flatmate, a new
+    <p class="note"><b>Run it again when something changes.</b> A new roommate, a new
     job, a baby, a move. A room should be for whatever your life is now, and it stops
     being that quietly, without anyone noticing.</p>
-    <p class="note"><b>One room, then stop.</b> If you're on hour two you've turned a
-    twenty-minute decision into a project, which is the thing this guide exists to
-    prevent.</p>
+    <p class="note"><b>One room, then stop.</b> If choosing a shared purpose needs more discussion, record the unresolved question and a time to revisit it. Do not count an unsettled plan as agreed or a planned change as finished.</p>
   </div>
 
   <p class="signoff">Nobody ever asked you what you wanted your home to do. It's a

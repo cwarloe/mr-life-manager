@@ -38,7 +38,7 @@ of the sequence and into a conversation. Nothing else does.
 >
 > It's one page, and it's Dave's whole system. The top of it is the ten minutes you do before bed — empty the sink, wipe the counters, walk one lap and put things back. Underneath that there's one job for each day of the week, and two days with nothing on them at all.
 >
-> Print it and stick it inside a cabinet door. It's the thing that means nobody ever has to do tonight again.
+> Print it and stick it inside a cabinet door. It's what keeps you from having to rush like tonight again.
 >
 > — Charles
 
@@ -111,11 +111,10 @@ genuinely doable and it's the only real research we have.
 
 1. ~~**The printable.**~~ Done — Email 1 links
    <https://mrlifemanager.com/print/the-week.pdf>. Open it before sending.
-2. **No paid offer appears anywhere in this sequence**, deliberately. ADR-015
-   says the paid step is smaller and in the same domain; that product ($9, the
-   maintenance version) **does not exist yet**. Inserting a placeholder offer
-   would break the shrinking rule and sell something we can't deliver. The
-   natural insertion point is after email 3, once there's something real.
+2. ~~**No paid offer / $9 maintenance product.**~~ **Parked** — under ADR-020
+   (Accepted) a $9–19 guide is offered only after a free win; it is a later idea, not an open ship
+   item. These sequences stay free-task only (ADR-015 shrinking rule still
+   applies if a same-domain paid step is ever un-parked).
 3. ~~**MailerLite automation.**~~ **Done** 2026-09-22 (Active per owner). Live
    ops spec: [MAILERLITE-SETUP.md](MAILERLITE-SETUP.md). Keep
    "resend to unopens" off — it violates ADR-016.

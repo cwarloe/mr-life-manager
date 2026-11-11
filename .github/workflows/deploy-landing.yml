@@ -7,16 +7,21 @@ on:
       - "products/landing/*.html"
       - "products/landing/assets/**"
       - "products/landing/templates/**"
+      - "products/landing/audiences/**"
       - "products/landing/favicon.svg"
       - "products/landing/site.webmanifest"
-      - "products/landing/CNAME"
       - "products/checklists/**"
       - "products/worksheets/**"
       - "products/print/**"
       - "products/guides-pdf/**"
       - ".github/scripts/build_site.py"
+      - ".github/scripts/preview_site.py"
+      - ".github/scripts/check_preview_site.py"
       - ".github/scripts/site_catalog.py"
+      - ".github/scripts/guide_inventory.py"
+      - ".github/scripts/theme_tokens.py"
       - ".github/workflows/deploy-landing.yml"
+      - ".github/workflows/reuse-validate-build.yml"
   workflow_dispatch:
 
 permissions:
@@ -29,34 +34,36 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  validate:
+    uses: ./.github/workflows/reuse-validate-build.yml
+
   deploy:
+    needs: validate
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Configure Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
-      - name: Validate before publishing
-        run: |
-          python3 .github/scripts/validate_repo.py
-          python3 .github/scripts/check_pdfs_fresh.py
-          python3 .github/scripts/check_entry_pages.py
-
+      # Rebuild in this job so the Pages artifact is produced here.
+      # Full validate (repo + pdfs + entry pages + build check) already ran
+      # in the reusable validate job; a second build is required because
+      # upload-pages-artifact needs _site in the deploy job workspace.
       - name: Build site
         run: |
           python3 .github/scripts/build_site.py
           python3 .github/scripts/check_built_site.py
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: _site
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

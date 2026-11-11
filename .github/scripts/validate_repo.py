@@ -8,6 +8,9 @@ import sys
 from pathlib import Path
 from urllib.parse import unquote
 
+from check_theme import scan as scan_theme
+from guide_inventory import FLYER_QRS, SHARE_QR_SHEETS, SHEETS
+
 ROOT = Path(__file__).resolve().parents[2]
 ERRORS: list[str] = []
 
@@ -44,9 +47,6 @@ def validate_share_qr() -> None:
     generate_share_assets.py writes both; this catches a hand edit or a sheet
     added to guide_inventory.SHEETS without re-running it.
     """
-    sys.path.insert(0, str(ROOT / ".github" / "scripts"))
-    from guide_inventory import FLYER_QRS, SHARE_QR_SHEETS, SHEETS  # noqa: E402
-
     svg_path = ROOT / "products" / "print" / "share-qr.svg"
     if not svg_path.is_file():
         error("products/print/share-qr.svg: missing (run generate_share_assets.py)")
@@ -72,9 +72,6 @@ def validate_flyer_qrs() -> None:
     The QR itself is drawn by generate_share_assets.py (qrcode is not installed
     in CI), so this checks the label it writes rather than decoding the image.
     """
-    sys.path.insert(0, str(ROOT / ".github" / "scripts"))
-    from guide_inventory import FLYER_QRS  # noqa: E402
-
     block = re.compile(r"<!-- flyer-qr:start -->(.*?)<!-- flyer-qr:end -->", re.DOTALL)
     for src, url in FLYER_QRS.items():
         found = block.findall((ROOT / src).read_text(encoding="utf-8"))
@@ -85,6 +82,13 @@ def validate_flyer_qrs() -> None:
             error(f"{src}: flyer QR copies differ (run generate_share_assets.py)")
         if f'aria-label="QR code for {url}"' not in found[0]:
             error(f"{src}: flyer QR is not labeled for {url} (run generate_share_assets.py)")
+
+
+def validate_theme() -> None:
+    """Colors, fonts and shadows come from tokens.css (check_theme.py)."""
+    findings, _prototypes = scan_theme()
+    for finding in findings:
+        error(f"raw color or font, use a token from tokens.css: {finding}")
 
 
 def validate_markdown_links() -> tuple[int, int]:
@@ -127,6 +131,7 @@ def main() -> int:
     markdown_count, link_count = validate_markdown_links()
     validate_share_qr()
     validate_flyer_qrs()
+    validate_theme()
 
     if ERRORS:
         print("Repository validation failed:")

@@ -1,44 +1,31 @@
 #!/usr/bin/env python3
-"""Fail if a committed printable is older than the HTML it came from.
+"""Fail if a committed printable no longer matches the sources it was rendered from.
 
 The email sequences link straight at these PDFs, so a stale one means a reader
 is handed corrected copy on the site and the uncorrected version in their inbox.
 That has already happened once.
 
 Rendered PDFs are not byte-stable — Chrome stamps a creation date and a document
-ID into every run — so this compares a hash of each *source* instead. The
-manifest is written by render_all_pdfs.py; if a source has changed since, the
-hashes diverge and the PDF needs re-rendering.
+ID into every run — so this compares a hash of each *source* instead: the HTML,
+its local stylesheets, the embedded-fonts CSS and the print zoom (see
+render_pdf.source_digest). The manifest is written by render_all_pdfs.py; if any
+of those has changed since, the hashes diverge and the PDF needs re-rendering.
 """
-import hashlib
 import json
 import sys
 from pathlib import Path
+
+from guide_inventory import SHEETS
+from render_pdf import effective_zoom, print_scales, source_digest
 
 ROOT = Path(__file__).resolve().parents[2]
 MANIFEST = ROOT / "products" / "guides-pdf" / ".sources.json"
 
 
-def digest(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()[:16]
-
-
-def source_digest(src: Path) -> str:
-    """Hash HTML plus any local stylesheets it links (PDF render inlines them)."""
-    sys.path.insert(0, str(ROOT / ".github" / "scripts"))
-    from render_pdf import linked_local_stylesheets  # noqa: E402
-    h = hashlib.sha256()
-    h.update(src.read_bytes())
-    for css in linked_local_stylesheets(src):
-        h.update(b"\0")
-        h.update(css.read_bytes())
-    return h.hexdigest()[:16]
-
-
 def current() -> dict:
-    sys.path.insert(0, str(ROOT / ".github" / "scripts"))
-    from guide_inventory import SHEETS  # noqa: E402
-    return {stem: source_digest(ROOT / src) for src, stem in SHEETS}
+    scales = print_scales()
+    return {stem: source_digest(ROOT / src, effective_zoom(stem, scales))
+            for src, stem in SHEETS}
 
 
 def main() -> int:
@@ -47,7 +34,7 @@ def main() -> int:
               file=sys.stderr)
         return 1
 
-    recorded = json.loads(MANIFEST.read_text())
+    recorded = json.loads(MANIFEST.read_text(encoding="utf-8"))
     now = current()
     stale = sorted(k for k in now if recorded.get(k) != now[k])
     missing = sorted(k for k in now
@@ -56,7 +43,8 @@ def main() -> int:
     if stale or missing:
         print("Printables are out of date:\n", file=sys.stderr)
         for k in stale:
-            print(f"  {k} — source changed since the PDF was rendered", file=sys.stderr)
+            print(f"  {k} — source, print scale or fonts changed since the PDF was rendered",
+                  file=sys.stderr)
         for k in missing:
             print(f"  {k} — PDF missing", file=sys.stderr)
         print("\nRun:  python3 .github/scripts/render_all_pdfs.py", file=sys.stderr)
@@ -69,3 +57,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

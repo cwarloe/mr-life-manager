@@ -1,0 +1,196 @@
+/* Mr. Life Manager design tokens: the ONE place colors, fonts, shadows and
+   QR ink are defined. Every other stylesheet, page and generator uses
+   var(--token). To restyle the site, change values here. Rule and checker:
+   products/landing/THEMING.md and .github/scripts/check_theme.py.
+
+   Published at /assets/tokens.css. Every page links it before its own
+   stylesheet (site.css, entry.css, looks.css or printable.css). Sheets in
+   products/checklists/, products/worksheets/ and products/print/ link it by a
+   relative path so render_pdf.py can inline it; build_site.py rewrites that
+   path for the published copies.
+
+   Palettes are attributes, so they work on any element:
+     (none)                  the site: marketing pages and checklists
+     data-palette="print"    printable sheets and the /guides/ and /print/ indexes
+     data-palette="week"     The Week (one Letter sheet, light only)
+     data-palette="feedback" the feedback form (light only)
+     data-look="<family>-<scheme>"  the audience looks (screen only; see
+                             LOOKS in site_catalog.py). Light values work on
+                             any element (the scheme-picker swatches use
+                             that); dark variants apply to the page.
+
+   Tokens
+     --ink text            --paper page            --surface cards and panels
+     --muted quiet text    --quiet quieter text (feedback only)
+     --rule / --rule-strong / --rule-mid  borders and rules (--rule-mid: print)
+     --accent / --accent-soft / --accent-deep  main action, its tint, its hover
+     --on-accent           text on an --accent fill
+     --second / --second-soft / --on-second  second color: the safety note, completed steps
+     --dark / --on-dark    dark bands (military looks)
+     --tape                highlight labels (students and military looks)
+     --badge-reset-* / --badge-setup-*  reset and setup badges
+     --shadow-xs / -sm / -md, --shadow-lift, --shadow-tape, --shadow-sheet
+     --desk                the backdrop behind a sheet shown on screen
+     --dots / --dots-faint the students' halftone background
+     --qr-ink / --qr-bg    share QR codes: keep black on white for scanners
+     --swatch-1 / --swatch-2  the two colors a scheme-picker button shows
+     --font-ui headings and controls, --font-text reading text,
+     --font-display short labels in the students and military looks */
+
+@font-face{font-family:"Bangers";src:url("/assets/fonts/bangers.woff2") format("woff2");font-display:swap}
+@font-face{font-family:"Saira Stencil One";src:url("/assets/fonts/saira-stencil-one.woff2") format("woff2");font-display:swap}
+
+/* ---------- the site (default) ---------- */
+:root,[data-palette]{
+  --ink:#14181F; --paper:#F9F7F2; --surface:#FFFFFF;
+  --accent:#1A446C; --accent-soft:#EBF1F7; --accent-deep:#123250; --on-accent:#FFFFFF;
+  --second:#A65E12; --second-soft:#FDF6EC; --on-second:#FFFFFF;
+  --muted:#5A6270; --rule:#E0DBD1; --rule-strong:#BCB6A8;
+  --badge-reset-bg:#FDF4E7; --badge-reset-text:#964F0A; --badge-reset-border:#F0D9BC;
+  --badge-setup-bg:#EDF3F8; --badge-setup-text:#1B456D; --badge-setup-border:#D0DFEC;
+  --shadow-xs:0 1px 2px rgba(0,0,0,0.08);
+  --shadow-sm:0 1px 3px rgba(20,24,31,0.05);
+  --shadow-md:0 4px 12px rgba(20,24,31,0.07);
+  --qr-ink:#000; --qr-bg:#fff;
+  --font-ui:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-text:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-display:var(--font-ui);
+}
+
+/* ---------- printable sheets ---------- */
+[data-palette="print"]{
+  --ink:#12161C; --paper:#FBF9F4; --surface:#FFFFFF;
+  --accent:#1F4E79; --accent-soft:#E7EEF5;
+  --second:#B4741A; --second-soft:#F7EEDD;
+  --muted:#6B7280; --rule:#D9D5CC; --rule-strong:#B8B2A6;
+}
+
+/* ---------- dark mode (site and printable sheets on screen) ---------- */
+@media (prefers-color-scheme:dark){
+  :root,[data-palette]{
+    --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
+    --accent:#8FB6DA; --accent-soft:#1D2833;
+    --second:#E3A94E; --second-soft:#2A2418;
+    --muted:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
+    --badge-reset-bg:#262016; --badge-reset-text:#E3A94E; --badge-reset-border:#423624;
+    --badge-setup-bg:#16222E; --badge-setup-text:#8FB6DA; --badge-setup-border:#27384A;
+    --shadow-sm:0 1px 3px rgba(0,0,0,0.3);
+    --shadow-md:0 4px 12px rgba(0,0,0,0.4);
+  }
+}
+
+/* ---------- on paper: printed checklists and sheets ---------- */
+@media print{
+  :root,[data-palette]{
+    --ink:#000; --paper:#fff; --surface:#fff; --muted:#333;
+    --rule:#bbb; --rule-mid:#999; --rule-strong:#666;
+    --accent:#1F4E79; --accent-soft:#fff; --second:#7a4d0a; --second-soft:#fff;
+  }
+}
+
+/* ---------- The Week: light only, on screen and on paper ---------- */
+[data-palette="week"]{
+  --ink:#12161C; --paper:#fff; --accent:#1F4E79; --second:#B4741A;
+  --muted:#5A616B; --rule:#C9C4BA; --rule-strong:#8A8378;
+  --desk:#F3F1EC; --shadow-sheet:0 2px 14px rgba(0,0,0,.14);
+}
+
+/* ---------- feedback form: light only ---------- */
+[data-palette="feedback"]{
+  --ink:#12161C; --paper:#FBF9F4; --surface:#fff; --accent:#1F4E79; --accent-deep:#173c5e;
+  --on-accent:#fff; --second:#B4741A; --rule:#e5ded1; --muted:#4a4a44; --quiet:#6a675c;
+}
+
+/* =====================================================================
+   Audience looks (screen only; printed pages keep the palettes above).
+   Layout and component rules for the looks stay in looks.css.
+   ===================================================================== */
+@media screen{
+
+/* career: clean, all sans, follows light/dark */
+[data-look^="career-"]{--font-text:var(--font-ui); --shadow-lift:0 8px 24px rgba(15,29,43,.10);
+  --swatch-1:var(--accent); --swatch-2:var(--second)}
+[data-look="career-teal"]{
+  --ink:#0F1D2B; --paper:#F3F7F8; --surface:#FFFFFF; --muted:#4A5A68;
+  --accent:#0B6E6E; --accent-soft:#E2F1EF; --accent-deep:#08504F; --on-accent:#FFFFFF;
+  --second:#B93C0A; --second-soft:#FFF0E6; --rule:#D6E1E5; --rule-strong:#A9BCC4;
+}
+[data-look="career-navy"]{
+  --ink:#111827; --paper:#F5F6F9; --surface:#FFFFFF; --muted:#4B5563;
+  --accent:#1E3A8A; --accent-soft:#E6ECFA; --accent-deep:#172C6B; --on-accent:#FFFFFF;
+  --second:#A34A06; --second-soft:#FEF3E2; --rule:#DCE1EA; --rule-strong:#AEB7C6;
+}
+[data-look="career-plum"]{
+  --ink:#1C1424; --paper:#F8F5F8; --surface:#FFFFFF; --muted:#57505E;
+  --accent:#6B2D63; --accent-soft:#F3E8F1; --accent-deep:#52214C; --on-accent:#FFFFFF;
+  --second:#26704B; --second-soft:#E5F3EB; --rule:#E4DCE3; --rule-strong:#BBAFBA;
+}
+[data-look="career-green"]{
+  --ink:#111418; --paper:#F4F5F6; --surface:#FFFFFF; --muted:#4B525C;
+  --accent:#15703B; --accent-soft:#E3F2E8; --accent-deep:#0F552C; --on-accent:#FFFFFF;
+  --second:#2F3A46; --second-soft:#E8EBEF; --rule:#DDE0E4; --rule-strong:#AEB4BC;
+}
+@media (prefers-color-scheme:dark){
+  html[data-look^="career-"]{
+    --ink:#E6EEF1; --paper:#0D161B; --surface:#14212A; --muted:#9DB0BA;
+    --rule:#22343D; --rule-strong:#3A5260; --on-accent:#0D161B;
+  }
+  html[data-look="career-teal"]{--accent:#4FC2BB; --accent-soft:#12302F; --accent-deep:#7AD6D0; --second:#FF9A62; --second-soft:#2E1D13}
+  html[data-look="career-navy"]{--accent:#8EA8F0; --accent-soft:#18233F; --accent-deep:#B3C4F5; --second:#F2B45B; --second-soft:#2D2312}
+  html[data-look="career-green"]{--accent:#5FD08E; --accent-soft:#12301F; --accent-deep:#8EE0AE; --second:#C3CCD6; --second-soft:#1E252C}
+  html[data-look="career-plum"]{--accent:#D99BCF; --accent-soft:#311C2E; --accent-deep:#E8BEE1; --second:#7BD1A4; --second-soft:#16291F}
+}
+
+/* students: comic panel, light only */
+[data-look^="students-"]{
+  color-scheme:light; --font-text:var(--font-ui);
+  --font-display:"Bangers","Comic Sans MS",Impact,sans-serif;
+  --ink:#14110F; --paper:#F4EFE1; --surface:#FFFFFF; --muted:#4A443B;
+  --rule:#14110F; --rule-strong:#14110F; --on-accent:#FFFFFF;
+  --dots:rgba(20,17,15,.12); --dots-faint:rgba(20,17,15,.06);
+  --swatch-1:var(--accent); --swatch-2:var(--tape);
+}
+[data-look="students-blue"]{--accent:#1B47A0; --accent-soft:#E6ECF8; --accent-deep:#143679; --second:#A33A00; --second-soft:#FFF3C2; --tape:#FFD23F}
+[data-look="students-red"]{--accent:#C3231A; --accent-soft:#FBE3E1; --accent-deep:#9A1B14; --second:#1B47A0; --second-soft:#FFF3C2; --tape:#FFD23F}
+[data-look="students-green"]{--accent:#1A6B3A; --accent-soft:#E5F1E9; --accent-deep:#13522C; --second:#7A3F12; --second-soft:#FBECC4; --tape:#F2B632}
+[data-look="students-orange"]{
+  --ink:#12233F; --paper:#F1EEE6; --muted:#3D4A60; --rule:#12233F; --rule-strong:#12233F;
+  --accent:#B23C04; --accent-soft:#FBE7DB; --accent-deep:#8F3003; --second:#1D5A85; --second-soft:#E2F1FA; --tape:#8FD3F4;
+  --swatch-2:var(--ink);
+}
+
+/* military: mission board, light only */
+[data-look^="military-"]{color-scheme:light; --font-text:var(--font-ui);
+  --font-display:"Saira Stencil One","Arial Black",Impact,sans-serif;
+  --shadow-tape:0 1px 0 #00000033; --swatch-1:var(--dark); --swatch-2:var(--accent)}
+[data-look="military-scarlet"]{
+  --ink:#1E1416; --paper:#EFE9E1; --surface:#FAF7F2; --muted:#52464A;
+  --rule:#AC9C93; --rule-strong:#8C0B1F; --dark:#8C0B1F; --on-dark:#FFF7E3;
+  --accent:#FFC72C; --accent-soft:#F5EDE2; --accent-deep:#E8AE12; --on-accent:#2A0A0F;
+  --second:#A50F25; --second-soft:#F7E3E3; --tape:#FFD866;
+}
+[data-look="military-black"]{
+  --ink:#141414; --paper:#ECEAE3; --surface:#F8F7F3; --muted:#4A4A44;
+  --rule:#9A968A; --rule-strong:#111111; --dark:#111111; --on-dark:#F8F7F3;
+  --accent:#FFCC01; --accent-soft:#F2EFE4; --accent-deep:#E0B400; --on-accent:#111111;
+  --second:#111111; --second-soft:#F7EFCF; --tape:#FFE07A;
+}
+[data-look="military-blue"]{
+  --ink:#0D1B33; --paper:#E6EBF3; --surface:#F7F9FD; --muted:#43506A;
+  --rule:#93A2BD; --rule-strong:#00308F; --dark:#00308F; --on-dark:#F7F9FD;
+  --accent:#FFD100; --accent-soft:#EBF0F9; --accent-deep:#E6BC00; --on-accent:#0D1B33;
+  --second:#00308F; --second-soft:#E1E8F7; --tape:#FFE680;
+}
+[data-look="military-navy"]{
+  --ink:#0F1E33; --paper:#E4E9F1; --surface:#F6F8FC; --muted:#44536B;
+  --rule:#8FA0BA; --rule-strong:#10294A; --dark:#10294A; --on-dark:#F6F8FC;
+  --accent:#F0AE1A; --accent-soft:#E9EDF5; --accent-deep:#D69A10; --on-accent:#10294A;
+  --second:#10294A; --second-soft:#F9EFD2; --tape:#F4D98A;
+}
+[data-look="military-silver"]{
+  --ink:#121419; --paper:#E4E6EA; --surface:#F5F6F8; --muted:#4A4F59;
+  --rule:#9AA0AA; --rule-strong:#1C1F26; --dark:#1C1F26; --on-dark:#F5F6F8;
+  --accent:#B4BAC3; --accent-soft:#ECEEF1; --accent-deep:#9AA1AC; --on-accent:#121419;
+  --second:#1C1F26; --second-soft:#E3E8F2; --tape:#CDD2DA;
+}
+}

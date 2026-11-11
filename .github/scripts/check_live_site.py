@@ -3,52 +3,73 @@
 
 from __future__ import annotations
 
+import html
+import re
 import sys
 import time
+from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
-from site_catalog import ENTRY_ROUTES, MAILERLITE_FORM_ATTR, ORIGIN
+from site_catalog import (
+    ENTRY_ROUTES,
+    PUBLISHED_ENTRY_ROUTES,
+    MAILERLITE_FORM_ATTR,
+    MAILERLITE_JS_URL,
+    ORIGIN,
+    PARTNERS_LIVE_MARKERS,
+    PRIVACY_LIVE_MARKERS,
+    required_share_images,
+)
 
-BASE = ORIGIN
+
+HOMEPAGE_SOURCE = Path(__file__).resolve().parents[2] / "products" / "landing" / "index.html"
+
+
+def _homepage_headline() -> str:
+    """Read the homepage <h1> from the repo so copy edits don't break this check."""
+    match = re.search(r"<h1[^>]*>(.*?)</h1>", HOMEPAGE_SOURCE.read_text(encoding="utf-8"), re.S)
+    if not match:
+        raise SystemExit(f"No <h1> found in {HOMEPAGE_SOURCE}")
+    text = html.unescape(re.sub(r"<[^>]+>", "", match.group(1)))
+    return " ".join(text.split()).rstrip(".")
+
 
 def _entry_pages() -> dict[str, tuple[str, ...]]:
     pages: dict[str, tuple[str, ...]] = {
-        "/": ("Run your home without carrying all of it in your head",),
+        "/": (_homepage_headline(),),
     }
-    for route in ENTRY_ROUTES:
+    for route in PUBLISHED_ENTRY_ROUTES:
         pages[f"/{route.page}"] = (
-            MAILERLITE_FORM_ATTR,
             f'data-guide="{route.slug}"',
             'src="/assets/entry.js"',
-            "Dave's week on one page",
         )
-    for route in ENTRY_ROUTES:
+        if route.collects_email:
+            pages[f"/{route.page}"] += (MAILERLITE_FORM_ATTR, "one thing worth printing: the week on one page")
+    for route in PUBLISHED_ENTRY_ROUTES:
         pages[f"/{route.completion_page}"] = (
-            MAILERLITE_FORM_ATTR,
-            f"var VALUE = '{route.slug}'",
+            f'data-guide="{route.slug}"',
+            'src="/assets/entry.js"',
             "One thing finished",
         )
-    pages["/first-place.html"] = (
-        "First%20Place%20%2439%20founding%20reservation",
-        "Reserve the $39 founding version",
-        "planned founding price",
-    )
-    pages["/partners.html"] = (
-        "Pilot it with five",
-        "data-source-link",
-        "Five-person pilot",
-        "/print/partner-pilot.pdf",
-    )
-    pages["/privacy.html"] = ("MailerLite stores", "The Week")
+        if route.collects_email:
+            pages[f"/{route.completion_page}"] += (MAILERLITE_FORM_ATTR, MAILERLITE_JS_URL, "ml-fallback")
+        elif route.next_url:
+            pages[f"/{route.completion_page}"] += (f'href="{route.next_url}"', route.next_title)
+    audiences = Path(__file__).resolve().parents[2] / "products" / "landing" / "audiences"
+    for path in sorted(audiences.glob("*.html")):
+        pages[f"/{path.stem}/"] = ('data-look="', 'class="door', "data-look-pick")
+    pages["/partners.html"] = PARTNERS_LIVE_MARKERS
+    pages["/privacy.html"] = PRIVACY_LIVE_MARKERS
     return pages
 
 
 PAGES = _entry_pages()
+# Live check expects home + entry doors + privacy (subset of sitemap_core_urls).
 SITEMAP_URLS = (
-    f"{BASE}/",
-    *(f"{BASE}/{route.page}" for route in ENTRY_ROUTES),
-    f"{BASE}/privacy.html",
+    f"{ORIGIN}/",
+    *(f"{ORIGIN}/{route.page}" for route in ENTRY_ROUTES),
+    f"{ORIGIN}/privacy.html",
 )
 
 
@@ -58,16 +79,27 @@ def fetch(url: str) -> tuple[str, str, bytes]:
         return response.geturl(), response.headers.get_content_type(), response.read()
 
 
+def _expect_pdf(url: str, problems: list[str]) -> None:
+    try:
+        final, content_type, body = fetch(url)
+        if final != url:
+            problems.append(f"{url}: unexpected final URL {final}")
+        if content_type != "application/pdf" or not body.startswith(b"%PDF-"):
+            problems.append(f"{url}: response is not a PDF")
+    except (HTTPError, URLError, TimeoutError) as exc:
+        problems.append(f"{url}: {exc}")
+
+
 def run_once() -> list[str]:
     problems: list[str] = []
     for path, markers in PAGES.items():
-        url = BASE + path
+        url = ORIGIN + path
         try:
             final, content_type, body = fetch(url)
         except (HTTPError, URLError, TimeoutError) as exc:
             problems.append(f"{url}: {exc}")
             continue
-        if not final.startswith(BASE):
+        if not final.startswith(ORIGIN):
             problems.append(f"{url}: redirected outside canonical domain to {final}")
         if content_type != "text/html":
             problems.append(f"{url}: content type {content_type}, expected text/html")
@@ -80,37 +112,21 @@ def run_once() -> list[str]:
         if path != "/privacy.html" and 'href="/privacy.html"' not in text:
             problems.append(f"{url}: missing privacy link")
 
-    pdf_url = BASE + "/print/the-week.pdf"
-    try:
-        final, content_type, body = fetch(pdf_url)
-        if final != pdf_url:
-            problems.append(f"{pdf_url}: unexpected final URL {final}")
-        if content_type != "application/pdf" or not body.startswith(b"%PDF-"):
-            problems.append(f"{pdf_url}: response is not a PDF")
-    except (HTTPError, URLError, TimeoutError) as exc:
-        problems.append(f"{pdf_url}: {exc}")
+    _expect_pdf(ORIGIN + "/print/the-week.pdf", problems)
+    _expect_pdf(ORIGIN + "/print/partner-pilot.pdf", problems)
 
-    partner_pdf_url = BASE + "/print/partner-pilot.pdf"
-    try:
-        final, content_type, body = fetch(partner_pdf_url)
-        if final != partner_pdf_url:
-            problems.append(f"{partner_pdf_url}: unexpected final URL {final}")
-        if content_type != "application/pdf" or not body.startswith(b"%PDF-"):
-            problems.append(f"{partner_pdf_url}: response is not a PDF")
-    except (HTTPError, URLError, TimeoutError) as exc:
-        problems.append(f"{partner_pdf_url}: {exc}")
+    for share_name in required_share_images():
+        share_url = ORIGIN + f"/assets/share/{share_name}"
+        try:
+            final, content_type, body = fetch(share_url)
+            if final != share_url:
+                problems.append(f"{share_url}: unexpected final URL {final}")
+            if content_type != "image/png" or not body.startswith(b"\x89PNG\r\n\x1a\n"):
+                problems.append(f"{share_url}: response is not a PNG")
+        except (HTTPError, URLError, TimeoutError) as exc:
+            problems.append(f"{share_url}: {exc}")
 
-    share_url = BASE + "/assets/share/home.png"
-    try:
-        final, content_type, body = fetch(share_url)
-        if final != share_url:
-            problems.append(f"{share_url}: unexpected final URL {final}")
-        if content_type != "image/png" or not body.startswith(b"\x89PNG\r\n\x1a\n"):
-            problems.append(f"{share_url}: response is not a PNG")
-    except (HTTPError, URLError, TimeoutError) as exc:
-        problems.append(f"{share_url}: {exc}")
-
-    sitemap_url = BASE + "/sitemap.xml"
+    sitemap_url = ORIGIN + "/sitemap.xml"
     try:
         final, content_type, body = fetch(sitemap_url)
         if final != sitemap_url:
@@ -126,7 +142,7 @@ def run_once() -> list[str]:
     except (HTTPError, URLError, TimeoutError) as exc:
         problems.append(f"{sitemap_url}: {exc}")
 
-    robots_url = BASE + "/robots.txt"
+    robots_url = ORIGIN + "/robots.txt"
     try:
         final, _, body = fetch(robots_url)
         robots = body.decode("utf-8", errors="replace")
@@ -138,8 +154,8 @@ def run_once() -> list[str]:
     for start in ("http://mrlifemanager.com/", "https://www.mrlifemanager.com/"):
         try:
             final, _, _ = fetch(start)
-            if final != BASE + "/":
-                problems.append(f"{start}: ended at {final}, expected {BASE}/")
+            if final != ORIGIN + "/":
+                problems.append(f"{start}: ended at {final}, expected {ORIGIN}/")
         except (HTTPError, URLError, TimeoutError) as exc:
             problems.append(f"{start}: {exc}")
     return problems
@@ -150,7 +166,11 @@ def main() -> int:
     for attempt in range(3):
         problems = run_once()
         if not problems:
-            print("Production smoke test passed: twelve pages, four routes, one partner path, one founding offer, two PDFs, share images, sitemap, robots and canonical redirects.")
+            print(
+                f"Production smoke test passed: {len(PAGES)} pages, "
+                f"{len(ENTRY_ROUTES)} routes, one partner path, one founding offer, "
+                "two PDFs, share images, sitemap, robots and canonical redirects."
+            )
             return 0
         if attempt < 2:
             time.sleep(10)

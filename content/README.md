@@ -15,6 +15,13 @@ extracting reusable domain material into this tree.
 Do not pause validation to invent an empty domain tree. Write where the reader
 is; extract here only after something survives contact with real people.
 
+## Facilitating an intervention
+
+Use the [intervention session template](intervention-template.md) to prepare
+and run a home-organizing visit, record concrete next actions, and capture
+lessons afterward. It is an internal facilitation standard derived from the
+2014 recording, with our additions labeled; it is not a validated product.
+
 ## Writing standards
 
 Every piece of content should:
@@ -31,6 +38,45 @@ Every piece of content should:
 6. **Be modular.** Assume it will be reused in three products and read out of
    order.
 
+## The act-now filter: site, ad and landing-page copy
+
+Charles, 2026-10-31. Picture the reader standing in a coffee shop, holding a
+flier from the dining hall, or opening a link a friend sent. The copy has one
+job: make them feel one problem they have **today**, tap it, and then either
+start now or pick a specific time and commit to it. Run every line on a
+landing page, flier or ad through these questions:
+
+1. **Does it move them toward tapping a door, starting, or picking a time?**
+   If not, cut it.
+2. **Is it about now?** Avoid lines about value they might find later, things
+   they'll use someday, or what to save for next time ("Moving every two or
+   three years? Save the first-night page." failed this: nothing in it matters
+   in the moment they're reading).
+3. **Does it ask them to agree, or to act?** A line they nod at ("good point")
+   but don't act on is a hook without a result. Insight is fine only when it
+   leads straight into the action.
+4. **Does every word earn its place?** That isn't a call for clipped,
+   noun-less fragments to sound punchy or save space; write full sentences a
+   person would say. Long copy is fine, and the evidence says long copy can
+   sell well, when the length is what gets them to act now. Length to keep
+   them reading is not the goal.
+
+This is a strong default, not a wall: a line that fails it can stay when you
+can say how it gets someone to act today.
+
+**Plain speech (Charles, 2026-10-31).** Write the way people actually think
+and talk, not the way AI copy sounds.
+
+- **Every verb gets its object.** "Pick a time" alone leaves the reader
+  wondering what the time is for; "Pick a day and time to do the dishes"
+  doesn't. Don't use "it," "this" or "them" unless the thing was named in the
+  same sentence or the one just before.
+- **No clipped or clever lines.** "The floor is clothes" is not English; "There
+  are clothes all over the floor" is. No lists posing as sentences, no slogans,
+  no hiding the subject or object to sound punchy.
+- **Read it out loud.** If you wouldn't say it that way to a friend standing
+  next to you, rewrite it.
+
 ## Building a new entry page
 
 **Copy an existing entry page and change the content. Do not build one from
@@ -38,6 +84,9 @@ scratch, and do not copy an old one from memory** — every time that has happen
 something was missing and nothing looked broken.
 
 Source of truth: [`products/landing/guests.html`](../products/landing/guests.html).
+
+**Derive the steps from [Dave's principles](../frameworks/dave-principles.md#using-the-engine-on-a-new-domain)**,
+and list the outside facts the page depends on so they get checked.
 
 An entry page is one pain, one action, the win before the email
 ([ADR-015](../planning/decisions.md#adr-015--the-win-comes-before-the-email)).
@@ -47,7 +96,7 @@ doesn't:
 
 | Must have | Why |
 |---|---|
-| Shared `/assets/entry.css` + `/assets/entry.js` + `data-guide` / `data-completion-url` on `<html>` | Shared sheet + script; page-local print zoom (and one-room `.says`) only |
+| Shared `/assets/entry.css` + `/assets/entry.js` + `data-guide` / `data-completion-url` on `<html>` | Shared sheet + script; page-local print zoom only |
 | `.go-do` / `.go-print` buttons | The mode switch, placed after the framing, before step 1 |
 | Viewport-locked doing layout | So Next can never be pushed off a phone screen |
 | `content:attr(data-n)` numbering | CSS counters skip hidden steps; without it every card reads "1" |
@@ -56,6 +105,14 @@ doesn't:
 | `@page{size:Letter}` and a print zoom | US paper, and fill it — see below |
 | A `data-guide` tag (wired by entry.js) | Untagged signups land nowhere |
 | A matching `<tag>-sequence.md` | A page that collects addresses and sends nothing is worse than no page |
+
+**Routes without email:** set `email_signup=False` in `site_catalog.py`; the
+builder uses `finished-next.html` for a simple completion page. These routes
+keep doing mode, print controls, completion tracking, and public-page checks.
+They do not embed a signup or require an email sequence. An optional free next
+step can use `next_url`, `next_title`, and `next_description`. Leave those empty
+to end at the win, as the dinner route does while the longer checklists are
+de-linked.
 
 **After creating one, run
 [`tune_print_scale.py`](../.github/scripts/tune_print_scale.py)** logic against
@@ -85,7 +142,7 @@ prevented:
 | `.no-print` on sections that aren't for the printed context | A shopping list doesn't need "where to keep it" — that's for when you're home |
 
 **What's worth printing is what gets used again.** A sheet for something someone
-does once has no reason to exist. That is why all four email sequences hand over
+does once has no reason to exist. That is why every email sequence hands over
 The Week rather than a copy of the page the reader just finished.
 
 ## Email voice: write full sentences
@@ -114,7 +171,7 @@ Three habits to watch, all of them mine:
    drops them to sound tighter; speech keeps them.
 
 **This applies to emails, not to the guides.** On a printed checklist a fragment
-is a label and it works — *"Bin out. Window open."* is correct there. In an inbox
+is a label and it works — *"Take the trash out and open a window."* works there. In an inbox
 the same construction sounds like a robot. Different register, different rules.
 
 ## US English, throughout
@@ -152,9 +209,16 @@ someone who'd tell you over a coffee, not from an authority.
 to 2009, but that's the age of our archive, not the age of his practice. "Decades"
 is both truer and more interesting than counting.
 
-**Where he appears in a product, he appears after the reader has done something**,
-never as onboarding. Provenance is a reward; it is not an introduction. See
-[ADR-015](../planning/decisions.md#adr-015--the-win-comes-before-the-email).
+**Task pages don't mention Dave** (Charles, 2026-10-26). A stranger doesn't know
+who he is, and it doesn't matter to them. The only job of an entry page is
+getting the task done. No "Dave's order," no "his test," no story about him, not
+even below the steps. Write the method as plain instructions.
+
+**He is introduced later**: on the completion page and in the emails, after the
+reader has finished something. Provenance is a reward, not an introduction.
+
+The [principles engine](../frameworks/dave-principles.md) is how we build
+pages from his method. That's for us; it doesn't show on the page.
 
 ## Scope: how deep is too deep
 

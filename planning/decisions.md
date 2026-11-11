@@ -11,7 +11,7 @@ revisiting a decision means re-examining an argument rather than re-inventing on
 
 ```
 ## ADR-NNN — Title
-Status:   Proposed | Accepted | Superseded by ADR-NNN | Rejected
+Status:   Proposed | Accepted | Under review | Superseded by ADR-NNN | Rejected
 Date:     YYYY-MM-DD
 Context:  What situation forced a decision
 Decision: What was decided
@@ -21,9 +21,10 @@ Revisit when: The condition that should reopen this
 ```
 
 **Status legend:** *Accepted* means we're acting on it. *Proposed* means it's
-written down but not committed. Nothing here is permanent — but changing an
-Accepted decision means writing a new ADR that supersedes it, not quietly
-editing this one.
+written down but not committed. *Under review* means paused — keep what exists;
+build nothing new on it or cite it as settled until it is re-decided. Nothing
+here is permanent — but changing an Accepted decision means writing a new ADR
+that supersedes it, not quietly editing this one.
 
 ---
 
@@ -496,7 +497,8 @@ practice.
 
 ## ADR-010 — Beachhead: keep the audience, change the payer
 
-**Status:** Accepted
+**Status:** Under review (2026-10-03). Charles has put this on hold while the buyers, revenue model and marketing strategy are reworked with Growth Steward and outside consultants. Don't treat it as a settled rule or build new work on it until it is re-decided.
+**Previously:** Accepted
 **Date:** 2026-09-08
 **Supersedes the open review on** [ADR-003](#adr-003--initial-beachhead-market-first-time-independent-adults)
 
@@ -850,6 +852,7 @@ Not yet ADRs. These need to be made, and each blocks something.
 |---|---|---|
 | Put Dave's arrangement in writing at some point — **not urgent, substance is settled** ([ADR-011](#adr-011--mr-life-manager-is-a-real-person-dave-webster)). It protects him and his family more than it protects the founder. | Nothing immediate | Low |
 | **Capture Dave's material before anything else.** He under-reports his own expertise by nature, so this needs method, not just time. | All content; the entire product line | **Highest** |
+| **Is the flagship comprehensive or small?** *(Reframed 2026-10-15: ADR-020, Accepted, makes the flagship the home-domain house-in-order system.)* A ten-domain manual may be exactly what the underwater professional has already failed to finish ([analysis](../docs/research/underwater-professional.md#implications)). Decide who it is for before writing it. **Candidate answer (2026-09-29): both, for different readers** — comprehensive for people leaving structure, small for people with no margin ([niche strategy](../docs/business/niche-strategy.md#same-content-two-containers-matched-to-capacity)). | Writing the flagship | Medium |
 | Is Health in scope, given liability and expertise limits? | Domain taxonomy, content plan | Low |
 | Does Transportation earn its own domain, or fold into Maintenance? | Taxonomy | Low |
 | Should the public-facing domain list compress from 13 to 5–6? | Marketing, product structure | Low |
@@ -890,7 +893,9 @@ obvious and he'll mean it. Capture guidance is in
 
 ## ADR-015 — The win comes before the email
 
-**Status:** Accepted
+**Status:** Under review (2026-10-03). Charles has put this on hold while the buyers, revenue model and marketing strategy are reworked with Growth Steward and outside consultants. Don't treat it as a settled rule or build new work on it until it is re-decided.
+**Superseded in part by [ADR-020](#adr-020--win-before-wallet-retire-the-39-flagship)** (2026-10-15): its $39 *First Place* parts.
+**Previously:** Accepted
 **Date:** 2026-09-20
 **Scope:** Funnel architecture, landing pages, email sequences, guide design.
 **Implements** [ADR-014](#adr-014--completion-is-what-converts).
@@ -979,7 +984,8 @@ way until something tests it.
 
 ## ADR-016 — The sequence shrinks unconditionally
 
-**Status:** Accepted
+**Status:** Under review (2026-10-03). Charles has put this on hold while the buyers, revenue model and marketing strategy are reworked with Growth Steward and outside consultants. Don't treat it as a settled rule or build new work on it until it is re-decided.
+**Previously:** Accepted
 **Date:** 2026-09-20
 **Scope:** All email sequences.
 **Implements** [ADR-014](#adr-014--completion-is-what-converts) and
@@ -1079,7 +1085,7 @@ which left the relationship to *First Place*'s food section open.
 **Context.** The free guide
 [Six Meals and a Stocked Kitchen](../products/checklists/six-meals/) gives away
 six repeatable meals. *First Place* ($39) also promised "six repeatable meals",
-on its [founding-offer page](../products/landing/first-place.html) and in the
+on its founding-offer page (`/first-place.html`, deleted 2026-10-15 under ADR-020) and in the
 [product ladder](../docs/business/product-ladder.md). That conflicts with the
 ladder's own "Nothing sold twice" check.
 
@@ -1134,3 +1140,214 @@ touched here.
 
 **Revisit when:** marketing settles pricing for laundry and roommate material.
 
+---
+
+## ADR-020 — Win before wallet; retire the $39 flagship
+
+**Status:** Accepted (2026-10-15)
+**Date:** 2026-10-15
+**Scope:** The paid side of the product ladder. Retires *First Place* ($39) and
+its no-charge reservation page and demand test. Free pages are unchanged.
+**Relates to** [ADR-015](#adr-015--the-win-comes-before-the-email) (under
+review), which set the $9 first step and the $39 *First Place*. ADR-020
+supersedes ADR-015's $39 *First Place* parts; the rest of ADR-015 stays under
+review. Also follows
+[ADR-018](#adr-018--six-meals-removed-from-first-place), whose subject no longer
+exists.
+
+**Context.** The $39 *First Place* comprehensive guide priced above verified
+category comparables and bundled everything into one complex offer — the
+opposite of the brand's single-issue, directive shape. Per
+[competitor notes](../docs/research/competitor-notes.md#verified-price-points),
+$9–19 is the proven band for guides in this category.
+
+**Decision.**
+
+- **Free tier:** single-issue task pages and basic checklists. One pain, one
+  directive solution, one clear end state. Free forever.
+- **Paid tier:** deeper $9–19 guides per domain, offered only after the free win
+  has delivered real value.
+- **Flagship:** the house-in-order system — cleaning, organizing, dishes,
+  laundry. The physical work autopay can't do.
+- **Principle:** we don't charge for what costs us nothing to make, and we don't
+  sell to people who won't use it.
+- **Subscription** only if action-gated: the next unlocks when the last is done.
+  No dopamine without doing.
+
+**Consequences.** The [product ladder](../docs/business/product-ladder.md), the
+README, business model, revenue ideas, roadmap, backlog and briefs drop the $39
+*First Place* rung. The reservation page (`/first-place.html`), its share image
+and its site checks are deleted; the built-site check now fails if the page or a
+link to it comes back. Dave's principles remain the cross-domain content engine
+(a friend's office-cleanup request became a live page in 30 minutes); the
+flagship stays in the home domain. The flagship's name, price and format are not
+set. The room-by-room bundle moves from $29 to $19 to fit the band (Charles,
+2026-10-15). Draft source: [adr-020-win-before-wallet.md](adr-020-win-before-wallet.md).
+
+**Status of the evidence.** Reasoning plus verified competitor prices. No reader
+has seen the new ladder.
+
+**Revisit when:** Charles accepts or rejects this, or the revenue and marketing
+rework lands.
+
+---
+
+## ADR-021 — When the reader can't act yet, ask for a when
+
+**Status:** Accepted (2026-10-26, Charles)
+**Date:** 2026-10-26
+**Relates to** [ADR-015](#adr-015--the-win-comes-before-the-email) and
+[ADR-016](#adr-016--the-sequence-shrinks-unconditionally), both under review.
+
+**Context.** QR codes in cafés, bookstores and campuses mean many readers will
+see a page where they can't act on it. User feedback says the same. A strict
+reading of ADR-015 (no ask before the win) would leave those readers with
+nothing but something to read, and reading alone is how "someday" happens. See
+[deferred-win.md](../docs/research/deferred-win.md).
+
+**Decision.**
+
+- **The win-first principle stays the default, and it does not override getting
+  the reader to a win at all.** When the reader can't act yet, the page may ask
+  for a time and a way to reach them *before* the task is done. They are signing
+  up to get the task back when they can do it, not for a newsletter, and the
+  reminder delivers only that task.
+- **No snoozing forever.** The reader can move the time a limited number of
+  times. Then the reminders end.
+- **Reading alone is not success.** Every page needs a path from reading to
+  doing.
+
+**Rationale.** About half of intentions never become action; a specific date
+and time closes much of that gap, and one well-timed specific reminder does
+most of the work (research in deferred-win.md).
+
+**Consequences.** A reminder flow is now in scope. Its design, the channels, and
+the snooze cap are not yet decided.
+
+**Revisit when:** completion data shows whether readers who set a time finish
+more often than those who don't.
+
+---
+
+## ADR-022 — Price follows what it costs us to deliver
+
+**Status:** Accepted (2026-10-26, Charles)
+**Date:** 2026-10-26
+**Refines** [ADR-020](#adr-020--win-before-wallet-retire-the-39-flagship). Its
+principle line, "we don't charge for what costs us nothing to make," is
+replaced by the rule below. The rest of ADR-020 stands.
+**Resolves** conflicts C1 and C3 in the
+[lifecycle plan](../docs/research/lifecycle/04-lifecycle-plan.md#35-conflicts-this-section-raises).
+
+**Context.** The lifecycle plan found ADR-020 (paid tier = deeper guides; don't
+charge for what costs nothing) pulling against the
+[Vivid Vision](../docs/vision/vivid-vision-2029.md) (people pay gladly for help
+taking action). Charles's answer: both are true, at different levels, and the
+old principle was too absolute. Everything costs something; what matters is how
+much.
+
+**Decision.**
+
+- **The less something costs us in time and resources to make and deliver, the
+  less we charge for it, if anything.** Trivial cost: free or nearly free.
+  Real ongoing cost: priced accordingly. This is a principle, not a formula, and
+  it is not to be applied dogmatically.
+- **The ladder, from cheapest to deliver to most expensive:**
+
+  | Level | Example | Price |
+  |---|---|---|
+  | Free | Task pages, basic checklists | Free forever |
+  | Very low | A deeper guide; possibly the weekly checklist | A few dollars |
+  | Group check-in call | Several people, one call | Low |
+  | Facilitated group, online | A small group working through it together | More |
+  | Facilitated group, in person | The same, in a room | More |
+  | One-to-one, online or in person | Individual help | Most expensive, and mostly unnecessary |
+  | "Intervention" (Dave's word) | Applying the checklists and concepts in person, for someone who agrees to it; possibly nominated, voted on, or paid for by others | Case by case |
+  | Annual gathering | An in-person or online conference, once a year | Idea, not yet scoped |
+
+- **Everything we make gets reused.** Calls, interventions, groups, short videos
+  and writing are turned into free or paid content. Whether a piece is free,
+  paid, or a bonus can depend on where the reader is in the funnel.
+- **Recorded coaching is a gray area**, not automatically free: it cost real
+  time to make. It may go to frequent participants ("members," a frequent-flyer
+  idea) rather than being sold. Any membership must still follow the Vivid
+  Vision's rule: **if they're not using it, they don't pay for it.**
+- **Mastermind groups** are an open idea: participants name the need and also
+  develop and contribute what works, which becomes content.
+
+**Guardrails.**
+
+- **Interventions and anything that becomes content require the person's clear,
+  freely given consent,** and they keep the right to say no or withdraw. Being
+  nominated by others is an invitation, never an obligation. Nothing is ever
+  presented in a way that shames the person (principle 8, dignity not shame).
+- Group levels come before one-to-one: they're cheaper for the reader, cheaper
+  to deliver, and the group itself provides the "someone checks on you" that
+  Dave's method relies on.
+
+**Consequences.** The lifecycle plan's first paid offer (a one-to-one start
+call) should be weighed against a **group check-in call**, which this ladder
+puts lower. The product ladder's old Rung 3 prices ($299–2,500) need
+re-deciding against this ladder. Interventions as content need a written
+consent process before the first one.
+
+**First paid level (Charles, 2026-10-26).** **One weekly group call that
+anyone can join**, from the start. If only one person shows up, it's a small
+group that week, not a one-to-one service. The call is built so everyone
+benefits from everyone else's wins, setbacks and ideas. Price: not yet set.
+
+**Orientation and the weekly call (Charles, 2026-10-26).**
+
+- **A recorded orientation, clearly labeled as recorded**, about ten minutes:
+  what the site is, how the checklists work, how the weekly call runs. It ends
+  with an action (pick one checklist and an exact time, then come to the next
+  live call), not a pitch.
+- **Real interaction without Charles present:** after the orientation, people
+  can send in a win or a question with a short form, answered on the next live
+  call, by name if they agree.
+- **The live call stays live.** When there isn't one, say so plainly and point
+  to last week's recording.
+- **Never imply presence that isn't real.** This is an ethical line, so it's
+  absolute: no fake chat messages, no invented attendee counts, no countdowns to
+  a "live" event that is a recording, and nothing called live that isn't.
+  "Evergreen" or "automated" webinars that pretend to be live are the model we
+  don't copy.
+
+**Revisit when:** the first paid level has run long enough to show what people
+actually use.
+
+## ADR-023 — Target the first stretch with nobody else running things
+
+**Status:** Accepted (2026-10-31, Charles)
+**Date:** 2026-10-31
+
+**Context.** The audience pages (`/career`, `/students`, `/military`) and the
+copy review raised a question: the military page spoke to people who "set the
+standard" now, but junior enlisted mostly live in barracks with room
+inspections. Charles answered it for every audience, not just military.
+
+**Decision.** We target people at **their first chance to be nearly
+completely unsupervised**: nobody telling them what to do, checking on them or
+reminding them, so they're lost, confused or just not getting to it. In his
+words: "When the supervision goes down and there is no one else telling them
+what to do, that's what we are targeting." This is for every brand page and
+niche.
+
+- **Military:** officers and academy grads at a first assignment, and anyone
+  who has just moved off base. **Junior enlisted in barracks are not a target
+  until they move off base.** They have programs on base and room inspections.
+- **Students:** the first stretch without parents, RAs or a dorm schedule
+  running things. A first apartment fits better than a dorm.
+- **Career:** first job, first place alone, no structure outside work.
+
+**Consequences.** Copy names the situation of being on your own for the first
+time without blaming the person. Fliers go where this group is (off-base
+housing areas, apartment complexes near campus, coworking and office coffee
+shops), not into barracks or dorm-only spaces. Checklist gaps are judged by
+this group: a barracks-room checklist is not a priority; a first-apartment or
+first-place-off-base version is.
+
+**School and branch colors (same day).** Campus fliers can open a page in
+colors close to the school's, with `?look=`, and the military schemes follow
+the branches' colors. Colors only: no school or branch names, mascots, logos or
+"for X students" lines, so nothing implies sponsorship or endorsement.

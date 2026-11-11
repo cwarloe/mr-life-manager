@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-palette="week">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,28 +8,25 @@
 <title>Having People Over — Flyer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="../landing/assets/tokens.css">
 <style>
 /* A posted flyer, not a web page. One US Letter sheet read from a few feet
    away on a community board. One headline, one QR code to /guests.html, and
    tear-off tabs carrying the same QR code. No second offer, no share ask.
    QR codes come from generate_share_assets.py (FLYER_QRS); don't hand-edit. */
 @page{size:Letter;margin:0.45in}
-:root{
-  --ink:#12161C; --paper:#fff; --blue:#1F4E79; --amber:#B4741A;
-  --slate:#5A616B; --rule:#C9C4BA; --rule-strong:#8A8378;
-  --sans:"Archivo",system-ui,sans-serif; --serif:"Source Serif 4",Georgia,serif;
-}
+/* Colors and fonts: tokens.css, data-palette="week". */
 *{box-sizing:border-box}
 html,body{height:100%}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-ui);
   -webkit-font-smoothing:antialiased}
 .sheet{width:7.6in;height:10.1in;margin:0 auto;display:flex;flex-direction:column}
 
 .brand{margin:0;border-top:6px solid var(--ink);padding-top:.16in;
-  font-size:10pt;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+  font-size:10pt;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
 
 h1{font-size:68pt;font-weight:800;letter-spacing:-.035em;line-height:.95;margin:.42in 0 0}
-.support{font-family:var(--serif);font-size:21pt;line-height:1.3;color:var(--slate);
+.support{font-family:var(--font-text);font-size:21pt;line-height:1.3;color:var(--muted);
   margin:.24in 0 0;max-width:6.4in}
 
 .scan{margin:.5in 0 0;display:flex;align-items:center;gap:.42in;
@@ -37,15 +34,15 @@ h1{font-size:68pt;font-weight:800;letter-spacing:-.035em;line-height:.95;margin:
 .scan .flyer-qr{width:2.5in;height:2.5in}
 .flyer-qr{display:block;flex:none;color:var(--ink)}
 .caption{margin:0;font-size:22pt;font-weight:700;letter-spacing:-.015em;line-height:1.18}
-.caption span{display:block;margin-top:.14in;font-family:var(--serif);font-weight:400;
-  font-size:13pt;letter-spacing:0;color:var(--slate)}
-.caption b{display:block;margin-top:.1in;font-family:var(--sans);font-size:11pt;
-  font-weight:600;letter-spacing:.02em;color:var(--blue)}
+.caption span{display:block;margin-top:.14in;font-family:var(--font-text);font-weight:400;
+  font-size:13pt;letter-spacing:0;color:var(--muted)}
+.caption b{display:block;margin-top:.1in;font-family:var(--font-ui);font-size:11pt;
+  font-weight:600;letter-spacing:.02em;color:var(--accent)}
 
 footer{margin-top:auto;padding-top:.12in;border-top:1px solid var(--rule);
   display:flex;justify-content:space-between;gap:1rem;
-  font-family:var(--serif);font-size:9pt;line-height:1.35;color:var(--slate)}
-footer b{font-family:var(--sans);font-weight:700;color:var(--ink)}
+  font-family:var(--font-text);font-size:9pt;line-height:1.35;color:var(--muted)}
+footer b{font-family:var(--font-ui);font-weight:700;color:var(--ink)}
 
 /* Tear-off tabs: the same QR code, for someone who wants to take it home. */
 .tabs{margin-top:.16in;border-top:1.5px dashed var(--rule-strong);
@@ -54,10 +51,10 @@ footer b{font-family:var(--sans);font-weight:700;color:var(--ink)}
 .tab:first-child{border-left:0}
 .tab .flyer-qr{width:1.02in;height:1.02in;margin:0 auto}
 .tab p{margin:.07in 0 0;font-size:8.6pt;font-weight:700;line-height:1.2}
-.tab p span{display:block;margin-top:.03in;font-family:var(--serif);font-weight:400;font-size:8.8pt;line-height:1.25;color:var(--slate);text-wrap:balance}
+.tab p span{display:block;margin-top:.03in;font-family:var(--font-text);font-weight:400;font-size:8.8pt;line-height:1.25;color:var(--muted);text-wrap:balance}
 @media screen{
-  body{padding:2rem 1rem;background:#F3F1EC;height:auto}
-  .sheet{background:#fff;padding:.45in;width:8.5in;height:11in;box-shadow:0 2px 14px rgba(0,0,0,.14)}
+  body{padding:2rem 1rem;background:var(--desk);height:auto}
+  .sheet{background:var(--paper);padding:.45in;width:8.5in;height:11in;box-shadow:var(--shadow-sheet)}
 }
 </style>
 </head>

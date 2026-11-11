@@ -33,7 +33,7 @@ Shrinks unconditionally. Nobody is branched on opens or clicks. A **reply** or a
 >
 > It's one page, and it's Dave's whole system. The top of it is the ten minutes you do before bed — empty the sink, wipe the counters, walk one lap and put things back. Underneath that there's one job for each day of the week, and two days with nothing on them at all.
 >
-> Don't start it yet. You've got boxes. But stick it inside a cabinet door now, while you're still deciding where things go, because it's a lot easier to build a place around a routine than to bolt one on later.
+> Don't start it yet. You've got boxes. But stick it inside a cabinet door now, while you're still deciding where things go, because it's a lot easier to build a place around a routine than to add one later later.
 >
 > Now, about tomorrow.
 >
@@ -113,8 +113,9 @@ which is the quiet point of the question.
 
 1. ~~**The printable.**~~ Done — Email 1 links
    <https://mrlifemanager.com/print/the-week.pdf>. Open it before sending.
-2. **No paid offer.** Deliberate — the $9 product doesn't exist. Insertion point
-   is after email 3.
+2. ~~**No paid offer / $9 product.**~~ **Parked** — under ADR-020 (Accepted) a
+   $9–19 guide is offered only after a free win; it is a later idea, not an open ship item and not in
+   this sequence.
 3. ~~**MailerLite automation.**~~ **Done** 2026-09-22 (Active per owner). Live
    ops spec: [MAILERLITE-SETUP.md](MAILERLITE-SETUP.md). Keep
    "resend to unopens" off — it violates ADR-016.

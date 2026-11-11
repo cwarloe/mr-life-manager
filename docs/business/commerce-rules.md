@@ -36,6 +36,8 @@ frustration.
 | **Next $9–19** | Same price, next problem, when they want more direction | Repeat purchase at the same trust level |
 | **Higher** | Only when they need real help and guidance, and know they do | Never an upsell they didn't ask for |
 
+Free archive guides already at `/guides/` (including Laundry, Solved and the Household Agreement / roommate kit) are **not** the $9–19 checklist tier — that tier is for future paid tests that add organization beyond what's free ([ADR-019](../../planning/decisions.md#adr-019--laundry-solved-and-the-roommate-kit-are-free-only)).
+
 **One free guide, not six.** Everything stays public at `/guides/` for search
 and sharing — *public* and *offered* are different decisions — but the funnel
 hands over exactly one.
@@ -139,7 +141,7 @@ microfiber cloths
 laundry detergent · a toilet bowl cleaner and brush
 
 Dedicated glass cleaner stays **optional**; a damp microfiber is the default.
-Never add a glass-cleaner link just to make the kit feel complete.
+Don't add a glass-cleaner link just to make the kit feel complete; padding a list costs trust.
 
 **No "full kit" that forces every possible item.** A low-cost starting point, and
 a clear checklist for shopping in person.
@@ -199,7 +201,7 @@ their floor type, pet needs, storage, and usage)
 specialty sprays, bulk cleaner packs, decorative gadgets, duplicates that solve
 no named problem.
 
-**Never "buy all upgrades."** The call to action is "See options" or "Consider
+**No "buy all upgrades."** It pushes people past what they need. The call to action is "See options" or "Consider
 this if [specific problem]."
 
 ---
@@ -246,3 +248,4 @@ Before publishing or updating any recommendation:
 - [ ] Disclosure visible and correct
 - [ ] **Would remain defensible if no commission existed**
 - [ ] **Offers one action, not a menu** ([ADR-014](../../planning/decisions.md#adr-014--completion-is-what-converts))
+

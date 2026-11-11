@@ -38,9 +38,9 @@ figured out.
 
 **Likely products**
 - **First Apartment Checklist** (free archive / shareable) — highest-fit free guide; entry pages are the front door ([ADR-015](../../planning/decisions.md#adr-015--the-win-comes-before-the-email))
-- Cleaning-supply starter list + roommate chore agreement template
+- **Cleaning Supply Starter List** (free archive / shareable) + **Household Agreement** worksheet (roommate kit; free-only per [ADR-019](../../planning/decisions.md#adr-019--laundry-solved-and-the-roommate-kit-are-free-only))
 - Room-by-room setup guide
-- Low-cost ebook: *First Place* (student edition)
+- Low-cost $9–19 guide, after a free win (ADR-020)
 
 **Buying behavior**
 Low personal budget, high sensitivity to price, very high sensitivity to
@@ -80,14 +80,14 @@ genuinely lost on all of it.
 - A place he's not embarrassed to bring someone back to
 
 **Likely products**
-- *First Place: The Practical Guide to Running Your First Home* (flagship)
+- The house-in-order system (flagship, ADR-020)
 - Adulting paperwork toolkit — what documents exist, why, where they live
 - Home maintenance calendar (annual, by season)
 - Money basics module: accounts, autopay, buffer, what to do with a first salary
 
 **Buying behavior**
 **The best MVP customer.** Real income, acute and time-bound pain, high
-motivation, and privacy-seeking — he'd rather pay $39 than ask his dad. Likely
+motivation, and privacy-seeking — he'd rather pay than ask his dad. Likely
 to buy **$29–$79** for a comprehensive guide, and to buy *right at the moment of
 the move*. Found through search ("how often should I", "first apartment
 checklist"), YouTube, and Reddit.
@@ -123,7 +123,6 @@ now a live negotiation — usually held at the worst possible moment.
 - **Household Operating Agreement** worksheet — division of labor, standards,
   cadences, who owns what
 - Shared calendar + money system setup guide
-- *First Place: Couples Edition*
 - Hospitality toolkit: hosting without panic
 - A 30-day "Home Reset" program done together
 
@@ -175,6 +174,9 @@ skip the learning curve. **$99–$499** for a course or program, **$500–$2,000
 for a done-with-you setup. Buys on trust, so she needs proof — reviews, a strong
 free resource, a real person behind the brand. Reached through newsletters,
 podcasts, LinkedIn, and word of mouth.
+
+> **Evidence check (2026-09-29):** the pattern holds; the "lacked discipline"
+> diagnosis does not. See [underwater-professional.md](../research/underwater-professional.md).
 
 > **Strategic note:** Dana is not the beachhead, but she is the reason the
 > premium tier exists. Keep the door open for her from day one; don't build the
@@ -255,3 +257,4 @@ and not five:
 
 **The transition is the trigger.** Marketing, timing, and partnerships should all
 be built around moments of transition, not around evergreen interest in tidiness.
+

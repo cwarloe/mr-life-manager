@@ -41,7 +41,7 @@ That's the whole message. Anything more coaches them.
 carefully than they would, and they'll do steps they'd otherwise skip, to be
 polite. Send it cold and ask afterwards.
 
-**Never explain a step.** If they message asking what something means, that is the
+**Don't explain a step during the test.** If they message asking what something means, that is the
 single most valuable signal you'll get all week. **Write down the exact wording of
 their question** and then answer it. The question is the finding; the answer is
 just politeness.

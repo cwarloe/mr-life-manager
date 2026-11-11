@@ -6,6 +6,23 @@ turning it into a full-time administrative job.
 **Operating constraint:** maximize useful outcomes and revenue per owner-hour,
 not the number of products, platforms, or channels.
 
+## Waiting on the bot
+
+**One list of everything that needs a live account.** Each item links to its
+full steps. Remove an item when it's done; add one when a change needs account
+work.
+
+| Item | Status | Steps |
+|---|---|---|
+| **Office page emails** | **To do (approved by Charles 2026-10-26)** | Create group `entry-office` in MailerLite and set up the 3-email automation matching [`office-sequence.md`](../products/landing/emails/office-sequence.md). Rule: trigger on group join, immediate email 1, day 3 email 2, day 7 email 3. |
+| **Google Search Console** | Not verified | Needs Charles's Google login: verify the domain and submit `/sitemap.xml`. See [External one-time items](#external-one-time-items). |
+| **QR codes for fliers** | When fliers are made | Each printed code gets its own tag, `?from=qr-<place>-<page>`. Format and examples in the [deferred-win architecture](deferred-win-architecture.md#comparing-pages-and-places). A code aimed at an audience points to its landing page, e.g. `mrlifemanager.com/career?from=qr-<place>` (also `/students`, `/military`; see [audience pages](../products/landing/audiences/README.md)). Record each posted code in the [audience tracker](../docs/business/audience-tracker.md). |
+
+Nothing else needs a live account right now. MailerLite does **not** need
+changes for the "Not right now" flow, the new underwater headline, or the
+removal of Dave's name from the task pages: the web addresses, tags and email
+copy are unchanged.
+
 ## Current operating state
 
 | System | Current use | Source of truth |
@@ -13,12 +30,17 @@ not the number of products, platforms, or channels.
 | GitHub Pages | Public website and PDFs | Repository `main` and deployment workflow |
 | Cloudflare | DNS for `mrlifemanager.com` | Private account; do not store credentials here |
 | Zoho | `hello@mrlifemanager.com` mailbox | Private account |
-| MailerLite | One form, four route groups, four three-email automations | [`MAILERLITE-SETUP.md`](../products/landing/emails/MAILERLITE-SETUP.md) |
+| MailerLite | One form, four route groups, four three-email automations; the office door's `entry-office` group and automation are not created yet | [`MAILERLITE-SETUP.md`](../products/landing/emails/MAILERLITE-SETUP.md) |
 | GitHub Actions | Build, validation, deployment and public-site monitoring | [`.github/workflows/`](../.github/workflows/) |
 
 **Email state reported by owner 2026-09-22:** all four automations are active.
 Email 1 contains one PDF link, [`The Week`](https://mrlifemanager.com/print/the-week.pdf).
 The entry-page action and print option happen before signup.
+
+**Office door (added 2026-10-06):** deliberate one-off (Charles, 2026-10-08) —
+direct-link only. Its `entry-office` group and automation are not created yet,
+so it has not had a route test. For a one-off, ask Charles whether a MailerLite
+group is wanted before wiring one.
 
 **Last private account-level funnel test:** 2026-09-22 — **pass** for all four entry routes (confirm → correct `entry-*` group → Email 1 with [`The Week`](https://mrlifemanager.com/print/the-week.pdf)). Test subscribers removed. Guests/first-night verified earlier the same week; underwater/one-room completed on this date.
 
@@ -27,11 +49,8 @@ The entry-page action and print option happen before signup.
 those page visits as a directional completion measure. They prove the reader
 reached and acknowledged the end state, not that every physical action occurred.
 
-**Paid-demand test:** `/first-place.html` names a planned $39 founding price and
-collects no-charge reservations as prefilled emails to the monitored inbox. A
-reservation is not a sale and must never be reported as revenue or paid demand.
-The optional source label in the subject records the route that produced the
-message; it is attribution, not identity tracking.
+**Paid-demand test:** none live. Per ADR-020 (Accepted) a paid guide is only
+offered after a free win; no reservation or price page is running.
 
 ## The cadence
 
@@ -78,7 +97,7 @@ These obligations stay dormant until their trigger occurs.
 
 | Trigger | Activate then |
 |---|---|
-| Before broader email distribution | Recorded four-route delivery test; DMARC monitoring; valid postal footer; privacy text matches the live account |
+| Before broader email distribution | Recorded delivery test for every entry route; DMARC monitoring; valid postal footer; privacy text matches the live account |
 | Before distributing the founding-offer page | Monitored `hello@` inbox; privacy text matches the live page; a simple count of unique reservation senders |
 | Before the first sale | Checkout terms; refund policy; assumed-name/entity check; separate transaction records; tax and bookkeeping decision |
 | After ten customers | FAQ from actual questions; three saved support replies; product version log |
@@ -96,15 +115,16 @@ burden.
 The scheduled live-site workflow checks:
 
 - HTTPS and canonical redirects;
-- the homepage, four entry pages and privacy page;
+- the homepage, every entry page in `site_catalog.py` and the privacy page;
 - the MailerLite form marker and page-specific `guide` value;
 - the single promised PDF;
 - required privacy and contact links; and
 - `/sitemap.xml` and `/robots.txt` (sitemap lists the public doors; completion pages stay out).
 
 That catches public breakage. It cannot see MailerLite's private groups or
-delivered inbox messages. An account operator performs the controlled four-route
-test and records only its date and pass/fail result here—never test addresses.
+delivered inbox messages. An account operator performs the controlled test of
+every entry route and records only its date and pass/fail result here—never
+test addresses.
 
 ## Incident response
 
@@ -137,11 +157,32 @@ repository work:
   MailerLite verification and DKIM were already resolved.
 - Postal address in MailerLite footers confirmed 2026-09-22 (6621 West Holiday
   Drive, Boise).
-- Privacy-first visitor analytics: **not installed** as of 2026-09-22. Default
-  choice is Cloudflare Web Analytics (existing DNS account, no extra vendor).
-  Domain is GitHub Pages IPs, not Cloudflare-proxied, so a JS beacon token from
-  the Cloudflare dashboard is required before the privacy page can name a live
-  service. Do not invent a snippet.
+- Privacy-first visitor analytics: **Umami Cloud, switched on 2026-10-26**
+  (account under charles.warloe@gmail.com, Hobby plan). Replaces the earlier default, Cloudflare Web
+  Analytics, which [does not record query strings](https://developers.cloudflare.com/web-analytics/faq/)
+  (so it would drop the `from=` QR tags) and has no custom events (so it can't
+  tell "start now" from "pick a time").
+  - **Plan:** Hobby, free: 1 website, 100,000 events a month, 6 months of
+    history ([pricing](https://umami.is/pricing), checked 2026-10-26). Record
+    the monthly scorecard before data ages out.
+  - **Commercial use is allowed.** Terms checked 2026-10-26: "for any lawful
+    personal or business purpose, including commercial purposes" and "nothing in
+    these Legal Terms restricts commercial use of the Services"
+    ([terms](https://umami.is/terms)). An older version seen in search results
+    said "personal, non-commercial use or internal business purpose"; recheck if
+    the terms change.
+  - **To switch it on (one step):** create the Umami Cloud account, add the
+    site `mrlifemanager.com`, and paste its website ID into `UMAMI_WEBSITE_ID`
+    in `.github/scripts/site_catalog.py`. The build then adds the script to
+    every page and shows the analytics paragraph on the privacy page;
+    `check_built_site.py` fails if those two ever disagree. Tracking only runs
+    on `mrlifemanager.com`, not in tests or previews.
+  - **Events sent** (no cookies, nothing personal; each carries `page` and the
+    QR `from` tag): `start-now`, `not-right-now`, `time-picked` (choice),
+    `calendar-added` (ics or google), `shared-with-checker`, `came-back` (moved,
+    step), `started-from-reminder`, `rescheduled` (mid-task or on-return, step,
+    moved), `stopped-at-limit`, `let-go`, `print`, `reached-end` (path),
+    `finished` (path).
 - Google Search Console: **not verified in the console** as of 2026-09-22.
   Public precheck **pass**: `/`, `/first-night.html`, `/guests.html`,
   `/underwater.html`, `/one-room.html`, and `/privacy.html` return HTTPS 200;

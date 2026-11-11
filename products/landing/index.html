@@ -3,90 +3,62 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Run your home without carrying all of it in your head. Start with one useful task, free and ungated.">
+<meta name="description" content="Run your home without burning brainpower on every little thing. Start with one useful task, free and ungated.">
 <meta name="color-scheme" content="light dark">
 <title>Mr. Life Manager</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<link rel="stylesheet" href="/assets/tokens.css">
+<link rel="stylesheet" href="/assets/site.css">
 <style>
-:root{
-  --ink:#12161C; --paper:#FBF9F4; --surface:#FFFFFF;
-  --blue:#1F4E79; --blue-soft:#E7EEF5;
-  --amber:#B4741A; --amber-soft:#F7EEDD;
-  --slate:#6B7280; --rule:#D9D5CC; --rule-strong:#B8B2A6;
-  --sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
-}
-@media (prefers-color-scheme:dark){
-  :root{
-    --ink:#E8E6E1; --paper:#14171B; --surface:#1B1F24;
-    --blue:#8FB6DA; --blue-soft:#1D2833;
-    --amber:#E3A94E; --amber-soft:#2A2418;
-    --slate:#9AA1AC; --rule:#2E343B; --rule-strong:#454C55;
-  }
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
-body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;
-  line-height:1.55;margin:0;-webkit-font-smoothing:antialiased}
-.wrap{max-width:60rem;margin:0 auto;padding:0 1.5rem}
-.narrow{max-width:42rem}
-.bar{border-bottom:1px solid var(--rule)}
-.bar .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:1rem;padding-bottom:1rem}
-.brand{font-weight:700;font-size:.95rem;letter-spacing:-.01em}
-.brand span{color:var(--blue)}
-.bar a{font-size:.85rem;color:var(--slate);text-decoration:none;font-weight:500}
-.bar a:hover{color:var(--blue)}
 .hero{padding:4.5rem 0 3.5rem;border-bottom:3px solid var(--ink)}
-.kicker{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--blue);margin:0 0 1.2rem}
+.kicker{margin:0 0 1.2rem}
 h1{font-size:clamp(2.4rem,7vw,4rem);font-weight:800;line-height:1.02;letter-spacing:-.03em;
   margin:0;text-wrap:balance;max-width:19ch}
-.sub{font-family:var(--serif);font-size:clamp(1.1rem,2.4vw,1.35rem);line-height:1.5;
-  color:var(--slate);margin:1.4rem 0 0;max-width:46ch}
+.sub{font-family:var(--font-text);font-size:clamp(1.1rem,2.4vw,1.35rem);line-height:1.5;
+  color:var(--muted);margin:1.4rem 0 0;max-width:46ch}
 .sub strong{color:var(--ink);font-weight:600}
-.picker{display:grid;gap:.75rem;margin:2rem 0 0}
 .cta-row{margin:2rem 0 0}
 a.cta{display:inline-block;font-weight:700;font-size:1.05rem;letter-spacing:-.01em;
-  color:var(--paper);background:var(--ink);padding:.85rem 1.35rem;border-radius:3px;
-  text-decoration:none;line-height:1.3}
-a.cta:hover{background:var(--blue)}
-a.cta:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
-.onedoor{margin:1.6rem 0 0;border-left:3px solid var(--rule-strong);padding-left:1rem}
-.onedoor p{font-family:var(--serif);font-size:.98rem;line-height:1.6;margin:0;color:var(--slate)}
+  color:var(--on-accent);background:var(--accent);padding:.85rem 1.4rem;border-radius:4px;
+  text-decoration:none;line-height:1.3;box-shadow:var(--shadow-sm);transition:all .15s ease}
+a.cta:hover{background:var(--accent-deep);box-shadow:var(--shadow-md);transform:translateY(-1px)}
+.picker{display:grid;gap:.85rem;margin:1rem 0 0}
+a.pick{display:grid;gap:.4rem;border:1px solid var(--rule);border-radius:6px;
+  padding:1.25rem 1.45rem;background:var(--surface);text-decoration:none;color:inherit;
+  box-shadow:var(--shadow-sm);transition:all .15s ease}
+a.pick:hover{border-color:var(--accent);box-shadow:var(--shadow-md);transform:translateY(-1px)}
+.pick-meta{display:flex;align-items:center;gap:.5rem;margin-bottom:.1rem}
+.badge{display:inline-block;font-family:var(--font-ui);font-size:.7rem;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;padding:.2rem .55rem;border-radius:3px}
+.badge-reset{background:var(--badge-reset-bg);color:var(--badge-reset-text);border:1px solid var(--badge-reset-border)}
+.badge-setup{background:var(--badge-setup-bg);color:var(--badge-setup-text);border:1px solid var(--badge-setup-border)}
+a.pick .q{font-size:1.15rem;font-weight:700;letter-spacing:-.015em;line-height:1.25}
+a.pick .a{font-family:var(--font-text);font-size:.96rem;line-height:1.45;color:var(--muted)}
+.onedoor{margin:1.8rem 0 0;border-left:3px solid var(--rule-strong);padding-left:1.1rem}
+.onedoor p{font-family:var(--font-text);font-size:.98rem;line-height:1.6;margin:0;color:var(--muted)}
 .onedoor p + p{margin-top:.6rem}
-.onedoor b{font-family:var(--sans);font-weight:700;color:var(--ink)}
-.onedoor a{color:var(--blue);font-weight:600}
-a.pick{display:grid;gap:.3rem;border:2px solid var(--rule-strong);border-radius:3px;
-  padding:1.15rem 1.4rem;background:var(--surface);text-decoration:none;color:inherit}
-a.pick:hover{border-color:var(--blue)}
-a.pick:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
-a.pick .q{font-size:1.12rem;font-weight:700;letter-spacing:-.01em;line-height:1.25}
-a.pick .a{font-family:var(--serif);font-size:.95rem;line-height:1.45;color:var(--slate)}
-.fine{font-size:.82rem;color:var(--slate);margin:.75rem 0 0}
+.onedoor b{font-family:var(--font-ui);font-weight:700;color:var(--ink)}
+.onedoor a{color:var(--accent);font-weight:600}
+.fine{margin:.75rem 0 0}
 section{padding:4rem 0}
 section + section{border-top:1px solid var(--rule)}
-.eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--blue);margin:0 0 .9rem}
+.eyebrow{margin:0 0 .9rem}
 h2{font-size:clamp(1.6rem,3.6vw,2.2rem);font-weight:700;letter-spacing:-.02em;margin:0;
   text-wrap:balance;max-width:22ch}
-.lede{font-family:var(--serif);font-size:1.08rem;line-height:1.6;margin:1.1rem 0 0;max-width:58ch}
-p.body{font-family:var(--serif);font-size:1.03rem;line-height:1.65;margin:1.1rem 0 0;max-width:58ch}
+.lede{font-family:var(--font-text);font-size:1.08rem;line-height:1.6;margin:1.1rem 0 0;max-width:58ch}
+p.body{font-family:var(--font-text);font-size:1.03rem;line-height:1.65;margin:1.1rem 0 0;max-width:58ch}
 p.body strong{font-weight:600}
 .dave{background:var(--surface);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.pull{font-family:var(--serif);font-size:clamp(1.3rem,3.2vw,1.75rem);line-height:1.4;
-  font-style:italic;margin:1.6rem 0;padding-left:1.4rem;border-left:4px solid var(--amber);
+.pull{font-family:var(--font-text);font-size:clamp(1.3rem,3.2vw,1.75rem);line-height:1.4;
+  font-style:italic;margin:1.6rem 0;padding-left:1.4rem;border-left:4px solid var(--second);
   max-width:34ch;text-wrap:balance}
-.attrib{font-family:var(--sans);font-style:normal;font-size:.8rem;font-weight:600;
-  letter-spacing:.08em;text-transform:uppercase;color:var(--slate);display:block;margin-top:.9rem}
+.attrib{font-family:var(--font-ui);font-style:normal;font-size:.8rem;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:block;margin-top:.9rem}
 .close{border-top:3px solid var(--ink);background:var(--surface)}
 .close h2{max-width:20ch}
-footer{border-top:1px solid var(--rule);padding:2rem 0 3rem;font-size:.82rem;color:var(--slate)}
 footer .wrap{display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space-between}
-footer b{color:var(--ink);font-weight:600}
-footer a{color:var(--slate)}
 @media (max-width:34rem){
   .hero{padding:3rem 0 2.5rem}
   section{padding:3rem 0}
@@ -100,43 +72,45 @@ footer a{color:var(--slate)}
 </div></div>
 <header class="hero"><div class="wrap">
   <p class="kicker">Practical systems for running a home</p>
-  <h1>Run your home without carrying all of it in your head.</h1>
-  <p class="sub">What to do on the first night. How to reset the place when it gets away
-  from you. What actually keeps it from happening again. <strong>One useful action, in the
-  order you need it</strong> — without pretending somebody already taught you.</p>
+  <h1>Run your home without burning brainpower on every little thing.</h1>
+  <p class="sub">What to do on night one. How to get the house livable when it's completely out of hand. The simple daily rhythm that lets you run your week half-asleep—written by people who had to learn it from scratch.</p>
   <p class="cta-row"><a class="cta" href="#start">Start with what's going on right now →</a></p>
 </div></header>
 <section id="start"><div class="wrap">
   <p class="eyebrow">Start here</p>
   <h2>What's going on right now?</h2>
   <p class="lede">Pick the one that's actually true today. You'll get a page with
-  the thing to do on it — no sign-up, no download, nothing to decide.</p>
+  six steps to follow — no sign-up or download required.</p>
   <div class="picker">
     <a class="pick" href="/first-night.html">
-      <span class="q">I just moved in and it's my first night here</span>
-      <span class="a">Six things tonight, in order of what costs most to skip —
-      and the first one is worth actual money</span>
-    </a>
-    <a class="pick" href="/one-room.html">
-      <span class="q">There's a room I stopped using</span>
-      <span class="a">Garage, spare room, closet — Dave's three-pile method, one
-      zone at a time, about two hours</span>
+      <div class="pick-meta"><span class="badge badge-setup">Setup · First Night</span></div>
+      <span class="q">I just moved in and it's my first night here.</span>
+      <span class="a">Handle tonight's essentials before unpacking the whole place.</span>
     </a>
     <a class="pick" href="/guests.html">
-      <span class="q">Someone's coming over and the place is a disaster</span>
-      <span class="a">Six things, in order, about thirty-five minutes — and it still
-      works if you've only got ten</span>
+      <div class="pick-meta"><span class="badge badge-reset">Reset · Company</span></div>
+      <span class="q">Someone's coming over and the place isn't ready.</span>
+      <span class="a">Clear the sitting area, clean the bathroom, empty the sink, and take the trash out.</span>
+    </a>
+    <a class="pick" href="/dinner.html">
+      <div class="pick-meta"><span class="badge badge-reset">Quick Reset · Table</span></div>
+      <span class="q">Dinner's ready. There's nowhere to eat.</span>
+      <span class="a">Make room at the table and sit down to eat. The organizing can wait.</span>
     </a>
     <a class="pick" href="/underwater.html">
-      <span class="q">Nothing particular happened. I'm just underwater</span>
-      <span class="a">Six things that put a floor under it — about forty minutes,
-      and the first two already change tomorrow</span>
+      <div class="pick-meta"><span class="badge badge-reset">Reset · Recovery</span></div>
+      <span class="q">Your place is a mess. Again.</span>
+      <span class="a">Reset the kitchen, gather loose clutter, make the bed, and plan tomorrow’s first task.</span>
+    </a>
+    <a class="pick" href="/one-room.html">
+      <div class="pick-meta"><span class="badge badge-setup">Project · Storage</span></div>
+      <span class="q">There's a room I stopped using.</span>
+      <span class="a">Reclaim one zone of a garage, spare room, or closet, and finish it.</span>
     </a>
   </div>
   <div class="onedoor">
-    <p><b>Those are the doors open so far.</b> The next one is moving in with
-    someone.</p>
-    <p>If yours isn't here, <a href="mailto:hello@mrlifemanager.com?subject=The%20one%20I%20need">tell
+    <p><b>Five ways to get one useful thing done.</b> Pick the problem that's true today and follow the steps.</p>
+    <p>If yours isn't here, <a href="mailto:charles@mrlifemanager.com?subject=The%20one%20I%20need">tell
     me which one you need</a>. Genuinely useful to know, and it decides what gets
     built next.</p>
   </div>
@@ -153,7 +127,7 @@ footer a{color:var(--slate)}
   <span class="attrib">— Dave</span></blockquote>
   <p class="body">Which is <strong>exactly why nobody ever told you.</strong> The people who
   know this can't see it as knowledge. From the inside it just looks like common sense — so it
-  never gets handed down. Not out of indifference. Out of invisibility.</p>
+  never gets handed down. Not because they don't care, but because they don't notice they know it.</p>
   <p class="body">That's the whole reason this exists. And it's why nothing here talks down to
   you: I had to be taught all of it too.</p>
 </div></section>
@@ -169,27 +143,25 @@ footer a{color:var(--slate)}
 <section><div class="wrap narrow">
   <p class="eyebrow">Where this goes</p>
   <h2>Order isn't the point.</h2>
-  <p class="body">A tidy house nobody enters is a museum. The reason to get a handle on all
+  <p class="body">A tidy house matters because it lets people in. The reason to keep up with all
   this is so you can <strong>open the door</strong> — have people over on two hours' notice,
-  feed someone, put a friend up for the night, without a two-day panic first.</p>
-  <p class="body">Systems buy you margin. Margin is what lets you say <em>come over.</em>
-  That's the whole point, and everything else is just the machinery that makes it possible.</p>
+  feed someone, put a friend up for the night, without two days of rushing first.</p>
+  <p class="body">A few daily habits give you spare time and energy, and that is what lets you say <em>come over.</em>
+  That's the whole point, and everything else on this site is how you get there.</p>
 </div></section>
 <section class="close"><div class="wrap">
   <h2>Nobody expected you to have known this.</h2>
   <p class="lede">Pick the thing that's true today and do it. That's the whole
   method, and it's the only one that has ever worked.</p>
   <p class="cta-row"><a class="cta" href="#start">Go to the thing that's true today →</a></p>
-  <p class="fine">Setting up a home? See the planned $39 founding offer for
-  <a href="/first-place.html?from=homepage"><em>First Place: Your First 30 Days</em></a>.</p>
   <p class="fine">Helping someone else? See the small-pilot page for
   <a href="/partners.html?from=homepage">parents, mentors, churches, and campuses</a>.</p>
   <p class="fine">Questions, or something you wish existed —
-  <a href="mailto:hello@mrlifemanager.com">hello@mrlifemanager.com</a> ·
+  <a href="mailto:charles@mrlifemanager.com">charles@mrlifemanager.com</a> ·
   <a href="/privacy.html">Privacy</a></p>
 </div></section>
 <footer><div class="wrap">
-  <span><b>Mr. Life Manager</b> — <a href="mailto:hello@mrlifemanager.com">hello@mrlifemanager.com</a></span>
+  <span><b>Mr. Life Manager</b> — <a href="mailto:charles@mrlifemanager.com">charles@mrlifemanager.com</a></span>
   <span>Free to use, copy, and teach from — with credit. Not for resale. · <a href="/privacy.html">Privacy</a></span>
 </div></footer>
 </body>

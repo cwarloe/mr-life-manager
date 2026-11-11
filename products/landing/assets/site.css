@@ -1,0 +1,39 @@
+/* Shared marketing chrome: bar, footer, type baseline. Colors and fonts come
+   from tokens.css, which every page links first. */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+}
+body{
+  background:var(--paper);color:var(--ink);font-family:var(--font-ui);font-size:16px;
+  line-height:1.55;margin:0;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:60rem;margin:0 auto;padding:0 1.5rem}
+.narrow{max-width:42rem}
+.bar{border-bottom:1px solid var(--rule);background:var(--paper)}
+.bar .wrap{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-top:1rem;padding-bottom:1rem;
+}
+.brand{font-weight:700;font-size:.95rem;letter-spacing:-.01em;text-decoration:none;color:inherit}
+.brand span{color:var(--accent)}
+.bar a{font-size:.85rem;color:var(--muted);text-decoration:none;font-weight:500}
+.bar a:hover{color:var(--accent)}
+.kicker,.eyebrow{
+  font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 1rem;
+}
+.fine{font-size:.82rem;color:var(--muted)}
+.fine a{color:var(--accent);font-weight:600}
+.ml-fallback a{color:var(--accent);font-weight:600}
+footer{border-top:1px solid var(--rule);padding:2rem 0 3rem;font-size:.82rem;color:var(--muted)}
+footer a{color:var(--muted)}
+footer b{color:var(--ink);font-weight:600}
+
+/* Shared keyboard focus for marketing controls (index / partners). */
+a.pick:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+a.cta:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+a.reserve-button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+a.button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}

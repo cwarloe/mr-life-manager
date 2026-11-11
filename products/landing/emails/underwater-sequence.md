@@ -23,8 +23,8 @@ There's no move and no guest arriving — they've just been underwater for a whi
 which means shame is closest to the surface here. Nothing in this sequence
 references how they got there or how long it's been.
 
-The page's "floor" is a foundation under the week, not a mopped floor. Email 1
-has to say that in the page's own words, or it reads like we think they cleaned.
+The page resets the house to baseline. Email 1 reinforces that win
+in the page's own words.
 
 ---
 
@@ -32,7 +32,7 @@ has to say that in the page's own words, or it reads like we think they cleaned.
 
 **Subject:** Here's the thing worth printing
 
-> You put a floor under the week tonight. Here's the thing that keeps it there.
+> You got the house back to livable tonight. Here's how to keep it that way.
 >
 > https://mrlifemanager.com/print/the-week.pdf
 >
@@ -88,8 +88,9 @@ Then it ends. **Silence means stop.**
 
 ## Still open
 
-1. **No paid offer**, deliberately — the $9 product doesn't exist. Insertion
-   point is after email 3.
+1. ~~**No paid offer / $9 product.**~~ **Parked** — under ADR-020 (Accepted) a
+   $9–19 guide is offered only after a free win; it is a later idea, not an open ship item and not in
+   this sequence.
 2. ~~**MailerLite automation.**~~ **Done** 2026-09-22 (Active per owner). Live
    ops spec: [MAILERLITE-SETUP.md](MAILERLITE-SETUP.md). Keep
    resend-to-unopeners off — it violates ADR-016.

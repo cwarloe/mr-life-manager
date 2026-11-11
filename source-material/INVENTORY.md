@@ -12,12 +12,23 @@ Recovered from Gmail 2026-09-19. Thread IDs are Gmail's, for re-retrieval.
 | 2009-11-04 | Weekly cleaning schedule (+ the golden-rules preface) | [2009-11-04-dave-webster-weekly-schedule.md](2009-11-04-dave-webster-weekly-schedule.md) |
 | 2009-11-10 | Cleaning materials list (per room) | [2009-11-10-dave-webster-materials-list.md](2009-11-10-dave-webster-materials-list.md) |
 | 2010-01-02 | House goals & fix-up — hospitality, light, focal points | [2010-01-02-dave-webster-house-goals.md](2010-01-02-dave-webster-house-goals.md) |
+| 2014-01-15 | The Vu intervention (video transcript) | [2014-01-15-dave-webster-vu-intervention.md](2014-01-15-dave-webster-vu-intervention.md) |
 | 2023-07-17 | Kitchen cleanup notes + materials list | [2023-07-17-dave-webster-cleanup-notes.md](2023-07-17-dave-webster-cleanup-notes.md) |
 
 **All four 2009–2010 `.docx` guides are recovered as of 2026-09-19.** The 2023
 email ("All that I could find") turns out to be an archive of this material, not
 independent later writing — its preface, its four goals and its completion rule
 all trace to these documents.
+
+### 2014 intervention: review and derived material
+
+Charles reviewed and approved the Drive `Transcript.txt` for use on 2026-10-27
+([Drive source](https://drive.google.com/file/d/1mXzFAoDpt_8Bke5vOBOFrd-j48zZmlzZ/view)).
+The archived transcript is unchanged, including its original automated-draft
+notice. Its [analysis](2014-01-15-analysis.md) now maps observations to timestamps
+and separates evidence from interpretation. The reusable
+[session template](../content/intervention-template.md) and updated
+[principles engine](../frameworks/dave-principles.md) derive from that source.
 
 ## Still outstanding
 
@@ -53,7 +64,7 @@ connector can list but not download (see retrieval note above).
 | 2011-07-27 | `Roommate_Behavior_Policy v2.doc` — Micah Stroh's "tenant house rules" | `1315e9526d510865` | The closest thing to a behavior-and-expectations document rather than a legal contract. Charles asked for it by name after getting the lease. Most useful of the set. |
 | 2011-07-26 | `GrassLawn Fill in Blank Monthly_Agreement.doc` — fill-in-the-blank lease | `1315e9526d510865` | Sent "at your own risk," already ~5 years old in 2011. Legal boilerplate. |
 | 2012-08-06 / 08-13 | Application form, roommate agreement, then a revised lease + roommate agreement | `138fa5293846e1ed`, `138feedc1dba0534` | Landlord-supplied (johnh.wa101@gmail.com). Received, not authored. |
-| 2024-06-17 | `Boise Roommate Agreement - 6621 W Holiday.docx` + `Boise house lease - 6621 W Holiday Drive.docx` | `18fd06c6c2a00d54` | **Charles's own.** He adapted Chad Morgan's versions — "nearly identical to what your dad created with names and addresses changed" — for a house of college guys. Forwarded to Dave 2025-05-07 as "Here's the template." This is the one with a real story behind it. |
+| 2024-06-17 | `Boise Roommate Agreement - 6621 W Holiday.docx` + `Boise house lease - 6621 W Holiday Drive.docx` | `18fd06c6c2a00d54` | **Charles's own.** He adapted Chad Morgan's versions — "nearly identical to what your dad created with names and addresses changed" — for a house of college guys. Forwarded 2025-05-07 to davhawk73@gmail.com as "Here's the template," then "update to cover July 2025–July 2026." **Recipient unconfirmed** — not Dave's known address; the wording reads like a housemate renewing. Contents never read (attachment not downloadable), so nothing in the repo is built from it. |
 
 None of these are in Google Drive as of 2026-09-22 (searched by full text).
 

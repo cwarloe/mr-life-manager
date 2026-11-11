@@ -1,10 +1,17 @@
 #!/usr/bin/env python3
 """Assert every entry page has required scripts, print styles, and signup wiring."""
-import re
 import sys
 from pathlib import Path
 
-from site_catalog import MAILERLITE_FORM_ATTR
+from site_catalog import (
+    ALL_ENTRY_ROUTES,
+    ENTRY_CSS_MARKERS,
+    ENTRY_JS_MARKERS,
+    ENTRY_ROUTES,
+    PUBLISHED_ENTRY_ROUTES,
+    MAILERLITE_FORM_ATTR,
+    MAILERLITE_JS_URL,
+)
 
 ROOT = Path(__file__).resolve().parents[2]
 LANDING = ROOT / "products" / "landing"
@@ -13,32 +20,17 @@ ENTRY_JS = LANDING / "assets" / "entry.js"
 ENTRY_CSS = LANDING / "assets" / "entry.css"
 
 REQUIRED = [
+    ("design tokens (products/landing/THEMING.md)", 'href="/assets/tokens.css"'),
     ("shared entry stylesheet", 'href="/assets/entry.css"'),
     ("shared entry script", 'src="/assets/entry.js"'),
     ("mode buttons", 'class="go-do"'),
     ("print scale", "body{zoom:"),
+]
+
+EMAIL_REQUIRED = [
     ("MailerLite form", MAILERLITE_FORM_ATTR),
-    ("one-PDF promise", "Dave's week on one page"),
-    ("post-completion destination", 'data-completion-url="/finished-'),
-    ("guide tag config", 'data-guide="'),
-]
-
-ENTRY_CSS_REQUIRED = [
-    ("viewport-locked layout", "body.doing .steps{flex:1"),
-    ("step numbering fix", "content:attr(data-n)"),
-    ("print hides the reasoning", ".why,.why.open,.whybtn"),
-    ("print forces all steps", ".step{display:block !important}"),
-    ("Letter page size", "@page{size:Letter"),
-    ("text-size-adjust", "-webkit-text-size-adjust"),
-    ("prefers-reduced-motion", "prefers-reduced-motion"),
-]
-
-ENTRY_JS_REQUIRED = [
-    ("doing-mode", "classList.add('doing')"),
-    ("source attribution handoff", "new URLSearchParams(window.location.search).get('from')"),
-    ("MailerLite dual-field tag", "fields[guide]"),
-    ("MailerLite fallback", "ml-fallback"),
-    ("guide VALUE wiring", "var VALUE = guide"),
+    ("MailerLite CDN", MAILERLITE_JS_URL),
+    ("one-PDF promise", "one thing worth printing: the week on one page"),
 ]
 
 
@@ -49,7 +41,7 @@ def main() -> int:
         problems.append(f"missing shared script: {ENTRY_JS.relative_to(ROOT)}")
     else:
         js = ENTRY_JS.read_text()
-        for label, needle in ENTRY_JS_REQUIRED:
+        for label, needle in ENTRY_JS_MARKERS:
             if needle not in js:
                 problems.append(f"entry.js: missing {label}")
 
@@ -57,37 +49,71 @@ def main() -> int:
         problems.append(f"missing shared stylesheet: {ENTRY_CSS.relative_to(ROOT)}")
     else:
         css = ENTRY_CSS.read_text()
-        for label, needle in ENTRY_CSS_REQUIRED:
+        for label, needle in ENTRY_CSS_MARKERS:
             if needle not in css:
                 problems.append(f"entry.css: missing {label}")
 
-    pages = sorted(p for p in LANDING.glob("*.html")
-                   if 'class="steps"' in p.read_text())
-    if not pages:
-        print("no entry pages found — did the layout change?", file=sys.stderr)
-        return 1
-
-    for p in pages:
-        s = p.read_text()
-        for label, needle in REQUIRED:
+    catalog_pages = []
+    for route in PUBLISHED_ENTRY_ROUTES:
+        path = LANDING / route.page
+        if not path.is_file():
+            problems.append(f"missing ENTRY_ROUTES page: {route.page}")
+            continue
+        catalog_pages.append(path)
+        s = path.read_text()
+        required = REQUIRED + EMAIL_REQUIRED if route.collects_email else REQUIRED
+        for label, needle in required:
             if needle not in s:
-                problems.append(f"{p.name}: missing {label}")
+                problems.append(f"{path.name}: missing {label}")
 
-        # A page that asks for an email must tag it, and that tag must have a
-        # sequence to receive. Otherwise it collects addresses and sends nothing.
-        if "ml-embedded" in s:
-            m = re.search(r'data-guide="([a-z0-9-]+)"', s)
-            if not m:
-                problems.append(f"{p.name}: has a signup but does not tag it")
-            else:
-                seq = EMAILS / f"{m.group(1)}-sequence.md"
-                if not seq.exists():
-                    problems.append(
-                        f"{p.name}: tags signups '{m.group(1)}' but "
-                        f"{seq.name} does not exist")
-            cm = re.search(r'data-completion-url="(/finished-[a-z0-9-]+\.html)"', s)
-            if not cm:
-                problems.append(f"{p.name}: missing data-completion-url")
+        if 'data-defer="on"' in s:
+            for label, needle in (("'Pick a time' button", 'class="go-later"'),
+                                  ("appointment length", 'data-minutes="'),
+                                  ("calendar title", 'data-task="')):
+                if needle not in s:
+                    problems.append(f"{path.name}: data-defer is on but missing {label}")
+
+        expected_completion = f"/{route.completion_page}"
+        completion_attr = f'data-completion-url="{expected_completion}"'
+        if completion_attr not in s:
+            problems.append(
+                f"{path.name}: missing data-completion-url for {route.completion_page}"
+            )
+
+        if f'data-guide="{route.slug}"' not in s:
+            problems.append(f'{path.name}: missing data-guide="{route.slug}"')
+        seq = EMAILS / f"{route.slug}-sequence.md"
+        if route.collects_email and not seq.is_file():
+            problems.append(f"{path.name}: {seq.name} does not exist")
+        if not route.collects_email:
+            if 'class="ml-embedded"' in s:
+                problems.append(f"{path.name}: direct-next route must not collect email")
+            if route.next_url:
+                target = ROOT / "products" / "landing" / route.next_url.lstrip("/").split("#", 1)[0]
+                if not target.is_file() or not route.next_title or not route.next_description:
+                    problems.append(f"{path.name}: direct next step must have an existing target and descriptive copy")
+
+    # Warn on unexpected steps pages outside the catalog (orphan HTML).
+    expected_names = {route.page for route in ALL_ENTRY_ROUTES}
+    for path in sorted(LANDING.glob("*.html")):
+        if path.name in expected_names:
+            continue
+        if 'class="steps"' in path.read_text():
+            problems.append(
+                f'{path.name}: has class="steps" but is not in ENTRY_ROUTES'
+            )
+
+    # Pre-build: completion template must keep the MailerLite CDN URL.
+    finished_tmpl = LANDING / "templates" / "finished.html"
+    if not finished_tmpl.is_file():
+        problems.append(
+            f"missing completion template: {finished_tmpl.relative_to(ROOT)}"
+        )
+    elif MAILERLITE_JS_URL not in finished_tmpl.read_text():
+        problems.append(
+            f"{finished_tmpl.relative_to(ROOT)}: missing MailerLite CDN "
+            f"({MAILERLITE_JS_URL})"
+        )
 
     if problems:
         print("Entry pages are incomplete:\n", file=sys.stderr)
@@ -97,8 +123,8 @@ def main() -> int:
               file=sys.stderr)
         return 1
 
-    print(f"{len(pages)} entry pages complete: "
-          f"{', '.join(p.stem for p in pages)}")
+    print(f"{len(catalog_pages)} entry pages complete: "
+          f"{', '.join(p.stem for p in catalog_pages)}")
     return 0
 
 

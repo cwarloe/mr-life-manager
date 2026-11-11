@@ -1,5 +1,14 @@
 # Checklists
 
+Current paused-draft revisions and review links: [readiness index](../../docs/research/paused-checklist-readiness.md). Revised sources remain unpublished pending later pilot/use testing.
+
+**Publication paused, 2026-10-27.** Charles is focusing the public site on
+first night, guests, dinner, underwater, and one room. The reference guides,
+their PDFs, the organizing comparison, and the six newer entrances are retained
+as source for later; they are not current public offers. Old HTML URLs lead to
+the five active choices. The Week and partner pilot handout stay published for
+the existing flows. Historical status notes below describe the drafts.
+
 Printable checklists and guides. Per
 [ADR-015](../../planning/decisions.md#adr-015--the-win-comes-before-the-email)
 they are **archive and search surface** at `/guides/`, not the front door —
@@ -53,6 +62,28 @@ boxes and is the worked example of getting this wrong; it was cut to 13 on
 Write a `brief.md` before building — see [../README.md](../README.md).
 
 ## Status
+
+**Felt-pain entrances, 2026-10-27:** the guide library now has six additional
+six-step action pages for laundry piles, making dinner, choosing a cleaner,
+a usable sitting spot, tomorrow's kitchen, and a shared dishes agreement.
+The [coverage brief](../landing/briefs/felt-pain-guides.md) maps every guide to
+its short entrance and distinguishes source content from our adaptations.
+The longer guide and PDF files remain intact; the new pages end at a small
+win without promoting longer checklists or collecting email.
+
+**Three organizing versions, 2026-10-27:**
+[junk drawers](reset-your-space/versions/junk-drawers.md),
+[things put away and lost](reset-your-space/versions/cant-find-things.md), and
+[a table blocked by clutter](reset-your-space/versions/clear-the-table.md).
+Each is eight actions with a different finished win. The
+[public comparison page](../landing/organizing-ideas.html) carries all three;
+the [shared brief](reset-your-space/versions/brief.md) records sources and
+what remains untested. They are comparison drafts, not three new homepage routes.
+
+**New Markdown draft, 2026-10-27:** [Reset Your Space](reset-your-space/checklist.md)
+turns the full January 2014 intervention method into twelve ordered actions for
+one usable area. See its [brief](reset-your-space/brief.md) for sources and
+adaptations. It has not been reader-tested or added to the public guide catalog.
 
 **Seven shipped, none reviewed or reader-tested.** Each printable `.html` is the
 source of truth; its `brief.md` holds intent and open questions.

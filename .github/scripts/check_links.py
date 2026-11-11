@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 """Fail if outbound HTTPS links in published HTML no longer resolve. Runs weekly."""
 from __future__ import annotations
-import re, sys, urllib.error, urllib.request
+import re
+import urllib.error
+import urllib.request
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
+
+from site_catalog import MAILERLITE_JS_URL
 
 ROOT = Path(__file__).resolve().parents[2]
 UA = "Mozilla/5.0 (compatible; MrLifeManagerLinkCheck/1.0)"
@@ -19,6 +23,8 @@ def links() -> dict[str, list[str]]:
             if any(h in url for h in SKIP_HOSTS):
                 continue
             found.setdefault(url, []).append(str(html.relative_to(ROOT)))
+    # Inline bootstrap loads this CDN script; it never appears in an href.
+    found.setdefault(MAILERLITE_JS_URL, []).append("site_catalog.MAILERLITE_JS_URL")
     return found
 
 

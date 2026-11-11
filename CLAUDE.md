@@ -1,18 +1,43 @@
 # Working agreement
 
+## Current publication scope
+
+Charles selected five active checklists on 2026-10-27, in this order:
+`first-night`, `guests`, `dinner`, `underwater`, `one-room`. All other entry
+pages, the organizing comparison page, and reference guides are paused for
+public use. Keep their source files; old HTML URLs redirect to the current
+choices. `ACTIVE_ENTRY_SLUGS` in `site_catalog.py` controls the live entries;
+`guide_inventory.py` pauses reference-guide publication and their PDFs.
+Only `the-week.pdf` (promised by active emails) and `partner-pilot.pdf` remain
+published. Resume other material when Charles says it is ready. Older notes
+about live draft routes describe the previous state.
+
+## Owner review previews
+
+Charles authorized an unlisted live review section at `/preview/` on 2026-10-28.
+It displays retained drafts and guide PDFs without reactivating standard routes.
+`preview_site.py` generates it directly from the revised sources. Preview HTML
+is noindex, excluded from the sitemap and normal navigation, uses a preview
+copy of the execution script with events/signup helpers removed, and has no
+email forms or production analytics. Completion and calendar links stay within
+`/preview/`. Normal paused URLs still redirect home. This is a public review URL,
+not authentication or approval to add drafts to the five main choices.
+
 ## Division of labor
 
-**Claude makes the changes and pushes to GitHub. A bot does everything
+**Claude makes the changes and pushes them. A bot does everything
 downstream.** The bot handles MailerLite, verification, and anything that
 touches a live account.
 
 So:
 
-- **Do the work, commit it, push it.** GitHub Actions deploys the site on push
-  to `main`.
+- **Do the work, commit it, push to `main`.** Charles, 2026-10-26: "you can
+  push to main. I trust you. we can always revert." GitHub Actions deploys the
+  site when changes land on `main`, so run the checks first. A branch and PR
+  are still fine for anything large or uncertain.
 - **End with a short prompt for the bot** — a few lines, plain prose, saying
   what changed and what to update. Not a checklist, not a runbook.
-- **Never hand Charles manual steps.** No "open this in a browser," no "send
+- **Don't hand Charles manual steps.** No "open this in a browser," no "send
   yourself a test signup," no "inspect this element and tell me what it says."
   If something genuinely can't be verified from here, either remove the
   uncertainty in code or let the bot find out.
@@ -37,31 +62,65 @@ chores for him. He has a bot precisely so that doesn't happen.
 - **Say what's untested.** Most decisions here are reasoning, not evidence, and
   should be labelled that way.
 
+## Writing rules for this repo
+
+**Avoid "never" and "always" unless it's an ethical line** (Charles,
+2026-10-26). Absolute wording makes bots and agents push back even when logic
+and good sense say an exception is right. State the rule, give the reason, and
+say what it's protecting, so whoever applies it can use judgment. Keep the
+absolutes for ethics: deceiving people, shaming them, or charging for what they
+don't use. Safety, privacy, consent, and the integrity of sources and data
+(verbatim source material, invented facts, credentials) count as ethical lines
+too.
+
+**Older text still has absolutes.** The ADRs are a historical record and aren't
+rewritten, and the frameworks are teaching material for readers. Where they say
+"never" or "always" about something that isn't an ethical line, read it as a
+strong default with a reason, not a wall: apply it unless good sense clearly
+says otherwise, and say so when you make an exception.
+
+**Site, ad and landing-page copy goes through the act-now filter** in
+[`content/README.md`](content/README.md#the-act-now-filter-site-ad-and-landing-page-copy):
+every line moves the reader to feel one problem today and start now or pick a
+time. Cut lines about later, someday, or things to agree with.
+
 ## Standing rules already written down
 
 Don't re-derive these — read them:
 
 - [`content/README.md`](content/README.md) — depth rule, US English, email
-  voice (full sentences, never clipped fragments), how printables differ from
+  voice (full sentences, not clipped fragments), how printables differ from
   web pages, how to refer to Dave
 - [`planning/decisions.md`](planning/decisions.md) — the ADRs. ADR-014
   (completion converts), ADR-015 (the win comes before the email), ADR-016
   (the sequence shrinks unconditionally), ADR-017 (Kitchen That Works free,
-  folded into Six Meals), ADR-018 (six meals off First Place; First Place stays
-  $39), ADR-019 (Laundry, Solved and the roommate kit free only) govern most
+  folded into Six Meals), ADR-018 (six meals off the old paid flagship), ADR-019 (Laundry, Solved and the roommate kit free only) govern most
   product decisions
+  - **ADR-020 (win before wallet) is Accepted (2026-10-15).** It retires
+    the $39 flagship and sets the ladder: free single-issue wins forever,
+    $9–19 guides only after a free win, house-in-order flagship.
+  - **ADR-010, ADR-015 and ADR-016 are under review (2026-10-03).** Charles
+    is reworking buyers, the revenue model and marketing strategy. Keep
+    existing pages and emails as they are, but don't build new work on these
+    three or cite them as settled until they're re-decided.
 - [`docs/business/commerce-rules.md`](docs/business/commerce-rules.md) —
   affiliate and pricing rules
+- [`frameworks/dave-principles.md`](frameworks/dave-principles.md) — the
+  engine for applying Dave's method to a new domain. Use it for any new page,
+  quote Dave only word for word, and label anything generated as ours
 - [`source-material/`](source-material/INVENTORY.md) — Dave's original
   documents. **Verbatim, never edited**, not even for spelling
+- [`planning/HANDOFF.md`](planning/HANDOFF.md) — session handoff: where things
+  stand, open threads, workflow
 
 ## Mechanics
 
-- Public origin + the four entry routes live in
+- Public origin + the entry routes live in
   `.github/scripts/site_catalog.py` — import from there; don't hardcode the
   doors in new checks
 - `python3 .github/scripts/build_site.py` — assemble `_site/`
-- `python3 .github/scripts/validate_repo.py` — HTML + internal links; run before
+- `python3 .github/scripts/validate_repo.py` — HTML + internal links, and each
+  sheet's inline share QR matches `products/print/share-qr.svg`; run before
   committing
 - `python3 .github/scripts/render_all_pdfs.py` — regenerate printables with the
   brand fonts embedded; it refuses to write a PDF missing them
@@ -72,13 +131,18 @@ Don't re-derive these — read them:
 - `python3 .github/scripts/check_entry_pages.py` — every entry page carries the
   doing-mode script, the print rules, a signup tag and a matching sequence.
   Runs in CI. **New entry page? Copy `guests.html`**, don't build from scratch
-- `python3 .github/scripts/check_pdfs_fresh.py` — fails if a committed PDF is
-  older than its source HTML. Runs in CI. **Change a guide's HTML and you must
+- `python3 .github/scripts/check_pdfs_fresh.py` — fails if a committed PDF's
+  source hash (HTML + linked CSS + embedded-fonts CSS + print zoom) no longer
+  matches `.sources.json`. Runs in CI. **Change a guide's HTML and you must
   re-render**, or the emails link to the old version
 - `python3 .github/scripts/check_built_site.py` — run after `build_site.py`; it
-  verifies canonical/share metadata, the four MailerLite routes, privacy copy
+  verifies canonical/share metadata, every entry route's MailerLite wiring, privacy copy
   and public support files
 - `python3 .github/scripts/check_live_site.py` — production smoke test. GitHub
   Actions runs it after Pages deployment and weekly; it never submits a form
+- Colors, fonts and shadows live in `products/landing/assets/tokens.css`;
+  everything else uses `var(--token)`. `validate_repo.py` runs
+  `check_theme.py`, which fails on raw values elsewhere. The rule and the
+  exceptions: [`products/landing/THEMING.md`](products/landing/THEMING.md)
 - Entry-page action sheets are **not** committed as PDFs. They print from each
   page's own stylesheet, so the sheet can't drift from the page.

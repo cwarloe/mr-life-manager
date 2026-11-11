@@ -1,5 +1,12 @@
 # Landing Page — Setup
 
+Owner review: [unlisted draft previews](https://mrlifemanager.com/preview/) show the retained revisions outside the five-entry flow. Preview forms and production tracking are disabled; the ordinary paused URLs remain redirects.
+
+**Current scope, 2026-10-27:** five active entrances, in order: first night,
+guests, dinner, underwater, and one room. Other task pages and reference guides
+are paused, with source retained. Old HTML links redirect to the homepage.
+Only The Week and the partner pilot handout remain published as PDFs.
+
 **Status (2026-09-21):** The public site is live at
 [https://mrlifemanager.com](https://mrlifemanager.com). HTTPS is on. HTTP
 redirects. `www` redirects to the apex.
@@ -15,15 +22,18 @@ entry pages, after the action
 | `/guests.html` | Entry page + signup |
 | `/underwater.html` | Entry page + signup |
 | `/one-room.html` | Entry page + signup |
+| `/dinner.html` | Six-step table reset with a calendar option; completion ends at the win, with no signup |
+| `/laundry-pile.html`, `/make-dinner.html`, `/cleaning-start.html` | Paused drafts; old URLs redirect to the active choices |
+| `/comfortable-room.html`, `/kitchen-close.html`, `/shared-dishes.html` | Paused drafts; old URLs redirect to the active choices |
+| `/office.html`, `/organizing-ideas.html` | Paused; old URLs redirect to the active choices |
 | `/index-parents.html` | Parent page — send them a door, no form |
 | `/partners.html?from=<source>` | Small-pilot page for mentors, churches and campuses |
-| `/guides/` | Archive of the free guides |
-| `/guides/<slug>.html` | Each guide |
-| `/print/` | Index of print-ready PDFs |
-| `/print/<slug>.pdf` | A specific printable |
+| `/guides/` | The five active checklists |
+| `/guides/<paused-slug>.html` | Redirect to the active choices; reference-guide source stays in the repo |
+| `/print/` | The Week and partner pilot handout |
+| `/print/the-week.pdf` | Weekly sheet promised by active email sequences |
 | `/print/partner-pilot.pdf` | Four audience-specific, QR-coded pilot handouts |
 | `/finished-<door>.html` | No-index completion destination for each entry page |
-| `/first-place.html` | No-charge reservation for the planned $39 founding offer |
 | `/privacy.html` | What an email is used for |
 
 `index.html` is the main page. `index-parents.html` is the parent-facing
@@ -51,8 +61,14 @@ Pillow, ReportLab, and `qrcode`.
 **Account ID:** `2635985`  
 **Embedded form ID:** `00ZwEr`
 
-The form is embedded on all four entry pages and their four completion pages.
-Do not put it back on the homepage or the *First Place* founding-offer page. The
+The form is embedded on email-collecting entry routes and their completion pages.
+The dinner route ends at the completed win. It does not collect addresses or
+need a new automation. Its “Not right now” option creates a calendar invite,
+using the shared deferred-start flow; the reminder stays in the reader's calendar.
+The six guide-derived draft routes retain their no-signup completion and
+calendar configuration in source, but are paused for publication. Existing
+active signup routes and their email delivery remain unchanged.
+Do not put it back on the homepage. The
 completion pages reuse the originating door tag, so the reader receives the
 same three-email sequence whether they signed up in reading mode or immediately
 after finishing in doing mode.
@@ -61,14 +77,16 @@ The intended account state is documented in
 [`emails/MAILERLITE-SETUP.md`](emails/MAILERLITE-SETUP.md). The original
 site-wide welcome sequence is withdrawn
 ([ADR-016](../../planning/decisions.md#adr-016--the-sequence-shrinks-unconditionally));
-do not reactivate it. Live copy is in the four entry-specific sequence files.
+do not reactivate it. Live copy is in the entry-specific sequence files.
 
 The owner reported all four automations active on 2026-09-22. Each sends one PDF
 link in email 1 — `/print/the-week.pdf` — not a copy of the action page. The
-action and its print option have already been delivered before signup.
+action and its print option have already been delivered before signup. The
+office page (added 2026-10-06) has a drafted sequence but no MailerLite group or
+automation yet.
 
 The founding-offer page uses a prefilled email to `hello@mrlifemanager.com`.
-That keeps the demand test live without a fifth automation or a risk that a
+That keeps the demand test live without another automation or a risk that a
 reservation receives an unrelated free sequence. Treat each sent message as a
 reservation, not revenue. A safe `from` query value on the founding-offer URL is
 carried into the reservation subject so a reply can be attributed without
@@ -82,15 +100,16 @@ still require a controlled account-level test; record the last result in
 
 ## Domain
 
-DNS already points at GitHub Pages (`185.199.108–111.153`). The `CNAME` file
-in this directory must stay in the published root.
+DNS already points at GitHub Pages (`185.199.108–111.153`). The custom domain
+is set in the repository's Pages settings. The site publishes from a GitHub
+Actions workflow, so a `CNAME` file in the artifact is ignored and not needed.
 
 If the certificate or HTTPS checkbox ever falls off: Settings → Pages →
 confirm `mrlifemanager.com` → Enforce HTTPS.
 
 ## External operating items
 
-- [ ] Record a four-page MailerLite delivery test and footer/unsubscribe check
+- [ ] Record a MailerLite delivery test for every entry page and a footer/unsubscribe check
 - [x] Confirm SPF/DKIM and MailerLite domain verification (DNS checked 2026-09-22)
 - [ ] Add DMARC in monitoring mode, then verify MailerLite and Zoho alignment
 - [ ] Add privacy-first visitor analytics and Search Console verification

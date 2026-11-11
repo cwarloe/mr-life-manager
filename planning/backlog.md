@@ -56,11 +56,11 @@ Each item is tagged with its [roadmap](roadmap.md) phase and primary
 
 | Item | Phase | Notes |
 |---|---|---|
-| ~~Landing page + email capture~~ | 2 | **Deployed with four active MailerLite routes**, confirmed by owner 2026-09-22. Account-level delivery evidence remains P0. |
+| ~~Landing page + email capture~~ | 2 | **Deployed with four active MailerLite routes**, confirmed by owner 2026-09-22. Account-level delivery evidence **Passed 2026-09-22** (see P0 row + [operations.md](operations.md)). |
 | ~~Four entry-specific email sequences~~ | 2 | **Active in MailerLite**, three emails each. Email 1 links only `The Week`; reader validation remains open. |
 | ~~Parent-facing gift landing page~~ | 2 | **Deployed and connected** 2026-09-16 → [index-parents.html](../products/landing/index-parents.html) |
 | 2–3 low-cost guides ($9–$19) | 3 | Tests which topic sells before committing to a book |
-| ***First Place*** founding validation | 3 | $39 no-charge reservation page is live in the repo. Build the product only after reservations and real-reader evidence justify it. |
+| House-in-order flagship validation | 3 | Per ADR-020 (Accepted). Build only after free wins and $9–19 guides show what people finish. Price not set. |
 | Payment + delivery setup | 3 | Gumroad or similar; pick and move on |
 
 ### Research
@@ -72,6 +72,8 @@ Each item is tagged with its [roadmap](roadmap.md) phase and primary
 | Search-demand check on top topics | 1 |
 | Reddit/forum language mining | 1 |
 | Name reaction test with women in the audience | 1 |
+| Validation conversations with cybersecurity coworkers (high-intensity niche) — [analysis](../docs/research/high-intensity-professionals.md#where-to-validate) | 1 |
+| Ask Dave: what his Air Force Academy volunteer role allows, plus seniors' vocabulary and calendar — [questions](../docs/research/service-academy-grads.md#open-questions-for-dave) | 1 |
 
 ---
 
@@ -103,6 +105,8 @@ Each item is tagged with its [roadmap](roadmap.md) phase and primary
 
 ### Product
 
+- **Travel Mode** entry page — pre-trip shutdown + first-hour-home reset. Evidence-backed candidate ([analysis](../docs/research/high-intensity-professionals.md#implications)); build only after validation, per the roadmap.
+
 - Room-by-room bundle ($29)
 - ~~Kitchen That Works ($19)~~ — **free, folded into** [Six Meals and a Stocked Kitchen](../products/checklists/six-meals/) (Charles, 2026-09-26; revenue TBD with marketing)
 - Paperwork Starter Kit ($19)
@@ -111,7 +115,6 @@ Each item is tagged with its [roadmap](roadmap.md) phase and primary
 - Household Operating System, couples ($99)
 - Hosting Without Panic ($49)
 - Starting Over Toolkit ($49)
-- Persona editions of *First Place*
 - Group coaching cohort
 - Notion/Sheets template versions of the toolkits
 
