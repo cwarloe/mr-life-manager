@@ -2,13 +2,13 @@
 
 This folder is a reader's pass over the newer Mr. Life Manager docs. I did not edit any source file. Suggested rewrites are for wording and for facts that already contradict the live site or each other. Anything that needs a business decision is only in [needs-charles.md](needs-charles.md).
 
-Notes now in this folder include the 31 October copy-final file. Notes on the remaining areas will follow in later commits on this branch.
+Notes now in this folder include the audience pages. The last remaining note is the 9 November Drive import.
 
 ## The five biggest problems
 
 These five will be revised if later areas change the picture. The first pass already supports all five.
 
-1. The live student and career pages send people who are still living out of boxes to the first-night checklist, which is for the night someone moves in, not for unpacking weeks later. The 1 November workflow draft splits those moments correctly. The live doors do not. Detail for this one is in a later note.
+1. The live student and career pages send people who are still living out of boxes to the first-night checklist, which is for the night someone moves in, not for unpacking weeks later. The 1 November workflow draft splits those moments correctly. The live doors do not. See [audience-pages.md](audience-pages.md).
 2. The strategy docs do not agree on who the customer is or who pays. In [target-audiences.md](../../vision/target-audiences.md), Tyler is the best paying MVP customer. In the 5 November [customer-profile.md](../../business/customer-profile.md), the same name is an 18 to 25 year old who mostly uses free checklists, with a parent as a possible buyer. The live site speaks to students, early-career workers, and people living off base, which the persona doc never names.
 3. The product ladder does not match what is actually offered. Dinner is one of the five live checklists, but the ladder's entry list names first night, guests, one room, underwater, and office, and leaves dinner out. See [brand-niche-ladder.md](brand-niche-ladder.md).
 4. Brand positioning marks name clearance closed on 23 September 2026. The USPTO scan imported on 9 November found a live federal registration for LIFE MANAGER and says the name is not cleared. See [brand-niche-ladder.md](brand-niche-ladder.md).
@@ -26,9 +26,10 @@ These five will be revised if later areas change the picture. The first pass alr
 | [copy-workflows.md](copy-workflows.md) | Flier overview and workflows 1 to 6 | 10 | In this commit |
 | [social-launch-kit.md](social-launch-kit.md) | Social launch kit | 3 | In this commit |
 | [research-copy-final.md](research-copy-final.md) | Copy final, 31 October | 4 | In this commit |
-| [needs-charles.md](needs-charles.md) | Business decisions only | 18 questions so far | Running list, will grow |
+| [audience-pages.md](audience-pages.md) | Audience landing pages and their README | 6 | In this commit |
+| [needs-charles.md](needs-charles.md) | Business decisions only | 19 questions so far | Running list, will grow |
 
-Later notes, not in the folder yet: audience pages; 9 November Drive import.
+Later notes, not in the folder yet: 9 November Drive import.
 
 ## What I read and what I skipped
 

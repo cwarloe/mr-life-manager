@@ -6,7 +6,7 @@ What already works well: [copy-final-2026-10-31.md](../../research/copy-final-20
 
 Lines 1 to 4 tell the reader not to paste from this file without a rewrite. The three audience HTML files still carry a comment that their copy comes from this document, and most of the live headlines and door titles are still taken from it. The 1 November workflow files were written to replace the clipped speech. The public pages have not caught up.
 
-This is a factual mismatch, not a new copy deck. The rewrites belong with the audience pages and the workflow draft. A later note on the audience pages will take this up in more detail. See [needs-charles.md](needs-charles.md), question 18, for the door-4 product choice.
+This is a factual mismatch, not a new copy deck. The rewrites belong with the audience pages and the workflow draft. See [audience-pages.md](audience-pages.md) and [needs-charles.md](needs-charles.md), question 18, for the door-4 product choice.
 
 Until those land, a one-line addition under the banner would stop someone from treating this file as current:
 
