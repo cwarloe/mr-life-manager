@@ -12,4 +12,8 @@ These are business decisions, not wording fixes. I have not suggested a rewrite 
 
 5. Is hospitality the destination, as the mission and [principles.md](../../vision/principles.md), lines 126 to 141, say, or is "attention for what matters" the real prize, as [customer-outcomes.md](../../vision/customer-outcomes.md), lines 167 to 174, says? [vivid-vision-2029.md](../../vision/vivid-vision-2029.md), lines 163 to 166, already asks whether having people over belongs in the 2029 picture.
 
+6. Should interviews follow the 5 November plan in [willingness-to-pay-plan.md](../../business/willingness-to-pay-plan.md), lines 16 to 18, which calls for 3 to 5 recent movers aged 18 to 25 and 3 to 5 parents, or the week-1 pack in [interview-pack-week1.md](../../research/interviews/interview-pack-week1.md), lines 7 and 14 to 15, which samples five persona groups and aims for 15 to 20 conversations?
+
+7. Is the reserve-page threshold in [willingness-to-pay-plan.md](../../business/willingness-to-pay-plan.md), lines 84 to 85, still the line you want: at least 5% of parents-page visitors who see the offer, and at least 20 reservations, in about three weeks? The plan does not say whether that page currently has enough visitors for the test to measure willingness to pay rather than reach.
+
 More questions will be added as the later review notes land.

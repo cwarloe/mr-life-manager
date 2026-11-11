@@ -2,7 +2,7 @@
 
 This folder is a reader's pass over the newer Mr. Life Manager docs. I did not edit any source file. Suggested rewrites are for wording and for facts that already contradict the live site or each other. Anything that needs a business decision is only in [needs-charles.md](needs-charles.md).
 
-The first notes are in this folder now: vision, customer profile, and business model. Notes on the remaining areas will follow in later commits on this branch.
+Notes now in this folder: vision, customer profile, business model, and the Bronco competitor scan and willingness-to-pay plan. Notes on the remaining areas will follow in later commits on this branch.
 
 ## The five biggest problems
 
@@ -21,9 +21,10 @@ These five will be revised if later areas change the picture. The first pass alr
 | [vision.md](vision.md) | Mission, principles, target audiences, customer outcomes, vivid vision 2029 | 6 | In this commit |
 | [customer-profile.md](customer-profile.md) | November Bronco customer profile | 3 | In this commit |
 | [business-model.md](business-model.md) | Business model | 3 | In this commit |
-| [needs-charles.md](needs-charles.md) | Business decisions only | 5 questions so far | In this commit, will grow |
+| [bronco-feedback-docs.md](bronco-feedback-docs.md) | Competitor scan and willingness-to-pay plan | 4 | In this commit |
+| [needs-charles.md](needs-charles.md) | Business decisions only | 7 questions so far | Running list, will grow |
 
-Later notes, not in the folder yet: Bronco competitor scan and willingness-to-pay plan; brand positioning, niche strategy, and product ladder; copy workflows; social launch kit; 31 October copy-final; audience pages; 9 November Drive import.
+Later notes, not in the folder yet: brand positioning, niche strategy, and product ladder; copy workflows; social launch kit; 31 October copy-final; audience pages; 9 November Drive import.
 
 ## What I read and what I skipped
 
