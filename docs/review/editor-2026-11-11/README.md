@@ -2,7 +2,7 @@
 
 This folder is a reader's pass over the newer Mr. Life Manager docs. I did not edit any source file. Suggested rewrites are for wording and for facts that already contradict the live site or each other. Anything that needs a business decision is only in [needs-charles.md](needs-charles.md).
 
-Notes now in this folder: vision, customer profile, business model, and the Bronco competitor scan and willingness-to-pay plan. Notes on the remaining areas will follow in later commits on this branch.
+Notes now in this folder include brand positioning, niche strategy, and the product ladder. Notes on the remaining areas will follow in later commits on this branch.
 
 ## The five biggest problems
 
@@ -10,8 +10,8 @@ These five will be revised if later areas change the picture. The first pass alr
 
 1. The live student and career pages send people who are still living out of boxes to the first-night checklist, which is for the night someone moves in, not for unpacking weeks later. The 1 November workflow draft splits those moments correctly. The live doors do not. Detail for this one is in a later note.
 2. The strategy docs do not agree on who the customer is or who pays. In [target-audiences.md](../../vision/target-audiences.md), Tyler is the best paying MVP customer. In the 5 November [customer-profile.md](../../business/customer-profile.md), the same name is an 18 to 25 year old who mostly uses free checklists, with a parent as a possible buyer. The live site speaks to students, early-career workers, and people living off base, which the persona doc never names.
-3. The product ladder does not match what is actually offered. Dinner is one of the five live checklists, but the ladder's entry list names first night, guests, one room, underwater, and office, and leaves dinner out. Detail for this one is in a later note.
-4. Brand positioning marks name clearance closed on 23 September 2026. The USPTO scan imported on 9 November found a live federal registration for LIFE MANAGER and says the name is not cleared. Detail for this one is in a later note.
+3. The product ladder does not match what is actually offered. Dinner is one of the five live checklists, but the ladder's entry list names first night, guests, one room, underwater, and office, and leaves dinner out. See [brand-niche-ladder.md](brand-niche-ladder.md).
+4. Brand positioning marks name clearance closed on 23 September 2026. The USPTO scan imported on 9 November found a live federal registration for LIFE MANAGER and says the name is not cleared. See [brand-niche-ladder.md](brand-niche-ladder.md).
 5. A careful reader cannot tell what is decided. [mission.md](../../vision/mission.md) still offers two mission statements. [business-model.md](../../business/business-model.md) still treats ADR-015 as the funnel rule, though that ADR is on hold. No customer interviews have been done, yet older audience pages still read as if willingness to pay is known.
 
 ## Index of the notes
@@ -22,9 +22,10 @@ These five will be revised if later areas change the picture. The first pass alr
 | [customer-profile.md](customer-profile.md) | November Bronco customer profile | 3 | In this commit |
 | [business-model.md](business-model.md) | Business model | 3 | In this commit |
 | [bronco-feedback-docs.md](bronco-feedback-docs.md) | Competitor scan and willingness-to-pay plan | 4 | In this commit |
-| [needs-charles.md](needs-charles.md) | Business decisions only | 7 questions so far | Running list, will grow |
+| [brand-niche-ladder.md](brand-niche-ladder.md) | Brand positioning, niche strategy, product ladder | 7 | In this commit |
+| [needs-charles.md](needs-charles.md) | Business decisions only | 11 questions so far | Running list, will grow |
 
-Later notes, not in the folder yet: brand positioning, niche strategy, and product ladder; copy workflows; social launch kit; 31 October copy-final; audience pages; 9 November Drive import.
+Later notes, not in the folder yet: copy workflows; social launch kit; 31 October copy-final; audience pages; 9 November Drive import.
 
 ## What I read and what I skipped
 

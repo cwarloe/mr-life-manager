@@ -16,4 +16,12 @@ These are business decisions, not wording fixes. I have not suggested a rewrite 
 
 7. Is the reserve-page threshold in [willingness-to-pay-plan.md](../../business/willingness-to-pay-plan.md), lines 84 to 85, still the line you want: at least 5% of parents-page visitors who see the offer, and at least 20 reservations, in about three weeks? The plan does not say whether that page currently has enough visitors for the test to measure willingness to pay rather than reach.
 
+8. Mid-tier products on [product-ladder.md](../../business/product-ladder.md), lines 108 to 118, including the 30-Day Life Reset at $79 and the couples Household Operating System at $99, are flagged as predating ADR-020 and not re-decided against it. Keep them, drop them, or revisit them? I am not suggesting a price.
+
+9. The flagship name and price are "not set" in [product-ladder.md](../../business/product-ladder.md), lines 97 to 106, while the historical section still discusses First Place at $39. Which stance should the docs use until a new decision is made? I am not suggesting a name or a price.
+
+10. Should name clearance stay marked closed, as in [brand-positioning.md](../../business/brand-positioning.md), line 362, and the 23 September 2026 addendum in [brand-name-scan.md](../../research/brand-name-scan.md), or should the docs show the yellow, not-cleared status from the USPTO scan in [research-chores-2026-09-16.md](../../research/research-chores-2026-09-16.md), which found a live federal registration for LIFE MANAGER?
+
+11. Are *The Floor*, *The Reset*, and *Travel Mode* in [niche-strategy.md](../../business/niche-strategy.md), lines 78 to 82, still candidate products, or should those names come out of the strategy doc until they are on the ladder?
+
 More questions will be added as the later review notes land.
