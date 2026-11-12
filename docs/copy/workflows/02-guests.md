@@ -123,7 +123,7 @@ This is the full page they follow, step by step. They see one step at a time on 
 
 Get these first: trash bags, a basket or a box, what you need to wash dishes (soap and a sponge), a cleaner and a cloth, a toilet brush, a clean hand towel, and a broom or vacuum.
 
-You're doing the sink, the room where you'll sit, one bathroom, and the floors in between. Nothing else. There's nothing to sign up for.
+You're doing the sink, the room where you'll sit, one bathroom, and the floors in between. Nothing else. You don't have to sign up for anything.
 
 ### Step 1: Tie up the kitchen trash and open a window.
 

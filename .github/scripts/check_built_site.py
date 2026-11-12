@@ -251,6 +251,14 @@ def main() -> int:
     if "finished-" in sitemap:
         problems.append("sitemap.xml: completion pages must stay out of search")
 
+    # Fonts are self-hosted (assets/fonts/); a Google Fonts link would send
+    # every visitor's IP to Google, which the privacy page doesn't disclose.
+    for path in sorted(OUT.rglob("*")):
+        if path.suffix in {".html", ".css", ".js"} and re.search(
+                r"fonts\.(?:googleapis|gstatic)\.com", path.read_text(encoding="utf-8")):
+            problems.append(f"{path.relative_to(OUT)}: loads Google Fonts; use the "
+                            "self-hosted fonts in assets/tokens.css")
+
     check_preview_site(OUT, problems)
     if problems:
         print("Built-site validation failed:", file=sys.stderr)

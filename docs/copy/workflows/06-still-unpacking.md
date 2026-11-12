@@ -120,7 +120,7 @@ This is the full page they follow, step by step. They see one step at a time on 
 
 Pick one room, the one you use most, like the kitchen or the bedroom. You'll unpack that one room today and no other.
 
-You'll need trash bags, scissors or a box cutter, a basket or a box for things you can't place yet, labels or paper and tape, a cloth, a broom or vacuum, and a way to get the empty boxes out of the house today. Keep the doorway clear. There's nothing to sign up for.
+You'll need trash bags, scissors or a box cutter, a basket or a box for things you can't place yet, labels or paper and tape, a cloth, a broom or vacuum, and a way to get the empty boxes out of the house today. Keep the doorway clear. You don't have to sign up for anything.
 
 ### Step 1: Decide where things in this room will live, and where the empty boxes will go.
 
