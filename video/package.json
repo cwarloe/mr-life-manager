@@ -1,0 +1,22 @@
+{
+  "name": "mlm-video",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Mr. Life Manager social videos (Remotion). Vertical 9:16 for phones.",
+  "scripts": {
+    "sync": "node scripts/sync.mjs",
+    "studio": "npm run sync && remotion studio src/index.ts",
+    "still": "npm run sync && remotion still src/index.ts",
+    "render": "npm run sync && remotion render src/index.ts"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.543",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "remotion": "4.0.543"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "typescript": "7.0.2"
+  }
+}
