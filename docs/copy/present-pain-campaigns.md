@@ -1,6 +1,6 @@
 # Present-pain campaigns: company tonight and a home you cannot start tackling
 
-**Status:** Recommended campaign copy after adversarial review, November 12, 2026. Copy direction is settled for production; the company-tonight scheduling dependency below remains. No live page, video, PDF, email or account changed. Proposed words are ours, not customer quotations. Recognition and response are untested. Based on the [felt-pain audit](../review/felt-pain-marketing/README.md), current [company task](../../products/landing/guests.html) and [reset task](../../products/landing/underwater.html).
+**Status:** Recommended campaign copy after adversarial review, November 12, 2026. Copy direction is settled for production; the company-tonight path is implemented as described below. No live page, video, PDF, email or account changed. Proposed words are ours, not customer quotations. Recognition and response are untested. Based on the [felt-pain audit](../review/felt-pain-marketing/README.md), current [company task](../../products/landing/guests.html) and [reset task](../../products/landing/underwater.html).
 
 The offer is help doing the work in a defined order, not a set of ideas to assess. Acquisition creative contains no checklist excerpt or instruction to perform an isolated step. It sends the person to the matching task, where they start or commit to an exact time to do it.
 
@@ -40,7 +40,7 @@ One CTA to the company task. No instructional preview, follow/save/comment reque
 
 > Get the sitting area, bathroom, sink and walking route ready, with the trash outside. The free company checklist takes you through the work in order. Allow about an hour, longer with a full sink. Open the profile link and start. If you're away, choose the exact time you'll start when you get home—with enough time before they arrive.
 
-**Matching destination:** https://mrlifemanager.com/guests.html?from=ig-company-tonight
+**Matching destination:** https://mrlifemanager.com/guests.html?when=tonight&from=ig-company-tonight
 
 The actual Instagram profile link must open that task. For a placement with a direct link, replace “Open the profile link” with “Open the company checklist.” Do not print a fake tappable button into a video.
 
@@ -174,3 +174,29 @@ Neither dependency requires another abstract copy-choice question. Resolve
 them in implementation, then use the recommended creative. Actual response
 and completed work remain untested; adversarial judgment cannot certify that
 any wording will stop scrolling or cause action.
+
+## Implemented landing path
+
+Company campaign link uses `?when=tonight&from=ig-company-tonight`. This
+repeats the tonight hook, asks the guest-arrival and preparation times on the
+reader's current local date, and requires a future start with at least the
+60-minute planning block before arrival. A backlog can require longer; this
+is not a finish guarantee. No tomorrow/weekend suggestions are offered on
+that path. Calendar return links preserve visit date, arrival, source, look
+and resumed step. A passed visit shows a general-company link instead of
+pretending the original visit is still tonight. Other company links retain
+general scheduling. Both active pages now use the recommended problem-led
+opening and task-specific Start action. The task instructions remain intact.
+
+The earlier implementation-boundary paragraphs describe the review findings;
+this section records their implementation, not proof of audience response.
+
+Implementation checks: six mobile integration tests cover exact calendar
+times, same-night validation, stale choices, reminder return and step resume,
+expired-visit recovery and both unchanged full six-step flows. Run after
+`python3 .github/scripts/build_site.py` with
+`python3 tests/test_campaign_flows.py` (Python Playwright plus Chromium;
+`CAMPAIGN_BROWSER` optionally selects the browser executable). Mobile
+screenshots were inspected and both pages still print on one Letter page.
+Actual calendar saves, Instagram account links and audience outcomes are not
+verified by these software checks.
