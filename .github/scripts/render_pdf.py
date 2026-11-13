@@ -29,6 +29,10 @@ CHROME_CANDIDATES = (
 
 GF_LINK = re.compile(
     r'<link[^>]+fonts\.(?:googleapis|gstatic)\.com[^>]*>\s*', re.I)
+# The site's own @font-face rules (tokens.css) point at /assets/fonts/, which a
+# staged file can't reach. Left in, they win over embedded-fonts.css and Chrome
+# falls back to system fonts, so they are dropped from inlined stylesheets.
+SITE_FONT_FACE = re.compile(r'@font-face\s*\{[^}]*url\(["\']?/assets/fonts/[^}]*\}\s*', re.I)
 # Local (non-CDN) stylesheet links — relative or same-origin path.
 LOCAL_CSS_LINK = re.compile(
     r'<link\b[^>]*\brel=["\']stylesheet["\'][^>]*\bhref=["\']([^"\']+)["\'][^>]*>\s*'
@@ -45,6 +49,10 @@ def find_chrome() -> str:
     which = shutil.which("google-chrome") or shutil.which("chromium")
     if which:
         return which
+    # Playwright's Chromium, whatever build number is installed.
+    pw = sorted(Path("/opt/pw-browsers").glob("chromium-*/chrome-linux*/chrome"))
+    if pw:
+        return str(pw[-1])
     sys.exit("chrome not found (tried " + ", ".join(CHROME_CANDIDATES) + ")")
 
 
@@ -69,7 +77,8 @@ def inline_local_stylesheets(html: str, src: Path) -> tuple[str, int]:
         if not css_path.is_file():
             sys.exit(f"{src}: missing stylesheet {href} ({css_path})")
         count += 1
-        return "<style>\n" + css_path.read_text(encoding="utf-8") + "\n</style>\n"
+        css = SITE_FONT_FACE.sub("", css_path.read_text(encoding="utf-8"))
+        return "<style>\n" + css + "\n</style>\n"
 
     return LOCAL_CSS_LINK.sub(repl, html), count
 
@@ -135,17 +144,20 @@ def render(src: Path, out: Path, zoom: float = 1.0) -> None:
     out.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory() as tmp:
         staged = Path(tmp) / src.name
+        draft = Path(tmp) / out.name
         staged.write_text(html)
         subprocess.run(
             [chrome, "--headless", "--disable-gpu", "--no-sandbox",
-             "--no-pdf-header-footer", f"--print-to-pdf={out}", str(staged)],
+             "--no-pdf-header-footer", f"--print-to-pdf={draft}", str(staged)],
             check=True, capture_output=True)
-    # Assert brand faces landed (Chrome can silently fall back without CDN).
-    blob = out.read_bytes()
-    missing = [f for f in (b"Archivo", b"SourceSerif4") if f not in blob]
-    if missing:
-        sys.exit(f"{out.name}: brand fonts missing from output "
-                 f"({', '.join(m.decode() for m in missing)}) — refusing to ship it")
+        # Assert brand faces landed (Chrome can silently fall back to system
+        # fonts). A refused render never replaces the committed PDF.
+        blob = draft.read_bytes()
+        missing = [f for f in (b"Archivo", b"SourceSerif4") if f not in blob]
+        if missing:
+            sys.exit(f"{out.name}: brand fonts missing from output "
+                     f"({', '.join(m.decode() for m in missing)}) — refusing to ship it")
+        shutil.move(str(draft), out)
 
     try:
         shown = out.relative_to(ROOT)

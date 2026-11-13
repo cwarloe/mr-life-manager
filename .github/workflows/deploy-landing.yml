@@ -24,10 +24,10 @@ on:
       - ".github/workflows/reuse-validate-build.yml"
   workflow_dispatch:
 
+# Read-only by default; only the deploy job gets the Pages write and OIDC token, so the validate job
+# (which runs repo scripts) never holds them.
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages
@@ -39,6 +39,10 @@ jobs:
 
   deploy:
     needs: validate
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

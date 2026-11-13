@@ -92,7 +92,8 @@ def validate_theme() -> None:
 
 
 def validate_markdown_links() -> tuple[int, int]:
-    files = sorted(ROOT.rglob("*.md"))
+    # Our own Markdown only: installed packages (video/node_modules) carry thousands of third-party READMEs.
+    files = sorted(p for p in ROOT.rglob("*.md") if "node_modules" not in p.parts)
     checked = 0
     pattern = re.compile(r"\[[^\]]*\]\(([^)]+)\)")
 

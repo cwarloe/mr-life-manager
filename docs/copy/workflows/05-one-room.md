@@ -117,7 +117,7 @@ This is the full page they follow, step by step. They see one step at a time on 
 
 Pick one part of the room and mark its edges before you move anything. It could be a workbench and the floor in front of it, a set of shelves and the floor in front of them, or a reading corner with a chair, a table and a clear path. Pick something you can handle by yourself. A wall of old papers or heavy equipment can wait for another day or for someone to help.
 
-You'll need bags, boxes you already have, labels or paper and tape, a cloth, a broom or vacuum, and a way to get the stuff you're getting rid of out of the house today. Keep the doorway clear. There's nothing to sign up for.
+You'll need bags, boxes you already have, labels or paper and tape, a cloth, a broom or vacuum, and a way to get the stuff you're getting rid of out of the house today. Keep the doorway clear. You don't have to sign up for anything.
 
 ### Step 1: Decide what this part of the room is for, and where the trash and donations will go.
 

@@ -26,6 +26,12 @@ pickers or the sitemap, so the link that office already has works. Time copy
 before the start button is one plain line ("Give it about an hour. Longer if
 the sink is full."), not a disclaimer (Charles: "stop being defensive").
 
+**Social videos, 2026-11-12:** vertical 27-second Remotion videos for phones, one
+per audience (students, career, military), in [`video/`](../video/README.md).
+The words are the flier lines under review and live only in
+`video/src/copy.ts`; colors and fonts come from `tokens.css`. Re-render after
+the copy review changes any line. No sound yet.
+
 **Copy under review, 2026-11-01:** Charles rejected the clipped copy ("the floor
 is clothes", "pick a time" with no object). The fliers, every screen from scan
 to finish, and the checklists are rewritten in plain speech in

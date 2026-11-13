@@ -121,7 +121,7 @@ This is the full page they follow, step by step. They see one step at a time on 
 
 ### Before you start
 
-Before you open more boxes, find your phone and key, your bedding, toilet paper, soap, a towel, your toothbrush and toothpaste. You need a bed or mattress that's put together, and a place to sit. If something is missing, getting it is part of tonight's work. There's nothing to sign up for.
+Before you open more boxes, find your phone and key, your bedding, toilet paper, soap, a towel, your toothbrush and toothpaste. You need a bed or mattress that's put together, and a place to sit. If something is missing, getting it is part of tonight's work. You don't have to sign up for anything.
 
 ### Step 1: Take photos of every room before you unpack more.
 

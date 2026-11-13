@@ -20,6 +20,7 @@ def main() -> int:
     scales = print_scales()
 
     failed = []
+    rendered = set()
     for src, stem in SHEETS:
         s = ROOT / src
         if not s.exists():
@@ -31,11 +32,16 @@ def main() -> int:
         if r.returncode:
             failed.append(f"{stem}: {r.stderr.strip() or r.stdout.strip()}")
         else:
+            rendered.add(stem)
             print(r.stdout.strip())
     # Record what each PDF was rendered from, so check_pdfs_fresh.py can tell
     # when a source has moved on without the printable being regenerated.
-    manifest = {stem: source_digest(ROOT / src, effective_zoom(stem, scales))
-                for src, stem in SHEETS if (ROOT / src).exists()}
+    # A sheet that failed keeps its old entry, so check_pdfs_fresh.py still
+    # reports it as stale.
+    path = OUT / ".sources.json"
+    manifest = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+    manifest.update({stem: source_digest(ROOT / src, effective_zoom(stem, scales))
+                     for src, stem in SHEETS if stem in rendered})
     (OUT / ".sources.json").write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n")
 
     if failed:

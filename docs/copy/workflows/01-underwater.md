@@ -123,7 +123,7 @@ This is the full page they follow, step by step. They see one step at a time on 
 
 Get these first: what you need to wash dishes (soap and a sponge), a cleaner and a cloth, trash bags, a basket or a box, a laundry hamper, and your phone. You'll make your bed with the sheets that are already on it. Washing the sheets is a job for another day.
 
-You're doing your kitchen, one main room, your bed, your dirty clothes and your mail. That's all. Don't clean the cabinets, the windows or any other rooms. There's nothing to sign up for.
+You're doing your kitchen, one main room, your bed, your dirty clothes and your mail. That's all. Don't clean the cabinets, the windows or any other rooms. You don't have to sign up for anything.
 
 ### Step 1: Wash the dishes and wipe down the kitchen.
 

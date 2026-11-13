@@ -116,7 +116,7 @@ This is the full page they follow, step by step. They see one step at a time on 
 
 ### Before you start
 
-The table and the chairs you need: that's the whole job. Leave the rest of the house alone. You'll need a trash bag, a cloth, and enough baskets or boxes to hold the loose stuff. There's nothing to sign up for.
+The table and the chairs you need: that's the whole job. Leave the rest of the house alone. You'll need a trash bag, a cloth, and enough baskets or boxes to hold the loose stuff. You don't have to sign up for anything.
 
 ### Step 1: Throw away the trash on the table.
 
