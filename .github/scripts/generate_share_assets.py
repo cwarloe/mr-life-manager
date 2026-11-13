@@ -3,13 +3,17 @@
 footer share QR used by The Week and the free guides.
 
 The footer QR is written to products/print/share-qr.svg and copied inline
-between the share-qr markers in every sheet listed in guide_inventory.SHEETS
+between the share-qr markers in every sheet in guide_inventory.SHARE_QR_SHEETS
 (render_pdf.py prints from a temp copy, so an <img> path would not resolve).
 validate_repo.py fails if an inline copy drifts from the committed SVG.
+
+Flyers (guide_inventory.FLYER_QRS) carry no share QR. Each gets one QR to one
+entry page, written between flyer-qr markers.
 """
 
 from __future__ import annotations
 
+import re
 from pathlib import Path
 
 import qrcode
@@ -21,7 +25,7 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen import canvas
 
-from guide_inventory import SHEETS
+from guide_inventory import FLYER_QRS, SHARE_QR_SHEETS
 from theme_tokens import palette
 from site_catalog import ORIGIN, PAUSED_ENTRY_ROUTES, required_share_images
 
@@ -32,6 +36,7 @@ SHARE_QR_URL = f"{ORIGIN}/"
 SHARE_QR_PATH = ROOT / "products" / "print" / "share-qr.svg"
 SHARE_QR_START = "<!-- share-qr:start -->"
 SHARE_QR_END = "<!-- share-qr:end -->"
+FLYER_QR_BLOCK = re.compile(r"<!-- flyer-qr:start -->.*?<!-- flyer-qr:end -->", re.DOTALL)
 
 # Colors come from tokens.css (the printables' palette), so a token change
 # reaches the share images and the handout on the next run.
@@ -117,7 +122,8 @@ def make_qr(url: str) -> Image.Image:
     return code.make_image(fill_color=INK, back_color="white").convert("RGB")
 
 
-def share_qr_svg(url: str) -> str:
+def share_qr_svg(url: str, css_class: str = "share-qr",
+                 label: str = "QR code for mrlifemanager.com") -> str:
     """One-path SVG of the footer QR: same library and error correction as
     make_qr, 2-module quiet zone, modules drawn in currentColor on white."""
     code = qrcode.QRCode(version=None, border=2, error_correction=qrcode.constants.ERROR_CORRECT_M)
@@ -137,8 +143,8 @@ def share_qr_svg(url: str) -> str:
                 x += 1
             runs.append(f"M{start} {y}h{x - start}v1h-{x - start}z")
     return (
-        f'<svg class="share-qr" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {size} {size}" '
-        f'role="img" aria-label="QR code for mrlifemanager.com" shape-rendering="crispEdges">'
+        f'<svg class="{css_class}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {size} {size}" '
+        f'role="img" aria-label="{label}" shape-rendering="crispEdges">'
         f'<rect width="{size}" height="{size}" fill="#fff"/>'  # theme-ok: QR must stay black on white for scanners
         f'<path fill="currentColor" d="{"".join(runs)}"/></svg>'
     )
@@ -148,7 +154,7 @@ def sync_share_qr(svg: str) -> int:
     """Write the committed SVG and refresh each sheet's inline copy."""
     SHARE_QR_PATH.write_text(svg + "\n")
     updated = 0
-    for src, _stem in SHEETS:
+    for src, _stem in SHARE_QR_SHEETS:
         path = ROOT / src
         html = path.read_text()
         if html.count(SHARE_QR_START) != 1 or html.count(SHARE_QR_END) != 1:
@@ -156,6 +162,22 @@ def sync_share_qr(svg: str) -> int:
         head, rest = html.split(SHARE_QR_START)
         _, tail = rest.split(SHARE_QR_END)
         new = f"{head}{SHARE_QR_START}{svg}{SHARE_QR_END}{tail}"
+        if new != html:
+            path.write_text(new)
+            updated += 1
+    return updated
+
+
+def sync_flyer_qrs() -> int:
+    """Refresh every flyer-qr block in each flyer with its one destination."""
+    updated = 0
+    for src, url in FLYER_QRS.items():
+        path = ROOT / src
+        html = path.read_text()
+        if not FLYER_QR_BLOCK.search(html):
+            raise SystemExit(f"{src}: no <!-- flyer-qr:start --> ... <!-- flyer-qr:end --> block")
+        svg = share_qr_svg(url, css_class="flyer-qr", label=f"QR code for {url}")
+        new = FLYER_QR_BLOCK.sub(lambda _m: f"<!-- flyer-qr:start -->{svg}<!-- flyer-qr:end -->", html)
         if new != html:
             path.write_text(new)
             updated += 1
@@ -258,6 +280,7 @@ def main() -> int:
         social_image(kicker, headline, SHARE_DIR / filename)
 
     qr_updates = sync_share_qr(share_qr_svg(SHARE_QR_URL))
+    flyer_updates = sync_flyer_qrs()
 
     PDF_PATH.parent.mkdir(parents=True, exist_ok=True)
     pdf = canvas.Canvas(str(PDF_PATH), pagesize=letter, pageCompression=1)
@@ -268,7 +291,8 @@ def main() -> int:
     pdf.save()
 
     print(f"Generated {len(SHARES)} social images and {PDF_PATH.relative_to(ROOT)}")
-    print(f"Wrote {SHARE_QR_PATH.relative_to(ROOT)}; refreshed the inline copy in {qr_updates} of {len(SHEETS)} sheets")
+    print(f"Wrote {SHARE_QR_PATH.relative_to(ROOT)}; refreshed the inline copy in {qr_updates} of {len(SHARE_QR_SHEETS)} sheets")
+    print(f"Refreshed flyer QR codes in {flyer_updates} of {len(FLYER_QRS)} flyers")
     return 0
 
 

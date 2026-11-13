@@ -8,7 +8,7 @@ from pathlib import Path
 from preview_site import build_preview
 from theme_tokens import palette
 
-from guide_inventory import GUIDES, LEGACY_GUIDE_SLUGS, PDF_TITLES, PAUSED_GUIDE_SLUGS, PUBLISHED_PDF_NAMES
+from guide_inventory import GUIDES, LEGACY_GUIDE_SLUGS, PDF_TITLES, PAUSED_GUIDE_SLUGS, PUBLISHED_PDF_NAMES, UNLISTED_PDFS
 from site_catalog import (
     ANALYTICS_DOMAIN,
     ENTRY_ROUTES,
@@ -312,6 +312,8 @@ def main() -> int:
     rows = []
     for pdf in pdfs:
         shutil.copy2(pdf, OUT / "print" / pdf.name)
+        if pdf.name in UNLISTED_PDFS:
+            continue  # published for posting, not offered to readers
         label = PDF_TITLES.get(pdf.name, pdf.stem.replace("-", " ").title())
         rows.append(f"<li><a class='file' href='/print/{pdf.name}'>{label}<span>PDF</span></a></li>")
     # Retired PDF names keep resolving (a PDF can't meta-refresh); unlisted.

@@ -13,8 +13,9 @@ Scans the site's sources (HTML, CSS, JS under products/) and the generators
 that write CSS or images (.github/scripts/*.py).
 
 A line that truly needs a literal says why in a comment containing
-"theme-ok: <reason>". The inline share QR (between the share-qr markers) is
-skipped: it is generated, and scanners need it black on white.
+"theme-ok: <reason>". The inline share QR (between the share-qr markers) and
+flyer QR (between the flyer-qr markers) are skipped: they are generated, and
+scanners need them black on white.
 PROTOTYPES are design galleries for options not yet picked: their counts are
 listed, not failed. When an option is chosen, move its values into tokens.css
 and drop the page from PROTOTYPES.
@@ -45,7 +46,7 @@ NAMED = re.compile(r"\b(?:color|background(?:-color)?|border(?:-[\w-]+)?|fill|st
 URI = re.compile(r"%23[0-9a-fA-F]{3,8}\b")
 FONT = re.compile(r"\bfont(?:-family)?\s*:\s*([^;}{\"']*(?:\"[^\"]*\"[^;}{\"']*)*)")
 FAMILY = re.compile(r"\"[^\"]+\"|\b(?:serif|sans-serif|monospace|cursive|system-ui|Arial|Helvetica|Impact|Georgia|Verdana|Times)\b")
-QR_BLOCK = re.compile(r"<!-- share-qr:start -->.*?<!-- share-qr:end -->", re.S)
+QR_BLOCK = re.compile(r"<!-- (?:share-qr|flyer-qr):start -->.*?<!-- (?:share-qr|flyer-qr):end -->", re.S)
 THEME_META = re.compile(r"<meta\b[^>]*name=[\"']theme-color[\"'][^>]*>")
 
 
