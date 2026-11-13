@@ -49,3 +49,20 @@ Use ordinal checks (missing / weak / adequate for pilot), not a numeric score im
 Measurement: distinguish reach/early retention, task visits, immediate starts, time choices, calendar-link clicks, returns, starts from reminders and acknowledged full finishes. Calendar-link clicks do not prove saves; page finishes do not independently prove physical work. Use the existing scorecard and audience tracker; avoid creating another reporting obligation.
 
 Suggest the smallest useful comparison. Low-volume observations cannot establish causal superiority. Ask whether fewer views but more completed tasks would be better; for this project they generally would.
+
+## Acquisition standard clarified November 12, 2026
+
+Read `docs/review/felt-pain-marketing/README.md` and the marketing-hooks section
+of `content/README.md`. Challenge whether the hook recognizes a specific
+problem and distress already present, rather than an aspiration, demographic,
+calendar event without unreadiness, or advice someone can agree with and save.
+An actual visit tonight plus an unready home is different from wanting to invite
+people someday. Ongoing overwhelm can be immediate without a deadline.
+Do not invent shame or universal emotional responses.
+
+For this acquisition campaign, remove instructional checklist previews.
+Recognition should lead to wanting help and opening the matching task, then
+starting or choosing the exact time to do it. Polished production, correct routes
+and readable text do not establish compelling marketing. Label creative judgment
+and audience evidence separately. The original rendered-video pilot verdict was
+limited and is superseded by this creative hold pending revised hooks.

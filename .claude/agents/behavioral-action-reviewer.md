@@ -32,3 +32,20 @@ Give a short verdict, a stage-by-stage friction map and the three most useful co
 Propose measurements that fit the existing infrastructure and label their limits. The calendar-added event is a link click; came-back is a return-URL load; finished is self-acknowledgment. Do not equate events with distinct people. A separate, optional later follow-up could test recurring independent action, but first establish the immediate outcome.
 
 Choose a test feasible for a small project. Avoid large experiments or assigning the owner a new research workload. Preserve reader dignity and consent.
+
+## Acquisition standard clarified November 12, 2026
+
+Read `docs/review/felt-pain-marketing/README.md` and the marketing-hooks section
+of `content/README.md`. Challenge whether the hook recognizes a specific
+problem and distress already present, rather than an aspiration, demographic,
+calendar event without unreadiness, or advice someone can agree with and save.
+An actual visit tonight plus an unready home is different from wanting to invite
+people someday. Ongoing overwhelm can be immediate without a deadline.
+Do not invent shame or universal emotional responses.
+
+For this acquisition campaign, remove instructional checklist previews.
+Recognition should lead to wanting help and opening the matching task, then
+starting or choosing the exact time to do it. Polished production, correct routes
+and readable text do not establish compelling marketing. Label creative judgment
+and audience evidence separately. The original rendered-video pilot verdict was
+limited and is superseded by this creative hold pending revised hooks.

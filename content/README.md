@@ -71,6 +71,36 @@ and talk, not the way AI copy sounds.
 - **Read it out loud.** If you wouldn't say it that way to a friend standing
   next to you, rewrite it.
 
+## Marketing hooks: recognition of an existing problem
+
+Charles, 2026-11-12. Acquisition copy names a specific situation the reader is
+already experiencing and wants help resolving now. An aspiration, demographic
+label, useful tip or attractive result alone does not establish that need.
+“Someone is coming over tonight and my place is not ready” has a real deadline;
+“Would you like to invite people over?” is a different, weaker acquisition premise.
+An ongoing distress can qualify without a deadline: a mess the reader feels
+unable to start addressing. Do not invent embarrassment or intensify shame.
+
+Review the whole entrance against four questions:
+
+- What is happening in their life now, and what concrete consequence bothers them?
+- What are they stuck on, and does the actual task resolve that obstacle?
+- Does the message invite “help me with this now,” or merely “good advice”?
+- Is the next move opening the matching task to start or select an exact time,
+  rather than reading tips, evaluating a checklist preview or saving for later?
+
+For this campaign, keep instructional previews out of acquisition creative.
+Show the problem and a credible bounded result; put the instructions in the
+execution experience. Do not remove essential scope, supplies, safety or honest
+time allowances just to increase clicks. Selecting a time is for doing the work,
+not deferring the decision to engage. Preserve contextual deadlines when true
+of the intended viewer; do not broaden them away merely to include more people.
+
+Recognition, urgency and completion are creative hypotheses until tested with
+readers. Reviewers should challenge these directly, not approve on route matching,
+legibility and politeness alone. Reference guides and post-completion teaching
+have different jobs; they need not become urgent acquisition messages.
+
 ## Building a new entry page
 
 **Copy an existing entry page and change the content. Do not build one from

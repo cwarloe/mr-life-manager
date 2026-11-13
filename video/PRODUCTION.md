@@ -1,5 +1,7 @@
 # Task-focused Instagram production
 
+**Creative hold after owner review, November 12, 2026.** Technical render QA remains valid, but these cuts do not meet the clarified present-distress acquisition standard. Do not publish them based on the earlier conditional pilot verdict below. See [felt-pain marketing audit](../docs/review/felt-pain-marketing/README.md). Revised hooks and removal of checklist previews come before another production pass.
+
 Four rendered drafts. Sound-off, 1080×1920, 30 fps, H.264/yuv420p. No presenter recording, music license or voiceover needed. Original audience compositions are preserved.
 
 | Composition | Export | Length | Task |
