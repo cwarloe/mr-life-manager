@@ -1,6 +1,6 @@
 # Present-pain campaigns: company tonight and a home you cannot start tackling
 
-**Status:** Copy draft for adversarial review, November 12, 2026. No live page, video, PDF, email or account changed. Proposed words are ours, not customer quotations. Recognition and response are untested. Based on the [felt-pain audit](../review/felt-pain-marketing/README.md), current [company task](../../products/landing/guests.html) and [reset task](../../products/landing/underwater.html).
+**Status:** Recommended campaign copy after adversarial review, November 12, 2026. Copy direction is settled for production; the company-tonight scheduling dependency below remains. No live page, video, PDF, email or account changed. Proposed words are ours, not customer quotations. Recognition and response are untested. Based on the [felt-pain audit](../review/felt-pain-marketing/README.md), current [company task](../../products/landing/guests.html) and [reset task](../../products/landing/underwater.html).
 
 The offer is help doing the work in a defined order, not a set of ideas to assess. Acquisition creative contains no checklist excerpt or instruction to perform an isolated step. It sends the person to the matching task, where they start or commit to an exact time to do it.
 
@@ -30,7 +30,7 @@ A leads with the real deadline, unreadiness and the specific obstacle the ordere
 > Your place isn't ready.
 > You don't know where to start.
 >
-> Get the rooms they'll use ready. Follow the work in order.
+> Get the rooms they'll use ready. We'll tell you what to do first and what comes next.
 >
 > Open the profile link. Start getting ready for tonight.
 
@@ -52,7 +52,7 @@ The actual Instagram profile link must open that task. For a placement with a di
 
 **Result and offer**
 
-> Get the spaces they'll use ready: a clear sitting area, a clean bathroom, an empty sink, swept floors where they'll walk, and the trash outside. Follow the checklist in order. The other rooms can wait.
+> Get the spaces they'll use ready: a clear sitting area, a clean bathroom, an empty sink, swept floors where they'll walk, and the trash outside. We'll tell you what to do first and what comes next. The other rooms can wait.
 
 **Time and preparation**
 
@@ -151,9 +151,26 @@ Review these drafts first on one question: **Does the intended person recognize 
 
 ## Adversarial review disposition
 
-The social-action-critic reviewed this draft against the owner's clarified
-standard. Both recommended hooks name a current unresolved problem and blocked
-start. Applied two corrections: lead the reset offer with usable rooms rather
-than the checklist container; distinguish the company result from the order of
-the work. The tonight scheduler remains an implementation dependency, not a
-copy-only fix. Ready for owner copy review, not published or audience-validated.
+The social-action-critic recommends hook A and the primary creative above for
+both campaigns. This is a production recommendation, not a question for Charles
+to decide again. Each names present distress, an obstacle the actual task
+addresses, a wanted result, and a direct start action.
+
+The company offer's procedural sentence is useful rather than a material
+marketing defect: the person does not know where to start, so being told what
+to do first and next is the help being offered. Lead that sentence with the
+result (rooms ready), as the recommended creative does. Additional abstract
+benefit language would dilute the current visit and create more copy without
+resolving a missing promise. Cut generic aspiration, checklist previews,
+demographic introductions and further synonym polishing.
+
+Keep the reset primary unchanged: it leads with the usable kitchen and main
+room, then explains how the help removes the ordering decision. Do not invent
+a visitor or a deadline for this ongoing problem.
+
+The company-tonight scheduler remains an implementation dependency, not a
+copy-only fix. The exact profile-link destination must match the campaign.
+Neither dependency requires another abstract copy-choice question. Resolve
+them in implementation, then use the recommended creative. Actual response
+and completed work remain untested; adversarial judgment cannot certify that
+any wording will stop scrolling or cause action.
