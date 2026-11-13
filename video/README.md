@@ -10,7 +10,13 @@ per audience, all from the same template:
 | `Promo-career` | `career-teal`, clean | mrlifemanager.com/career |
 | `Promo-military` | `military-navy`, Mission Board | mrlifemanager.com/military |
 
-## The story (about 27 seconds, no sound needed)
+## Action-conversion review
+
+The current audience overview compositions are reference drafts. The [adversarial review and task-specific video briefs](ACTION-REVIEW.md) identify problems with using the flyer/QR explanation directly as an Instagram Reel. Start the next production pass with the company and table cuts in that review: one felt problem, one concrete result and one matching task destination.
+
+Reusable reviewers are [social-action-critic](../.claude/agents/social-action-critic.md) and [behavioral-action-reviewer](../.claude/agents/behavioral-action-reviewer.md). They have been run against the source; their critique is not rendered-media QA or observed audience conversion. Review each new render and its actual start/schedule path before considering it ready for a small pilot.
+
+## The existing story (about 27 seconds, no sound needed)
 
 1. **Hook (3 s):** the flier's first line, e.g. "Living on your own for the first time?"
 2. **Three problems (10 s):** the flier's three problem lines, one at a time, in the reader's words.
