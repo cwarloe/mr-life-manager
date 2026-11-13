@@ -55,11 +55,7 @@ landing page, flier or ad through these questions:
 3. **Does it ask them to agree, or to act?** A line they nod at ("good point")
    but don't act on is a hook without a result. Insight is fine only when it
    leads straight into the action.
-4. **Does every word earn its place?** That isn't a call for clipped,
-   noun-less fragments to sound punchy or save space; write full sentences a
-   person would say. Long copy is fine, and the evidence says long copy can
-   sell well, when the length is what gets them to act now. Length to keep
-   them reading is not the goal.
+4. **Does every word earn its place?** Clarity takes priority over sentence completeness. Use complete sentences, short fragments, lists or labels when they make the next step clearest. Reject ambiguity and unnatural cleverness. Long copy is useful when it helps someone act; length to keep them reading is not the goal.
 
 This is a strong default, not a wall: a line that fails it can stay when you
 can say how it gets someone to act today.
@@ -71,9 +67,7 @@ and talk, not the way AI copy sounds.
   wondering what the time is for; "Pick a day and time to do the dishes"
   doesn't. Don't use "it," "this" or "them" unless the thing was named in the
   same sentence or the one just before.
-- **No clipped or clever lines.** "The floor is clothes" is not English; "There
-  are clothes all over the floor" is. No lists posing as sentences, no slogans,
-  no hiding the subject or object to sound punchy.
+- **Use the clearest form.** "The floor is clothes" obscures the situation; "There are clothes all over the floor" names it. A short label such as "Clear seats. Room to eat." can work when the context is obvious. Do not hide the subject or object just to sound punchy.
 - **Read it out loud.** If you wouldn't say it that way to a friend standing
   next to you, rewrite it.
 
