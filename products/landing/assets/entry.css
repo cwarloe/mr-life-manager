@@ -257,3 +257,22 @@ body.doing .nav .bail{display:block;width:100%;flex:0 0 100%;margin:0;min-height
   background:var(--second-soft);border-left:3px solid var(--second);padding:.75rem .9rem;margin:0 0 1.2rem!important}
 .bail-note[hidden]{display:none}
 .bail-note b{color:var(--second)}
+/* Commitment comes before preparation and instructions on campaign entrances.
+   JS adds the class; without JS, the complete printable page stays available. */
+@media screen{
+  body.commit-first:not(.doing) .steps,
+  body.commit-first:not(.doing) .frame,
+  body.commit-first:not(.doing) .warn,
+  body.commit-first:not(.doing) .stop,
+  body.commit-first:not(.doing) .after,
+  body.commit-first:not(.doing) .callout,
+  body.commit-first:not(.doing) .signup,
+  body.commit-first:not(.doing) footer,
+  body.commit-first .fork-alt{display:none}
+  body.commit-first.preparing .frame{display:block}
+  body.commit-first.preparing .fork,
+  body.commit-first.preparing .later,
+  body.commit-first.preparing .resume{display:none}
+  .prep-cancel{display:block}
+}
+@media print{.prep-start,.prep-cancel{display:none!important}}

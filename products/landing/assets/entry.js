@@ -178,9 +178,37 @@
       window.scrollTo(0, 0);
     }
     function startAt(n) { body.classList.add('doing'); show(n); }
-    function start() { startAt(0); }
+    var commitFirst = root.getAttribute('data-commit-first') === 'on';
+    if (commitFirst) {
+      body.classList.add('commit-first');
+      document.querySelectorAll('.exit').forEach(function (button) { button.textContent = 'Back to start or schedule'; });
+    }
+    function prepareAt(n) {
+      if (!commitFirst) { startAt(n); return; }
+      body.classList.add('preparing');
+      var frame = document.querySelector('.frame');
+      var ready = frame.querySelector('.prep-start');
+      if (!ready) {
+        ready = document.createElement('button');
+        ready.type = 'button'; ready.className = 'prep-start when-use';
+        ready.textContent = 'I have what I need. Start the checklist.';
+        frame.appendChild(ready);
+        var cancel = document.createElement('button');
+        cancel.type = 'button'; cancel.className = 'when-use prep-cancel';
+        cancel.textContent = 'Choose a day and time instead';
+        cancel.addEventListener('click', function () {
+          body.classList.remove('preparing');
+          document.querySelector('.go-later').click();
+        });
+        frame.appendChild(cancel);
+      }
+      ready.onclick = function () { body.classList.remove('preparing'); startAt(n); };
+      frame.scrollIntoView({block: 'start'});
+      ready.focus({preventScroll: true});
+    }
+    function start() { prepareAt(0); }
     function stop() {
-      body.classList.remove('doing');
+      body.classList.remove('doing', 'preparing');
       steps.forEach(function (s) { s.classList.remove('current'); });
       done.classList.remove('show');
       document.querySelector('.fork').scrollIntoView({block: 'center'});
@@ -205,18 +233,6 @@
       var MAX_MOVES = 2;
       var minutes = parseInt(root.getAttribute('data-minutes'), 10) || 40;
       var task = root.getAttribute('data-task') || document.title;
-      // Only the explicit campaign promises tonight. Other company entrances
-      // keep their existing day/time choices.
-      var tonightCampaign = guide === 'guests' && params.get('when') === 'tonight';
-      function localDay(d) {
-        return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
-      }
-      var visitDay = /^\d{4}-\d{2}-\d{2}$/.test(params.get('visitday') || '') ? params.get('visitday') : localDay(new Date());
-      var arrivalValue = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/.test(params.get('arrival') || '') ? params.get('arrival') : '';
-      if (tonightCampaign) {
-        document.querySelector('header.top h1').textContent = "Someone's coming over tonight. Your place isn't ready. You don't know where to start.";
-        document.querySelector('.go-later').textContent = "I'm away. Choose when I'll get ready tonight.";
-      }
       var moved = Math.min(parseInt(params.get('moved'), 10) || 0, MAX_MOVES);
       var firstAtHome = 0;
       while (firstAtHome < steps.length && steps[firstAtHome].hasAttribute('data-portable')) firstAtHome++;
@@ -239,10 +255,6 @@
         if (resumeAt > 0) q.push('step=' + (resumeAt + 1));
         if (/^[a-z0-9-]{1,40}$/.test(source || '')) q.push('from=' + encodeURIComponent(source));
         if (look) q.push('look=' + look);
-        if (tonightCampaign) {
-          q.push('when=tonight', 'visitday=' + visitDay);
-          if (arrivalValue) q.push('arrival=' + encodeURIComponent(arrivalValue));
-        }
         return location.origin + location.pathname + '?' + q.join('&');
       }
       function duration() {
@@ -316,30 +328,16 @@
           }).join('') + '</ol><p>Done? Now pick the time for the rest.</p></div>';
       }
       later.innerHTML = '<p class="bail-note" hidden></p>' + portableHtml +
-        '<h2>When will you do it?</h2>' +
-        '<p class="later-sub">Pick a day and a time. \u201cLater\u201d isn\u2019t a time.</p>' +
+        '<h2>' + (commitFirst ? 'When will you start the checklist?' : 'When will you do it?') + '</h2>' +
+        '<p class="later-sub">Choose the day and time you will start.</p>' +
         '<div class="when-picks"></div>' +
-        '<p class="when-own"><label>Or pick your own: <input type="datetime-local" class="when-input"></label> ' +
+        '<p class="when-own"><label>Day and time: <input type="datetime-local" class="when-input"></label> ' +
         '<button type="button" class="when-use">Use this time</button></p>' +
-        '<div class="decided" hidden></div>';
-      if (tonightCampaign) {
-        later.innerHTML = '<p class="bail-note" hidden></p>' +
-          '<h2>When will you get ready tonight?</h2>' +
-          '<p>Choose when you will be home to start. Reserve at least an hour before your guests arrive; a full sink or missing supplies can need longer. This is a planning block, not a guaranteed finish time.</p>' +
-          '<p class="when-own"><label>Guests arrive tonight: <input type="datetime-local" class="arrival-input when-input"></label></p>' +
-          '<p class="when-own"><label>Start getting ready tonight: <input type="datetime-local" class="when-input prep-input"></label></p>' +
-          '<button type="button" class="when-use">Use this preparation time</button>' +
-          '<p class="schedule-error" role="alert" hidden></p><div class="decided" hidden></div>';
-        later.querySelector('.arrival-input').value = arrivalValue;
-        later.querySelectorAll('input').forEach(function (input) {
-          input.min = visitDay + 'T00:00'; input.max = visitDay + 'T23:59';
-          input.addEventListener('input', function () { later.querySelector('.decided').hidden = true; });
-        });
-      }
+        '<p class="schedule-error" role="alert" hidden></p><div class="decided" hidden></div>';
       fork.parentNode.insertBefore(later, fork.nextSibling);
 
       var picks = later.querySelector('.when-picks');
-      (tonightCampaign ? [] : choices()).forEach(function (c) {
+      (commitFirst ? [] : choices()).forEach(function (c) {
         var b = document.createElement('button');
         b.type = 'button';
         b.innerHTML = '<span class="when-name">' + c[0] + '</span><span class="when-time">' +
@@ -347,35 +345,26 @@
         b.addEventListener('click', function () { track('time-picked', {choice: c[0]}); decide(c[1]); });
         picks.appendChild(b);
       });
+      later.querySelector('.when-input').addEventListener('input', function () { later.querySelector('.decided').hidden = true; });
       later.querySelector('.when-use').addEventListener('click', function () {
-        var v = later.querySelector(tonightCampaign ? '.prep-input' : '.when-input').value;
+        var v = later.querySelector('.when-input').value;
         var d = v ? new Date(v) : null;
-        if (tonightCampaign && !validTonight(d)) return;
-        if (!d || isNaN(d) || d <= new Date()) { later.querySelector('.when-input').focus(); return; }
+        var error = later.querySelector('.schedule-error');
+        if (!d || isNaN(d) || d <= new Date()) {
+          later.querySelector('.decided').hidden = true;
+          error.textContent = 'Choose a future day and time to start the checklist.';
+          error.hidden = false; later.querySelector('.when-input').focus(); return;
+        }
+        error.hidden = true;
         track('time-picked', {choice: 'Custom'});
         decide(d);
       });
-
-      function validTonight(when) {
-        var arrivalInput = later.querySelector('.arrival-input');
-        var arrival = new Date(arrivalInput.value);
-        var error = later.querySelector('.schedule-error');
-        var message = '';
-        if (localDay(new Date()) !== visitDay) message = 'This visit date has passed. Open the general company checklist to plan another visit.';
-        else if (!arrivalInput.value || isNaN(arrival) || localDay(arrival) !== visitDay || arrival <= new Date()) message = 'Choose a future arrival time tonight.';
-        else if (!when || isNaN(when) || localDay(when) !== visitDay || when <= new Date()) message = 'Choose a future time tonight when you will be home to start.';
-        else if (when.getTime() + minutes * 60000 > arrival.getTime()) message = 'Leave at least an hour between starting and their arrival. A backlog can need longer. If that time is unavailable, this full task may not fit before the visit.';
-        error.textContent = message; error.hidden = !message;
-        if (message) { later.querySelector('.decided').hidden = true; return false; }
-        arrivalValue = arrivalInput.value;
-        return true;
-      }
 
       function decide(when) {
         var url = returnUrl(moved);
         var box = later.querySelector('.decided');
         var href = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(invite(when, url));
-        box.innerHTML = '<h2>That\u2019s decided.</h2>' +
+        box.innerHTML = '<h2>Save your start time.</h2>' +
           '<p class="decided-when">' + esc(label(when)) + '</p>' +
           '<p>Put it on your calendar now, so it comes back to you at that time with the steps ready.</p>' +
           '<p class="decided-btns">' +
@@ -387,7 +376,6 @@
         box.hidden = false;
         ['ics', 'google'].forEach(function (kind) {
           box.querySelector('.cal-' + kind).addEventListener('click', function (event) {
-            if (tonightCampaign && !validTonight(when)) { event.preventDefault(); return; }
             track('calendar-added', {kind: kind});
           });
         });
@@ -404,19 +392,6 @@
       }
 
       function openLater() { later.hidden = false; later.scrollIntoView({block: 'start'}); }
-      var expiredVisit = tonightCampaign && (visitDay !== localDay(new Date()) || (arrivalValue && new Date(arrivalValue) <= new Date()));
-      if (expiredVisit) {
-        document.querySelector('header.top h1').textContent = 'Get your place ready for company.';
-        var expired = document.createElement('p');
-        expired.className = 'bail-note';
-        expired.textContent = 'The visit time has passed. You can still use the steps, or plan another visit with the general company checklist. ';
-        var general = document.createElement('a');
-        var generalUrl = new URL(location.href);
-        ['when', 'visitday', 'arrival', 'resume', 'step', 'moved'].forEach(function (key) { generalUrl.searchParams.delete(key); });
-        general.href = generalUrl.pathname + generalUrl.search; general.textContent = 'Plan another visit';
-        expired.appendChild(general); fork.parentNode.insertBefore(expired, fork);
-        goLater.hidden = true;
-      }
       var bailNote = later.querySelector('.bail-note');
       var bailNoteText = root.getAttribute('data-bail-note') || '';
       goLater.addEventListener('click', function () {
@@ -466,11 +441,7 @@
       var card = document.createElement('section');
       card.className = 'resume';
       var where = firstAtHome ? 'You\u2019re picking up at step ' + (firstAtHome + 1) + '.' : 'Step one is ready.';
-      if (expiredVisit) {
-        card.innerHTML = '<h2>You can still use the checklist.</h2>' +
-          '<p>The original visit time has passed. Use the steps now, or use Plan another visit below to choose a new preparation time.</p>' +
-          '<p class="resume-btns"><button type="button" class="resume-start">Use the steps now</button></p>';
-      } else if (moved >= MAX_MOVES) {
+      if (moved >= MAX_MOVES) {
         card.innerHTML = '<h2>This is the time you picked.</h2>' +
           '<p>You\u2019ve moved it twice already. Either start now, or let this one go.</p>' +
           '<p class="resume-btns"><button type="button" class="resume-start">Start now</button>' +
@@ -486,7 +457,7 @@
       track('came-back', {moved: String(moved), step: String(firstAtHome + 1)});
       card.querySelector('.resume-start').addEventListener('click', function () {
         track('started-from-reminder', {moved: String(moved)});
-        startAt(firstAtHome);
+        prepareAt(firstAtHome);
       });
       var move = card.querySelector('.resume-move');
       if (move) move.addEventListener('click', function () {

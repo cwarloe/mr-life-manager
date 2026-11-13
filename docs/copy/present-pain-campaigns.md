@@ -1,6 +1,42 @@
 # Present-pain campaigns: company tonight and a home you cannot start tackling
 
-**Status:** Recommended campaign copy after adversarial review, November 12, 2026. Copy direction is settled for production; the company-tonight path is implemented as described below. No live page, video, PDF, email or account changed. Proposed words are ours, not customer quotations. Recognition and response are untested. Based on the [felt-pain audit](../review/felt-pain-marketing/README.md), current [company task](../../products/landing/guests.html) and [reset task](../../products/landing/underwater.html).
+**Status:** Superseded in part by the owner's approved commitment-first wording below, November 12, 2026. Older draft/review sections are retained as history; their arrival-time restrictions no longer apply. No new videos or social posts. Recognition and response remain untested.
+
+## Current approved opening and flow
+
+Company:
+
+> Someone's coming over. Your place isn't ready.
+>
+> Follow the checklist to get your place ready. Allow about an hour—a full sink can take longer.
+>
+> When will you start?
+>
+> [I'm home. Start the checklist now.]
+>
+> [Choose a day and time to start the checklist.]
+
+Reset follows the same structure:
+
+> The dishes are piled up. There are clothes all over the floor. You don't know where to start.
+>
+> Follow the checklist to get your place back under control. Allow about an hour and a half—a backlog of dishes or mail can take longer.
+>
+> When will you start?
+>
+> [I'm home. Start the checklist now.]
+>
+> [Choose a day and time to start the checklist.]
+
+The first choice reveals supplies and bounded task scope, followed by a start button. The second reveals one specific day/time picker and then the calendar-save action. The instructions are withheld from the initial decision screen. Both tasks retain all six steps, calendar return, mid-task resume and one-page printing. Without JavaScript the full reading/printing page remains available.
+
+Only the start time is requested. The hour/90-minute guidance is advice, not a constraint; users can start in a few minutes or choose another day. No guest-arrival picker, before-visit calculation or tonight restriction. Old `when=tonight`, `arrival` and `visitday` links remain usable but do not impose the retired rules; new reminder links omit those parameters. Source/look and resumed step remain preserved.
+
+Canonical company campaign destination: https://mrlifemanager.com/guests.html?from=ig-company-profile
+
+Canonical reset destination: https://mrlifemanager.com/underwater.html?from=ig-home-reset
+
+The following sections document the earlier drafts and review history, rather than instructions to restore their superseded restrictions.
 
 The offer is help doing the work in a defined order, not a set of ideas to assess. Acquisition creative contains no checklist excerpt or instruction to perform an isolated step. It sends the person to the matching task, where they start or commit to an exact time to do it.
 

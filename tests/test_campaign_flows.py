@@ -49,92 +49,112 @@ class CampaignFlows(unittest.TestCase):
         self.context.close()
         self.assertEqual(self.errors, [])
 
-    def open_tonight(self, extra=''):
-        self.page.goto(self.origin + '/guests.html?when=tonight&from=ig-company-tonight&look=career-teal' + extra)
-        self.page.locator('.go-later').click()
+    def open_task(self, slug='guests', query=''):
+        self.page.goto(self.origin + '/' + slug + '.html' + query)
 
-    def select_times(self, start='2026-11-12T18:00', arrival='2026-11-12T19:30'):
-        self.page.locator('.arrival-input').fill(arrival)
-        self.page.locator('.prep-input').fill(start)
-        self.page.locator('.when-use').click()
+    def start_checklist(self):
+        self.page.locator('.go-do').click()
+        self.assertTrue(self.page.locator('.frame').is_visible())
+        self.assertTrue(self.page.locator('.steps').is_hidden())
+        self.page.locator('.prep-start').click()
+        self.assertTrue(self.page.locator('.step.current').is_visible())
 
-    def test_tonight_links_return_to_task_and_current_step(self):
-        self.open_tonight()
-        self.assertEqual(self.page.locator('.when-picks button').count(), 0)
-        self.assertIn('tonight', self.page.locator('h1').inner_text())
-        self.select_times()
-        self.assertTrue(self.page.locator('.decided').is_visible())
-        ics = unquote(self.page.locator('.cal-ics').get_attribute('href')).replace('\r\n ', '')
-        self.assertIn('DTSTART:20261113T010000Z', ics)
-        self.assertIn('DTEND:20261113T020000Z', ics)
-        url = next(line[4:] for line in ics.splitlines() if line.startswith('URL:'))
-        q = parse_qs(urlsplit(url).query)
-        for key, value in {'resume':'1','when':'tonight','visitday':'2026-11-12','arrival':'2026-11-12T19:30','from':'ig-company-tonight','look':'career-teal'}.items():
-            self.assertEqual(q[key], [value])
-        google = parse_qs(urlsplit(self.page.locator('.cal-google').get_attribute('href')).query)
-        self.assertEqual(google['dates'], ['20261113T010000Z/20261113T020000Z'])
-        self.assertIn(url, google['details'][0])
-        self.page.goto(url)
-        self.page.locator('.resume-start').click()
-        self.assertIn('Bag the kitchen trash', self.page.locator('.step.current h2').inner_text())
-        self.page.locator('.nav .next').click()
-        self.page.locator('.nav .bail').click()
-        self.select_times()
-        ics = unquote(self.page.locator('.cal-ics').get_attribute('href')).replace('\r\n ', '')
-        self.assertIn('step=2', ics)
+    def choose_time(self, value='2026-11-13T18:00'):
+        self.page.locator('.when-input').fill(value)
+        self.page.locator('.later .when-use').click()
 
-    def test_rejects_past_tomorrow_and_insufficient_lead_time(self):
-        self.open_tonight()
-        for start, arrival, message in [
-            ('2026-11-13T18:00','2026-11-13T20:00','arrival'),
-            ('2026-11-12T16:00','2026-11-12T20:00','future time'),
-            ('2026-11-12T19:00','2026-11-12T19:30','at least an hour'),
-            ('2026-11-12T20:00','2026-11-12T19:30','at least an hour')]:
-            self.select_times(start, arrival)
-            self.assertTrue(self.page.locator('.decided').is_hidden())
-            self.assertIn(message, self.page.locator('.schedule-error').inner_text())
-
-    def test_changes_invalidate_old_calendar_links(self):
-        self.open_tonight()
-        self.select_times()
-        self.page.locator('.arrival-input').fill('2026-11-12T18:15')
-        self.assertTrue(self.page.locator('.decided').is_hidden())
-
-    def test_expired_return_does_not_claim_tonight(self):
-        for suffix in ['&resume=1&visitday=2026-11-11&arrival=2026-11-11T20:00',
-                       '&resume=1&visitday=2026-11-12&arrival=2026-11-12T16:00']:
-            self.page.goto(self.origin + '/guests.html?when=tonight' + suffix)
-            self.assertNotIn('tonight', self.page.locator('h1').inner_text())
-            self.assertTrue(self.page.locator('.go-later').is_hidden())
-            self.assertEqual(self.page.locator('.resume-move').count(), 0)
-            self.assertNotIn('This is the time you picked', self.page.locator('.resume').inner_text())
-            self.assertTrue(self.page.get_by_role('link', name='Plan another visit').is_visible())
-            self.page.get_by_role('link', name='Plan another visit').click()
-            self.assertNotIn('when=', self.page.url)
-
-    def test_midnight_blocks_reusing_open_form(self):
-        self.open_tonight()
-        self.select_times()
-        self.page.clock.set_fixed_time(datetime.fromisoformat('2026-11-13T07:01:00+00:00'))
-        self.page.locator('.when-use').click()
-        self.assertIn('visit date has passed', self.page.locator('.schedule-error').inner_text())
-        self.assertTrue(self.page.locator('.decided').is_hidden())
-
-    def test_generic_company_and_reset_keep_full_execution(self):
-        for slug, heading, cta in [('guests','Someone\'s coming over.', 'Start getting ready'), ('underwater','The dishes are piled up.', 'Start the reset')]:
-            self.page.goto(self.origin + '/' + slug + '.html')
-            self.assertIn(heading, self.page.locator('h1').inner_text())
-            self.assertIn(cta, self.page.locator('.go-do').inner_text())
-            self.assertEqual(self.page.locator('.step').count(), 6)
-            self.page.locator('.go-later').click()
-            self.assertGreater(self.page.locator('.when-picks button').count(), 0)
-            self.page.locator('.when-picks button').first.click()
-            self.assertTrue(self.page.locator('.cal-ics').is_visible())
-            self.page.locator('.go-do').click()
+    def test_both_openings_put_commitment_before_instructions(self):
+        for slug in ['guests', 'underwater']:
+            self.open_task(slug)
+            self.assertIn('Follow the checklist', self.page.locator('.sub').inner_text())
+            self.assertIn('Allow about', self.page.locator('.sub').inner_text())
+            self.assertIn('When will you start?', self.page.locator('.fork').inner_text())
+            self.assertTrue(self.page.locator('.steps').is_hidden())
+            self.assertTrue(self.page.locator('.frame').is_hidden())
+            self.assertLess(self.page.locator('.go-later').bounding_box()['y'], 844)
+            self.start_checklist()
             for _ in range(6):
                 self.page.locator('.nav .next').click()
             self.assertTrue(self.page.locator('.done .complete').is_visible())
             self.assertLessEqual(self.page.evaluate('document.documentElement.scrollWidth'), 390)
+
+    def test_one_picker_accepts_tomorrow_and_short_notice(self):
+        for query in ['', '?when=tonight&visitday=2026-11-01&arrival=2026-11-01T19:00']:
+            self.open_task(query=query)
+            self.page.locator('.go-later').click()
+            self.assertEqual(self.page.locator('input[type="datetime-local"]').count(), 1)
+            self.assertEqual(self.page.locator('.arrival-input').count(), 0)
+            self.assertEqual(self.page.locator('.when-picks button').count(), 0)
+            for value in ['2026-11-12T17:05', '2026-11-13T18:00']:
+                self.choose_time(value)
+                self.assertTrue(self.page.locator('.decided').is_visible())
+                self.assertIn('Save your start time', self.page.locator('.decided').inner_text())
+
+    def test_invalid_times_and_edits_hide_old_calendar_links(self):
+        self.open_task()
+        self.page.locator('.go-later').click()
+        for value in ['', '2026-11-12T16:00']:
+            self.choose_time(value)
+            self.assertTrue(self.page.locator('.decided').is_hidden())
+            self.assertIn('future day and time', self.page.locator('.schedule-error').inner_text())
+        self.choose_time()
+        self.page.locator('.when-input').fill('2026-11-14T18:00')
+        self.assertTrue(self.page.locator('.decided').is_hidden())
+
+    def test_calendar_roundtrip_and_mid_task_resume(self):
+        self.open_task(query='?from=ig-company-tonight&look=career-teal&when=tonight')
+        self.page.locator('.go-later').click()
+        self.choose_time()
+        def invite():
+            return unquote(self.page.locator('.cal-ics').get_attribute('href')).replace('\r\n ', '')
+        ics = invite()
+        self.assertIn('DTSTART:20261114T010000Z', ics)
+        self.assertIn('DTEND:20261114T020000Z', ics)
+        url = next(line[4:] for line in ics.splitlines() if line.startswith('URL:'))
+        q = parse_qs(urlsplit(url).query)
+        self.assertEqual(q['resume'], ['1'])
+        self.assertEqual(q['from'], ['ig-company-tonight'])
+        self.assertEqual(q['look'], ['career-teal'])
+        self.assertNotIn('arrival', q)
+        self.assertNotIn('visitday', q)
+        self.assertNotIn('when', q)
+        google = parse_qs(urlsplit(self.page.locator('.cal-google').get_attribute('href')).query)
+        self.assertEqual(google['dates'], ['20261114T010000Z/20261114T020000Z'])
+        self.assertIn(url, google['details'][0])
+        self.page.goto(url)
+        self.page.locator('.resume-start').click()
+        self.page.locator('.prep-start').click()
+        self.page.locator('.nav .next').click()
+        self.page.locator('.nav .bail').click()
+        self.choose_time()
+        ics = invite()
+        self.assertIn('step=2', ics)
+        url = next(line[4:] for line in ics.splitlines() if line.startswith('URL:'))
+        self.page.goto(url)
+        self.page.locator('.resume-start').click()
+        self.page.locator('.prep-start').click()
+        self.assertIn('Empty the sink', self.page.locator('.step.current h2').inner_text())
+
+    def test_preparation_can_return_to_scheduling(self):
+        self.open_task('underwater')
+        self.page.locator('.go-do').click()
+        self.page.locator('.prep-cancel').click()
+        self.assertTrue(self.page.locator('.later').is_visible())
+        self.assertTrue(self.page.locator('.frame').is_hidden())
+
+    def test_other_tasks_and_print_remain_available(self):
+        self.open_task('dinner')
+        self.assertTrue(self.page.locator('.frame').is_visible())
+        self.page.locator('.go-do').click()
+        self.assertTrue(self.page.locator('.step.current').is_visible())
+        self.page.locator('.nav .bail').click()
+        self.assertGreater(self.page.locator('.when-picks button').count(), 0)
+        import re
+        for slug in ['guests', 'underwater']:
+            self.open_task(slug)
+            self.page.evaluate('document.fonts.ready')
+            pdf = self.page.pdf(format='Letter', print_background=True)
+            self.assertEqual(len(re.findall(rb'/Type /Page\b', pdf)), 1)
 
 if __name__ == '__main__':
     unittest.main()

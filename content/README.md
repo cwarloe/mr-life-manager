@@ -101,6 +101,22 @@ readers. Reviewers should challenge these directly, not approve on route matchin
 legibility and politeness alone. Reference guides and post-completion teaching
 have different jobs; they need not become urgent acquisition messages.
 
+### Commitment-first checklist entrance
+
+Charles, November 12, 2026: company and home-reset entrances name the current
+problem, explicitly offer the checklist, state the planning allowance and
+backlog caveat upfront, then ask when the reader will start. Use “I'm home.
+Start the checklist now.” and “Choose a day and time to start the checklist.”
+Reveal supplies and full task scope after Start, before the first instruction;
+reveal one start-date/time picker after Schedule. Keep the opening free of
+instructional previews and unrelated reading. Printing and no-JavaScript
+access still expose the full task.
+
+Collect the commitment time only. Do not ask for guest arrival, enforce a gap,
+or restrict preparation to tonight. An hour is guidance, not a booking rule.
+A reader who recognizes the problem may choose today, tomorrow or another day.
+The hook's purpose is recognition; it does not justify controlling their schedule.
+
 ## Building a new entry page
 
 **Copy an existing entry page and change the content. Do not build one from
