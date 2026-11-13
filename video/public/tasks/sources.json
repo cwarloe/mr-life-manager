@@ -1,0 +1,17 @@
+{
+  "source_sha256": {
+    "products/landing/guests.html": "7d18b14dd8adf4658d34aebfa40da744c02e1144afd9ed685e3353fbaee580a2",
+    "products/landing/dinner.html": "a17ae65a7f5597ee8f482cf9ae3c3e0bca78aa500e0cbfcbcb785960b247166c",
+    "products/landing/first-night.html": "7f3a9fca2cb7924c3d7153e6f349113a00123353fa689c9b2b618032fc753d2d",
+    "products/landing/assets/entry.js": "b24535aca7208044bafd8f658461387583c98230822e34a434e0f99715e15f40",
+    "products/landing/assets/entry.css": "6a15d4d2afa88d85a8fa884ba9bd5744e7d1e1d0b8760a1f6ceac4c250cd3226",
+    "products/landing/assets/tokens.css": "04a47e1795ad2bf00e813ed6bd93941868801071fdaade76e1006a3943d70e69"
+  },
+  "viewport": {
+    "width": 540,
+    "height": 800,
+    "deviceScaleFactor": 2
+  },
+  "selector": ".step.current",
+  "mode": "after .go-do; document.fonts.ready"
+}

@@ -1,6 +1,6 @@
 # Mr. Life Manager social videos
 
-Vertical (9:16, 1080x1920, 30 fps, about 27 seconds) videos for phones: Reels,
+Vertical (9:16, 1080x1920, 30 fps) videos for phones: Reels,
 Shorts and TikTok. Built with [Remotion](https://www.remotion.dev/). One video
 per audience, all from the same template:
 
@@ -10,11 +10,15 @@ per audience, all from the same template:
 | `Promo-career` | `career-teal`, clean | mrlifemanager.com/career |
 | `Promo-military` | `military-navy`, Mission Board | mrlifemanager.com/military |
 
+## Current production cuts
+
+Four task-focused, sound-off cuts are rendered: company (two hooks), table and first-night. See [PRODUCTION.md](PRODUCTION.md) for compositions, matching captions, routes, render commands and QA. The original audience compositions remain as reference drafts.
+
 ## Action-conversion review
 
 The current audience overview compositions are reference drafts. The [adversarial review and task-specific video briefs](ACTION-REVIEW.md) identify problems with using the flyer/QR explanation directly as an Instagram Reel. Start the next production pass with the company and table cuts in that review: one felt problem, one concrete result and one matching task destination.
 
-Reusable reviewers are [social-action-critic](../.claude/agents/social-action-critic.md) and [behavioral-action-reviewer](../.claude/agents/behavioral-action-reviewer.md). They have been run against the source; their critique is not rendered-media QA or observed audience conversion. Review each new render and its actual start/schedule path before considering it ready for a small pilot.
+Reusable reviewers are [social-action-critic](../.claude/agents/social-action-critic.md) and [behavioral-action-reviewer](../.claude/agents/behavioral-action-reviewer.md). The initial review was source-only; the new production pass includes sampled rendered-frame review, documented in PRODUCTION.md. Neither establishes audience conversion. Review each new render and its actual start/schedule path before considering it ready for a small pilot.
 
 ## The existing story (about 27 seconds, no sound needed)
 
@@ -30,7 +34,7 @@ the apps put their buttons and captions.
 
 ## Words
 
-All wording is in [`src/copy.ts`](src/copy.ts) and nowhere else. **It is draft
+Original audience wording is in [`src/copy.ts`](src/copy.ts). Task-cut wording is in [`src/action-copy.ts`](src/action-copy.ts), with shared scene labels in `ActionPromo.tsx`. **It is draft
 wording:** the lines come from the fliers under review in
 [`docs/copy/`](../docs/copy/README.md). When reviewers change a line there,
 change it in `copy.ts` too, then re-render. It follows the copy rules in
