@@ -11,7 +11,7 @@ and [ADR-015](../../../planning/decisions.md#adr-015--the-win-comes-before-the-e
 
 | | When | Ask | Size |
 |---|---|---|---|
-| 1 | Immediate | The Week, plus one named action | ten minutes |
+| 1 | Immediate | The Week, plus one named action | one weekly plan |
 | 2 | Day 3 | The same thing, smaller | the sink |
 | 3 | Day 7 | Nothing. One question. | one word |
 | — | After | **Stop.** | — |
@@ -32,15 +32,15 @@ in the page's own words.
 
 **Subject:** Here's the thing worth printing
 
-> You got the house back to livable tonight. Here's how to keep it that way.
+> The reset checklist covers the kitchen, one main room, your bed, dirty clothes and waiting mail. Here's a weekly sheet to maintain finished areas and plan what still needs doing.
 >
 > https://mrlifemanager.com/print/the-week.pdf
 >
-> It's one page, and it's Dave's whole system. The top of it is ten minutes you do before bed — empty the sink, wipe the counters, walk one lap and put things back. Underneath that there's one job for each day, and two days with nothing on them at all.
+> It's one page, adapted from Dave's weekly schedule. The top is a nightly close-out: empty the sink, wipe the counters and table, and return things to their homes. Below are weekly jobs with space to write your start times. Cross out spaces you don't have, and finish the applicable jobs by Sunday evening.
 >
 > Print it and stick it inside a cabinet door.
 >
-> The two empty days are the important part. This isn't a system that needs you to be different. It's a system that assumes some days you've got nothing left.
+> Friday and Sunday have no extra scheduled job. The nightly close-out still applies. Other rooms, sorting the clutter baskets and paying bills remain separate work; write the next job and its time in the reset space.
 >
 > — Charles
 
@@ -52,13 +52,13 @@ in the page's own words.
 
 **Subject:** The shorter version
 
-> Ten minutes a night is the right answer, and it's also more than most people can start with. That's my fault for leading with it.
+> A full nightly close-out can be more than you can take on tonight. Here's one job with a clear finish.
 >
 > So here's the version that fits anywhere.
 >
 > Just empty the sink before you go to bed. That's it.
 >
-> It takes about four minutes most nights. Skip the counters, skip the lap around the room. Just the sink.
+> Allow time for the dishes you actually have, including soaking or handwashing. Leave the sink empty; the counters and putting things away are separate jobs tonight.
 >
 > It does the most work of anything on that page, because a kitchen with an empty sink looks under control even if nothing else has been touched — and walking into that in the morning changes how the day starts.
 >

@@ -31,9 +31,9 @@ Shrinks unconditionally. Nobody is branched on opens or clicks. A **reply** or a
 >
 > https://mrlifemanager.com/print/the-week.pdf
 >
-> It's one page, and it's Dave's whole system. The top of it is the ten minutes you do before bed — empty the sink, wipe the counters, walk one lap and put things back. Underneath that there's one job for each day of the week, and two days with nothing on them at all.
+> It's one page, adapted from Dave's weekly schedule. The top is a nightly close-out: empty the sink, wipe the counters and table, and return things to their homes. Below are weekly jobs with space to write your start times. Cross out spaces you don't have, and finish the applicable jobs by Sunday evening.
 >
-> Don't start it yet. You've got boxes. But stick it inside a cabinet door now, while you're still deciding where things go, because it's a lot easier to build a place around a routine than to add one later later.
+> Use the nightly close-out in the areas you have already set up. The rest still needs a reset before maintenance can keep it that way. Use the space on the sheet to name one unfinished area, what finished means, and when you will do it.
 >
 > Now, about tomorrow.
 >

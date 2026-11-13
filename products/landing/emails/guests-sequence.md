@@ -15,8 +15,8 @@ Per-entry sequences (not one site-wide welcome) per [ADR-015](../../../planning/
 
 | | When | Ask | Size |
 |---|---|---|---|
-| 1 | Immediate | The Week (one page), plus one named action | ~10 min |
-| 2 | Day 3 | The same thing, smaller | ~4 min |
+| 1 | Immediate | The Week (one page), plus one named action | one weekly plan |
+| 2 | Day 3 | The same thing, smaller | the sink |
 | 3 | Day 7 | Nothing. One question. | one word |
 | — | After | **Stop.** | — |
 
@@ -30,15 +30,15 @@ of the sequence and into a conversation. Nothing else does.
 
 **Subject:** Here's the thing worth printing
 
-> You already did the hard part tonight, so I'm not going to send you a copy of it. You won't need that page again if this works.
+> The guest-area checklist and a weekly routine do different jobs. Here is the sheet for keeping the areas you have finished usable.
 >
-> Here's what I'd print instead.
+> Here's the one page I'd print.
 >
 > https://mrlifemanager.com/print/the-week.pdf
 >
-> It's one page, and it's Dave's whole system. The top of it is the ten minutes you do before bed — empty the sink, wipe the counters, walk one lap and put things back. Underneath that there's one job for each day of the week, and two days with nothing on them at all.
+> It's one page, adapted from Dave's weekly schedule. The top is a nightly close-out: empty the sink, wipe the counters and table, and return things to their homes. Below are weekly jobs with space to write your start times. Cross out spaces you don't have, and finish the applicable jobs by Sunday evening.
 >
-> Print it and stick it inside a cabinet door. It's what keeps you from having to rush like tonight again.
+> Print it and stick it inside a cabinet door. Your guest area is ready; other areas and the temporary clutter basket may still need work. Use the reset space to name the next job, its finish, and its start time.
 >
 > — Charles
 
@@ -50,13 +50,13 @@ of the sequence and into a conversation. Nothing else does.
 
 **Subject:** The shorter version
 
-> I think ten minutes a night is the right answer, but I also think it's more than most people can start with. That's my fault for leading with it.
+> A full nightly close-out can be more than you can take on tonight. Here's one job with a clear finish.
 >
 > So here's the version that fits anywhere.
 >
 > Just empty the sink before you go to bed. That's it.
 >
-> It takes about four minutes most nights. You can skip the counters and skip the lap around the room. Just do the sink.
+> Allow time for the dishes you actually have, including soaking or handwashing. Leave the sink empty; the counters and putting things away are separate jobs tonight.
 >
 > It's the one that does the most work. A kitchen with an empty sink looks under control even if you haven't touched anything else, and walking into that in the morning changes how the whole day starts.
 >

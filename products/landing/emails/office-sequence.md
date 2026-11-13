@@ -12,7 +12,7 @@ and [ADR-015](../../../planning/decisions.md#adr-015--the-win-comes-before-the-e
 
 | | When | Ask | Size |
 |---|---|---|---|
-| 1 | Immediate | The Week, plus the end-of-day ten minutes | ten minutes |
+| 1 | Immediate | The Week, plus the end-of-day close-out | one close-out |
 | 2 | Day 3 | The same thing, smaller | one drawer |
 | 3 | Day 7 | Nothing. One question. | a few words |
 | — | After | **Stop.** | — |
@@ -32,9 +32,9 @@ every day, so the desk refills unless the tray actually gets emptied.
 >
 > https://mrlifemanager.com/print/the-week.pdf
 >
-> It's one page, and it's Dave's whole system. He wrote it for a home, but the top of it works anywhere: ten minutes at the end of the day putting everything back where it lives.
+> It's one page, adapted from Dave's weekly schedule for a home. Its useful idea for a desk is an end-of-day close-out: return current tools and papers to their authorized homes.
 >
-> At work, that means the last ten minutes before you leave. Empty the tray, file what's done, and put back anything that's out. The desk should look tomorrow morning the way it looks right now.
+> Before you leave, file completed material under your workplace rules and put current tools away. Keep pending work in its authorized place with the owner and next action recorded. Allow the time the job needs; a paper backlog is separate reset work.
 >
 > Print it and pin it somewhere you'll see it at the end of the day.
 >

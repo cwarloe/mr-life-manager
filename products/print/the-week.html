@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Dave's week on one page. The nightly ten minutes, and one job a day.">
+<meta name="description" content="A one-page weekly checklist: maintain areas you have reset, schedule remaining reset work, and finish your household jobs.">
 <title>The Week</title>
 <link rel="stylesheet" href="../landing/assets/tokens.css">
 <style>
@@ -70,6 +70,26 @@ h1{font-size:30pt;font-weight:800;letter-spacing:-.03em;margin:0;line-height:.95
 /* Footer share QR (generate_share_assets.py). Secondary: small, corner, no copy. */
 .credit .share{display:flex;align-items:center;gap:.4rem;text-align:right;white-space:nowrap}
 .share-qr{display:block;flex:none;width:.44in;height:.44in;color:var(--qr-ink)}
+
+.setup{margin:.35rem 0 0;font-family:var(--font-text);font-size:9pt;line-height:1.35}
+.setup p{margin:.15rem 0}
+.write{display:inline-block;border-bottom:1px solid var(--ink);min-width:1.05in;min-height:.16in}
+.write.long{min-width:2.45in}
+.box{display:inline-block;width:.11in;height:.11in;border:1px solid var(--ink);vertical-align:baseline;margin-right:.06in}
+.days th.d{width:.85in}
+.days th.when{width:1.05in}
+.days td.day{font-size:11.5pt}
+.days td.job{font-size:10pt}
+.days td.when{font-family:var(--font-text);font-size:8.4pt;white-space:nowrap}
+.days td.when .write{min-width:.85in}
+.daily-check{font-family:var(--font-ui);font-size:8pt;margin:.3rem 0 0;word-spacing:.06in}
+.reset{margin:.4rem 0 0;border:2px solid var(--second);border-radius:3px;padding:.4rem .55rem}
+.reset h2{margin:0 0 .14rem;font-size:11pt}
+.reset p{margin:.12rem 0;font-family:var(--font-text);font-size:8.8pt;line-height:1.3}
+.rules{grid-template-columns:1fr 1.3fr;margin:.35rem 0 0}
+.one p{font-size:11.5pt}
+.credit{font-size:7.7pt;margin-top:.35rem}
+
 @media screen{
   body{padding:2rem 1rem;background:var(--desk)}
   .sheet{background:var(--paper);padding:.5in;box-shadow:var(--shadow-sheet)}
@@ -81,46 +101,57 @@ h1{font-size:30pt;font-weight:800;letter-spacing:-.03em;margin:0;line-height:.95
 
   <header>
     <h1>The Week</h1>
-    <p class="brand">Mr. Life Manager<span>Dave's system, on one page</span></p>
+    <p class="brand">Mr. Life Manager<span>Adapted from Dave's weekly schedule</span></p>
   </header>
 
-  <section class="nightly">
-    <p class="lab">Every night, before bed · about ten minutes</p>
-    <div class="three">
-      <div><span class="n">1</span><span class="t">Empty the sink<em>Completely. Dishwasher or washed.</em></span></div>
-      <div><span class="n">2</span><span class="t">Wipe the counters<em>And the table you eat at.</em></span></div>
-      <div><span class="n">3</span><span class="t">One lap<em>Put back anything not where it lives.</em></span></div>
-    </div>
-    <p class="whenever">This is the anchor. Ten minutes tonight lets you run your week half-asleep. Skip it for four days, and tomorrow morning turns into an emergency cleanup project.</p>
+  <section class="setup">
+    <p><b>Week ending Sunday:</b> <span class="write"></span></p>
+    <p>Use the nightly routine in areas already reset. A room or pile still needing its first reset is separate work; name the next area and its finish below. Keep the areas you have finished usable while you tackle the rest.</p>
   </section>
 
+  <section class="nightly">
+    <p class="lab">Every night, before bed</p>
+    <div class="three">
+      <div><span class="n">1</span><span class="t">Empty the sink<em>Wash or load the dishes. Leave the sink empty.</em></span></div>
+      <div><span class="n">2</span><span class="t">Wipe the counters<em>And the table you eat at. Leave them usable.</em></span></div>
+      <div><span class="n">3</span><span class="t">Put things away<em>Return loose items to their known homes.</em></span></div>
+    </div>
+    <p class="whenever">Time your full close-out once and allow that time each night. A dish backlog or belongings without homes need reset work, not a faster lap. Check a night only when its close-out is finished.</p>
+    <p class="daily-check"><span class="box"></span>Mon <span class="box"></span>Tue <span class="box"></span>Wed <span class="box"></span>Thu <span class="box"></span>Fri <span class="box"></span>Sat <span class="box"></span>Sun</p>
+  </section>
+
+  <p class="setup">Cross out spaces you do not have. Keep every applicable job, move days to fit your week, and write the start times. These are maintenance jobs after the relevant area has been reset.</p>
   <table class="days">
-    <thead><tr><th class="d">Day</th><th>The one job, on top of the nightly ten minutes</th></tr></thead>
+    <thead><tr><th class="d">Done / day</th><th>The job and its finish</th><th class="when">Start day / time</th></tr></thead>
     <tbody>
-      <tr><td class="day">Monday</td><td class="job">Floors<em>Sweep, vacuum or mop. Dust what needs it — blinds, mirrors, shelves. Include the entry and stairs.</em></td></tr>
-      <tr><td class="day">Tuesday</td><td class="job">Laundry, start to finish<em>Wash, dry, fold, and put it away the same day. Folded and left in the basket doesn't count.</em></td></tr>
-      <tr><td class="day">Wednesday</td><td class="job">Bedroom and the main bathroom<em>Floors, surfaces, mirror, toilet, sink, tub. Check whether the windows need doing.</em></td></tr>
-      <tr><td class="day">Thursday</td><td class="job">The kitchen, properly<em>Appliances, cabinet fronts, and clear the old food out of the fridge. Wipe the shelves while it's empty.</em></td></tr>
-      <tr class="rest"><td class="day">Friday</td><td class="job">Nothing extra. Just the nightly ten.</td></tr>
-      <tr><td class="day">Saturday</td><td class="job">The other bathroom, and the car<em>Second bathroom top to bottom. Sweep the garage. Clear out the car and the trunk.</em></td></tr>
-      <tr class="rest"><td class="day">Sunday</td><td class="job">Nothing extra. Just the nightly ten.</td></tr>
+      <tr><td class="day"><span class="box"></span>Mon</td><td class="job">Floors and dusting<em>Clean the floors and dusty surfaces in the areas you maintain, including your entry and any stairs.</em></td><td class="when"><span class="write"></span></td></tr>
+      <tr><td class="day"><span class="box"></span>Tue</td><td class="job">Laundry, start to finish<em>Schedule the loads you need. Wash, dry, fold or hang, and put them in their homes. Allow for transfers and drying.</em></td><td class="when"><span class="write"></span></td></tr>
+      <tr><td class="day"><span class="box"></span>Wed</td><td class="job">Bedroom and main bathroom<em>Clean the floors and surfaces, toilet, sink, mirror and tub or shower. Check whether the windows need cleaning.</em></td><td class="when"><span class="write"></span></td></tr>
+      <tr><td class="day"><span class="box"></span>Thu</td><td class="job">Kitchen<em>Clean appliance surfaces and cabinet fronts. Check fridge food using its storage guidance; clean spills and shelves as needed.</em></td><td class="when"><span class="write"></span></td></tr>
+      <tr><td class="day"><span class="box"></span>Sat</td><td class="job">Other spaces you have<em>Clean a second bathroom, return items and sweep the garage, and clear and clean the car as needed. Cross out only those you do not have.</em></td><td class="when"><span class="write"></span></td></tr>
+      <tr class="rest"><td class="day">Fri / Sun</td><td class="job" colspan="2">No extra scheduled job. Finish the nightly close-out.</td></tr>
     </tbody>
   </table>
 
+  <section class="reset">
+    <h2>One unfinished reset: give it a finish and a time</h2>
+    <p><b>Area or basket:</b> <span class="write long"></span> <b>Start:</b> <span class="write"></span></p>
+    <p><b>Finished means:</b> <span class="write long"></span> <b>Finish by:</b> <span class="write"></span></p>
+    <p>A temporary basket is not a storage home. Put its contents in known homes, choose homes for what remains, and complete any trash or donation handoff. If help or supplies are missing, write that next action and its time first.</p>
+  </section>
+
   <div class="rules">
     <div class="one">
-      <p class="lab">If you only do one thing</p>
+      <p class="lab">If you only do one thing tonight</p>
       <p>Empty the sink before bed.</p>
     </div>
     <div class="swap">
-      <p>Swap days whenever life gets in the way. <b>Just get all five jobs done before
-      Sunday night.</b> You pick the day—just don't skip the finish line.</p>
+      <p><b>Finish the applicable weekly jobs by Sunday evening.</b> Swap days without losing the finish. Leave an unfinished job unchecked and give its remaining work a specific next time.</p>
     </div>
   </div>
 
   <p class="credit">
-    <span><b>Before any of this works</b>, the place has to start at zero once —
-    everything with a home, nothing left to deal with later. Then this keeps it there.</span>
+    <span>Our adaptation of Dave's weekly schedule: reset an area, give things homes, then maintain it. Use suitable cleaning methods and follow product and appliance directions.</span>
     <span class="share"><span><b>mrlifemanager.com</b><br>Free to copy and share. Not for resale.</span>
     <!-- share-qr:start --><svg class="share-qr" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" role="img" aria-label="QR code for mrlifemanager.com" shape-rendering="crispEdges"><rect width="29" height="29" fill="#fff"/><path fill="currentColor" d="M2 2h7v1h-7zM10 2h4v1h-4zM15 2h4v1h-4zM20 2h7v1h-7zM2 3h1v1h-1zM8 3h1v1h-1zM13 3h1v1h-1zM15 3h2v1h-2zM20 3h1v1h-1zM26 3h1v1h-1zM2 4h1v1h-1zM4 4h3v1h-3zM8 4h1v1h-1zM12 4h2v1h-2zM16 4h1v1h-1zM20 4h1v1h-1zM22 4h3v1h-3zM26 4h1v1h-1zM2 5h1v1h-1zM4 5h3v1h-3zM8 5h1v1h-1zM10 5h3v1h-3zM15 5h2v1h-2zM18 5h1v1h-1zM20 5h1v1h-1zM22 5h3v1h-3zM26 5h1v1h-1zM2 6h1v1h-1zM4 6h3v1h-3zM8 6h1v1h-1zM10 6h2v1h-2zM15 6h4v1h-4zM20 6h1v1h-1zM22 6h3v1h-3zM26 6h1v1h-1zM2 7h1v1h-1zM8 7h1v1h-1zM10 7h1v1h-1zM13 7h2v1h-2zM18 7h1v1h-1zM20 7h1v1h-1zM26 7h1v1h-1zM2 8h7v1h-7zM10 8h1v1h-1zM12 8h1v1h-1zM14 8h1v1h-1zM16 8h1v1h-1zM18 8h1v1h-1zM20 8h7v1h-7zM10 9h3v1h-3zM14 9h1v1h-1zM16 9h3v1h-3zM2 10h1v1h-1zM6 10h1v1h-1zM8 10h4v1h-4zM19 10h5v1h-5zM26 10h1v1h-1zM2 11h1v1h-1zM5 11h2v1h-2zM13 11h7v1h-7zM22 11h2v1h-2zM25 11h1v1h-1zM2 12h2v1h-2zM5 12h1v1h-1zM8 12h3v1h-3zM13 12h1v1h-1zM16 12h2v1h-2zM19 12h1v1h-1zM21 12h1v1h-1zM23 12h2v1h-2zM2 13h4v1h-4zM9 13h6v1h-6zM16 13h2v1h-2zM19 13h4v1h-4zM24 13h2v1h-2zM2 14h2v1h-2zM6 14h1v1h-1zM8 14h1v1h-1zM10 14h1v1h-1zM12 14h3v1h-3zM17 14h1v1h-1zM19 14h3v1h-3zM23 14h4v1h-4zM2 15h2v1h-2zM5 15h2v1h-2zM10 15h3v1h-3zM14 15h2v1h-2zM17 15h2v1h-2zM22 15h1v1h-1zM25 15h1v1h-1zM6 16h1v1h-1zM8 16h1v1h-1zM10 16h1v1h-1zM12 16h4v1h-4zM17 16h1v1h-1zM20 16h5v1h-5zM5 17h1v1h-1zM7 17h1v1h-1zM9 17h4v1h-4zM14 17h1v1h-1zM17 17h1v1h-1zM19 17h1v1h-1zM21 17h2v1h-2zM24 17h2v1h-2zM2 18h2v1h-2zM6 18h1v1h-1zM8 18h1v1h-1zM10 18h1v1h-1zM12 18h3v1h-3zM16 18h1v1h-1zM18 18h7v1h-7zM10 19h1v1h-1zM12 19h3v1h-3zM16 19h1v1h-1zM18 19h1v1h-1zM22 19h1v1h-1zM2 20h7v1h-7zM10 20h1v1h-1zM13 20h4v1h-4zM18 20h1v1h-1zM20 20h1v1h-1zM22 20h1v1h-1zM2 21h1v1h-1zM8 21h1v1h-1zM11 21h1v1h-1zM13 21h2v1h-2zM18 21h1v1h-1zM22 21h5v1h-5zM2 22h1v1h-1zM4 22h3v1h-3zM8 22h1v1h-1zM10 22h5v1h-5zM18 22h7v1h-7zM2 23h1v1h-1zM4 23h3v1h-3zM8 23h1v1h-1zM11 23h3v1h-3zM15 23h2v1h-2zM18 23h4v1h-4zM24 23h3v1h-3zM2 24h1v1h-1zM4 24h3v1h-3zM8 24h1v1h-1zM12 24h4v1h-4zM18 24h3v1h-3zM23 24h1v1h-1zM25 24h1v1h-1zM2 25h1v1h-1zM8 25h1v1h-1zM12 25h1v1h-1zM14 25h1v1h-1zM16 25h2v1h-2zM19 25h7v1h-7zM2 26h7v1h-7zM10 26h1v1h-1zM12 26h3v1h-3zM17 26h1v1h-1zM19 26h2v1h-2zM24 26h3v1h-3z"/></svg><!-- share-qr:end --></span>
   </p>

@@ -11,7 +11,7 @@ and [ADR-015](../../../planning/decisions.md#adr-015--the-win-comes-before-the-e
 
 | | When | Ask | Size |
 |---|---|---|---|
-| 1 | Immediate | The Week, plus one named action | ten minutes |
+| 1 | Immediate | The Week, plus one named action | one weekly plan |
 | 2 | Day 3 | The same thing, smaller | one shelf |
 | 3 | Day 7 | Nothing. One question. | a few words |
 | — | After | **Stop.** | — |
@@ -26,15 +26,15 @@ think the next zone has to be another whole afternoon, and never start it.
 
 **Subject:** Here's the thing worth printing
 
-> You finished one zone. Here's what stops the next one filling up.
+> One usable zone is the starting point for maintaining that zone. Here is the weekly sheet, with a place to plan the next unfinished area.
 >
 > https://mrlifemanager.com/print/the-week.pdf
 >
-> It's one page, and it's Dave's whole system. The top is ten minutes before bed — empty the sink, wipe the counters, walk one lap and put things back. Underneath there's one job a day, and two days with nothing on them.
+> It's one page, adapted from Dave's weekly schedule. The top is a nightly close-out: empty the sink, wipe the counters and table, and return things to their homes. Below are weekly jobs with space to write your start times. Cross out spaces you don't have, and finish the applicable jobs by Sunday evening.
 >
 > Print it and stick it inside a cabinet door.
 >
-> It has nothing to do with the room you just did, and that's the point. Rooms fill up because things have nowhere to go, and the ten minutes is where things go.
+> Keep the zone you have reset usable by returning things to their homes. The sheet does not assume the rest of the house is organized. Name the next area, its finish and its start time before taking it apart.
 >
 > — Charles
 

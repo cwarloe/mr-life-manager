@@ -1,0 +1,27 @@
+# The Week: source-based review and revision
+
+November 12, 2026. Internal editorial review, not evidence of reader outcomes or typical completion times. The printable is our adaptation of Dave's method; it is not a verbatim Dave document or his entire system. Original documents in `source-material/` were not changed.
+
+## What needed fixing
+
+| Original issue | Evidence and related work | Change |
+|---|---|---|
+| Whole home must start at zero, with nothing left, before the sheet can help | Dave's [weekly schedule](../../source-material/2009-11-04-dave-webster-weekly-schedule.md), preface I.B, explicitly requires initial cleaning before maintenance. The current [company](../landing/guests.html), [reset](../landing/underwater.html) and [one-zone](../landing/one-room.html) tasks deliberately leave work outside their boundaries. The [2014 analysis](../../source-material/2014-01-15-analysis.md), 10:42–11:49 and 30:01–30:25, records staged preparation and temporary placement. | Retain reset-before-maintenance for the relevant area. Maintain the areas already reset, and name a separate unfinished reset with a visible finish, start and deadline. This staged bridge is our application, not a new quotation from Dave. |
+| Universal ten-minute close-out and four missed days causing an emergency | The raw weekly source establishes nightly work, not a ten-minute completion guarantee or a four-day threshold. [How Often Should I…?](../checklists/how-often/how-often-should-i.html) already says to time the complete routine and allow longer for a dish backlog. | Remove both claims. Ask the reader to time their full close-out and allow that time; identify a backlog or missing homes as reset work. |
+| A lap around the home could become shuffling piles | The weekly source says everything has its place and surfaces are for use. [Principles 15, 17, 18](../../frameworks/dave-principles.md) preserve known homes and useful access. Company and reset tasks explicitly leave temporary baskets as separate sorting work. | Return items to known homes. Name a basket/area in the reset section; give its contents homes and complete outgoing handoffs. A temporary basket is not a finished storage system. |
+| Generic tasks assume a second bathroom, garage and car | Dave's original schedule is specific to Charles's home. The [2014 analysis](../../source-material/2014-01-15-analysis.md) shows Dave asking about actual use and storage before prescribing. | Cross out spaces not present, retain every applicable job, and write actual start times. No instruction to clean a nonexistent space and no invitation to omit necessary work merely because it is optional. |
+| A schedule without places to commit or mark completion | Weekly-source preface I.B allows swapping days but keeps the Sunday finish. [Principle 23](../../frameworks/dave-principles.md) traces dated work to house goals and the recorded specific action. | Add week-ending date, nightly completion boxes, weekly job completion boxes and start lines, and next-reset start/finish fields. A box means the job is finished, not merely started. |
+| Laundry could stop at the clean basket | Dave's Tuesday includes washing, drying, folding and putting away. [Laundry, Solved](../checklists/laundry/laundry-solved.html) distinguishes machine time, transfers and actual storage. | Keep the full cycle and homes as the finish. Schedule the required loads and allow transfer/drying time rather than promising one universal duration. |
+| PDF offer and emails promise a different product | Source signup blocks and Email 1 describe ten minutes and “Dave's whole system”; sink Email 2 promises four minutes. | Align the four active email-source sequences, the paused office sequence, related source signup paragraphs and the actual completion template. Keep the existing PDF destination, one PDF link in Email 1, sequence timing and form wiring. Remove routine/sink time guarantees and label the sheet an adaptation. |
+
+## What remains Dave's method
+
+The nightly sink, counters/table and returning things; meaningful homes for items; reset before maintenance; flexible weekly days with a Sunday finish; and laundry completed through putting away all trace to the 2009 weekly source. We did not replace the routine with a trivial task or turn scheduling alone into completion. The sink-only fallback remains a single smaller job, not completion of the nightly or weekly checklist.
+
+The checkboxes, start-time blanks, explicitly bounded transition from our entry tasks and source-linked explanations are our editorial/worksheet adaptations. The printed weekly rows preserve Dave's home-care categories but allow absent spaces to be crossed out. General label/appliance guidance comes from the existing task/guide approach; no new food-storage interval or technical cleaning method was introduced.
+
+## Delivery and verification boundary
+
+The source edits do not change MailerLite's saved automation text. A downstream operator must sync the revised source email paragraphs without adding links or changing cadence. The existing PDF URL stays `/print/the-week.pdf`; replacing that file updates what its link opens.
+
+The parent production pass regenerates the one-page PDF, tunes scale, checks embedded fonts and source freshness, inspects the render, and runs repository/build checks. Representative household completion times, routine adherence and outcomes remain untested. We did not audit unrelated claims in every historical sequence note or broaden the work into the paused guide library.
