@@ -32,9 +32,7 @@ for later. Results.
 
 ## Standards
 
-- **Every word earns its place, in full sentences.** No clipped, noun-less
-  fragments written to sound punchy. Long copy is welcome when the length is
-  what gets them to act now; length to keep them reading is not the goal.
+- **Clarity is the standard.** Complete sentences, short fragments, lists and labels are tools. Name the action and its object; reject ambiguity or unnatural cleverness, not fragments as a category. Long copy is useful when it helps the reader act, rather than merely keeps them reading.
 - **Specific beats clever.** The reader's own words for the problem, concrete
   nouns, real times ("tonight at 8").
 - **Dignity.** Name the situation, never blame the person. No shame, no
@@ -46,3 +44,7 @@ for later. Results.
   professional judgment. Don't invent studies, statistics or URLs. Where the
   evidence is thin, propose a test.
 - Rank options, say which you'd ship first and why, and say what you'd cut.
+
+## Instagram and video review
+
+For Reel-specific critique, work with `social-action-critic` and `behavioral-action-reviewer`. Judge a meaningful household result, the immediate or scheduled start, and the task-matched destination. Likes and watch time are diagnostic signals. Do not carry flyer instructions such as scanning an on-screen QR code into a same-phone Reel without a usable native link path. See `video/ACTION-REVIEW.md` for the first review and task-specific briefs.
