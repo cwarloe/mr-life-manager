@@ -8,6 +8,7 @@ folder for reviewers.** Nothing in here is on the live site yet.
 |---|---|
 | [`social-launch-kit.md`](social-launch-kit.md) | Static social post drafts, matching task destinations, source labels, and publishing handoff. Builds on the workflows below; clarity and completed tasks govern the copy. |
 | [`workflow-wording.md`](workflow-wording.md) | The overview: the three fliers side by side, the decisions made, and what reviewers should check. |
+| [`side-quest.md`](side-quest.md) | Proposal (2026-11-16): a one-tap "do you have the staples?" check and a time-boxed side quest to get ready, so the calendar picker doesn't commit someone to a job they can't do yet. Mock: [`side-quest-mock.png`](side-quest-mock.png). |
 | [`workflows/`](workflows/) | **Start here.** Six files, one per workflow. Each one covers the whole path for one problem: the flier line, the page after the scan, picking a day and time, the calendar reminder, the full checklist, and the finish page. Each has a Word copy too. |
 
 **Rules the copy follows:** the act-now filter and the plain-speech rule in
