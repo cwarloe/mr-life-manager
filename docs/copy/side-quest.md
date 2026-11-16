@@ -1,6 +1,6 @@
 # Side quest: the "are you ready?" step (proposal)
 
-**Status:** Proposal for review, 2026-11-16. Nothing here is on the site. Wording
+**Status:** Proposal for review, 2026-11-16. **One decision made:** no hard lock; the kit check never blocks anyone from starting. Nothing here is on the site. Wording
 is draft and follows the plain-speech rule in
 [`content/README.md`](../../content/README.md).
 **Picture of the flow:** [side-quest-mock.png](side-quest-mock.png) (student look; four screens).
@@ -44,6 +44,8 @@ switch those pages to "Pre-flight check" or "Kit check" with the same screens.
 | **A. A gate before the fork** | A kit screen in front of "home or not home" | Simple to explain | Adds a tap for every reader, including the ones who have everything. People scanning a flier are already not home; making them answer first loses the most starts. |
 | **B. Inside each branch** | Home: check at step 1. Not home: suggest it after they pick a time | Nothing in the way | Two different pieces of code and wording |
 | **C. One kit check with three doors (recommended)** | The same kit check, reachable from (1) a quiet third link under the two buttons, (2) a "step 0" if they tap Start without checking, and (3) a suggestion after they pick a time | One component, nothing blocks anyone, ready people lose no taps | The third link has to be quiet enough not to compete with the two buttons |
+
+**Decided (Charles, 2026-11-16): no hard lock.** "Not really wanting to fight people on this if they want to power through." Nobody is ever stopped from starting. The rest of this section is the reasoning.
 
 **Why not a hard lock.** "You can't start until you've checked the kit" would stop
 the people who already have everything and the people who'd rather just try. The
