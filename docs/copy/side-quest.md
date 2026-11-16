@@ -1,6 +1,6 @@
 # Side quest: the "are you ready?" step (proposal)
 
-**Status:** Proposal for review, 2026-11-16. **One decision made:** no hard lock; the kit check never blocks anyone from starting. Nothing here is on the site. Wording
+**Status:** Proposal for review, 2026-11-16. **Two decisions made:** no hard lock, and when something is missing the side quest is the suggested path (more taps accepted). Nothing here is on the site. Wording
 is draft and follows the plain-speech rule in
 [`content/README.md`](../../content/README.md).
 **Picture of the flow:** [side-quest-mock.png](side-quest-mock.png) (student look; four screens).
@@ -45,7 +45,7 @@ switch those pages to "Pre-flight check" or "Kit check" with the same screens.
 | **B. Inside each branch** | Home: check at step 1. Not home: suggest it after they pick a time | Nothing in the way | Two different pieces of code and wording |
 | **C. One kit check with three doors (recommended)** | The same kit check, reachable from (1) a quiet third link under the two buttons, (2) a "step 0" if they tap Start without checking, and (3) a suggestion after they pick a time | One component, nothing blocks anyone, ready people lose no taps | The third link has to be quiet enough not to compete with the two buttons |
 
-**Decided (Charles, 2026-11-16): no hard lock.** "Not really wanting to fight people on this if they want to power through." Nobody is ever stopped from starting. The rest of this section is the reasoning.
+**Decided (Charles, 2026-11-16): no hard lock, and a soft push toward the side quest.** "Not really wanting to fight people on this if they want to power through." Nobody is ever stopped from starting. **If someone is missing something, we softly suggest the side quest first, even though it means more taps** (Charles: "even if it's more clicks"). The side quest is the highlighted button and "Start anyway" is one tap below it. The rest of this section is the reasoning.
 
 **Why not a hard lock.** "You can't start until you've checked the kit" would stop
 the people who already have everything and the people who'd rather just try. The
@@ -109,7 +109,8 @@ without checking):
 > You can clean almost everything in your place with these. Tap the ones you've got.
 > ☐ White vinegar ☐ Dish soap ☐ Two cloths ☐ Trash bags ☐ A basket or box ☐ A spray bottle
 > *(all ticked:)* **[ I've got them all. Let's go. ]**
-> *(any unticked:)* **[ I'm missing something. ]**
+> *(any unticked:)* **[ Side quest first: get what I'm missing ]** (highlighted)
+> *(always, below it:)* Start anyway. Nothing is locked. Step 1 will use what's on this list.
 > Half vinegar, half water in the spray bottle cleans counters, sinks and glass.
 > Not on stone like granite or marble. Never mix it with bleach.
 
@@ -127,6 +128,43 @@ without checking):
 > **SIDE QUEST. Friday, 6:00 p.m.** Pick up a basket or box, and a spray bottle.
 > **MAIN THING. Saturday, 10:00 a.m.** Wash the dishes and pick up your place.
 > **[ Add both to my calendar ]**  **[ Ask a friend to check on you ]**
+
+## A clickable shopping list (idea from Charles, 2026-11-16)
+
+**The idea:** when something is missing, the side quest shows the missing items
+as a list the reader can tap to get fast, ideally same-day, through Walmart,
+Amazon or a local delivery app. Charles doesn't want affiliate links unless they
+get people the items sooner.
+
+**What I'd build first, and why.**
+1. **"Copy my shopping list"** (plain text of the missing items). It works in any
+   store or delivery app, needs no account, and can never go stale.
+2. **A few "search for this" links**: one tap opens the store's own search for
+   "distilled white vinegar" and so on. These name generic items, not brands, so
+   they fit the commerce rule of the fewest products and no brand pushing.
+3. **Cart links that add every item at once** only after we know what each store
+   allows. Some are only available through an affiliate or partner program, which
+   is the one case where an affiliate account could save the reader taps.
+
+**What I can say now.**
+- **Affiliate links don't make anything arrive sooner.** Only a link that fills the
+  cart saves taps, and delivery speed depends on the reader's address and the
+  store. So affiliate only matters if it's the *only way* to get the cart link.
+- **Same-day isn't something we can promise.** It depends on the reader's ZIP and
+  the store. Safe wording is "may be available same-day where you live."
+- **Rule 10 of the commerce rules still applies:** never invent, infer or repair a
+  product link; every link is checked against the real retailer page. Search links
+  are easier to check than product links, and they don't go stale as often.
+- **A delivery can be slower than the errand.** The side quest is about 10 minutes
+  at a store. For tonight's job, a trip may beat a delivery.
+- **Same-day in the middle of the side quest is a good fit** for people who can't
+  leave the house; the picker for the errand already says "tonight" or "tomorrow."
+
+**Being checked** (a researcher is verifying each retailer's own pages): the exact
+search-link formats, whether any one-tap cart link exists without an affiliate
+account, what same-day costs without a paid membership, and what disclosure the
+FTC requires if we ever use an affiliate link. Report:
+`docs/research/growth/same-day-shopping-links.md`.
 
 ## Rules that keep it from becoming a way to put things off
 
@@ -170,8 +208,10 @@ single line above the buttons.
 1. **"Side quest" on all pages, or only students?** (Career and military might
    prefer "Pre-flight check" or "Kit check.")
 2. **Should the third link be on the page from day one, or only after the step 0
-   version has been tried?** The step 0 version costs nothing for people who tick
-   everything, and it needs no new link.
+   version has been tried?** With Charles's answer that everyone sees the kit
+   check once (one tap if they have it all), the step 0 version already reaches
+   everyone. My suggestion: build that first, and add the third link only if
+   people want to check before choosing.
 3. **Should we offer a "Copy my shopping list" button at all,** or just show the
    list? (It's one tap for the reader, a little code for us.)
 4. **Is "about 10 minutes to pick up" right?** It's a guess. Please time a real
