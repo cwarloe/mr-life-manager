@@ -136,15 +136,19 @@ as a list the reader can tap to get fast, ideally same-day, through Walmart,
 Amazon or a local delivery app. Charles doesn't want affiliate links unless they
 get people the items sooner.
 
-**What I'd build first, and why.**
-1. **"Copy my shopping list"** (plain text of the missing items). It works in any
-   store or delivery app, needs no account, and can never go stale.
-2. **A few "search for this" links**: one tap opens the store's own search for
-   "distilled white vinegar" and so on. These name generic items, not brands, so
-   they fit the commerce rule of the fewest products and no brand pushing.
-3. **Cart links that add every item at once** only after we know what each store
-   allows. Some are only available through an affiliate or partner program, which
-   is the one case where an affiliate account could save the reader taps.
+**What to build first (after the research, 2026-11-16).**
+1. **"Copy my shopping list."** The missing items as plain text the reader pastes
+   into Walmart, Amazon or any delivery app. No account, no backend, no affiliate
+   deal, and it can't go stale.
+2. **One "Find a store near you" link** (Google Maps, which documents its link
+   format and needs no key). It opens a search for nearby stores.
+3. **Not yet:** retailer search links, cart links, affiliate links. See below.
+
+**Correction.** An earlier version of this section proposed retailer search links
+as step 2. That conflicts with a rule I didn't flag: the commerce rules say **no
+search links in the action path** (link rule 2: a search is a choice, and choice is
+what we're removing). Even the Maps link is a search for a place, so it needs
+Charles's OK. A retailer search link would need an exception to that rule.
 
 **What I can say now.**
 - **Affiliate links don't make anything arrive sooner.** Only a link that fills the
@@ -160,11 +164,20 @@ get people the items sooner.
 - **Same-day in the middle of the side quest is a good fit** for people who can't
   leave the house; the picker for the errand already says "tonight" or "tomorrow."
 
-**Being checked** (a researcher is verifying each retailer's own pages): the exact
-search-link formats, whether any one-tap cart link exists without an affiliate
-account, what same-day costs without a paid membership, and what disclosure the
-FTC requires if we ever use an affiliate link. Report:
-`docs/research/growth/same-day-shopping-links.md`.
+**What the research found** ([report](../research/growth/same-day-shopping-links.md)):
+- **No cart link works without an account on their side.** Amazon's needs an
+  Associates tag, Instacart's needs an API key and approval, and no public one
+  turned up for Walmart or Target.
+- **Retailer search links are unofficial.** Only Target's loaded for the researcher;
+  Walmart blocked automated fetching and Amazon was flaky. None are documented,
+  so they could break without notice.
+- **Affiliate links don't speed anything up.** They add tracking and a commission,
+  and they conflict with the rule that basic consumables pay us nothing.
+- **A 10-minute drive usually beats delivery.** Non-member delivery fees are about
+  $10 with minimums, per the researcher; the Walmart numbers are only partly
+  verified because walmart.com blocked the check.
+- **Safe wording is "check your address."** Don't promise same-day, free, fast or
+  in stock.
 
 ## Rules that keep it from becoming a way to put things off
 
