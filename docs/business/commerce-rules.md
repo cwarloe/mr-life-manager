@@ -88,7 +88,7 @@ link-checking process quietly edit what we tell people they need.
 1. **Every affiliate link resolves to the exact product named** — not a search
    result, category page, different size, different scent, marketplace
    substitute, or anything else.
-2. **No search links in the action path.** A search is a choice, and choice is
+2. **No search links in the action path.** *Exception (Charles, 2026-11-17): the side quest may include one Google Maps "find a store near you" link, a search for a place, not a product.* A search is a choice, and choice is
    the thing we are removing. *Click here, done, go.* Sending someone to research
    and select re-creates the paralysis the page exists to prevent.
 3. **Record in a source-of-truth file:** product name, retailer, URL, size/count,

@@ -144,6 +144,8 @@ get people the items sooner.
    format and needs no key). It opens a search for nearby stores.
 3. **Not yet:** retailer search links, cart links, affiliate links. See below.
 
+**Decided (Charles, 2026-11-17):** the Maps "find a store near you" link is fine, and retailer search links are left out for now (his call to me: the goal is that people complete the tasks, and only one of three retailers' search pages even loads reliably). Revisit if people ask for them.
+
 **Correction.** An earlier version of this section proposed retailer search links
 as step 2. That conflicts with a rule I didn't flag: the commerce rules say **no
 search links in the action path** (link rule 2: a search is a choice, and choice is
