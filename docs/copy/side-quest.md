@@ -5,6 +5,13 @@ is draft and follows the plain-speech rule in
 [`content/README.md`](../../content/README.md).
 **Picture of the flow:** [side-quest-mock.png](side-quest-mock.png) (student look; four screens).
 
+**Decided (Charles, 2026-11-17): no "side quest" on the customer side.**
+Marketing wouldn't call it that, and the point is only to get people the stuff so
+they can finish the task. The customer-facing words are plain: **"What you'll
+need"** for the check and **"Get what's missing first"** for the button. "Side
+quest" stays as our own shorthand in this file. Keep it simple: no extra calendar
+entry for now.
+
 ## What Charles said
 
 People can do almost everything around the house with a few staples. If you
@@ -19,11 +26,14 @@ can't really do the main thing anyway. So: ask "do you have the stuff?" before
 Every checklist already says "grab these first," but it's a paragraph people
 skip, and the calendar picker lets someone commit to a time without checking
 they can do the job. We turn the supply list into a **one-tap kit check**. If
-they have everything, nothing changes. If something is missing, they get a
-**side quest**: a short, time-boxed errand to get it, with its **own calendar
-entry** before the main time. Both go on the calendar in one tap.
+they have everything, nothing changes. If something is missing, we suggest
+getting it first (a short errand, with a copy-the-list button and a store-finder
+link), then they go back to the plan they already had. Simple version: no second
+calendar entry.
 
-## The name
+## The name (superseded: customer-facing words are plain, see the top)
+
+The table below is the brainstorm. Charles decided on 2026-11-17 against "side quest" on the customer side.
 
 | Option | Who it fits | Verdict |
 |---|---|---|
@@ -93,41 +103,36 @@ and have to stay on the kit screen:
 "Equal parts vinegar and water" is the usual mix, but the repo doesn't state a
 ratio. **Confirm it before it ships.**
 
-## The screens (draft wording)
+## The screens (draft wording, simplified 2026-11-17)
 
-All screens are drawn in [side-quest-mock.png](side-quest-mock.png).
+Drawn in [side-quest-mock.png](side-quest-mock.png). No game words, no second
+calendar entry: the page helps people get what they need, then goes back to the
+plan they already had.
 
-**1. The page after the scan** (the two buttons stay as they are). Under them, a
-quiet third link:
-> **Side quest: check you've got the staples**
-> Vinegar, dish soap, cloths. 3 minutes, and you'll need them for step 1.
+**1. The page after the scan.** The two buttons stay as they are. Optional, quiet
+link under them:
+> **What you'll need** (1 minute)
+> Vinegar, dish soap, cloths. You'll use them in step 1.
 
-**2. The kit check** (opens from the third link, or as step 0 if they tap Start
-without checking):
-> **SIDE QUEST**
-> **Do you have the staples?**
-> You can clean almost everything in your place with these. Tap the ones you've got.
+**2. The check** (shows once to everyone who taps Start, and after they pick a time):
+> **What you'll need**
+> Most of this you probably have. Tap the ones you've got.
 > ☐ White vinegar ☐ Dish soap ☐ Two cloths ☐ Trash bags ☐ A basket or box ☐ A spray bottle
-> *(all ticked:)* **[ I've got them all. Let's go. ]**
-> *(any unticked:)* **[ Side quest first: get what I'm missing ]** (highlighted)
-> *(always, below it:)* Start anyway. Nothing is locked. Step 1 will use what's on this list.
+> *(all ticked:)* **[ I've got everything. Let's go. ]**
+> *(any unticked:)* **[ Get what's missing first ]** (highlighted)
+> *(always, below it:)* Start anyway. Nothing is locked.
 > Half vinegar, half water in the spray bottle cleans counters, sinks and glass.
 > Not on stone like granite or marble. Never mix it with bleach.
 
-**3. The side quest** (when something is missing):
-> **SIDE QUEST**
-> **Pick up a basket or box, and a spray bottle.** *(the unticked items)*
+**3. Getting what's missing:**
+> **Get these first:** a basket or box, a spray bottle.
 > About 10 minutes. Any grocery or dollar store has both.
-> **[ Copy my shopping list ]**
-> **When will you pick them up?** [ Tonight, 6:00 p.m. ] [ Tomorrow, 6:00 p.m. ]
-> Then you'll pick the day and time for the main thing, after your side quest.
-> **[ Next: pick the main time ]**
+> **[ Copy my shopping list ]**  **[ Find a store near you ]**
+> **[ I've got them. Back to my plan. ]**
 
-**4. Decided** (one tap puts both on the calendar):
-> **That's decided:**
-> **SIDE QUEST. Friday, 6:00 p.m.** Pick up a basket or box, and a spray bottle.
-> **MAIN THING. Saturday, 10:00 a.m.** Wash the dishes and pick up your place.
-> **[ Add both to my calendar ]**  **[ Ask a friend to check on you ]**
+**4. If they were picking a time:** the usual "That's decided" screen, with one
+added line under the time:
+> Have these ready by then: a basket or box, a spray bottle.
 
 ## A clickable shopping list (idea from Charles, 2026-11-16)
 
@@ -181,18 +186,16 @@ Charles's OK. A retailer search link would need an exception to that rule.
 - **Safe wording is "check your address."** Don't promise same-day, free, fast or
   in stock.
 
-## Rules that keep it from becoming a way to put things off
+## Rules that keep it simple
 
-1. **The side quest never replaces the main time.** They still pick a day and
-   time for the main thing, and it has to come after the side quest.
-2. **It's small and time-boxed:** about 3 minutes to check, about 10 to pick up.
-3. **One errand per scan.** After they pick a time for the side quest, they go
-   straight to picking the main time.
-4. **If they already have everything, nothing is added.** One tap.
-5. **The calendar file carries both events**, so the reminder for the side quest
-   arrives on its own, then the main reminder.
-6. **The moved-twice rule still applies to the main time** (the existing cap
-   after two moves).
+1. **It never blocks.** "Start anyway" is always one tap.
+2. **It's small:** about a minute to check, about 10 minutes to get what's missing.
+3. **Nothing is added if they have everything.** One tap.
+4. **One list, one job:** it only helps them get the stuff. It doesn't add a second
+   plan, a second time to pick or a second reminder.
+5. **The existing rules for the main time still apply** (the cap after two moves).
+6. **Later, only if people forget the supplies:** a second calendar entry for the
+   errand, with the main time after it.
 
 ## What we'd measure
 
@@ -209,19 +212,19 @@ single line above the buttons.
 
 ## What it takes (so you can weigh it)
 
-- **Small:** the kit check as a card in the existing flow, ticks kept on the page
-  only, and the third link under the two buttons.
-- **Medium:** the second calendar event. The invite file can hold two events
-  (a standard calendar format feature), and the Google Calendar link needs a second
-  link. The main picker has to disable times earlier than the side quest.
+- **Small:** the check as a card in the existing flow (ticks kept on the page only),
+  the copy-list button, the Maps link, and the optional quiet link under the two buttons.
+- **Later, only if needed:** a second calendar entry for the errand. The invite
+  file can hold two events and the Google Calendar link would need a second link;
+  the main picker would then disable times earlier than the errand.
 - **Copy:** one kit list per workflow (the table above), the safety line, and the
   three screens. All of it goes through the copy review first.
 - **Not needed:** accounts, a database, or remembering anything between visits.
 
 ## Questions for Charles and reviewers
 
-1. **"Side quest" on all pages, or only students?** (Career and military might
-   prefer "Pre-flight check" or "Kit check.")
+1. **Are "What you'll need" and "Get what's missing first" the right plain words?**
+   Say what you'd say to a friend.
 2. **Should the third link be on the page from day one, or only after the step 0
    version has been tried?** With Charles's answer that everyone sees the kit
    check once (one tap if they have it all), the step 0 version already reaches
