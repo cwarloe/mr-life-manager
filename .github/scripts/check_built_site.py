@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import html as html_lib
+import json
 import re
 import sys
 from html.parser import HTMLParser
@@ -62,6 +63,21 @@ def main() -> int:
     if not pages:
         print("_site has no HTML; run build_site.py first", file=sys.stderr)
         return 1
+
+    release_file = OUT / "release.json"
+    if not release_file.is_file():
+        problems.append("missing release.json with the deployed commit")
+    else:
+        release = json.loads(release_file.read_text(encoding="utf-8"))
+        commit = release.get("commit", "")
+        if not re.fullmatch(r"[0-9a-f]{40}", commit):
+            problems.append("release.json: invalid commit SHA")
+        else:
+            home = (OUT / "index.html").read_text(encoding="utf-8")
+            if f'<meta name="site-build" content="{commit}">' not in home:
+                problems.append("index.html: build metadata does not match release.json")
+            if f'Build {commit[:8]}' not in home or 'data-mlm-build' not in home:
+                problems.append("index.html: visible build identifier missing")
 
     legacy_pages = {
         OUT / "guides" / f"{old}.html": f"/guides/{new}.html"
