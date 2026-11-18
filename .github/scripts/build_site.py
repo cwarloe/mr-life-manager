@@ -3,7 +3,9 @@
 from __future__ import annotations
 import html as html_lib
 import json
-import re, shutil, sys
+import os
+import re, shutil, subprocess, sys
+from datetime import datetime, timezone
 from pathlib import Path
 from preview_site import build_preview
 from theme_tokens import palette
@@ -119,6 +121,50 @@ def apply_analytics() -> int:
         if new != text:
             path.write_text(new, encoding="utf-8")
     return count
+
+
+def add_release_info() -> str:
+    """Stamp the actual checked-out revision into the published artifact.
+
+    This happens during the Pages build, not in authored HTML. A deployment
+    can therefore be identified even when the source branch has moved on.
+    """
+    commit = os.environ.get("GITHUB_SHA", "").lower()
+    if not re.fullmatch(r"[0-9a-f]{40}", commit):
+        try:
+            commit = subprocess.check_output(
+                ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True,
+                stderr=subprocess.DEVNULL,
+            ).strip().lower()
+        except (OSError, subprocess.CalledProcessError):
+            commit = ""
+    if not re.fullmatch(r"[0-9a-f]{40}", commit):
+        sys.exit("Cannot identify the build commit; release metadata would be misleading")
+
+    release = {
+        "repository": "cwarloe/mr-life-manager",
+        "commit": commit,
+        "built_at": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
+    }
+    (OUT / "release.json").write_text(json.dumps(release, indent=2) + "\n", encoding="utf-8")
+    for path in sorted(OUT.rglob("*.html")):
+        if path.is_relative_to(OUT / "preview"):
+            continue
+        text = path.read_text(encoding="utf-8")
+        if REDIRECT_MARKER in text:
+            continue
+        text = text.replace(
+            "</head>", f'<meta name="site-build" content="{commit}">\n</head>', 1
+        )
+        if "</footer>" in text:
+            text = text.replace(
+                "</footer>",
+                f' <small data-mlm-build title="Published Git commit {commit}">'
+                f'Build {commit[:8]}</small></footer>',
+                1,
+            )
+        path.write_text(text, encoding="utf-8")
+    return commit
 
 
 def redirect_page(target_path: str, title: str) -> str:
@@ -356,9 +402,11 @@ def main() -> int:
     (OUT / "sitemap.xml").write_text("\n".join(lines), encoding="utf-8")
     analytics_count = apply_analytics()
     metadata_count = add_public_metadata()
+    release_commit = add_release_info()
     print(
         f"Built _site/ — {len(GUIDES)} guides, {len(pdfs)} printables, "
         f"metadata on {metadata_count} pages, "
+        f"commit {release_commit[:8]}, "
         + (f"analytics on {analytics_count} pages." if UMAMI_WEBSITE_ID else "analytics off (no Umami ID).")
     )
     return 0
