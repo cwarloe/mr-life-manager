@@ -14,3 +14,13 @@ The $39 "First Place" comprehensive guide priced above verified category compara
 
 ## Consequences
 product-ladder.md, the First Place reservation page and demand test, and all $39 references need reworking. Dave's principles remain the cross-domain content engine (a friend's office-cleanup request became a live page in 30 minutes); the flagship stays in the home domain.
+
+## Clarifying note (proposed 2026-10-23, pending Charles's approval)
+
+This decision covers **list signup**: asking for an email address to join the
+newsletter or an entry sequence before the reader has finished something.
+It does not cover a **timed delivery**: one email, at a time the reader chose,
+with the checklist they picked, from a separate reminder group, with no
+newsletter enrollment unless they later opt in. That delivery may be offered
+before the win to readers who are away from home
+([save-for-later.md](../docs/business/save-for-later.md)).
