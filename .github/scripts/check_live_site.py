@@ -4,6 +4,8 @@
 from __future__ import annotations
 
 import html
+import json
+import os
 import re
 import sys
 import time
@@ -77,6 +79,42 @@ def fetch(url: str) -> tuple[str, str, bytes]:
     request = Request(url, headers={"User-Agent": "mr-life-manager-healthcheck/1.0"})
     with urlopen(request, timeout=20) as response:
         return response.geturl(), response.headers.get_content_type(), response.read()
+
+
+def check_release(expected_commit: str) -> list[str]:
+    """Check that the live build identity agrees with its homepage and deployment."""
+    problems: list[str] = []
+    release_url = ORIGIN + "/release.json"
+    try:
+        final, _, body = fetch(release_url)
+        if final != release_url:
+            problems.append(f"{release_url}: unexpected redirect to {final}")
+        release = json.loads(body)
+        commit = release.get("commit", "") if isinstance(release, dict) else ""
+        if not isinstance(commit, str) or not re.fullmatch(r"[0-9a-f]{40}", commit):
+            return problems + [f"{release_url}: missing valid Git commit SHA"]
+        if release.get("repository") != "cwarloe/mr-life-manager":
+            problems.append(f"{release_url}: unexpected repository")
+        if expected_commit and commit != expected_commit:
+            problems.append(
+                f"{release_url}: serving {commit[:8]}, expected deployed {expected_commit[:8]}"
+            )
+    except (HTTPError, URLError, TimeoutError, ValueError) as exc:
+        return problems + [f"{release_url}: {exc}"]
+
+    homepage_url = ORIGIN + "/"
+    try:
+        _, content_type, body = fetch(homepage_url)
+        text = body.decode("utf-8", errors="replace")
+        if content_type != "text/html":
+            problems.append(f"{homepage_url}: not HTML")
+        if f'<meta name="site-build" content="{commit}">' not in text:
+            problems.append(f"{homepage_url}: build meta tag differs from release.json")
+        if 'data-mlm-build' not in text or f'Build {commit[:8]}' not in text:
+            problems.append(f"{homepage_url}: visible build ID differs from release.json")
+    except (HTTPError, URLError, TimeoutError) as exc:
+        problems.append(f"{homepage_url}: {exc}")
+    return problems
 
 
 def _expect_pdf(url: str, problems: list[str]) -> None:
@@ -162,6 +200,27 @@ def run_once() -> list[str]:
 
 
 def main() -> int:
+    expected = os.environ.get("EXPECTED_DEPLOY_SHA", "").strip().lower()
+    if expected and not re.fullmatch(r"[0-9a-f]{40}", expected):
+        print("EXPECTED_DEPLOY_SHA must be a full Git commit SHA", file=sys.stderr)
+        return 1
+
+    # After GitHub reports a deployment succeeded, allow CDN propagation time.
+    # Scheduled and manually triggered checks validate internal consistency.
+    attempts = 20 if expected else 3
+    for attempt in range(attempts):
+        release_issues = check_release(expected)
+        if not release_issues:
+            print(f"Live release identity verified{f' for {expected[:8]}' if expected else ''}.")
+            break
+        if attempt < attempts - 1:
+            time.sleep(15)
+    else:
+        print("Production release verification failed:", file=sys.stderr)
+        for problem in release_issues:
+            print(f"- {problem}", file=sys.stderr)
+        return 1
+
     problems: list[str] = []
     for attempt in range(3):
         problems = run_once()

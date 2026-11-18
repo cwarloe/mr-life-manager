@@ -16,6 +16,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: check-live-site
+  cancel-in-progress: true
+
 jobs:
   smoke-test:
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
@@ -23,7 +27,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          # The workflow_run may be older than the current main branch.
+          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.sha }}
 
       - name: Check production routes and offer
+        env:
+          EXPECTED_DEPLOY_SHA: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || '' }}
         run: python3 .github/scripts/check_live_site.py
 
