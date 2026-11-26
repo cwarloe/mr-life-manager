@@ -73,6 +73,21 @@ class JourneyQualityTests(unittest.TestCase):
         _, problems = check_events(source)
         self.assertTrue(any("unexpected analytics event 'purchase'" in p for p in problems), problems)
 
+    def test_nested_payload_cannot_bypass_event_key_review(self):
+        source = script() + "\ntrack('start-now', {visitor: {email: 'private'}});\n"
+        _, problems = check_events(source)
+        self.assertTrue(any('unreviewed analytics track() call shape' in p for p in problems), problems)
+
+    def test_computed_event_name_cannot_bypass_event_review(self):
+        source = script() + "\nconst eventName = 'purchase'; track(eventName, {});\n"
+        _, problems = check_events(source)
+        self.assertTrue(any('unreviewed analytics track() call shape' in p for p in problems), problems)
+
+    def test_direct_umami_call_cannot_bypass_event_review(self):
+        source = script() + "\nwindow.umami.track('purchase', {email: 'private'});\n"
+        _, problems = check_events(source)
+        self.assertTrue(any('direct Umami tracking bypasses' in p for p in problems), problems)
+
     def test_event_key_cannot_be_repurposed_in_a_different_stage(self):
         source = script() + "\ntrack('start-now', {step: '6'});\n"
         _, problems = check_events(source)
