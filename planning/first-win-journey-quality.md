@@ -17,7 +17,7 @@ pages are outside this release check.
 | Route integrity | Source guide identity and intended finish page | Completion points to another person's checklist |
 | Measurement consistency | Existing 13 Umami event names and the payload for each event | Renamed event, unreviewed parameter, dropped stage |
 | Site integration | Existing `check_entry_pages.py` and `check_built_site.py` | Broken public route, mailer wiring, PDF, metadata or privacy notice |
-| Behavioral review | Existing `tests/test_campaign_flows.py` browser tests, run separately where Chromium is available | A visitor can't proceed, schedule, resume or finish |
+| Behavioral review | Existing `tests/test_campaign_flows.py` browser tests, run by the `mobile-journey` CI job | A visitor can't proceed, schedule, resume or finish |
 
 `python3 .github/scripts/check_journey_quality.py --out artifacts/journey-quality.json`
 records a small, deterministic *traveler*: each published route, first and
@@ -73,3 +73,27 @@ Related: [operations and scorecard](operations.md),
 [`tests/test_campaign_flows.py`](../tests/test_campaign_flows.py),
 and [open reminder concept PR #108](https://github.com/cwarloe/mr-life-manager/pull/108)
 (owner review required; not changed by this initiative).
+
+## Automated mobile regression check
+
+The `mobile-journey` job in `validate-content.yml` builds the local site and
+runs `tests/test_campaign_flows.py` using the pinned Playwright dependency in
+`tests/requirements-browser.txt`. It runs on pull requests and relevant main
+pushes, including browser-test and dependency-file changes. The browser
+context blocks requests outside its local server; there are no signups,
+calendar-account saves or live-customer records involved.
+
+The browser suite verifies the accepted commitment-first entrances, one
+start-time picker, near-term and future-day choices, rejection of missing/past
+times, removal of stale calendar links after edits, calendar contents and
+return URLs, reminder/current-step resume, all six steps, mobile overflow,
+and one-page print output. The existing offline gate remains a fast separate
+check. A passing browser run verifies interaction behavior, not physical work
+or Instagram's calendar integration.
+
+For a local run, install `tests/requirements-browser.txt` in a virtual
+environment, install its Chromium with `python -m playwright install chromium`,
+build with `python3 .github/scripts/build_site.py`, and run
+`python tests/test_campaign_flows.py -v`. `CAMPAIGN_BROWSER` can select an
+existing Chromium executable; otherwise the tests prefer their pinned
+Playwright browser when no explicit executable is selected.

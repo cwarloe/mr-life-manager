@@ -1,4 +1,5 @@
 """Mobile integration checks. Run after build_site.py; requires Python Playwright.
+Install tests/requirements-browser.txt and its Chromium first.
 CAMPAIGN_BROWSER can select a Chromium executable. No external requests or saves.
 """
 import functools
@@ -27,7 +28,9 @@ class CampaignFlows(unittest.TestCase):
         cls.origin = 'http://127.0.0.1:' + str(cls.server.server_port)
         cls.playwright = sync_playwright().start()
         shells = list((ROOT / 'video/node_modules/.remotion').glob('**/chrome-headless-shell'))
-        executable = os.environ.get('CAMPAIGN_BROWSER') or next((str(p) for p in shells if p.is_file()), None) or shutil.which('chromium')
+        executable = os.environ.get('CAMPAIGN_BROWSER')
+        if not executable and not Path(cls.playwright.chromium.executable_path).is_file():
+            executable = next((str(p) for p in shells if p.is_file()), None) or shutil.which('chromium')
         cls.browser = cls.playwright.chromium.launch(executable_path=executable, args=['--no-sandbox'])
 
     @classmethod

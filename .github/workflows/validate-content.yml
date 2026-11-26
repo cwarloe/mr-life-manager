@@ -24,6 +24,8 @@ on:
       - ".github/scripts/theme_tokens.py"
       - ".github/scripts/generate_share_assets.py"
       - "tests/test_journey_quality.py"
+      - "tests/test_campaign_flows.py"
+      - "tests/requirements-browser.txt"
       - ".github/workflows/validate-content.yml"
       - ".github/workflows/reuse-validate-build.yml"
   workflow_dispatch:
@@ -53,3 +55,20 @@ jobs:
           path: artifacts/journey-quality.json
           if-no-files-found: warn
           retention-days: 14
+
+  # Browser tests exercise the built local site; external requests are blocked
+  # in the test context, so CI cannot submit a form or visit a live account.
+  mobile-journey:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install the pinned browser-test runtime
+        run: |
+          python3 -m venv .venv-browser
+          .venv-browser/bin/python -m pip install -r tests/requirements-browser.txt
+          .venv-browser/bin/python -m playwright install --with-deps chromium
+      - name: Build the local site
+        run: python3 .github/scripts/build_site.py
+      - name: Check mobile start, schedule, calendar return, resume and print
+        run: .venv-browser/bin/python tests/test_campaign_flows.py -v

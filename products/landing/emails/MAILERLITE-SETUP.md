@@ -14,6 +14,13 @@ public pages and PDF, but it cannot inspect MailerLite's private automation
 state. If the account and this file disagree, pause broad distribution until the
 account has been brought back to this specification.
 
+## Pending weekly-copy synchronization
+
+The revised weekly PDF is already available at its existing link. The related
+sequence-source changes need account-level verification before being called
+synchronized. The reusable [weekly-copy handoff](WEEK-SYNC-HANDOFF.md) names the
+sources, scope and expected verification record; it is not a running bot.
+
 ## Routing
 
 The same form is embedded after the completed action on all five pages and on
