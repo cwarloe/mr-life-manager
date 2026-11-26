@@ -145,6 +145,39 @@ class CampaignFlows(unittest.TestCase):
         self.assertTrue(self.page.locator('.later').is_visible())
         self.assertTrue(self.page.locator('.frame').is_hidden())
 
+    def test_every_published_task_reaches_its_own_finish_page(self):
+        import sys
+        sys.path.insert(0, str(ROOT / '.github' / 'scripts'))
+        from site_catalog import PUBLISHED_ENTRY_ROUTES
+
+        for route in PUBLISHED_ENTRY_ROUTES:
+            with self.subTest(route=route.slug):
+                self.page.goto(self.origin + '/' + route.page + '?from=ci-local')
+                self.page.locator('.go-do').click()
+                if self.page.locator('.prep-start').count():
+                    self.page.locator('.prep-start').click()
+                for _ in range(6):
+                    self.page.locator('.nav .next').click()
+                self.page.locator('.done .complete').click()
+                self.assertEqual(urlsplit(self.page.url).path, '/' + route.completion_page)
+                query = parse_qs(urlsplit(self.page.url).query)
+                self.assertEqual(query['from'], ['ci-local'])
+                self.assertEqual(query['path'], ['now'])
+                self.assertTrue(self.page.locator('h1').is_visible())
+
+    def test_full_checklist_remains_available_without_javascript(self):
+        context = self.browser.new_context(java_script_enabled=False)
+        context.route('**/*', lambda r: r.continue_() if r.request.url.startswith(self.origin) else r.abort())
+        page = context.new_page()
+        try:
+            for slug in ['guests', 'underwater']:
+                page.goto(self.origin + '/' + slug + '.html')
+                self.assertTrue(page.locator('.frame').is_visible())
+                self.assertTrue(page.locator('.steps').is_visible())
+                self.assertEqual(page.locator('.step:visible').count(), 6)
+        finally:
+            context.close()
+
     def test_other_tasks_and_print_remain_available(self):
         self.open_task('dinner')
         self.assertTrue(self.page.locator('.frame').is_visible())

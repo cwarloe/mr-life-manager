@@ -87,7 +87,8 @@ The browser suite verifies the accepted commitment-first entrances, one
 start-time picker, near-term and future-day choices, rejection of missing/past
 times, removal of stale calendar links after edits, calendar contents and
 return URLs, reminder/current-step resume, all six steps, mobile overflow,
-and one-page print output. The existing offline gate remains a fast separate
+one-page print output, completion routing for every published task, and full
+checklist access when JavaScript is unavailable. The existing offline gate remains a fast separate
 check. A passing browser run verifies interaction behavior, not physical work
 or Instagram's calendar integration.
 
