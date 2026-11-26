@@ -25,18 +25,25 @@ not authentication or approval to add drafts to the five main choices.
 
 ## Division of labor
 
-**Claude makes the changes and pushes them. A bot does everything
-downstream.** The bot handles MailerLite, verification, and anything that
-touches a live account.
+**Repository agents implement and verify code changes. The designated bot
+handles authorized live-account operations.** In particular, the bot handles
+MailerLite and actions that touch a live account; repo-local agents can finish
+their own validation and other technical checks without passing routine work
+to Charles.
 
 So:
 
-- **Do the work, commit it, push to `main`.** Charles, 2026-10-26: "you can
-  push to main. I trust you. we can always revert." GitHub Actions deploys the
-  site when changes land on `main`, so run the checks first. A branch and PR
-  are still fine for anything large or uncertain.
-- **End with a short prompt for the bot** — a few lines, plain prose, saying
-  what changed and what to update. Not a checklist, not a runbook.
+- **Finish preauthorized, low-risk engineering autonomously.** Charles,
+  2026-10-26: "you can push to main. I trust you. we can always revert."
+  GitHub Actions deploys the site when changes land on `main`, so run the
+  relevant checks first. Use a branch and PR for multi-file or uncertain work;
+  merge after required CI succeeds and the change stays within the approved
+  scope. Small reversible fixes may follow the existing direct-push permission
+  after checks. Public content, paid features, privacy/consent, and material
+  business decisions still require their own authority.
+- **Give the bot a short handoff only when it has a real downstream task** — a
+  few lines of plain prose saying what to update and why. No bot prompt is
+  needed after a self-contained internal change with no external action.
 - **Don't hand Charles manual steps.** No "open this in a browser," no "send
   yourself a test signup," no "inspect this element and tell me what it says."
   If something genuinely can't be verified from here, either remove the
