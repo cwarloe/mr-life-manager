@@ -42,6 +42,9 @@ OPTIONAL_EVENT_FIELDS = {"rescheduled": frozenset({"step"})}
 ALLOWED_FIELDS = frozenset({"path", "choice", "kind", "moved", "step", "where"})
 COMMON_FIELDS = frozenset({"page", "from", "look"})
 CALL = re.compile(r"\btrack\(\s*(['\"])([a-z0-9-]+)\1\s*(?:,\s*\{([^{}]*)\})?\s*\)", re.S)
+CALL_SITE = re.compile(r"(?<![\w$.])track\s*\(")
+FUNCTION_DEFINITION = re.compile(r"\bfunction\s+$")
+DIRECT_UMAMI = re.compile(r"\bumami\.track\s*\(")
 FIELD = re.compile(r"(?:^|,)\s*([a-zA-Z_$][\w$]*)\s*:")
 
 
@@ -80,7 +83,24 @@ class StepText(HTMLParser):
 def check_events(js: str) -> tuple[dict[str, list[str]], list[str]]:
     problems: list[str] = []
     seen: dict[str, list[str]] = {}
-    for match in CALL.finditer(js):
+    parsed_calls = list(CALL.finditer(js))
+    parsed_starts = {match.start() for match in parsed_calls}
+    for site in CALL_SITE.finditer(js):
+        # This simple scanner intentionally accepts only literal event names
+        # and flat payloads. Otherwise nested objects or computed names can
+        # bypass the approved event-key contract without being inspected.
+        before = js[max(0, site.start() - 24):site.start()]
+        if FUNCTION_DEFINITION.search(before):
+            continue
+        if site.start() not in parsed_starts:
+            problems.append("entry.js: unreviewed analytics track() call shape; "
+                            "use a literal event name and flat payload")
+    # The single approved direct Umami call is inside the track() adapter.
+    # Extra direct calls would bypass payload/event review entirely.
+    if len(DIRECT_UMAMI.findall(js)) != 1:
+        problems.append("entry.js: direct Umami tracking bypasses the reviewed track() adapter")
+
+    for match in parsed_calls:
         name = match.group(2)
         fields = set(FIELD.findall(match.group(3) or ""))
         seen.setdefault(name, []).append(",".join(sorted(fields)))
