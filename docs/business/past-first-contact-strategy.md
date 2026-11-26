@@ -55,8 +55,9 @@ parent, church, or campus, one route at a time.
 
 Once pilots show completions and reservations exist, turn the no-charge
 reservation into a real founding purchase. Charles tells reservers himself, as
-[`first-place.html`](../../products/landing/first-place.html) promises. Not by
-MailerLite broadcast.
+the now-retired `first-place.html` draft once proposed. Not by MailerLite
+broadcast. This is historical planning; [ADR-020](../../planning/decisions.md#adr-020--win-before-wallet-retire-the-39-flagship)
+retired the $39 flagship.
 
 - **Customer action:** buy the $39 founding version.
 - **Principle:** 11, *Completion is what converts* (the commercial half), and

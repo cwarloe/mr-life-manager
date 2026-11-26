@@ -48,6 +48,9 @@ group is wanted before wiring one.
 `/finished-*.html` page after the reader explicitly chooses “I finished.” Count
 those page visits as a directional completion measure. They prove the reader
 reached and acknowledged the end state, not that every physical action occurred.
+The dependency-free [first-win journey quality contract](first-win-journey-quality.md)
+checks the published action routes and event meanings in CI without visiting
+the production site or reading private analytics.
 
 **Paid-demand test:** none live. Per ADR-020 (Accepted) a paid guide is only
 offered after a free win; no reservation or price page is running.
