@@ -104,6 +104,31 @@ class CampaignFlows(unittest.TestCase):
         self.page.locator('.when-input').fill('2026-11-14T18:00')
         self.assertTrue(self.page.locator('.decided').is_hidden())
 
+    def test_spring_clock_gap_cannot_silently_shift_a_calendar_reminder(self):
+        # In Boise on March 14, 2027 the clock skips from 01:59 to 03:00.
+        # A JS Date normally normalizes the nonexistent 02:30 to 03:30.
+        self.open_task('guests')
+        self.page.locator('.go-later').click()
+        self.choose_time('2027-03-14T02:30')
+        self.assertTrue(self.page.locator('.decided').is_hidden())
+        self.assertIn('valid future day and time', self.page.locator('.schedule-error').inner_text())
+        self.choose_time('2027-03-14T03:30')
+        self.assertTrue(self.page.locator('.decided').is_visible())
+        invite = unquote(self.page.locator('.cal-ics').get_attribute('href'))
+        self.assertIn('DTSTART:20270314T093000Z', invite)
+
+    def test_bad_move_count_does_not_bypass_calendar_reschedule_limit(self):
+        self.open_task('guests', '?resume=1&moved=-3')
+        self.page.locator('.resume-move').click()
+        self.choose_time()
+        invite = unquote(self.page.locator('.cal-ics').get_attribute('href')).replace('\r\n ', '')
+        url = next(line[4:] for line in invite.splitlines() if line.startswith('URL:'))
+        self.assertEqual(parse_qs(urlsplit(url).query)['moved'], ['1'])
+
+        self.open_task('guests', '?resume=1&moved=2')
+        self.assertTrue(self.page.locator('.resume-drop').is_visible())
+        self.assertEqual(self.page.locator('.resume-move').count(), 0)
+
     def test_calendar_roundtrip_and_mid_task_resume(self):
         self.open_task(query='?from=ig-company-tonight&look=career-teal&when=tonight')
         self.page.locator('.go-later').click()
