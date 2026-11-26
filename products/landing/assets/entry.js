@@ -233,7 +233,10 @@
       var MAX_MOVES = 2;
       var minutes = parseInt(root.getAttribute('data-minutes'), 10) || 40;
       var task = root.getAttribute('data-task') || document.title;
-      var moved = Math.min(parseInt(params.get('moved'), 10) || 0, MAX_MOVES);
+      // Treat an invalid URL count as a fresh visit; negative/partial numbers
+      // otherwise defeat the two-move limit after a calendar round trip.
+      var movedParam = params.get('moved') || '0';
+      var moved = /^\d+$/.test(movedParam) ? Math.min(Number(movedParam), MAX_MOVES) : 0;
       var firstAtHome = 0;
       while (firstAtHome < steps.length && steps[firstAtHome].hasAttribute('data-portable')) firstAtHome++;
       if (firstAtHome >= steps.length) firstAtHome = 0;
@@ -288,6 +291,11 @@
           hour: 'numeric', minute: '2-digit'});
       }
       function stamp(d) { return d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, ''); }
+      function localInputValue(d) {
+        function two(n) { return String(n).padStart(2, '0'); }
+        return d.getFullYear() + '-' + two(d.getMonth() + 1) + '-' + two(d.getDate()) +
+          'T' + two(d.getHours()) + ':' + two(d.getMinutes());
+      }
       function icsText(t) { return String(t).replace(/\\/g, '\\\\').replace(/[,;]/g, '\\$&').replace(/\n/g, '\\n'); }
       function fold(line) {
         var out = [];
@@ -350,9 +358,12 @@
         var v = later.querySelector('.when-input').value;
         var d = v ? new Date(v) : null;
         var error = later.querySelector('.schedule-error');
-        if (!d || isNaN(d) || d <= new Date()) {
+        // A daylight-saving spring gap (e.g. 02:30 when clocks jump to 03:00)
+        // silently rolls forward in Date(). Refuse it instead of scheduling an
+        // appointment for a different hour than the one the reader chose.
+        if (!d || isNaN(d) || localInputValue(d) !== v || d <= new Date()) {
           later.querySelector('.decided').hidden = true;
-          error.textContent = 'Choose a future day and time to start the checklist.';
+          error.textContent = 'Choose a valid future day and time to start the checklist.';
           error.hidden = false; later.querySelector('.when-input').focus(); return;
         }
         error.hidden = true;
