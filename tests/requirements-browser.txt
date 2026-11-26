@@ -1,0 +1,2 @@
+# Keep Chromium and its Python driver in step. Used only by local/CI tests.
+playwright==1.62.0
