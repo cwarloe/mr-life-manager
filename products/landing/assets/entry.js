@@ -296,6 +296,14 @@
         return d.getFullYear() + '-' + two(d.getMonth() + 1) + '-' + two(d.getDate()) +
           'T' + two(d.getHours()) + ':' + two(d.getMinutes());
       }
+      function repeatsAtClockChange(d, value) {
+        // datetime-local cannot distinguish the two occurrences of an hour
+        // repeated when daylight saving time ends. Date() picks one silently.
+        var tomorrowOffset = new Date(d.getTime() + 24 * 60 * 60000).getTimezoneOffset();
+        var repeatedMinutes = tomorrowOffset - d.getTimezoneOffset();
+        return repeatedMinutes > 0 &&
+          localInputValue(new Date(d.getTime() + repeatedMinutes * 60000)) === value;
+      }
       function icsText(t) { return String(t).replace(/\\/g, '\\\\').replace(/[,;]/g, '\\$&').replace(/\n/g, '\\n'); }
       function fold(line) {
         var out = [];
@@ -358,12 +366,17 @@
         var v = later.querySelector('.when-input').value;
         var d = v ? new Date(v) : null;
         var error = later.querySelector('.schedule-error');
+        var ambiguous = d && !isNaN(d) && localInputValue(d) === v && repeatsAtClockChange(d, v);
         // A daylight-saving spring gap (e.g. 02:30 when clocks jump to 03:00)
         // silently rolls forward in Date(). Refuse it instead of scheduling an
         // appointment for a different hour than the one the reader chose.
-        if (!d || isNaN(d) || localInputValue(d) !== v || d <= new Date()) {
+        // Fall's repeated hour has two possible instants, so ask for a time
+        // with an unambiguous UTC offset rather than choosing on their behalf.
+        if (!d || isNaN(d) || localInputValue(d) !== v || ambiguous || d <= new Date()) {
           later.querySelector('.decided').hidden = true;
-          error.textContent = 'Choose a valid future day and time to start the checklist.';
+          error.textContent = ambiguous ?
+            'That time happens twice when clocks change. Choose a different time.' :
+            'Choose a valid future day and time to start the checklist.';
           error.hidden = false; later.querySelector('.when-input').focus(); return;
         }
         error.hidden = true;

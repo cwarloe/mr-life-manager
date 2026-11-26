@@ -117,6 +117,19 @@ class CampaignFlows(unittest.TestCase):
         invite = unquote(self.page.locator('.cal-ics').get_attribute('href'))
         self.assertIn('DTSTART:20270314T093000Z', invite)
 
+    def test_fall_repeated_clock_hour_requires_an_unambiguous_time(self):
+        # Boise's 01:30 occurs twice on Nov 7, 2027; the reader did not pick
+        # which offset was intended, so no calendar link should be generated.
+        self.open_task('guests')
+        self.page.locator('.go-later').click()
+        self.choose_time('2027-11-07T01:30')
+        self.assertTrue(self.page.locator('.decided').is_hidden())
+        self.assertIn('happens twice', self.page.locator('.schedule-error').inner_text())
+        self.choose_time('2027-11-07T02:30')
+        self.assertTrue(self.page.locator('.decided').is_visible())
+        invite = unquote(self.page.locator('.cal-ics').get_attribute('href'))
+        self.assertIn('DTSTART:20271107T093000Z', invite)
+
     def test_bad_move_count_does_not_bypass_calendar_reschedule_limit(self):
         self.open_task('guests', '?resume=1&moved=-3')
         self.page.locator('.resume-move').click()
